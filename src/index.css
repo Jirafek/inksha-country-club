@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'MontserratVariable', system-ui, sans-serif;
+    }
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-base font-medium transition-colors hover:bg-opacity-50;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-sm font-bold uppercase transition-colors hover:bg-opacity-50;
+  }
+
+  .button.button-small {
+    @apply text-lg lg:py-3 lg:text-lg;
+  }
+
+  .heading {
+    @apply text-3xl font-extrabold uppercase lg:text-4xl;
+  }
+}
+
+.slow-move > .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear;
+}
+
+/* #areas::after, */
+#areas::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  z-index: 10;
+}
+
+#areas::after {
+  right: 0;
+  background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+
+@keyframes openMenu {
+  0% { height: 0; }
+  100% { height: 1933px; }
+}
+
+@keyframes closeMenu {
+  0% { height: 1933px; }
+  100% { height: 0; }
+}
+
+@font-face {
+  font-family: 'Lato-R';
+  src: local('Lato-Regular'),
+    url('./fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat-R';
+  src: local('MontserratAlternates-Regular'),
+    url('./fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+.open-menu {
+  animation-name: openMenu;
+  animation-duration: 1s;
+}
+
+.close-menu {
+  animation-name: closeMenu;
+  animation-duration: 1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.non-slider:nth-child(9) {
+  justify-self: end;
+}
+
+.non-slider:nth-child(11) {
+  justify-self: start;
+}
+
+.non-slider:nth-child(10) {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@media (min-width: 1024px) {
+  .non-slider:nth-child(10) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.disabled-class {
+  border-radius: 100px !important;
+  border: 1px solid var(--unnamed, #FFF);
+  background: rgba(252, 9, 9, 0.50);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: black !important;
+}
+
+.-current- {
+  border-radius: 100px;
+  border: 0.5px solid #000;
+  background: #FFFAFA !important;
+  color: black !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.-selected- {
+  border-radius: 100px !important;
+  border: 1px solid var(--unnamed, #FFF);
+  background: rgba(9, 252, 66, 0.5) !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: black !important;
+}
+
+.air-datepicker-body--day-name {
+  color: black !important;
+}
+
+.-weekend- {
+  color: #FC0909 !important;
+}
+
+.air-datepicker-cell {
+  transition: 0.5s;
+  font-family: 'Lato-R';
+}
+
+.air-datepicker-nav--title, .monterey {
+  font-family: 'Montserrat-R';
+}
+
+/*-------------------------------*/
+
+.input_for_calendar {
+  font-size: 13px;
+  font-family: 'Montserrat-R';
+}
+
+.-other-month-.-weekend-, .-disabled-.-weekend- {
+  color: rgba(255, 0, 0, 0.422) !important;
+}
+
+@keyframes moveSky1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fromZeroTo100 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes from100ToZero {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+.zero-animation {
+  animation: fromZeroTo100 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.hundreed-animation {
+  animation: fromZeroTo100 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveSky2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Стили для позиции "doska.png" */
+.doska-container {
+  left: 50%;
+  width: 260px;
+  transition: top 1s ease; /* Плавное изменение top свойства */
+}
+
+/* Анимация для перемещения доски вниз */
+@keyframes moveDoska {
+  0% {
+    top: -20rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.animate-moveDoska {
+  animation: moveDoska 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.animate-moveSky1 {
+  animation: moveSky1 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.animate-moveSky2 {
+  animation: moveSky2 2s linear;
+  animation-fill-mode: forwards;
+}

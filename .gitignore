@@ -1,38 +1,102 @@
-.DS_STORE
-node_modules
-scripts/flow/*/.flowconfig
-.flowconfig
+# Игнорирование временных и системных файлов
+*.swp
 *~
+.DS_Store
+Thumbs.db
+
+# Игнорирование папки сборки (по умолчанию node.js)
+/build/
+/dist/
+/out/
+
+# Игнорирование зависимостей и модулей
+/node_modules/
+
+# Игнорирование локальных конфигурационных файлов
+.env.local
+.env.*.local
+
+# Игнорирование файлов среды
+.env.production
+.env.development
+.env.test
+
+# Игнорирование файлов логов
+/log/
+*.log
+
+# Игнорирование временных и кэш файлов
+/tmp/
+/cache/
+
+# Игнорирование сгенерированного кода и бинарных файлов
+*.log
 *.pyc
-.grunt
-_SpecRunner.html
-__benchmarks__
-build/
-remote-repo/
-coverage/
-.module-cache
-fixtures/dom/public/react-dom.js
-fixtures/dom/public/react.js
-test/the-files-to-test.generated.js
-*.log*
-chrome-user-data
+*.class
+*.o
+*.so
+*.exe
+
+# Игнорирование файлов конфигурации IDE и редакторов кода
+/.vscode/
+/.idea/
 *.sublime-project
 *.sublime-workspace
-.idea
-*.iml
-.vscode
-*.swp
-*.swo
 
-packages/react-devtools-core/dist
-packages/react-devtools-extensions/chrome/build
-packages/react-devtools-extensions/chrome/*.crx
-packages/react-devtools-extensions/chrome/*.pem
-packages/react-devtools-extensions/firefox/build
-packages/react-devtools-extensions/firefox/*.xpi
-packages/react-devtools-extensions/firefox/*.pem
-packages/react-devtools-extensions/shared/build
-packages/react-devtools-extensions/.tempUserDataDir
-packages/react-devtools-inline/dist
-packages/react-devtools-shell/dist
-packages/react-devtools-timeline/dist
+# Игнорирование файлов, содержащих личные данные
+# Например, если вы используете API ключи или секреты
+.secret
+*.key
+
+# Игнорирование временных файлов и каталогов
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# Игнорирование сгенерированных файлов документации
+/docs/
+
+# Игнорирование файлов настроек редакторов и систем сборки
+*.iml
+*.ipr
+*.iws
+/.settings/
+.gradle/
+*.sublime-workspace
+
+# Игнорирование файлов локализации
+*.mo
+*.pot
+
+# Игнорирование файлов архивов
+*.zip
+*.rar
+*.gz
+*.tar
+*.7z
+
+# Игнорирование файлов с исходным кодом Jupyter notebook
+*.ipynb
+
+# Игнорирование файлов установки зависимостей
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Игнорирование файлов локализации приложений Android
+**/android/app/build/
+**/android/app/outputs/
+**/android/build/
+**/android/gradle/
+
+# Игнорирование файлов локализации приложений iOS
+**/ios/Pods/
+**/ios/build/
+
+# Игнорирование файлов пакетного менеджера npm
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+yarn.lock
+

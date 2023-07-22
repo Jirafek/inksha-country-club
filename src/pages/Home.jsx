@@ -3,6 +3,7 @@ import BookingCalendar from '../components/BookPicker';
 import Welcome from '../components/Home/Welcome';
 import Map from '../components/Home/Map';
 import About from '../components/Home/About';
+import Happy from '../components/Home/Happy';
 
 const Home = () => {
     return (
@@ -11,6 +12,8 @@ const Home = () => {
             <Welcome />
             <Map />
             <About />
+            <Happy />
+                <div className="h-[200px]"></div>
             <div className='fixed bottom-0 w-full h-[110px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">
                     <img className='h-11' src="/image/to_top_button.png" alt="" />

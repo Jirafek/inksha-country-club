@@ -271,7 +271,7 @@ html {
   animation-fill-mode: forwards;
 }
 
-.about_background {
+.about_background, .happy_background {
   width: 100%;
   height: 100%;
   background-image: url('/image/bg-burger.png');

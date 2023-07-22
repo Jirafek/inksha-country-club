@@ -4,6 +4,8 @@ import Welcome from '../components/Home/Welcome';
 import Map from '../components/Home/Map';
 import About from '../components/Home/About';
 import Happy from '../components/Home/Happy';
+import Gallery from '../components/Home/Gallery';
+import Eat from '../components/Home/Eat';
 
 const Home = () => {
     return (
@@ -13,6 +15,8 @@ const Home = () => {
             <Map />
             <About />
             <Happy />
+            <Gallery />
+            <Eat />
                 <div className="h-[200px]"></div>
             <div className='fixed bottom-0 w-full h-[110px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">

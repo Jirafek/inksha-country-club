@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const HappyClickableItems = ({ arrayData }) => {
     return (
@@ -6,7 +7,7 @@ const HappyClickableItems = ({ arrayData }) => {
             {
                 arrayData.map((el, i) => {
                     return (
-                        <div className="flex gap-[10px] items-center">
+                        <div key={uuidv4()} className="flex gap-[10px] items-center">
                             <div className="rounded-full relative w-[130px] h-[130px]">
                                 <img style={{transform: 'translateX(-50%)'}} className="absolute left-[38%] -top-[13px]" src="/image/happy_contur.png" alt="" />
                                 <img className="rounded-full object-cover w-[110px] h-[110px]" src={el.img} alt="" />

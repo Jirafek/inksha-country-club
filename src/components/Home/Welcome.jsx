@@ -39,6 +39,10 @@ const Welcome = () => {
         setBurgerState(!burgerState);
     }
 
+    function closeBurger() {
+        setBurgerState(false);
+    }
+
     useEffect(() => {
         BookingCalendar([], 'zaezd'); // get data from FireBase
         BookingCalendar([], 'viezd'); // get data from FireBase
@@ -50,23 +54,29 @@ const Welcome = () => {
     return (
         <section id='book' className="relative m-0">
             <img className="w-full" src="/image/bg1.png" alt="" />
-            <img style={burgerState ? {display: 'block'} : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
-            <div style={burgerState ? {display: 'flex', transform: 'translateX(-50%)'} : {transform: 'translateX(-50%)'}} className={` hidden absolute pl-[21px] flex-col left-1/2 gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] top-28 z-10`}>
+            <img style={burgerState ? { display: 'block' } : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
+            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={` hidden absolute pl-[21px] flex-col left-1/2 gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] top-28 z-10`}>
                 {routes.map((el, i) => {
                     return (
-                        <a key={uuidv4()} href={el.link} className='flex gap-[1px]'>
-                            <p className='monterey'>
-                                {el.text}
-                            </p>
-                            {el.icon && <img src={el.icon} />}
-                        </a>
+                        <div onClick={closeBurger} key={uuidv4()}>
+                            <a href={el.link} className='flex gap-[1px]'>
+                                <p className='monterey'>
+                                    {el.text}
+                                </p>
+                                {el.icon && <img src={el.icon} />}
+                            </a>
+                        </div>
                     );
                 })}
             </div>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container animate-moveDoska'>
                 <img className='w-full h-full' src="/image/doska.png" alt="" />
-                <img style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 bottom-[25px]' src="/image/call.png" alt="" />
-                <img style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 bottom-[4.2rem]' src="/image/about.png" alt="" />
+                <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+799999999">
+                    <img src="/image/call.png" alt="" />
+                </a>
+                <a className='absolute left-1/2 bottom-[4.2rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
+                    <img src="/image/about.png" alt="" />
+                </a>
             </div>
             <img className='absolute top-0 left-0 animate-moveSky1' src="/image/sky1.png" alt="" />
             <img className='absolute top-0 right-0 animate-moveSky2' src="/image/sky2.png" alt="" />
@@ -79,8 +89,8 @@ const Welcome = () => {
                     initial='hidden'
                     whileInView='visible'
                     viewport={{ once: true }}
-                    variants={heading} 
-                    onSubmit={handleSubmit(onSubmit)} 
+                    variants={heading}
+                    onSubmit={handleSubmit(onSubmit)}
                     className='px-16'>
                     <m.div variants={headingLines} className='relative w-full mb-2'>
                         <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />

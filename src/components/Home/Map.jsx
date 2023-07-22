@@ -186,7 +186,7 @@ const Map = () => {
 
 
     return (
-        <div className="t-body relative" style={{margin: '0'}}>
+        <div id="map" className="t-body relative" style={{margin: '0'}}>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute -top-[18px] left-1/2 z-20 w-full'>
                 <img className='w-full' src="/image/map_title.png" alt="" />
                 <p style={{ transform: 'translate(-50%)' }} className='text-white font-bold monterey vsm:text-[16px] text-[14px] absolute left-1/2 top-[37%]'>КАРТА ТЕРРИТОРИИ</p>

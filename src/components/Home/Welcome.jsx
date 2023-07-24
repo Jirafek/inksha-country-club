@@ -87,24 +87,24 @@ const Welcome = () => {
             >
                 <m.form
                     initial='hidden'
-                    whileInView='visible'
-                    viewport={{ once: true }}
-                    variants={heading}
+                    // whileInView='visible'
+                    // viewport={{ once: true }}
+                    // variants={heading}
                     onSubmit={handleSubmit(onSubmit)}
                     className='px-16'>
-                    <m.div variants={headingLines} className='relative w-full mb-2'>
+                    <m.div className='relative w-full mb-2'> {/*  variants={headingLines} */}
                         <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />
                         <input style={errors.zaezd && { borderColor: 'red' }} {...register("zaezd", { required: true })} id='zaezd' placeholder='ЗАЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
                     </m.div>
-                    <m.div variants={headingLines} className='relative w-full mb-2'>
+                    <m.div className='relative w-full mb-2'>
                         <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />
                         <input style={errors.viezd && { borderColor: 'red' }} {...register("viezd", { required: true })} id='viezd' placeholder='ВЫЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
                     </m.div>
-                    <m.div variants={headingLines} className='relative w-full mb-2'>
+                    <m.div className='relative w-full mb-2'>
                         <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.png" alt="" />
                         <input style={errors.people && { borderColor: 'red' }} {...register("people", { required: true })} placeholder='КОЛИЧЕСТВО ЧЕЛОВЕК' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
                     </m.div>
-                    <m.button variants={headingLines} type='submit' className='w-full rounded-[30px] border border-black bg-[#0CF259] bg-opacity-50 shadow-md monterey text-white font-semibold text-lg h-9'>
+                    <m.button type='submit' className='w-full rounded-[30px] border border-black bg-[#0CF259] bg-opacity-50 shadow-md monterey text-white font-semibold text-lg h-9'>
                         Посмотреть
                     </m.button>
                 </m.form>

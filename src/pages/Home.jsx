@@ -27,9 +27,9 @@ const Home = () => {
             <img className='w-full' src="/image/help.png" alt="" />
             <Calculate />
                 <div className="h-[200px]"></div>
-            <div className='fixed bottom-0 w-full h-[110px] z-[1001] flex flex-col gap-1 transition-all'>
+            <div className='fixed bottom-0 w-full h-[90px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">
-                    <img className='h-11' src="/image/to_top_button.png" alt="" />
+                    <img className='h-8' src="/image/to_top_button.png" alt="" />
                 </a>
                 <div className='bg-[#957BAE] h-full w-full flex items-center justify-around'>
                     <a className='h-full' href="#book">

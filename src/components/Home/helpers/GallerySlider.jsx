@@ -30,7 +30,7 @@ const GallerySlider = ({ images }) => {
     arrows: false,
     adaptiveHeight: false,
     centerMode: true, // Добавляем centerMode
-    centerPadding: "5px", // Расстояние между слайдами
+    centerPadding: "20px", // Расстояние между слайдами
     beforeChange: (_, nextSlide) => {
       tiltSlider(nextSlide);
     },

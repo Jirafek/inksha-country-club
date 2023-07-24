@@ -111,7 +111,7 @@ const Calculate = () => {
         selectedLocation === '1' ? 30 :
             selectedLocation === '2' ? 15 :
                 selectedLocation === '3' ? 10 :
-                    18
+                    30
     );
 
 
@@ -120,7 +120,7 @@ const Calculate = () => {
         const currentDays = event.target.value === '1' ? 30 :
             event.target.value === '2' ? 15 :
                 event.target.value === '3' ? 10 :
-                    18
+                30
         if (guesses > currentDays) {
             setGuesses(currentDays);
         }
@@ -244,8 +244,12 @@ const Calculate = () => {
                 if (guesses > 6) {
                     if (guesses <= 12) {
                         currentTotal += 5000;
+                    } else if (guesses <= 18) {
+                        currentTotal += 20000;
+                    } else if (guesses <= 24) {
+                        currentTotal += 35000;
                     } else {
-                        currentTotal += 15000;
+                        currentTotal += 50000;
                     }
                 }
                 currentTotal = currentTotal * days
@@ -255,8 +259,12 @@ const Calculate = () => {
                 if (guesses > 6) {
                     if (guesses <= 12) {
                         currentTotal += 10000
+                    } else if (guesses <= 18) {
+                        currentTotal += 30000;
+                    } else if (guesses <= 24) {
+                        currentTotal += 50000;
                     } else {
-                        currentTotal += 30000
+                        currentTotal += 70000;
                     }
                 }
                 currentTotal = currentTotal * days

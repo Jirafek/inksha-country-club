@@ -20,7 +20,7 @@ const About = () => {
                         <span className="font-semibold">Икша Кантри Клаб</span> на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в <span className="font-semibold">25</span> км от м. Алтуфьево в лесной зоне на берегу водохранилища
                     </p>
                 </div>
-                <div className="flex justify-center pb-3">
+                <div className="flex justify-center pb-9">
                     <button onClick={handleDownload}>
                         <div
                             style={{ background: 'linear-gradient(98deg, rgba(253, 249, 249, 0.12) 0%, rgba(253, 249, 249, 0.08) 100%)' }}
@@ -32,6 +32,7 @@ const About = () => {
                 </div>
                 <img className="absolute bottom-0 left-0" src="/image/gorshok_left.png" alt="" />
                 <img className="absolute bottom-0 right-0" src="/image/gorshok.png" alt="" />
+                <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.png" alt="" />
             </div>
         </section>
     );

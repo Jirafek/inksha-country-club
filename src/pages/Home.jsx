@@ -10,11 +10,13 @@ import Locations from '../components/Home/Locations';
 import Events from '../components/Home/Events';
 import EventsFromFireBase from '../components/Home/EventsFromFireBase';
 import Calculate from '../components/Home/Calculate';
+import Spec from '../components/Home/Spec';
+import Dates from '../components/Home/Dates';
 
 const Home = () => {
     return (
         // <input id='zaezd' type="text" />
-        <div className='m-w-[400px]'>
+        <div className='m-w-[400px] relative'>
             <Welcome />
             <Map />
             <About />
@@ -26,6 +28,8 @@ const Home = () => {
             <EventsFromFireBase />
             <img className='w-full' src="/image/help.png" alt="" />
             <Calculate />
+            <Spec />
+            <Dates />
                 <div className="h-[200px]"></div>
             <div className='fixed bottom-0 w-full h-[90px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">

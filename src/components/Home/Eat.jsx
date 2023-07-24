@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
 
-// change TITLE + BACKGROUND
-
 const EatListData = [
     {
         img: '/image/fire.png',
@@ -35,7 +33,7 @@ const Eat = () => {
     };
 
     return (
-        <section id="eat" style={{ backgroundImage: 'url(/image/bg-happy.png)' }} className="happy_background relative back_settings">
+        <section id="eat" style={{ backgroundImage: 'url(/image/eat_bg.png)' }} className="happy_background relative back_settings">
             {selectedImage && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"

@@ -4,6 +4,7 @@ import BookingCalendar from '../BookPicker';
 import { useForm } from 'react-hook-form';
 import routes from '../../utils/Home/routes';
 import { v4 as uuidv4 } from 'uuid';
+import { Helmet } from 'react-helmet';
 
 const heading = {
     hidden: {},
@@ -32,6 +33,77 @@ const headingLines = {
 const Welcome = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
+    useEffect(() => {
+      const script = document.createElement('script');
+      script.src = '//widget.bronirui-online.ru/js/app.js';
+      script.async = true;
+    
+      script.onload = () => {
+        window.znmsWidget.init('#znms-widget-1', {
+          moduleId: 5026,
+          index: 0,
+          widget: {
+            position: {
+              top: '100px',
+            },
+            mobile: {
+              absolute: false,
+              color: undefined,
+              position: {
+                top: '100px',
+              },
+            },
+          },
+          button: {
+            position: {
+              bottom: '50px',
+              left: '50px',
+              right: '50px',
+            },
+          },
+        });
+        
+        // Примените ваши стили после инициализации виджета
+        const customStyles = `
+          .znms-widget__main-wrapper {
+            background-color: transparent !important;
+            backdrop-filter: blur(0px) !important;
+            -webkit-backdrop-filter: blur(0px) !important;
+            --tw-backdrop-blur: 0px !important;
+          }
+
+          .znms-widget__v-calendar-pane-container {
+            z-index: 2000 !important;
+          }
+
+          .znms-widget__module-form-block {
+            background-color: transparent !important;
+            -webkit-backdrop-filter: blur(0px) !important;
+          }
+  
+          .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
+            display: none !important;
+          }
+  
+          .znms-widget__module-form-block__btn {
+            background-color: rgba(12, 242, 89, 0.50) !important;
+            border-radius: 30px !important;
+            border: 1px solid #000 !important;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+            font-size: 18px !important;
+          }
+
+          .znms-widget__module-form-block__items--links-container {
+            display: none !important;
+          }
+        `;
+        const styleElement = document.createElement('style');
+        styleElement.innerHTML = customStyles;
+        document.head.appendChild(styleElement);
+      };
+    
+      document.body.appendChild(script);
+    }, []);
 
     const [burgerState, setBurgerState] = useState(false);
 
@@ -44,8 +116,8 @@ const Welcome = () => {
     }
 
     useEffect(() => {
-        BookingCalendar([], 'zaezd'); // get data from FireBase
-        BookingCalendar([], 'viezd'); // get data from FireBase
+        // BookingCalendar([], 'zaezd'); // get data from FireBase
+        // BookingCalendar([], 'viezd'); // get data from FireBase
         setTimeout(() => {
             document.querySelector('.animate-moveSky1').style.display = 'none'
             document.querySelector('.animate-moveSky2').style.display = 'none'
@@ -85,13 +157,14 @@ const Welcome = () => {
                 style={{ transform: 'translateX(-50%)' }}
                 className='absolute left-1/2 w-full bottom-[4.5rem]'
             >
+                <div id="znms-widget-1"></div>
                 <m.form
                     initial='hidden'
                     // whileInView='visible'
                     // viewport={{ once: true }}
                     // variants={heading}
                     onSubmit={handleSubmit(onSubmit)}
-                    className='px-16'>
+                    className='px-16 hidden'>
                     <m.div className='relative w-full mb-2'> {/*  variants={headingLines} */}
                         <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />
                         <input style={errors.zaezd && { borderColor: 'red' }} {...register("zaezd", { required: true })} id='zaezd' placeholder='ЗАЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />

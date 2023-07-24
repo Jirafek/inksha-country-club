@@ -33,7 +33,7 @@ const routes = [
     {
         text: "ЛОКАЦИИ",
         icon: "",
-        link: "#location"
+        link: "#locations"
     },
     {
         text: "МЕРОПРИЯТИЯ",

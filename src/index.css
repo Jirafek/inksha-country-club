@@ -282,3 +282,49 @@ html {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.slider-image {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Плавный переход с продолжительностью 0.5 секунды */
+}
+
+/* Стиль для скрытия слайдов */
+.slider-image:not(.active) {
+  opacity: 0;
+}
+
+input[type="range"] {
+  height: 2px;
+  background-color: #000;
+  width: 140px;
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}

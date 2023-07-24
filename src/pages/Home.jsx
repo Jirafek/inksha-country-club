@@ -6,6 +6,10 @@ import About from '../components/Home/About';
 import Happy from '../components/Home/Happy';
 import Gallery from '../components/Home/Gallery';
 import Eat from '../components/Home/Eat';
+import Locations from '../components/Home/Locations';
+import Events from '../components/Home/Events';
+import EventsFromFireBase from '../components/Home/EventsFromFireBase';
+import Calculate from '../components/Home/Calculate';
 
 const Home = () => {
     return (
@@ -17,6 +21,11 @@ const Home = () => {
             <Happy />
             <Gallery />
             <Eat />
+            <Locations />
+            <Events />
+            <EventsFromFireBase />
+            <img className='w-full' src="/image/help.png" alt="" />
+            <Calculate />
                 <div className="h-[200px]"></div>
             <div className='fixed bottom-0 w-full h-[110px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">

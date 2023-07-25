@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomEventArrows";
+import { v4 as uuidv4 } from 'uuid';
 
 const requestsData = [ // get from firebase 
     {
@@ -36,7 +37,7 @@ const Responce = () => {
             <Slider className="mt-5 pb-16" {...settings}>
                 {
                     requestsData.map((el, i) => (
-                        <div className="flex flex-col items-center justify-center">
+                        <div key={uuidv4()} className="flex flex-col items-center justify-center">
                             <div className="flex justify-center">
 
                             <img src={el.img} alt="" />
@@ -47,8 +48,8 @@ const Responce = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center">
-                                <div className="back_settings relative flex justify-center items-center monterey w-[330px] h-[325px]" style={{backgroundImage: 'url(/image/textholder_req.png)'}}>
-                                    <p className="text-center text-black w-[300px] h-[305px] overflow-y-auto my-2">
+                                <div className="back_settings pt-1 relative flex justify-center items-center monterey w-[330px] h-[320px]" style={{backgroundImage: 'url(/image/textholder_req.png)'}}>
+                                    <p className="text-center text-black w-[300px] h-[305px] overflow-y-auto py-2">
                                         {el.text}
                                     </p>
                                 </div>

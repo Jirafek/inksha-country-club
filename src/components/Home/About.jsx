@@ -10,13 +10,21 @@ const About = () => {
     return (
         <section className="about_background back_settings relative" id="about">
             <div className="m-0">
-                <img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2" src="/image/man_about.png" alt="" />
-                <div className="pt-[206px] flex justify-center items-center">
-                    <img src="/image/video_border.png" alt="" />
+                <img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" src="/image/man_about.png" alt="" />
+                <div className="pt-[218px] pb-[3.75rem] flex justify-center items-center">
+
+                    <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    {/* <div className="relative max-w-[352px] max-h-[209px]">
+                        <img className="absolute top-0" src="/image/video_border.png" alt="" />
+                        <div className="flex justify-center items-center">
+
+                        <iframe className="z-20 relative w-[85%] h-[85%]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div> */}
                 </div>
                 <NumberedItem arrayData={NumeredItemsData} />
                 <div className="flex justify-center items-center back_settings mt-3 h-60 mb-[10px]" style={{ backgroundImage: 'url(/image/about_text_border.png)', backgroundSize: 'auto' }}  >
-                    <p className="w-[300px] text-center montaguSlab text-[#000]">
+                    <p className="w-[300px] text-center montaguSlab text-[#000] text-[15px]">
                         <span className="font-semibold">Икша Кантри Клаб</span> на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в <span className="font-semibold">25</span> км от м. Алтуфьево в лесной зоне на берегу водохранилища
                     </p>
                 </div>

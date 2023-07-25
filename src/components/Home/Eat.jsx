@@ -40,7 +40,7 @@ const Eat = () => {
                     style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
                     onClick={closeImage}
                 >
-                    <img src={selectedImage} alt="Opened Image" />
+                    <img className="w-[90%] rounded-[30px]" src={selectedImage} alt="Opened Image" />
                 </div>
             )}
             <div className="m-0 flex flex-col items-center">
@@ -49,7 +49,7 @@ const Eat = () => {
             <img className="w-full mb-[5px]" src="/image/cook_cooker.png" alt="" />
             <div className="flex justify-center mb-[5px]">
                 <div className="back_settings flex flex-col justify-around items-center h-[255px] w-[350px] relative py-3" style={{ backgroundImage: 'url(/image/cook_frame.png)', backgroundSize: 'auto' }}>
-                    <h3 className="monterey text-lg font-semibold text-[#161212]">МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ</h3>
+                    <h4 className="monterey text-lg font-semibold text-[#161212] text-[16px]">МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ</h4>
                     <img className="absolute top-[45px] left-[110px] z-10" src="/image/ukr1.png" alt="" />
                     {
                         EatListData.map((el, i) => (

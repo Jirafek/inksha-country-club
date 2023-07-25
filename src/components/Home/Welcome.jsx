@@ -73,7 +73,7 @@ const Welcome = () => {
           }
 
           .znms-widget__teleporter {
-            margin-bottom: 45px;
+            margin-bottom: 52px;
           }
 
           .znms-widget__v-calendar-pane-container {
@@ -135,7 +135,7 @@ const Welcome = () => {
         <section id='book' className="relative m-0">
             <img className="w-full" src="/image/bg1.jpg" alt="" />
             <img style={burgerState ? { display: 'block' } : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
-            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={` hidden absolute pl-[21px] flex-col left-1/2 gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] top-28 z-10`}>
+            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] hidden absolute pl-[21px] flex-col left-[55%] gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-10`}>
                 {routes.map((el, i) => {
                     return (
                         <div onClick={closeBurger} key={uuidv4()}>
@@ -152,10 +152,10 @@ const Welcome = () => {
             <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container animate-moveDoska'>
                 <img className='w-full h-full' src="/image/doska.png" alt="" />
                 <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+799999999">
-                    <img src="/image/call.png" alt="" />
+                    <img className='w-[44px]' src="/image/call.png" alt="" />
                 </a>
-                <a className='absolute left-1/2 bottom-[4.2rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
-                    <img src="/image/about.png" alt="" />
+                <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
+                    <img className='w-[80px]' src="/image/about.png" alt="" />
                 </a>
             </div>
             <img className='absolute top-0 left-0 animate-moveSky1' src="/image/sky1.png" alt="" />

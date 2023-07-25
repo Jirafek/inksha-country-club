@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const HappyClickableItems = ({ arrayData }) => {
     return (
-        <div className="flex flex-col gap-10 items-center">
+        <div className="flex flex-col gap-10 items-center py-10">
             {
                 arrayData.map((el, i) => {
                     return (

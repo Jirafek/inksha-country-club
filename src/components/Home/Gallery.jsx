@@ -4,9 +4,15 @@ import Slider from './helpers/Slider';
 
 const Gallery = () => {
     const images = [
-        '/image/gallery_back.png',
-        '/image/gallery_back.png',
-        '/image/gallery_back.png',
+        '/image/gallery_back1.png',
+        '/image/gallery_back2.png',
+        '/image/gallery_back3.png',
+        '/image/gallery_back4.png',
+        '/image/gallery_back5.png',
+        '/image/gallery_back6.png',
+        '/image/gallery_back7.png',
+        '/image/gallery_back8.png',
+        '/image/gallery_back9.png',
     ];
     return (
         <section className="about_background back_settings relative" id="gallery">

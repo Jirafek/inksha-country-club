@@ -145,13 +145,13 @@ const Events = () => {
                     eventsData.map((el, i) => {
                         return (
                             <div className="flex flex-col items-center justify-center relative" key={uuidv4()}>
-                                <div className="flex justify-center mb-[35px]">
+                                <div className="flex justify-center mb-[5px]">
                                     <div style={{ backgroundImage: 'url(/image/events_title.png)' }} className="back_settings flex justify-center items-center w-[310px] h-[55px] text-[#000] monterey text-[19px] font-bold">
                                         {el.title}
                                     </div>
                                 </div>
-                                <div className="flex justify-center mb-[20px]">
-                                    <img className="px-5 mb-[10px]" src={el.img} alt="" />
+                                <div className="flex justify-center mb-[5px]">
+                                    <img className="px-5 w-[280px]" src={el.img} alt="" />
                                 </div>
                                 <div className="flex justify-center mb-[10px]">
                                     <div style={{ backgroundImage: 'url(/image/events_text_bg.png)' }} className="back_settings text-[12px] monterey text-[#000] flex w-[320px] h-[220px] items-center justify-center">

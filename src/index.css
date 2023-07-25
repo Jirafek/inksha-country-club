@@ -242,7 +242,7 @@ html {
 /* Стили для позиции "doska.png" */
 .doska-container {
   left: 50%;
-  width: 230px;
+  width: 205px;
   transition: top 1s ease; /* Плавное изменение top свойства */
 }
 

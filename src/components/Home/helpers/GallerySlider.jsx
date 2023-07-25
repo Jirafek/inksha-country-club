@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 
 const GallerySlider = ({ images }) => {
   const sliderRef = useRef(null);
@@ -21,16 +22,16 @@ const GallerySlider = ({ images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     fade: false,
     draggable: false,
     swipe: false,
     touchMove: false,
     arrows: false,
-    adaptiveHeight: false,
+    adaptiveHeight: true,
     centerMode: true, // Добавляем centerMode
-    centerPadding: "20px", // Расстояние между слайдами
+    centerPadding: "100px", // Расстояние между слайдами
     beforeChange: (_, nextSlide) => {
       tiltSlider(nextSlide);
     },
@@ -49,7 +50,6 @@ const GallerySlider = ({ images }) => {
           slidesToScroll: 1,
           adaptiveHeight: false,
           centerMode: true,
-          centerPadding: "20px",
         },
       },
     ],
@@ -66,7 +66,7 @@ const GallerySlider = ({ images }) => {
       const transform = `translate(-50%, -50%) rotate(${-tiltAngleDeg}deg)`;
       slider.style.transformOrigin = transformOrigin;
       slider.style.transform = transform;
-      slider.style.marginLeft = window.innerWidth < 370 ? '450' : '480px';
+      slider.style.marginLeft = window.innerWidth < 370 ? '450px' : '400px';
     }
   };
 
@@ -78,14 +78,14 @@ const GallerySlider = ({ images }) => {
     <div className="gallery-slider" style={{ height: "500px", overflow: "hidden" }}>
       <Slider className="w-[900px]" {...settings} ref={sliderRef}>
         {images.map((imageUrl, index) => (
-          <div key={uuidv4()} className="flex items-center justify-center">
+          <Link to="/gallery-all" key={uuidv4()} className="flex items-center justify-center">
             <img
               src={imageUrl}
               alt={`Slide ${index + 1}`}
               onClick={() => handleImageClick(index)}
               style={{ transform: 'rotate(30deg)' }}
             />
-          </div>
+          </Link>
         ))}
       </Slider>
     </div>

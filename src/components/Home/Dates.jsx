@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // GEt data from firebase
 
@@ -21,9 +22,9 @@ const Dates = () => {
                 </div>
                 <img style={{transform: 'translateX(-50%) translateY(-50%)'}} className="w-[310px] absolute left-1/2 top-1/2" src="/image/dates_people_photo.png" alt="" />
             </div>
-            <div className="flex justify-center pb-32">
+            <Link to="/choose-date" className="flex justify-center pb-32">
                 <button style={{backgroundImage: 'url(/image/choose_date.png)'}} className="back_settings w-[205px] h-[70px]"></button>
-            </div>
+            </Link>
         </section>
     );
 }

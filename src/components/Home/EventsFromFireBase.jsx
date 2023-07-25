@@ -1,12 +1,10 @@
 import React from "react";
 
-// change TITLE
-
 const EventsFromFireBase = () => {
     return (
-        <section style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[855px] back_settings relative">
+        <section id="blog" style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[855px] back_settings relative">
             <div className="flex flex-col items-center"> {/* pt-[4.5rem]  */}
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/eventsFireBase_bg_title.png" alt="" />
             </div>
             <div className="absolute -bottom-[52px] w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="62" viewBox="0 0 390 62" fill="none">

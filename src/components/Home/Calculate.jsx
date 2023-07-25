@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 
-// change TITLE
-
 const extraServiceData = [
     {
         title: 'Растопка бани',
@@ -302,7 +300,7 @@ const Calculate = () => {
     return (
         <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.png)' }} className="back_settings relative">
             <div className="flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/calc_bg_title.png" alt="" />
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>
                 <div

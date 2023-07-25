@@ -3,6 +3,7 @@ const routes = [
     {
         text: "БРОНИРОВАНИЕ",
         icon: "/image/Heart.png",
+        whiteIcon: "/image/white_heart.png",
         link: "#book"
     },
     {
@@ -48,6 +49,7 @@ const routes = [
     {
         text: "СПЕЦПРЕДЛОЖЕНИЯ",
         icon: "/image/Heart.png",
+        whiteIcon: "/image/white_heart.png",
         link: "#spec"
     },
     {
@@ -63,7 +65,7 @@ const routes = [
     {
         text: "ВОПРОС-ОТВЕТ",
         icon: "",
-        link: "#faq"
+        link: "/faq"
     },
     {
         text: "ОТЗЫВЫ",

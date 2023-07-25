@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 const Home = lazy(() => import('pages/Home'));
 const Booking = lazy(() => import('pages/Booking'));
 const Keitering = lazy(() => import('pages/Keitering'));
+const DatesChooser = lazy(() => import('pages/DatesChooser'));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/booking' element={<Booking />} />
       <Route path='/keitering' element={<Keitering />} />
+      <Route path='/choose-date' element={<DatesChooser />} />
       {/* <Route path='*' element={<NotFound />} /> */}
     </Routes>
   );

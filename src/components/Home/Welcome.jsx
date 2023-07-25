@@ -72,6 +72,10 @@ const Welcome = () => {
             --tw-backdrop-blur: 0px !important;
           }
 
+          .znms-widget__teleporter {
+            margin-bottom: 45px;
+          }
+
           .znms-widget__v-calendar-pane-container {
             z-index: 2000 !important;
           }
@@ -95,6 +99,10 @@ const Welcome = () => {
 
           .znms-widget__module-form-block__items--links-container {
             display: none !important;
+          }
+
+          .znms-widget__module-form-block__item {
+            opacity: 0.9;
           }
         `;
         const styleElement = document.createElement('style');
@@ -125,7 +133,7 @@ const Welcome = () => {
     }, []);
     return (
         <section id='book' className="relative m-0">
-            <img className="w-full" src="/image/bg1.png" alt="" />
+            <img className="w-full" src="/image/bg1.jpg" alt="" />
             <img style={burgerState ? { display: 'block' } : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
             <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={` hidden absolute pl-[21px] flex-col left-1/2 gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] top-28 z-10`}>
                 {routes.map((el, i) => {

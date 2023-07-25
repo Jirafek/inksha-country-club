@@ -188,7 +188,7 @@ const Map = () => {
     return (
         <div id="map" className="t-body relative" style={{margin: '0'}}>
         <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
-            <img src="/image/happy_title.png" alt="" />
+            <img src="/image/map_bg_title.png" alt="" />
         </div>
         <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
             <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">

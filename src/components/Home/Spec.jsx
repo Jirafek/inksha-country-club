@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-// change TITLE
-
 const Spec = () => {
     const [currentBg, setCurrentBg] = useState('spec_bg.png');
 
@@ -15,7 +13,7 @@ const Spec = () => {
                 <img src="/image/close_btn.png" alt="" />
             </button>
             <div style={currentBg.includes('2') ? { opacity: '0' } : { opacity: '1' }} className="m-0 flex flex-col items-center transition-all duration-300">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/spec_bg_title.png" alt="" />
             </div>
             <div className=" flex justify-center mb-[80px]">
                 <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕННИНИКУ САП-ДОСКУ</p>

@@ -44,7 +44,7 @@ const Eat = () => {
                 </div>
             )}
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/eat_bg_title.png" alt="" />
             </div>
             <img className="w-full mb-[5px]" src="/image/cook_cooker.png" alt="" />
             <div className="flex justify-center mb-[5px]">

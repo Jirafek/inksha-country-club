@@ -8,8 +8,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
 import Confetti from "react-confetti";
 
-// change TITLE
-
 const eventsData = [
     {
         title: 'День рождения',
@@ -134,7 +132,7 @@ const Events = () => {
     return (
         <section style={{ backgroundImage: 'url(/image/bg-events.png)' }} id="events" className="back_settings relative">
             <div className="flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/events_bg_title.png" alt="" />
             </div>
             <Confetti
                 width={width}

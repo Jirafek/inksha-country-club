@@ -12,6 +12,9 @@ import EventsFromFireBase from '../components/Home/EventsFromFireBase';
 import Calculate from '../components/Home/Calculate';
 import Spec from '../components/Home/Spec';
 import Dates from '../components/Home/Dates';
+import Responce from '../components/Home/Responce';
+import YandexMap from '../components/Home/YandexMap';
+import Footer from '../components/Home/Footer';
 
 const Home = () => {
     return (
@@ -30,6 +33,9 @@ const Home = () => {
             <Calculate />
             <Spec />
             <Dates />
+            <Responce />
+            <YandexMap />
+            <Footer />
                 <div className="h-[200px]"></div>
             <div className='fixed bottom-0 w-full h-[90px] z-[1001] flex flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">

@@ -52,7 +52,7 @@ const Locations = () => {
     return (
         <section id="locations" className="about_background back_settings relative">
             <div className="pt-10 flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/locations_bg_title.png" alt="" />
             </div>
 
             <Slider {...settings}>

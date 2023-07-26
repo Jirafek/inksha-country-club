@@ -7,14 +7,9 @@ import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/Cus
 
 const sliderData = [
     {
-        bg: '/image/h_bg1.png',
-        img: '/image/h_1.png',
-        text: 'Баня и спа: Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое'
-    },
-    {
-        bg: '/image/h_bg2.png',
-        img: '/image/h_2.png',
-        text: 'Если вы любите рыбалку, Икша Кантри Клаб прекрасное место для этого. Водохранилище и форелевый пруд на территории комплекса вас приятно удивят.'
+        bg: '/image/h_bg4.png',
+        img: '/image/h_4.png',
+        text: ''
     },
     {
         bg: '/image/h_bg3.png',
@@ -27,9 +22,14 @@ const sliderData = [
         ]
     },
     {
-        bg: '/image/h_bg4.png',
-        img: '/image/h_4.png',
-        text: ''
+        bg: '/image/h_bg1.png',
+        img: '/image/h_1.png',
+        text: 'Баня и спа: Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое'
+    },
+    {
+        bg: '/image/h_bg2.png',
+        img: '/image/h_2.png',
+        text: 'Если вы любите рыбалку, Икша Кантри Клаб прекрасное место для этого. Водохранилище и форелевый пруд на территории комплекса вас приятно удивят.'
     },
 ];
 
@@ -55,13 +55,13 @@ const HappySlider = () => {
                             </div>
                             <img className="relative z-10 mb-8" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
-                                <div style={i === 3 ? {display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)'} : {display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)'}} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
+                                <div style={i === 0 ? {display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)'} : {display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)'}} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
                                     {
-                                        i < 2 ?
+                                        i >= 2 ?
                                             <p className="monterey text-center">
                                                 {el.text}
                                             </p>
-                                            : i === 2 ?
+                                            : i === 1 ?
                                                 <div className="flex flex-col items-start">
                                                     <p className="monterey font-extrabold self-center">
                                                         {el.title}

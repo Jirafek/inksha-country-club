@@ -189,11 +189,11 @@ const Map = () => {
             </div>
             <div
                 style={{ transform: 'translateX(-50%)', backgroundColor: '#eee2ae', boxShadow: '0px 3.411449670791626px 17.057249069213867px 0px rgba(0, 0, 0, 0.25)' }}
-                className='absolute flex flex-col justify-center items-center w-[330px] bottom-[10px] rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
+                className='absolute flex flex-col justify-center items-center w-[270px] bottom-[20px] rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
             >
                 <p className='div_title font-bold'>Пляж</p>
                 <img className='div_img w-[140px]' src="/image/map_bg_mini.png" alt="" />
-                <p className='div_text text-center text-[12px]'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</p>
+                <p className='div_text text-center text-[11px] px-[2px]'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</p>
                 <button className='w-[220px]'>
                     <img src="/image/map_mini_btn.png" alt="" />
                 </button>

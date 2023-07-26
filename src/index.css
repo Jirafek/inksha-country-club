@@ -244,6 +244,7 @@ html {
   left: 50%;
   width: 205px;
   transition: top 1s ease; /* Плавное изменение top свойства */
+  top: -20rem;
 }
 
 /* Анимация для перемещения доски вниз */
@@ -262,12 +263,12 @@ html {
 }
 
 .animate-moveSky1 {
-  animation: moveSky1 2s linear;
+  animation: moveSky1 3s linear;
   animation-fill-mode: forwards;
 }
 
 .animate-moveSky2 {
-  animation: moveSky2 2s linear;
+  animation: moveSky2 3s linear;
   animation-fill-mode: forwards;
 }
 

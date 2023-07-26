@@ -3,15 +3,15 @@ import { v4 as uuidv4 } from 'uuid';
 
 const fireBaseData = [
     {
-        img: '/image/pudge.jpg',
+        img: '/image/home_photo_test.jpg',
         link: ''
     },
     {
-        img: '/image/pudge.jpg',
+        img: '/image/home_photo_test.jpg',
         link: ''
     },
     {
-        img: '/image/pudge.jpg',
+        img: '/image/home_photo_test.jpg',
         link: ''
     },
 ];

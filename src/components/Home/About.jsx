@@ -11,7 +11,7 @@ const About = () => {
         <section className="about_background back_settings relative" id="about">
             <div className="m-0">
                 <img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" src="/image/man_about.png" alt="" />
-                <div className="pt-[218px] pb-[3.75rem] flex justify-center items-center">
+                <div className="pt-[218px] pb-[1.75rem] flex justify-center items-center">
 
                     <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                     {/* <div className="relative max-w-[352px] max-h-[209px]">

@@ -9,72 +9,72 @@ const Map = () => {
                 {
                     title: 'Беседка',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'BBQ',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Спальный домик',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
-                    title: 'Домик',
+                    title: 'Спальный домик',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Шар',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Баня',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Купель',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Летний душ',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: ''
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.'
                 },
                 {
                     title: 'Свидание на берегу',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Посиделки у камина',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Кибертрак',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
-                    title: 'Домик',
+                    title: 'Спальный домик',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Спорт и водные развлечения',
                     imageSrc: 'https://ie.wampi.ru/2023/05/10/Mask-group.png',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
                 {
                     title: 'Пляж',
                     imageSrc: 'https://ie.wampi.ru/2023/05/10/Mask-group.png',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
+                    text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
                 },
             ],
             positionRelativeMouse = { x: 10, y: 10 }
@@ -366,7 +366,7 @@ const Map = () => {
                                         </div>
                                         <h2 className="map-info_title">Спальный домик</h2>
                                     </div>
-                                    <div className="map-info-content" style={{ display: 'block' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?</div>
+                                    <div className="map-info-content" style={{ display: 'block' }}>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</div>
                                 </div>
                             </div>
                         </div>

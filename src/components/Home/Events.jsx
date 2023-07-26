@@ -130,7 +130,7 @@ const Events = () => {
             </div>
             <Confetti
                 width={width}
-                height={height}
+                height='710px'
                 numberOfPieces={eventsData[activeSlideIndex]?.link === "birthday" ? 300 : 0}
                 gravity={0.1}
             />
@@ -139,15 +139,15 @@ const Events = () => {
                     eventsData.map((el, i) => {
                         return (
                             <div className="flex flex-col items-center justify-center relative" key={uuidv4()}>
-                                <div className="flex justify-center mb-[5px]">
+                                <div className="flex justify-center mb-[20px]">
                                     <div style={{ backgroundImage: 'url(/image/events_title.png)' }} className="back_settings flex justify-center items-center w-[310px] h-[55px] text-[#000] monterey text-[19px] font-bold">
                                         {el.title}
                                     </div>
                                 </div>
-                                <div className="flex justify-center mb-[5px]">
-                                    <img className="px-5 w-[280px]" src={el.img} alt="" />
+                                <div className="flex justify-center mb-[15px]">
+                                    <img className="px-5 w-[300px]" src={el.img} alt="" />
                                 </div>
-                                <div className="flex justify-center mb-[10px]">
+                                <div className="flex justify-center mb-[15px]">
                                     <div style={{ backgroundImage: 'url(/image/events_text_bg.png)' }} className="back_settings relative text-[12px] monterey text-[#000] flex w-[240px] h-[160px] items-center justify-center">
 
                                         <ul className="flex flex-col items-center justify-center pl-[15px]">

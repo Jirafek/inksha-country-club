@@ -1,10 +1,37 @@
 import React from "react";
 
+const fireBaseData = [
+    {
+        img: '/image/pudge.jpg',
+        link: ''
+    },
+    {
+        img: '/image/pudge.jpg',
+        link: ''
+    },
+    {
+        img: '/image/pudge.jpg',
+        link: ''
+    },
+];
+
 const EventsFromFireBase = () => {
     return (
         <section id="blog" style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[855px] back_settings relative">
-            <div className="flex flex-col items-center"> {/* pt-[4.5rem]  */}
+            <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
                 <img src="/image/eventsFireBase_bg_title.png" alt="" />
+            </div>
+            <div className="flex justify-center flex-wrap gap-x-6 gap-y-[6px]">
+                {
+                    fireBaseData.map((el, i) => (
+                        <div className="flex flex-col items-center gap-[10px]">
+                            <img className="w-[150px] rounded-xl" src={el.img} alt="" />
+                            <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                Подробнее
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
             <div className="absolute -bottom-[52px] w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="62" viewBox="0 0 390 62" fill="none">

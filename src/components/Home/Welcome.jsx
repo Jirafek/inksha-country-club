@@ -158,9 +158,9 @@ const Welcome = () => {
                     <img className='w-[80px]' src="/image/about.png" alt="" />
                 </a>
             </div>
-            <img className='absolute top-0 left-0 animate-moveSky1' src="/image/sky1.png" alt="" />
-            <img className='absolute top-0 right-0 animate-moveSky2' src="/image/sky2.png" alt="" />
-            <img onClick={handleBurgerClick} className='absolute top-24 left-3 z-20' src="/image/burger.png" alt="" />
+            <img className='absolute top-0 left-0 animate-moveSky1 z-[21]' src="/image/sky1.png" alt="" />
+            <img className='absolute top-0 right-0 animate-moveSky2 z-[21]' src="/image/sky2.png" alt="" />
+            <img onClick={handleBurgerClick} className='absolute top-8 left-3 z-20' src="/image/burger.png" alt="" />
             <div
                 style={{ transform: 'translateX(-50%)' }}
                 className='absolute left-1/2 w-full bottom-[4.5rem]'

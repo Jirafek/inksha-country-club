@@ -45,7 +45,7 @@ const Home = () => {
             <Locations />
             <Events />
             <EventsFromFireBase />
-            <img className='w-full' src="/image/help.png" alt="" />
+            <img className='w-full h-[851px]' src="/image/help.png" alt="" />
             <Calculate />
             <Spec />
             <Dates />

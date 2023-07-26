@@ -10,7 +10,7 @@ const Footer = () => {
                 <img src="/image/footer_title.png" alt="" />
             </div>
             <div className="w-full footer_blured_back flex flex-col pt-5 pl-2">
-                <div className="flex flex-col gap-[6px] mb-5">
+                <div className="flex flex-col mb-4">
                     <div className="flex items-center">
                         <img src="/image/call_big.png" alt="" />
                         <a href="tel:+7985909120">
@@ -26,7 +26,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="flex flex-col gap-[15px] pl-[14px]">
+                <div className="flex flex-col gap-[10px] pl-[14px]">
                     {
                         routes.map((route, i) => (
                             <div key={uuidv4()}>
@@ -41,12 +41,12 @@ const Footer = () => {
                     }
                 </div>
                 <div className="flex flex-col gap-2 pb-[5px] pt-[15px]">
-                    <div className="flex justify-between monterey px-[11px]">
-                        <Link to="/data-privicy" className="text-white text-[12px]">Политика данных</Link>
-                        <Link to="/faq" className="text-white text-[12px]">FAQ</Link>
-                        <Link to="/live-rules" className="text-white text-[12px]">Правила проживания</Link>
+                    <div className="flex justify-around monterey px-[11px]"> {/* justify-between */}
+                        <Link to="/data-privicy" className="text-white text-[12px] underline">Политика данных</Link>
+                        {/* <Link to="/faq" className="text-white text-[12px]">FAQ</Link> */}
+                        <Link to="/live-rules" className="text-white text-[12px] underline">Правила проживания</Link>
                     </div>
-                    <p className="text-center text-white text-[12px] monterey px-[26px]">ООО "Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб</p>
+                    <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб</p>
                 </div>
             </div>
         </section>

@@ -73,7 +73,9 @@ const Welcome = () => {
           }
 
           .znms-widget__teleporter {
-            margin-bottom: 52px;
+            // margin-top: 90px; */
+            position: relative;
+            bottom: -80px;
           }
 
           .znms-widget__v-calendar-pane-container {

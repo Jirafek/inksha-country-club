@@ -76,7 +76,7 @@ const GallerySlider = ({ images }) => {
 
   return (
     <div className="gallery-slider" style={{ height: "500px", overflow: "hidden" }}>
-      <Slider className="w-[900px]" {...settings} ref={sliderRef}>
+      <Slider className="w-[900px] z-20" {...settings} ref={sliderRef}>
         {images.map((imageUrl, index) => (
           <Link to="/gallery-all" key={uuidv4()} className="flex items-center justify-center">
             <img

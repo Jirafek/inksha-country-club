@@ -20,7 +20,6 @@ const Gallery = () => {
                 <img src="/image/gallery_title.png" alt="" />
             </div>
             <GallerySlider images={images} />
-            <div className="pb-[240px]"></div>
             <img className="absolute -bottom-[2px] w-full" src="/image/gallery_translate_layer.png" alt="" />
             {/* <Slider images={images} /> */}
         </section>

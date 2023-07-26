@@ -52,6 +52,7 @@ const Home = () => {
             <Responce />
             <YandexMap />
             <Footer />
+            <img src="/image/bg1.jpg" alt="" />
                 <div className="h-[60px]"></div>
             <div style={isVisible ? {display: 'flex'} : {}} className='hidden fixed bottom-0 w-full h-[100px] z-[1001] flex-col gap-1 transition-all'>
                 <a className='self-end' href="#book">

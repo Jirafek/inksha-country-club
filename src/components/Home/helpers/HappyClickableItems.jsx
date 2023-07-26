@@ -18,13 +18,13 @@ const HappyClickableItems = ({ arrayData }) => {
             {
                 arrayData.map((el, i) => {
                     return (
-                        <Link to="/choose-happy">
+                        <Link key={uuidv4()} to="/choose-happy">
                             <m.div
                                 initial='hidden'
                                 whileInView='visible'
                                 viewport={{ once: true }}
                                 variants={heading}
-                                key={uuidv4()} className="flex gap-[10px] items-center">
+                                 className="flex gap-[10px] items-center">
                                 <m.div variants={el.animation} className="rounded-full relative w-[130px] h-[130px]">
                                     <img className="rounded-full object-cover w-[110px] h-[110px]" src={el.img} alt="" />
                                 </m.div>

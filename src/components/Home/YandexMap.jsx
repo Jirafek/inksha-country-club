@@ -38,7 +38,6 @@ const YandexMap = () => {
             <div style={{transform: 'translateX(-50%)'}} className="absolute top-3 left-1/2 w-[320px]">
                 <img src="/image/yandex_map_title.png" alt="" />
             </div>
-
                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="800" frameBorder="0"></iframe>
             </div>
             <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[183px] px-[15px] pt-5 monterey">

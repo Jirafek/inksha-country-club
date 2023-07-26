@@ -189,7 +189,7 @@ const Map = () => {
             </div>
             <div
                 style={{ transform: 'translateX(-50%)', backgroundColor: '#eee2ae', boxShadow: '0px 3.411449670791626px 17.057249069213867px 0px rgba(0, 0, 0, 0.25)' }}
-                className='absolute flex flex-col justify-center items-center w-[330px] bottom-0 rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
+                className='absolute flex flex-col justify-center items-center w-[330px] bottom-[10px] rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
             >
                 <p className='div_title font-bold'>Пляж</p>
                 <img className='div_img w-[140px]' src="/image/map_bg_mini.png" alt="" />
@@ -198,6 +198,7 @@ const Map = () => {
                     <img src="/image/map_mini_btn.png" alt="" />
                 </button>
             </div>
+            <img style={{transform: 'translateX(-50%)'}} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" />
             <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
                 <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                     <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />

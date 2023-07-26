@@ -80,7 +80,7 @@ const GalleryAll = () => {
                         variants={headingLines}
                         src={`/image/${chosenImage}`}
                         alt=""
-                        style={{ width: "90%" }}
+                        style={{ width: "200px" }}
                         className="absolute"
                     />
                 </m.div>

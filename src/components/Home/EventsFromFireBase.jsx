@@ -15,7 +15,7 @@ const fireBaseData = [
         date: '23.06.2023'
     },
     {
-        img: '/image/events_fire3.JPG',
+        img: '/image/events_fire3.jpg',
         link: '',
         title: 'Фестиваль лимонада',
         date: '19.08.2023'
@@ -28,29 +28,35 @@ const EventsFromFireBase = () => {
             <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
                 <img src="/image/eventsFireBase_bg_title.png" alt="" />
             </div>
-            <div className="flex justify-center flex-wrap gap-x-6 gap-y-[6px]">
-                {
-                    fireBaseData.map((el, i) => (
-                        <div key={uuidv4()} className="flex flex-col items-center h-[250px] justify-between">
-                            <div className="mb-[10px] flex flex-col items-center">
+            <div className="h-[850px] overflow-y-auto">
+                <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px]">
+                    {
+                        fireBaseData.map((el, i) => (
+                            <div key={uuidv4()} className="flex flex-col items-center h-[250px] justify-between">
+                                <div className="mb-[10px] flex flex-col items-center">
 
-                                <p className="max-w-[120px] text-[12px] text-black monterey text-center font-bold mb-1">
-                                    {el.title}
-                                </p>
-                                <img className="w-[150px] rounded-xl" src={el.img} alt="" />
-                            </div>
-                            <div className="flex flex-col gap-1 items-center">
+                                    <div className="flex rounded-[10px] justify-center items-center bg-[#EAD3B5] border border-[#765947] w-[150px] mb-1">
+                                        <p className="text-[13px] text-black monterey text-center font-bold">
+                                            {el.title}
+                                        </p>
+                                    </div>
+                                    <img className="w-[150px] rounded-xl" src={el.img} alt="" />
+                                </div>
+                                <div className="flex flex-col gap-1 items-center">
 
-                                <p className="text-[10px] text-black monterey">
-                                    {el.date}
-                                </p>
-                                <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
-                                    Подробнее
+                                    <div className="w-[120px] rounded-[10px] border border-[#765947] flex justify-center items-center bg-white">
+                                        <p className="text-[13px] text-black monterey py-[3px]">
+                                            {el.date}
+                                        </p>
+                                    </div>
+                                    <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                        Подробнее
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
             <div className="absolute -bottom-[52px] w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="62" viewBox="0 0 390 62" fill="none">

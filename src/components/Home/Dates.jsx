@@ -9,11 +9,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 const imageData = [
     '/image/dates_people_photo.png',
-    '/image/dates_people_photo.png',
-    '/image/dates_people_photo.png',
-    '/image/dates_people_photo.png',
-    '/image/dates_people_photo.png',
-    '/image/dates_people_photo.png',
+    '/image/dates_people_photo2.png',
+    '/image/dates_people_photo3.png',
+    '/image/dates_people_photo4.png',
+    '/image/dates_people_photo5.png',
+    '/image/dates_people_photo6.png',
 ];
 
 const Dates = () => {
@@ -45,7 +45,7 @@ const Dates = () => {
                     imageData.map((el, i) => (
                         <div key={uuidv4()} className="flex justify-center">
                             <div className="flex justify-center relative">
-                                <div style={{ backgroundImage: 'url(/image/dates_photo_cup.png)' }} className="back_settings w-[330px] h-[205px] flex justify-center items-center z-20"></div>
+                                <div style={{ backgroundImage: 'url(/image/dates_photo_cup.png)' }} className="back_settings w-[330px] h-[210px] flex justify-center items-center z-20"></div>
                                 <img style={{ transform: 'translateX(-50%) translateY(-50%)' }} className="w-[310px] absolute left-1/2 top-1/2" src={el} alt="" />
                             </div>
                         </div>

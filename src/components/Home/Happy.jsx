@@ -13,4 +13,10 @@ const Happy = () => {
     );
 }
 
+
+{/* <div className="flex justify-center items-center w-[148px] h-[168px]">
+
+<img className="rounded-full" src={el.img} alt="" />
+</div> */}
+
 export default Happy;

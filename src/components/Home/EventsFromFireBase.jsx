@@ -3,16 +3,22 @@ import { v4 as uuidv4 } from 'uuid';
 
 const fireBaseData = [
     {
-        img: '/image/home_photo_test.jpg',
-        link: ''
+        img: '/image/events_fire1.JPG',
+        link: '',
+        title: 'День настольных игр',
+        date: '15.04.2023'
     },
     {
-        img: '/image/home_photo_test.jpg',
-        link: ''
+        img: '/image/events_fire2.JPG',
+        link: '',
+        title: 'Мастер класс «Sup-Board для новичков»',
+        date: '23.06.2023'
     },
     {
-        img: '/image/home_photo_test.jpg',
-        link: ''
+        img: '/image/events_fire3.JPG',
+        link: '',
+        title: 'Фестиваль лимонада',
+        date: '19.08.2023'
     },
 ];
 
@@ -25,10 +31,22 @@ const EventsFromFireBase = () => {
             <div className="flex justify-center flex-wrap gap-x-6 gap-y-[6px]">
                 {
                     fireBaseData.map((el, i) => (
-                        <div key={uuidv4()} className="flex flex-col items-center gap-[10px]">
-                            <img className="w-[150px] rounded-xl" src={el.img} alt="" />
-                            <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
-                                Подробнее
+                        <div key={uuidv4()} className="flex flex-col items-center h-[250px] justify-between">
+                            <div className="mb-[10px] flex flex-col items-center">
+
+                                <p className="max-w-[120px] text-[12px] text-black monterey text-center font-bold mb-1">
+                                    {el.title}
+                                </p>
+                                <img className="w-[150px] rounded-xl" src={el.img} alt="" />
+                            </div>
+                            <div className="flex flex-col gap-1 items-center">
+
+                                <p className="text-[10px] text-black monterey">
+                                    {el.date}
+                                </p>
+                                <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                    Подробнее
+                                </div>
                             </div>
                         </div>
                     ))

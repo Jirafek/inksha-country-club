@@ -114,7 +114,7 @@ const Welcome = () => {
           skyContainer1.classList.add('animate-moveSky1');
           skyContainer2.classList.add('animate-moveSky2');
           doskaContainer.classList.add('animate-moveDoska');
-        }, 1000)
+        }, 2500)
       const styleElement = document.createElement('style');
       styleElement.innerHTML = customStyles;
       document.head.appendChild(styleElement);
@@ -139,7 +139,7 @@ const Welcome = () => {
     setTimeout(() => {
       document.querySelector('.animate-moveSky1').style.display = 'none'
       document.querySelector('.animate-moveSky2').style.display = 'none'
-    }, 4000)
+    }, 6000)
   }, []);
   return (
     <section id='book' className="relative m-0">

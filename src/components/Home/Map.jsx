@@ -188,7 +188,7 @@ const Map = () => {
                 <img src="/image/map_bg_title.png" alt="" />
             </div>
             <div
-                style={{ transform: 'translateX(-50%)', backgroundColor: 'rgba(255, 255, 255, 0.60)', boxShadow: '0px 3.411449670791626px 17.057249069213867px 0px rgba(0, 0, 0, 0.25)' }}
+                style={{ transform: 'translateX(-50%)', backgroundColor: '#eee2ae', boxShadow: '0px 3.411449670791626px 17.057249069213867px 0px rgba(0, 0, 0, 0.25)' }}
                 className='absolute flex flex-col justify-center items-center w-[330px] bottom-1 rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
             >
                 <p className='div_title font-bold'>Пляж</p>

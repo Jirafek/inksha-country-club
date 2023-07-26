@@ -54,7 +54,7 @@ const YandexMap = () => {
                     </p>
 
                     <div className="absolute bottom-[2px] right-0 flex items-center">
-                        <a className="mr-1" target="_blanc" href="https://vk.com/ikshacountryclub">
+                        <a className="mr-[6px]" target="_blanc" href="https://vk.com/ikshacountryclub">
                             <img src="/image/vk.png" alt="" />
                         </a>
                         <a target="_blanc" href="https://www.instagram.com/ikshacountryclub">

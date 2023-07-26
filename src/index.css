@@ -220,6 +220,31 @@ html {
   }
 }
 
+@keyframes changeOpacit {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes changeOpacitBack {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.opacityWin {
+  animation: changeOpacit 0.5s ease-in-out;
+}
+.opacityLoose {
+  animation: changeOpacitBack 0.5s ease-in;
+}
+
 .zero-animation {
   animation: fromZeroTo100 1s linear;
   animation-fill-mode: forwards;

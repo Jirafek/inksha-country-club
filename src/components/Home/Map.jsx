@@ -1,5 +1,30 @@
 import '../styles/map.css';
 import React, { useEffect } from 'react';
+import { m } from 'framer-motion';
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const headingLinesOpacity = {
+    hidden: {
+        opacity: 0,
+        // clipPath: 'inset(100% 0px 0px)',
+    },
+    visible: {
+        opacity: 1,
+        // clipPath: 'inset(0% 0px 0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 1.5,
+        },
+    },
+};
 
 const Map = () => {
 
@@ -98,12 +123,30 @@ const Map = () => {
             },
             ChangeText = (title, src, text) => {
                 const title_div = document.querySelector('.div_title'),
-                div_img = document.querySelector('.div_img'),
-                div_text = document.querySelector('.div_text');
+                    div_img = document.querySelector('.div_img'),
+                    div_text = document.querySelector('.div_text');
 
-                title_div.innerHTML = title;
-                div_text.innerHTML = text;
-                div_img.src = src;
+                    title_div.classList.remove('opacityWin');
+                    div_img.classList.remove('opacityWin');
+                    div_text.classList.remove('opacityWin');
+
+                title_div.classList.add('opacityLoose');
+                div_img.classList.add('opacityLoose');
+                div_text.classList.add('opacityLoose');
+
+                setTimeout(() => {
+                    title_div.classList.remove('opacityLoose');
+                    div_img.classList.remove('opacityLoose');
+                    div_text.classList.remove('opacityLoose');
+
+                    title_div.classList.add('opacityWin');
+                    div_img.classList.add('opacityWin');
+                    div_text.classList.add('opacityWin');
+
+                    title_div.innerHTML = title;
+                    div_text.innerHTML = text;
+                    div_img.src = src;
+                }, 500)
             },
             getTooltip = (_e, title) => {
                 mapTooltip.textContent = title;
@@ -187,18 +230,22 @@ const Map = () => {
             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
                 <img src="/image/map_bg_title.png" alt="" />
             </div>
-            <div
+            <m.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                variants={heading}
                 style={{ transform: 'translateX(-50%)', backgroundColor: '#eee2ae', boxShadow: '0px 3.411449670791626px 17.057249069213867px 0px rgba(0, 0, 0, 0.25)' }}
                 className='absolute flex flex-col justify-center items-center w-[270px] bottom-[20px] rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
             >
-                <p className='div_title font-bold'>Пляж</p>
-                <img className='div_img w-[140px]' src="/image/map_bg_mini.png" alt="" />
-                <p className='div_text text-center text-[11px] px-[2px]'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</p>
+                <m.div variants={headingLinesOpacity} className='div_title font-bold duration-300'>Пляж</m.div>
+                <m.img variants={headingLinesOpacity} className='div_img w-[140px] duration-300' src="/image/map_bg_mini.png" alt="" />
+                <m.div variants={headingLinesOpacity} className='div_text text-center text-[11px] px-[2px] duration-300'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</m.div>
                 <button className='w-[220px]'>
                     <img src="/image/map_mini_btn.png" alt="" />
                 </button>
-            </div>
-            <img style={{transform: 'translateX(-50%)'}} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" />
+            </m.div>
+            <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" />
             <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
                 <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                     <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />

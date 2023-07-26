@@ -1,6 +1,31 @@
 import React from "react";
 import NumeredItemsData from '../../utils/Home/NumeredItemsData';
 import NumberedItem from './helpers/NumberedItem';
+import { m } from 'framer-motion';
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const headingLinesOpacity = {
+    hidden: {
+        opacity: 0,
+        // clipPath: 'inset(100% 0px 0px)',
+    },
+    visible: {
+        opacity: 1,
+        // clipPath: 'inset(0% 0px 0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 1,
+        },
+    },
+};
 
 const About = () => {
     const handleDownload = () => {
@@ -9,8 +34,14 @@ const About = () => {
     }
     return (
         <section style={{backgroundImage: 'url(/image/about_bg_styled.jpg)'}} className="back_settings relative" id="about">
-            <div className="m-0">
-                <img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" src="/image/man_about.png" alt="" />
+            <m.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                variants={heading} 
+                className="m-0">
+                <m.img 
+                style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
                 <div className="pt-[218px] pb-[1.75rem] flex justify-center items-center">
 
                     <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
@@ -41,7 +72,7 @@ const About = () => {
                 <img className="absolute bottom-0 left-0" src="/image/gorshok_left.png" alt="" />
                 <img className="absolute bottom-0 right-0" src="/image/gorshok.png" alt="" />
                 <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.png" alt="" />
-            </div>
+            </m.div>
         </section>
     );
 }

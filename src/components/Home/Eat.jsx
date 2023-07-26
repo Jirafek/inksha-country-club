@@ -1,6 +1,45 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
+import { m } from 'framer-motion';
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const headingLinesLeft = {
+    hidden: {
+        opacity: 0,
+        right: '400px'
+    },
+    visible: {
+        opacity: 1,
+        right: '16px',
+        transition: {
+            ease: 'easeOut',
+            duration: 2.5,
+        },
+    },
+};
+const headingLinesRight = {
+    hidden: {
+        opacity: 0,
+        left: '300px'
+    },
+    visible: {
+        opacity: 1,
+        left: '16px',
+        transition: {
+            ease: 'easeOut',
+            duration: 2,
+        },
+    },
+};
 
 const EatListData = [
     {
@@ -33,7 +72,14 @@ const Eat = () => {
     };
 
     return (
-        <section id="eat" style={{ backgroundImage: 'url(/image/eat_bg.png)' }} className="happy_background relative back_settings">
+        <m.section 
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true }}
+        variants={heading} 
+        id="eat" 
+        style={{ backgroundImage: 'url(/image/eat_bg.png)' }} 
+        className="happy_background relative back_settings">
             {selectedImage && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"
@@ -80,9 +126,9 @@ const Eat = () => {
                     </Link>
                 </div>
             </div>
-            <img className="absolute bottom-0 left-4" src="/image/chair_left.png" alt="" />
-            <img className="absolute -bottom-[65px] right-4 z-10" src="/image/chair_right.png" alt="" />
-        </section>
+            <m.img className="absolute bottom-0 left-4" variants={headingLinesRight} src="/image/chair_left.png" alt="" />
+            <m.img className="absolute -bottom-[65px] right-4 z-10" variants={headingLinesLeft} src="/image/chair_right.png" alt="" />
+        </m.section>
     );
 }
 

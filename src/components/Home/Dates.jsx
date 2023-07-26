@@ -1,9 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // GEt data from firebase
 
+const imageData = [
+    '/image/dates_people_photo.png',
+    '/image/dates_people_photo.png',
+    '/image/dates_people_photo.png',
+    '/image/dates_people_photo.png',
+    '/image/dates_people_photo.png',
+    '/image/dates_people_photo.png',
+];
+
 const Dates = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+    };
     return (
         <section id="dates" style={{ backgroundImage: 'url(/image/dates_bg.png)' }} className="back_settings relative">
             <div className="flex flex-col items-center">
@@ -12,18 +33,26 @@ const Dates = () => {
             <div className="flex justify-center mb-3">
                 <img className="heart" src="/image/heart_dates.png" alt="" />
             </div>
+
             <div className="flex justify-center mb-3">
-                <div style={{backgroundImage: 'url(/image/dates_test_bg.png)'}} className="back_settings w-[313px] h-[152px] py-3 px-[18px] text-center monterey font-medium text-[14px]">
-                Романтическая атмосфера, закат на воде, ужин при свечах и рассвет над кронами деревьев, именно так и должно выглядеть идеальное свидание, и вы знаете где его провести.
+                <div style={{ backgroundImage: 'url(/image/dates_test_bg.png)' }} className="back_settings w-[313px] h-[152px] py-3 px-[18px] text-center monterey font-medium text-[14px]">
+                    Романтическая атмосфера, закат на воде, ужин при свечах и рассвет над кронами деревьев, именно так и должно выглядеть идеальное свидание, и вы знаете где его провести.
                 </div>
             </div>
-            <div className="flex justify-center relative mb-[30px]">
-                <div style={{backgroundImage: 'url(/image/dates_photo_cup.png)'}} className="back_settings w-[330px] h-[205px] flex justify-center items-center z-20">
-                </div>
-                <img style={{transform: 'translateX(-50%) translateY(-50%)'}} className="w-[310px] absolute left-1/2 top-1/2" src="/image/dates_people_photo.png" alt="" />
-            </div>
+            <Slider className="mb-[30px]" {...settings}>
+                {
+                    imageData.map((el, i) => (
+                        <div className="flex justify-center">
+                            <div className="flex justify-center relative">
+                                <div style={{ backgroundImage: 'url(/image/dates_photo_cup.png)' }} className="back_settings w-[330px] h-[205px] flex justify-center items-center z-20"></div>
+                                <img style={{ transform: 'translateX(-50%) translateY(-50%)' }} className="w-[310px] absolute left-1/2 top-1/2" src={el} alt="" />
+                            </div>
+                        </div>
+                    ))
+                }
+            </Slider>
             <Link to="/choose-date" className="flex justify-center pb-32">
-                <button style={{backgroundImage: 'url(/image/choose_date.png)'}} className="back_settings w-[205px] h-[70px]"></button>
+                <button style={{ backgroundImage: 'url(/image/choose_date.png)' }} className="back_settings w-[205px] h-[70px]"></button>
             </Link>
         </section>
     );

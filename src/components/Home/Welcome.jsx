@@ -135,7 +135,7 @@ const Welcome = () => {
         <section id='book' className="relative m-0">
             <img className="w-full" src="/image/bg1.jpg" alt="" />
             <img style={burgerState ? { display: 'block' } : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
-            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] hidden absolute pl-[21px] flex-col left-[55%] gap-[15px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-10`}>
+            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] hidden absolute pl-[21px] flex-col left-[55%] gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-10`}>
                 {routes.map((el, i) => {
                     return (
                         <div onClick={closeBurger} key={uuidv4()}>

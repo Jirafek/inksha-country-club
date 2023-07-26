@@ -8,7 +8,7 @@ const About = () => {
         window.open(fileUrl, '_blank');
     }
     return (
-        <section className="about_background back_settings relative" id="about">
+        <section style={{backgroundImage: 'url(/image/about_bg_styled.jpg)'}} className="back_settings relative" id="about">
             <div className="m-0">
                 <img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" src="/image/man_about.png" alt="" />
                 <div className="pt-[218px] pb-[1.75rem] flex justify-center items-center">

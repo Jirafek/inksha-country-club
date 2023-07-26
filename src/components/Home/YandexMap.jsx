@@ -39,7 +39,7 @@ const YandexMap = () => {
                 <img src="/image/yandex_map_title.png" alt="" />
             </div>
 
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="600" frameBorder="0"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="800" frameBorder="0"></iframe>
             </div>
             <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[183px] px-[15px] pt-5 monterey">
                 <div className="relative flex flex-col gap-[10px] h-full">
@@ -66,6 +66,9 @@ const YandexMap = () => {
                     </div>
                 </div>
             </m.div>
+            <div className="absolute bottom-[243px] left-[15px]">
+                <iframe className="relative w-[317px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            </div>
         </m.section>
     );
 }

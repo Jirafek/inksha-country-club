@@ -53,15 +53,15 @@ const YandexMap = () => {
                         посёлок Менжинец, городской округ Мытищи, Московская область, Россия 
                     </p>
 
-                    <div className="absolute bottom-[2px] right-0 flex">
-                        <a target="_blanc" href="https://vk.com/ikshacountryclub">
+                    <div className="absolute bottom-[2px] right-0 flex items-center">
+                        <a className="mr-1" target="_blanc" href="https://vk.com/ikshacountryclub">
                             <img src="/image/vk.png" alt="" />
                         </a>
                         <a target="_blanc" href="https://www.instagram.com/ikshacountryclub">
                             <img src="/image/inst.png" alt="" />
                         </a>
                         <a target="_blanc" href="https://www.youtube.com/@ikshacountryclub">
-                            <img className="w-[39px] h-[39px] bg-transparent" src="/image/youtube_bg.png" alt="" />
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.png" alt="" />
                         </a>
                     </div>
                 </div>

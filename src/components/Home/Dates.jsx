@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { v4 as uuidv4 } from 'uuid';
 
 // GEt data from firebase
 
@@ -42,7 +43,7 @@ const Dates = () => {
             <Slider className="mb-[30px]" {...settings}>
                 {
                     imageData.map((el, i) => (
-                        <div className="flex justify-center">
+                        <div key={uuidv4()} className="flex justify-center">
                             <div className="flex justify-center relative">
                                 <div style={{ backgroundImage: 'url(/image/dates_photo_cup.png)' }} className="back_settings w-[330px] h-[205px] flex justify-center items-center z-20"></div>
                                 <img style={{ transform: 'translateX(-50%) translateY(-50%)' }} className="w-[310px] absolute left-1/2 top-1/2" src={el} alt="" />

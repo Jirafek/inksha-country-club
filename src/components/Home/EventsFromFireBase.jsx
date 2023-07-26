@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const fireBaseData = [
     {
@@ -24,7 +25,7 @@ const EventsFromFireBase = () => {
             <div className="flex justify-center flex-wrap gap-x-6 gap-y-[6px]">
                 {
                     fireBaseData.map((el, i) => (
-                        <div className="flex flex-col items-center gap-[10px]">
+                        <div key={uuidv4()} className="flex flex-col items-center gap-[10px]">
                             <img className="w-[150px] rounded-xl" src={el.img} alt="" />
                             <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
                                 Подробнее

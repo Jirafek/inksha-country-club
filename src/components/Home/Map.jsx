@@ -7,12 +7,12 @@ const Map = () => {
         const
             positions = [
                 {
-                    title: 'Заголовок 1',
+                    title: 'Беседка',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Большой заголовок для примера',
+                    title: 'BBQ',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
@@ -22,27 +22,27 @@ const Map = () => {
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 4',
+                    title: 'Домик',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 5',
+                    title: 'Шар',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 6',
+                    title: 'Баня',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 7',
+                    title: 'Купель',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 8',
+                    title: 'Летний душ',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: ''
                 },
@@ -57,12 +57,12 @@ const Map = () => {
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 11',
+                    title: 'Кибертрак',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
                 {
-                    title: 'Заголовок 12',
+                    title: 'Домик',
                     imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut atque maiores sint ex nisi autem laboriosam perspiciatis eos explicabo nemo a eius et corrupti enim deserunt animi omnis numquam, quis officia. Esse facilis nam in ipsam voluptate est facere quam, neque numquam magni! Amet aut quasi odit cum rerum recusandae eum enim itaque suscipit similique. Officia voluptatum hic corporis voluptates excepturi quibusdam iste corrupti molestias nihil repellat earum quam recusandae facere repudiandae dignissimos cumque optio ab, iusto doloremque quidem dolore iure, fugiat, aut error? Minima, nulla necessitatibus odit impedit nam sapiente obcaecati laudantium, quae eveniet voluptatem magnam unde doloribus?',
                 },
@@ -94,20 +94,12 @@ const Map = () => {
                 // Logic
                 const
                     openPopup = (title, src, text) => {
-                        popupWrapper.classList.add('view');
-                        const
-                            popupImage = popup.querySelector('.map-info_image'),
-                            popupTitle = popup.querySelector('.map-info_title'),
-                            popupText = popup.querySelector('.map-info-content');
-        
-                        popupImage.src = src;
-                        popupTitle.innerHTML = title;
-                        if (text === '') {
-                            popupText.style.display = 'none';
-                        } else {
-                            popupText.style.display = 'block';
-                            popupText.innerHTML = text;
-                        }
+                        ChangeText(title, src, text)
+                    },
+                    ChangeText = (title, src, text) => {
+                        const title_div = document.querySelector('.div_title');
+
+                        title_div.innerHTML = title;
                     },
                     getTooltip = (_e, title) => {
                         mapTooltip.textContent = title;
@@ -137,7 +129,8 @@ const Map = () => {
                             const src = positions[position].imageSrc;
                             const text = positions[position].text;
                             const title = positions[position].title;
-                            openPopup(title, src, text);
+                            ChangeText(title, src, text);
+                            // openPopup(title, src, text);
                         }
                     },
                     pressedPopupClose_popup = _e => {
@@ -190,6 +183,7 @@ const Map = () => {
         <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
             <img src="/image/map_bg_title.png" alt="" />
         </div>
+        <div style={{transform: 'translateX(-50%)'}} className='absolute flex justify-center items-center w-[225px] div_title bottom-[12rem] text-white monterey text-[20px] left-1/2 z-20'>Выбери локацию</div>
         <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
             <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                 <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />

@@ -24,15 +24,15 @@ const fireBaseData = [
 
 const EventsFromFireBase = () => {
     return (
-        <section id="blog" style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[851px] back_settings relative">
+        <section id="blog" style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[500px] back_settings relative">
             <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
                 <img src="/image/eventsFireBase_bg_title.png" alt="" />
             </div>
-            <div className="h-[600px] overflow-y-auto">
+            <div className="h-[500px] overflow-y-auto">
                 <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px]">
                     {
                         fireBaseData.map((el, i) => (
-                            <div key={uuidv4()} className="flex flex-col items-center h-[250px]">
+                            <div key={uuidv4()} className="flex flex-col items-center">
                                 <div className="mb-[10px] flex flex-col items-center">
 
                                     <div className="flex rounded-[10px] justify-center items-center bg-[#EAD3B5] border border-[#765947] w-[150px] mb-1">

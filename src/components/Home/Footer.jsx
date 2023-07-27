@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.jpg)' }}>
+        <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.png)' }}>
             <div className="pt-10 flex flex-col items-center">
                 <img src="/image/footer_title.png" alt="" />
             </div>

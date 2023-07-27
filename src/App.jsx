@@ -11,6 +11,7 @@ const GalleryAll = lazy(() => import('pages/GalleryAll'));
 const HappySlider = lazy(() => import('pages/HappySlider'));
 const Rules = lazy(() => import('pages/Rules'));
 const NotFound = lazy(() => import('pages/NotFound'));
+const Korporativy = lazy(() => import('pages/Korporativy'));
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/choose-happy' element={<HappySlider />} />
       <Route path='/data-privicy' element={<Rules title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ" isNeedButton={true} isNeedPadding={true} text={text_privicy} />} />
       <Route path='/live-rules' element={<Rules title="ПОЛИТИКА ДАННЫХ" isNeedButton={false} isNeedPadding={false} text={text_living} />} />
+      <Route path='/korp' element={<Korporativy />} />
       <Route path='*' element={<NotFound />} />
       {/* <Route path='*' element={<NotFound />} /> */}
     </Routes>

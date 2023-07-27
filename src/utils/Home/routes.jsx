@@ -60,7 +60,7 @@ const routes = [
     {
         text: "КОРПОРАТИВЫ",
         icon: "",
-        link: "#korp"
+        link: "/korp"
     },
     {
         text: "ВОПРОС-ОТВЕТ",

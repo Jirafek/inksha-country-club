@@ -41,7 +41,7 @@ const About = () => {
                 variants={heading} 
                 className="m-0">
                 <m.img 
-                style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
+                style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[65px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
                 <div className="pt-[218px] pb-[1.75rem] flex justify-center items-center">
 
                     <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
@@ -63,7 +63,7 @@ const About = () => {
                     <button onClick={handleDownload}>
                         <div
                             style={{ background: 'linear-gradient(98deg, rgba(253, 249, 249, 0.12) 0%, rgba(253, 249, 249, 0.08) 100%)' }}
-                            className="rounded-[10px] colored border-[2px] border-[#A08C7D] backdrop-blur-[1px] montaga px-[6px] py-[2px]"
+                            className="rounded-[10px] colored text-[13px] border-[2px] border-[#A08C7D] backdrop-blur-[1px] montaga px-[6px] py-[2px]"
                         >
                             Скачивайте PDF версию о нашем клубе
                         </div>

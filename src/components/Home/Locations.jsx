@@ -4,6 +4,31 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomArrows";
 import { v4 as uuidv4 } from 'uuid';
+import { m } from 'framer-motion';
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const headingLinesOpacity = {
+    hidden: {
+        opacity: 0,
+        // clipPath: 'inset(100% 0px 0px)',
+    },
+    visible: {
+        opacity: 1,
+        // clipPath: 'inset(0% 0px 0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 1,
+        },
+    },
+};
 
 // change TITLE
 

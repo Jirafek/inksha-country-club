@@ -238,6 +238,33 @@ html {
   }
 }
 
+@keyframes fromZeroTo120 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 124px;
+  }
+}
+
+@keyframes from120ToZero {
+  0% {
+    height: 124px;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+.heightWin {
+  animation: fromZeroTo120 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+.heightLoose {
+  animation: from120ToZero 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+
 .opacityWin {
   animation: changeOpacit 0.5s ease-in-out;
 }

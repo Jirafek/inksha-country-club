@@ -75,7 +75,7 @@ const Welcome = () => {
           .znms-widget__teleporter {
             // margin-top: 90px; */
             position: relative;
-            bottom: -80px;
+            bottom: -150px;
           }
 
           .znms-widget__v-calendar-pane-container {
@@ -85,6 +85,7 @@ const Welcome = () => {
           .znms-widget__module-form-block {
             background-color: transparent !important;
             -webkit-backdrop-filter: blur(0px) !important;
+            bottom: -80px;
           }
   
           .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {

@@ -1,6 +1,11 @@
 import '../styles/map.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { m } from 'framer-motion';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { v4 as uuidv4 } from 'uuid';
+import { CustomNextArrow, CustomPrevArrow } from './helpers/CustomEventArrows';
 
 const heading = {
     hidden: {},
@@ -26,6 +31,21 @@ const headingLinesOpacity = {
     },
 };
 
+const blocks = {
+    hidden: {
+        opacity: 0,
+        clipPath: 'inset(100% 0px 0px)',
+    },
+    visible: {
+        opacity: 1,
+        clipPath: 'inset(0% 0px 0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 1.5,
+        },
+    },
+};
+
 const Map = () => {
 
 
@@ -33,62 +53,62 @@ const Map = () => {
         positions = [
             {
                 title: 'Беседка',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/besedka.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'BBQ',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/bbq_old.JPG',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/dom2.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/dom2.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
-                title: 'Шар',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                title: 'Иглу',
+                imageSrc: '/image/iglu.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Баня',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/bania.HEIC',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Купель',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/kupel.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Летний душ',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/dush.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.'
             },
             {
                 title: 'Свидание на берегу',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/prichal.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Посиделки у камина',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/koster.JPG',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Кибертрак',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/track.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: 'https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album',
+                imageSrc: '/image/dom2.jpg',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
@@ -126,9 +146,9 @@ const Map = () => {
                     div_img = document.querySelector('.div_img'),
                     div_text = document.querySelector('.div_text');
 
-                    title_div.classList.remove('opacityWin');
-                    div_img.classList.remove('opacityWin');
-                    div_text.classList.remove('opacityWin');
+                title_div.classList.remove('opacityWin');
+                div_img.classList.remove('opacityWin');
+                div_text.classList.remove('opacityWin');
 
                 title_div.classList.add('opacityLoose');
                 div_img.classList.add('opacityLoose');
@@ -224,11 +244,80 @@ const Map = () => {
         popupClose.addEventListener('click', pressedPopupClose_popup);
     })
 
+    const [location, setLocation] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [arrowState, setArrowState] = useState(false);
+
+    const handleMenu = () => {
+        if (isMenuOpen) {
+            setArrowState(false)
+        } else {
+            setArrowState(true)
+        }
+        setIsMenuOpen(!isMenuOpen);
+    }
+
+    const changeMap = (index) => {
+        setLocation(index);
+        setIsMenuOpen(false);
+    }
+
+    const locations = [
+        {
+            title: 'Лесная Резиденция',
+            img: '/image/'
+        },
+        {
+            title: 'Шале',
+            img: '/image/'
+        },
+        {
+            title: 'Коттедж',
+            img: '/image/'
+        },
+        {
+            title: 'Олимпийская деревня',
+            img: '/image/'
+        },
+    ];
+
 
     return (
         <div id="map" className="t-body relative" style={{ margin: '0' }}>
             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
                 <img src="/image/map_bg_title.png" alt="" />
+            </div>
+            <div style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 top-24 z-20'>
+                <m.div
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{ once: true }}
+                    variants={heading}
+                    className='flex flex-col relative pb-[115px]'>
+                    <div onClick={handleMenu} className='bg-[#A4B68B] z-30 border-[3px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[50px] flex items-center justify-around'>
+                        <p className='text-white monterey font-extrabold text-[19px]'>
+                            {
+                                locations[location].title
+                            }
+                        </p>
+                        <img className='duration-300' style={{transform: `rotate(${arrowState ? 180 : 0}deg)`}} src="/image/arrow_choose.png" alt="" />
+                    </div>
+                    <div style={{display: `${isMenuOpen ? 'flex' : 'none'}`}} className='w-[330px] map_menu absolute bottom-0 h-[124px] bg-[#A4B68B] border-[3px] border-[#FFF] rounded-b-[10px] px-5 flex flex-col justify-around'>
+                        {
+                            locations.map((el, i) => {
+                                if (i === location) return null;
+
+                                return (
+                                    <div className='text-white monterey font-extrabold text-[19px]' onClick={() => changeMap(i)}>
+                                        {
+                                            el.title
+                                        }
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+                </m.div>
             </div>
             <m.div
                 initial='hidden'
@@ -424,7 +513,7 @@ const Map = () => {
                                     <div className="popup-content map-info">
                                         <div className="map-info-title">
                                             <div className="map-info_image__wrapper">
-                                                <img className="map-info_image" src="https://sun9-73.userapi.com/impg/ISQjVHwwgM0BPtscZP6l9mq1owGEaL0CCR5IWw/PD6qXHxDkfw.jpg?size=1080x1080&quality=95&sign=c0abb82fb112fceb16cacc692f88d622&type=album" alt="sdfdfsf" />
+                                                <img className="map-info_image" src="/image/" alt="sdfdfsf" />
                                             </div>
                                             <h2 className="map-info_title">Спальный домик</h2>
                                         </div>

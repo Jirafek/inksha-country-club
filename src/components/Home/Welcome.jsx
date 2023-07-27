@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { m } from 'framer-motion';
 import BookingCalendar from '../BookPicker';
 import { useForm } from 'react-hook-form';
-import routes from '../../utils/Home/routes';
-import { v4 as uuidv4 } from 'uuid';
 import { Helmet } from 'react-helmet';
 
 const heading = {
@@ -65,6 +63,16 @@ const Welcome = () => {
 
       // Примените ваши стили после инициализации виджета
       const customStyles = `
+
+          
+      .znms-widget__module-form-block__btn {
+        background-color: rgba(12, 242, 89, 0.50) !important;
+        border-radius: 30px !important;
+        border: 1px solid #000 !important;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+        font-size: 18px !important;
+        margin-top: 13px !important;
+      }
           .znms-widget__main-wrapper {
             background-color: transparent !important;
             backdrop-filter: blur(0px) !important;
@@ -82,6 +90,22 @@ const Welcome = () => {
             z-index: 2000 !important;
           }
 
+          .znms-widget__module-form-block__input {
+            display: none !important;
+          }
+
+          .znms-widget__module-form-block__label {
+            font-size: 14px !important;
+            margin-bottom: 0 !important;
+          }
+
+          .znms-widget__module-form-block__left:nth-child(-n+1) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+          }
+
           .znms-widget__module-form-block {
             background-color: transparent !important;
             -webkit-backdrop-filter: blur(0px) !important;
@@ -91,14 +115,6 @@ const Welcome = () => {
           .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
             display: none !important;
           }
-  
-          .znms-widget__module-form-block__btn {
-            background-color: rgba(12, 242, 89, 0.50) !important;
-            border-radius: 30px !important;
-            border: 1px solid #000 !important;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
-            font-size: 18px !important;
-          }
 
           .znms-widget__module-form-block__items--links-container {
             display: none !important;
@@ -106,6 +122,9 @@ const Welcome = () => {
 
           .znms-widget__module-form-block__item {
             opacity: 0.9;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            height: 40px !important;
           }
         `;
         setTimeout(() => {
@@ -126,16 +145,6 @@ const Welcome = () => {
       document.body.appendChild(script);
   }, []);
 
-  const [burgerState, setBurgerState] = useState(false);
-
-  function handleBurgerClick() {
-    setBurgerState(!burgerState);
-  }
-
-  function closeBurger() {
-    setBurgerState(false);
-  }
-
   useEffect(() => {
     // BookingCalendar([], 'zaezd'); // get data from FireBase
     // BookingCalendar([], 'viezd'); // get data from FireBase
@@ -146,22 +155,7 @@ const Welcome = () => {
   }, []);
   return (
     <section id='book' className="relative m-0">
-      <img className="w-full" src="/image/bg1.jpg" alt="" />
-      <img style={burgerState ? { display: 'block' } : {}} className={` hidden absolute w-full z-[9] top-0`} src="/image/bg-burger.png" alt="" />
-      <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] hidden absolute pl-[21px] flex-col left-[55%] gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-10`}>
-        {routes.map((el, i) => {
-          return (
-            <div onClick={closeBurger} key={uuidv4()}>
-              <a href={el.link} className='flex gap-[1px]'>
-                <p className='monterey'>
-                  {el.text}
-                </p>
-                {el.icon && <img src={el.icon} />}
-              </a>
-            </div>
-          );
-        })}
-      </div>
+      <img className="w-full h-[665px]" src="/image/bg1.jpg" alt="" />
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
         <img className='w-full h-full' src="/image/doska.png" alt="" />
         <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+799999999">
@@ -173,7 +167,6 @@ const Welcome = () => {
       </div>
       <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.png" alt="" />
       <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.png" alt="" />
-      <img onClick={handleBurgerClick} className='absolute top-8 left-3 z-20' src="/image/burger.png" alt="" />
       <div
         style={{ transform: 'translateX(-50%)' }}
         className='absolute left-1/2 w-full bottom-[4.5rem]'

@@ -101,7 +101,7 @@ const Korporativy = () => {
                                 <div className="bg-[#EDDEDF] border border-[#B76569] rounded-[30px] w-[330px] py-[6px] mt-[2px]">
                                     <label className="flex justify-around items-center">
                                         <input {...register("оформление и оплата договора +10%")} name="dogovor" type="checkbox" />
-                                        <p className="monterey text-[13px]">оформление и оплата договора +10%</p>
+                                        <p className="monterey text-[13px]">оплата юр.переводом по договору +10%</p>
                                     </label>
                                 </div>
                             </div>

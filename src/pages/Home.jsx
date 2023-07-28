@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import routes from '../utils/Home/routes';
 import { v4 as uuidv4 } from 'uuid';
 import BookingCalendar from '../components/BookPicker';
+import { Link } from 'react-router-dom';
 import Welcome from '../components/Home/Welcome';
 import Map from '../components/Home/Map';
 import About from '../components/Home/About';
@@ -54,12 +55,12 @@ const Home = () => {
                 {routes.map((el, i) => {
                     return (
                         <div onClick={closeBurger} key={uuidv4()}>
-                            <a href={el.link} className='flex gap-[1px]'>
+                            <Link to={el.link} className='flex gap-[1px]'>
                                 <p className='monterey'>
                                     {el.text}
                                 </p>
                                 {el.icon && <img src={el.icon} />}
-                            </a>
+                            </Link>
                         </div>
                     );
                 })}

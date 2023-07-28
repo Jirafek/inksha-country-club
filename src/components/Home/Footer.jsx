@@ -41,9 +41,9 @@ const Footer = () => {
                     }
                 </div>
                 <div className="flex flex-col gap-2 pb-[5px] pt-[15px]">
-                    <div className="flex justify-around monterey px-[11px]"> {/* justify-between */}
+                    <div className="flex justify-between monterey px-[11px]"> {/* justify-between */}
                         <Link to="/data-privicy" className="text-white text-[12px] underline">Политика данных</Link>
-                        {/* <Link to="/faq" className="text-white text-[12px]">FAQ</Link> */}
+                        <Link to="/faq" className="text-white text-[12px] underline">FAQ</Link>
                         <Link to="/live-rules" className="text-white text-[12px] underline">Правила проживания</Link>
                     </div>
                     <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб</p>

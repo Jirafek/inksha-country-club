@@ -17,7 +17,7 @@ const images = [
         text: 'Активный отдых'
     },
     {
-        img: '/image/korp_chill.png',
+        img: '/image/korp_riba.png',
         text: 'Рыбалка на пруду'
     },
 ];
@@ -131,7 +131,7 @@ const Korporativy = () => {
                                 <div style={{ backgroundColor: 'rgb(255, 233, 233)' }} className="relative rounded-[20px] back_settings w-full py-[35px] px-[9px] flex flex-col items-center gap-3">
                                     {
                                         inputs.map((el, i) => (
-                                            <input key={uuidv4()} placeholder={el} {...register(el, { required: true })} className="w-full outline-none pl-[17px] py-[6px] leading-normal rounded-[10px] border border-black bg-white" type="text" />
+                                            <input key={uuidv4()} placeholder={el} {...register(el, { required: el === 'e-mail' ? false : true })} className="w-full outline-none pl-[17px] py-[6px] leading-normal rounded-[10px] border border-black bg-white" type="text" />
                                         ))
                                     }
                                 </div>

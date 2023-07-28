@@ -72,6 +72,10 @@ const Welcome = () => {
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
         font-size: 18px !important;
         margin-top: 13px !important;
+        height: 35px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
       }
           .znms-widget__main-wrapper {
             background-color: transparent !important;
@@ -83,7 +87,7 @@ const Welcome = () => {
           .znms-widget__teleporter {
             // margin-top: 90px; */
             position: relative;
-            bottom: -150px;
+            bottom: -100px;
           }
 
           .znms-widget__v-calendar-pane-container {
@@ -109,7 +113,7 @@ const Welcome = () => {
           .znms-widget__module-form-block {
             background-color: transparent !important;
             -webkit-backdrop-filter: blur(0px) !important;
-            bottom: -80px;
+            bottom: -50px;
           }
   
           .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
@@ -124,7 +128,7 @@ const Welcome = () => {
             opacity: 0.9;
             padding-top: 0 !important;
             padding-bottom: 0 !important;
-            height: 40px !important;
+            height: 35px !important;
           }
         `;
         setTimeout(() => {

@@ -50,8 +50,14 @@ const Home = () => {
     return (
         // <input id='zaezd' type="text" />
         <div className='m-w-[400px] relative'>
-            <img style={burgerState ? { display: 'block' } : {}} className={` hidden fixed w-full z-[2000] top-0`} src="/image/bg-burger.png" alt="" />
-            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] hidden fixed pl-[21px] flex-col left-[55%] gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-[2000]`}>
+            {/* <img style={burgerState ? { display: 'block' } : {}} className={` hidden fixed w-full z-[2000] top-0`} src="/image/bg-burger.png" alt="" /> */}
+
+            <div
+                className="fixed top-0 left-[194px] w-full h-screen hidden items-center justify-center z-[100]"
+                style={burgerState ? { display: 'flex', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.8)' } : { transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+                onClick={handleBurgerClick}
+            >
+            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] py-[24px] hidden fixed pl-[21px] flex-col left-[50%] gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-[2000]`}>
                 {routes.map((el, i) => {
                     return (
                         <div onClick={closeBurger} key={uuidv4()}>
@@ -64,6 +70,7 @@ const Home = () => {
                         </div>
                     );
                 })}
+            </div>
             </div>
             <img onClick={handleBurgerClick} className='fixed top-8 left-3 z-[2000]' src="/image/burger.png" alt="" />
             <Welcome />

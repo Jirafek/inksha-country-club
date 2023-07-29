@@ -113,8 +113,8 @@ const EventsFromFireBase = () => {
                 <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.png" alt="" />
                 <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.png" alt="" />
             </div>
-            <div className="h-[500px] overflow-y-auto">
-                <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px]">
+            <div className="h-[500px] overflow-hidden">
+                <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px] overflow-hidden">
                     {
                         fireBaseData.map((el, i) => (
                             <div key={uuidv4()} className="flex flex-col items-center">
@@ -142,25 +142,6 @@ const EventsFromFireBase = () => {
                         ))
                     }
                 </div>
-            </div>
-            <div className="absolute -bottom-[52px] w-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="62" viewBox="0 0 390 62" fill="none">
-                    <g filter="url(#filter0_d_1273_6018)">
-                        <path d="M0.144531 0.324219H390.314V50.1611C236.788 6.91459 0.144531 31.705 0.144531 50.1611C0.144531 68.6173 0.144531 0.324219 0.144531 0.324219Z" fill="#EAAB7F" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_d_1273_6018" x="-3.85547" y="0.324219" width="398.17" height="61.002" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                            <feOffset dy="4" />
-                            <feGaussianBlur stdDeviation="2" />
-                            <feComposite in2="hardAlpha" operator="out" />
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1273_6018" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1273_6018" result="shape" />
-                        </filter>
-                    </defs>
-                </svg>
             </div>
         </m.section>
     );

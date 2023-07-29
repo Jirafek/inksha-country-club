@@ -47,7 +47,7 @@ const About = () => {
                 <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
                 <div className="pt-[180px] pb-[1.75rem] flex justify-center items-center">
 
-                    <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe className="relative w-[330px] h-[180px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                     {/* <div className="relative max-w-[352px] max-h-[209px]">
                         <img className="absolute top-0" src="/image/video_border.png" alt="" />
                         <div className="flex justify-center items-center">

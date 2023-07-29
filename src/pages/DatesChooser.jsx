@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
 import { v4 as uuidv4 } from 'uuid';
+import FixedFuter from '../components/Home/FixedFuter';
 
 const datesData = [
     {
@@ -242,12 +243,13 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center mt-3">
-                                <button className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</button>
+                                <a  target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
                             </div>
                         </div>
                     ))
                 }
             </Slider>
+            <FixedFuter link="/" needRotate={true} />
         </m.section>
     );
 }

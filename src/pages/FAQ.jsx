@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FixedFuter from '../components/Home/FixedFuter';
 
 const faq_data = [
     {
@@ -67,6 +68,7 @@ const FAQ = () => {
                     ))
                 }
             </div>
+            <FixedFuter link="/" needRotate={true} />
         </section>
     );
 }

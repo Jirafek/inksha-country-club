@@ -1,5 +1,77 @@
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { m } from 'framer-motion';
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const sky1 = {
+    hidden: {
+        opacity: 1,
+        // transform: 'translateX(0)'
+        x: 0
+    },
+    visible: {
+        opacity: 0,
+        // transform: 'translateX(-400px)',
+        x: -400,
+        transition: {
+            ease: 'easeOut',
+            duration: 4,
+        },
+    },
+};
+
+const sky2 = {
+    hidden: {
+        opacity: 1,
+        x: 0
+    },
+    visible: {
+        opacity: 0,
+        x: 400,
+        transition: {
+            ease: 'easeOut',
+            duration: 4,
+        },
+    },
+};
+
+const sky3 = {
+    hidden: {
+        opacity: 1,
+        x: 100,
+    },
+    visible: {
+        opacity: 0,
+        x: -400,
+        transition: {
+            ease: 'easeOut',
+            duration: 4,
+        },
+    },
+};
+
+const sky4 = {
+    hidden: {
+        opacity: 1,
+        x: 200,
+    },
+    visible: {
+        opacity: 0,
+        x: 200,
+        transition: {
+            ease: 'easeOut',
+            duration: 4,
+        },
+    },
+};
 
 const fireBaseData = [
     {
@@ -24,9 +96,22 @@ const fireBaseData = [
 
 const EventsFromFireBase = () => {
     return (
-        <section id="blog" style={{ backgroundImage: 'url(/image/bg-eve.png)' }} className="min-h-[500px] back_settings relative">
+        <m.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={heading}
+            id="blog"
+            style={{ backgroundImage: 'url(/image/bg-eve.png)', overflowX: 'hidden' }}
+            className="min-h-[500px] back_settings relative">
             <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
                 <img src="/image/eventsFireBase_bg_title.png" alt="" />
+            </div>
+            <div>
+                <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.png" alt="" />
+                <m.img variants={sky2} className="absolute -top-[60px] right-0" src="/image/events_sky2.png" alt="" />
+                <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.png" alt="" />
+                <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.png" alt="" />
             </div>
             <div className="h-[500px] overflow-y-auto">
                 <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px]">
@@ -49,9 +134,9 @@ const EventsFromFireBase = () => {
                                             {el.date}
                                         </p>
                                     </div>
-                                    <div style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
                                         Подробнее
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         ))
@@ -77,7 +162,7 @@ const EventsFromFireBase = () => {
                     </defs>
                 </svg>
             </div>
-        </section>
+        </m.section>
     );
 }
 

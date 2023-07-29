@@ -33,18 +33,21 @@ const About = () => {
         window.open(fileUrl, '_blank');
     }
     return (
-        <section style={{backgroundImage: 'url(/image/about_bg_styled.jpg)'}} className="back_settings relative" id="about">
+        <section style={{ backgroundImage: 'url(/image/about_bg_styled.jpg)' }} className="back_settings relative" id="about">
             <m.div
                 initial='hidden'
                 whileInView='visible'
                 viewport={{ once: true }}
-                variants={heading} 
+                variants={heading}
                 className="m-0">
-                <m.img 
-                style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[65px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
-                <div className="pt-[218px] pb-[1.75rem] flex justify-center items-center">
 
-                    <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/-d2tm8zXoWE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                {/* <div style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px] bg-transparent">
+                    <img className="bg-transparent" src="/image/man_transparent.mp4" alt="GIF Image" />
+                </div> */}
+                <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
+                <div className="pt-[180px] pb-[1.75rem] flex justify-center items-center">
+
+                    <iframe className="relative w-[330px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                     {/* <div className="relative max-w-[352px] max-h-[209px]">
                         <img className="absolute top-0" src="/image/video_border.png" alt="" />
                         <div className="flex justify-center items-center">
@@ -56,14 +59,14 @@ const About = () => {
                 <NumberedItem arrayData={NumeredItemsData} />
                 <div className="flex justify-center items-center back_settings mt-3 h-60 mb-[10px]" style={{ backgroundImage: 'url(/image/about_text_border.png)', backgroundSize: 'auto' }}  >
                     <p className="w-[300px] text-center montaguSlab text-[#000] text-[15px]">
-                        <span className="font-semibold">Икша Кантри Клаб</span> на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в <span className="font-semibold">25</span> км от м. Алтуфьево в лесной зоне на берегу водохранилища
+                        <span className="font-semibold">Икша Кантри Клаб</span> – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в <span className="font-semibold">25</span> км от м. Алтуфьево в лесной зоне на берегу водохранилища
                     </p>
                 </div>
                 <div className="flex justify-center pb-9">
                     <button onClick={handleDownload}>
                         <div
                             style={{ background: 'linear-gradient(98deg, rgba(253, 249, 249, 0.12) 0%, rgba(253, 249, 249, 0.08) 100%)' }}
-                            className="rounded-[10px] colored text-[13px] border-[2px] border-[#A08C7D] backdrop-blur-[1px] montaga px-[6px] py-[2px]"
+                            className="rounded-[10px] colored text-[13px] border-[2px] border-[#A08C7D] backdrop-blur-[1px] montaga px-[6px] py-[2px] underline"
                         >
                             Скачивайте PDF версию о нашем клубе
                         </div>

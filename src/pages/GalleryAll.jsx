@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { v4 as uuid4 } from "uuid";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { m } from 'framer-motion';
+import FixedFuter from '../components/Home/FixedFuter';
+import { CustomNextArrow, CustomPrevArrow } from '../utils/Home/CustomArrowsGallery';
 
 const heading = {
     hidden: {},
@@ -24,16 +29,45 @@ const headingLines = {
     },
 };
 
-const images = [
-    "gallery-all1.png",
-    "gallery-all2.png",
-    "gallery-all3.png",
-    "gallery-all5.png",
-    "gallery-all6.png",
-    "gallery-all7.png",
+const imagesTerritory = [
+    "/image/gallery-all1.png",
+    "/image/gallery-all2.png",
+    "/image/gallery-all3.png",
+    "/image/gallery-all5.png",
+    "/image/gallery-all6.png",
+    "/image/gallery-all7.png",
+];
+
+const imagesActive = [
+    "/image/gallery-all8.png",
+    "/image/gallery-all9.png",
+    "/image/gallery-all10.png",
+    "/image/gallery-all11.png",
+    "/image/gallery-all12.png",
+    "/image/gallery-all13.png",
+];
+
+const gallerySliderData = [
+    {
+        img: '/image/gallery_slider_title.png',
+        items: imagesTerritory
+    },
+    {
+        img: '/image/gallery_slider_title1.png',
+        items: imagesActive
+    },
 ];
 
 const GalleryAll = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <CustomNextArrow />,
+        prevArrow: <CustomPrevArrow />,
+    };
     const [chosenImage, setChosenImage] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false); // новое состояние для отслеживания открытия/закрытия модального окна
 
@@ -48,23 +82,31 @@ const GalleryAll = () => {
 
     return (
         <section style={{ height: "100vh" }} className="about_background back_settings relative">
-            <div className="m-0 flex flex-col items-center">
-                <img src="/image/gallery_title.png" alt="" />
-            </div>
+            <Slider {...settings}>
+                {
+                    gallerySliderData.map((el, i) => (
+                        <Fragment key={uuid4()}>
+                            <div className="m-0 flex flex-col items-center">
+                                <img src={el.img} alt="" />
+                            </div>
 
-            <div className="flex justify-center">
-                <div className="grid grid-cols-2">
-                    {images.map((el, i) => (
-                        <img
-                            className="max-w-[135px] duration-300"
-                            key={uuid4()}
-                            src={`/image/${el}`}
-                            alt=""
-                            onClick={() => handleImageClick(el)} // добавляем обработчик клика
-                        />
-                    ))}
-                </div>
-            </div>
+                            <div className="flex justify-center">
+                                <div className="grid grid-cols-2">
+                                    {el.items.map((image, i) => (
+                                        <img
+                                            className="max-w-[135px] duration-300"
+                                            key={uuid4()}
+                                            src={image}
+                                            alt=""
+                                            onClick={() => handleImageClick(image)} // добавляем обработчик клика
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </Fragment>
+                    ))
+                }
+            </Slider>
 
             {isModalOpen && (
                 <m.div
@@ -78,13 +120,14 @@ const GalleryAll = () => {
                 >
                     <m.img
                         variants={headingLines}
-                        src={`/image/${chosenImage}`}
+                        src={chosenImage}
                         alt=""
                         style={{ width: "200px" }}
                         className="absolute"
                     />
                 </m.div>
             )}
+            <FixedFuter link="/" needRotate={true} />
         </section>
     );
 };

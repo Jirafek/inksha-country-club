@@ -432,7 +432,7 @@ const Calculate = () => {
                     Предварительная стоимость: {total}
                 </div>
                 <div className="flex justify-center">
-                    <button type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.png)' }} className="back_settings w-[208px] h-[45px]"></button>
+                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.png)' }} className="back_settings w-[208px] h-[45px]"></a>
                 </div>
             </form>
         </section>

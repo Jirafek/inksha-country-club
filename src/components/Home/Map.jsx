@@ -300,15 +300,15 @@ const Map = () => {
                                 locations[location].title
                             }
                         </p>
-                        <img className='duration-300' style={{transform: `rotate(${arrowState ? 180 : 0}deg)`}} src="/image/arrow_choose.png" alt="" />
+                        <img className='duration-300' style={{ transform: `rotate(${arrowState ? 180 : 0}deg)` }} src="/image/arrow_choose.png" alt="" />
                     </div>
-                    <div style={{display: `${isMenuOpen ? 'flex' : 'none'}`}} className='w-[330px] map_menu absolute bottom-0 h-[124px] bg-[#A4B68B] border-[3px] border-[#FFF] rounded-b-[10px] px-5 flex flex-col justify-around'>
+                    <div style={{ display: `${isMenuOpen ? 'flex' : 'none'}` }} className='w-[330px] map_menu absolute bottom-0 h-[124px] bg-[#A4B68B] border-[3px] border-[#FFF] rounded-b-[10px] px-5 flex flex-col justify-around'>
                         {
                             locations.map((el, i) => {
                                 if (i === location) return null;
 
                                 return (
-                                    <div className='text-white monterey font-extrabold text-[19px]' onClick={() => changeMap(i)}>
+                                    <div key={uuidv4()} className='text-white monterey font-extrabold text-[19px]' onClick={() => changeMap(i)}>
                                         {
                                             el.title
                                         }
@@ -533,7 +533,31 @@ const Map = () => {
 
 
 
-                    </div> </div></div></div></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div className='absolute w-full -bottom-[5px] z-30'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="11" viewBox="0 0 390 11" fill="none">
+                    <g filter="url(#filter0_df_1447_4339)">
+                        <path d="M-2.54102 6.63281H392.436" stroke="#AB9C6F" strokeWidth="9" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_df_1447_4339" x="-6.54102" y="0.132812" width="402.978" height="19" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1447_4339" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1447_4339" result="shape" />
+                            <feGaussianBlur stdDeviation="1" result="effect2_foregroundBlur_1447_4339" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+        </div>
     );
 }
 

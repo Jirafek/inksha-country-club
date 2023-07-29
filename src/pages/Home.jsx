@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer, Fragment, useState, useEffect } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import routes from '../utils/Home/routes';
 import { v4 as uuidv4 } from 'uuid';
-import BookingCalendar from '../components/BookPicker';
+import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from 'react-router-dom';
 import Welcome from '../components/Home/Welcome';
 import Map from '../components/Home/Map';
@@ -21,6 +22,7 @@ import Footer from '../components/Home/Footer';
 
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [sidebarOpen, toggle] = useReducer((s) => !s, false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,62 +50,63 @@ const Home = () => {
     }
 
     return (
-        // <input id='zaezd' type="text" />
-        <div className='m-w-[400px] relative'>
-            {/* <img style={burgerState ? { display: 'block' } : {}} className={` hidden fixed w-full z-[2000] top-0`} src="/image/bg-burger.png" alt="" /> */}
-
-            <div
-                className="fixed top-0 left-[194px] w-full h-screen hidden items-center justify-center z-[100]"
-                style={burgerState ? { display: 'flex', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.8)' } : { transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
-                onClick={handleBurgerClick}
-            >
-            <div style={burgerState ? { display: 'flex', transform: 'translateX(-50%)' } : { transform: 'translateX(-50%)' }} className={`top-[55px] py-[24px] hidden fixed pl-[21px] flex-col left-[50%] gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px] z-[2000]`}>
-                {routes.map((el, i) => {
-                    return (
-                        <div onClick={closeBurger} key={uuidv4()}>
-                            <Link to={el.link} className='flex gap-[1px]'>
-                                <p className='monterey'>
-                                    {el.text}
-                                </p>
-                                {el.icon && <img src={el.icon} />}
-                            </Link>
-                        </div>
-                    );
-                })}
+        <Fragment>
+            <div className='m-w-[400px] relative'>
+                <Transition.Root as={Fragment} show={sidebarOpen}>
+                    <Dialog as='div' className='fixed inset-0 z-[2000]' onClose={toggle}>
+                        <Transition.Child
+                            as={Fragment}
+                            enter='transition ease-in-out duration-300 transform'
+                            enterFrom='translate-x-full'
+                            enterTo='translate-x-0'
+                            leave='transition ease-in-out duration-300 transform'
+                            leaveFrom='translate-x-0'
+                            leaveTo='translate-x-full'
+                        >
+                            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
+                                <div className='flex flex-col h-full justify-center items-center'>
+                                    <div className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
+                                        {routes.map((el, i) => {
+                                            return (
+                                                <div onClick={toggle} key={uuidv4()}>
+                                                    <Link to={el.link} className='flex gap-[1px]'>
+                                                        <p className='monterey'>
+                                                            {el.text}
+                                                        </p>
+                                                        {el.icon && <img src={el.icon} />}
+                                                    </Link>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        </Transition.Child>
+                    </Dialog>
+                </Transition.Root>
+                <img onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.png" alt="" />
+                <Welcome />
+                <Map />
+                <About />
+                <Happy />
+                <Gallery />
+                <Eat />
+                <Locations />
+                <Events />
+                <EventsFromFireBase />
+                <img className='w-full h-[851px]' src="/image/help.png" alt="" />
+                <Calculate />
+                <Spec />
+                <Dates />
+                <Responce />
+                <YandexMap />
+                <Footer />
+                <div className="h-[60px]"></div>
+                {
+                    isVisible && <FixedFuter link="#book" needRotate={false} />
+                }
             </div>
-            </div>
-            <img onClick={handleBurgerClick} className='fixed top-8 left-3 z-[2000]' src="/image/burger.png" alt="" />
-            <Welcome />
-            <Map />
-            <About />
-            <Happy />
-            <Gallery />
-            <Eat />
-            <Locations />
-            <Events />
-            <EventsFromFireBase />
-            <img className='w-full h-[851px]' src="/image/help.png" alt="" />
-            <Calculate />
-            <Spec />
-            <Dates />
-            <Responce />
-            <YandexMap />
-            <Footer />
-            <div className="h-[60px]"></div>
-            <div style={isVisible ? { display: 'flex' } : {}} className='hidden fixed bottom-0 w-full h-[100px] z-[1001] flex-col gap-1 transition-all'>
-                <a className='self-end' href="#book">
-                    <img className='h-8' src="/image/to_top_button.png" alt="" />
-                </a>
-                <div className='bg-[#957BAE] h-full w-full flex items-center justify-around'>
-                    <a className='' href="#book">
-                        <img className='w-[302px]' src="/image/booking_button.png" alt="" />
-                    </a>
-                    <a href="tel:+7999999999">
-                        <img className='h-[58px] w-[61px]' src="/image/call.png" alt="" />
-                    </a>
-                </div>
-            </div>
-        </div>
+        </Fragment>
     );
 }
 

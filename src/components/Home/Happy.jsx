@@ -9,6 +9,7 @@ const Happy = () => {
                 <img src="/image/happy_title.png" alt="" />
             </div>
             <HappyClickableItems arrayData={HappyClickableItemsData} />
+                <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.png" alt="" />
         </section>
     );
 }

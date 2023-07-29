@@ -3,6 +3,7 @@ import { m } from 'framer-motion';
 import BookingCalendar from '../BookPicker';
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
+import VideoPlayer from './VideoPlayer';
 
 const heading = {
   hidden: {},
@@ -160,9 +161,10 @@ const Welcome = () => {
   return (
     <section id='book' className="relative m-0">
       <img className="w-full h-[665px]" src="/image/bg1.jpg" alt="" />
+      {/* <VideoPlayer /> */}
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
         <img className='w-full h-full' src="/image/doska.png" alt="" />
-        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+799999999">
+        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
           <img className='w-[44px]' src="/image/call.png" alt="" />
         </a>
         <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">

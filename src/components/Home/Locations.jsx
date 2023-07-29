@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomArrows";
 import { v4 as uuidv4 } from 'uuid';
 import { m } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const heading = {
     hidden: {},
@@ -29,8 +30,6 @@ const headingLinesOpacity = {
         },
     },
 };
-
-// change TITLE
 
 const sliderData = [ // get images from FireBase
     {
@@ -91,7 +90,7 @@ const Locations = () => {
                                 </div>
                                 <div className="flex justify-center">
                                     <div style={{ backgroundImage: 'url(/image/locations_about.png)' }} className="back_settings text-[16px] monterey text-[#000] flex w-[240px] h-[95px] flex-col items-center justify-center">
-                                        <h2 className="font-bold">
+                                        <h2 className="font-bold text-[14px]">
                                             {el.title}
                                         </h2>
                                         <p>
@@ -108,9 +107,9 @@ const Locations = () => {
                 }
             </Slider>
             <div className="flex justify-center pb-[65px]">
-                <button style={{ backgroundImage: 'url(/image/location_about_button.png)' }} className="w-[175px] text-[22px] font-bold h-[60px] text-[#000] monterey">
+                <Link to="/locations-about" style={{ backgroundImage: 'url(/image/location_about_button.png)' }} className="w-[175px] text-[22px] font-bold h-[60px] text-[#000] monterey flex justify-center items-center">
                     Подробнее
-                </button>
+                </Link>
             </div>
             <div className="absolute -bottom-[10px] w-full z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 390 71" fill="none">

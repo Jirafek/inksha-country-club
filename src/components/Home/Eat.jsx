@@ -63,7 +63,6 @@ const Eat = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const openImage = (image) => {
-        console.log('img')
         setSelectedImage(image);
     };
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FixedFuter from '../components/Home/FixedFuter';
 
 // change TITLE
 
@@ -34,17 +35,18 @@ const Keitering = () => {
     }
 
     return (
-        <section className="about_background back_settings relative">
+        <section className="about_background back_settings relative h-screen">
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
-                <button
+                <img src="/image/eat_bg_title.png" alt="" />
+                <a
+                    target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi"
                     style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
                     className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] monterey mb-5 py-[7px] px-[6px]"
                 >
                     Посмотреть меню
-                </button>
+                </a>
             </div>
-            <div className="flex flex-col items-center justify-center px-[10px]">
+            <div className="flex flex-col items-center justify-center px-[10px] pb-20">
                 <button onClick={nextSlide} className="mb-3">
                     <img src="/image/arrow_slider.png" alt="" />
                 </button>
@@ -61,6 +63,7 @@ const Keitering = () => {
                     <img className="rotate-180" src="/image/arrow_slider.png" alt="" />
                 </button>
             </div>
+            <FixedFuter link="/" needRotate={true} />
         </section>
     );
 }

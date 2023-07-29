@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
+import FixedFuter from '../components/Home/FixedFuter';
 
 const sliderData = [
     {
@@ -40,22 +41,22 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom="48px" />,
-        prevArrow: <CustomPrevArrow isBottom="48px" />,
+        nextArrow: <CustomNextArrow isBottom="100px" />,
+        prevArrow: <CustomPrevArrow isBottom="100px" />,
     };
     return (
         <section className="relative h-[800px]">
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="relative">
-                            <img className="absolute w-full h-[851px] top-0" src={el.bg} alt="" />
+                        <div className="relative pb-[70px]">
+                            <img className="absolute w-full h-[800px] top-0" src={el.bg} alt="" />
                             <div className="m-0 flex flex-col items-center z-10 relative">
                                 <img src="/image/happy_title.png" alt="" />
                             </div>
                             <img className="relative z-10 mb-8" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
-                                <div style={i === 0 ? {display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)'} : {display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)'}} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
+                                <div style={i === 0 ? { display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)' } : { display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)' }} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
                                     {
                                         i >= 2 ?
                                             <p className="monterey text-center">
@@ -82,16 +83,16 @@ const HappySlider = () => {
 
                                 </div>
                             </div>
-                            <div className="flex justify-center pb-[41px]">
-
-                                <button style={{backgroundImage: 'url(/image/h_btn_layer.png)'}} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
-                                    Прайс-Лист
-                                </button>
+                            <div style={{transform: 'translateX(-50%)'}} className="absolute left-1/2 bottom-[40px] z-20">
+                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
+                                        Прайс-Лист
+                                    </a>
                             </div>
                         </div>
                     ))
                 }
             </Slider>
+            <FixedFuter link="/" needRotate={true} />
         </section>
     );
 }

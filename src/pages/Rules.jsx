@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FixedFuter from '../components/Home/FixedFuter';
 
 const Rules = (props) => {
     const { title, isNeedButton, isNeedPadding, text } = props;
@@ -42,10 +43,11 @@ const Rules = (props) => {
                     </div>
                     <Link to="/#book"><img src="/image/low_bron.png" alt="" /></Link>
                 </div>
-                <p className="text-center text-[12px]">
+                <p className="text-center text-[12px] pb-5">
                     "Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб
                 </p>
             </div>
+            <FixedFuter link="/" needRotate={true} />
         </section>
     );
 }

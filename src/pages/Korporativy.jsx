@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { Navigate } from "react-router-dom";
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
+import FixedFuter from '../components/Home/FixedFuter';
 
 const images = [
     {
@@ -113,7 +114,7 @@ const Korporativy = () => {
                             </div>
                         </div>
                         <img className="absolute w-full bottom-1" src="/image/korp_men.png" alt="" />
-                        <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-3 w-[260px]">
+                        <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
                             <img src="/image/korp_btn.png" alt="" />
                         </button>
                     </form>
@@ -152,6 +153,8 @@ const Korporativy = () => {
                                 <RingLoader color={'#123abc'} loading={isLoading} css={override} size={150} />
                             </div>
             }
+
+            <FixedFuter link="/" needRotate={true} />
         </div>
     );
 }

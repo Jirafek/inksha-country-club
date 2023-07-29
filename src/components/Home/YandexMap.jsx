@@ -40,7 +40,7 @@ const YandexMap = () => {
             </div>
                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="800" frameBorder="0"></iframe>
             </div>
-            <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[183px] px-[15px] pt-5 monterey">
+            <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[212px] px-[15px] pt-5 monterey">
                 <div className="relative flex flex-col gap-[10px] h-full">
                     <p className="text-black underline">
                         <a href="tel:+79859091202">+7 985 909 12 02</a>
@@ -53,10 +53,16 @@ const YandexMap = () => {
                     </p>
 
                     <div className="absolute bottom-[2px] right-0 flex items-center">
-                        <a className="mr-[6px]" target="_blanc" href="https://vk.com/ikshacountryclub">
+                        <a target="_blanc" href="https://wa.me/+79859091202">
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/wa.png" alt="" />
+                        </a>
+                        <a target="_blanc" href="https://t.me/ikshacountryclub">
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/tg.png" alt="" />
+                        </a>
+                        <a className="mr-[10px] ml-1" target="_blanc" href="https://vk.com/ikshacountryclub">
                             <img src="/image/vk.png" alt="" />
                         </a>
-                        <a target="_blanc" href="https://www.instagram.com/ikshacountryclub">
+                        <a className="mr-1" target="_blanc" href="https://www.instagram.com/ikshacountryclub">
                             <img src="/image/inst.png" alt="" />
                         </a>
                         <a target="_blanc" href="https://www.youtube.com/@ikshacountryclub">
@@ -65,7 +71,7 @@ const YandexMap = () => {
                     </div>
                 </div>
             </m.div>
-            <div className="absolute bottom-[243px] left-[15px]">
+            <div className="absolute bottom-[270px] left-[15px]">
                 <iframe className="relative w-[317px]" src="https://www.youtube.com/embed/gklmawJFCOs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
         </m.section>

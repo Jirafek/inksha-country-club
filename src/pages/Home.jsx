@@ -64,7 +64,8 @@ const Home = () => {
                             leaveTo='translate-x-full'
                         >
                             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
-                                <div className='flex flex-col h-full justify-center items-center'>
+                                <div className='flex flex-col h-full w-full justify-center items-center'>
+                                    <img onClick={toggle}  style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} className='fixed w-[45px] top-8 right-3 z-[2001]' src="/image/close_icon.png" alt="" />
                                     <div className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
                                         {routes.map((el, i) => {
                                             return (
@@ -84,7 +85,7 @@ const Home = () => {
                         </Transition.Child>
                     </Dialog>
                 </Transition.Root>
-                <img onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.png" alt="" />
+                <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.png" alt="" />
                 <Welcome />
                 <Map />
                 <About />

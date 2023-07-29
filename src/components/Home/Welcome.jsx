@@ -74,7 +74,7 @@ const Welcome = () => {
         font-size: 18px !important;
         margin-top: 13px !important;
         height: 35px !important;
-        display: flex !important;
+        display: flex !important;А
         justify-content: center !important;
         align-items: center !important;
       }

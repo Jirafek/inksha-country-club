@@ -95,21 +95,21 @@ const Welcome = () => {
             z-index: 2000 !important;
           }
 
-          .znms-widget__module-form-block__input {
-            display: none !important;
-          }
+          // .znms-widget__module-form-block__input {
+          //   display: none !important;
+          // }
 
-          .znms-widget__module-form-block__label {
-            font-size: 14px !important;
-            margin-bottom: 0 !important;
-          }
+          // .znms-widget__module-form-block__label {
+          //   font-size: 14px !important;
+          //   margin-bottom: 0 !important;
+          // }
 
-          .znms-widget__module-form-block__left:nth-child(-n+1) {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-          }
+          // .znms-widget__module-form-block__left:nth-child(-n+1) {
+          //   display: flex;
+          //   flex-wrap: wrap;
+          //   align-items: center;
+          //   gap: 20px;
+          // }
 
           .znms-widget__module-form-block {
             background-color: transparent !important;

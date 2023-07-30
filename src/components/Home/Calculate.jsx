@@ -45,7 +45,7 @@ const extraServiceData = [
     },
     {
         title: 'Проектор (фильмы)',
-        cost: '0',
+        cost: '1000',
         point: 'р'
     },
     {

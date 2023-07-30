@@ -10,7 +10,8 @@ const sliderData = [
     {
         bg: '/image/h_bg4.png',
         img: '/image/h_4.png',
-        text: ''
+        text: '',
+        height: '545px'
     },
     {
         bg: '/image/h_bg3.png',
@@ -20,17 +21,20 @@ const sliderData = [
             'велосипед, квадроцикл',
             'катер, гидроцикл, лодка',
             'волейбол, футбол, бадминтон'
-        ]
+        ],
+        height: '356px'
     },
     {
         bg: '/image/h_bg1.png',
         img: '/image/h_1.png',
-        text: 'Баня и спа: Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое'
+        text: 'Баня и спа: Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое',
+        height: '306px'
     },
     {
         bg: '/image/h_bg2.png',
         img: '/image/h_2.png',
-        text: 'Если вы любите рыбалку, Икша Кантри Клаб прекрасное место для этого. Водохранилище и форелевый пруд на территории комплекса вас приятно удивят.'
+        text: 'Если вы любите рыбалку, Икша Кантри Клаб прекрасное место для этого. Водохранилище и форелевый пруд на территории комплекса вас приятно удивят.',
+        height: '316px'
     },
 ];
 
@@ -41,20 +45,20 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom="160px" />,
-        prevArrow: <CustomPrevArrow isBottom="160px" />,
+        nextArrow: <CustomNextArrow isBottom="125px" />,
+        prevArrow: <CustomPrevArrow isBottom="125px" />,
     };
     return (
         <section className="relative h-screen">
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="relative pb-[70px]">
+                        <div className="relative pb-[20px]">
                             <img className="absolute w-full h-screen top-0" src={el.bg} alt="" />
-                            <div className="m-0 flex flex-col items-center z-10 relative">
+                            <div style={{ transform: 'translateX(-50%)' }} className="m-0 w-[330px] flex left-1/2 flex-col items-center absolute z-20 top-0">
                                 <img src="/image/happy_title.png" alt="" />
                             </div>
-                            <img className="relative z-10 mb-8" src={el.img} alt="" />
+                            <img className="relative z-10 mb-0" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
                                 <div style={i === 0 ? { display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)' } : { display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)' }} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
                                     {
@@ -83,10 +87,12 @@ const HappySlider = () => {
 
                                 </div>
                             </div>
-                            <div style={{transform: 'translateX(-50%)', bottom: `${i === 0 ? '150px' : '35px'}`}} className="absolute left-1/2 bottom-[150px] z-20">
+                            <div className="relative w-full h-[100px]">
+                                <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '30px' : '35px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
                                     <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
                                         Прайс-Лист
                                     </a>
+                                </div>
                             </div>
                         </div>
                     ))

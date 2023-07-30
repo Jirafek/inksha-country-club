@@ -8,9 +8,9 @@ const FixedFuter = ({link, needRotate}) => {
                 <img style={{transform: `rotate(${needRotate ? -90 : 0}deg)`}} className='h-11' src="/image/to_top_button.png" alt="" />
             </Link>
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around'>
-                <Link to="#book">
+                <a href="https://bronirui-online.ru/iksha-country-club">
                     <img className='w-[302px]' src="/image/booking_button.png" alt="" />
-                </Link>
+                </a>
                 <a href="tel:+79859091202">
                     <img className='h-[58px] w-[61px]' src="/image/call.png" alt="" />
                 </a>

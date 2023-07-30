@@ -45,15 +45,15 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom="125px" />,
-        prevArrow: <CustomPrevArrow isBottom="125px" />,
+        nextArrow: <CustomNextArrow isBottom="150px" />,
+        prevArrow: <CustomPrevArrow isBottom="150px" />,
     };
     return (
         <section className="relative h-screen">
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="relative pb-[20px]">
+                        <div className="relative pb-[30px]">
                             <img className="absolute w-full h-screen top-0" src={el.bg} alt="" />
                             <div style={{ transform: 'translateX(-50%)' }} className="m-0 w-[330px] flex left-1/2 flex-col items-center absolute z-20 top-0">
                                 <img src="/image/happy_title.png" alt="" />

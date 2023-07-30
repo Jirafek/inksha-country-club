@@ -2454,3 +2454,505 @@ img:not([src]) {
         animation-delay: 11s;
     }
 }
+
+:root {
+    --color-position-lines: #fff000;
+    --color-position-lines__hover: #000fff;
+    --color-geo-first: #ff0;
+    --color-geo-second: #f0f;
+    --color-geo-third: #0f0;
+    --color-geo-forth: #0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.map_geo {
+    fill: #00000000;
+    stroke-width: 10;
+    stroke-dasharray: 50;
+    stroke-linecap: round;
+    stroke-opacity: 1;
+    transition: all .3s ease-in;
+    animation: dash 32s linear forwards infinite;
+    /* pointer-events: unset; */
+    stroke-dashoffset: 1490;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* .map_geo:hover {
+    stroke-opacity: 1;
+}
+.map_geo:hover text {
+    opacity: 1;
+} */
+.map_geo text {
+    text-shadow: 5px 5px 15px black;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    stroke: none;
+    opacity: .5;
+    /* transition: all .3s ease-in;*/
+    animation: blink 2s linear forwards infinite;
+}
+@keyframes blink {
+  from {
+    opacity: .5;
+    text-shadow: 5px 5px 15px black;
+  } 50% {
+    opacity: 1;
+    text-shadow: 10px 10px 15px black;
+  } to {
+    opacity: .5;
+    text-shadow: 5px 5px 15px black;
+  }
+}
+.map_geo:nth-child(1) {
+    stroke: var(--color-geo-first);
+}
+.map_geo:nth-child(1) text {
+    fill: var(--color-geo-first);
+}
+.map_geo:nth-child(2) {
+    stroke: var(--color-geo-second);
+}
+.map_geo:nth-child(2) text {
+    fill: var(--color-geo-second);
+}
+.map_geo:nth-child(3) {
+    stroke: var(--color-geo-third);
+}
+.map_geo:nth-child(3) text {
+    fill: var(--color-geo-third);
+}
+.map_geo:nth-child(4) {
+    stroke: var(--color-geo-forth);
+}
+.map_geo:nth-child(4) text {
+    fill: var(--color-geo-forth);
+}
+
+.wrapper {
+    position: relative;
+}
+
+.map__wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    cursor: url("https://im.wampi.ru/2023/05/11/cursor.png") 0 0, auto;
+}
+.map-ships {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    pointer-events: none;
+}
+.map_legend {
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    width: 25vw;
+    animation: shipSwim 80s linear infinite alternate;
+}
+.map_image_ship__wrapper {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    pointer-events: all;
+    padding: 20px 40px;
+}
+.map_image_ship__wrapper:hover {
+    cursor: url("https://ic.wampi.ru/2023/05/11/cursor_pointer.png") 0 0, auto;
+}
+.map_image_ship {
+    position: relative;
+    width: calc(10vw);
+    height: auto;
+    transform-origin: 50% 50%;
+    transition: all 1s linear;
+}
+.swim {
+    animation: shipSwim 50s linear infinite alternate;
+}
+.map_image_ship img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.map_image_ship svg {
+    position: absolute;
+    top: 1.5%;
+    left: -23%;
+    width: 100%;
+    height: 100%;
+    fill: rgba(0, 0, 0, 0);
+    pointer-events: all;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    animation: mapButtonAnimation 12s linear infinite;
+}
+.map_image_ship__wrapper:nth-child(1) {
+    top: 10%;
+    left: 4%;
+}
+.map_image_ship__wrapper:nth-child(2) {
+    top: 0%;
+    right: 5%;
+    transform: scale(-1, 1);
+}
+.map_image_birds__wrapper {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    animation: birdsAnimation 40s linear infinite;
+    z-index: 10000;
+}
+.map_image_birds {
+    width: 10vw;
+    height: auto;
+}
+.map_image_birds img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.map_image {
+    width: 100%;
+    /* height: 100vh; */
+    /* aspect-ratio: 16 / 9; */
+    object-fit: cover;
+}
+
+.map-controls {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.map-controls-list {
+    margin-top: -2px;
+    width: 100%;
+    height: 100%;
+}
+.map_button {
+    stroke-dasharray: 0;
+    opacity: 1 !important;
+
+}
+.map_button path {
+    fill: rgba(0, 0, 0, 0);
+}
+.map_button path:not(:nth-child(1)) {
+    stroke-width: 4;
+    stroke: var(--color-position-lines);
+    filter: blur(1px);
+    pointer-events: all;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    transition: all 0.2s linear;
+}
+.map_button:hover {
+    cursor: url("https://ic.wampi.ru/2023/05/11/cursor_pointer.png") 0 0, auto;
+}
+.map_button:hover path:not(:nth-child(1)) {
+    stroke-width: 7;
+    filter: blur(5px);
+    animation: mapButtonAnimation 2s linear infinite;
+}
+
+@keyframes mapButtonAnimation {
+    0% {
+        stroke: var(--color-position-lines__hover);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        stroke: var(--color-position-lines__hover);
+    }
+}
+@keyframes mapButtonAnimationMob {
+    0% {
+        stroke: var(--color-position-lines);
+    }
+    50% {
+        stroke: var(--color-position-lines);
+    }
+    75% {
+        stroke: var(--color-position-lines__hover);
+    }
+}
+@keyframes shipSwim {
+    from {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(40px) translateY(-20px) rotate(-10deg);
+    }
+    50% {
+        transform: translateX(50px) translateY(-25px) rotate(10deg);
+    }
+    to {
+        transform: translateX(70px) translateY(-30px) rotate(0deg);
+    }
+}
+@keyframes birdsAnimation {
+    from {
+        top: 50%;
+        left: -20%;
+    }
+    to {
+        top: -10%;
+        left: 60%;
+    }
+}
+
+.map-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+
+    display: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 4px solid white;
+}
+.map-tooltip_preview {
+    position: absolute;
+    top: -30%; left: 0%;
+    width: 800px;
+    height: 600px;
+    display: none;
+    transform: scale(.5) translateX(-50%);
+}
+
+
+.map-info {
+    display: flex;
+    /* justify-content: center; */
+    gap: 20px;
+}
+
+.map-info-title,
+.map-info-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-info-content {
+    /* height: 50%; */
+    /* overflow: scroll; */
+}
+
+.map-info-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-info_image__wrapper {
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-width: 400px;
+}
+
+.map-info_image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.popup__wrapper {
+    backdrop-filter: blur(0px);
+    opacity: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.popup__wrapper.view {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+    pointer-events: all;
+}
+
+.popup {
+    position: relative;
+    /* width: 90%; */
+    max-width: 800px;
+    height: fit-content;
+}
+
+.popup-content {
+    padding: 20px 40px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    border-radius: 10px;
+    overflow-y: scroll;
+
+    scrollbar-width: none;
+}
+
+.popup-content::-webkit-scrollbar {
+    display: none;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: #00000000;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-close::before,
+.popup-close::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: #000000;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+}
+
+.popup-close::before {
+    transform: rotate(-45deg);
+}
+
+.popup-close::after {
+    transform: rotate(45deg);
+}
+
+.map-controls-list:nth-child(2) {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .map-controls-list:nth-child(1) {
+        display: none;
+    }
+
+    .map-controls-list:nth-child(2) {
+        display: block;
+    }
+    .map_image_birds {
+        width: 20vw;
+    }
+
+    .map_image {
+        aspect-ratio: 2160 / 3840;
+        /* height: 100vh; */
+    }
+    .map_legend {
+        top: 12%;
+        width: 70vw;
+    }
+
+    .map-info {
+        flex-direction: column;
+    }
+
+    .map-tooltip {
+        display: none !important;
+    }
+
+    .popup {
+        max-width: none;
+    }
+    .map_image_ship {
+        width: 10vh;
+    }
+    .map_image_ship__wrapper:nth-child(2) {
+        top: 10%;
+    }
+    .map_button path:not(:nth-child(1)) {
+        stroke-width: 7;
+        filter: blur(5px);
+        animation: mapButtonAnimationMob 10s linear infinite alternate;
+    }
+    .map_button:nth-child(1) path:not(:nth-child(1)) {
+        animation-delay: 0s;
+    }
+    .map_button:nth-child(2) path:not(:nth-child(1)) {
+        animation-delay: 1s;
+    }
+    .map_button:nth-child(3) path:not(:nth-child(1)) {
+        animation-delay: 2s;
+    }
+    .map_button:nth-child(4) path:not(:nth-child(1)) {
+        animation-delay: 3s;
+    }
+    .map_button:nth-child(5) path:not(:nth-child(1)) {
+        animation-delay: 4s;
+    }
+    .map_button:nth-child(6) path:not(:nth-child(1)) {
+        animation-delay: 5s;
+    }
+    .map_button:nth-child(7) path:not(:nth-child(1)) {
+        animation-delay: 6s;
+    }
+    .map_button:nth-child(8) path:not(:nth-child(1)) {
+        animation-delay: 7s;
+    }
+    .map_button:nth-child(9) path:not(:nth-child(1)) {
+        animation-delay: 8s;
+    }
+    .map_button:nth-child(10) path:not(:nth-child(1)) {
+        animation-delay: 9s;
+    }
+    .map_button:nth-child(11) path:not(:nth-child(1)) {
+        animation-delay: 10s;
+    }
+    .map_button:nth-child(12) path:not(:nth-child(1)) {
+        animation-delay: 11s;
+    }
+}
+

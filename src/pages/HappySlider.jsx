@@ -33,7 +33,7 @@ const sliderData = [
     {
         bg: '/image/h_bg2.png',
         img: '/image/h_2.png',
-        text: 'Если вы любите рыбалку, Икша Кантри Клаб прекрасное место для этого. Водохранилище и форелевый пруд на территории комплекса вас приятно удивят.',
+        text: 'Если вы любите рыбалку, Икша Кантри Клаб - прекрасное место для вас. Водохранилище и форелевый пруд на территории вас приятно удивят.',
         height: '316px'
     },
 ];
@@ -60,10 +60,10 @@ const HappySlider = () => {
                             </div>
                             <img className="relative z-10 mb-0" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
-                                <div style={i === 0 ? { display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)' } : { display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)' }} className="border border-[#000] rounded-[10px] flex justify-center items-center px-7 pt-[20px] pb-9">
+                                <div style={i === 0 ? { display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)' } : { display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)' }} className="border border-[#000] rounded-[10px] flex justify-center items-center px-2 pt-[10px] pb-5">
                                     {
                                         i >= 2 ?
-                                            <p className="monterey text-center">
+                                            <p className="monterey text-center text-[14px]">
                                                 {el.text}
                                             </p>
                                             : i === 1 ?
@@ -74,8 +74,8 @@ const HappySlider = () => {
                                                     {
                                                         el.text.map((textItem, index) => (
                                                             <div className="flex items-center gap-1">
-                                                                <div className="h-[18px] w-[18px] rounded-full bg-white"></div>
-                                                                <p>
+                                                                <div className="h-[15px] w-[15px] rounded-full bg-white"></div>
+                                                                <p className="text-[15px]">
                                                                     {textItem}
                                                                 </p>
                                                             </div>
@@ -88,7 +88,7 @@ const HappySlider = () => {
                                 </div>
                             </div>
                             <div className="relative w-full h-[100px]">
-                                <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '45px' : '35px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
+                                <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '45px' : '66px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
                                     <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
                                         Выбрать услугу
                                     </a>

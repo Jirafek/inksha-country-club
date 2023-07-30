@@ -53,7 +53,7 @@ const HappySlider = () => {
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="relative pb-[30px]">
+                        <div className="relative pb-[40px]">
                             <img className="absolute w-full h-screen top-0" src={el.bg} alt="" />
                             <div style={{ transform: 'translateX(-50%)' }} className="m-0 w-[330px] flex left-1/2 flex-col items-center absolute z-20 top-0">
                                 <img src="/image/happy_title.png" alt="" />

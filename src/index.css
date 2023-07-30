@@ -426,3 +426,7 @@ Welome widget css ---------------------------- */
   border: solid 1px white;
   border-radius: 20px 20px 0 0;
 }
+
+.ytp-title-link {
+  display: none;
+}

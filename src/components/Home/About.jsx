@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import NumeredItemsData from '../../utils/Home/NumeredItemsData';
 import NumberedItem from './helpers/NumberedItem';
 import { m } from 'framer-motion';
@@ -28,6 +28,20 @@ const headingLinesOpacity = {
 };
 
 const About = () => {
+
+    useEffect(() => {
+        const customStyles = `
+        .ytp-title-link {
+            display: none !important;
+        }
+        `;
+
+        const styleElement = document.createElement('style');
+      styleElement.innerHTML = customStyles;
+      const ytDoc = document.querySelector('.yt-video');
+    //   ytDoc.document.head.appendChild(styleElement);
+    })
+
     const handleDownload = () => {
         const fileUrl = '/pdf/iksha-country-club.pdf';
         window.open(fileUrl, '_blank');
@@ -47,7 +61,7 @@ const About = () => {
                 <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.png" alt="" />
                 <div className="pt-[180px] pb-[1.75rem] flex justify-center items-center">
 
-                    <iframe className="relative w-[330px] h-[180px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe className="relative yt-video w-[330px] h-[205px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                     {/* <div className="relative max-w-[352px] max-h-[209px]">
                         <img className="absolute top-0" src="/image/video_border.png" alt="" />
                         <div className="flex justify-center items-center">

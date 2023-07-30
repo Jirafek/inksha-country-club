@@ -41,16 +41,16 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom="100px" />,
-        prevArrow: <CustomPrevArrow isBottom="100px" />,
+        nextArrow: <CustomNextArrow isBottom="160px" />,
+        prevArrow: <CustomPrevArrow isBottom="160px" />,
     };
     return (
-        <section className="relative h-[800px]">
+        <section className="relative h-screen">
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
                         <div className="relative pb-[70px]">
-                            <img className="absolute w-full h-[800px] top-0" src={el.bg} alt="" />
+                            <img className="absolute w-full h-screen top-0" src={el.bg} alt="" />
                             <div className="m-0 flex flex-col items-center z-10 relative">
                                 <img src="/image/happy_title.png" alt="" />
                             </div>
@@ -83,7 +83,7 @@ const HappySlider = () => {
 
                                 </div>
                             </div>
-                            <div style={{transform: 'translateX(-50%)'}} className="absolute left-1/2 bottom-[40px] z-20">
+                            <div style={{transform: 'translateX(-50%)', bottom: `${i === 0 ? '150px' : '35px'}`}} className="absolute left-1/2 bottom-[150px] z-20">
                                     <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
                                         Прайс-Лист
                                     </a>

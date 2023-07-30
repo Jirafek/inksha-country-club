@@ -90,7 +90,7 @@ const HappySlider = () => {
                             <div className="relative w-full h-[100px]">
                                 <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '30px' : '35px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
                                     <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
-                                        Прайс-Лист
+                                        Выбрать услугу
                                     </a>
                                 </div>
                             </div>

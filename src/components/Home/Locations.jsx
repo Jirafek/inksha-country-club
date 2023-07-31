@@ -33,28 +33,28 @@ const headingLinesOpacity = {
 
 const sliderData = [ // get images from FireBase
     {
-        img: '/image/locations1.png',
+        img: '/image/locations1.webp',
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
         link: '/locations/1'
     },
     {
-        img: '/image/locations2.png',
+        img: '/image/locations2.webp',
         title: 'ШАЛЕ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
         link: '/locations/2'
     },
     {
-        img: '/image/locations3.png',
+        img: '/image/locations3.webp',
         title: 'КОТТЕДЖ',
         people: 'до 10 человек',
         money: 'от 10,000 Р',
         link: '/locations/3'
     },
     {
-        img: '/image/locations4.png',
+        img: '/image/locations4.webp',
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
@@ -76,7 +76,7 @@ const Locations = () => {
     return (
         <section id="locations" className="about_background back_settings relative">
             <div className="pt-10 flex flex-col items-center">
-                <img src="/image/locations_bg_title.png" alt="" />
+                <img src="/image/locations_bg_title.webp" alt="" />
             </div>
 
             <Slider {...settings}>
@@ -89,7 +89,7 @@ const Locations = () => {
                                     <img className="px-5 mb-[10px]" src={el.img} alt="" />
                                 </div>
                                 <div className="flex justify-center">
-                                    <div style={{ backgroundImage: 'url(/image/locations_about.png)' }} className="back_settings text-[16px] monterey text-[#000] flex w-[240px] h-[95px] flex-col items-center justify-center">
+                                    <div style={{ backgroundImage: 'url(/image/locations_about.webp)' }} className="back_settings text-[16px] monterey text-[#000] flex w-[240px] h-[95px] flex-col items-center justify-center">
                                         <h2 className="font-bold text-[14px]">
                                             {el.title}
                                         </h2>
@@ -107,7 +107,7 @@ const Locations = () => {
                 }
             </Slider>
             <div className="flex justify-center pb-[65px]">
-                <Link to="/locations-about" style={{ backgroundImage: 'url(/image/location_about_button.png)' }} className="w-[175px] text-[22px] font-bold h-[60px] text-[#000] monterey flex justify-center items-center">
+                <Link to="/locations-about" style={{ backgroundImage: 'url(/image/location_about_button.webp)' }} className="w-[175px] text-[22px] font-bold h-[60px] text-[#000] monterey flex justify-center items-center">
                     Подробнее
                 </Link>
             </div>

@@ -206,14 +206,14 @@ const DatesChooser = () => {
             style={{ height: '100vh' }}
             className="about_background back_settings relative">
             <m.div variants={headingLines} className="flex flex-col items-center">
-                <img src="/image/dates_title.png" alt="" />
+                <img src="/image/dates_title.webp" alt="" />
             </m.div>
             <Slider className="mt-5 mb-2" {...settings}>
                 {
                     datesData.map((el, i) => (
                         <div key={uuidv4()} className="flex flex-col items-center justify-center">
                             <div className="flex justify-center">
-                                <div style={{ backgroundImage: 'url(/image/dates_chooser_bg.png)' }} className="back_settings flex justify-center items-center text-white monterey text-[14px] relative w-[270px] h-[70px]">
+                                <div style={{ backgroundImage: 'url(/image/dates_chooser_bg.webp)' }} className="back_settings flex justify-center items-center text-white monterey text-[14px] relative w-[270px] h-[70px]">
                                     {el.title}
                                 </div>
                             </div>

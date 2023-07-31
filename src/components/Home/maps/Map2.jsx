@@ -6,7 +6,7 @@ const Map2 = () => {
         <div className="wrapper">
             <div className="map__wrapper">
                 <picture className="map-picture">
-                    <img src="/image/shk.png" alt="" className="map_image" />
+                    <img src="/image/shk.webp" alt="" className="map_image" />
                 </picture>
             </div>
             <div className="map-controls">

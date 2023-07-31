@@ -8,12 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 // GEt data from firebase
 
 const imageData = [
-    '/image/dates_people_photo.png',
-    '/image/dates_people_photo2.png',
-    '/image/dates_people_photo3.png',
-    '/image/dates_people_photo4.png',
-    '/image/dates_people_photo5.png',
-    '/image/dates_people_photo6.png',
+    '/image/dates_people_photo.webp',
+    '/image/dates_people_photo2.webp',
+    '/image/dates_people_photo3.webp',
+    '/image/dates_people_photo4.webp',
+    '/image/dates_people_photo5.webp',
+    '/image/dates_people_photo6.webp',
 ];
 
 const Dates = () => {
@@ -27,16 +27,16 @@ const Dates = () => {
         autoplay: true,
     };
     return (
-        <section id="dates" style={{ backgroundImage: 'url(/image/dates_bg.png)' }} className="back_settings relative">
+        <section id="dates" style={{ backgroundImage: 'url(/image/dates_bg.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center">
-                <img src="/image/dates_title.png" alt="" />
+                <img src="/image/dates_title.webp" alt="" />
             </div>
             <div className="flex justify-center mb-3">
-                <img className="heart" src="/image/heart_dates.png" alt="" />
+                <img className="heart" src="/image/heart_dates.webp" alt="" />
             </div>
 
             <div className="flex justify-center mb-3">
-                <div style={{ backgroundImage: 'url(/image/dates_test_bg.png)' }} className="back_settings w-[313px] h-[152px] py-3 px-[18px] text-center monterey font-medium text-[14px]">
+                <div style={{ backgroundImage: 'url(/image/dates_test_bg.webp)' }} className="back_settings w-[313px] h-[152px] py-3 px-[18px] text-center monterey font-medium text-[14px]">
                     Романтическая атмосфера, закат на воде, ужин при свечах и рассвет над кронами деревьев, именно так и должно выглядеть идеальное свидание, и вы знаете где его провести.
                 </div>
             </div>
@@ -45,7 +45,7 @@ const Dates = () => {
                     imageData.map((el, i) => (
                         <div key={uuidv4()} className="flex justify-center">
                             <div className="flex justify-center relative">
-                                <div style={{ backgroundImage: 'url(/image/dates_photo_cup.png)' }} className="back_settings w-[330px] h-[210px] flex justify-center items-center z-20"></div>
+                                <div style={{ backgroundImage: 'url(/image/dates_photo_cup.webp)' }} className="back_settings w-[330px] h-[210px] flex justify-center items-center z-20"></div>
                                 <img style={{ transform: 'translateX(-50%) translateY(-50%)' }} className="w-[310px] absolute left-1/2 top-1/2" src={el} alt="" />
                             </div>
                         </div>
@@ -53,7 +53,7 @@ const Dates = () => {
                 }
             </Slider>
             <Link to="/choose-date" className="flex justify-center pb-32">
-                <button style={{ backgroundImage: 'url(/image/choose_date.png)' }} className="back_settings w-[205px] h-[70px]"></button>
+                <button style={{ backgroundImage: 'url(/image/choose_date.webp)' }} className="back_settings w-[205px] h-[70px]"></button>
             </Link>
         </section>
     );

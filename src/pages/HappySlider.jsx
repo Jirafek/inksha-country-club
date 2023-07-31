@@ -8,14 +8,14 @@ import FixedFuter from '../components/Home/FixedFuter';
 
 const sliderData = [
     {
-        bg: '/image/h_bg4.png',
-        img: '/image/h_4.png',
+        bg: '/image/h_bg4.webp',
+        img: '/image/h_4.webp',
         text: '',
         height: '545px'
     },
     {
-        bg: '/image/h_bg3.png',
-        img: '/image/h_3.png',
+        bg: '/image/h_bg3.webp',
+        img: '/image/h_3.webp',
         title: 'ВИДЫ АКТИВНОГО ОТДЫХА',
         text: [
             'велосипед, квадроцикл',
@@ -25,14 +25,14 @@ const sliderData = [
         height: '356px'
     },
     {
-        bg: '/image/h_bg1.png',
-        img: '/image/h_1.png',
+        bg: '/image/h_bg1.webp',
+        img: '/image/h_1.webp',
         text: 'Баня и спа: Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое',
         height: '306px'
     },
     {
-        bg: '/image/h_bg2.png',
-        img: '/image/h_2.png',
+        bg: '/image/h_bg2.webp',
+        img: '/image/h_2.webp',
         text: 'Если вы любите рыбалку, Икша Кантри Клаб - прекрасное место для вас. Водохранилище и форелевый пруд на территории вас приятно удивят.',
         height: '316px'
     },
@@ -56,7 +56,7 @@ const HappySlider = () => {
                         <div className="relative pb-[40px]">
                             <img className="absolute w-full h-screen top-0" src={el.bg} alt="" />
                             <div style={{ transform: 'translateX(-50%)' }} className="m-0 w-[330px] flex left-1/2 flex-col items-center absolute z-20 top-0">
-                                <img src="/image/happy_title.png" alt="" />
+                                <img src="/image/happy_title.webp" alt="" />
                             </div>
                             <img className="relative z-10 mb-0" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
@@ -89,7 +89,7 @@ const HappySlider = () => {
                             </div>
                             <div className="relative w-full h-[100px]">
                                 <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '45px' : '66px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
-                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.png)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
+                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.webp)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
                                         Выбрать услугу
                                     </a>
                                 </div>

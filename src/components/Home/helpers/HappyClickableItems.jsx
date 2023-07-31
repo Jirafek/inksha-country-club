@@ -29,7 +29,7 @@ const HappyClickableItems = ({ arrayData }) => {
                                     <img className="rounded-full object-cover w-[110px] h-[110px]" src={el.img} alt="" />
                                 </m.div>
                                 <div className="w-[115px] h-[34px] flex justify-center items-center mb-[25px]">
-                                    <img className="absolute" src="/image/happy_text_block.png" alt="" />
+                                    <img className="absolute" src="/image/happy_text_block.webp" alt="" />
                                     <p className="text-white text-center monterey text-base font-medium z-20 relative">
                                         {el.text}
                                     </p>

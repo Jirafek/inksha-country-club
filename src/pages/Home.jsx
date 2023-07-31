@@ -65,7 +65,7 @@ const Home = () => {
                         >
                             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
                                 <div className='flex flex-col h-full w-full justify-center items-center'>
-                                    <img onClick={toggle}  style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.png" alt="" />
+                                    <img onClick={toggle}  style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.webp" alt="" />
                                     <div className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
                                         {routes.map((el, i) => {
                                             return (
@@ -83,7 +83,7 @@ const Home = () => {
                         </Transition.Child>
                     </Dialog>
                 </Transition.Root>
-                <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.png" alt="" />
+                <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.webp" alt="" />
                 <Welcome />
                 <Map />
                 <About />
@@ -93,7 +93,7 @@ const Home = () => {
                 <Locations />
                 <Events />
                 <EventsFromFireBase />
-                <img className='w-full h-[851px]' src="/image/help.png" alt="" />
+                <img className='w-full h-[851px]' src="/image/help.webp" alt="" />
                 <Calculate />
                 <Spec />
                 <Dates />

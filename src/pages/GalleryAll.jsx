@@ -30,30 +30,30 @@ const headingLines = {
 };
 
 const imagesTerritory = [
-    "/image/gallery-all1.png",
-    "/image/gallery-all2.png",
-    "/image/gallery-all3.png",
-    "/image/gallery-all5.png",
-    "/image/gallery-all6.png",
-    "/image/gallery-all7.png",
+    "/image/gallery-all1.webp",
+    "/image/gallery-all2.webp",
+    "/image/gallery-all3.webp",
+    "/image/gallery-all5.webp",
+    "/image/gallery-all6.webp",
+    "/image/gallery-all7.webp",
 ];
 
 const imagesActive = [
-    "/image/gallery-all8.png",
-    "/image/gallery-all9.png",
-    "/image/gallery-all10.png",
-    "/image/gallery-all11.png",
-    "/image/gallery-all12.png",
-    "/image/gallery-all13.png",
+    "/image/gallery-all8.webp",
+    "/image/gallery-all9.webp",
+    "/image/gallery-all10.webp",
+    "/image/gallery-all11.webp",
+    "/image/gallery-all12.webp",
+    "/image/gallery-all13.webp",
 ];
 
 const gallerySliderData = [
     {
-        img: '/image/gallery_slider_title.png',
+        img: '/image/gallery_slider_title.webp',
         items: imagesTerritory
     },
     {
-        img: '/image/gallery_slider_title1.png',
+        img: '/image/gallery_slider_title1.webp',
         items: imagesActive
     },
 ];

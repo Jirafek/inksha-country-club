@@ -75,19 +75,19 @@ const sky4 = {
 
 const fireBaseData = [
     {
-        img: '/image/events_fire1.JPG',
+        img: '/image/events_fire1.webp',
         link: '',
         title: 'День настольных игр',
         date: '15.04.2023'
     },
     {
-        img: '/image/events_fire2.JPG',
+        img: '/image/events_fire2.webp',
         link: '',
         title: 'Мастер класс «Sup-Board для новичков»',
         date: '23.06.2023'
     },
     {
-        img: '/image/events_fire3.jpg',
+        img: '/image/events_fire3.webp',
         link: '',
         title: 'Фестиваль лимонада',
         date: '19.08.2023'
@@ -102,16 +102,16 @@ const EventsFromFireBase = () => {
             viewport={{ once: true }}
             variants={heading}
             id="blog"
-            style={{ backgroundImage: 'url(/image/bg-eve.png)', overflowX: 'hidden' }}
+            style={{ backgroundImage: 'url(/image/bg-eve.webp)', overflowX: 'hidden' }}
             className="min-h-[500px] back_settings relative">
             <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
-                <img src="/image/eventsFireBase_bg_title.png" alt="" />
+                <img src="/image/eventsFireBase_bg_title.webp" alt="" />
             </div>
             <div>
-                <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.png" alt="" />
-                <m.img variants={sky2} className="absolute -top-[60px] right-0" src="/image/events_sky2.png" alt="" />
-                <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.png" alt="" />
-                <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.png" alt="" />
+                <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.webp" alt="" />
+                <m.img variants={sky2} className="absolute -top-[60px] right-0" src="/image/events_sky2.webp" alt="" />
+                <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.webp" alt="" />
+                <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.webp" alt="" />
             </div>
             <div className="h-[500px] overflow-hidden">
                 <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px] overflow-hidden">
@@ -134,7 +134,7 @@ const EventsFromFireBase = () => {
                                             {el.date}
                                         </p>
                                     </div>
-                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/fire_button.png)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/fire_button.webp)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
                                         Подробнее
                                     </a>
                                 </div>

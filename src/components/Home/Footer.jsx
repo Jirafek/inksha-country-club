@@ -5,21 +5,21 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.png)' }}>
+        <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
             <div className="pt-10 flex flex-col items-center">
-                <img src="/image/footer_title.png" alt="" />
+                <img src="/image/footer_title.webp" alt="" />
             </div>
             <div className="w-full footer_blured_back flex flex-col pt-5 pl-2">
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center">
-                        <img src="/image/call_big.png" alt="" />
+                        <img src="/image/call_big.webp" alt="" />
                         <a href="tel:+7985909120">
                             <h2 className="text-white monterey font-extrabold underline">+7 985 909 12 02</h2>
                         </a>
                     </div>
                     <div className="flex items-center">
-                        <div style={{ backgroundImage: 'url(/image/email_big.png)' }} className="flex w-[49px] h-[51px] justify-center items-center back_settings">
-                            <img src="/image/email_inside.png" alt="" />
+                        <div style={{ backgroundImage: 'url(/image/email_big.webp)' }} className="flex w-[49px] h-[51px] justify-center items-center back_settings">
+                            <img src="/image/email_inside.webp" alt="" />
                         </div>
                         <a href="mailto:contact@ikshacountryclub.com">
                             <h2 className="text-white monterey font-extrabold underline">contact@ikshacountryclub.com</h2>

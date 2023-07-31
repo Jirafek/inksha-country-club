@@ -4,12 +4,12 @@ import HappyClickableItemsData from '../../utils/Home/HappyClickableItemsData';
 
 const Happy = () => {
     return (
-        <section id="happy" style={{backgroundImage: 'url(/image/bg-happy.png)'}} className="happy_background relative back_settings">
+        <section id="happy" style={{backgroundImage: 'url(/image/bg-happy.webp)'}} className="happy_background relative back_settings">
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/happy_title.png" alt="" />
+                <img src="/image/happy_title.webp" alt="" />
             </div>
             <HappyClickableItems arrayData={HappyClickableItemsData} />
-                <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.png" alt="" />
+                <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" alt="" />
         </section>
     );
 }

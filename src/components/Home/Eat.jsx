@@ -43,19 +43,19 @@ const headingLinesRight = {
 
 const EatListData = [
     {
-        img: '/image/fire.png',
+        img: '/image/fire.webp',
         text: 'плов на костре',
-        openImage: '/image/plov.png'
+        openImage: '/image/plov.webp'
     },
     {
-        img: '/image/fish.png',
+        img: '/image/fish.webp',
         text: 'финская уха на костре',
-        openImage: '/image/uha.png'
+        openImage: '/image/uha.webp'
     },
     {
-        img: '/image/cooker.png',
+        img: '/image/cooker.webp',
         text: 'шашлык от Шефа',
-        openImage: '/image/shah.png'
+        openImage: '/image/shah.webp'
     },
 ];
 
@@ -77,7 +77,7 @@ const Eat = () => {
         viewport={{ once: true }}
         variants={heading} 
         id="eat" 
-        style={{ backgroundImage: 'url(/image/eat_bg.png)' }} 
+        style={{ backgroundImage: 'url(/image/eat_bg.webp)' }} 
         className="happy_background relative back_settings">
             {selectedImage && (
                 <div
@@ -89,13 +89,13 @@ const Eat = () => {
                 </div>
             )}
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/eat_bg_title.png" alt="" />
+                <img src="/image/eat_bg_title.webp" alt="" />
             </div>
-            <img className="w-full mb-[5px]" src="/image/cook_cooker.png" alt="" />
+            <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
             <div className="flex justify-center mb-[5px]">
-                <div className="back_settings flex flex-col justify-around items-center h-[255px] w-[350px] relative py-3" style={{ backgroundImage: 'url(/image/cook_frame.png)', backgroundSize: 'auto' }}>
+                <div className="back_settings flex flex-col justify-around items-center h-[255px] w-[350px] relative py-3" style={{ backgroundImage: 'url(/image/cook_frame.webp)', backgroundSize: 'auto' }}>
                     <h4 className="monterey text-lg font-semibold text-[#161212] text-[16px]">МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ</h4>
-                    <img className="absolute top-[45px] left-[110px] z-10" src="/image/ukr1.png" alt="" />
+                    <img className="absolute top-[45px] left-[110px] z-10" src="/image/ukr1.webp" alt="" />
                     {
                         EatListData.map((el, i) => (
                             <div key={uuidv4()} className="flex gap-[5px] items-center self-start pl-7 z-20" onClick={() => openImage(el.openImage)}>
@@ -114,7 +114,7 @@ const Eat = () => {
                     className="max-w-[360px] w-full h-[105px] rounded-[50px] border-white border py-[10px] flex flex-col items-center justify-center relative"
                 >
                     <p className="monterey text-[17px] text-white text-center w-[300px]">Также мы готовы организовать для вас кейтеринг !</p>
-                    <img className="absolute bottom-[14px] right-[10px]" src="/image/bulk.png" alt="" />
+                    <img className="absolute bottom-[14px] right-[10px]" src="/image/bulk.webp" alt="" />
                     <Link to="/keitering">
                         <button
                             style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
@@ -125,8 +125,8 @@ const Eat = () => {
                     </Link>
                 </div>
             </div>
-            <m.img className="absolute bottom-0 left-4" variants={headingLinesRight} src="/image/chair_left.png" alt="" />
-            <m.img className="absolute -bottom-[65px] right-4 z-10" variants={headingLinesLeft} src="/image/chair_right.png" alt="" />
+            <m.img className="absolute bottom-0 left-4" variants={headingLinesRight} src="/image/chair_left.webp" alt="" />
+            <m.img className="absolute -bottom-[65px] right-4 z-10" variants={headingLinesLeft} src="/image/chair_right.webp" alt="" />
         </m.section>
     );
 }

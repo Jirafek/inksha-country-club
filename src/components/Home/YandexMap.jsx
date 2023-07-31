@@ -36,7 +36,7 @@ const YandexMap = () => {
             id="contacts">
             <div className="relative">
             <div style={{transform: 'translateX(-50%)'}} className="absolute top-3 left-1/2 w-[320px]">
-                <img src="/image/yandex_map_title.png" alt="" />
+                <img src="/image/yandex_map_title.webp" alt="" />
             </div>
                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="800" frameBorder="0"></iframe>
             </div>
@@ -54,19 +54,19 @@ const YandexMap = () => {
 
                     <div className="absolute bottom-[2px] right-0 flex items-center">
                         <a target="_blanc" href="https://wa.me/+79859091202">
-                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/wa.png" alt="" />
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/wa.webp" alt="" />
                         </a>
                         <a target="_blanc" href="https://t.me/ikshacountryclub">
-                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/tg.png" alt="" />
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/tg.webp" alt="" />
                         </a>
                         <a className="mr-[10px] ml-1" target="_blanc" href="https://vk.com/ikshacountryclub">
-                            <img src="/image/vk.png" alt="" />
+                            <img src="/image/vk.webp" alt="" />
                         </a>
                         <a className="mr-1" target="_blanc" href="https://www.instagram.com/ikshacountryclub">
-                            <img src="/image/inst.png" alt="" />
+                            <img src="/image/inst.webp" alt="" />
                         </a>
                         <a target="_blanc" href="https://www.youtube.com/@ikshacountryclub">
-                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.png" alt="" />
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="" />
                         </a>
                     </div>
                 </div>

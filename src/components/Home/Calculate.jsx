@@ -285,11 +285,9 @@ const Calculate = () => {
             })
         }
 
-        console.log(currentTotal)
         if (days >= 3) {
             currentTotal = currentTotal * (1 - SALE) // отнимаем скидку
         }
-        console.log(currentTotal)
 
         setTotal(currentTotal);
     }
@@ -298,13 +296,13 @@ const Calculate = () => {
 
     };
     return (
-        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.png)' }} className="back_settings relative">
+        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center">
-                <img src="/image/calc_bg_title.png" alt="" />
+                <img src="/image/calc_bg_title.webp" alt="" />
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>
                 <div
-                    style={{ backgroundImage: 'url(/image/calc_type_bg.png)' }}
+                    style={{ backgroundImage: 'url(/image/calc_type_bg.webp)' }}
                     className="back_settings text-[#000] monterey w-[337px] h-[376px]"
                 >
                     <div className="flex flex-col text-[13px] monterey text-[#433E6A] gap-2">
@@ -342,7 +340,7 @@ const Calculate = () => {
                         <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество гостей: <span className="w-5 block ml-1">{guesses}</span></h2>
                         <div className="flex justify-center">
                             <div className="flex items-center">
-                                <img className="mr-[10px]" src="/image/man_icon.png" alt="" />
+                                <img className="mr-[10px]" src="/image/man_icon.webp" alt="" />
                                 <div className="border border-black w-8 h-[22px] text-[19px] flex items-center justify-center font-semibold">1</div>
                                 <input
                                     type="range"
@@ -383,7 +381,7 @@ const Calculate = () => {
                         <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h2>
                         <div className="flex justify-center">
                             <div className="flex items-center">
-                                <img className="mr-[10px]" src="/image/calculate_calendar.png" alt="" />
+                                <img className="mr-[10px]" src="/image/calculate_calendar.webp" alt="" />
                                 <div className="border border-black w-8 h-[22px] text-[19px] flex items-center justify-center font-semibold">1</div>
                                 <input
                                     type="range"
@@ -399,10 +397,10 @@ const Calculate = () => {
                     </div>
                 </div>
                 <div
-                    style={{ backgroundImage: 'url(/image/extra_calc_bg.png)' }}
+                    style={{ backgroundImage: 'url(/image/extra_calc_bg.webp)' }}
                     className="back_settings text-[#000] monterey w-[345px] h-[255px] relative my-2"
                 >
-                    <div style={{ transform: 'translateX(-50%)', backgroundImage: 'url(/image/calc_headline.png)' }} className="back_settings h-[36px] w-[268px] absolute flex justify-center items-center left-1/2 top-0 text-[15px] font-semibold">
+                    <div style={{ transform: 'translateX(-50%)', backgroundImage: 'url(/image/calc_headline.webp)' }} className="back_settings h-[36px] w-[268px] absolute flex justify-center items-center left-1/2 top-0 text-[15px] font-semibold">
                         Дополнительные услуги
                     </div>
                     <div className="flex flex-col gap-[10px] px-5 mt-10 overflow-y-auto h-[190px]">
@@ -432,7 +430,7 @@ const Calculate = () => {
                     Предварительная стоимость: {total}
                 </div>
                 <div className="flex justify-center">
-                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.png)' }} className="back_settings w-[208px] h-[45px]"></a>
+                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></a>
                 </div>
             </form>
         </section>

@@ -47,15 +47,15 @@ const FAQ = () => {
         setExpandedQuestion(index === expandedQuestion ? null : index);
     };
     return (
-        <section style={{ backgroundImage: 'url(/image/faq_bg.png)' }} className="relative back_settings h-[851px]">
+        <section style={{ backgroundImage: 'url(/image/faq_bg.webp)' }} className="relative back_settings h-[851px]">
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/faq_title.png" alt="" />
+                <img src="/image/faq_title.webp" alt="" />
             </div>
             <div className="flex justify-center flex-col items-center gap-2">
                 {
                     faq_data.map((el, i) => (
                         <div className="flex items-center">
-                            <img onClick={() => handleQuestionClick(i)} src="/image/faq_plus.png" alt="" />
+                            <img onClick={() => handleQuestionClick(i)} src="/image/faq_plus.webp" alt="" />
                             <div className="flex flex-col items-center justify-center gap-1">
                                 <div className="rounded-[60px] border border-white w-[270px] py-[9px] monterey text-white text-center flex justify-center font-extrabold items-center text-[15px]" style={{ backgroundColor: 'rgba(111, 98, 98, 0.54)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}>
                                     {el.question}

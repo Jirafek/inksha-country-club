@@ -2079,7 +2079,7 @@ img:not([src]) {
     height: auto;
     overflow: hidden;
     cursor:
-        url('/image/map_cursor.png') 0 0,
+        url('/image/map_cursor.webp') 0 0,
         auto;
 }
 .map-ships {
@@ -2104,7 +2104,7 @@ img:not([src]) {
 }
 .map_image_ship__wrapper:hover {
      cursor:
-        url('/image/map_cursor_hover.png') 0 0,
+        url('/image/map_cursor_hover.webp') 0 0,
         auto;
 }
 .map_image_ship {
@@ -2189,7 +2189,7 @@ img:not([src]) {
 }
 .map_button:hover {
     cursor:
-        url('/image/map_cursor_hover.png') 0 0,
+        url('/image/map_cursor_hover.webp') 0 0,
         auto;
 }
 .map_button:hover path:not(:nth-child(1)) {

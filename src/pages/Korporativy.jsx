@@ -10,15 +10,15 @@ import FixedFuter from '../components/Home/FixedFuter';
 
 const images = [
     {
-        img: '/image/korp_bania.png',
+        img: '/image/korp_bania.webp',
         text: 'Растопка бани и купели'
     },
     {
-        img: '/image/korp_chill.png',
+        img: '/image/korp_chill.webp',
         text: 'Активный отдых'
     },
     {
-        img: '/image/korp_riba.png',
+        img: '/image/korp_riba.webp',
         text: 'Рыбалка на пруду'
     },
 ];
@@ -74,13 +74,13 @@ const Korporativy = () => {
         <div>
             {
                 currentWindow === 1 ?
-                    <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.jpg)' }} className="relative back_settings h-[851px]">
+                    <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.webp)' }} className="relative back_settings h-[851px]">
                         <div className="m-0 flex flex-col items-center">
-                            <img src="/image/korp_title.png" alt="" />
+                            <img src="/image/korp_title.webp" alt="" />
                         </div>
                         <div className="flex justify-center relative">
-                            <img src="/image/korp_layer_photo.png" alt="" />
-                            <img className="absolute bottom-1" src="/image/korp_people.png" alt="" />
+                            <img src="/image/korp_layer_photo.webp" alt="" />
+                            <img className="absolute bottom-1" src="/image/korp_people.webp" alt="" />
                         </div>
                         <div>
                             <div className="flex justify-center flex-col px-[30px]">
@@ -109,22 +109,22 @@ const Korporativy = () => {
                         </div>
                         <div className="absolute top-[427px] right-0">
                             <div className="relative">
-                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.png" alt="" />
-                                <img className="z-30 relative" src="/image/ramp_korp.png" alt="" />
+                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.webp" alt="" />
+                                <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
                             </div>
                         </div>
-                        <img className="absolute w-full bottom-1" src="/image/korp_men.png" alt="" />
+                        <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
                         <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
-                            <img src="/image/korp_btn.png" alt="" />
+                            <img src="/image/korp_btn.webp" alt="" />
                         </button>
                     </form>
                     : currentWindow === 2 ?
-                        <form onSubmit={handleSubmit(onSend)} style={{ backgroundImage: 'url(/image/korp_bg2.jpg)' }} className="relative back_settings h-[750px]">
+                        <form onSubmit={handleSubmit(onSend)} style={{ backgroundImage: 'url(/image/korp_bg2.webp)' }} className="relative back_settings h-[750px]">
                             <div className="m-0 flex flex-col items-center">
-                                <img src="/image/korp_title.png" alt="" />
+                                <img src="/image/korp_title.webp" alt="" />
                             </div>
                             <div className="flex justify-center">
-                                <div style={{ backgroundImage: 'url(/image/korp2_tabl.png)' }} className="relative back_settings w-[265px] h-[204px] pt-[55px] font-medium pb-[25px] px-[21px] monterey text-[22px] text-center">
+                                <div style={{ backgroundImage: 'url(/image/korp2_tabl.webp)' }} className="relative back_settings w-[265px] h-[204px] pt-[55px] font-medium pb-[25px] px-[21px] monterey text-[22px] text-center">
                                     Оставьте ваши контакты и наш менеджер свяжется с вами
                                 </div>
                             </div>
@@ -139,14 +139,14 @@ const Korporativy = () => {
                             </div>
                             <div className="flex justify-center">
                                 <button className="w-[338px]">
-                                    <img src="/image/korp2_btn.png" alt="" />
+                                    <img src="/image/korp2_btn.webp" alt="" />
                                 </button>
                             </div>
                         </form>
                         : currentWindow === 3 ?
                             <>
                                 {navigateState && <Navigate to="/" />}
-                                <img className="h-[851px]" src="/image/bron_good.jpg" alt="" />
+                                <img className="h-[851px]" src="/image/bron_good.webp" alt="" />
                             </>
                             :
                             <div className="flex justify-center items-center h-screen">

@@ -141,7 +141,7 @@ const Welcome = () => {
           skyContainer1.classList.add('animate-moveSky1');
           skyContainer2.classList.add('animate-moveSky2');
           doskaContainer.classList.add('animate-moveDoska');
-        }, 2500)
+        }, 1500)
       const styleElement = document.createElement('style');
       styleElement.innerHTML = customStyles;
       document.head.appendChild(styleElement);
@@ -156,23 +156,23 @@ const Welcome = () => {
     setTimeout(() => {
       document.querySelector('.animate-moveSky1').style.display = 'none'
       document.querySelector('.animate-moveSky2').style.display = 'none'
-    }, 6000)
+    }, 4500)
   }, []);
   return (
     <section id='book' className="relative m-0">
-      <img className="w-full h-[665px]" src="/image/bg1.jpg" alt="" />
+      <img className="w-full h-[665px]" src="/image/bg1.webp" alt="" />
       {/* <VideoPlayer /> */}
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
-        <img className='w-full h-full' src="/image/doska.png" alt="" />
+        <img className='w-full h-full' src="/image/doska.webp" alt="" />
         <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
-          <img className='w-[44px]' src="/image/call.png" alt="" />
+          <img className='w-[44px]' src="/image/call.webp" alt="" />
         </a>
         <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
-          <img className='w-[80px]' src="/image/about.png" alt="" />
+          <img className='w-[80px]' src="/image/about.webp" alt="" />
         </a>
       </div>
-      <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.png" alt="" />
-      <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.png" alt="" />
+      <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.webp" alt="" />
+      <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.webp" alt="" />
       <div
         style={{ transform: 'translateX(-50%)' }}
         className='absolute left-1/2 w-full bottom-[4.5rem]'
@@ -186,15 +186,15 @@ const Welcome = () => {
           onSubmit={handleSubmit(onSubmit)}
           className='px-16 hidden'>
           <m.div className='relative w-full mb-2'> {/*  variants={headingLines} */}
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />
+            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="" />
             <input style={errors.zaezd && { borderColor: 'red' }} {...register("zaezd", { required: true })} id='zaezd' placeholder='ЗАЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.div className='relative w-full mb-2'>
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.png" alt="" />
+            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="" />
             <input style={errors.viezd && { borderColor: 'red' }} {...register("viezd", { required: true })} id='viezd' placeholder='ВЫЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.div className='relative w-full mb-2'>
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.png" alt="" />
+            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.webp" alt="" />
             <input style={errors.people && { borderColor: 'red' }} {...register("people", { required: true })} placeholder='КОЛИЧЕСТВО ЧЕЛОВЕК' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.button type='submit' className='w-full rounded-[30px] border border-black bg-[#0CF259] bg-opacity-50 shadow-md monterey text-white font-semibold text-lg h-9'>

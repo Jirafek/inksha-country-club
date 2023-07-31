@@ -10,7 +10,7 @@ import FixedFuter from '../components/Home/FixedFuter';
 
 const locationsData = [
     {
-        img: '/image/locations_slider_title.png',
+        img: '/image/locations_slider_title.webp',
         link: 'https://www.youtube.com/embed/myNwsKZabqs',
         title: 'Веранда с домиками на берегу',
         circles: [
@@ -28,7 +28,7 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title2.png',
+        img: '/image/locations_slider_title2.webp',
         link: 'https://www.youtube.com/embed/WbReNc_s-f4',
         title: 'Лофт-веранда с камином',
         circles: [
@@ -45,7 +45,7 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title3.png',
+        img: '/image/locations_slider_title3.webp',
         link: 'https://www.youtube.com/embed/gklmawJFCOs',
         title: 'Коттедж',
         circles: [
@@ -62,7 +62,7 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title4.png',
+        img: '/image/locations_slider_title4.webp',
         link: 'https://www.youtube.com/embed/myNwsKZabqs',
         title: 'Спальные домики с выходом на пляж',
         circles: [
@@ -115,7 +115,7 @@ const LocationsSlider = () => {
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                             <div className="flex justify-center mt-3 mb-2">
-                                <div className="w-full h-[355px] back_settings relative px-5 py-3 flex flex-col items-center" style={{backgroundImage: 'url(/image/locations_text_layer.png)'}}>
+                                <div className="w-full h-[355px] back_settings relative px-5 py-3 flex flex-col items-center" style={{backgroundImage: 'url(/image/locations_text_layer.webp)'}}>
                                     <h3 className="font-extrabold text-[20px] text-center">
                                         {el.title}
                                     </h3>

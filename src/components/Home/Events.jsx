@@ -11,7 +11,7 @@ import Confetti from "react-confetti";
 const eventsData = [
     {
         title: 'День рождения',
-        img: '/image/events_1.png',
+        img: '/image/events_1.webp',
         text: [
             'От 9 часов',
             'Уютная крытая веранда для компании',
@@ -23,7 +23,7 @@ const eventsData = [
     },
     {
         title: 'Шашлыки',
-        img: '/image/events_2.png',
+        img: '/image/events_2.webp',
         text: [
             'От 5 часов', 
             'Рыболовные снасти',
@@ -35,7 +35,7 @@ const eventsData = [
     },
     {
         title: 'Баня и Спа',
-        img: '/image/events_3.png',
+        img: '/image/events_3.webp',
         text: [
             '6 часов',
             'Русская баня',
@@ -47,7 +47,7 @@ const eventsData = [
     },
     {
         title: 'Караоке Вечеринка',
-        img: '/image/events_4.png',
+        img: '/image/events_4.webp',
         text: [
             '6 часов',
             '2 микрофона и выбор из тысяч популярных песен',
@@ -59,7 +59,7 @@ const eventsData = [
     },
     {
         title: 'Девичник',
-        img: '/image/events_5.png',
+        img: '/image/events_5.webp',
         text: [
             '6 часов',
             '2 микрофона и выбор из тысяч популярных песен',
@@ -71,7 +71,7 @@ const eventsData = [
     },
     {
         title: 'Мальчишник',
-        img: '/image/events_6.png',
+        img: '/image/events_6.webp',
         text: [
             '6 часов',
             'Русская баня',
@@ -83,7 +83,7 @@ const eventsData = [
     },
     {
         title: 'Свадьба',
-        img: '/image/events_7.png',
+        img: '/image/events_7.webp',
         text: [
             '6 часов',
             'Русская баня',
@@ -95,7 +95,7 @@ const eventsData = [
     },
     {
         title: 'Послесвадебная вечеринка',
-        img: '/image/events_8.png',
+        img: '/image/events_8.webp',
         text: [
             '6 часов',
             'Русская баня',
@@ -124,9 +124,9 @@ const Events = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
-        <section style={{ backgroundImage: 'url(/image/bg-events.png)' }} id="events" className="back_settings relative">
+        <section style={{ backgroundImage: 'url(/image/bg-events.webp)' }} id="events" className="back_settings relative">
             <div className="flex flex-col items-center">
-                <img src="/image/events_bg_title.png" alt="" />
+                <img src="/image/events_bg_title.webp" alt="" />
             </div>
             <Confetti
                 width={width}
@@ -140,7 +140,7 @@ const Events = () => {
                         return (
                             <div className="flex flex-col items-center justify-center relative" key={uuidv4()}>
                                 <div className="flex justify-center mb-[20px]">
-                                    <div style={{ backgroundImage: 'url(/image/events_title.png)' }} className="back_settings flex justify-center items-center w-[310px] h-[55px] text-[#000] monterey text-[19px] font-bold">
+                                    <div style={{ backgroundImage: 'url(/image/events_title.webp)' }} className="back_settings flex justify-center items-center w-[310px] h-[55px] text-[#000] monterey text-[19px] font-bold">
                                         {el.title}
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@ const Events = () => {
                                     <img className="px-5 w-[300px]" src={el.img} alt="" />
                                 </div>
                                 <div className="flex justify-center mb-[15px]">
-                                    <div style={{ backgroundImage: 'url(/image/events_text_bg.png)' }} className="back_settings relative text-[12px] monterey text-[#000] flex w-[240px] h-[160px] items-center justify-center">
+                                    <div style={{ backgroundImage: 'url(/image/events_text_bg.webp)' }} className="back_settings relative text-[12px] monterey text-[#000] flex w-[240px] h-[160px] items-center justify-center">
 
                                         <ul className="flex flex-col items-center justify-center pl-[15px]">
                                             {el.text.map((el, i) => {
@@ -162,7 +162,7 @@ const Events = () => {
                                     </div>
                                 </div>
                                 <Link to={el.link} className="flex justify-center pb-[30px]">
-                                    <button style={{ backgroundImage: 'url(/image/date_button_event.png)' }} className="w-[205px] text-[19px] font-bold h-[70px] text-[#000] monterey flex items-center justify-center">
+                                    <button style={{ backgroundImage: 'url(/image/date_button_event.webp)' }} className="w-[205px] text-[19px] font-bold h-[70px] text-[#000] monterey flex items-center justify-center">
                                         Выбрать дату
                                     </button>
                                 </Link>

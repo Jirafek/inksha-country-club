@@ -2,8 +2,8 @@
 const routes = [
     {
         text: "БРОНИРОВАНИЕ",
-        icon: "/image/Heart.png",
-        whiteIcon: "/image/white_heart.png",
+        icon: "/image/Heart.webp",
+        whiteIcon: "/image/white_heart.webp",
         link: "#book"
     },
     {
@@ -48,8 +48,8 @@ const routes = [
     },
     {
         text: "СПЕЦПРЕДЛОЖЕНИЯ",
-        icon: "/image/Heart.png",
-        whiteIcon: "/image/white_heart.png",
+        icon: "/image/Heart.webp",
+        whiteIcon: "/image/white_heart.webp",
         link: "#spec"
     },
     {

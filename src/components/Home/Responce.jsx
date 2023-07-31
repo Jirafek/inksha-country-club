@@ -7,12 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 const requestsData = [ // get from firebase 
     {
-        img: '/image/andrew_req.png',
+        img: '/image/andrew_req.webp',
         title: 'Олег, 33 года',
         text: 'Отмечали день рождения в этом месте. Все очень понравилось) встретили доброжелательно и дали все необходимо для барбекю. Во время отдыха никто лишний раз не беспокоил, но были на связи. У нас немного подвела погода, но все равно с удовольствием попарились и искупались в купели) в теплую погоду или летом там должно быть еще лучше) прекрасное место для спокойного семейного отдыха, мы были там с детьми и собакой) место рекомендую'
     },
     {
-        img: '/image/anna_req.png',
+        img: '/image/anna_req.webp',
         title: 'Анна, 26 лет',
         text: 'Очень хорошее место! Красиво, чисто, уютно и все продумано до мелочей! Администратор всегда на связи и всегда готов приехать и предоставить доп услуги, как караоке например. Получили огромное удовольствие от отдыха и ещё вернёмся !'
     },
@@ -30,9 +30,9 @@ const Responce = () => {
     };
 
     return (
-        <section id="req" className="back_settings relative" style={{ backgroundImage: 'url(/image/responce_bg.png)' }}>
+        <section id="req" className="back_settings relative" style={{ backgroundImage: 'url(/image/responce_bg.webp)' }}>
             <div className="pt-10 flex flex-col items-center">
-                <img src="/image/responce_title.png" alt="" />
+                <img src="/image/responce_title.webp" alt="" />
             </div>
             <Slider className="mt-5 pb-16" {...settings}>
                 {
@@ -43,12 +43,12 @@ const Responce = () => {
                             <img src={el.img} alt="" />
                             </div>
                             <div className="flex justify-center">
-                                <div className="back_settings relative flex justify-center items-center w-[185px] h-[53px] text-white monterey" style={{backgroundImage: 'url(/image/req_title_bg.png)'}}>
+                                <div className="back_settings relative flex justify-center items-center w-[185px] h-[53px] text-white monterey" style={{backgroundImage: 'url(/image/req_title_bg.webp)'}}>
                                     {el.title}
                                 </div>
                             </div>
                             <div className="flex justify-center">
-                                <div className="back_settings pt-1 relative flex justify-center items-center monterey w-[330px] h-[320px]" style={{backgroundImage: 'url(/image/textholder_req.png)'}}>
+                                <div className="back_settings pt-1 relative flex justify-center items-center monterey w-[330px] h-[320px]" style={{backgroundImage: 'url(/image/textholder_req.webp)'}}>
                                     <p className="text-center text-black w-[300px] h-[305px] overflow-y-auto py-2">
                                         {el.text}
                                     </p>

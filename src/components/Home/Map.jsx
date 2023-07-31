@@ -56,27 +56,27 @@ const Map = () => {
         positions = [
             {
                 title: 'Беседка',
-                imageSrc: '/image/besedka.jpg',
+                imageSrc: '/image/besedka.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'BBQ',
-                imageSrc: '/image/bbq_old.JPG',
+                imageSrc: '/image/bbq_old.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: '/image/dom2.jpg',
+                imageSrc: '/image/dom2.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: '/image/dom2.jpg',
+                imageSrc: '/image/dom2.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Иглу',
-                imageSrc: '/image/iglu.jpg',
+                imageSrc: '/image/iglu.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
@@ -86,42 +86,42 @@ const Map = () => {
             },
             {
                 title: 'Купель',
-                imageSrc: '/image/kupel.jpg',
+                imageSrc: '/image/kupel.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Летний душ',
-                imageSrc: '/image/dush.jpg',
+                imageSrc: '/image/dush.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.'
             },
             {
                 title: 'Свидание на берегу',
-                imageSrc: '/image/prichal.jpg',
+                imageSrc: '/image/prichal.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Посиделки у камина',
-                imageSrc: '/image/koster.JPG',
+                imageSrc: '/image/koster.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Кибертрак',
-                imageSrc: '/image/track.jpg',
+                imageSrc: '/image/track.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спальный домик',
-                imageSrc: '/image/dom2.jpg',
+                imageSrc: '/image/dom2.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Спорт и водные развлечения',
-                imageSrc: 'https://ie.wampi.ru/2023/05/10/Mask-group.png',
+                imageSrc: 'https://ie.wampi.ru/2023/05/10/Mask-group.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
             {
                 title: 'Пляж',
-                imageSrc: '/image/map_bg_mini.png',
+                imageSrc: '/image/map_bg_mini.webp',
                 text: 'Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.',
             },
         ],
@@ -133,7 +133,7 @@ const Map = () => {
         const
             positions = Array(50).fill(0).map((elem, i) => ({
                 title: `Заголовок ${i + 1}`,
-                imageSrc: './shk.png',
+                imageSrc: './shk.webp',
                 text: 'Text'
             })),
             positionRelativeMouse = { x: 10, y: 10 }
@@ -297,7 +297,7 @@ const Map = () => {
     return (
         <div id="map" className="t-body relative" style={{ margin: '0' }}>
             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
-                <img src="/image/map_bg_title.png" alt="" />
+                <img src="/image/map_bg_title.webp" alt="" />
             </div>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 top-24 z-20'>
                 <m.div
@@ -306,13 +306,13 @@ const Map = () => {
                     viewport={{ once: true }}
                     variants={heading}
                     className='flex flex-col relative'>
-                    <div onClick={handleMenu2} className='bg-[#A4B68B] z-30 border-[2px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[40px] flex items-center justify-around'>
+                    <div onClick={handleMenu2} className='bg-[#A4B68B] z-30 border-[2px] border-[#FFF] rounded-[10px] w-[300px] h-[40px] flex items-center justify-around'>
                         <p className='text-white monterey font-extrabold text-[19px]'>
                             {
                                 locations[0].title
                             }
                         </p>
-                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 0}deg)` }} src="/image/arrow_choose.png" alt="" />
+                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
                     </div>
 
 
@@ -334,19 +334,33 @@ const Map = () => {
                 </m.div>
             </div>
 
-            <div style={{ transform: 'translateX(-50%)' }} onClick={handleMenu2} className='bg-[#A4B68B] absolute bottom-[100px] left-1/2 z-30 border-[2px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[40px] flex items-center justify-around'>
+            <div style={{ transform: 'translateX(-50%)' }} onClick={handleMenu2} className='bg-[#A4B68B] absolute bottom-[100px] left-1/2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[300px] h-[40px] flex items-center justify-around'>
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     {
                         locations[3].title
                     }
                 </p>
-                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.png" alt="" />
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="" />
             </div>
 
-            <div style={{display: `${location === 1 ? 'none' : 'flex'}`}} onClick={handleMenu1} className='absolute bottom-[295px] right-2 flex items-center gap-1 z-30 -rotate-[2deg]'>
-                <p className='text-white font-bold'>Шале, Коттедж</p>
-                <img className='w-[20px] -rotate-90' src="/image/arrow_choose.png" alt="" />
+            <div onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[190px] right-2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[100px] h-[40px] flex items-center justify-around'>
+                <p className='text-white monterey font-extrabold text-[19px]'>
+                    Шале
+                </p>
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
             </div>
+
+            <div style={location === 0 ? {right: '8px'} : {right: '190px'}} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[240px] duration-500 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[150px] h-[40px] flex items-center justify-around'>
+                <p className='text-white monterey font-extrabold text-[19px]'>
+                    Коттедж
+                </p>
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
+            </div>
+
+            {/* <div style={{display: `${location === 1 ? 'none' : 'flex'}`}} onClick={handleMenu1} className='absolute bottom-[295px] right-2 flex items-center gap-1 z-30 -rotate-[2deg]'>
+                <p className='text-white font-bold'>Шале, Коттедж</p>
+                <img className='w-[20px] -rotate-90' src="/image/arrow_choose.webp" alt="" />
+            </div> */}
 
             {/* <m.div
                 initial='hidden'
@@ -357,13 +371,13 @@ const Map = () => {
                 className='absolute flex flex-col justify-center items-center w-[270px] bottom-[20px] rounded-xl border-[2px] border-[#7F8E6B] text-black text-[16px] monterey left-1/2 z-20'
             >
                 <m.div variants={headingLinesOpacity} className='div_title font-bold duration-300'>Пляж</m.div>
-                <m.img variants={headingLinesOpacity} className='div_img w-[140px] duration-300' src="/image/map_bg_mini.png" alt="" />
+                <m.img variants={headingLinesOpacity} className='div_img w-[140px] duration-300' src="/image/map_bg_mini.webp" alt="" />
                 <m.div variants={headingLinesOpacity} className='div_text text-center text-[11px] px-[2px] duration-300'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</m.div>
                 <button className='w-[220px]'>
-                    <img src="/image/map_mini_btn.png" alt="" />
+                    <img src="/image/map_mini_btn.webp" alt="" />
                 </button>
             </m.div> */}
-            {/* <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" /> */}
+            {/* <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.webp" alt="" /> */}
             <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
                 <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                     <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />

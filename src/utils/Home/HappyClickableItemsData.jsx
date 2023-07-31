@@ -57,22 +57,22 @@ const headingLines2 = {
 
 const HappyClickableItemsData = [
     {
-        img: "/image/bania.png",
+        img: "/image/bania.webp",
         text: "Баня",
         animation: headingLines1
     },
     {
-        img: "/image/ribalka.png",
+        img: "/image/ribalka.webp",
         text: "Рыбалка",
         animation: headingLines2
     },
     {
-        img: "/image/sport.png",
+        img: "/image/sport.webp",
         text: "Спорт",
         animation: headingLines3
     },
     {
-        img: "/image/posidelki.png",
+        img: "/image/posidelki.webp",
         text: "Посиделки",
         animation: headingLines4
     },

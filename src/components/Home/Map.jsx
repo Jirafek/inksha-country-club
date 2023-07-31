@@ -131,12 +131,12 @@ const Map = () => {
 
     useEffect(() => {
         const
-    positions = Array(50).fill(0).map((elem, i) => ({
-        title: `Заголовок ${i + 1}`,
-        imageSrc: './shk.png',
-        text: 'Text'
-    })),
-    positionRelativeMouse = { x: 10, y: 10 }
+            positions = Array(50).fill(0).map((elem, i) => ({
+                title: `Заголовок ${i + 1}`,
+                imageSrc: './shk.png',
+                text: 'Text'
+            })),
+            positionRelativeMouse = { x: 10, y: 10 }
 
         const
             mapTooltip = document.querySelector('.map-tooltip'),
@@ -150,7 +150,20 @@ const Map = () => {
         // Logic
         const
             openPopup = (title, src, text) => {
-                ChangeText(title, src, text)
+                popupWrapper.classList.add('view');
+                const
+                    popupImage = popup.querySelector('.map-info_image'),
+                    popupTitle = popup.querySelector('.map-info_title'),
+                    popupText = popup.querySelector('.map-info-content');
+
+                popupImage.src = src;
+                popupTitle.innerHTML = title;
+                if (text === '') {
+                    popupText.style.display = 'none';
+                } else {
+                    popupText.style.display = 'block';
+                    popupText.innerHTML = text;
+                }
             },
             ChangeText = (title, src, text) => {
                 const title_div = document.querySelector('.div_title'),
@@ -207,8 +220,8 @@ const Map = () => {
                     const src = positions[position].imageSrc;
                     const text = positions[position].text;
                     const title = positions[position].title;
-                    ChangeText(title, src, text);
-                    // openPopup(title, src, text);
+                    // ChangeText(title, src, text);
+                    openPopup(title, src, text);
                 }
             },
             pressedPopupClose_popup = _e => {
@@ -244,15 +257,16 @@ const Map = () => {
 
     const [location, setLocation] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [arrowState, setArrowState] = useState(false);
+    const [arrow1State, setArrow1State] = useState(false);
+    const [arrow2State, setArrow2State] = useState(false);
 
-    const handleMenu = () => {
-        if (isMenuOpen) {
-            setArrowState(false)
-        } else {
-            setArrowState(true)
-        }
-        setIsMenuOpen(!isMenuOpen);
+    const handleMenu1 = () => {
+        setLocation(1);
+        console.log('da')
+    }
+
+    const handleMenu2 = () => {
+        setLocation(location === 1 ? 0 : 1);
     }
 
     const changeMap = (index) => {
@@ -291,16 +305,18 @@ const Map = () => {
                     whileInView='visible'
                     viewport={{ once: true }}
                     variants={heading}
-                    className='flex flex-col relative pb-[115px]'>
-                    <div onClick={handleMenu} className='bg-[#A4B68B] z-30 border-[3px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[50px] flex items-center justify-around'>
+                    className='flex flex-col relative'>
+                    <div onClick={handleMenu2} className='bg-[#A4B68B] z-30 border-[2px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[40px] flex items-center justify-around'>
                         <p className='text-white monterey font-extrabold text-[19px]'>
                             {
-                                locations[location].title
+                                locations[0].title
                             }
                         </p>
-                        <img className='duration-300' style={{ transform: `rotate(${arrowState ? 180 : 0}deg)` }} src="/image/arrow_choose.png" alt="" />
+                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 0}deg)` }} src="/image/arrow_choose.png" alt="" />
                     </div>
-                    <div style={{ display: `${isMenuOpen ? 'flex' : 'none'}` }} className='w-[330px] map_menu absolute bottom-0 h-[124px] bg-[#A4B68B] border-[3px] border-[#FFF] rounded-b-[10px] px-5 flex flex-col justify-around'>
+
+
+                    {/* <div style={{ display: `${isMenuOpen ? 'flex' : 'none'}` }} className='w-[330px] map_menu absolute bottom-0 h-[124px] bg-[#A4B68B] border-[3px] border-[#FFF] rounded-b-[10px] px-5 flex flex-col justify-around'>
                         {
                             locations.map((el, i) => {
                                 if (i === location) return null;
@@ -314,10 +330,25 @@ const Map = () => {
                                 );
                             })
                         }
-                    </div>
+                    </div> */}
                 </m.div>
             </div>
-            <m.div
+
+            <div style={{ transform: 'translateX(-50%)' }} onClick={handleMenu2} className='bg-[#A4B68B] absolute bottom-[100px] left-1/2 z-30 border-[2px] border-[#FFF] rounded-[10px] px-[10px] w-[330px] h-[40px] flex items-center justify-around'>
+                <p className='text-white monterey font-extrabold text-[19px]'>
+                    {
+                        locations[3].title
+                    }
+                </p>
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.png" alt="" />
+            </div>
+
+            <div style={{display: `${location === 1 ? 'none' : 'flex'}`}} onClick={handleMenu1} className='absolute bottom-[295px] right-2 flex items-center gap-1 z-30 -rotate-[2deg]'>
+                <p className='text-white font-bold'>Шале, Коттедж</p>
+                <img className='w-[20px] -rotate-90' src="/image/arrow_choose.png" alt="" />
+            </div>
+
+            {/* <m.div
                 initial='hidden'
                 whileInView='visible'
                 viewport={{ once: true }}
@@ -331,15 +362,14 @@ const Map = () => {
                 <button className='w-[220px]'>
                     <img src="/image/map_mini_btn.png" alt="" />
                 </button>
-            </m.div>
-            <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" />
+            </m.div> */}
+            {/* <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.png" alt="" /> */}
             <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
                 <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                     <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />
                         {
-                            location === 0 ? <Map3 />
-                            : location === 3 ? <Map1 />
-                            : <Map2 />
+                            location === 0 ? <Map1 />
+                                : <Map2 />
                         }
                         <div className="popup-list">
                             <div className="popup__wrapper map-info__wrapper">

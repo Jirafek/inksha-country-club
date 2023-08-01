@@ -55,10 +55,10 @@ const About = () => {
                 variants={heading}
                 className="m-0">
 
-                {/* <div style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px] bg-transparent">
-                    <img className="bg-transparent" src="/image/man_transparent.mp4" alt="GIF Image" />
-                </div> */}
-                <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.webp" alt="" />
+                <div style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px] bg-transparent">
+                    <img className="bg-transparent" src="/image/girman.gif" alt="GIF Image" />
+                </div>
+                {/* <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.webp" alt="" /> */}
                 <div className="pt-[180px] pb-[1.75rem] flex justify-center items-center">
 
                     <iframe className="relative yt-video w-[330px] h-[205px]" src="https://www.youtube.com/embed/Eat2wgPNuIo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

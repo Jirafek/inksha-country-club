@@ -132,22 +132,22 @@ const Welcome = () => {
             height: 35px !important;
           }
         `;
-        setTimeout(() => {
+      setTimeout(() => {
 
-          const doskaContainer = document.querySelector('.doska-container'),
+        const doskaContainer = document.querySelector('.doska-container'),
           skyContainer1 = document.querySelector('.sky1'),
           skyContainer2 = document.querySelector('.sky2');
 
-          skyContainer1.classList.add('animate-moveSky1');
-          skyContainer2.classList.add('animate-moveSky2');
-          doskaContainer.classList.add('animate-moveDoska');
-        }, 1500)
+        skyContainer1.classList.add('animate-moveSky1');
+        skyContainer2.classList.add('animate-moveSky2');
+        doskaContainer.classList.add('animate-moveDoska');
+      }, 1500)
       const styleElement = document.createElement('style');
       styleElement.innerHTML = customStyles;
       document.head.appendChild(styleElement);
     };
-      script.onload = initializeWidget;
-      document.body.appendChild(script);
+    script.onload = initializeWidget;
+    document.body.appendChild(script);
   }, []);
 
   useEffect(() => {
@@ -162,6 +162,9 @@ const Welcome = () => {
     <section id='book' className="relative m-0">
       <img className="w-full h-[665px]" src="/image/bg1.webp" alt="" />
       {/* <VideoPlayer /> */}
+      <div className="absolute z-30 bottom-0 w-full bg-transparent">
+        <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
+      </div>
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
         <img className='w-full h-full' src="/image/doska.webp" alt="" />
         <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">

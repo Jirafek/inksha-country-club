@@ -1,9 +1,9 @@
 import '../styles/map.css';
-import React, { useEffect, useState } from 'react';
-import { m } from 'framer-motion';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import React, { useEffect, useState, useRef } from 'react';
+import { m } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import { CustomNextArrow, CustomPrevArrow } from './helpers/CustomEventArrows';
 import Map1 from './maps/Map1';
@@ -52,6 +52,17 @@ const blocks = {
 };
 
 const Map = () => {
+
+    const sliderRef = React.useRef();
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+    };
 
 
     const
@@ -263,7 +274,7 @@ const Map = () => {
 
     const handleMenu1 = () => {
         setLocation(1);
-        console.log('da')
+        // sliderRef.current.slickNext();
     }
 
     const handleMenu2 = (index) => {
@@ -286,6 +297,7 @@ const Map = () => {
             }
         } else {
             setLocation(0);
+            // sliderRef.current.slickPrev();
         }
     }
 
@@ -293,6 +305,7 @@ const Map = () => {
         setIsMenuOpen(false);
         setIsMenu2Open(false);
         setLocation(1);
+        // sliderRef.current.slickNext();
     }
 
     const locations = [
@@ -410,6 +423,7 @@ const Map = () => {
             <div id="allrecords" className="t-records t-records_animated t-records_visible" data-hook="blocks-collection-content-node" data-tilda-project-id="5147217" data-tilda-page-id="36876098" data-tilda-page-alias="map" data-tilda-formskey="52fd5696ee95138e553990b205147217" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
                 <div id="rec595655846" className="r t-rec" style={{ backgrounColor: '#000000' }} data-animationappear="off" data-record-type="131" data-bg-color="#000000">
                     <div className="t123"><div className="t-container_100 "><div className="t-width t-width_100 " />
+
                         {
                             location === 0 ? <Map1 />
                                 : <Map2 />

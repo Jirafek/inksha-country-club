@@ -118,7 +118,7 @@ const Calculate = () => {
         const currentDays = event.target.value === '1' ? 30 :
             event.target.value === '2' ? 15 :
                 event.target.value === '3' ? 10 :
-                30
+                    30
         if (guesses > currentDays) {
             setGuesses(currentDays);
         }
@@ -126,7 +126,7 @@ const Calculate = () => {
         countTotal();
     };
 
-    const [selectedWeek, setSelectedWeek] = useState('пн-чт'); 
+    const [selectedWeek, setSelectedWeek] = useState('пн-чт');
 
     const handleWeekChange = (event) => {
         setSelectedWeek(event.target.value);
@@ -163,7 +163,7 @@ const Calculate = () => {
         countTotal();
     }, [total])
 
-    const countTotal = (updatedStates = "", week="") => {
+    const countTotal = (updatedStates = "", week = "") => {
         let currentTotal = 0;
         const SALE = 0.2; // Размер скидки
         const currentWeek = week === "" ? selectedWeek : week;
@@ -297,8 +297,9 @@ const Calculate = () => {
     };
     return (
         <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="back_settings relative">
-            <div className="flex flex-col items-center">
-                <img src="/image/calc_bg_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px]">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h1>
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>
                 <div
@@ -312,28 +313,28 @@ const Calculate = () => {
                                 checked={selectedLocation === "1"}
                                 onChange={handleLocationChange}
                                 className="w-[15px]" name="location" value="1" type="radio" />
-                            <p className="underline">ЛЕСНАЯ РЕЗИДЕНЦИЯ</p>
+                            <p>ЛЕСНАЯ РЕЗИДЕНЦИЯ</p>
                         </div>
                         <div className="flex gap-[15px] pl-12">
                             <input
                                 checked={selectedLocation === "2"}
                                 onChange={handleLocationChange}
                                 className="w-[15px]" name="location" value="2" type="radio" />
-                            <p className="underline">ШАЛЕ</p>
+                            <p>ШАЛЕ</p>
                         </div>
                         <div className="flex gap-[15px] pl-12">
                             <input
                                 checked={selectedLocation === "3"}
                                 onChange={handleLocationChange}
                                 className="w-[15px]" name="location" value="3" type="radio" />
-                            <p className="underline">КОТТЕДЖ</p>
+                            <p>КОТТЕДЖ</p>
                         </div>
                         <div className="flex gap-[15px] pl-12">
                             <input
                                 checked={selectedLocation === "4"}
                                 onChange={handleLocationChange}
                                 className="w-[15px]" name="location" value="4" type="radio" />
-                            <p className="underline">ОЛИМПИЙСКАЯ ДЕРЕВНЯ</p>
+                            <p>ОЛИМПИЙСКАЯ ДЕРЕВНЯ</p>
                         </div>
                     </div>
                     <div className="mt-[42px] flex flex-col text-[13px] monterey text-[#000]">

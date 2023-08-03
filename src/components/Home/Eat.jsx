@@ -71,14 +71,14 @@ const Eat = () => {
     };
 
     return (
-        <m.section 
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true }}
-        variants={heading} 
-        id="eat" 
-        style={{ backgroundImage: 'url(/image/eat_bg.webp)' }} 
-        className="happy_background relative back_settings">
+        <m.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={heading}
+            id="eat"
+            style={{ backgroundImage: 'url(/image/eat_bg.webp)' }}
+            className="happy_background relative back_settings">
             {selectedImage && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"
@@ -88,8 +88,9 @@ const Eat = () => {
                     <img className="w-[90%] rounded-[30px]" src={selectedImage} alt="Opened Image" />
                 </div>
             )}
-            <div className="m-0 flex flex-col items-center">
-                <img src="/image/eat_bg_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px]">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h1>
             </div>
             <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
             <div className="flex justify-center mb-[5px]">

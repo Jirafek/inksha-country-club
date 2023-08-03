@@ -16,8 +16,9 @@ const Gallery = () => {
     ];
     return (
         <section className="about_background back_settings relative" id="gallery">
-            <div className="m-0 flex flex-col items-center">
-                <img src="/image/gallery_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">ГАЛЕРЕЯ</h1>
             </div>
             <GallerySlider images={images} />
             <img className="absolute -bottom-[2px] w-full" src="/image/gallery_translate_layer.webp" alt="" />

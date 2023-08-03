@@ -12,8 +12,9 @@ const Spec = () => {
             <button onClick={handleChangeImage} style={currentBg.includes('2') ? { opacity: '1' } : { opacity: '0' }} className="transition-all z-30 duration-300 absolute right-[15px] top-[30px]">
                 <img src="/image/close_btn.webp" alt="" />
             </button>
-            <div style={currentBg.includes('2') ? { opacity: '0' } : { opacity: '1' }} className="m-0 flex flex-col items-center transition-all duration-300">
-                <img src="/image/spec_bg_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">СПЕЦПРЕДЛОЖЕНИЯ</h1>
             </div>
             <div className=" flex justify-center mb-[80px]">
                 <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕННИНИКУ САП-ДОСКУ</p>

@@ -48,8 +48,9 @@ const FAQ = () => {
     };
     return (
         <section style={{ backgroundImage: 'url(/image/faq_bg.webp)' }} className="relative back_settings h-[851px]">
-            <div className="m-0 flex flex-col items-center">
-                <img src="/image/faq_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">ВОПРОС-ОТВЕТ</h1>
             </div>
             <div className="flex justify-center flex-col items-center gap-2">
                 {
@@ -60,7 +61,7 @@ const FAQ = () => {
                                 <div className="rounded-[60px] border border-white w-[270px] py-[9px] monterey text-white text-center flex justify-center font-extrabold items-center text-[15px]" style={{ backgroundColor: 'rgba(111, 98, 98, 0.54)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}>
                                     {el.question}
                                 </div>
-                                <div style={{backgroundColor: 'rgba(111, 98, 98, 0.54)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)', display: `${expandedQuestion === i ? 'flex' : 'none'}`}} className="flex w-[230px] text-white text-center px-1 rounded-[60px] border border-white justify-center items-center">
+                                <div style={{ backgroundColor: 'rgba(111, 98, 98, 0.54)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)', display: `${expandedQuestion === i ? 'flex' : 'none'}` }} className="flex w-[230px] text-white text-center px-1 rounded-[60px] border border-white justify-center items-center">
                                     {el.answer}
                                 </div>
                             </div>

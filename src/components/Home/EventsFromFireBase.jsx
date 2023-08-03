@@ -104,8 +104,9 @@ const EventsFromFireBase = () => {
             id="blog"
             style={{ backgroundImage: 'url(/image/bg-eve.webp)', overflowX: 'hidden' }}
             className="min-h-[500px] back_settings relative">
-            <div className="flex flex-col items-center pb-[70px]"> {/* pt-[4.5rem]  */}
-                <img src="/image/eventsFireBase_bg_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">СОБЫТИЯ</h1>
             </div>
             <div>
                 <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.webp" alt="" />

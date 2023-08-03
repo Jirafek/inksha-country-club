@@ -127,8 +127,9 @@ const Events = () => {
 
     return (
         <section style={{ backgroundImage: 'url(/image/bg-events.webp)' }} id="events" className="back_settings relative">
-            <div className="flex flex-col items-center">
-                <img src="/image/events_bg_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">МЕРОПРИЯТИЯ</h1>
             </div>
             <Confetti
                 width={width}

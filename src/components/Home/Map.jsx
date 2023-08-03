@@ -309,8 +309,9 @@ const Map = () => {
 
     return (
         <div id="map" className="t-body relative" style={{ margin: '0' }}>
-            <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center absolute left-1/2 z-20 w-full"> {/* pt-[4.5rem]  */}
-                <img src="/image/map_bg_title.webp" alt="" />
+            <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">КАРТА ТЕРРИТОРИИ</h1>
             </div>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 top-24 z-20'>
                 <m.div

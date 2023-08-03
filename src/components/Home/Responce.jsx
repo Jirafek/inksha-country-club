@@ -31,8 +31,9 @@ const Responce = () => {
 
     return (
         <section id="req" className="back_settings relative" style={{ backgroundImage: 'url(/image/responce_bg.webp)' }}>
-            <div className="pt-10 flex flex-col items-center">
-                <img src="/image/responce_title.webp" alt="" />
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <h1 className="text-[20px] text-white z-10 font-bold">ОТЗЫВЫ</h1>
             </div>
             <Slider className="mt-5 pb-16" {...settings}>
                 {
@@ -40,15 +41,15 @@ const Responce = () => {
                         <div key={uuidv4()} className="flex flex-col items-center justify-center">
                             <div className="flex justify-center">
 
-                            <img src={el.img} alt="" />
+                                <img src={el.img} alt="" />
                             </div>
                             <div className="flex justify-center">
-                                <div className="back_settings relative flex justify-center items-center w-[185px] h-[53px] text-white monterey" style={{backgroundImage: 'url(/image/req_title_bg.webp)'}}>
+                                <div className="back_settings relative flex justify-center items-center w-[185px] h-[53px] text-white monterey" style={{ backgroundImage: 'url(/image/req_title_bg.webp)' }}>
                                     {el.title}
                                 </div>
                             </div>
                             <div className="flex justify-center">
-                                <div className="back_settings pt-1 relative flex justify-center items-center monterey w-[330px] h-[320px]" style={{backgroundImage: 'url(/image/textholder_req.webp)'}}>
+                                <div className="back_settings pt-1 relative flex justify-center items-center monterey w-[330px] h-[320px]" style={{ backgroundImage: 'url(/image/textholder_req.webp)' }}>
                                     <p className="text-center text-black w-[300px] h-[305px] overflow-y-auto py-2">
                                         {el.text}
                                     </p>

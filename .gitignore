@@ -95,6 +95,8 @@ pip-delete-this-directory.txt
 
 # Игнорирование файлов пакетного менеджера npm
 node_modules/
+node_modules
+/node_modules
 package-lock.json
 npm-debug.log
 yarn-error.log

@@ -430,3 +430,7 @@ Welome widget css ---------------------------- */
 .ytp-title-link {
   display: none;
 }
+
+canvas {
+  z-index: 0 !important;
+}

@@ -8,6 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
 import Confetti from "react-confetti";
 
+// without link, book block
+
 const eventsData = [
     {
         title: 'День рождения',
@@ -25,7 +27,7 @@ const eventsData = [
         title: 'Шашлыки',
         img: '/image/events_2.webp',
         text: [
-            'От 5 часов', 
+            'От 5 часов',
             'Рыболовные снасти',
             'Освещаемая веранда со столами и диванами',
             'Просторный индивидуальный причал',
@@ -133,6 +135,7 @@ const Events = () => {
                 height='710px'
                 numberOfPieces={eventsData[activeSlideIndex]?.link === "birthday" ? 300 : 0}
                 gravity={0.1}
+                className="z-0"
             />
             <Slider {...settings}>
                 {

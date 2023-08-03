@@ -10,6 +10,8 @@ import Map1 from './maps/Map1';
 import Map2 from './maps/Map2';
 import Map3 from './maps/Map3';
 
+// Slider
+
 const heading = {
     hidden: {},
     visible: {
@@ -266,7 +268,22 @@ const Map = () => {
 
     const handleMenu2 = (index) => {
         if (location === 0) {
-            index === 0 ? setIsMenuOpen(!isMenuOpen) : setIsMenu2Open(!isMenu2Open);
+            if (index === 0) {
+                if (isMenu2Open && !isMenuOpen) {
+                    setIsMenu2Open(false);
+                    setIsMenuOpen(true);
+                } else {
+                    setIsMenuOpen(!isMenuOpen)
+                }
+
+            } else {
+                if (!isMenu2Open && isMenuOpen) {
+                    setIsMenu2Open(true);
+                    setIsMenuOpen(false);
+                } else {
+                    setIsMenu2Open(!isMenu2Open)
+                }
+            }
         } else {
             setLocation(0);
         }
@@ -302,7 +319,7 @@ const Map = () => {
                     viewport={{ once: true }}
                     variants={heading}
                     className='flex flex-col relative'>
-                    <div style={{ marginBottom: `${isMenuOpen ? '88px' : '0'}` }} onClick={() => handleMenu2(0)} className='bg-[#A4B68B] z-50 border-[2px] border-[#FFF] rounded-[10px] w-[300px] h-[40px] flex items-center justify-around'>
+                    <div style={{ marginBottom: `${isMenuOpen ? '88px' : '0'}`, flexDirection: `${location === 1 ? 'row-reverse' : 'row'}`, marginLeft: `${location === 0 ? 0 : -70}px`, justifyContent: `${location === 1 ? 'start' : 'space-around'}`, gap: `${location === 0 ? 0 : 15}px`, paddingLeft: `${location === 0 ? 0 : 7}px` }} onClick={() => handleMenu2(0)} className='bg-[#A4B68B] z-50 border-[2px] border-[#FFF] rounded-[10px] w-[280px] h-[40px] flex items-center justify-around'>
                         <p className='text-white monterey font-extrabold text-[19px]'>
                             Лесная Резиденция
                         </p>
@@ -310,7 +327,7 @@ const Map = () => {
                     </div>
 
 
-                    <div style={{ display: `${isMenuOpen ? 'flex' : 'none'}` }} className='w-[300px] map_menu absolute bottom-0 h-[95px] bg-[#A4B68B] border-[3px] border-[#FFF] z-40 rounded-b-[10px] px-1 flex flex-col justify-around'>
+                    <div style={{ display: `${isMenuOpen ? 'flex' : 'none'}` }} className='w-[280px] map_menu absolute bottom-0 h-[95px] bg-[#A4B68B] border-[3px] border-[#FFF] z-40 rounded-b-[10px] px-1 flex flex-col justify-around'>
                         {
                             locations.map((el, i) => {
                                 return (
@@ -326,19 +343,19 @@ const Map = () => {
                 </m.div>
             </div>
 
-            <div style={{transform: 'translateX(-50%)'}} className='absolute bottom-[0px] left-1/2 z-30'>
-                <div className='relative flex flex-col w-[300px] h-[40px]'>
+            <div style={{ transform: 'translateX(-50%)' }} className='absolute bottom-[0px] left-1/2 z-30'>
+                <div className='relative flex flex-col w-[280px] h-[40px]'>
 
 
-                <div style={{ transform: 'translateX(-50%)' }} onClick={() => handleMenu2(1)} className='bg-[#A4B68B] absolute bottom-[100px] left-1/2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[300px] h-[40px] flex items-center justify-around'>
-                    <p className='text-white monterey font-extrabold text-[19px]'>
-                        Олимпийская деревня
-                    </p>
-                    <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="" />
-                </div>
-                
+                    <div style={{ transform: `translateX(${location === 0 ? -50 : -62}%)`, flexDirection: `${location === 1 ? 'row-reverse' : 'row'}`, bottom: `${location === 1 ? '510px' : '100px'}` }} onClick={() => handleMenu2(1)} className='bg-[#A4B68B] absolute bottom-[100px] left-1/2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[280px] h-[40px] flex items-center justify-around'>
+                        <p className='text-white monterey font-extrabold text-[19px]'>
+                            Олимпийская деревня
+                        </p>
+                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="" />
+                    </div>
 
-                    <div style={{ display: `${isMenu2Open ? 'flex' : 'none'}` }} className='w-[300px] map_menu absolute -top-[188px] h-[95px] bg-[#A4B68B] border-[3px] border-[#FFF] z-20 rounded-t-[10px] px-1 flex flex-col justify-around'>
+
+                    <div style={{ display: `${isMenu2Open ? 'flex' : 'none'}` }} className='w-[280px] map_menu absolute -top-[188px] h-[95px] bg-[#A4B68B] border-[3px] border-[#FFF] z-20 rounded-t-[10px] px-1 flex flex-col justify-around'>
                         {
                             locations.map((el, i) => {
                                 return (
@@ -354,18 +371,18 @@ const Map = () => {
                 </div>
             </div>
 
-            <div style={ location === 0 ? { right: '8px', display: isMenuOpen ? 'hidden' : 'flex' } : { right: '250px', display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[240px] right-2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[100px] h-[40px] flex items-center justify-around'>
+            <div style={location === 0 ? { right: '8px', display: isMenuOpen ? 'hidden' : 'flex' } : { right: '210px', top: '275px', display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[300px] right-2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[100px] h-[40px] flex items-center justify-around'>
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Шале
                 </p>
-                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="" />
             </div>
 
-            <div style={{ display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[190px] duration-500 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[150px] h-[40px] right-2 flex items-center justify-around'>
+            <div style={{ display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[250px] duration-500 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[150px] h-[40px] right-2 flex items-center justify-around'>
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Коттедж
                 </p>
-                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
+                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="" />
             </div>
 
             {/* <div style={{display: `${location === 1 ? 'none' : 'flex'}`}} onClick={handleMenu1} className='absolute bottom-[295px] right-2 flex items-center gap-1 z-30 -rotate-[2deg]'>

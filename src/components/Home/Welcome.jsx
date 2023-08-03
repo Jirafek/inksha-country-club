@@ -167,11 +167,11 @@ const Welcome = () => {
       </div>
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
         <img className='w-full h-full' src="/image/doska.webp" alt="" />
-        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
-          <img className='w-[44px]' src="/image/call.webp" alt="" />
-        </a>
         <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
           <img className='w-[80px]' src="/image/about.webp" alt="" />
+        </a>
+        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
+          <img className='w-[44px]' src="/image/call.webp" alt="" />
         </a>
       </div>
       <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.webp" alt="" />

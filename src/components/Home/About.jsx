@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import NumeredItemsData from '../../utils/Home/NumeredItemsData';
 import NumberedItem from './helpers/NumberedItem';
 import { m } from 'framer-motion';
@@ -37,9 +37,9 @@ const About = () => {
         `;
 
         const styleElement = document.createElement('style');
-      styleElement.innerHTML = customStyles;
-      const ytDoc = document.querySelector('.yt-video');
-    //   ytDoc.document.head.appendChild(styleElement);
+        styleElement.innerHTML = customStyles;
+        const ytDoc = document.querySelector('.yt-video');
+        //   ytDoc.document.head.appendChild(styleElement);
     })
 
     const handleDownload = () => {
@@ -72,11 +72,11 @@ const About = () => {
                 </div>
                 <NumberedItem arrayData={NumeredItemsData} />
                 <div className="flex justify-center items-center back_settings mt-3 h-60 mb-[10px]" style={{ backgroundImage: 'url(/image/about_text_border.webp)', backgroundSize: 'auto' }}  >
-                    <p className="w-[300px] text-center montaguSlab text-[#000] text-[15px]">
+                    <p className="w-[260px] text-center montaguSlab text-[#000] text-[15px]">
                         <span className="font-semibold">Икша Кантри Клаб</span> – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в <span className="font-semibold">25</span> км от м. Алтуфьево в лесной зоне на берегу водохранилища
                     </p>
                 </div>
-                <div className="flex justify-center pb-9">
+                <div className="flex justify-center pb-12">
                     <button onClick={handleDownload}>
                         <div
                             style={{ background: 'linear-gradient(98deg, rgba(253, 249, 249, 0.12) 0%, rgba(253, 249, 249, 0.08) 100%)' }}

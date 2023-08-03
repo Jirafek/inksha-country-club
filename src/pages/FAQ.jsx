@@ -69,7 +69,7 @@ const FAQ = () => {
                     ))
                 }
             </div>
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#contacts" needRotate={true} />
         </section>
     );
 }

@@ -99,7 +99,7 @@ const HappySlider = () => {
                     ))
                 }
             </Slider>
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#happy" needRotate={true} />
         </section>
     );
 }

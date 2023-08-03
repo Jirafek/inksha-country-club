@@ -43,7 +43,7 @@ const datesData = [
 
 
 
-        
+
         texts: [
             '7 часов',
             'Фрукты, маршмеллоу',
@@ -243,13 +243,13 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center mt-3">
-                                <a  target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
+                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
                             </div>
                         </div>
                     ))
                 }
             </Slider>
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#dates" needRotate={true} />
         </m.section>
     );
 }

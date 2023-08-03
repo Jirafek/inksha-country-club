@@ -127,7 +127,7 @@ const GalleryAll = () => {
                     />
                 </m.div>
             )}
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#gallery" needRotate={true} />
         </section>
     );
 };

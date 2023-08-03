@@ -63,7 +63,7 @@ const Keitering = () => {
                     <img className="rotate-180" src="/image/arrow_slider.webp" alt="" />
                 </button>
             </div>
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#eat" needRotate={true} />
         </section>
     );
 }

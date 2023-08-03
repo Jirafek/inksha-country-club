@@ -115,16 +115,16 @@ const LocationsSlider = () => {
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                             <div className="flex justify-center mt-3 mb-2">
-                                <div className="w-full h-[355px] back_settings relative px-5 py-3 flex flex-col items-center" style={{backgroundImage: 'url(/image/locations_text_layer.webp)'}}>
+                                <div className="w-full h-[355px] back_settings relative px-5 py-3 flex flex-col items-center" style={{ backgroundImage: 'url(/image/locations_text_layer.webp)' }}>
                                     <h3 className="font-extrabold text-[20px] text-center">
                                         {el.title}
                                     </h3>
                                     <div className="flex justify-around w-full">
                                         {
                                             el.circles.map((text, index) => (
-                                                <div 
-                                                style={{backgroundColor: 'linear-gradient(217deg, rgba(255, 252, 252, 0.60) 0%, rgba(255, 252, 252, 0.30) 100%)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)'}} 
-                                                className="w-[90px] h-[90px] rounded-full border border-[#4F8B36] text-[18px] text-center font-bold backdrop-blur-[2px] flex justify-center items-center">
+                                                <div
+                                                    style={{ backgroundColor: 'linear-gradient(217deg, rgba(255, 252, 252, 0.60) 0%, rgba(255, 252, 252, 0.30) 100%)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}
+                                                    className="w-[90px] h-[90px] rounded-full border border-[#4F8B36] text-[18px] text-center font-bold backdrop-blur-[2px] flex justify-center items-center">
                                                     {text}
                                                 </div>
                                             ))
@@ -144,9 +144,9 @@ const LocationsSlider = () => {
                             <div className="flex justify-center px-4 pb-[80px]">
                                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full items-center px-5 border-[3px] border-[#4F8B36] bg-[#B5EAC9] rounded-[10px] pb-[25px] relative">
                                     <p className="text-[20px] font-bold mb-[7px]">Перезвоните мне</p>
-                                    <input {...register('name', {required: true})} style={{borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)'}} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="имя" type="text" />
-                                    <input {...register('phone', {required: true})} style={{borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)'}} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="телефон" type="text" />
-                                    <button type="submit" style={{transform: 'translateX(-50%)'}} className="absolute -bottom-3 left-1/2 bg-[#0CF259] text-[13px] py-[2px] px-[40px] border-black border-[2px] rounded-[10px]">
+                                    <input {...register('name', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="имя" type="text" />
+                                    <input {...register('phone', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="телефон" type="text" />
+                                    <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute -bottom-3 left-1/2 bg-[#0CF259] text-[13px] py-[2px] px-[40px] border-black border-[2px] rounded-[10px]">
                                         гоу
                                     </button>
                                 </form>
@@ -155,7 +155,7 @@ const LocationsSlider = () => {
                     ))
                 }
             </Slider>
-            <FixedFuter link="/" needRotate={true} />
+            <FixedFuter link="/#locations" needRotate={true} />
         </section>
     );
 }

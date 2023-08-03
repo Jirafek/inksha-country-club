@@ -72,8 +72,8 @@ const Home = () => {
                                     <ul className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
                                         {routes.map((el, i) => {
                                             return (
-                                                <li>
-                                                    <Link to={el.link} onClick={toggle} key={uuidv4()} className='flex gap-[1px] outline-none'>
+                                                <li key={uuidv4()}>
+                                                    <Link to={el.link} onClick={toggle} className='flex gap-[1px] outline-none'>
                                                         <p className='monterey'>
                                                             {el.text}
                                                         </p>

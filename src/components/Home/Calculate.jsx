@@ -298,7 +298,7 @@ const Calculate = () => {
     return (
         <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px]">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <img alt="" className="absolute" src="/image/titles_bg.webp" />
                 <h1 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h1>
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>
@@ -308,33 +308,41 @@ const Calculate = () => {
                 >
                     <div className="flex flex-col text-[13px] monterey text-[#433E6A] gap-2">
                         <h2 className="text-[#000] text-[15px] font-semibold text-center mb-[5px] mt-[10px]">Выберите локацию</h2>
-                        <div className="flex gap-[15px] pl-12">
-                            <input
-                                checked={selectedLocation === "1"}
-                                onChange={handleLocationChange}
-                                className="w-[15px]" name="location" value="1" type="radio" />
-                            <p>ЛЕСНАЯ РЕЗИДЕНЦИЯ</p>
+                        <div className="pl-12">
+                            <label className="flex gap-[15px]">
+                                <input
+                                    checked={selectedLocation === "1"}
+                                    onChange={handleLocationChange}
+                                    className="w-[15px]" name="location" value="1" type="radio" />
+                                <p>ЛЕСНАЯ РЕЗИДЕНЦИЯ</p>
+                            </label>
                         </div>
-                        <div className="flex gap-[15px] pl-12">
-                            <input
-                                checked={selectedLocation === "2"}
-                                onChange={handleLocationChange}
-                                className="w-[15px]" name="location" value="2" type="radio" />
-                            <p>ШАЛЕ</p>
+                        <div className="pl-12">
+                            <label className="flex gap-[15px]">
+                                <input
+                                    checked={selectedLocation === "2"}
+                                    onChange={handleLocationChange}
+                                    className="w-[15px]" name="location" value="2" type="radio" />
+                                <p>ШАЛЕ</p>
+                            </label>
                         </div>
-                        <div className="flex gap-[15px] pl-12">
-                            <input
-                                checked={selectedLocation === "3"}
-                                onChange={handleLocationChange}
-                                className="w-[15px]" name="location" value="3" type="radio" />
-                            <p>КОТТЕДЖ</p>
+                        <div className="pl-12">
+                            <label className="flex gap-[15px]">
+                                <input
+                                    checked={selectedLocation === "3"}
+                                    onChange={handleLocationChange}
+                                    className="w-[15px]" name="location" value="3" type="radio" />
+                                <p>КОТТЕДЖ</p>
+                            </label>
                         </div>
-                        <div className="flex gap-[15px] pl-12">
-                            <input
-                                checked={selectedLocation === "4"}
-                                onChange={handleLocationChange}
-                                className="w-[15px]" name="location" value="4" type="radio" />
-                            <p>ОЛИМПИЙСКАЯ ДЕРЕВНЯ</p>
+                        <div className="pl-12">
+                            <label className="flex gap-[15px]">
+                                <input
+                                    checked={selectedLocation === "4"}
+                                    onChange={handleLocationChange}
+                                    className="w-[15px]" name="location" value="4" type="radio" />
+                                <p>ОЛИМПИЙСКАЯ ДЕРЕВНЯ</p>
+                            </label>
                         </div>
                     </div>
                     <div className="mt-[42px] flex flex-col text-[13px] monterey text-[#000]">

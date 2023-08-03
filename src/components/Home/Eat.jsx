@@ -100,7 +100,7 @@ const Eat = () => {
                     {
                         EatListData.map((el, i) => (
                             <div key={uuidv4()} className="flex gap-[5px] items-center self-start pl-7 z-20" onClick={() => openImage(el.openImage)}>
-                                <img src={el.img} alt="" />
+                                <div style={{ backgroundImage: `url(${el.img})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="w-[60px] h-[60px]"></div>
                                 <p className="text-[17px] text-[#161212] monterey underline">
                                     {el.text}
                                 </p>

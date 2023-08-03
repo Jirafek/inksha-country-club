@@ -86,9 +86,9 @@ const About = () => {
                         </div>
                     </button>
                 </div>
-                <img className="absolute bottom-0 left-0" src="/image/gorshok_left.webp" alt="" />
-                <img className="absolute bottom-0 right-0" src="/image/gorshok.webp" alt="" />
-                <img className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" alt="" />
+                <img alt="vase" className="absolute bottom-0 left-0" src="/image/gorshok_left.webp" />
+                <img alt="vase" className="absolute bottom-0 right-0" src="/image/gorshok.webp" />
+                <img alt="wood translator" className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" />
             </m.div>
         </section>
     );

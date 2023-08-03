@@ -66,19 +66,23 @@ const Home = () => {
                             {/* зменить крест кнопкой + nav -> ul -> li */}
                             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
                                 <nav className='flex flex-col h-full w-full justify-center items-center'>
-                                    <img onClick={toggle} style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.webp" alt="" />
-                                    <nav className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
+                                    <button className='outline-none' style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} onClick={toggle}>
+                                        <img className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.webp" alt="" />
+                                    </button>
+                                    <ul className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
                                         {routes.map((el, i) => {
                                             return (
-                                                <Link to={el.link} onClick={toggle} key={uuidv4()} className='flex gap-[1px] outline-none'>
-                                                    <p className='monterey'>
-                                                        {el.text}
-                                                    </p>
-                                                    {el.icon && <img src={el.icon} />}
-                                                </Link>
+                                                <li>
+                                                    <Link to={el.link} onClick={toggle} key={uuidv4()} className='flex gap-[1px] outline-none'>
+                                                        <p className='monterey'>
+                                                            {el.text}
+                                                        </p>
+                                                        {el.icon && <img src={el.icon} />}
+                                                    </Link>
+                                                </li>
                                             );
                                         })}
-                                    </nav>
+                                    </ul>
                                 </nav>
                             </div>
                         </Transition.Child>

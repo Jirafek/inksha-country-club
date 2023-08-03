@@ -27,20 +27,20 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="flex flex-col gap-[10px] pl-[14px]">
+                <ul className="flex flex-col gap-[10px] pl-[14px]">
                     {
                         routes.map((route, i) => (
-                            <div key={uuidv4()}>
+                            <li key={uuidv4()}>
                                 <a href={route.link} className='flex gap-[1px]'>
                                     <p className='monterey text-white font-medium'>
                                         {route.text}
                                     </p>
                                     {route.icon && <img src={route.whiteIcon} />}
                                 </a>
-                            </div>
+                            </li>
                         ))
                     }
-                </div>
+                </ul>
                 <div className="flex flex-col gap-2 pb-[5px] pt-[15px]">
                     <div className="flex justify-between monterey px-[11px]"> {/* justify-between */}
                         <Link to="/data-privicy" className="text-white text-[12px] underline">Политика данных</Link>

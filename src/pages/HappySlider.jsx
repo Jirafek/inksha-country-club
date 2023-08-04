@@ -56,10 +56,10 @@ const HappySlider = () => {
                         <div className="relative pb-[40px]">
                             <img className="absolute w-full h-[851px] top-0" src={el.bg} alt="" />
                             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
-                                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                                <img className="absolute" src="/image/titles_bg.webp" alt="Отдых у воды - Икшинское водохранилище" />
                                 <h1 className="text-[20px] text-white z-10 font-bold">РАЗВЛЕЧЕНИЯ</h1>
                             </div>
-                            <img className="relative z-10 mb-0" src={el.img} alt="" />
+                            <img className="relative z-10 mb-0" src={el.img} alt="Загородный клуб Подмосковье" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">
                                 <div style={i === 0 ? { display: 'none', backgroundColor: 'rgba(245, 236, 236, 0.44)' } : { display: 'flex', backgroundColor: 'rgba(245, 236, 236, 0.44)' }} className="border border-[#000] rounded-[10px] flex justify-center items-center px-2 pt-[10px] pb-5">
                                     {

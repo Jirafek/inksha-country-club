@@ -429,7 +429,7 @@ const Map = () => {
                                 : <Map2 />
                         }
                         <div className="popup-list">
-                            <div className="popup__wrapper map-info__wrapper">
+                            <div className="popup__wrapper map-info__wrapper z-40">
                                 <div className="popup">
                                     <button className="popup-close"> </button>
                                     <div className="popup-content map-info">

@@ -109,7 +109,7 @@ const LocationsSlider = () => {
                     locationsData.map((el, i) => (
                         <div className="flex flex-col items-center">
                             <div className="flex flex-col items-center">
-                                <img src={el.img} alt="" />
+                                <img src={el.img} alt="Домики на природе в Подмосковье Икша Кантри Клаб" />
                             </div>
                             <div className="flex justify-center">
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

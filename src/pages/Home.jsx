@@ -13,6 +13,7 @@ import Eat from '../components/Home/Eat';
 import Locations from '../components/Home/Locations';
 import Events from '../components/Home/Events';
 import EventsFromFireBase from '../components/Home/EventsFromFireBase';
+import Help from '../components/Home/Help';
 import Calculate from '../components/Home/Calculate';
 import Spec from '../components/Home/Spec';
 import Dates from '../components/Home/Dates';
@@ -98,7 +99,7 @@ const Home = () => {
                 <Locations />
                 <Events />
                 <EventsFromFireBase />
-                <img className='w-full h-[851px]' src="/image/help.webp" alt="" />
+                <Help />
                 <Calculate />
                 <Spec />
                 <Dates />

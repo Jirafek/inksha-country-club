@@ -1,12 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const FixedFuter = ({link, needRotate}) => {
+const FixedFuter = ({ link, needRotate }) => {
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1)
+    };
     return (
         <div className='flex fixed bottom-0 w-full h-[112px] z-[1001] flex-col gap-1 transition-all'>
-            <Link className='self-end' to={link}>
-                <img style={{transform: `rotate(${needRotate ? -90 : 0}deg)`}} className='h-11' src="/image/to_top_button.webp" alt="" />
-            </Link>
+            {
+                link === '#book' ?
+                    <Link className='self-end' to={link}>
+                        <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className='h-11' src="/image/to_top_button.webp" alt="" />
+                    </Link>
+                    :
+                    <button className='self-end' onClick={goBack}>
+                        <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className='h-11' src="/image/to_top_button.webp" alt="" />
+                    </button>
+            }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around'>
                 <a href="https://bronirui-online.ru/iksha-country-club">
                     <img className='w-[302px]' src="/image/booking_button.webp" alt="" />

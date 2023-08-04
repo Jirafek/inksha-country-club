@@ -87,7 +87,7 @@ const GalleryAll = () => {
                     gallerySliderData.map((el, i) => (
                         <Fragment key={uuid4()}>
                             <div className="m-0 flex flex-col items-center">
-                                <img src={el.img} alt="" />
+                                <img src={el.img} alt="Фотогалерея Икша Кантри Клаб" />
                             </div>
 
                             <div className="flex justify-center">
@@ -97,7 +97,7 @@ const GalleryAll = () => {
                                             className="max-w-[135px] duration-300"
                                             key={uuid4()}
                                             src={image}
-                                            alt=""
+                                            alt="Отдых в Подмосковье - Икша Кантри Клаб"
                                             onClick={() => handleImageClick(image)} // добавляем обработчик клика
                                         />
                                     ))}

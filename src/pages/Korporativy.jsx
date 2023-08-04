@@ -76,11 +76,11 @@ const Korporativy = () => {
                 currentWindow === 1 ?
                     <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.webp)' }} className="relative back_settings h-[851px]">
                         <div className="m-0 flex flex-col items-center">
-                            <img src="/image/korp_title.webp" alt="" />
+                            <img src="/image/korp_title.webp" alt="Корпоратив в Подмосковье - Икша Кантри Клаб" />
                         </div>
                         <div className="flex justify-center relative">
-                            <img src="/image/korp_layer_photo.webp" alt="" />
-                            <img className="absolute bottom-1" src="/image/korp_people.webp" alt="" />
+                            <img src="/image/korp_layer_photo.webp" alt="Корпоратив в загородном клубе Икша Кантри Клаб" />
+                            <img className="absolute bottom-1" src="/image/korp_people.webp" alt="Тимбилдинг и корпоративы в Подмосковье Икша Кантри Клаб" />
                         </div>
                         <div>
                             <div className="flex justify-center flex-col px-[30px]">
@@ -89,7 +89,7 @@ const Korporativy = () => {
                                         images.map((el, i) => (
                                             <label className="w-[103px]" key={uuidv4()}>
                                                 <div className="flex flex-col items-center gap-[3px]">
-                                                    <img className="w-[103px]" src={el.img} alt="" />
+                                                    <img className="w-[103px]" src={el.img} alt="Проведение корпоративов в Подмосковье Икша Кантри Клаб" />
                                                     <input name="dops" {...register(el.text)} type="checkbox" />
                                                     <p className="max-w-[110px] monterey text-[11px] text-center">
                                                         {el.text}
@@ -109,19 +109,19 @@ const Korporativy = () => {
                         </div>
                         <div className="absolute top-[427px] right-0">
                             <div className="relative">
-                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.webp" alt="" />
-                                <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
+                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.webp" alt="Корпоративные мероаприятия" />
+                                <img className="z-30 relative" src="/image/ramp_korp.webp" alt="Провести Корпоратив загородом Икша Кантри Клаб" />
                             </div>
                         </div>
                         <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
                         <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
-                            <img src="/image/korp_btn.webp" alt="" />
+                            <img src="/image/korp_btn.webp" alt="Проведение корпоративов Икша Кантри Клаб" />
                         </button>
                     </form>
                     : currentWindow === 2 ?
                         <form onSubmit={handleSubmit(onSend)} style={{ backgroundImage: 'url(/image/korp_bg2.webp)' }} className="relative back_settings h-[750px]">
                             <div className="m-0 flex flex-col items-center">
-                                <img src="/image/korp_title.webp" alt="" />
+                                <img src="/image/korp_title.webp" alt="Корпоративные праздники в Подмосковье - -Икша Кантри Клаб" />
                             </div>
                             <div className="flex justify-center">
                                 <div style={{ backgroundImage: 'url(/image/korp2_tabl.webp)' }} className="relative back_settings w-[265px] h-[204px] pt-[55px] font-medium pb-[25px] px-[21px] monterey text-[22px] text-center">
@@ -139,14 +139,14 @@ const Korporativy = () => {
                             </div>
                             <div className="flex justify-center">
                                 <button className="w-[338px]">
-                                    <img src="/image/korp2_btn.webp" alt="" />
+                                    <img src="/image/korp2_btn.webp" alt="Лучшие корпоративы- Икша Кантри Клаб" />
                                 </button>
                             </div>
                         </form>
                         : currentWindow === 3 ?
                             <>
                                 {navigateState && <Navigate to="/" />}
-                                <img className="h-[851px]" src="/image/bron_good.webp" alt="" />
+                                <img className="h-[851px]" src="/image/bron_good.webp" alt="Проведение корпоратива загородом в Подмосковье" />
                             </>
                             :
                             <div className="flex justify-center items-center h-screen">

@@ -149,7 +149,7 @@ const Map = () => {
                 imageSrc: './shk.webp',
                 text: 'Text'
             })),
-            positionRelativeMouse = { x: 10, y: 10 }
+            positionRelativeMouse = { x: 10, y: 10 };
 
         const
             mapTooltip = document.querySelector('.map-tooltip'),

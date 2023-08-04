@@ -37,7 +37,7 @@ const Keitering = () => {
     return (
         <section className="about_background back_settings relative h-screen">
             <div className="m-0 flex flex-col items-center">
-                <img src="/image/eat_bg_title.webp" alt="" />
+                <img src="/image/eat_bg_title.webp" alt="Шашлыки в Подмосковье" />
                 <a
                     target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi"
                     style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
@@ -48,19 +48,19 @@ const Keitering = () => {
             </div>
             <div className="flex flex-col items-center justify-center px-[10px] pb-20">
                 <button onClick={nextSlide} className="mb-3">
-                    <img src="/image/arrow_slider.webp" alt="" />
+                    <img src="/image/arrow_slider.webp" alt="Блюда на мангале Икша Кантри Клаб" />
                 </button>
                 <div className="flex justify-center">
                     <div className="grid grid-cols-2 gap-x-[10px] gap-y-[7px] w-full">
                         {
                             imageData[currentSlide].map((el, i) => (
-                                <img className="" src={el} alt="" />
+                                <img className="" src={el} alt="Шашлык на берегу Икшинского водохранилища" />
                             ))
                         }
                     </div>
                 </div>
                 <button onClick={nextSlide} className="mt-3">
-                    <img className="rotate-180" src="/image/arrow_slider.webp" alt="" />
+                    <img className="rotate-180" src="/image/arrow_slider.webp" alt="Мангал у воды в Подмосковье Икша Кантри Клаб" />
                 </button>
             </div>
             <FixedFuter link="/#eat" needRotate={true} />

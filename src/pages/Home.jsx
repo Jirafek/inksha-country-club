@@ -67,7 +67,7 @@ const Home = () => {
                             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
                                 <nav className='flex flex-col h-full w-full justify-center items-center'>
                                     <button className='outline-none' style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} onClick={toggle}>
-                                        <img className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.webp" alt="" />
+                                        <img className='fixed w-[45px] top-[2px] right-[2px] z-[2001]' src="/image/close_icon.webp" alt="Отдых загородом - Икша Кантри Клаб" />
                                     </button>
                                     <ul className={`py-[24px] pl-[21px] flex-col flex gap-[10px] w-[305px] bg-[#FFEFE4] rounded-[20px]`}>
                                         {routes.map((el, i) => {
@@ -77,7 +77,7 @@ const Home = () => {
                                                         <p className='monterey'>
                                                             {el.text}
                                                         </p>
-                                                        {el.icon && <img src={el.icon} />}
+                                                        {el.icon && <img src={el.icon} alt="Отдых загородом Подмосковье- Икша Кантри Клаб" />}
                                                     </Link>
                                                 </li>
                                             );
@@ -88,7 +88,7 @@ const Home = () => {
                         </Transition.Child>
                     </Dialog>
                 </Transition.Root>
-                <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.webp" alt="" />
+                <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} onClick={toggle} className='fixed top-8 left-3 z-[2001]' src="/image/burger.webp" alt="Отдых на выходные в Подмосковье" />
                 <Welcome />
                 <Map />
                 <About />
@@ -98,7 +98,7 @@ const Home = () => {
                 <Locations />
                 <Events />
                 <EventsFromFireBase />
-                <img className='w-full h-[851px]' src="/image/help.webp" alt="" />
+                <img className='w-full h-[851px]' src="/image/help.webp" alt="Праздник на природе в Подмосковье - Икша Кантри Клаб" />
                 <Calculate />
                 <Spec />
                 <Dates />

@@ -18,6 +18,7 @@ import Calculate from '../components/Home/Calculate';
 import Spec from '../components/Home/Spec';
 import Dates from '../components/Home/Dates';
 import Responce from '../components/Home/Responce';
+import Blog from '../components/Home/Blog';
 import YandexMap from '../components/Home/YandexMap';
 import Footer from '../components/Home/Footer';
 
@@ -104,6 +105,7 @@ const Home = () => {
                 <Spec />
                 <Dates />
                 <Responce />
+                <Blog />
                 <YandexMap />
                 <Footer />
                 <div className="h-[60px]"></div>

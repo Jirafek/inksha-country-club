@@ -357,7 +357,7 @@ const Map = () => {
                 </m.div>
             </div>
 
-            <div style={{ transform: 'translateX(-50%)' }} className='absolute bottom-[0px] left-1/2 z-30'>
+            <div style={{ transform: 'translateX(-50%)' }} className='absolute bottom-[0px] left-1/2 z-10'>
                 <div className='relative flex flex-col w-[280px] h-[40px]'>
 
 
@@ -385,14 +385,14 @@ const Map = () => {
                 </div>
             </div>
 
-            <div style={location === 0 ? { right: '8px', display: isMenuOpen ? 'hidden' : 'flex' } : { right: '210px', top: '275px', display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[300px] right-2 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[100px] h-[40px] flex items-center justify-around'>
+            <div style={location === 0 ? { right: '8px', display: isMenuOpen ? 'hidden' : 'flex' } : { right: '210px', top: '275px', display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[300px] right-2 z-10 border-[2px] border-[#FFF] rounded-[10px] w-[100px] h-[40px] flex items-center justify-around'>
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Шале
                 </p>
                 <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="" />
             </div>
 
-            <div style={{ display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[250px] duration-500 z-30 border-[2px] border-[#FFF] rounded-[10px] w-[150px] h-[40px] right-2 flex items-center justify-around'>
+            <div style={{ display: isMenuOpen ? 'hidden' : 'flex' }} onClick={handleMenu1} className='bg-[#A4B68B] absolute top-[250px] duration-500 z-10 border-[2px] border-[#FFF] rounded-[10px] w-[150px] h-[40px] right-2 flex items-center justify-around'>
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Коттедж
                 </p>

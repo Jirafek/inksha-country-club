@@ -203,8 +203,8 @@ const DatesChooser = () => {
             whileInView='visible'
             viewport={{ once: true }}
             variants={heading}
-            style={{ height: '100vh' }}
-            className="about_background back_settings relative">
+            style={{ height: '100vh', backgroundImage: 'url(/image/dates_chooser_bg.png)' }}
+            className="back_settings relative">
             <m.div variants={headingLines} className="flex flex-col items-center">
                 <img src="/image/dates_title.webp" alt="" />
             </m.div>
@@ -218,7 +218,7 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center px-[50px]">
-                                <div style={{ backgroundColor: 'rgba(124, 104, 78, 0.71)' }} className="rounded-[30px] flex flex-col gap-2">
+                                <div style={{ backgroundColor: 'rgb(124 104 78 / 95%)' }} className="rounded-[30px] flex flex-col gap-2">
                                     <div className="flex flex-col gap-2 max-h-96 overflow-y-auto">
                                         {
                                             el.texts.map((text, index) => (
@@ -243,7 +243,7 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center mt-3">
-                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
+                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
                             </div>
                         </div>
                     ))

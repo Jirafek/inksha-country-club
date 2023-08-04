@@ -32,13 +32,13 @@ const Rules = (props) => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <a className="mr-[6px]" target="_blanc" href="https://vk.com/ikshacountryclub">
-                            <img src="/image/vk.webp" alt="" />
+                            <img src="/image/vk.webp" alt="Отдых на берегу Икшинского водохранилища - Икша Кантри Клаб" />
                         </a>
                         <a target="_blanc" href="https://www.instagram.com/ikshacountryclub">
-                            <img src="/image/inst.webp" alt="" />
+                            <img src="/image/inst.webp" alt="Загородный клуб - Икша Кантри Клаб" />
                         </a>
                         <a target="_blanc" href="https://www.youtube.com/@ikshacountryclub">
-                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="" />
+                            <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="Отдых на природе в Подмосковье Икша Кантри Клаб" />
                         </a>
                     </div>
                     <Link to="/#book"><img src="/image/low_bron.webp" alt="" /></Link>

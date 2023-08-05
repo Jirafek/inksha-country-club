@@ -31,7 +31,7 @@ const Blog = () => {
                                 <h2 className="font-bold text-[16px] text-center">{el.title}</h2>
                                 <p className="text-[15px] text-center text-clip">{
                                     el.text.length > 140 ?
-                                        el.text.slice(0, 140) + "..."
+                                        el.text.slice(0, 110) + "..."
                                         :
                                         el.text}</p>
                             </Link>

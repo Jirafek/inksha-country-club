@@ -147,7 +147,7 @@ const Welcome = () => {
       skyContainer1.classList.add('animate-moveSky1');
       skyContainer2.classList.add('animate-moveSky2');
       doskaContainer.classList.add('animate-moveDoska');
-    }, 1000)
+    }, 1500)
   }, []);
 
   useEffect(() => {

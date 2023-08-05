@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { m } from 'framer-motion';
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 const ytSrc = 'https://www.youtube.com/embed/m24zezD9fWs';
 const ytId = ytSrc.split('/')[ytSrc.split('/').length - 1];
@@ -30,6 +31,11 @@ const headingLines = {
 
 const YandexMap = () => {
 
+    const mapStyles = {
+        width: "100%",
+        height: "800px",
+    }
+
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     const handlePlayVideo = () => {
@@ -49,7 +55,14 @@ const YandexMap = () => {
                     <img className="absolute" src="/image/titles_bg.webp" alt="" />
                     <h1 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h1>
                 </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" width="100%" height="800" frameBorder="0"></iframe>
+                {/* <YMaps style={mapStyles}>
+                    <div>
+                        <Map style={mapStyles} defaultState={{ center: [56.123184, 37.577218], zoom: 100 }} options={{ multiTouch: false }}>
+                            <Placemark geometry={[56.123184, 37.577218]} />
+                        </Map>
+                    </div>
+                </YMaps> */}
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" scroll="false" width="100%" height="800" frameBorder="0"></iframe>
             </div>
             <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[212px] px-[15px] pt-5 monterey">
                 <div className="relative flex flex-col gap-[10px] h-full">
@@ -88,7 +101,7 @@ const YandexMap = () => {
                         <div>
                             <a target="_blanc" href={ytSrc}>
                                 <img
-                                    src={`https://i.ytimg.com/vi_webp/${ytId}/maxresdefault.webp`}
+                                    src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
                                     alt=""
                                 />
                             </a>

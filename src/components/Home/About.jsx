@@ -62,7 +62,7 @@ const About = () => {
                             <div>
                                 <a target="_blanc" href={ytSrc}>
                                     <img
-                                        src={`https://i.ytimg.com/vi_webp/${ytId}/maxresdefault.webp`}
+                                        src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
                                         alt=""
                                     />
                                 </a>

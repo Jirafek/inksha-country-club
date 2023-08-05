@@ -132,22 +132,22 @@ const Welcome = () => {
             height: 35px !important;
           }
         `;
-      setTimeout(() => {
-
-        const doskaContainer = document.querySelector('.doska-container'),
-          skyContainer1 = document.querySelector('.sky1'),
-          skyContainer2 = document.querySelector('.sky2');
-
-        skyContainer1.classList.add('animate-moveSky1');
-        skyContainer2.classList.add('animate-moveSky2');
-        doskaContainer.classList.add('animate-moveDoska');
-      }, 1500)
       const styleElement = document.createElement('style');
       styleElement.innerHTML = customStyles;
       document.head.appendChild(styleElement);
     };
     script.onload = initializeWidget;
     document.body.appendChild(script);
+    setTimeout(() => {
+
+      const doskaContainer = document.querySelector('.doska-container'),
+        skyContainer1 = document.querySelector('.sky1'),
+        skyContainer2 = document.querySelector('.sky2');
+
+      skyContainer1.classList.add('animate-moveSky1');
+      skyContainer2.classList.add('animate-moveSky2');
+      doskaContainer.classList.add('animate-moveDoska');
+    }, 1000)
   }, []);
 
   useEffect(() => {

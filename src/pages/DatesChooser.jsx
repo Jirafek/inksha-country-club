@@ -219,7 +219,7 @@ const DatesChooser = () => {
                             </div>
                             <div className="flex justify-center px-[50px]">
                                 <div style={{ backgroundColor: 'rgb(124 104 78 / 95%)' }} className="rounded-[30px] flex flex-col gap-2">
-                                    <div className="flex flex-col gap-2 max-h-96 overflow-y-auto">
+                                    <div className="flex flex-col gap-2 max-h-[20rem] overflow-y-auto">
                                         {
                                             el.texts.map((text, index) => (
                                                 <div key={uuidv4()} className="flex items-center">

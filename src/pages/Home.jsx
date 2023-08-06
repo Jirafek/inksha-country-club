@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from 'react-router-dom';
 import Welcome from '../components/Home/Welcome';
-import Map from '../components/Home/Map';
+import Map from '../components/Home/Map/Map';
 import About from '../components/Home/About';
 import Happy from '../components/Home/Happy';
 import Gallery from '../components/Home/Gallery';

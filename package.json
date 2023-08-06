@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -24,6 +24,7 @@
     "framer-motion": "^6.3.11",
     "i18next": "^21.8.9",
     "i18next-browser-languagedetector": "^6.1.4",
+    "interactjs": "^1.10.18",
     "react": "^18.1.0",
     "react-confetti": "^6.1.0",
     "react-datepicker": "^4.16.0",

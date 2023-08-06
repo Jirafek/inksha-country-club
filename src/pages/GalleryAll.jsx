@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { m } from 'framer-motion';
 import FixedFuter from '../components/Home/FixedFuter';
 import { CustomNextArrow, CustomPrevArrow } from '../utils/Home/CustomArrowsGallery';
+import { Helmet } from "react-helmet";
 
 const heading = {
     hidden: {},
@@ -81,6 +82,22 @@ const GalleryAll = () => {
     };
 
     return (
+         <>
+      <Helmet>
+        <title>Фотогалерея - Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Отдых в Подмосковье - Фотогалерея Икша Кантри Клаб. Просмотрите наши красивые фотографии и приезхайте к нам на отдых на берегу Икшинского водохранилища."
+        />
+           <meta
+          name="title"
+          content="Отдых в Подмосковье в фотографиях Икша Кантри Клаб на берегу Икшинского водохранилища."
+        />
+           <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Фотогалерея, Икша, фотографии, фото, икшинское водохранилище, подмосковье, отдых, база, клуб, природа, у воды, "
+        />
+      </Helmet>
         <section style={{ height: "100vh" }} className="about_background back_settings relative">
             <Slider {...settings}>
                 {
@@ -129,6 +146,7 @@ const GalleryAll = () => {
             )}
             <FixedFuter link="/#gallery" needRotate={true} />
         </section>
+              </>
     );
 };
 

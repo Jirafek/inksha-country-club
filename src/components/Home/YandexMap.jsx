@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { m } from 'framer-motion';
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+// import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 const ytSrc = 'https://www.youtube.com/embed/m24zezD9fWs';
 const ytId = ytSrc.split('/')[ytSrc.split('/').length - 1];

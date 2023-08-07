@@ -30,6 +30,16 @@ const inputs = [
 ];
 
 const Korporativy = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openImage = () => {
+        setSelectedImage('/image/gram_korp.webp');
+    };
+
+    const closeImage = () => {
+        setSelectedImage(null);
+    };
+
     const [isLoading, setIsLoading] = useState(false);
     const [navigateState, setNavigateState] = useState(false);
     const [currentWindow, setCurrentWindow] = useState(1);
@@ -72,6 +82,15 @@ const Korporativy = () => {
 
     return (
         <div>
+            {selectedImage && (
+                <div
+                    className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+                    onClick={closeImage}
+                >
+                    <img className="w-[90%] rounded-[25px]" src={selectedImage} alt="Opened Image" />
+                </div>
+            )}
             {
                 currentWindow === 1 ?
                     <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.webp)' }} className="relative back_settings h-[851px]">
@@ -108,10 +127,10 @@ const Korporativy = () => {
                             </div>
                         </div>
                         <div className="absolute top-[427px] right-0">
-                            <div className="relative">
-                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.webp" alt="" />
+                            <button type="button" onClick={openImage} className="relative">
+                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/gram_korp.webp" alt="" />
                                 <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
-                            </div>
+                            </button>
                         </div>
                         <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
                         <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">

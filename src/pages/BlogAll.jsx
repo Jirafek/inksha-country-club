@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
+import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
 
 const blogData = [
     {
@@ -30,7 +31,8 @@ const BlogAll = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        nextArrow: <CustomNextArrow isBottom="470px" />,
+        prevArrow: <CustomPrevArrow isBottom="470px" />,
 
     };
     return (
@@ -54,7 +56,7 @@ const BlogAll = () => {
                                 <img src={el.image} alt="" />
                             </div>
                             <div className="flex justify-center">
-                                <div style={{ backgroundImage: 'url(/image/blog_textholder.png)' }} className="back_settings w-[335px] h-[300px] p-6 relative">
+                                <div style={{ backgroundImage: 'url(/image/blog_textholder.png)' }} className="back_settings w-[335px] h-[300px] p-6 relative text-center">
                                     <p>
                                         {
                                             el.text

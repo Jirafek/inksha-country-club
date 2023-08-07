@@ -21,8 +21,40 @@ import Responce from '../components/Home/Responce';
 import Blog from '../components/Home/Blog';
 import YandexMap from '../components/Home/YandexMap';
 import Footer from '../components/Home/Footer';
+import { useLocation } from 'react-router-dom'
 
 const Home = () => {
+    const [locationState, setLocationState] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        // Функция обработчика события popstate
+        const handlePopstate = () => {
+            // Получаем текущий URL
+            const currentUrl = window.location.href;
+
+            console.log(currentUrl)
+
+            // Проверяем, содержит ли текущий URL нужный query parameter
+            if (currentUrl.includes('znms_widget_open=5026')) {
+                setLocationState(true);
+            } else {
+                setLocationState(false);
+            }
+        };
+
+        // Добавляем слушатель события popstate
+        window.addEventListener('popstate', handlePopstate);
+
+        // Выполняем обработчик события при первой загрузке компонента
+        handlePopstate();
+
+        // Очищаем слушатель события при размонтировании компонента
+        // return () => {
+        //     window.removeEventListener('popstate', handlePopstate);
+        // };
+    }, []);
+
     const [isVisible, setIsVisible] = useState(false);
     const [sidebarOpen, toggle] = useReducer((s) => !s, false);
 
@@ -53,7 +85,7 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className='m-w-[400px] relative'>
+            <div style={{ display: `${locationState ? 'none' : 'block'}` }} className='m-w-[400px] relative'>
                 <Transition.Root as={Fragment} show={sidebarOpen}>
                     <Dialog as='div' className='fixed inset-0 z-[2000]' onClose={toggle}>
                         <Transition.Child

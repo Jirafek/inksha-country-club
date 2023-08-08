@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const datesData = [
     {
@@ -198,6 +199,24 @@ const DatesChooser = () => {
         prevArrow: <CustomPrevArrow />,
     };
     return (
+         <>
+      <Helmet>
+        <title>Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых</title>
+        <meta
+          name="description"
+          content="Загородный клуб Икша Кантри Клаб. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами. Баня, Уютные домики, Шашлыки, водные развлечения, красивые закаты"
+        />
+            <meta
+          name="title"
+          content="Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых в Подмосковье у воды."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <m.section
             initial='hidden'
             whileInView='visible'
@@ -251,6 +270,7 @@ const DatesChooser = () => {
             </Slider>
             <FixedFuter link="/#dates" needRotate={true} />
         </m.section>
+              </>
     );
 }
 

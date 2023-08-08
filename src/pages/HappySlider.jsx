@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
+
 
 const sliderData = [
     {
@@ -49,6 +51,24 @@ const HappySlider = () => {
         prevArrow: <CustomPrevArrow isBottom="142px" />,
     };
     return (
+           <>
+      <Helmet>
+        <title>Отдых в Подмосковье с Икша Кантри Клаб - Рыбалка, Баня и СПА, водные виды спорта. </title>
+        <meta
+          name="description"
+          content="Отдых в Подмосковье с Икша Кантри Клаб - Рыбалка, Баня и СПА, водные виды спорта. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами.  Уютные домики, Шашлыки, красивые закаты. Выбирайте свой незабываемый отдых недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Отдых в Подмосковье с Икша Кантри Клаб - Рыбалка, Баня и СПА, водные виды спорта на Икшинском водохранилище."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <section className="relative h-[851px]">
             <Slider {...settings}>
                 {
@@ -101,6 +121,7 @@ const HappySlider = () => {
             </Slider>
             <FixedFuter link="/#happy" needRotate={true} />
         </section>
+                </>
     );
 }
 

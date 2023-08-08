@@ -21,6 +21,7 @@ import Responce from '../components/Home/Responce';
 import Blog from '../components/Home/Blog';
 import YandexMap from '../components/Home/YandexMap';
 import Footer from '../components/Home/Footer';
+import { Helmet } from "react-helmet";
 import { useLocation } from 'react-router-dom'
 
 const Home = () => {
@@ -84,6 +85,24 @@ const Home = () => {
     }
 
     return (
+          <>
+      <Helmet>
+        <title>Загородный клуб Икша Кантри Клаб - Отдых в Подмосковье на берегу Икшинского водохранилища. </title>
+        <meta
+          name="description"
+          content="Загородный клуб Икша Кантри Клаб - Рыбалка, Баня и СПА, водные виды спорта. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами.  Уютные домики, Шашлыки, красивые закаты. Выбирайте свой незабываемый отдых недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Загородный клуб Икша Кантри Клаб -Отдых в подмосковье, Рыбалка, Баня и СПА, водные виды спорта на Икшинском водохранилище."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <Fragment>
             <div style={{ display: `${locationState ? 'none' : 'block'}` }} className='m-w-[400px] relative'>
                 <Transition.Root as={Fragment} show={sidebarOpen}>
@@ -146,6 +165,7 @@ const Home = () => {
                 }
             </div>
         </Fragment>
+                </>
     );
 }
 

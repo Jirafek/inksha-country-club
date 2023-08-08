@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const faq_data = [
     {
@@ -47,6 +48,24 @@ const FAQ = () => {
         setExpandedQuestion(index === expandedQuestion ? null : index);
     };
     return (
+         <>
+      <Helmet>
+        <title>Отдых в Подмосковье с Икша Кантри Клаб - Вопросы и Ответы</title>
+        <meta
+          name="description"
+          content="Отдых в Подмосковье с Икша Кантри Клаб - Отвечаем на частые вопросы наши клиентов. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами."
+        />
+            <meta
+          name="title"
+          content="Отдых в Подмосковье с Икша Кантри Клаб - FAQ (Частые вопросы и ответы)."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, катание, домик, беседки"
+        />
+      </Helmet>
         <section style={{ backgroundImage: 'url(/image/faq_bg.webp)' }} className="relative back_settings h-[851px]">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
@@ -71,6 +90,7 @@ const FAQ = () => {
             </div>
             <FixedFuter link="/#contacts" needRotate={true} />
         </section>
+              </>
     );
 }
 

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
+import { Helmet } from "react-helmet";
 
 const blogData = [
     {
@@ -36,6 +37,24 @@ const BlogAll = () => {
 
     };
     return (
+          <>
+      <Helmet>
+        <title>Загородный Отдых в Подмосковье - Увлекательные истории от Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Загородный Отдых в Подмосковье - Посетители Икша Кантри Клаб делятся своими незабываемыми впечатлениями. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами."
+        />
+            <meta
+          name="title"
+          content="Загородный Отдых в Подмосковье - Захватывающие истории и впечатления от Икша Кантри Клаб ."
+        />
+            <meta
+          name="keywords"
+          content="загородный отдых, загородный клуб, загородный, Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, катание, домик, беседки"
+        />
+      </Helmet>
         <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
                 <img alt="" className="absolute" src="/image/blog_title_bg.webp" />
@@ -70,6 +89,7 @@ const BlogAll = () => {
             </Slider>
             <FixedFuter link="#blog" needRotate={true} />
         </section>
+               </>
     );
 }
 

@@ -77,7 +77,7 @@ const HappySlider = () => {
                             <img className="absolute w-full h-[851px] top-0" src={el.bg} alt="" />
                             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
                                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                                <h1 className="text-[20px] text-white z-10 font-bold">РАЗВЛЕЧЕНИЯ</h1>
+                                <h2 className="text-[20px] text-white z-10 font-bold">РАЗВЛЕЧЕНИЯ</h2>
                             </div>
                             <img className="relative z-10 mb-0" src={el.img} alt="" />
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">

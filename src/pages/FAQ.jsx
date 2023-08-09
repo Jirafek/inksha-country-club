@@ -69,7 +69,7 @@ const FAQ = () => {
         <section style={{ backgroundImage: 'url(/image/faq_bg.webp)' }} className="relative back_settings h-[851px]">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">ВОПРОС-ОТВЕТ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">ВОПРОС-ОТВЕТ</h2>
             </div>
             <div className="flex justify-center flex-col items-center gap-2">
                 {

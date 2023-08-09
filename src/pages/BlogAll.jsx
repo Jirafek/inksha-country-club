@@ -58,7 +58,7 @@ const BlogAll = () => {
         <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
                 <img alt="" className="absolute" src="/image/blog_title_bg.webp" />
-                <h1 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
             </div>
             <Slider className="pb-16" {...settings}>
                 {

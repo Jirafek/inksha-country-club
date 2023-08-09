@@ -15,7 +15,7 @@ const Gallery = () => {
         '/image/gallery_back9.webp',
     ];
     return (
-        <section className="about_background back_settings relative" id="gallery">
+        <section className="section about_background back_settings relative" id="gallery">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
                 <h1 className="text-[20px] text-white z-10 font-bold">ГАЛЕРЕЯ</h1>

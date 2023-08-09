@@ -18,7 +18,7 @@ const blogData = [
 
 const Blog = () => {
     return (
-        <section className="back_settings about_background" id="blog">
+        <section className="section back_settings about_background" id="blog">
             <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
                 <img alt="" className="absolute" src="/image/blog_title_bg.webp" />
                 <h1 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h1>

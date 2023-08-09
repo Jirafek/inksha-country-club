@@ -65,7 +65,7 @@ const Welcome = () => {
       // Примените ваши стили после инициализации виджета
       const customStyles = `
 
-          
+
       .znms-widget__module-form-block__btn {
         background-color: rgba(12, 242, 89, 0.50) !important;
         border-radius: 30px !important;
@@ -116,7 +116,7 @@ const Welcome = () => {
             -webkit-backdrop-filter: blur(0px) !important;
             bottom: -50px;
           }
-  
+
           .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
             display: none !important;
           }
@@ -159,12 +159,12 @@ const Welcome = () => {
     }, 4500)
   }, []);
   return (
-    <section id='book' className="relative m-0">
-      <img className="w-full h-[665px]" src="/image/bg1.webp" alt="" />
+    <section id='book' className="section relative m-0">
+      <img className="w-full h-[100%]" src="/image/bg1.webp" alt="" />
       {/* <VideoPlayer /> */}
-      <div className="absolute z-30 bottom-0 w-full bg-transparent">
+      {/* <div className="absolute z-30 bottom-0 w-full bg-transparent">
         <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
-      </div>
+      </div> */}
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
         <img className='w-full h-full' src="/image/doska.webp" alt="" />
         <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">

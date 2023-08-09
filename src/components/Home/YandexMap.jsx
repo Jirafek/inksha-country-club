@@ -48,7 +48,7 @@ const YandexMap = () => {
             whileInView='visible'
             viewport={{ once: true }}
             variants={heading}
-            className="relative"
+            className="section relative"
             id="contacts">
             <div className="relative">
                 <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">

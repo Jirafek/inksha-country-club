@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
+        <section id="footer" className="section back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
                 <h1 className="text-[20px] text-white z-10 font-bold">ИКША Country Club</h1>

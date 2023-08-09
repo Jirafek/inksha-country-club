@@ -43,7 +43,7 @@ const About = () => {
         window.open(fileUrl, '_blank');
     }
     return (
-        <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative" id="about">
+        <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="section back_settings relative" id="about">
             <m.div
                 initial='hidden'
                 whileInView='visible'

@@ -90,7 +90,7 @@ const Eat = () => {
             )}
             <div className="flex flex-col items-center justify-center relative h-[90px]">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h2>
             </div>
             <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
             <div className="flex justify-center mb-[5px]">

@@ -52,7 +52,7 @@ const YandexMap = () => {
             <div className="relative">
                 <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
                     <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                    <h1 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h1>
+                    <h2 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h2>
                 </div>
                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9fd5ee0a4eb1741a8b66cbf0ff740727f45a33b5ab3731a94c50d75de17a22fc&amp;source=constructor" scroll="false" width="100%" height="800" frameBorder="0"></iframe>
             </div>

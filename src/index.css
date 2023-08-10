@@ -40,6 +40,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .slow-move > .swiper-wrapper {
   align-items: center;
   transition-timing-function: linear;
@@ -399,7 +404,7 @@ input[type="range"]::-ms-thumb {
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
 }
-/* 
+/*
 Welome widget css ---------------------------- */
 
 .znms-widget__main-wrapper {

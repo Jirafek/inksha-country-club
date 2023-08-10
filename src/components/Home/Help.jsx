@@ -2,7 +2,7 @@ import React from "react";
 
 const Help = () => {
     return (
-        <section id="help" style={{ backgroundImage: 'url(/image/bron_how_bg.webp)' }} className="back_settings flex flex-col justify-center items-center">
+        <section id="help" style={{ backgroundImage: 'url(/image/bron_how_bg.webp)' }} className="section back_settings flex flex-col justify-center items-center">
             <div className="flex flex-col items-center justify-center mb-[45px]">
                 <img alt="" src="/image/bron_textholder.webp" />
             </div>

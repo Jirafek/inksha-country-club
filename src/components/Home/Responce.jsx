@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomEventArrows";
 import { v4 as uuidv4 } from 'uuid';
 
-const requestsData = [ // get from firebase 
+const requestsData = [ // get from firebase
     {
         img: '/image/andrew_req.webp',
         title: 'Олег, 33 года',
@@ -30,7 +30,7 @@ const Responce = () => {
     };
 
     return (
-        <section id="req" className="back_settings relative" style={{ backgroundImage: 'url(/image/responce_bg.webp)' }}>
+        <section id="req" className="section back_settings relative" style={{ backgroundImage: 'url(/image/responce_bg.webp)' }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
                 <h2 className="text-[20px] text-white z-10 font-bold">ОТЗЫВЫ</h2>

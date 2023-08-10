@@ -296,7 +296,7 @@ const Calculate = () => {
 
     };
     return (
-        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="back_settings relative">
+        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="section back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px]">
                 <img alt="" className="absolute" src="/image/titles_bg.webp" />
                 <h2 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h2>

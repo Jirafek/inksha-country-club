@@ -74,7 +74,7 @@ const Locations = () => {
     };
 
     return (
-        <section id="locations" className="about_background back_settings relative">
+        <section id="locations" className="section about_background back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10 pt-[4.5rem]">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
                 <h2 className="text-[20px] text-white z-10 font-bold">ЛОКАЦИИ</h2>

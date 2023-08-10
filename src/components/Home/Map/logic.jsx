@@ -15,33 +15,43 @@ export const
             dragMoveListener = __event => {
                 let
                     target = __event.target,
+                    [x, y] = dragRestriction(
+                        target,
+                        (parseFloat(target.getAttribute('data-x')) || 0) + __event.dx,
+                        (parseFloat(target.getAttribute('data-y')) || 0) + __event.dy
+                    );
 
-                    x = (parseFloat(target.getAttribute('data-x')) || 0) + __event.dx,
-                    y = (parseFloat(target.getAttribute('data-y')) || 0) + __event.dy;
-
-                target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-
-                // dragRestriction(target, x, y);
+                target.style.transform = `translate(${x}px, ${y}px)`;
 
                 target.setAttribute('data-x', x);
                 target.setAttribute('data-y', y);
+            },
+            dragRestriction = (target, x, y) => {
+                const
+                    targetW = target.getBoundingClientRect().width,
+                    targetH = target.getBoundingClientRect().height,
+
+                    targetLeft = x + targetW / 2 - targetW * ss / 2,
+                    targetTop = y + targetH / 2 - targetH * ss / 2,
+                    targetRight = mapSection.clientWidth - (targetLeft + targetW * ss),
+                    targetBottom = mapSection.clientHeight - (targetTop + targetH * ss);
+
+                let modX = x, modY = y;
+
+                if (targetW * ss == mapSection.clientWidth || targetLeft > 0)
+                    modX = -targetW / 2 + targetW * ss / 2
+
+                if (targetRight > 0)
+                    modX = -(targetW * ss - mapSection.clientWidth) + (targetW * ss / 2 - targetW / 2);
+
+                if (targetH * ss == mapSection.clientHeight || targetTop > 0)
+                    modY = -targetH / 2 + targetH * ss / 2;
+
+                if (targetBottom > 0)
+                    modY = -(targetH * ss - mapSection.clientHeight) + (targetH * ss / 2 - targetH / 2);
+
+                return [modX, modY];
             };
-            // dragRestriction = (target, x, y) => {
-            //     const
-            //         targetW = target.getBoundingClientRect().width,
-            //         targetH = target.getBoundingClientRect().height,
-
-            //         targetLeft = x + targetW / 2 - targetW * ss / 2,
-            //         targetTop = y + targetH / 2 - targetH * ss / 2,
-            //         targetRight = +mapSection.clientWidth - targetLeft + targetW * ss,
-            //         targetBottom = targetTop + targetH * ss;
-
-            //     console.log('Mod: ', targetRight)
-
-
-
-            //     return `translate(${modX}px, ${modY}px)`;
-            // };
 
         let scale = 1;
         let ss = 1;
@@ -54,7 +64,7 @@ export const
                     move: __event => {
                         let
                             elemScale = __event.scale * scale,
-                            currentScale = elemScale < 1 ? 1 : elemScale;
+                        currentScale = elemScale < 1 ? 1 : elemScale;
 
                         ss = currentScale;
 
@@ -65,6 +75,7 @@ export const
                     end: __event => {
                         scale = scale * __event.scale
                         ss = scale;
+                        // currentScale = scale;
                     }
                 }
             })

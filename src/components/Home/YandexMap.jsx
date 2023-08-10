@@ -53,7 +53,7 @@ const YandexMap = () => {
             <div className="relative">
                 <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
                     <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                    <h1 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h1>
+                    <h2 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h2>
                 </div>
                 {/* <YMaps style={mapStyles}>
                     <div>

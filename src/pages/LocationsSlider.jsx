@@ -7,6 +7,7 @@ import { CustomNextArrow, CustomPrevArrow } from '../utils/Home/CustomArrowsLoca
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const locationsData = [
     {
@@ -103,6 +104,25 @@ const LocationsSlider = () => {
     }
 
     return (
+          <>
+      <Helmet>
+        <title>Домики в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Домики в Подмосковье с Икша Кантри Клаб -  а также беседки Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+            отдохнуть на берегу Икшинского водохранилища.
+     Уютные домики и беседки, Шашлыки, красивые закаты. Проведите свои выходные на природе, недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Домики в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, глэмпинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <section className="about_background back_settings relative px-[6px]">
             <Slider {...settings}>
                 {
@@ -157,6 +177,7 @@ const LocationsSlider = () => {
             </Slider>
             <FixedFuter link="/#locations" needRotate={true} />
         </section>
+               </>
     );
 }
 

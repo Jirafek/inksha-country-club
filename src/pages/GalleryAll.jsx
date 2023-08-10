@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { m } from 'framer-motion';
 import FixedFuter from '../components/Home/FixedFuter';
 import { CustomNextArrow, CustomPrevArrow } from '../utils/Home/CustomArrowsGallery';
+import { Helmet } from "react-helmet";
 
 const heading = {
     hidden: {},
@@ -81,6 +82,24 @@ const GalleryAll = () => {
     };
 
     return (
+          <>
+      <Helmet>
+        <title>Фотогалерея Икша Кантри Клаб - Посмотрите фотографии про отдых в подмосковье</title>
+        <meta
+          name="description"
+          content="Фотогалерея Икша Кантри Клаб. Красивые Фотографии с берега Икшинского водохранилища,
+            Впечатления об отдыхе, Уютные домики, Шашлыки, водные развлечения, красивые закаты"
+        />
+            <meta
+          name="title"
+          content="Фотогалерея Икша Кантри Клаб - Посмотрите красивые фотографии про отдых в подмосковье у воды"
+        />
+            <meta
+          name="keywords"
+          content="фото, фотография, фотогарелея, сьемки. Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <section style={{ height: "100vh" }} className="about_background back_settings relative">
             <Slider {...settings}>
                 {
@@ -129,6 +148,7 @@ const GalleryAll = () => {
             )}
             <FixedFuter link="/#gallery" needRotate={true} />
         </section>
+                </>
     );
 };
 

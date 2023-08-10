@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const images = [
     {
@@ -30,6 +31,16 @@ const inputs = [
 ];
 
 const Korporativy = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openImage = () => {
+        setSelectedImage('/image/gram_korp.webp');
+    };
+
+    const closeImage = () => {
+        setSelectedImage(null);
+    };
+
     const [isLoading, setIsLoading] = useState(false);
     const [navigateState, setNavigateState] = useState(false);
     const [currentWindow, setCurrentWindow] = useState(1);
@@ -71,7 +82,35 @@ const Korporativy = () => {
   `;
 
     return (
+          <>
+      <Helmet>
+        <title>Корпоративы в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Корпоративы в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+            отдохнуть со своей командой и укрепить командый дух на берегу Икшинского водохранилища.
+     Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Корпоративы в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <div>
+            {selectedImage && (
+                <div
+                    className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+                    onClick={closeImage}
+                >
+                    <img className="w-[90%] rounded-[25px]" src={selectedImage} alt="Opened Image" />
+                </div>
+            )}
             {
                 currentWindow === 1 ?
                     <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.webp)' }} className="relative back_settings h-[851px]">
@@ -108,10 +147,10 @@ const Korporativy = () => {
                             </div>
                         </div>
                         <div className="absolute top-[427px] right-0">
-                            <div className="relative">
-                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2" src="/image/gram_korp.webp" alt="" />
+                            <button type="button" onClick={openImage} className="relative">
+                                <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/gram_korp.webp" alt="" />
                                 <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
-                            </div>
+                            </button>
                         </div>
                         <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
                         <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
@@ -156,6 +195,7 @@ const Korporativy = () => {
 
             <FixedFuter link="/" needRotate={true} />
         </div>
+                </>
     );
 }
 

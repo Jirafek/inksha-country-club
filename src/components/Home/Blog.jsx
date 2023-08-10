@@ -39,7 +39,7 @@ const Blog = () => {
                     })
                 }
             </div>
-            <div className="flex justify-center pb-[100px]">
+            <div className="flex justify-center pb-[35px]">
                 <Link to="/blog-all" className="w-[218px] h-[62px] flex justify-center items-center back_settings" style={{ backgroundImage: 'url(/image/req_title_bg.webp)' }}>
                     <p className="text-white text-center">посмотреть все</p>
                 </Link>

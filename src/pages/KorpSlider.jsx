@@ -6,6 +6,7 @@ import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/Cus
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const korpSliderData = [
     {
@@ -41,6 +42,25 @@ const KorpSlider = () => {
         prevArrow: <CustomPrevArrow isBottom="7px" />,
     };
     return (
+         <>
+      <Helmet>
+        <title>Корпоративы и тимбилдинг в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Корпоративы и самый эффективный тимбилдинг в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+            отдохнуть и укрепить командый дух на берегу Икшинского водохранилища.
+     Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Корпоративы и тимбилдинг в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <section style={{ backgroundImage: 'url(/image/korp_slider_bg.png)' }} className="back_settings relative h-[851px]">
             <Slider className="" {...settings}>
                 {
@@ -68,6 +88,7 @@ const KorpSlider = () => {
             </Slider>
             <FixedFuter link="/#korp" needRotate={true} />
         </section>
+               </>
     );
 }
 

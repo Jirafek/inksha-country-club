@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
+import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
+import { Helmet } from "react-helmet";
 
 const blogData = [
     {
@@ -30,14 +32,33 @@ const BlogAll = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        nextArrow: <CustomNextArrow isBottom="470px" />,
+        prevArrow: <CustomPrevArrow isBottom="470px" />,
 
     };
     return (
+          <>
+      <Helmet>
+        <title>Загородный Отдых в Подмосковье - Увлекательные истории от Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Загородный Отдых в Подмосковье - Посетители Икша Кантри Клаб делятся своими незабываемыми впечатлениями. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами."
+        />
+            <meta
+          name="title"
+          content="Загородный Отдых в Подмосковье - Захватывающие истории и впечатления от Икша Кантри Клаб ."
+        />
+            <meta
+          name="keywords"
+          content="загородный отдых, загородный клуб, загородный, Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, катание, домик, беседки"
+        />
+      </Helmet>
         <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
                 <img alt="" className="absolute" src="/image/blog_title_bg.webp" />
-                <h1 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
             </div>
             <Slider className="pb-16" {...settings}>
                 {
@@ -54,7 +75,7 @@ const BlogAll = () => {
                                 <img src={el.image} alt="" />
                             </div>
                             <div className="flex justify-center">
-                                <div style={{ backgroundImage: 'url(/image/blog_textholder.png)' }} className="back_settings w-[335px] h-[300px] p-6 relative">
+                                <div style={{ backgroundImage: 'url(/image/blog_textholder.png)' }} className="back_settings w-[335px] h-[300px] p-6 relative text-center">
                                     <p>
                                         {
                                             el.text
@@ -68,6 +89,7 @@ const BlogAll = () => {
             </Slider>
             <FixedFuter link="#blog" needRotate={true} />
         </section>
+               </>
     );
 }
 

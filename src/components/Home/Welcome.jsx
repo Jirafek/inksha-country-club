@@ -4,6 +4,7 @@ import BookingCalendar from '../BookPicker';
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import VideoPlayer from './VideoPlayer';
+import { useLocation } from 'react-router-dom'
 
 const heading = {
   hidden: {},
@@ -30,6 +31,7 @@ const headingLines = {
 };
 
 const Welcome = () => {
+
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   useEffect(() => {
@@ -131,6 +133,10 @@ const Welcome = () => {
             padding-bottom: 0 !important;
             height: 35px !important;
           }
+
+          .znms-widget__v-calendar-popover-content-wrapper {
+            z-index: 100 !important;
+          }
         `;
       const styleElement = document.createElement('style');
       styleElement.innerHTML = customStyles;
@@ -147,8 +153,22 @@ const Welcome = () => {
       skyContainer1.classList.add('animate-moveSky1');
       skyContainer2.classList.add('animate-moveSky2');
       doskaContainer.classList.add('animate-moveDoska');
-    }, 1000)
+    }, 1500)
   }, []);
+
+  window.addEventListener("hashchange", function () {
+    // Получить текущий URL с хэшем
+    var currentUrlWithHash = window.location.href;
+
+    console.log(currentUrlWithHash)
+
+    // Можно также получить только хэш
+    var currentHash = window.location.hash;
+    console.log(currentHash)
+
+    // Здесь ты можешь выполнить действия при изменении ссылки
+    // Например, управлять z-index для модуля бронирования и контента
+  });
 
   useEffect(() => {
     // BookingCalendar([], 'zaezd'); // get data from FireBase
@@ -163,6 +183,7 @@ const Welcome = () => {
       <img className="w-full h-[100%]" src="/image/bg1.webp" alt="" />
       {/* <VideoPlayer /> */}
       {/* <div className="absolute z-30 bottom-0 w-full bg-transparent">
+      <div className="absolute z-[1] bottom-0 w-full bg-transparent">
         <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
       </div> */}
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>

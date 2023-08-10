@@ -346,7 +346,7 @@ const Calculate = () => {
                         </div>
                     </div>
                     <div className="mt-[42px] flex flex-col text-[13px] monterey text-[#000]">
-                        <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество гостей: <span className="w-5 block ml-1">{guesses}</span></h2>
+                        <h3 className="text-center font-semibold text-[15px] flex justify-center">Количество гостей: <span className="w-5 block ml-1">{guesses}</span></h3>
                         <div className="flex justify-center">
                             <div className="flex items-center">
                                 <img className="mr-[10px]" src="/image/man_icon.webp" alt="" />
@@ -363,7 +363,7 @@ const Calculate = () => {
                             </div>
                         </div>
                         <div className="flex justify-center items-center gap-[10px] py-3">
-                            <h2 className="font-semibold text-[15px]">Заезд</h2>
+                            <h3 className="font-semibold text-[15px]">Заезд</h3>
                             <div className="flex flex-col text-[15px]">
                                 <div className="flex gap-2 items-center">
                                     <input
@@ -387,7 +387,7 @@ const Calculate = () => {
                                 </div>
                             </div>
                         </div>
-                        <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h2>
+                        <h3 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h3>
                         <div className="flex justify-center">
                             <div className="flex items-center">
                                 <img className="mr-[10px]" src="/image/calculate_calendar.webp" alt="" />

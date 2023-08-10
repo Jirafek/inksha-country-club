@@ -14,7 +14,7 @@ const Spec = () => {
             </button>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">СПЕЦПРЕДЛОЖЕНИЯ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">СПЕЦПРЕДЛОЖЕНИЯ</h2>
             </div>
             <div className=" flex justify-center mb-[80px]">
                 <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕННИНИКУ САП-ДОСКУ</p>

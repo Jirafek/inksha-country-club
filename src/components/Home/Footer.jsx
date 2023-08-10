@@ -8,14 +8,14 @@ const Footer = () => {
         <section id="footer" className="back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">ИКША Country Club</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">ИКША Country Club</h2>
             </div>
             <div className="w-full footer_blured_back flex flex-col pt-5 pl-2">
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center">
                         <img src="/image/call_big.webp" alt="" />
                         <a href="tel:+7985909120">
-                            <h2 className="text-white monterey font-extrabold underline">+7 985 909 12 02</h2>
+                            <h4 className="text-white monterey font-extrabold underline">+7 985 909 12 02</h4>
                         </a>
                     </div>
                     <div className="flex items-center">
@@ -23,7 +23,7 @@ const Footer = () => {
                             <img src="/image/email_inside.webp" alt="" />
                         </div>
                         <a href="mailto:contact@ikshacountryclub.com">
-                            <h2 className="text-white monterey font-extrabold underline">contact@ikshacountryclub.com</h2>
+                            <h4 className="text-white monterey font-extrabold underline">contact@ikshacountryclub.com</h4>
                         </a>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ body {
   overflow-x: hidden;
 }
 
-#root {
+/* #root {
   height: 200vh;
 }
 
@@ -57,14 +57,13 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #fff !important;
-}
+} */
 
 section#book {
-  height: 100vh;
-  border: 1px solid red;
+  height: 695px;
 }
 
-.section#footer {
+/* .section#footer {
   position: absolute;
   top: 100vh; left: 0;
 
@@ -82,7 +81,7 @@ section#book {
 .slow-move > .swiper-wrapper {
   align-items: center;
   transition-timing-function: linear;
-}
+} */
 
 /* #areas::after, */
 #areas::before {

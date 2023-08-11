@@ -93,7 +93,7 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        parallaxActivate(document);
+        // parallaxActivate(document);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);

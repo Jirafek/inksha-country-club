@@ -22,9 +22,33 @@ import Blog from '../components/Home/Blog';
 import YandexMap from '../components/Home/YandexMap';
 import Footer from '../components/Home/Footer';
 import { Helmet } from "react-helmet";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+
+
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Home = () => {
+    const parallaxActivate = document => {
+        const sections = Array.from(document.querySelectorAll('.section'));
+        gsap.registerPlugin(ScrollTrigger);
+        const timeline = gsap.timeline();
+
+        for (const i in sections) {
+            // if(i !== 0)
+                timeline.fromTo(sections[i], {y: '100vh'}, {y: '0'});
+        }
+
+        ScrollTrigger.create({
+            animation: timeline,
+            trigger: '#root',
+            start: 'top top',
+            invalidateOnRefresh: true,
+            end: 'bottom',
+            scrub: 1,
+            pin: true
+        });
+    };
     const [locationState, setLocationState] = useState(false);
     const location = useLocation();
 
@@ -69,6 +93,8 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll);
 
+        parallaxActivate(document);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -105,7 +131,7 @@ const Home = () => {
         />
       </Helmet>
         <Fragment>
-            <div style={{ display: `${locationState ? 'none' : 'block'}` }} className='m-w-[400px] relative'>
+            <div style={{ display: `${locationState ? 'none' : 'block'}` }} className='sections-container relative'>
                 <Transition.Root as={Fragment} show={sidebarOpen}>
                     <Dialog as='div' className='fixed inset-0 z-[2000]' onClose={toggle}>
                         <Transition.Child

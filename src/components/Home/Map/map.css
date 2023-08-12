@@ -52,6 +52,7 @@
 .map-viewer {
     height: 100%;
     width: 100%;
+    aspect-ratio: 4320 / 7680;
 }
 
 .map-wrapper {
@@ -67,14 +68,17 @@
 .map-figure {
     height: 100%;
     width: auto;
+    aspect-ratio: 4320 / 7680;
 }
 
 .map_image {
     height: 100%;
     width: auto;
+    aspect-ratio: 4320 / 7680;
 }
 
 .map-controls {
+    aspect-ratio: 4320 / 7680;
     position: absolute;
     top: 0;
     left: 0;

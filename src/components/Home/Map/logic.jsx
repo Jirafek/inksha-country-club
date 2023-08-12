@@ -9,6 +9,7 @@ export const
             map = document.querySelector('.map-viewer'),
             mapScale = document.querySelector('.map-wrapper');
 
+
         map.style.transform = 'translate(0px, 0px)';
 
         const
@@ -28,8 +29,8 @@ export const
             },
             dragRestriction = (target, x, y) => {
                 const
-                    targetW = target.getBoundingClientRect().width,
-                    targetH = target.getBoundingClientRect().height,
+                    targetW = target.clientWidth,
+                    targetH = target.clientHeight,
 
                     targetLeft = x + targetW / 2 - targetW * ss / 2,
                     targetTop = y + targetH / 2 - targetH * ss / 2,
@@ -37,18 +38,18 @@ export const
                     targetBottom = mapSection.clientHeight - (targetTop + targetH * ss);
 
                 let modX = x, modY = y;
-
-                if (targetW * ss == mapSection.clientWidth || targetLeft > 0)
-                    modX = -targetW / 2 + targetW * ss / 2
-
-                if (targetRight > 0)
+                if (targetRight >= 0)
                     modX = -(targetW * ss - mapSection.clientWidth) + (targetW * ss / 2 - targetW / 2);
 
-                if (targetH * ss == mapSection.clientHeight || targetTop > 0)
+                if (targetBottom >= 0)
+                    modY = -(targetH * ss - mapSection.clientHeight) + (targetH * ss / 2 - targetH / 2);
+
+                if ( targetLeft > 0 || targetW * ss == mapSection.clientWidth)
+                    modX = -targetW / 2 + targetW * ss / 2
+
+                if ( targetTop > 0 || targetH * ss == mapSection.clientHeight)
                     modY = -targetH / 2 + targetH * ss / 2;
 
-                if (targetBottom > 0)
-                    modY = -(targetH * ss - mapSection.clientHeight) + (targetH * ss / 2 - targetH / 2);
 
                 return [modX, modY];
             };
@@ -59,23 +60,21 @@ export const
         interact(map)
             .gesturable({
                 listeners: {
-                    // start: __event => {
-                    // },
                     move: __event => {
                         let
                             elemScale = __event.scale * scale,
-                        currentScale = elemScale < 1 ? 1 : elemScale;
+                            currentScale = Number(elemScale) < 1 ? 1.05 : elemScale;
 
                         ss = currentScale;
 
                         mapScale.style.transform = `scale(${currentScale})`
 
-                        dragMoveListener(__event);
+                        if(ss > 1)
+                            dragMoveListener(__event);
                     },
                     end: __event => {
-                        scale = scale * __event.scale
+                        scale = Number(scale * __event.scale) < 1 ? 1.05 : elemScale
                         ss = scale;
-                        // currentScale = scale;
                     }
                 }
             })

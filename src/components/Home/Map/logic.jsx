@@ -3,7 +3,7 @@ import interact from 'interactjs';
 import positions from './positions.json';
 
 export const
-    mapLogic = (document, mapVer) => {
+    mapLogic = (document, setTooltipActive) => {
         const
             mapSection = document.querySelector('.map'),
             map = document.querySelector('.map-viewer'),
@@ -56,24 +56,29 @@ export const
 
         let scale = 1;
         let ss = 1;
+        const tooltip = document.querySelector('.map-tooltip');
 
         interact(map)
             .gesturable({
                 listeners: {
+                    start: __event => {
+                        setTooltipActive(false);
+                    },
                     move: __event => {
                         let
                             elemScale = __event.scale * scale,
-                            currentScale = Number(elemScale) < 1 ? 1.05 : elemScale;
+                            currentScale = Number(elemScale) < 1 ? 1.01 : elemScale;
 
                         ss = currentScale;
 
                         mapScale.style.transform = `scale(${currentScale})`
+                        tooltip.style.transform = `scale(${1 / currentScale})`
 
                         if(ss > 1)
                             dragMoveListener(__event);
                     },
                     end: __event => {
-                        scale = Number(scale * __event.scale) < 1 ? 1.05 : elemScale
+                        scale = Number(scale * __event.scale) < 1 ? 1.01 : scale * __event.scale
                         ss = scale;
                     }
                 }
@@ -85,32 +90,31 @@ export const
 
 
     },
-    buttonsLogic = (document, setModalActive, setModalContent) => {
+    buttonsLogic = (document, setTooltipActive, setTooltipText) => {
         const buttonsList = document.querySelector('.map-controls-list');
-        buttonsList.addEventListener('click', __event => {
-            if (__event.target.closest('.map_button')?.dataset.position) {
-                const button = __event.target.closest('.map_button');
-                const num = +button.dataset.position;
+        const tooltip = document.querySelector('.map-tooltip');
+        const mapWrapper = document.querySelector('.map-wrapper');
 
-                setModalActive(true);
+        buttonsList.addEventListener('click', __event__ => {
+            const button = __event__.target.closest('.map_button');
 
-                const content = () => {
+            if (button) {
+                const rect = button.getBoundingClientRect();
+                const rectWrapper = mapWrapper.getBoundingClientRect();
+                const rectTooltip = tooltip.getBoundingClientRect();
 
-                    const currentPosition = positions.filter(position => position.id === num)[0];
+                let top = (rect.bottom - rectWrapper.top) * 100 / rectWrapper.height;
+                let left = (rect.left - rectWrapper.left - rectTooltip.width / 2) * 100 / rectWrapper.width;
 
-                    if (currentPosition) {
-                        return <>
-                            <img src={currentPosition.images[0]} />
-                            <h1>{currentPosition.title}</h1>
-                            <p>{currentPosition.text}</p>
-                        </>;
-                    }
-                    return <>
-                        <h1>Данных пока нет!</h1>
-                    </>;
-                };
+                console.log(top)
+                console.log(left)
+                if(left < 0) left = 0
 
-                setModalContent(content);
+                tooltip.style.top = `${top}%`;
+                tooltip.style.left = `${left}%`;
+
+                setTooltipActive(true);
+                setTooltipText(positions.find(position => position.id == +button.dataset.position).title);
             }
-        })
+        });
     };

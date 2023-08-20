@@ -2,7 +2,6 @@ import React from "react";
 
 const V1 = () => {
     return <>
-        <div className="map-wrapper">
             <figure className="map-figure">
                 <img src="/image/od.webp" alt="" className="map_image" />
             </figure>
@@ -183,7 +182,6 @@ const V1 = () => {
                     </g>
                 </svg>
             </div>
-        </div>
     </>;
 }
 

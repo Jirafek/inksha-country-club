@@ -41,7 +41,7 @@ const Footer = () => {
                         ))
                     }
                 </ul>
-                <div className="flex flex-col gap-2 pb-[5px] pt-[15px]">
+                <div className="flex flex-col gap-2 pb-[5px] pt-[15px] mb-16">
                     <div className="flex justify-between monterey px-[11px]"> {/* justify-between */}
                         <Link to="/data-privicy" className="text-white text-[12px] underline">Политика данных</Link>
                         <Link to="/faq" className="text-white text-[12px] underline">FAQ</Link>

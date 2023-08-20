@@ -2,8 +2,8 @@ import React from "react";
 
 const Help = () => {
     return (
-        <section id="help" style={{ backgroundImage: 'url(/image/bron_how_bg.webp)' }} className="back_settings flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center justify-center mb-[45px]">
+        <section id="help" style={{ backgroundImage: 'url(/image/bron_how_bg.webp)' }} className="section back_settings flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center justify-center mt-[35px]">
                 <img alt="" src="/image/bron_textholder.webp" />
             </div>
             <div className="flex flex-col items-center">

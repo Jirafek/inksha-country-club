@@ -78,7 +78,7 @@ const Eat = () => {
             variants={heading}
             id="eat"
             style={{ backgroundImage: 'url(/image/eat_bg.webp)' }}
-            className="happy_background relative back_settings">
+            className="section happy_background relative back_settings">
             {selectedImage && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100]"
@@ -90,7 +90,7 @@ const Eat = () => {
             )}
             <div className="flex flex-col items-center justify-center relative h-[90px]">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h2>
             </div>
             <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
             <div className="flex justify-center mb-[5px]">

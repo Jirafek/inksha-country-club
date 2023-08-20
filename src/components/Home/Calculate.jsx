@@ -296,10 +296,10 @@ const Calculate = () => {
 
     };
     return (
-        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="back_settings relative">
+        <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="section back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px]">
                 <img alt="" className="absolute" src="/image/titles_bg.webp" />
-                <h1 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h2>
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>
                 <div
@@ -307,7 +307,7 @@ const Calculate = () => {
                     className="back_settings text-[#000] monterey w-[337px] h-[376px]"
                 >
                     <div className="flex flex-col text-[13px] monterey text-[#433E6A] gap-2">
-                        <h2 className="text-[#000] text-[15px] font-semibold text-center mb-[5px] mt-[10px]">Выберите локацию</h2>
+                        <h3 className="text-[#000] text-[15px] font-semibold text-center mb-[5px] mt-[10px]">Выберите локацию</h3>
                         <div className="pl-12">
                             <label className="flex gap-[15px]">
                                 <input
@@ -346,7 +346,7 @@ const Calculate = () => {
                         </div>
                     </div>
                     <div className="mt-[42px] flex flex-col text-[13px] monterey text-[#000]">
-                        <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество гостей: <span className="w-5 block ml-1">{guesses}</span></h2>
+                        <h3 className="text-center font-semibold text-[15px] flex justify-center">Количество гостей: <span className="w-5 block ml-1">{guesses}</span></h3>
                         <div className="flex justify-center">
                             <div className="flex items-center">
                                 <img className="mr-[10px]" src="/image/man_icon.webp" alt="" />
@@ -363,7 +363,7 @@ const Calculate = () => {
                             </div>
                         </div>
                         <div className="flex justify-center items-center gap-[10px] py-3">
-                            <h2 className="font-semibold text-[15px]">Заезд</h2>
+                            <h3 className="font-semibold text-[15px]">Заезд</h3>
                             <div className="flex flex-col text-[15px]">
                                 <div className="flex gap-2 items-center">
                                     <input
@@ -387,7 +387,7 @@ const Calculate = () => {
                                 </div>
                             </div>
                         </div>
-                        <h2 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h2>
+                        <h3 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h3>
                         <div className="flex justify-center">
                             <div className="flex items-center">
                                 <img className="mr-[10px]" src="/image/calculate_calendar.webp" alt="" />

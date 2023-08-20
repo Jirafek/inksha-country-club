@@ -74,13 +74,13 @@ const Locations = () => {
     };
 
     return (
-        <section id="locations" className="about_background back_settings relative">
-            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+        <section id="locations" className="section about_background back_settings relative">
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10 pt-[4.5rem]">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">ЛОКАЦИИ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">ЛОКАЦИИ</h2>
             </div>
 
-            <Slider {...settings}>
+            <Slider className="mt-[35px]" {...settings}>
                 {
                     sliderData.map((el, i) => {
                         return (
@@ -91,9 +91,9 @@ const Locations = () => {
                                 </div>
                                 <div className="flex justify-center">
                                     <div style={{ backgroundImage: 'url(/image/locations_about.webp)' }} className="back_settings text-[16px] monterey text-[#000] flex w-[240px] h-[95px] flex-col items-center justify-center">
-                                        <h2 className="font-bold text-[14px]">
+                                        <h3 className="font-bold text-[14px]">
                                             {el.title}
-                                        </h2>
+                                        </h3>
                                         <p>
                                             {el.people}
                                         </p>

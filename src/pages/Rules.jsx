@@ -1,11 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const Rules = (props) => {
     const { title, isNeedButton, isNeedPadding, text } = props;
 
     return (
+          <>
+      <Helmet>
+        <title>Отдых в Подмосковье на берегу Икшинского водохранилища - Посетите Икша Кантри Клаб</title>
+        <meta
+          name="description"
+          content="Отдых в Подмосковье с Икша Кантри Клаб - Посетите наш загородный клуб. У нас есть Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+            отдохнуть на берегу Икшинского водохранилища.
+     Уютные домики, Шашлыки, красивые закаты. Проведите выходные на природе, недалеко от Москвы"
+        />
+            <meta
+          name="title"
+          content="Отдых в Подмосковье на берегу Икшинского водохранилища - Посетите Икша Кантри Клаб"
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <section className="back_settings relative" style={{ backgroundImage: 'url(/image/h_bg1.webp)' }}>
             <div className="flex justify-center">
                 <div className="back_settings relative w-[340px] h-[68px] flex justify-center text-center font-extrabold text-[14px] items-center monterey text-white" style={{ backgroundImage: 'url(/image/politics_bg.webp)' }}>
@@ -49,6 +69,7 @@ const Rules = (props) => {
             </div>
             <FixedFuter link="/#contacts" needRotate={true} />
         </section>
+               </>
     );
 }
 

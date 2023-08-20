@@ -27,10 +27,10 @@ const Dates = () => {
         autoplay: true,
     };
     return (
-        <section id="dates" style={{ backgroundImage: 'url(/image/dates_bg.webp)' }} className="back_settings relative">
+        <section id="dates" style={{ backgroundImage: 'url(/image/dates_bg.webp)' }} className="section back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px]">
                 <img className="absolute" src="/image/titles_bg.webp" alt="" />
-                <h1 className="text-[20px] text-white z-10 font-bold">СВИДАНИЯ НА БЕРЕГУ</h1>
+                <h2 className="text-[20px] text-white z-10 font-bold">СВИДАНИЯ НА БЕРЕГУ</h2>
             </div>
             <div className="flex justify-center mb-3">
                 <img className="heart" src="/image/heart_dates.webp" alt="" />

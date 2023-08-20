@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { m } from 'framer-motion';
 import FixedFuter from '../components/Home/FixedFuter';
 import { CustomNextArrow, CustomPrevArrow } from '../utils/Home/CustomArrowsGallery';
+import { Helmet } from "react-helmet";
 
 const heading = {
     hidden: {},
@@ -47,6 +48,36 @@ const imagesActive = [
     "/image/gallery-all13.webp",
 ];
 
+const guesses = [
+    "/image/gallery-all14.png",
+    "/image/gallery-all15.png",
+    "/image/gallery-all16.png",
+    "/image/gallery-all17.png",
+    "/image/gallery-all18.png",
+    "/image/gallery-all19.png",
+    "/image/gallery-all20.png",
+    "/image/gallery-all21.png",
+    "/image/gallery-all22.png",
+    "/image/gallery-all23.png",
+    "/image/gallery-all24.png",
+    "/image/gallery-all25.png",
+];
+
+const eat = [
+    "/image/gallery-all26.png",
+    "/image/gallery-all27.png",
+    "/image/gallery-all28.png",
+    "/image/gallery-all29.png",
+    "/image/gallery-all30.png",
+    "/image/gallery-all31.png",
+    "/image/gallery-all32.png",
+    "/image/gallery-all33.png",
+    "/image/gallery-all34.png",
+    "/image/gallery-all35.png",
+    "/image/gallery-all36.png",
+    "/image/gallery-all37.png",
+];
+
 const gallerySliderData = [
     {
         img: '/image/gallery_slider_title.webp',
@@ -55,6 +86,14 @@ const gallerySliderData = [
     {
         img: '/image/gallery_slider_title1.webp',
         items: imagesActive
+    },
+    {
+        img: '/image/gallery_slider_title3.png',
+        items: guesses
+    },
+    {
+        img: '/image/gallery_slider_title4.png',
+        items: eat
     },
 ];
 
@@ -81,54 +120,73 @@ const GalleryAll = () => {
     };
 
     return (
-        <section style={{ height: "100vh" }} className="about_background back_settings relative">
-            <Slider {...settings}>
-                {
-                    gallerySliderData.map((el, i) => (
-                        <Fragment key={uuid4()}>
-                            <div className="m-0 flex flex-col items-center">
-                                <img src={el.img} alt="" />
-                            </div>
-
-                            <div className="flex justify-center">
-                                <div className="grid grid-cols-2">
-                                    {el.items.map((image, i) => (
-                                        <img
-                                            className="max-w-[135px] duration-300"
-                                            key={uuid4()}
-                                            src={image}
-                                            alt=""
-                                            onClick={() => handleImageClick(image)} // добавляем обработчик клика
-                                        />
-                                    ))}
+        <>
+            <Helmet>
+                <title>Фотогалерея Икша Кантри Клаб - Посмотрите фотографии про отдых в подмосковье</title>
+                <meta
+                    name="description"
+                    content="Фотогалерея Икша Кантри Клаб. Красивые Фотографии с берега Икшинского водохранилища,
+            Впечатления об отдыхе, Уютные домики, Шашлыки, водные развлечения, красивые закаты"
+                />
+                <meta
+                    name="title"
+                    content="Фотогалерея Икша Кантри Клаб - Посмотрите красивые фотографии про отдых в подмосковье у воды"
+                />
+                <meta
+                    name="keywords"
+                    content="фото, фотография, фотогарелея, сьемки. Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, компания, катание, домик, беседки"
+                />
+            </Helmet>
+            <section className="about_background back_settings relative pb-[60px]">
+                <Slider {...settings}>
+                    {
+                        gallerySliderData.map((el, i) => (
+                            <Fragment key={uuid4()}>
+                                <div className="m-0 flex flex-col items-center">
+                                    <img src={el.img} alt="" />
                                 </div>
-                            </div>
-                        </Fragment>
-                    ))
-                }
-            </Slider>
 
-            {isModalOpen && (
-                <m.div
-                    initial='hidden'
-                    whileInView='visible'
-                    viewport={{ once: true }}
-                    variants={heading}
-                    style={{ background: "rgba(0, 0, 0, 0.5)" }}
-                    className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
-                    onClick={closeModal}
-                >
-                    <m.img
-                        variants={headingLines}
-                        src={chosenImage}
-                        alt=""
-                        style={{ width: "200px" }}
-                        className="absolute"
-                    />
-                </m.div>
-            )}
-            <FixedFuter link="/#gallery" needRotate={true} />
-        </section>
+                                <div className="flex justify-center">
+                                    <div className="grid grid-cols-2">
+                                        {el.items.map((image, i) => (
+                                            <img
+                                                className="max-w-[135px] duration-300"
+                                                key={uuid4()}
+                                                src={image}
+                                                alt=""
+                                                onClick={() => handleImageClick(image)} // добавляем обработчик клика
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                            </Fragment>
+                        ))
+                    }
+                </Slider>
+
+                {isModalOpen && (
+                    <m.div
+                        initial='hidden'
+                        whileInView='visible'
+                        viewport={{ once: true }}
+                        variants={heading}
+                        style={{ background: "rgba(0, 0, 0, 0.5)" }}
+                        className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
+                        onClick={closeModal}
+                    >
+                        <m.img
+                            variants={headingLines}
+                            src={chosenImage}
+                            alt=""
+                            style={{ width: "200px" }}
+                            className="absolute"
+                        />
+                    </m.div>
+                )}
+                <FixedFuter link="/#gallery" needRotate={true} />
+            </section>
+        </>
     );
 };
 

@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/CustomEventArrows";
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
+import { Helmet } from "react-helmet";
 
 const datesData = [
     {
@@ -198,13 +199,31 @@ const DatesChooser = () => {
         prevArrow: <CustomPrevArrow />,
     };
     return (
+         <>
+      <Helmet>
+        <title>Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых</title>
+        <meta
+          name="description"
+          content="Загородный клуб Икша Кантри Клаб. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами. Баня, Уютные домики, Шашлыки, водные развлечения, красивые закаты"
+        />
+            <meta
+          name="title"
+          content="Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых в Подмосковье у воды."
+        />
+            <meta
+          name="keywords"
+          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, компания, катание, домик, беседки"
+        />
+      </Helmet>
         <m.section
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
             variants={heading}
-            style={{ height: '100vh' }}
-            className="about_background back_settings relative">
+            style={{ height: '100vh', backgroundImage: 'url(/image/dates_chooser_bg.png)' }}
+            className="back_settings relative">
             <m.div variants={headingLines} className="flex flex-col items-center">
                 <img src="/image/dates_title.webp" alt="" />
             </m.div>
@@ -218,8 +237,8 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center px-[50px]">
-                                <div style={{ backgroundColor: 'rgba(124, 104, 78, 0.71)' }} className="rounded-[30px] flex flex-col gap-2">
-                                    <div className="flex flex-col gap-2 max-h-96 overflow-y-auto">
+                                <div style={{ backgroundColor: 'rgb(124 104 78 / 95%)' }} className="rounded-[30px] flex flex-col gap-2">
+                                    <div className="flex flex-col gap-2 max-h-[20rem] overflow-y-auto">
                                         {
                                             el.texts.map((text, index) => (
                                                 <div key={uuidv4()} className="flex items-center">
@@ -243,7 +262,7 @@ const DatesChooser = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center mt-3">
-                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] text-white bg-[#7C684E] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
+                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
                             </div>
                         </div>
                     ))
@@ -251,6 +270,7 @@ const DatesChooser = () => {
             </Slider>
             <FixedFuter link="/#dates" needRotate={true} />
         </m.section>
+              </>
     );
 }
 

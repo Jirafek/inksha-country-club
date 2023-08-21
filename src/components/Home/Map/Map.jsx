@@ -22,11 +22,10 @@ const Map = () => {
         [tooltipActive, setTooltipActive] = useState(false),
         [tooltipText, setTooltipText] = useState('');
 
-
     useEffect(() => {
         buttonsLogic(document, setTooltipActive, setTooltipText);
-
-        mapLogic(document, setTooltipActive);
+        mapLogic(document, setTooltipActive, setTooltipActive);
+        setTooltipActive(false)
         // window.dragMoveListener = dragMoveListener
     }, [mapVer]);
 

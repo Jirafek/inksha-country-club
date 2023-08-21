@@ -106,8 +106,7 @@ export const
                 let top = (rect.bottom - rectWrapper.top) * 100 / rectWrapper.height;
                 let left = (rect.left - rectWrapper.left - rectTooltip.width / 2) * 100 / rectWrapper.width;
 
-                console.log(top)
-                console.log(left)
+
                 if(left < 0) left = 0
 
                 tooltip.style.top = `${top}%`;

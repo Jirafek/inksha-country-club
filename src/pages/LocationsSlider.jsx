@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet";
 const locationsData = [
     {
         img: '/image/locations_slider_title.webp',
-        link: 'https://www.youtube.com/embed/myNwsKZabqs',
+        link: 'https://www.youtube.com/embed/45-Tw9CtsN0',
         title: 'Веранда с домиками на берегу',
         circles: [
             '30 чел',
@@ -104,30 +104,29 @@ const LocationsSlider = () => {
     }
 
     return (
-          <>
-      <Helmet>
-        <title>Домики в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
-        <meta
-          name="description"
-          content="Домики в Подмосковье с Икша Кантри Клаб -  а также беседки Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+        <section className="about_background back_settings relative">
+            <Helmet>
+                <title>Домики в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+                <meta
+                    name="description"
+                    content="Домики в Подмосковье с Икша Кантри Клаб -  а также беседки Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
             отдохнуть на берегу Икшинского водохранилища.
      Уютные домики и беседки, Шашлыки, красивые закаты. Проведите свои выходные на природе, недалеко от Москвы"
-        />
-            <meta
-          name="title"
-          content="Домики в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
-        />
-            <meta
-          name="keywords"
-          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+                />
+                <meta
+                    name="title"
+                    content="Домики в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+                />
+                <meta
+                    name="keywords"
+                    content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
 корпоратив, глэмпинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
-        />
-      </Helmet>
-        <section className="about_background back_settings relative px-[6px]">
+                />
+            </Helmet>
             <Slider {...settings}>
                 {
                     locationsData.map((el, i) => (
-                        <div className="flex flex-col items-center">
+                        <div key={uuidv4()} className="flex flex-col items-center">
                             <div className="flex flex-col items-center">
                                 <img src={el.img} alt="" />
                             </div>
@@ -135,7 +134,7 @@ const LocationsSlider = () => {
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                             <div className="flex justify-center mt-3 mb-2">
-                                <div className="w-full h-[355px] back_settings relative px-5 py-3 flex flex-col items-center" style={{ backgroundImage: 'url(/image/locations_text_layer.webp)' }}>
+                                <div className="w-full h-[370px] back_settings relative px-5 py-3 flex flex-col items-center" style={{ backgroundImage: 'url(/image/locations_text_layer.webp)' }}>
                                     <h3 className="font-extrabold text-[20px] text-center">
                                         {el.title}
                                     </h3>
@@ -143,6 +142,7 @@ const LocationsSlider = () => {
                                         {
                                             el.circles.map((text, index) => (
                                                 <div
+                                                    key={uuidv4()}
                                                     style={{ backgroundColor: 'linear-gradient(217deg, rgba(255, 252, 252, 0.60) 0%, rgba(255, 252, 252, 0.30) 100%)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}
                                                     className="w-[90px] h-[90px] rounded-full border border-[#4F8B36] text-[18px] text-center font-bold backdrop-blur-[2px] flex justify-center items-center">
                                                     {text}
@@ -153,7 +153,7 @@ const LocationsSlider = () => {
                                     <div className="flex flex-col justify-center mt-2">
                                         {
                                             el.texts.map((text, index) => (
-                                                <p className="text-[14px]">
+                                                <p key={uuidv4()} className="text-[14px]">
                                                     - {text}
                                                 </p>
                                             ))
@@ -177,7 +177,6 @@ const LocationsSlider = () => {
             </Slider>
             <FixedFuter link="/#locations" needRotate={true} />
         </section>
-               </>
     );
 }
 

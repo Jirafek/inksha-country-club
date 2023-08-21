@@ -21,7 +21,7 @@ const eventsData = [
             'Возможность остаться на ночлег (до 10 чел.)',
             'Предзаказ питания и праздничного торта'
         ],
-        link: 'birthday'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Шашлыки',
@@ -33,7 +33,7 @@ const eventsData = [
             'Просторный индивидуальный причал',
             '3 домика для ночлега и питание дополнительно'
         ],
-        link: 'shahliki'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Баня и Спа',
@@ -45,7 +45,7 @@ const eventsData = [
             'Парения и чай из самовара',
             'Дополнительно можно заказать питание'
         ],
-        link: 'bania'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Караоке Вечеринка',
@@ -57,7 +57,7 @@ const eventsData = [
             'Аудиосистема с настраиваемым под вас звуком',
             'Напитки и питание',
         ],
-        link: 'bania'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Девичник',
@@ -69,7 +69,7 @@ const eventsData = [
             'Аудиосистема с настраиваемым под вас звуком',
             'Напитки и питание',
         ],
-        link: 'devichnik'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Мальчишник',
@@ -81,7 +81,7 @@ const eventsData = [
             'Парения и чай из самовара',
             'Дополнительно можно заказать питание'
         ],
-        link: 'man_party'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Свадьба',
@@ -93,7 +93,7 @@ const eventsData = [
             'Парения и чай из самовара',
             'Дополнительно можно заказать питание'
         ],
-        link: 'svadba'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
     {
         title: 'Послесвадебная вечеринка',
@@ -105,7 +105,7 @@ const eventsData = [
             'Парения и чай из самовара',
             'Дополнительно можно заказать питание'
         ],
-        link: 'after_svadba'
+        link: 'https://bronirui-online.ru/iksha-country-club/uslugi'
     },
 
 ];
@@ -165,11 +165,11 @@ const Events = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <Link to={el.link} className="flex justify-center pb-[30px]">
+                                <a href={el.link} className="flex justify-center pb-[30px]">
                                     <button style={{ backgroundImage: 'url(/image/date_button_event.webp)' }} className="w-[205px] text-[19px] font-bold h-[70px] text-[#000] monterey flex items-center justify-center">
                                         Выбрать дату
                                     </button>
-                                </Link>
+                                </a>
                             </div>
                         );
                     })

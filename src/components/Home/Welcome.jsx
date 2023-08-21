@@ -170,14 +170,14 @@ const Welcome = () => {
     // Например, управлять z-index для модуля бронирования и контента
   });
 
-  // useEffect(() => {
-  //   // BookingCalendar([], 'zaezd'); // get data from FireBase
-  //   // BookingCalendar([], 'viezd'); // get data from FireBase
-  //   setTimeout(() => {
-  //     document.querySelector('.animate-moveSky1').style.display = 'none'
-  //     document.querySelector('.animate-moveSky2').style.display = 'none'
-  //   }, 4500)
-  // }, []);
+  useEffect(() => {
+    // BookingCalendar([], 'zaezd'); // get data from FireBase
+    // BookingCalendar([], 'viezd'); // get data from FireBase
+    setTimeout(() => {
+      document.querySelector('.animate-moveSky1').style.display = 'none'
+      document.querySelector('.animate-moveSky2').style.display = 'none'
+    }, 4500)
+  }, []);
   return (
     <section id='book' className="welcome relative m-0">
       <img className="w-full h-[100%]" src="/image/bg1.webp" alt="" />

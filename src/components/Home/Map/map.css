@@ -11,6 +11,7 @@
 .map {
     position: relative;
     width: 100vw;
+    max-height: 80vh;
     /* height: 90vh; */
     aspect-ratio: 4320 / 7680;
     overflow: hidden;
@@ -53,7 +54,7 @@
 
 .map-viewer {
     position: relative;
-    height: 100%;
+    height: auto;
     width: 100%;
     aspect-ratio: 4320 / 7680;
 }

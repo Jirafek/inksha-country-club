@@ -91,13 +91,14 @@ const LocationsSlider = () => {
         nextArrow: <CustomNextArrow />,
         prevArrow: <CustomPrevArrow />,
     };
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = (data) => {
 
         emailjs.send("service_a1dan7b", "template_avgrkli", data, "V_IkuqWqNwJlUw72K")
             .then((result) => {
                 alert('Форма успешно отправлена!');
+                reset()
             }, (error) => {
                 alert('Ошибка при отправке формы');
             }); // sending to email
@@ -161,20 +162,20 @@ const LocationsSlider = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex justify-center px-4 pb-[80px]">
-                                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full items-center px-5 border-[3px] border-[#4F8B36] bg-[#B5EAC9] rounded-[10px] pb-[25px] relative">
-                                    <p className="text-[20px] font-bold mb-[7px]">Перезвоните мне</p>
-                                    <input {...register('name', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="имя" type="text" />
-                                    <input {...register('phone', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="телефон" type="text" />
-                                    <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute -bottom-3 left-1/2 bg-[#0CF259] text-[13px] py-[2px] px-[40px] border-black border-[2px] rounded-[10px]">
-                                        гоу
-                                    </button>
-                                </form>
-                            </div>
                         </div>
                     ))
                 }
             </Slider>
+            <div className="flex justify-center px-4 pb-[150px]">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full items-center px-5 border-[3px] border-[#4F8B36] bg-[#B5EAC9] rounded-[10px] pb-[25px] relative">
+                    <p className="text-[20px] font-bold mb-[7px]">Перезвоните мне</p>
+                    <input {...register('name', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="имя" type="text" />
+                    <input {...register('phone', { required: true })} style={{ borderColor: 'rgba(0, 0, 0, 0.50)', backgroundColor: 'rgba(217, 217, 217, 0.50)' }} className="w-full rounded-[10px] text-[13px] pl-[13px] py-[6px] mb-[2px] border" placeholder="телефон" type="text" />
+                    <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute -bottom-3 left-1/2 bg-[#0CF259] text-[13px] py-[2px] px-[40px] border-black border-[2px] rounded-[10px]">
+                        Отправить
+                    </button>
+                </form>
+            </div>
             <FixedFuter link="/#locations" needRotate={true} />
         </section>
     );

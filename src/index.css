@@ -59,14 +59,15 @@ body {
   background-color: #fff !important;
 } */
 
-section#book {
+
+.welcome {
   height: 695px;
 }
 
-/* .welcome {
+section:not(section.map) {
   position: relative;
-  z-index: 1000;
-} */
+  z-index: 10000;
+}
 
 /* .section#footer {
   position: absolute;

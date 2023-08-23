@@ -18,9 +18,12 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className='h-11' src="/image/to_top_button.webp" alt="" />
                     </button>
             }
-            <div className='bg-[#957BAE] h-full w-full flex items-center justify-around'>
+            <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
                 <a href="https://bronirui-online.ru/iksha-country-club">
                     <img className='w-[302px]' src="/image/booking_button.webp" alt="" />
+                </a>
+                <a href="https://wa.me/79859091202" target="_blanc">
+                    <img className="h-[65px] absolute right-[60px] top-1/2 -translate-y-1/2" src="/image/wa_ft.png" alt="" />
                 </a>
                 <a href="tel:+79859091202">
                     <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="" />

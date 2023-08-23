@@ -16,6 +16,7 @@ const KorpSlider = lazy(() => import('pages/KorpSlider'));
 const FAQ = lazy(() => import('pages/FAQ'));
 const LocationsSlider = lazy(() => import('pages/LocationsSlider'));
 const BlogAll = lazy(() => import('pages/BlogAll'));
+const FormCalculate = lazy(() => import('pages/FormCalculate'));
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path='/faq' element={<FAQ />} />
       <Route path='/locations-about' element={<LocationsSlider />} />
       <Route path='/blog-all' element={<BlogAll />} />
+      <Route path='/form/:amount' element={<FormCalculate />} />
       <Route path='*' element={<NotFound />} />
       {/* <Route path='*' element={<NotFound />} /> */}
     </Routes>

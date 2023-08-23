@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 
 const extraServiceData = [
     {
@@ -439,7 +440,9 @@ const Calculate = () => {
                     Предварительная стоимость: {total}
                 </div>
                 <div className="flex justify-center">
-                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></a>
+                    <Link to={`/form/${total}`}>
+                        <button type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></button>
+                    </Link>
                 </div>
             </form>
         </section>

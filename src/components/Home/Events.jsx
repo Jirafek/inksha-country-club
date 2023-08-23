@@ -134,7 +134,7 @@ const Events = () => {
             <Confetti
                 width={width}
                 height='710px'
-                numberOfPieces={eventsData[activeSlideIndex]?.link === "birthday" ? 300 : 0}
+                numberOfPieces={eventsData[activeSlideIndex]?.title === "День рождения" ? 300 : 0}
                 gravity={0.1}
                 className="z-0"
             />

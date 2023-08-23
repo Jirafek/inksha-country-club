@@ -47,6 +47,9 @@ const Footer = () => {
                         <Link to="/faq" className="text-white text-[12px] underline">FAQ</Link>
                         <Link to="/live-rules" className="text-white text-[12px] underline">Правила проживания</Link>
                     </div>
+                    <div className="flex justify-center monterey">
+                        <a className="text-white text-[12px] underline" href="/pdf/oferta.pdf">Договор оферты</a>
+                    </div>
                     <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб</p>
                 </div>
             </div>

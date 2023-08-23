@@ -31,26 +31,32 @@ const Map = () => {
         // window.dragMoveListener = dragMoveListener
     }, [mapVer]);
 
-    const [isVisible, setIsVisible] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const triggerPosition = 650; // define the scroll position where you want to show the block
+    // const [isVisible, setIsVisible] = useState(false);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollPosition = window.scrollY;
+    //         const triggerPosition = 650; // define the scroll position where you want to show the block
 
-            setIsVisible(scrollPosition > triggerPosition);
-        };
+    //         setIsVisible(scrollPosition > triggerPosition);
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('scroll', handleScroll);
 
-        // parallaxActivate(document);
+    //     // parallaxActivate(document);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
+
+
+
+
+    // Выше было появление тайтла
 
     return <section className='section map'>
-        <div style={!isVisible ? { display: 'none' } : {}} className='map-header'>
+        <div className='map-header'>
             <div
                 className="map_title"
             >

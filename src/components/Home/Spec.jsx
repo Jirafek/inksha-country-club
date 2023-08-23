@@ -17,7 +17,7 @@ const Spec = () => {
                 <h2 className="text-[20px] text-white z-10 font-bold">СПЕЦПРЕДЛОЖЕНИЯ</h2>
             </div>
             <div className=" flex justify-center mb-[80px]">
-                <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕННИНИКУ САП-ДОСКУ</p>
+                <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕНИННИКУ САП-ДОСКУ</p>
             </div>
             <div style={currentBg.includes('2') ? { opacity: '1' } : { opacity: '0' }} className="flex items-center ml-[15px] transition-all duration-300">
                 <img src="/image/cake.webp" alt="" />

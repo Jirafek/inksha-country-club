@@ -82,13 +82,12 @@ const Welcome = () => {
       }
           .znms-widget__main-wrapper {
             background-color: transparent !important;
-            backdrop-filter: blur(0px) !important;
-            -webkit-backdrop-filter: blur(0px) !important;
-            --tw-backdrop-blur: 0px !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            --tw-backdrop-blur: none !important;
           }
 
           .znms-widget__teleporter {
-            // margin-top: 90px; */
             position: relative;
             bottom: -100px;
           }
@@ -97,25 +96,11 @@ const Welcome = () => {
             z-index: 2000 !important;
           }
 
-          // .znms-widget__module-form-block__input {
-          //   display: none !important;
-          // }
-
-          // .znms-widget__module-form-block__label {
-          //   font-size: 14px !important;
-          //   margin-bottom: 0 !important;
-          // }
-
-          // .znms-widget__module-form-block__left:nth-child(-n+1) {
-          //   display: flex;
-          //   flex-wrap: wrap;
-          //   align-items: center;
-          //   gap: 20px;
-          // }
-
           .znms-widget__module-form-block {
             background-color: transparent !important;
-            -webkit-backdrop-filter: blur(0px) !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            --tw-backdrop-blur: none !important;
             bottom: -50px;
           }
 
@@ -199,7 +184,7 @@ const Welcome = () => {
       <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.webp" alt="" />
       <div
         style={{ transform: 'translateX(-50%)' }}
-        className='absolute left-1/2 w-full bottom-[4.5rem]'
+        className='absolute left-1/2 w-full bottom-[8.5rem]'
       >
         <div id="znms-widget-1"></div>
         <m.form

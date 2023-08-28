@@ -69,19 +69,19 @@ const YandexMap = () => {
                     </p>
 
                     <div className="absolute bottom-[2px] right-0 flex items-center">
-                        <a target="_blanc" href="https://wa.me/+79859091202">
+                        <a href="https://wa.me/+79859091202">
                             <img className="w-[50px] h-[50px] bg-transparent" src="/image/wa.webp" alt="" />
                         </a>
-                        <a target="_blanc" href="https://t.me/ikshacountryclub">
+                        <a href="https://t.me/ikshacountryclub">
                             <img className="w-[50px] h-[50px] bg-transparent" src="/image/tg.webp" alt="" />
                         </a>
-                        <a className="mr-[10px] ml-1" target="_blanc" href="https://vk.com/ikshacountryclub">
+                        <a className="mr-[10px] ml-1" href="https://vk.com/ikshacountryclub">
                             <img src="/image/vk.webp" alt="" />
                         </a>
-                        <a className="mr-1" target="_blanc" href="https://www.instagram.com/ikshacountryclub">
+                        <a className="mr-1" href="https://www.instagram.com/ikshacountryclub">
                             <img src="/image/inst.webp" alt="" />
                         </a>
-                        <a target="_blanc" href="https://www.youtube.com/@ikshacountryclub">
+                        <a href="https://www.youtube.com/@ikshacountryclub">
                             <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="" />
                         </a>
                     </div>
@@ -91,7 +91,7 @@ const YandexMap = () => {
                 <div className="w-[330px] h-[205px] relative group">
                     {!isVideoPlaying && (
                         <div>
-                            <a target="_blanc" href={ytSrc}>
+                            <a href={ytSrc}>
                                 <img
                                     src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
                                     alt=""

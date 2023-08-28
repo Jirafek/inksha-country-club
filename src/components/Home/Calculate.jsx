@@ -365,7 +365,7 @@ const Calculate = () => {
                         <div className="flex justify-center items-center gap-[10px] py-3">
                             <h3 className="font-semibold text-[15px]">Заезд</h3>
                             <div className="flex flex-col text-[15px]">
-                                <div className="flex gap-2 items-center">
+                                <label className="flex gap-2 items-center">
                                     <input
                                         checked={selectedWeek === "пн-чт"}
                                         onChange={handleWeekChange}
@@ -374,8 +374,8 @@ const Calculate = () => {
                                         value="пн-чт"
                                         type="radio" />
                                     <p className="font-semibold">пн-чт</p>
-                                </div>
-                                <div className="flex gap-2 items-center">
+                                </label>
+                                <label className="flex gap-2 items-center">
                                     <input
                                         checked={selectedWeek === "пт-вс"}
                                         onChange={handleWeekChange}
@@ -384,7 +384,7 @@ const Calculate = () => {
                                         value="пт-вс"
                                         type="radio" />
                                     <p className="font-semibold">пт-вс</p>
-                                </div>
+                                </label>
                             </div>
                         </div>
                         <h3 className="text-center font-semibold text-[15px] flex justify-center">Количество дней: <span className="w-5 block ml-1">{days}</span></h3>
@@ -416,7 +416,7 @@ const Calculate = () => {
                         {
                             extraServiceData.map((el, i) => (
                                 <div key={uuidv4()} className="flex justify-between items-center">
-                                    <div className="flex items-center gap-[5px]">
+                                    <label className="flex items-center gap-[5px]">
                                         <input
                                             type="checkbox"
                                             className="w-[15px] h-[15px]"
@@ -426,7 +426,7 @@ const Calculate = () => {
                                         <p className="text-[13px] font-medium">
                                             {el.title}
                                         </p>
-                                    </div>
+                                    </label>
                                     <div className="flex justify-center items-center text-[11px] font-medium bg-[#E4F4E7] rounded-sm border border-[#221B4B] w-[80px]">
                                         {el.cost + el.point}
                                     </div>
@@ -439,7 +439,7 @@ const Calculate = () => {
                     Предварительная стоимость: {total}
                 </div>
                 <div className="flex justify-center">
-                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></a>
+                    <a href="https://bronirui-online.ru/iksha-country-club" type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></a>
                 </div>
             </form>
         </section>

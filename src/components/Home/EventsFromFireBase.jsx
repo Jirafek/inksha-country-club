@@ -136,7 +136,7 @@ const EventsFromFireBase = () => {
                                             {el.date}
                                         </p>
                                     </div>
-                                    <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/fire_button.webp)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
+                                    <a rel="noreferrer" href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/fire_button.webp)' }} className="back_settings w-[120px] h-[40px] relative text-[#000] monterey text-[16px] font-bold flex justify-center items-center">
                                         Подробнее
                                     </a>
                                 </div>

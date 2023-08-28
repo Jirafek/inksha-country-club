@@ -39,7 +39,7 @@ const About = () => {
     };
 
     const handleDownload = () => {
-        const fileUrl = '/pdf/iksha-country-club.pdf';
+        const fileUrl = '/pdf/iksha_pdf.pdf';
         window.open(fileUrl, '_blank');
     }
     return (
@@ -60,7 +60,7 @@ const About = () => {
                     <div className="w-[330px] h-[205px] relative group">
                         {!isVideoPlaying && (
                             <div>
-                                <a target="_blanc" href={ytSrc}>
+                                <a href={ytSrc}>
                                     <img
                                         src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
                                         alt=""

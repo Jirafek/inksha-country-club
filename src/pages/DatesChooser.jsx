@@ -199,78 +199,78 @@ const DatesChooser = () => {
         prevArrow: <CustomPrevArrow />,
     };
     return (
-         <>
-      <Helmet>
-        <title>Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых</title>
-        <meta
-          name="description"
-          content="Загородный клуб Икша Кантри Клаб. Приезжайте отдохнуть на берегу Икшинского водохранилища
+        <>
+            <Helmet>
+                <title>Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых</title>
+                <meta
+                    name="description"
+                    content="Загородный клуб Икша Кантри Клаб. Приезжайте отдохнуть на берегу Икшинского водохранилища
             и убедитесь сами. Баня, Уютные домики, Шашлыки, водные развлечения, красивые закаты"
-        />
-            <meta
-          name="title"
-          content="Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых в Подмосковье у воды."
-        />
-            <meta
-          name="keywords"
-          content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+                />
+                <meta
+                    name="title"
+                    content="Загородный клуб Икша Кантри Клаб - Выбирайте свой незабываемый отдых в Подмосковье у воды."
+                />
+                <meta
+                    name="keywords"
+                    content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
 корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, компания, катание, домик, беседки"
-        />
-      </Helmet>
-        <m.section
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-            variants={heading}
-            style={{ height: '100vh', backgroundImage: 'url(/image/dates_chooser_bg.png)' }}
-            className="back_settings relative">
-            <m.div variants={headingLines} className="flex flex-col items-center">
-                <img src="/image/dates_title.webp" alt="" />
-            </m.div>
-            <Slider className="mt-5 mb-2" {...settings}>
-                {
-                    datesData.map((el, i) => (
-                        <div key={uuidv4()} className="flex flex-col items-center justify-center">
-                            <div className="flex justify-center">
-                                <div style={{ backgroundImage: 'url(/image/dates_chooser_bg.webp)' }} className="back_settings flex justify-center items-center text-white monterey text-[14px] relative w-[270px] h-[70px]">
-                                    {el.title}
-                                </div>
-                            </div>
-                            <div className="flex justify-center px-[50px]">
-                                <div style={{ backgroundColor: 'rgb(124 104 78 / 95%)' }} className="rounded-[30px] flex flex-col gap-2">
-                                    <div className="flex flex-col gap-2 max-h-[20rem] overflow-y-auto">
-                                        {
-                                            el.texts.map((text, index) => (
-                                                <div key={uuidv4()} className="flex items-center">
-                                                    <div className="w-[33px] h-[33px]">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                                                            <path d="M16.8828 12.4697C16.0917 12.4697 15.3183 12.7043 14.6605 13.1438C14.0027 13.5834 13.49 14.2081 13.1873 14.939C12.8845 15.6699 12.8053 16.4742 12.9597 17.2501C13.114 18.026 13.495 18.7387 14.0544 19.2982C14.6138 19.8576 15.3265 20.2385 16.1025 20.3929C16.8784 20.5472 17.6826 20.468 18.4135 20.1652C19.1445 19.8625 19.7692 19.3498 20.2087 18.692C20.6482 18.0342 20.8828 17.2609 20.8828 16.4697C20.8828 15.4089 20.4614 14.3914 19.7112 13.6413C18.9611 12.8912 17.9437 12.4697 16.8828 12.4697ZM16.8828 18.4697C16.4873 18.4697 16.1006 18.3524 15.7717 18.1327C15.4428 17.9129 15.1864 17.6005 15.0351 17.2351C14.8837 16.8696 14.8441 16.4675 14.9212 16.0795C14.9984 15.6916 15.1889 15.3352 15.4686 15.0555C15.7483 14.7758 16.1047 14.5853 16.4926 14.5082C16.8806 14.431 17.2827 14.4706 17.6482 14.622C18.0136 14.7733 18.326 15.0297 18.5458 15.3586C18.7655 15.6875 18.8828 16.0742 18.8828 16.4697C18.8828 17.0002 18.6721 17.5089 18.297 17.8839C17.922 18.259 17.4132 18.4697 16.8828 18.4697Z" fill="white" />
-                                                        </svg>
-                                                    </div>
-                                                    <p className="text-[14px] text-white monterey">
-                                                        {text}
-                                                    </p>
-                                                </div>
-                                            ))
-                                        }
+                />
+            </Helmet>
+            <m.section
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                variants={heading}
+                style={{ height: '100vh', backgroundImage: 'url(/image/dates_chooser_bg.png)' }}
+                className="back_settings relative">
+                <m.div variants={headingLines} className="flex flex-col items-center">
+                    <img src="/image/dates_title.webp" alt="" />
+                </m.div>
+                <Slider className="mt-5 mb-2" {...settings}>
+                    {
+                        datesData.map((el, i) => (
+                            <div key={uuidv4()} className="flex flex-col items-center justify-center">
+                                <div className="flex justify-center">
+                                    <div style={{ backgroundImage: 'url(/image/dates_chooser_bg.webp)' }} className="back_settings flex justify-center items-center text-white monterey text-[14px] relative w-[270px] h-[70px]">
+                                        {el.title}
                                     </div>
-                                    <div className="flex justify-center">
-                                        <div className="px-[14px] bg-[#7C684E] border-white border rounded-[30px] text-5 monterey text-white mt-3 mb-1 max-w-[180px]">
-                                            {el.cost}
+                                </div>
+                                <div className="flex justify-center px-[50px]">
+                                    <div style={{ backgroundColor: 'rgb(124 104 78 / 95%)' }} className="rounded-[30px] flex flex-col gap-2">
+                                        <div className="flex flex-col gap-2 max-h-[20rem] overflow-y-auto">
+                                            {
+                                                el.texts.map((text, index) => (
+                                                    <div key={uuidv4()} className="flex items-center">
+                                                        <div className="w-[33px] h-[33px]">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                                                                <path d="M16.8828 12.4697C16.0917 12.4697 15.3183 12.7043 14.6605 13.1438C14.0027 13.5834 13.49 14.2081 13.1873 14.939C12.8845 15.6699 12.8053 16.4742 12.9597 17.2501C13.114 18.026 13.495 18.7387 14.0544 19.2982C14.6138 19.8576 15.3265 20.2385 16.1025 20.3929C16.8784 20.5472 17.6826 20.468 18.4135 20.1652C19.1445 19.8625 19.7692 19.3498 20.2087 18.692C20.6482 18.0342 20.8828 17.2609 20.8828 16.4697C20.8828 15.4089 20.4614 14.3914 19.7112 13.6413C18.9611 12.8912 17.9437 12.4697 16.8828 12.4697ZM16.8828 18.4697C16.4873 18.4697 16.1006 18.3524 15.7717 18.1327C15.4428 17.9129 15.1864 17.6005 15.0351 17.2351C14.8837 16.8696 14.8441 16.4675 14.9212 16.0795C14.9984 15.6916 15.1889 15.3352 15.4686 15.0555C15.7483 14.7758 16.1047 14.5853 16.4926 14.5082C16.8806 14.431 17.2827 14.4706 17.6482 14.622C18.0136 14.7733 18.326 15.0297 18.5458 15.3586C18.7655 15.6875 18.8828 16.0742 18.8828 16.4697C18.8828 17.0002 18.6721 17.5089 18.297 17.8839C17.922 18.259 17.4132 18.4697 16.8828 18.4697Z" fill="white" />
+                                                            </svg>
+                                                        </div>
+                                                        <p className="text-[14px] text-white monterey">
+                                                            {text}
+                                                        </p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <div className="px-[14px] bg-[#7C684E] border-white border rounded-[30px] text-5 monterey text-white mt-3 mb-1 max-w-[180px]">
+                                                {el.cost}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div className="flex justify-center mt-3">
+                                    <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
+                                </div>
                             </div>
-                            <div className="flex justify-center mt-3">
-                                <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
-                            </div>
-                        </div>
-                    ))
-                }
-            </Slider>
-            <FixedFuter link="/#dates" needRotate={true} />
-        </m.section>
-              </>
+                        ))
+                    }
+                </Slider>
+                <FixedFuter link="/#dates" needRotate={true} />
+            </m.section>
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './map.css';
-import Modal from 'components/Modal/Modal';
+// import Modal from 'components/Modal/Modal';
 import { mapLogic, buttonsLogic } from './logic';
 import Select from 'components/Select/Select';
 import { V1, V2 } from './variants';
@@ -14,20 +14,19 @@ const Map = () => {
         },
         {
             component: <V2 />,
-            title: 'Коттедж & Шалле'
+            title: 'Коттедж & Шале'
         }
     ];
 
-    const
-        [modalActive, setModalActive] = useState(false),
-        [ModalContent, setModalContent] = useState(() => <></>),
-        [mapVer, setMapVer] = useState(0)
+    const [mapVer, setMapVer] = useState(0),
+        [tooltipActive, setTooltipActive] = useState(false),
+        [tooltipText, setTooltipText] = useState('');
 
 
     useEffect(() => {
-        buttonsLogic(document, setModalActive, setModalContent);
+        buttonsLogic(document, setTooltipActive, setTooltipText);
 
-        mapLogic(document, mapVer);
+        mapLogic(document, setTooltipActive);
         // window.dragMoveListener = dragMoveListener
     }, [mapVer]);
 
@@ -66,14 +65,19 @@ const Map = () => {
             <Select current={mapVer} setCurrent={setMapVer} datas={mapVersions} />
         </div>
         <div className='map-viewer'>
-            {mapVersions[mapVer].component}
+            <div className="map-wrapper">
+                {mapVersions[mapVer].component}
+                <div className={tooltipActive ? 'map-tooltip map-tooltip--active' : 'map-tooltip'}>
+                    {tooltipText}
+                </div>
+            </div>
         </div>
 
-        <Modal
+        {/* <Modal
             amiActive={modalActive}
             setAmiActive={setModalActive}
             Content={ModalContent}
-        />
+        /> */}
     </section>;
 };
 

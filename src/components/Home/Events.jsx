@@ -165,7 +165,7 @@ const Events = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <a href={el.link} className="flex justify-center pb-[30px]">
+                                <a rel="noreferrer" href={el.link} className="flex justify-center pb-[30px]">
                                     <button style={{ backgroundImage: 'url(/image/date_button_event.webp)' }} className="w-[205px] text-[19px] font-bold h-[70px] text-[#000] monterey flex items-center justify-center">
                                         Выбрать дату
                                     </button>

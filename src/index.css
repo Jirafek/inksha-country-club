@@ -63,6 +63,11 @@ section#book {
   height: 695px;
 }
 
+.welcome {
+  position: relative;
+  z-index: 1000;
+}
+
 /* .section#footer {
   position: absolute;
   top: 100vh; left: 0;

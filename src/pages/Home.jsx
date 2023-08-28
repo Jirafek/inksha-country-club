@@ -121,7 +121,6 @@ const Home = () => {
                                 leaveFrom='translate-x-0'
                                 leaveTo='translate-x-full'
                             >
-                                {/* зменить крест кнопкой + nav -> ul -> li */}
                                 <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }} className='absolute inset-0 h-screen w-full overflow-y-auto'>
                                     <nav className='flex flex-col h-full w-full justify-center items-center'>
                                         <button className='outline-none' style={{ display: `${sidebarOpen ? 'block' : 'none'}` }} onClick={toggle}>

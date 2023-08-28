@@ -33,8 +33,8 @@ const inputs = [
 const Korporativy = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const openImage = () => {
-        setSelectedImage('/image/gram_korp.webp');
+    const openImage = (src) => {
+        setSelectedImage(src);
     };
 
     const closeImage = () => {
@@ -81,6 +81,9 @@ const Korporativy = () => {
             }, (error) => {
                 alert('Ошибка при отправке формы')
             }); // sending to email
+    }
+    const handleDownload = (url) => {
+        window.open(url, '_blank');
     }
 
     const override = css`
@@ -155,8 +158,14 @@ const Korporativy = () => {
                                 </div>
                             </div>
                             <div className="absolute top-[427px] right-0">
-                                <button type="button" onClick={openImage} className="relative">
+                                <button type="button" onClick={() => openImage('/image/gram_korp.webp')} className="relative">
                                     <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/gram_korp.webp" alt="" />
+                                    <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
+                                </button>
+                            </div>
+                            <div className="absolute top-[427px] left-0">
+                                <button type="button" onClick={() => handleDownload('/pdf/keyt.pdf')} className="relative">
+                                    <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/menu_list.jpg" alt="" />
                                     <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
                                 </button>
                             </div>

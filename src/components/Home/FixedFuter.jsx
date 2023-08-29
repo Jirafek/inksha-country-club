@@ -25,11 +25,15 @@ const FixedFuter = ({ link, needRotate }) => {
                     </button>
             }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
-                <a rel="noreferrer" href="https://bronirui-online.ru/iksha-country-club">
-                    <img className='w-[302px]' src="/image/booking_button.webp" alt="" />
+                <a rel="noreferrer" className="relative w-[230px] h-[40px] flex items-center justify-center" href="https://bronirui-online.ru/iksha-country-club">
+                    <img className='w-[230px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="" />
+                    <h3 className="monterey font-extrabold text-[18px] z-10">ЗАБРОНИРОВАТЬ</h3>
                 </a>
                 <a href="https://wa.me/79859091202" >
-                    <img className="h-[65px] absolute right-[60px] top-1/2 -translate-y-1/2" src="/image/wa_ft.png" alt="" />
+                    <img className="h-[65px]" src="/image/wa_ft.png" alt="" />
+                </a>
+                <a href="https://t.me/ikshacountryclub" >
+                    <img className="h-[65px]" src="/image/tg_footer.png" alt="" />
                 </a>
                 <a href="tel:+79859091202">
                     <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="" />

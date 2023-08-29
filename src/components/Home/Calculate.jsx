@@ -105,6 +105,7 @@ const Calculate = () => {
     const [guesses, setGuesses] = useState(1);
     const [days, setDays] = useState(1);
     const [selectedLocation, setSelectedLocation] = useState('1');
+    const [allDops, setAllDops] = useState('');
 
     const [maxDays, setMaxDays] = useState(
         selectedLocation === '1' ? 30 :
@@ -112,7 +113,6 @@ const Calculate = () => {
                 selectedLocation === '3' ? 10 :
                     30
     );
-
 
     const handleLocationChange = (event) => {
         setSelectedLocation(event.target.value);
@@ -163,6 +163,18 @@ const Calculate = () => {
     useEffect(() => {
         countTotal();
     }, [total])
+
+
+
+    useEffect(() => {
+        let string = '';
+        checkedStates.forEach((el, i) => {
+            if (el.isChecked) {
+                string += `${extraServiceData[i].title} ${extraServiceData[i].cost + extraServiceData[i].point}, `
+            }
+        })
+        setAllDops(string);
+    }, [checkedStates])
 
     const countTotal = (updatedStates = "", week = "") => {
         let currentTotal = 0;
@@ -440,7 +452,7 @@ const Calculate = () => {
                     Предварительная стоимость: {total}
                 </div>
                 <div className="flex justify-center">
-                    <Link to={`/form/${total}`}>
+                    <Link to={`/form/${total}?location=${selectedLocation}&guesses=${guesses}&week=${selectedWeek}&days=${days}&dops=${allDops}`}>
                         <button type="submit" style={{ backgroundImage: 'url(/image/calculate_continue.webp)' }} className="back_settings w-[208px] h-[45px]"></button>
                     </Link>
                 </div>

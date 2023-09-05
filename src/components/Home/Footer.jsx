@@ -31,12 +31,21 @@ const Footer = () => {
                     {
                         routes.map((route, i) => (
                             <li key={uuidv4()}>
-                                <a href={route.link} className='flex gap-[1px]'>
-                                    <p className='monterey text-white font-medium'>
-                                        {route.text}
-                                    </p>
-                                    {route.icon && <img src={route.whiteIcon} />}
-                                </a>
+                                {
+                                    route.link.includes('/') ?
+                                        <Link to={route.link} className='flex gap-[1px]'>
+                                            <p className='monterey text-white font-medium'>
+                                                {route.text}
+                                            </p>
+                                            {route.icon && <img src={route.whiteIcon} />}
+                                        </Link> :
+                                        <a href={route.link} className='flex gap-[1px]'>
+                                            <p className='monterey text-white font-medium'>
+                                                {route.text}
+                                            </p>
+                                            {route.icon && <img src={route.whiteIcon} />}
+                                        </a>
+                                }
                             </li>
                         ))
                     }

@@ -63,7 +63,7 @@ const routes = [
         link: "/korp"
     },
     {
-        text: "ВОПРОС-ОТВЕТ",
+        text: "ВОПРОС - ОТВЕТ",
         icon: "",
         link: "/faq"
     },

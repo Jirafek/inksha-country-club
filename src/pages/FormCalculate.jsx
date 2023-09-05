@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ const FormCalculate = () => {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isButtonAvailible, setIsButtonAvailible] = useState(false);
+    const [navigation, setNavigation] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,12 +34,11 @@ const FormCalculate = () => {
 
         emailjs.send("service_a1dan7b", "template_lqei02g", data, "V_IkuqWqNwJlUw72K")
             .then((result) => {
-                alert('Форма отправлена!')
                 setTimeout(() => {
                     setName('');
                     setPhone('');
                     setEmail('');
-                    setIsButtonAvailible(true);
+                    setNavigation(true);
                 }, 1000)
             }, (error) => {
                 alert('Ошибка при отправке формы')
@@ -47,6 +47,7 @@ const FormCalculate = () => {
 
     return (
         <section className="bg-[#201e1f] h-screen">
+            {navigation && <Navigate to="/thanks" />}
             <div className="flex justify-center items-center">
                 <div className="bg-white h-[550px] w-[380px] rounded-[15px] mt-12">
                     <h1 className="py-12 text-[26px] font-bold text-center">Заполните форму</h1>

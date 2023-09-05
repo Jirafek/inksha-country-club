@@ -19,6 +19,26 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 
 function AppWithDelay() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Установка лиснера при монтировании
+    window.addEventListener('resize', handleResize);
+
+    // Удаление лиснера при размонтировании
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Выводим сообщение в консоль, если ширина экрана большк 420 пикселя
+  if (windowWidth > 420) {
+    window.location.href = 'https://ikshacountryclub.com';
+  }
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

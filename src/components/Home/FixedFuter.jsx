@@ -26,7 +26,7 @@ const FixedFuter = ({ link, needRotate }) => {
             }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
                 <a rel="noreferrer" className="relative w-[230px] h-[40px] flex items-center justify-center" href="https://bronirui-online.ru/iksha-country-club">
-                    <img className='w-[230px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="" />
+                    <img className='w-[215px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="" />
                     <h3 className="monterey font-extrabold text-[18px] z-10">ЗАБРОНИРОВАТЬ</h3>
                 </a>
                 <a href="https://wa.me/79859091202" >

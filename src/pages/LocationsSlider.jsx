@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -81,6 +82,9 @@ const locationsData = [
     },
 ];
 
+
+const [navigation, setNavigation] = useState(false)
+
 const LocationsSlider = () => {
     const settings = {
         dots: false,
@@ -97,8 +101,8 @@ const LocationsSlider = () => {
 
         emailjs.send("service_a1dan7b", "template_avgrkli", data, "V_IkuqWqNwJlUw72K")
             .then((result) => {
-                alert('Форма успешно отправлена!');
                 reset()
+                setNavigation(true);
             }, (error) => {
                 alert('Ошибка при отправке формы');
             }); // sending to email
@@ -106,6 +110,7 @@ const LocationsSlider = () => {
 
     return (
         <section className="about_background back_settings relative">
+            {navigation && <Navigate to="/thanks" />}
             <Helmet>
                 <title>Домики в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
                 <meta

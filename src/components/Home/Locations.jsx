@@ -33,28 +33,32 @@ const headingLinesOpacity = {
 
 const sliderData = [ // get images from FireBase
     {
-        img: '/image/locations1.webp',
+        imgWebp: '/image/locations1.webp',
+        imgAvif: '/avif/locations1.avif',
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
         link: '/locations/1'
     },
     {
-        img: '/image/locations2.webp',
+        imgWebp: '/image/locations2.webp',
+        imgAvif: '/avif/locations2.avif',
         title: 'ШАЛЕ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
         link: '/locations/2'
     },
     {
-        img: '/image/locations3.webp',
+        imgWebp: '/image/locations3.webp',
+        imgAvif: '/avif/locations3.avif',
         title: 'КОТТЕДЖ',
         people: 'до 10 человек',
         money: 'от 10,000 Р',
         link: '/locations/3'
     },
     {
-        img: '/image/locations4.webp',
+        imgWebp: '/image/locations4.webp',
+        imgAvif: '/avif/locations4.avif',
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         people: 'до 30 человек',
         money: 'от 10,000 Р',
@@ -76,7 +80,10 @@ const Locations = () => {
     return (
         <section id="locations" className="section about_background back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10 pt-[4.5rem]">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-8 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
                 <h2 className="text-[20px] text-white z-10 font-bold">ЛОКАЦИИ</h2>
             </div>
 
@@ -86,8 +93,10 @@ const Locations = () => {
                         return (
                             <div className="flex flex-col items-center justify-center" key={uuidv4()}>
                                 <div className="flex justify-center">
-
-                                    <img className="px-5 mb-[10px]" src={el.img} alt="" />
+                                    <picture>
+                                        <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                        <img className="px-5 mb-[10px]" src={el.imgWebp} alt={`Изображение локации - ${el.title}`} />
+                                    </picture>
                                 </div>
                                 <div className="flex justify-center">
                                     <div style={{ backgroundImage: 'url(/image/locations_about.webp)' }} className="back_settings text-[16px] monterey text-[#000] flex w-[240px] h-[95px] flex-col items-center justify-center">

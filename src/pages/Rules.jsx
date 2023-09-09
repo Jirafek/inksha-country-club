@@ -51,17 +51,31 @@ const Rules = (props) => {
                     <p className="text-[12px]">Присоединяйтесь к нам в социальных сетях:</p>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                            <a className="mr-[6px]" href="https://vk.com/ikshacountryclub">
-                                <img src="/image/vk.webp" alt="" />
+                            <a className="mr-[6px]" href="https://vk.com/ikshacountryclub" rel="noreferrer">
+                                <picture>
+                                    <source srcSet="/avif/vk.avif 1x" type="image/avif" />
+                                    <img src="/image/vk.webp" alt="Загородный клуб Икша Кантри Клаб - ВКонтакте" />
+                                </picture>
                             </a>
-                            <a href="https://www.instagram.com/ikshacountryclub">
-                                <img src="/image/inst.webp" alt="" />
+                            <a href="https://www.instagram.com/ikshacountryclub" rel="noreferrer">
+                                <picture>
+                                    <source srcSet="/avif/inst.avif 1x" type="image/avif" />
+                                    <img src="/image/inst.webp" alt="Загородный клуб Икша Кантри Клаб - Инстаграм" />
+                                </picture>
                             </a>
-                            <a href="https://www.youtube.com/@ikshacountryclub">
-                                <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="" />
+                            <a href="https://www.youtube.com/@ikshacountryclub" rel="noreferrer">
+                                <picture>
+                                    <source srcSet="/avif/youtube_bg.avif 1x" type="image/avif" />
+                                    <img className="w-[50px] h-[50px] bg-transparent" src="/image/youtube_bg.webp" alt="Загородный клуб Икша Кантри Клаб - Ютуб" />
+                                </picture>
                             </a>
                         </div>
-                        <Link to="/#book"><img src="/image/low_bron.webp" alt="" /></Link>
+                        <Link to="/#book">
+                            <picture>
+                                <source srcSet="/avif/low_bron.avif 1x" type="image/avif" />
+                                <img src="/image/low_bron.webp" alt="Икша Кантри Клаб" />
+                            </picture>
+                        </Link>
                     </div>
                     <p className="text-center text-[12px] pb-5">
                         "Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб

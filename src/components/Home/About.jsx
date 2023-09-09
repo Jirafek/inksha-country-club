@@ -52,7 +52,7 @@ const About = () => {
                 className="m-0">
 
                 <div style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px] bg-transparent">
-                    <img className="bg-transparent" src="/image/girman.gif" alt="GIF Image" />
+                    <img className="bg-transparent" src="/image/girman.gif" alt="Икша Кантри Клаб" />
                 </div>
                 {/* <m.img style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 z-30 top-[30px] w-[215px]" variants={headingLinesOpacity} src="/image/man_about.webp" alt="" /> */}
                 <div className="pt-[180px] pb-[1.75rem] flex justify-center items-center">
@@ -63,7 +63,7 @@ const About = () => {
                                 <a href={ytSrc}>
                                     <img
                                         src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
-                                        alt=""
+                                        alt="Обложка ролика с ютуб канала Икша Кантри Клаб"
                                     />
                                 </a>
                                 <button
@@ -108,9 +108,18 @@ const About = () => {
                         </div>
                     </button>
                 </div>
-                <img alt="vase" className="absolute bottom-0 left-0" src="/image/gorshok_left.webp" />
-                <img alt="vase" className="absolute bottom-0 right-0" src="/image/gorshok.webp" />
-                <img alt="wood translator" className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" />
+                <picture>
+                    <source srcSet="/avif/gorshok_left.avif 1x" type="image/avif" />
+                    <img alt="Икша Кантри Клаб" className="absolute bottom-0 left-0" src="/image/gorshok_left.webp" />
+                </picture>
+                <picture>
+                    <source srcSet="/avif/gorshok.avif 1x" type="image/avif" />
+                    <img alt="Икша Кантри Клаб" className="absolute bottom-0 right-0" src="/image/gorshok.webp" />
+                </picture>
+                <picture>
+                    <source srcSet="/avif/wood_translate.avif 1x" type="image/avif" />
+                    <img alt="Икша Кантри Клаб" className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" />
+                </picture>
             </m.div>
         </section>
     );

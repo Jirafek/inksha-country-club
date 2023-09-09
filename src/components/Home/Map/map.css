@@ -42,6 +42,8 @@
 
 .map_title__bg {
     position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .map_title__text {

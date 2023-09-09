@@ -59,7 +59,11 @@ const Map = () => {
             <div
                 className="map_title"
             >
-                <img className="map_title__bg" src="/image/titles_bg.webp" alt="КАРТА ТЕРРИТОРИИ" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="map_title__bg" src="/image/titles_bg.webp" alt="Карта Территории Икша Кантри Клаб" />
+                </picture>
+
                 <h1 className="map_title__text">КАРТА ТЕРРИТОРИИ</h1>
             </div>
             <Select current={mapVer} setCurrent={setMapVer} datas={mapVersions} />

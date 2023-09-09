@@ -311,7 +311,10 @@ const Calculate = () => {
     return (
         <section id="calculator" style={{ backgroundImage: 'url(/image/calc_bg.webp)' }} className="section back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px]">
-                <img alt="" className="absolute" src="/image/titles_bg.webp" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
                 <h2 className="text-[20px] text-white z-10 font-bold">КАЛЬКУЛЯТОР ОТДЫХА</h2>
             </div>
             <form className="flex flex-col items-center" onSubmit={onSubmit}>

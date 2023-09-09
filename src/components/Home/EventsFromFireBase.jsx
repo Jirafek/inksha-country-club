@@ -75,19 +75,22 @@ const sky4 = {
 
 const fireBaseData = [
     {
-        img: '/image/events_fire1.webp',
+        imgWebp: '/image/events_fire1.webp',
+        imgAvif: '/avif/events_fire1.avif',
         link: '',
         title: 'День настольных игр',
         date: '15.04.2023'
     },
     {
-        img: '/image/events_fire2.webp',
+        imgWebp: '/image/events_fire2.webp',
+        imgAvif: '/avif/events_fire2.avif',
         link: '',
         title: 'Мастер класс «Sup-Board для новичков»',
         date: '23.06.2023'
     },
     {
-        img: '/image/events_fire3.webp',
+        imgWebp: '/image/events_fire3.webp',
+        imgAvif: '/avif/events_fire3.avif',
         link: '',
         title: 'Фестиваль лимонада',
         date: '19.08.2023'
@@ -106,14 +109,30 @@ const EventsFromFireBase = () => {
             className="section min-h-[500px] back_settings relative"
         >
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
+
                 <h1 className="text-[20px] text-white z-10 font-bold">СОБЫТИЯ</h1>
             </div>
             <div>
-                <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.webp" alt="" />
-                <m.img variants={sky2} className="absolute -top-[60px] right-0" src="/image/events_sky2.webp" alt="" />
-                <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.webp" alt="" />
-                <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/events_sky1.avif 1x" type="image/avif" />
+                    <m.img variants={sky1} className="absolute -top-[60px] left-0" src="/image/events_sky1.webp" alt="Икша Кантри Клаб" />
+                </picture>
+                <picture>
+                    <source srcSet="/avif/events_sky2.avif 1x" type="image/avif" />
+                    <m.img variants={sky2} className="absolute -top-[60px] right-0" src="/image/events_sky2.webp" alt="Икша Кантри Клаб" />
+                </picture>
+                <picture>
+                    <source srcSet="/avif/events_sky3.avif 1x" type="image/avif" />
+                    <m.img variants={sky3} className="absolute -top-[60px] left-[100px]" src="/image/events_sky3.webp" alt="Икша Кантри Клаб" />
+                </picture>
+                <picture>
+                    <source srcSet="/avif/events_sky3.avif 1x" type="image/avif" />
+                    <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.webp" alt="Икша Кантри Клаб" />
+                </picture>
             </div>
             <div className="h-[500px] overflow-hidden">
                 <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px] overflow-hidden">
@@ -127,7 +146,10 @@ const EventsFromFireBase = () => {
                                             {el.title}
                                         </p>
                                     </div>
-                                    <img className="w-[150px] rounded-xl" src={el.img} alt="" />
+                                    <picture>
+                                        <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                        <img className="w-[150px] rounded-xl" src={el.imgWebp} alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </div>
                                 <div className="flex flex-col gap-1 items-center">
 

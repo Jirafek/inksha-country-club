@@ -89,14 +89,22 @@ const Eat = () => {
                 </div>
             )}
             <div className="flex flex-col items-center justify-center relative h-[90px]">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
                 <h2 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h2>
             </div>
             <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
             <div className="flex justify-center mb-[5px]">
                 <div className="back_settings flex flex-col justify-around items-center h-[255px] w-[350px] relative py-3" style={{ backgroundImage: 'url(/image/cook_frame.webp)', backgroundSize: 'auto' }}>
                     <h4 className="monterey text-lg font-semibold text-[#161212] text-[16px]">МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ</h4>
-                    <img className="absolute top-[45px] left-[110px] z-10" src="/image/ukr1.webp" alt="" />
+
+                    <picture>
+                        <source srcSet="/avif/ukr1.avif 1x" type="image/avif" />
+                        <img className="absolute top-[45px] left-[110px] z-10" src="/image/ukr1.webp" alt="Икша Кантри Клаб" />
+                    </picture>
+
                     {
                         EatListData.map((el, i) => (
                             <div key={uuidv4()} className="flex gap-[5px] items-center self-start pl-7 z-20" onClick={() => openImage(el.openImage)}>
@@ -115,7 +123,12 @@ const Eat = () => {
                     className="max-w-[360px] w-full h-[105px] rounded-[50px] border-white border py-[10px] flex flex-col items-center justify-center relative"
                 >
                     <p className="monterey text-[17px] text-white text-center w-[300px]">Также мы готовы организовать для вас кейтеринг !</p>
-                    <img className="absolute bottom-[14px] right-[10px]" src="/image/bulk.webp" alt="" />
+
+                    <picture>
+                        <source srcSet="/avif/bulk.avif 1x" type="image/avif" />
+                        <img className="absolute bottom-[14px] right-[10px]" src="/image/bulk.webp" alt="Икша Кантри Клаб" />
+                    </picture>
+
                     <Link to="/keitering">
                         <button
                             style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
@@ -126,8 +139,14 @@ const Eat = () => {
                     </Link>
                 </div>
             </div>
-            <m.img className="absolute bottom-0 left-4" variants={headingLinesRight} src="/image/chair_left.webp" alt="" />
-            <m.img className="absolute -bottom-[65px] right-4 z-10" variants={headingLinesLeft} src="/image/chair_right.webp" alt="" />
+            <picture>
+                <source srcSet="/avif/chair_left.avif 1x" type="image/avif" />
+                <m.img className="absolute bottom-0 left-4" variants={headingLinesRight} src="/image/chair_left.webp" alt="Икша Кантри Клаб" />
+            </picture>
+            <picture>
+                <source srcSet="/avif/chair_right.avif 1x" type="image/avif" />
+                <m.img className="absolute -bottom-[65px] right-4 z-10" variants={headingLinesLeft} src="/image/chair_right.webp" alt="Икша Кантри Клаб" />
+            </picture>
         </m.section>
     );
 }

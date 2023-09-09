@@ -77,14 +77,17 @@ const GallerySlider = ({ images }) => {
   return (
     <div className="gallery-slider" style={{ height: "500px", overflow: "hidden" }}>
       <Slider className="w-[900px] z-20" {...settings} ref={sliderRef}>
-        {images.map((imageUrl, index) => (
+        {images.map(({avif, webp}, index) => (
           <Link to="/gallery-all" key={uuidv4()} className="flex items-center justify-center">
-            <img
-              src={imageUrl}
-              alt={`Slide ${index + 1}`}
-              onClick={() => handleImageClick(index)}
-              style={{ transform: 'rotate(30deg)' }}
-            />
+            <picture>
+              <source srcSet={`${avif} 1x`} type="image/avif" />
+              <img
+                  src={webp}
+                  alt={`Слайд №${index + 1}`}
+                  onClick={() => handleImageClick(index)}
+                  style={{ transform: 'rotate(30deg)' }}
+              />
+            </picture>
           </Link>
         ))}
       </Slider>

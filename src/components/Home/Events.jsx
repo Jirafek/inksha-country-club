@@ -13,7 +13,8 @@ import Confetti from "react-confetti";
 const eventsData = [
     {
         title: 'День рождения',
-        img: '/image/events_1.webp',
+        imgWebp: '/image/events_1.webp',
+        imgAvif: '/avif/events_1.avif',
         text: [
             'От 9 часов',
             'Уютная крытая веранда для компании',
@@ -25,7 +26,8 @@ const eventsData = [
     },
     {
         title: 'Шашлыки',
-        img: '/image/events_2.webp',
+        imgWebp: '/image/events_2.webp',
+        imgAvif: '/avif/events_2.avif',
         text: [
             'От 5 часов',
             'Рыболовные снасти',
@@ -37,7 +39,8 @@ const eventsData = [
     },
     {
         title: 'Баня и Спа',
-        img: '/image/events_3.webp',
+        imgWebp: '/image/events_3.webp',
+        imgAvif: '/avif/events_3.avif',
         text: [
             '6 часов',
             'Русская баня',
@@ -49,7 +52,8 @@ const eventsData = [
     },
     {
         title: 'Караоке Вечеринка',
-        img: '/image/events_4.webp',
+        imgWebp: '/image/events_4.webp',
+        imgAvif: '/avif/events_4.avif',
         text: [
             '6 часов',
             '2 микрофона и выбор из тысяч популярных песен',
@@ -61,7 +65,8 @@ const eventsData = [
     },
     {
         title: 'Девичник',
-        img: '/image/events_5.webp',
+        imgWebp: '/image/events_5.webp',
+        imgAvif: '/avif/events_5.avif',
         text: [
             '6 часов',
             '2 микрофона и выбор из тысяч популярных песен',
@@ -73,7 +78,8 @@ const eventsData = [
     },
     {
         title: 'Мальчишник',
-        img: '/image/events_6.webp',
+        imgWebp: '/image/events_6.webp',
+        imgAvif: '/avif/events_6.avif',
         text: [
             '6 часов',
             'Русская баня',
@@ -85,7 +91,8 @@ const eventsData = [
     },
     {
         title: 'Свадьба',
-        img: '/image/events_7.webp',
+        imgWebp: '/image/events_7.webp',
+        imgAvif: '/avif/events_7.avif',
         text: [
             '6 часов',
             'Русская баня',
@@ -97,7 +104,8 @@ const eventsData = [
     },
     {
         title: 'Послесвадебная вечеринка',
-        img: '/image/events_8.webp',
+        imgWebp: '/image/events_8.webp',
+        imgAvif: '/avif/events_8.avif',
         text: [
             '6 часов',
             'Русская баня',
@@ -128,7 +136,11 @@ const Events = () => {
     return (
         <section style={{ backgroundImage: 'url(/image/bg-events.webp)' }} id="events" className="section back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
+
                 <h2 className="text-[20px] text-white z-10 font-bold">МЕРОПРИЯТИЯ</h2>
             </div>
             <Confetti
@@ -149,7 +161,10 @@ const Events = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-center mb-[15px]">
-                                    <img className="px-5 w-[300px]" src={el.img} alt="" />
+                                    <picture>
+                                        <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                        <img className="px-5 w-[300px]" src={el.imgWebp} alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </div>
                                 <div className="flex justify-center mb-[15px]">
                                     <div style={{ backgroundImage: 'url(/image/events_text_bg.webp)' }} className="back_settings relative text-[12px] monterey text-[#000] flex w-[240px] h-[160px] items-center justify-center">

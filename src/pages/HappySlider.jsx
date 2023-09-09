@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 
 const sliderData = [
     {
-        bgAvif: '/avifimage/h_bg4.avif',
+        bgAvif: '/avif/h_bg4.avif',
         bgWebp: '/image/h_bg4.webp',
         imgAvif: '/avif/h_4.avif',
         imgWebp: '/image/h_4.webp',
@@ -18,7 +18,7 @@ const sliderData = [
         height: '545px'
     },
     {
-        bgAvif: '/avifimage/h_bg3.avif',
+        bgAvif: '/avif/h_bg3.avif',
         bgWebp: '/image/h_bg3.webp',
         imgAvif: '/avif/h_3.avif',
         imgWebp: '/image/h_3.webp',
@@ -31,7 +31,7 @@ const sliderData = [
         height: '356px'
     },
     {
-        bgAvif: '/avifimage/h_bg1.avif',
+        bgAvif: '/avif/h_bg1.avif',
         bgWebp: '/image/h_bg1.webp',
         imgAvif: '/avif/h_1.avif',
         imgWebp: '/image/h_1.webp',
@@ -39,7 +39,7 @@ const sliderData = [
         height: '306px'
     },
     {
-        bgAvif: '/avifimage/h_bg2.avif',
+        bgAvif: '/avif/h_bg2.avif',
         bgWebp: '/image/h_bg2.webp',
         imgAvif: '/avif/h_2.avif',
         imgWebp: '/image/h_2.webp',
@@ -55,8 +55,8 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom="147px" />,
-        prevArrow: <CustomPrevArrow isBottom="142px" />,
+        nextArrow: <CustomNextArrow isBottom='37%' />,
+        prevArrow: <CustomPrevArrow isBottom="37%" />,
     };
     return (
            <>
@@ -81,7 +81,7 @@ const HappySlider = () => {
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="relative pb-[40px]">
+                        <div className="h-screen relative pb-[40px]">
                             <picture>
                                 <source srcSet={`${el.bgAvif} 1x`} type="image/avif" />
                                 <img className="absolute w-full h-[851px] top-0" src={el.bgWebp} alt="Икша Кантри Клаб" />
@@ -129,11 +129,9 @@ const HappySlider = () => {
                                 </div>
                             </div>
                             <div className="relative w-full h-[100px]">
-                                <div style={{ transform: 'translateX(-50%)', bottom: `${i === 0 ? '45px' : '66px'}` }} className="absolute left-1/2 bottom-[150px] z-20">
-                                    <a href="https://bronirui-online.ru/iksha-country-club/uslugi" style={{ backgroundImage: 'url(/image/h_btn_layer.webp)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px]">
-                                        Выбрать услугу
-                                    </a>
-                                </div>
+                                <a href="https://bronirui-online.ru/iksha-country-club/uslugi" rel="noreferrer" style={{ backgroundImage: 'url(/image/h_btn_layer.webp)' }} className="back_settings relative flex justify-center items-center w-[161px] h-[60px] mx-auto my-0">
+                                    Выбрать услугу
+                                </a>
                             </div>
                         </div>
                     ))

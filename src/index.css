@@ -116,6 +116,7 @@ section#book {
 
 @font-face {
   font-family: 'Lato-R';
+  font-display: swap;
   src: local('Lato-Regular'),
     url('./fonts/Lato-Regular.ttf') format('truetype');
   font-weight: 500;
@@ -123,6 +124,7 @@ section#book {
 
 @font-face {
   font-family: 'Montserrat-R';
+  font-display: swap;
   src: local('MontserratAlternates-Regular'),
     url('./fonts/MontserratAlternates-Regular.ttf') format('truetype');
   font-weight: 500;
@@ -130,6 +132,7 @@ section#book {
 
 @font-face {
   font-family: 'Montaga';
+  font-display: swap;
   src: local('Montaga-Regular'),
     url('./fonts/Montaga-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -137,6 +140,7 @@ section#book {
 
 @font-face {
   font-family: 'MontaguSlab';
+  font-display: swap;
   src: local('MontaguSlab-VariableFont_opsz,wght'),
     url('./fonts/MontaguSlab-VariableFont_opsz,wght.ttf') format('truetype');
   font-weight: 500;

@@ -97,7 +97,7 @@ const HappySlider = () => {
                             </div>
                             <picture>
                                 <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
-                                <img className="relative z-10 mb-0" src={el.imgWebp} alt="Икша Кантри Клаб" />
+                                <img className="relative z-10 mb-0 my-0 mx-auto" src={el.imgWebp} alt="Икша Кантри Клаб" />
                             </picture>
 
                             <div className="flex justify-center z-10 relative px-[10px] mb-7">

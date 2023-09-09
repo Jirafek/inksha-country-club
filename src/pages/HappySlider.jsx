@@ -81,7 +81,7 @@ const HappySlider = () => {
             <Slider {...settings}>
                 {
                     sliderData.map((el, i) => (
-                        <div className="h-screen relative pb-[40px]">
+                        <div className="h-screen relative pb-[40px]" key={uuidv4()}>
                             <picture>
                                 <source srcSet={`${el.bgAvif} 1x`} type="image/avif" />
                                 <img className="absolute w-full h-[851px] top-0" src={el.bgWebp} alt="Икша Кантри Клаб" />

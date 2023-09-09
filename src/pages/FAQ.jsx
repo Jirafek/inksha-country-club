@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {v4 as uuidv4} from "uuid";
 
 const faq_data = [
     {
@@ -86,7 +87,7 @@ const FAQ = () => {
                 <div className="flex justify-center flex-col items-center gap-2 pb-[100px]">
                     {
                         faq_data.map((el, i) => (
-                            <div className="flex items-center">
+                            <div className="flex items-center" key={uuidv4()}>
                                 <picture>
                                     <source srcSet="/avif/faq_plus.avif 1x" type="image/avif" />
                                     <img onClick={() => handleQuestionClick(i)} src="/image/faq_plus.webp" alt="Икша Кантри Клаб" />

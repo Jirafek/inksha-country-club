@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, {Fragment, useState} from "react";
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {v4 as uuidv4} from "uuid";
 
 // change TITLE
 
@@ -136,10 +137,12 @@ const Keitering = () => {
                         <div className="grid grid-cols-2 gap-x-[10px] gap-y-[7px] w-full">
                             {
                                 imageData[currentSlide].map((el, i) => (
-                                    <picture>
-                                        <source srcSet={`${el.avif} 1x`} type="image/avif" />
-                                        <img className="" src={el.webp} alt="Икша Кантри Клаб" />
-                                    </picture>
+                                    <Fragment key={uuidv4()}>
+                                        <picture>
+                                            <source srcSet={`${el.avif} 1x`} type="image/avif" />
+                                            <img className="" src={el.webp} alt="Икша Кантри Клаб" />
+                                        </picture>
+                                    </Fragment>
                                 ))
                             }
                         </div>

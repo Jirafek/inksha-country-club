@@ -86,10 +86,8 @@ const locationsData = [
     },
 ];
 
-
-const [navigation, setNavigation] = useState(false)
-
 const LocationsSlider = () => {
+    const [navigation, setNavigation] = useState(false)
     const settings = {
         dots: false,
         infinite: true,

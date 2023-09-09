@@ -53,7 +53,7 @@ const YandexMap = () => {
                 <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
                     <picture>
                         <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
-                        <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Фоновое изображение для заголовка" />
+                        <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Фоновое изображение для заголовка" />
                     </picture>
 
                     <h2 className="text-[20px] text-white z-10 font-bold">КОНТАКТЫ</h2>

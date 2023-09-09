@@ -14,7 +14,7 @@ const heading = {
 
 const HappyClickableItems = ({ arrayData }) => {
     return (
-        <div className="flex flex-wrap gap-10 items-center justify-center pb-10 pt-6">
+        <div className="flex flex-wrap gap-10 items-center justify-center relative pb-10 pt-6 z-[1]">
             {
                 arrayData.map((el, i) => {
                     return (

@@ -90,7 +90,7 @@ const HappySlider = () => {
                             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
                                 <picture>
                                     <source srcSet="/avif/titles_bg.avif" type="image/avif" />
-                                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                                 </picture>
 
                                 <h2 className="text-[20px] text-white z-10 font-bold">РАЗВЛЕЧЕНИЯ</h2>

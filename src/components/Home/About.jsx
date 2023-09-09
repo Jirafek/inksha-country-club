@@ -118,7 +118,7 @@ const About = () => {
                 </picture>
                 <picture>
                     <source srcSet="/avif/wood_translate.avif 1x" type="image/avif" />
-                    <img alt="Икша Кантри Клаб" className="w-full absolute -bottom-5 z-20" src="/image/wood_translate.webp" />
+                    <img alt="Икша Кантри Клаб" className="w-full absolute -bottom-14 z-10" src="/image/wood_translate.webp" />
                 </picture>
             </m.div>
         </section>

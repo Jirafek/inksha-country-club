@@ -111,7 +111,7 @@ const EventsFromFireBase = () => {
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <picture>
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
-                    <img className="absolute top-0 left-0" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
 
                 <h1 className="text-[20px] text-white z-10 font-bold">СОБЫТИЯ</h1>

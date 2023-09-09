@@ -306,18 +306,18 @@ const GalleryAll = () => {
                                 <div className="flex justify-center">
                                     <div className="grid grid-cols-2">
                                         {el.items.map((imgUrl, i) => (
-                                            <picture>
-                                                <source srcSet={`${imgUrl.imgAvif} 1x`} type="image/avif" />
-                                                <source srcSet={`${imgUrl.imgWebp} 1x`} type="image/webp" />
-                                                <img
-                                                    className="max-w-[135px] duration-300"
-                                                    key={uuid4()}
-                                                    src={imgUrl.imgPng}
-                                                    alt="Икша Кантри Клаб"
-                                                    onClick={() => handleImageClick(imgUrl)} // добавляем обработчик клика
-                                                />
-                                            </picture>
-
+                                            <Fragment key={uuid4()}>
+                                                <picture>
+                                                    <source srcSet={`${imgUrl.imgAvif} 1x`} type="image/avif" />
+                                                    <source srcSet={`${imgUrl.imgWebp} 1x`} type="image/webp" />
+                                                    <img
+                                                        className="max-w-[135px] duration-300"
+                                                        src={imgUrl.imgPng}
+                                                        alt="Икша Кантри Клаб"
+                                                        onClick={() => handleImageClick(imgUrl)} // добавляем обработчик клика
+                                                    />
+                                                </picture>
+                                            </Fragment>
                                         ))}
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@ const GalleryAll = () => {
                                 src={chosenImage.imgPng}
                                 alt="Икша Кантри Клаб"
                                 style={{ width: "200px" }}
-                                className="absolute"
+                                className="absolute top-[40%] left-[25%]"
                             />
                         </picture>
 

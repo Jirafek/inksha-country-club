@@ -148,10 +148,10 @@ const Home = () => {
                             </Transition.Child>
                         </Dialog>
                     </Transition.Root>
-                    <button className='outline-none cursor-pointer' onClick={toggle}>
+                    <button className='fixed top-8 left-3 z-[2001] outline-none cursor-pointer' onClick={toggle}>
                         <picture>
                             <source srcSet="/avif/burger.avif 1x" type="image/avif" />
-                            <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} className='fixed top-8 left-3 z-[2001]' src="/image/burger.webp" alt="Иконка меню" />
+                            <img style={{ display: `${sidebarOpen ? 'none' : 'block'}` }} src="/image/burger.webp" alt="Иконка меню" />
                         </picture>
                     </button>
 

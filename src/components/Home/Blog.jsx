@@ -30,7 +30,7 @@ const Blog = () => {
                 {
                     blogData.map((el, i) => {
                         return (
-                            <Link to="/blog-all" className="h-[160px] w-full bg-white rounded-[50px] border border-[#AB8E67] pt-5 pb-1 px-7 gap-3 relative">
+                            <Link to="/blog-all" className="h-[160px] w-full bg-white rounded-[50px] border border-[#AB8E67] pt-5 pb-1 px-7 gap-3 relative" key={el.title}>
                                 <h2 className="font-bold text-[16px] text-center">{el.title}</h2>
                                 <p className="text-[15px] text-center text-clip">{
                                     el.text.length > 140 ?

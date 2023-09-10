@@ -57,22 +57,30 @@ const headingLines2 = {
 
 const HappyClickableItemsData = [
     {
-        img: "/image/bania.webp",
+        imgWebp: "/image/bania.webp",
+        imgAvif: "/avif/bania.avif",
+        imgAlt: 'Баня в Икша Кантри Клаб',
         text: "Баня",
         animation: headingLines1
     },
     {
-        img: "/image/ribalka.webp",
+        imgWebp: "/image/ribalka.webp",
+        imgAvif: "/avif/ribalka.avif",
+        imgAlt: 'Рыбалка в Икша Кантри Клаб',
         text: "Рыбалка",
         animation: headingLines2
     },
     {
-        img: "/image/sport.webp",
+        imgWebp: "/image/sport.webp",
+        imgAvif: "/avif/sport.avif",
+        imgAlt: 'Занятия спортом в Икша Кантри Клаб',
         text: "Спорт",
         animation: headingLines3
     },
     {
-        img: "/image/posidelki.webp",
+        imgWebp: "/image/posidelki.webp",
+        imgAvif: "/avif/posidelki.avif",
+        imgAlt: 'Посиделки в Икша Кантри Клаб',
         text: "Посиделки",
         animation: headingLines4
     },

@@ -11,15 +11,18 @@ import { Helmet } from "react-helmet";
 
 const images = [
     {
-        img: '/image/korp_bania.webp',
+        imgAvif: '/avif/korp_bania.avif',
+        imgWebp: '/image/korp_bania.webp',
         text: 'Растопка бани и купели'
     },
     {
-        img: '/image/korp_chill.webp',
+        imgAvif: '/avif/korp_chill.avif',
+        imgWebp: '/image/korp_chill.webp',
         text: 'Активный отдых'
     },
     {
-        img: '/image/korp_riba.webp',
+        imgAvif: '/avif/korp_riba.avif',
+        imgWebp: '/image/korp_riba.webp',
         text: 'Рыбалка на пруду'
     },
 ];
@@ -30,11 +33,16 @@ const inputs = [
     'e-mail',
 ];
 
+const korpGramUrls = {
+    webp: '/image/gram_korp.webp',
+    avif: '/avif/gram_korp.avif'
+};
+
 const Korporativy = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const openImage = (src) => {
-        setSelectedImage(src);
+    const openImage = (urls) => {
+        setSelectedImage(urls);
     };
 
     const closeImage = () => {
@@ -119,18 +127,31 @@ const Korporativy = () => {
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
                         onClick={closeImage}
                     >
-                        <img className="w-[90%] rounded-[25px]" src={selectedImage} alt="Opened Image" />
+                        <picture>
+                            <source srcSet={`${selectedImage.avif} 1x`} type="image/avif" />
+                            <img className="w-[90%] rounded-[25px]" src={selectedImage.webp} alt="Икша Кантри Клаб" />
+                        </picture>
                     </div>
                 )}
                 {
                     currentWindow === 1 ?
                         <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundImage: 'url(/image/korp_bg.webp)' }} className="relative back_settings h-[851px]">
                             <div className="m-0 flex flex-col items-center">
-                                <img src="/image/korp_title.webp" alt="" />
+                                <picture>
+                                    <source srcSet="/avif/korp_title.avif 1x" type="image/avif" />
+                                    <img src="/image/korp_title.webp" alt="Икша Кантри Клаб" />
+                                </picture>
                             </div>
                             <div className="flex justify-center relative">
-                                <img src="/image/korp_layer_photo.webp" alt="" />
-                                <img className="absolute bottom-1" src="/image/korp_people.webp" alt="" />
+                                <picture>
+                                    <source srcSet="/avif/korp_layer_photo.avif 1x" type="image/avif" />
+                                    <img src="/image/korp_layer_photo.webp" alt="Икша Кантри Клаб" />
+                                </picture>
+
+                                <picture>
+                                    <source srcSet="/avif/korp_people.avif 1x" type="image/avif" />
+                                    <img className="absolute bottom-1" src="/image/korp_people.webp" alt="Икша Кантри Клаб" />
+                                </picture>
                             </div>
                             <div>
                                 <div className="flex justify-center flex-col px-[30px]">
@@ -139,7 +160,11 @@ const Korporativy = () => {
                                             images.map((el, i) => (
                                                 <label className="w-[103px]" key={uuidv4()}>
                                                     <div className="flex flex-col items-center gap-[3px]">
-                                                        <img className="w-[103px]" src={el.img} alt="" />
+                                                        <picture>
+                                                            <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                                            <img className="w-[103px]" src={el.imgWebp} alt={`Икша Кантри Клаб - ${el.text}`} />
+                                                        </picture>
+
                                                         <input name="dops" {...register(el.text)} type="checkbox" />
                                                         <p className="max-w-[110px] monterey text-[11px] text-center">
                                                             {el.text}
@@ -158,26 +183,47 @@ const Korporativy = () => {
                                 </div>
                             </div>
                             <div className="absolute top-[427px] right-0">
-                                <button type="button" onClick={() => openImage('/image/gram_korp.webp')} className="relative">
-                                    <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/gram_korp.webp" alt="" />
-                                    <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
+                                <button type="button" onClick={() => openImage(korpGramUrls)} className="relative">
+                                    <picture>
+                                        <source srcSet="/avif/gram_korp.avif 1x" type="image/avif" />
+                                        <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/gram_korp.webp" alt="Икша Кантри Клаб" />
+                                    </picture>
+
+                                    <picture>
+                                        <source srcSet="/avif/ramp_korp.avif 1x" type="image/avif" />
+                                        <img className="z-30 relative" src="/image/ramp_korp.webp" alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </button>
                             </div>
                             <div className="absolute top-[427px] left-0">
                                 <button type="button" onClick={() => handleDownload('/pdf/keyt.pdf')} className="relative">
-                                    <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/menu_list.jpg" alt="" />
-                                    <img className="z-30 relative" src="/image/ramp_korp.webp" alt="" />
+                                    <picture>
+                                        <source srcSet="/avif/menu_list.avif 1x" type="image/avif" />
+                                        <source srcSet="/image/menu_list.webp 1x" type="image/webp" />
+                                        <img style={{ transform: 'translate(-50%)' }} className="absolute top-6 left-1/2 w-[60px]" src="/image/menu_list.jpg" alt="Икша Кантри Клаб" />
+                                    </picture>
+
+                                    <picture>
+                                        <source srcSet="/avif/ramp_korp.avif 1x" type="image/avif" />
+                                        <img className="z-30 relative" src="/image/ramp_korp.webp" alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </button>
                             </div>
                             <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
                             <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
-                                <img src="/image/korp_btn.webp" alt="" />
+                                <picture>
+                                    <source srcSet="/avif/korp_btn.avif 1x" type="image/avif" />
+                                    <img src="/image/korp_btn.webp" alt="Икша Кантри Клаб" />
+                                </picture>
                             </button>
                         </form>
                         : currentWindow === 2 ?
                             <form onSubmit={handleSubmit(onSend)} style={{ backgroundImage: 'url(/image/korp_bg2.webp)' }} className="relative back_settings h-[750px]">
                                 <div className="m-0 flex flex-col items-center">
-                                    <img src="/image/korp_title.webp" alt="" />
+                                    <picture>
+                                        <source srcSet="/avif/korp_title.avif 1x" type="image/avif" />
+                                        <img src="/image/korp_title.webp" alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </div>
                                 <div className="flex justify-center">
                                     <div style={{ backgroundImage: 'url(/image/korp2_tabl.webp)' }} className="relative back_settings w-[265px] h-[204px] pt-[55px] font-medium pb-[25px] px-[21px] monterey text-[22px] text-center">
@@ -195,14 +241,22 @@ const Korporativy = () => {
                                 </div>
                                 <div className="flex justify-center">
                                     <button className="w-[338px]">
-                                        <img src="/image/korp2_btn.webp" alt="" />
+                                        <picture>
+                                            <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                            <img src="/image/korp2_btn.webp" alt="Икша Кантри Клаб" />
+                                        </picture>
                                     </button>
                                 </div>
                             </form>
                             : currentWindow === 3 ?
                                 <>
                                     {navigateState && <Navigate to="/" />}
-                                    <img className="h-[851px]" src="/image/bron_good.webp" alt="" />
+
+                                    <picture>
+                                        <source srcSet="/avif/bron_good.avif 1x" type="image/avif" />
+                                        <img className="h-[851px]" src="/image/bron_good.webp" alt="Икша Кантри Клаб" />
+                                    </picture>
+
                                 </>
                                 :
                                 <div className="flex justify-center items-center h-screen">

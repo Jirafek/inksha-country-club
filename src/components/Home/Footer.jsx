@@ -7,20 +7,31 @@ const Footer = () => {
     return (
         <section id="footer" className="section back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
+
                 <h2 className="text-[20px] text-white z-10 font-bold">ИКША Country Club</h2>
             </div>
             <div className="w-full footer_blured_back flex flex-col pt-5 pl-2">
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center">
-                        <img src="/image/call_big.webp" alt="" />
+                        <picture>
+                            <source srcSet="/avif/call_big.avif 1x" type="image/avif" />
+                            <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
+                        </picture>
+
                         <a href="tel:+7985909120">
                             <h4 className="text-white monterey font-extrabold underline">+7 985 909 12 02</h4>
                         </a>
                     </div>
                     <div className="flex items-center">
                         <div style={{ backgroundImage: 'url(/image/email_big.webp)' }} className="flex w-[49px] h-[51px] justify-center items-center back_settings">
-                            <img src="/image/email_inside.webp" alt="" />
+                            <picture>
+                                <source srcSet="/avif/email_inside.avif 1x" type="image/avif" />
+                                <img src="/image/email_inside.webp" alt="Икша Кантри Клаб" />
+                            </picture>
                         </div>
                         <a href="mailto:contact@ikshacountryclub.com">
                             <h4 className="text-white monterey font-extrabold underline">contact@ikshacountryclub.com</h4>
@@ -37,13 +48,13 @@ const Footer = () => {
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} />}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
                                         </Link> :
                                         <a href={route.link} className='flex gap-[1px]'>
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} />}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
                                         </a>
                                 }
                             </li>

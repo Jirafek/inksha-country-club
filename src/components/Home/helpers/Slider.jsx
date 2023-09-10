@@ -21,9 +21,13 @@ const GallerySlider = ({ images }) => {
         });
       }}
     >
-      {images.map((image, index) => (
+      {images.map(({ avif, webp }, index) => (
         <SwiperSlide key={index} className="flex items-center justify-center h-full">
-          <img src={image} alt={`Slide ${index}`} className="max-w-full max-h-full transform -rotate-45" />
+            <picture>
+                <source srcSet={`${avif} 1x`} type="image/avif" />
+                <img src={webp} alt={`Слайд №${index + 1}`} className="max-w-full max-h-full transform -rotate-45" />
+            </picture>
+
         </SwiperSlide>
       ))}
     </Swiper>

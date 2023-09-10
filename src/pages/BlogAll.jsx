@@ -10,17 +10,23 @@ import { Helmet } from "react-helmet";
 const blogData = [
     {
         title: 'Икша Кантри Клаб: Ваш идеальный отдых в подмосковье',
-        image: '/image/blog_1.png',
+        imgAvif: '/avif/blog_1.avif',
+        imgWebp: '/image/blog_1.webp',
+        imgPng: '/image/blog_1.png',
         text: 'Мы рады приветствовать тебя в нашей лесной резиденции, расположенной на берегу Икшинского водохранилища, где ты сможешь насладиться отдыхом на природе и забыть обо всех повседневных заботах.'
     },
     {
         title: 'Организуйте корпоратив подмосковье: Икша Кантри Клаб',
-        image: '/image/blog_2.png',
+        imgAvif: '/avif/blog_2.avif',
+        imgWebp: '/image/blog_2.webp',
+        imgPng: '/image/blog_2.png',
         text: 'Ищете идеальное место для организации корпоратива на природе? Икша Кантри Клаб - это отличный выбор для вас и вашей компании. Мы располагаемся на первой линии Икшинского'
     },
     {
         title: 'На свежем воздухе - корпоративы на природе в подмосковье',
-        image: '/image/blog_3.png',
+        imgAvif: '/avif/blog_3.avif',
+        imgWebp: '/image/blog_3.webp',
+        imgPng: '/image/blog_3.png',
         text: 'Дорогие друзья, хотели бы вы провести незабываемый корпоратив или частное мероприятие на природе, где можно насладиться красотами леса и великолепными видами'
     },
 ];
@@ -57,7 +63,11 @@ const BlogAll = () => {
       </Helmet>
         <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative">
             <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
-                <img alt="" className="absolute" src="/image/blog_title_bg.webp" />
+                <picture>
+                    <source srcSet="/avif/blog_title_bg.avif 1x" type="image/avif" />
+                    <img alt="Икша Кантри Клаб" className="absolute top-0 left-0" src="/image/blog_title_bg.webp" />
+                </picture>
+
                 <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
             </div>
             <Slider className="pb-16" {...settings}>
@@ -72,7 +82,12 @@ const BlogAll = () => {
                                 </p>
                             </div>
                             <div className="flex justify-center py-3">
-                                <img src={el.image} alt="" />
+                                <picture>
+                                    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                    <source srcSet={`${el.imgWebp} 1x`} type="image/webp" />
+                                    <img src={el.imgPng} alt="Икша Кантри Клаб" />
+                                </picture>
+
                             </div>
                             <div className="flex justify-center">
                                 <div style={{ backgroundImage: 'url(/image/blog_textholder.png)' }} className="back_settings w-[335px] h-[300px] p-6 relative text-center">

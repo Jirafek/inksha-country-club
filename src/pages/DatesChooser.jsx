@@ -225,7 +225,11 @@ const DatesChooser = () => {
                 style={{ height: '100vh', backgroundImage: 'url(/image/dates_chooser_bg.png)' }}
                 className="back_settings relative">
                 <m.div variants={headingLines} className="flex flex-col items-center">
-                    <img src="/image/dates_title.webp" alt="" />
+                    <picture>
+                        <source srcSet="/avif/dates_title.avif 1x" type="image/avif" />
+                        <img src="/image/dates_title.webp" alt="Икша Кантри Клаб" />
+                    </picture>
+
                 </m.div>
                 <Slider className="mt-5 mb-2" {...settings}>
                     {

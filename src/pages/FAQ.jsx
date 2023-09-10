@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {v4 as uuidv4} from "uuid";
 
 const faq_data = [
     {
@@ -76,14 +77,22 @@ const FAQ = () => {
             </Helmet>
             <section style={{ backgroundImage: 'url(/image/faq_bg.webp)' }} className="relative back_settings">
                 <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
-                    <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                    <picture>
+                        <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                        <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                    </picture>
+
                     <h2 className="text-[20px] text-white z-10 font-bold">ВОПРОС-ОТВЕТ</h2>
                 </div>
                 <div className="flex justify-center flex-col items-center gap-2 pb-[100px]">
                     {
                         faq_data.map((el, i) => (
-                            <div className="flex items-center">
-                                <img onClick={() => handleQuestionClick(i)} src="/image/faq_plus.webp" alt="" />
+                            <div className="flex items-center" key={uuidv4()}>
+                                <picture>
+                                    <source srcSet="/avif/faq_plus.avif 1x" type="image/avif" />
+                                    <img onClick={() => handleQuestionClick(i)} src="/image/faq_plus.webp" alt="Икша Кантри Клаб" />
+                                </picture>
+
                                 <div className="flex flex-col items-center justify-center gap-1">
                                     <div className="rounded-[60px] border border-white w-[270px] py-[9px] monterey text-white text-center flex justify-center font-extrabold items-center text-[15px]" style={{ backgroundColor: 'rgba(111, 98, 98, 0.54)', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}>
                                         {el.question}

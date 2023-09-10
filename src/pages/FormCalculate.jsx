@@ -50,7 +50,7 @@ const FormCalculate = () => {
             {navigation && <Navigate to="/thanks" />}
             <div className="flex justify-center items-center">
                 <div className="bg-white h-[550px] w-[380px] rounded-[15px] mt-12">
-                    <h1 className="py-12 text-[26px] font-bold text-center">Заполните форму</h1>
+                    <h2 className="py-12 text-[26px] font-bold text-center">Заполните форму</h2>
                     <form className="flex flex-col justify-center items-center px-[20px] gap-7" onSubmit={handleSubmit}>
                         <input
                             className="w-full h-[40px] rounded-[10px] outline-none border border-black pl-2"

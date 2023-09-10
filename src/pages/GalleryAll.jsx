@@ -31,68 +31,220 @@ const headingLines = {
 };
 
 const imagesTerritory = [
-    "/image/gallery-all1.webp",
-    "/image/gallery-all2.webp",
-    "/image/gallery-all3.webp",
-    "/image/gallery-all5.webp",
-    "/image/gallery-all6.webp",
-    "/image/gallery-all7.webp",
+    {
+        imgAvif: "/avif/gallery-all1.avif",
+        imgWebp: "/image/gallery-all1.webp",
+        imgPng: "/image/gallery-all1.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all2.avif",
+        imgWebp: "/image/gallery-all2.webp",
+        imgPng: "/image/gallery-all2.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all3.avif",
+        imgWebp: "/image/gallery-all3.webp",
+        imgPng: "/image/gallery-all3.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all5.avif",
+        imgWebp: "/image/gallery-all5.webp",
+        imgPng: "/image/gallery-all5.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all6.avif",
+        imgWebp: "/image/gallery-all6.webp",
+        imgPng: "/image/gallery-all6.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all7.avif",
+        imgWebp: "/image/gallery-all7.webp",
+        imgPng: "/image/gallery-all7.png",
+    }
 ];
 
 const imagesActive = [
-    "/image/gallery-all8.webp",
-    "/image/gallery-all9.webp",
-    "/image/gallery-all10.webp",
-    "/image/gallery-all11.webp",
-    "/image/gallery-all12.webp",
-    "/image/gallery-all13.webp",
+    {
+        imgAvif: "/avif/gallery-all8.avif",
+        imgWebp: "/image/gallery-all8.webp",
+        imgPng: "/image/gallery-all8.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all9.avif",
+        imgWebp: "/image/gallery-all9.webp",
+        imgPng: "/image/gallery-all9.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all10.avif",
+        imgWebp: "/image/gallery-all10.webp",
+        imgPng: "/image/gallery-all10.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all11.avif",
+        imgWebp: "/image/gallery-all11.webp",
+        imgPng: "/image/gallery-all11.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all12.avif",
+        imgWebp: "/image/gallery-all12.webp",
+        imgPng: "/image/gallery-all12.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all13.avif",
+        imgWebp: "/image/gallery-all13.webp",
+        imgPng: "/image/gallery-all13.png",
+    }
 ];
 
 const guesses = [
-    "/image/gallery-all14.png",
-    "/image/gallery-all15.png",
-    "/image/gallery-all16.png",
-    "/image/gallery-all17.png",
-    "/image/gallery-all18.png",
-    "/image/gallery-all19.png",
-    "/image/gallery-all20.png",
-    "/image/gallery-all21.png",
-    "/image/gallery-all22.png",
-    "/image/gallery-all23.png",
-    "/image/gallery-all24.png",
-    "/image/gallery-all25.png",
+    {
+        imgAvif: "/avif/gallery-all14.avif",
+        imgWebp: "/image/gallery-all14.webp",
+        imgPng: "/image/gallery-all14.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all15.avif",
+        imgWebp: "/image/gallery-all15.webp",
+        imgPng: "/image/gallery-all15.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all16.avif",
+        imgWebp: "/image/gallery-all16.webp",
+        imgPng: "/image/gallery-all16.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all17.avif",
+        imgWebp: "/image/gallery-all17.webp",
+        imgPng: "/image/gallery-all17.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all18.avif",
+        imgWebp: "/image/gallery-all18.webp",
+        imgPng: "/image/gallery-all18.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all19.avif",
+        imgWebp: "/image/gallery-all19.webp",
+        imgPng: "/image/gallery-all19.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all20.avif",
+        imgWebp: "/image/gallery-all20.webp",
+        imgPng: "/image/gallery-all20.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all21.avif",
+        imgWebp: "/image/gallery-all21.webp",
+        imgPng: "/image/gallery-all21.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all22.avif",
+        imgWebp: "/image/gallery-all22.webp",
+        imgPng: "/image/gallery-all22.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all23.avif",
+        imgWebp: "/image/gallery-all23.webp",
+        imgPng: "/image/gallery-all23.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all24.avif",
+        imgWebp: "/image/gallery-all24.webp",
+        imgPng: "/image/gallery-all24.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all25.avif",
+        imgWebp: "/image/gallery-all25.webp",
+        imgPng: "/image/gallery-all25.png",
+    }
 ];
 
 const eat = [
-    "/image/gallery-all26.png",
-    "/image/gallery-all27.png",
-    "/image/gallery-all28.png",
-    "/image/gallery-all29.png",
-    "/image/gallery-all30.png",
-    "/image/gallery-all31.png",
-    "/image/gallery-all32.png",
-    "/image/gallery-all33.png",
-    "/image/gallery-all34.png",
-    "/image/gallery-all35.png",
-    "/image/gallery-all36.png",
-    "/image/gallery-all37.png",
+    {
+        imgAvif: "/avif/gallery-all26.avif",
+        imgWebp: "/image/gallery-all26.webp",
+        imgPng: "/image/gallery-all26.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all27.avif",
+        imgWebp: "/image/gallery-all27.webp",
+        imgPng: "/image/gallery-all27.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all28.avif",
+        imgWebp: "/image/gallery-all28.webp",
+        imgPng: "/image/gallery-all28.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all29.avif",
+        imgWebp: "/image/gallery-all29.webp",
+        imgPng: "/image/gallery-all29.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all30.avif",
+        imgWebp: "/image/gallery-all30.webp",
+        imgPng: "/image/gallery-all30.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all31.avif",
+        imgWebp: "/image/gallery-all31.webp",
+        imgPng: "/image/gallery-all31.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all32.avif",
+        imgWebp: "/image/gallery-all32.webp",
+        imgPng: "/image/gallery-all32.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all33.avif",
+        imgWebp: "/image/gallery-all33.webp",
+        imgPng: "/image/gallery-all33.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all34.avif",
+        imgWebp: "/image/gallery-all34.webp",
+        imgPng: "/image/gallery-all34.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all35.avif",
+        imgWebp: "/image/gallery-all35.webp",
+        imgPng: "/image/gallery-all35.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all36.avif",
+        imgWebp: "/image/gallery-all36.webp",
+        imgPng: "/image/gallery-all36.png",
+    },
+    {
+        imgAvif: "/avif/gallery-all37.avif",
+        imgWebp: "/image/gallery-all37.webp",
+        imgPng: "/image/gallery-all37.png",
+    }
 ];
 
 const gallerySliderData = [
     {
-        img: '/image/gallery_slider_title.webp',
+        imgAvif: '/avif/gallery_slider_title.avif',
+        imgWebp: '/image/gallery_slider_title.webp',
+        imgPng: '/image/gallery_slider_title.png',
         items: imagesTerritory
     },
     {
-        img: '/image/gallery_slider_title1.webp',
+        imgAvif: '/avif/gallery_slider_title1.avif',
+        imgWebp: '/image/gallery_slider_title1.webp',
+        imgPng: '/image/gallery_slider_title1.png',
         items: imagesActive
     },
     {
-        img: '/image/gallery_slider_title3.png',
+        imgAvif: '/avif/gallery_slider_title3.avif',
+        imgWebp: '/image/gallery_slider_title3.webp',
+        imgPng: '/image/gallery_slider_title3.png',
         items: guesses
     },
     {
-        img: '/image/gallery_slider_title4.png',
+        imgAvif: '/avif/gallery_slider_title4.avif',
+        imgWebp: '/image/gallery_slider_title4.webp',
+        imgPng: '/image/gallery_slider_title4.png',
         items: eat
     },
 ];
@@ -144,19 +296,28 @@ const GalleryAll = () => {
                         gallerySliderData.map((el, i) => (
                             <Fragment key={uuid4()}>
                                 <div className="m-0 flex flex-col items-center">
-                                    <img src={el.img} alt="" />
+                                    <picture>
+                                        <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                        <source srcSet={`${el.imgWebp} 1x`} type="image/webp" />
+                                        <img src={el.imgPng} alt="Икша Кантри Клаб" />
+                                    </picture>
                                 </div>
 
                                 <div className="flex justify-center">
                                     <div className="grid grid-cols-2">
-                                        {el.items.map((image, i) => (
-                                            <img
-                                                className="max-w-[135px] duration-300"
-                                                key={uuid4()}
-                                                src={image}
-                                                alt=""
-                                                onClick={() => handleImageClick(image)} // добавляем обработчик клика
-                                            />
+                                        {el.items.map((imgUrl, i) => (
+                                            <Fragment key={uuid4()}>
+                                                <picture>
+                                                    <source srcSet={`${imgUrl.imgAvif} 1x`} type="image/avif" />
+                                                    <source srcSet={`${imgUrl.imgWebp} 1x`} type="image/webp" />
+                                                    <img
+                                                        className="max-w-[135px] duration-300"
+                                                        src={imgUrl.imgPng}
+                                                        alt="Икша Кантри Клаб"
+                                                        onClick={() => handleImageClick(imgUrl)} // добавляем обработчик клика
+                                                    />
+                                                </picture>
+                                            </Fragment>
                                         ))}
                                     </div>
                                 </div>
@@ -175,13 +336,18 @@ const GalleryAll = () => {
                         className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
                         onClick={closeModal}
                     >
-                        <m.img
-                            variants={headingLines}
-                            src={chosenImage}
-                            alt=""
-                            style={{ width: "200px" }}
-                            className="absolute"
-                        />
+                        <picture>
+                            <source srcSet={`${chosenImage.imgAvif} 1x`} type="image/avif" />
+                            <source srcSet={`${chosenImage.imgWebp} 1x`} type="image/webp" />
+                            <m.img
+                                variants={headingLines}
+                                src={chosenImage.imgPng}
+                                alt="Икша Кантри Клаб"
+                                style={{ width: "200px" }}
+                                className="absolute top-[40%] left-[25%]"
+                            />
+                        </picture>
+
                     </m.div>
                 )}
                 <FixedFuter link="/#gallery" needRotate={true} />

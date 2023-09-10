@@ -12,7 +12,8 @@ import { Helmet } from "react-helmet";
 
 const locationsData = [
     {
-        img: '/image/locations_slider_title.webp',
+        imgAvif: '/avif/locations_slider_title.avif',
+        imgWebp: '/image/locations_slider_title.webp',
         link: 'https://www.youtube.com/embed/45-Tw9CtsN0',
         title: 'Веранда с домиками на берегу',
         circles: [
@@ -30,7 +31,8 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title2.webp',
+        imgAvif: '/avif/locations_slider_title2.avif',
+        imgWebp: '/image/locations_slider_title2.webp',
         link: 'https://www.youtube.com/embed/WbReNc_s-f4',
         title: 'Лофт-веранда с камином',
         circles: [
@@ -47,7 +49,8 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title3.webp',
+        imgAvif: '/avif/locations_slider_title3.avif',
+        imgWebp: '/image/locations_slider_title3.webp',
         link: 'https://www.youtube.com/embed/gklmawJFCOs',
         title: 'Коттедж',
         circles: [
@@ -64,7 +67,8 @@ const locationsData = [
         ]
     },
     {
-        img: '/image/locations_slider_title4.webp',
+        imgAvif: '/avif/locations_slider_title4.avif',
+        imgWebp: '/image/locations_slider_title4.webp',
         link: 'https://www.youtube.com/embed/myNwsKZabqs',
         title: 'Спальные домики с выходом на пляж',
         circles: [
@@ -82,10 +86,8 @@ const locationsData = [
     },
 ];
 
-
-const [navigation, setNavigation] = useState(false)
-
 const LocationsSlider = () => {
+    const [navigation, setNavigation] = useState(false)
     const settings = {
         dots: false,
         infinite: true,
@@ -134,7 +136,11 @@ const LocationsSlider = () => {
                     locationsData.map((el, i) => (
                         <div key={uuidv4()} className="flex flex-col items-center">
                             <div className="flex flex-col items-center">
-                                <img src={el.img} alt="" />
+                                <picture>
+                                    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                    <img src={el.imgWebp} alt={`Икша Кантри Клаб - ${el.title}`} />
+                                </picture>
+
                             </div>
                             <div className="flex justify-center">
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

@@ -3,8 +3,11 @@ import React from "react";
 const V2 = () => {
     return <>
         <figure className="map-figure">
-                <img src="/image/shk.webp" alt="" className="map_image" />
-            </figure>
+            <picture>
+                <source srcSet="/avif/shk.avif 1x" type="image/avif" />
+                <img src="/image/shk.webp" alt="Икша Кантри Клаб" className="map_image" />
+            </picture>
+        </figure>
             <div className="map-controls">
                 {/* <svg className="map-controls-list" viewBox="0 0 2160 3840">
                 </svg> */}

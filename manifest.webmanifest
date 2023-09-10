@@ -1,0 +1,11 @@
+{
+  "icons": [
+    { "src": "/src/favicon.ico", "type": "image/x-icon", "sizes": "64x64 32x32 24x24 16x16" },
+    { "src": "image/favicons/16x16.png", "type": "img/png", "sizes": "16x16" },
+    { "src": "image/favicons/32x32.png", "type": "img/png", "sizes": "32x32" },
+    { "src": "image/favicons/180x180.png", "type": "img/png", "sizes": "180x180" },
+    { "src": "image/favicons/192x192.png", "type": "img/png", "sizes": "192x192" },
+    { "src": "image/favicons/512x512.png", "type": "img/png", "sizes": "512x512" }
+  ],
+  "display": "standalone"
+}

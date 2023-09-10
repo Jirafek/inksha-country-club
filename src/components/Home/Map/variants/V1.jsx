@@ -3,7 +3,10 @@ import React from "react";
 const V1 = () => {
     return <>
             <figure className="map-figure">
-                <img src="/image/od.webp" alt="" className="map_image" />
+                <picture>
+                    <source srcSet="/avif/od.avif 1x" type="image/avif" />
+                    <img src="/image/od.webp" alt="Икша Кантри Клаб" className="map_image" />
+                </picture>
             </figure>
             <div className="map-controls">
                 <svg className="map-controls-list" viewBox="0 0 4320 7680">

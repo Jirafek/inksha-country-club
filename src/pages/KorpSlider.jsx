@@ -10,24 +10,40 @@ import { Helmet } from "react-helmet";
 
 const korpSliderData = [
     {
-        title: '/image/korp_sl_title-1.png',
+        titleAvif: '/avif/korp_sl_title-1.avif',
+        titleWebp: '/image/korp_sl_title-1.webp',
+        titlePng: '/image/korp_sl_title-1.png',
         text: 'Укрепить командный дух в спортивных мероприятиях, а потом всех вкусно накормить и комфортно разместить? Все правильно, рецепт идеального тимбилдинга именно такой, а у нас есть все ингредиенты, не хватает только вас.',
-        img: '/image/korp_sl_img-1.png'
+        imgAvif: '/avif/korp_sl_img-1.avif',
+        imgWebp: '/image/korp_sl_img-1.webp',
+        imgPng: '/image/korp_sl_img-1.png'
     },
     {
-        title: '/image/korp_sl_title-2.png',
+        titleAvif: '/avif/korp_sl_title-2.avif',
+        titleWebp: '/image/korp_sl_title-2.webp',
+        titlePng: '/image/korp_sl_title-2.png',
         text: 'В здоровом теле - здоровый дух, а в здоровой атмосфере - здоровый спорт, свежий воздух, русская баня, шашлык или барбекю - идеальный выбор для любителей активного отдыха.',
-        img: '/image/korp_sl_img-2.png'
+        imgAvif: '/avif/korp_sl_img-2.avif',
+        imgWebp: '/image/korp_sl_img-2.webp',
+        imgPng: '/image/korp_sl_img-2.png'
     },
     {
-        title: '/image/korp_sl_title-3.png',
+        titleAvif: '/avif/korp_sl_title-3.avif',
+        titleWebp: '/image/korp_sl_title-3.webp',
+        titlePng: '/image/korp_sl_title-3.png',
         text: 'Еда на природе всегда вкуснее, а в компании друзей и семьи - еще вкуснее, устройте пикник вашей мечты у нас, незабываемые впечатления вам гарантированы.',
-        img: '/image/korp_sl_img-3.png'
+        imgAvif: '/avif/korp_sl_img-3.avif',
+        imgWebp: '/image/korp_sl_img-3.webp',
+        imgPng: '/image/korp_sl_img-3.png'
     },
     {
-        title: '/image/korp_sl_title-4.png',
+        titleAvif: '/avif/korp_sl_title-4.avif',
+        titleWebp: '/image/korp_sl_title-4.webp',
+        titlePng: '/image/korp_sl_title-4.png',
         text: 'Барбекю как в кино? Именно так это и выглядит у нас, все необходимое собрано в одном месте в идеальных пропорциях и приправлено отличным сервисом.',
-        img: '/image/korp_sl_img-4.png'
+        imgAvif: '/avif/korp_sl_img-4.avif',
+        imgWebp: '/image/korp_sl_img-4.webp',
+        imgPng: '/image/korp_sl_img-4.png'
     },
 ];
 
@@ -67,7 +83,11 @@ const KorpSlider = () => {
                     korpSliderData.map((el, i) => (
                         <div key={uuidv4()} className="flex flex-col items-center">
                             <div className="flex flex-col items-center justify-center relative h-[90px] mb-[10px]">
-                                <img className="relative" src={el.title} alt="" />
+                                <picture>
+                                    <source srcSet={`${el.titleAvif} 1x`} type="image/avif" />
+                                    <source srcSet={`${el.titleWebp} 1x`} type="image/webp" />
+                                    <img className="relative" src={el.titlePng} alt="Икша Кантри Клаб" />
+                                </picture>
                             </div>
                             <div className="flex justify-center">
                                 <p style={{ textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }} className="w-[340px] text-[20px] text-center">
@@ -75,7 +95,11 @@ const KorpSlider = () => {
                                 </p>
                             </div>
                             <div className="flex justify-center px-1 mb-5">
-                                <img className="w-full" src={el.img} alt="" />
+                                <picture>
+                                    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
+                                    <source srcSet={`${el.imgWebp} 1x`} type="image/webp" />
+                                    <img className="w-full" src={el.imgPng} alt="Икша Кантри Клаб" />
+                                </picture>
                             </div>
                             <div className="flex justify-center px-1">
                                 <Link to="/korp/book" style={{ backgroundImage: 'url(/image/korp_sl_btn.png)' }} className="w-[230px] h-[65px] back_settings font-semibold relative flex justify-center items-center">

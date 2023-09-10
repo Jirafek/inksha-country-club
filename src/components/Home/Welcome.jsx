@@ -165,23 +165,43 @@ const Welcome = () => {
   }, []);
   return (
     <section id='book' className="welcome relative m-0">
-      <img className="w-full h-[100%]" src="/image/bg1.webp" alt="" />
+      <picture>
+        <source srcSet="/avif/bg1.avif 1x" type="image/avif" />
+        <img className="w-full h-[100%] object-cover" src="/image/bg1.webp" alt="Икша Кантри Клаб" />
+      </picture>
+
       {/* <VideoPlayer /> */}
       {/* <div className="absolute z-30 bottom-0 w-full bg-transparent">
       <div className="absolute z-[1] bottom-0 w-full bg-transparent">
         <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
       </div> */}
       <div style={{ transform: 'translateX(-50%)' }} className='absolute top-0 left-1/2 w-[260px] doska-container'>
-        <img className='w-full h-full' src="/image/doska.webp" alt="" />
+        <picture>
+          <source srcSet="/avif/doska.avif 1x" type="image/avif" />
+          <img className='w-full h-full' src="/image/doska.webp" alt="Икша Кантри Клаб" />
+        </picture>
         <a className='absolute left-1/2 bottom-[4rem]' style={{ transform: 'translateX(-50%)' }} href="#about">
-          <img className='w-[80px]' src="/image/about.webp" alt="" />
+          <picture>
+            <source srcSet="/avif/about.avif 1x" type="image/avif" />
+            <img className='w-[80px]' src="/image/about.webp" alt="Икша Кантри Клаб" />
+          </picture>
+
         </a>
         <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
-          <img className='w-[44px]' src="/image/call.webp" alt="" />
+          <picture>
+            <source srcSet="/avif/call.avif 1x" type="image/avif" />
+            <img className='w-[44px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+          </picture>
         </a>
       </div>
-      <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.webp" alt="" />
-      <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.webp" alt="" />
+      <picture>
+        <source srcSet="/avif/sky1.avif 1x" type="image/avif" />
+        <img className='absolute top-0 left-0 sky1 z-[21]' src="/image/sky1.webp" alt="Икша Кантри Клаб" />
+      </picture>
+      <picture>
+        <source srcSet="/avif/sky2.avif 1x" type="image/avif" />
+        <img className='absolute top-0 right-0 sky2 z-[21]' src="/image/sky2.webp" alt="Икша Кантри Клаб" />
+      </picture>
       <div
         style={{ transform: 'translateX(-50%)' }}
         className='absolute left-1/2 w-full bottom-[8.5rem]'
@@ -195,15 +215,24 @@ const Welcome = () => {
           onSubmit={handleSubmit(onSubmit)}
           className='px-16 hidden'>
           <m.div className='relative w-full mb-2'> {/*  variants={headingLines} */}
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="" />
+            <picture>
+              <source srcSet="/avif/calendar.avif 1x" type="image/avif" />
+              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="Икша Кантри Клаб" />
+            </picture>
             <input style={errors.zaezd && { borderColor: 'red' }} {...register("zaezd", { required: true })} id='zaezd' placeholder='ЗАЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.div className='relative w-full mb-2'>
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="" />
+            <picture>
+              <source srcSet="/avif/calendar.avif 1x" type="image/avif" />
+              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="Икша Кантри Клаб" />
+            </picture>
             <input style={errors.viezd && { borderColor: 'red' }} {...register("viezd", { required: true })} id='viezd' placeholder='ВЫЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.div className='relative w-full mb-2'>
-            <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.webp" alt="" />
+            <picture>
+              <source srcSet="/avif/persone.avif 1x" type="image/avif" />
+              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.webp" alt="Икша Кантри Клаб" />
+            </picture>
             <input style={errors.people && { borderColor: 'red' }} {...register("people", { required: true })} placeholder='КОЛИЧЕСТВО ЧЕЛОВЕК' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
           </m.div>
           <m.button type='submit' className='w-full rounded-[30px] border border-black bg-[#0CF259] bg-opacity-50 shadow-md monterey text-white font-semibold text-lg h-9'>

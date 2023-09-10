@@ -323,7 +323,10 @@ const Map = () => {
     return (
         <div id="map" className="t-body relative" style={{ margin: '0' }}>
             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
-                <img className="absolute" src="/image/titles_bg.webp" alt="" />
+                <picture>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
+                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                </picture>
                 <h2 className="text-[20px] text-white z-10 font-bold">КАРТА ТЕРРИТОРИИ</h2>
             </div>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 top-24 z-20'>
@@ -337,7 +340,11 @@ const Map = () => {
                         <p className='text-white monterey font-extrabold text-[19px]'>
                             Лесная Резиденция
                         </p>
-                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="" />
+
+                        <picture>
+                            <source srcSet="/avif/arrow_choose.avif 1x" type="image/avif" />
+                            <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 0}deg)` }} src="/image/arrow_choose.webp" alt="Икша Кантри Клаб" />
+                        </picture>
                     </div>
 
 
@@ -365,7 +372,11 @@ const Map = () => {
                         <p className='text-white monterey font-extrabold text-[19px]'>
                             Олимпийская деревня
                         </p>
-                        <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="" />
+
+                        <picture>
+                            <source srcSet="/avif/arrow_choose.avif 1x" type="image/avif" />
+                            <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="Икша Кантри Клаб" />
+                        </picture>
                     </div>
 
 
@@ -389,6 +400,11 @@ const Map = () => {
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Шале
                 </p>
+
+                <picture>
+                    <source srcSet="/avif/arrow_choose.avif 1x" type="image/avif" />
+                    <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 1 ? 90 : 180}deg)` }} src="/image/arrow_choose.webp" alt="Икша Кантри Клаб" />
+                </picture>
                 <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="" />
             </div>
 
@@ -396,7 +412,11 @@ const Map = () => {
                 <p className='text-white monterey font-extrabold text-[19px]'>
                     Коттедж
                 </p>
-                <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="" />
+
+                <picture>
+                    <source srcSet="/avif/arrow_choose.avif 1x" type="image/avif" />
+                    <img className='duration-300 w-[22px]' style={{ transform: `rotate(${location === 0 ? -90 : 0}deg)`, display: `${location === 0 ? 'block' : 'none'}` }} src="/image/arrow_choose.webp" alt="Икша Кантри Клаб" />
+                </picture>
             </div>
 
             {/* <div style={{display: `${location === 1 ? 'none' : 'flex'}`}} onClick={handleMenu1} className='absolute bottom-[295px] right-2 flex items-center gap-1 z-30 -rotate-[2deg]'>
@@ -416,7 +436,10 @@ const Map = () => {
                 <m.img variants={headingLinesOpacity} className='div_img w-[140px] duration-300' src="/image/map_bg_mini.webp" alt="" />
                 <m.div variants={headingLinesOpacity} className='div_text text-center text-[11px] px-[2px] duration-300'>Наш уютный домик у воды - это идеальное место для незабываемого отдыха. Здесь вы сможете окунуться в атмосферу релакса и насладиться красотой природы.</m.div>
                 <button className='w-[220px]'>
-                    <img src="/image/map_mini_btn.webp" alt="" />
+                    <picture>
+                        <source srcSet="/avif/map_mini_btn.avif 1x" type="image/avif" />
+                        <img src="/image/map_mini_btn.webp" alt="Икша Кантри Клаб" />
+                    </picture>
                 </button>
             </m.div> */}
             {/* <img style={{ transform: 'translateX(-50%)' }} className='bottom-0 left-1/2 absolute z-10' src="/image/zp_zipper.webp" alt="" /> */}
@@ -435,7 +458,7 @@ const Map = () => {
                                     <div className="popup-content map-info">
                                         <div className="map-info-title">
                                             <div className="map-info_image__wrapper">
-                                                <img className="map-info_image" src="/image/" alt="sdfdfsf" />
+                                                <img className="map-info_image" src="/image/" alt="Икша Кантри Клаб" />
                                             </div>
                                             <h2 className="map-info_title">Спальный домик</h2>
                                         </div>

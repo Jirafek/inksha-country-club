@@ -167,7 +167,7 @@ const Welcome = () => {
     <section id='book' className="welcome relative m-0">
       <picture>
         <source srcSet="/avif/bg1.avif 1x" type="image/avif" />
-        <img className="w-full h-[100%]" src="/image/bg1.webp" alt="Икша Кантри Клаб" />
+        <img className="w-full h-[100%] object-cover" src="/image/bg1.webp" alt="Икша Кантри Клаб" />
       </picture>
 
       {/* <VideoPlayer /> */}

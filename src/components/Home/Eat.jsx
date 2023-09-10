@@ -95,7 +95,10 @@ const Eat = () => {
                 </picture>
                 <h2 className="text-[20px] text-white z-10 font-bold">ПИТАНИЕ</h2>
             </div>
-            <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="" />
+            <picture>
+                <source srcSet="/avif/cook_cooker.avif 1x" type="image/avif" />
+                <img className="w-full mb-[5px]" src="/image/cook_cooker.webp" alt="Икша Кантри Клаб" />
+            </picture>
             <div className="flex justify-center mb-[5px]">
                 <div className="back_settings flex flex-col justify-around items-center h-[255px] w-[350px] relative py-3" style={{ backgroundImage: 'url(/image/cook_frame.webp)', backgroundSize: 'auto' }}>
                     <h4 className="monterey text-lg font-semibold text-[#161212] text-[16px]">МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ</h4>

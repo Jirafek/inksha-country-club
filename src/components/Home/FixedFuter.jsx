@@ -13,20 +13,20 @@ const FixedFuter = ({ link, needRotate }) => {
         });
     };
     return (
-        <div className='flex fixed bottom-0 w-full h-[112px] z-[1001] flex-col gap-1 transition-all'>
+        <div className='flex fixed bottom-0 w-full z-[1001] flex-col gap-1 transition-all'>
             {
                 link === '#book' ?
                     <button className='self-end' onClick={scrollToTop}>
                         <picture>
                             <source srcSet="/avif/to_top_button.avif 1x" type="image/avif" />
-                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className='h-11' src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
+                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
                         </picture>
                     </button>
                     :
                     <button className='self-end' onClick={goBack}>
                         <picture>
                             <source srcSet="/avif/to_top_button.avif 1x" type="image/avif" />
-                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className='h-11' src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
+                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
                         </picture>
                     </button>
             }

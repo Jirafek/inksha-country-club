@@ -62,13 +62,13 @@ const BlogAll = () => {
         />
       </Helmet>
         <section style={{ backgroundImage: 'url(/image/about_bg_styled.webp)' }} className="back_settings relative">
-            <div className="flex flex-col items-center justify-center relative h-[110px] pt-[25px]">
+            <div className="flex flex-col items-center justify-center relative h-[110px]">
                 <picture>
                     <source srcSet="/avif/blog_title_bg.avif 1x" type="image/avif" />
-                    <img alt="Икша Кантри Клаб" className="absolute top-0 left-0" src="/image/blog_title_bg.webp" />
+                    <img alt="Икша Кантри Клаб" className="absolute top-0 left-50% translate-x-[-50%]" src="/image/blog_title_bg.webp" />
                 </picture>
 
-                <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">Икша Кантри Клаб</h2>
             </div>
             <Slider className="pb-16" {...settings}>
                 {

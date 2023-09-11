@@ -84,7 +84,7 @@ const Locations = () => {
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-8 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
-                <h2 className="text-[20px] text-white z-10 font-bold">ЛОКАЦИИ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">ЛОКАЦИИ</h2>
             </div>
 
             <Slider className="mt-[35px]" {...settings}>

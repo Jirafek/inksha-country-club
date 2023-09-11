@@ -327,7 +327,7 @@ const Map = () => {
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
-                <h2 className="text-[20px] text-white z-10 font-bold">КАРТА ТЕРРИТОРИИ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">КАРТА ТЕРРИТОРИИ</h2>
             </div>
             <div style={{ transform: 'translateX(-50%)' }} className='absolute left-1/2 top-24 z-20'>
                 <m.div

@@ -24,7 +24,7 @@ const Blog = () => {
                     <source srcSet="/avif/blog_title_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-2 left-50% translate-x-[-50%]" src="/image/blog_title_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
-                <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">Икша Кантри Клаб</h2>
             </div>
             <div className="flex flex-col items-center px-3 gap-4 mb-4 mt-5">
                 {

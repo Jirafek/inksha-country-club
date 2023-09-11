@@ -106,12 +106,12 @@ const Keitering = () => {
                     <a
                         href="https://bronirui-online.ru/iksha-country-club/uslugi"
                         style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
-                        className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] monterey mb-3 py-[7px] px-[6px]"
+                        className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] montaga mb-3 py-[7px] px-[6px]"
                         rel="noreferrer"
                     >
                         Заказать питание
                     </a>
-                    <div className="flex flex-col items-center gap-4 mb-5">
+                    <div className="flex flex-col items-center gap-4 mb-5 montaga">
                         <button onClick={() => handleDownload('/pdf/keyt.pdf')}
                             className="text-white underline font-bold text-[20px]"
                         >
@@ -130,8 +130,6 @@ const Keitering = () => {
                             <source srcSet="/avif/arrow_slider.avif 1x" type="image/avif" />
                             <img src="/image/arrow_slider.webp" alt="Икша Кантри Клаб" />
                         </picture>
-
-
                     </button>
                     <div className="flex justify-center">
                         <div className="grid grid-cols-2 gap-x-[10px] gap-y-[7px] w-full">

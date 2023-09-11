@@ -49,7 +49,7 @@ const Gallery = () => {
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
 
-                <h2 className="text-[20px] text-white z-10 font-bold">ГАЛЕРЕЯ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">ГАЛЕРЕЯ</h2>
             </div>
             <GallerySlider images={images} />
 

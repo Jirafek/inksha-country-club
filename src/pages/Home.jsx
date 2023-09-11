@@ -3,7 +3,6 @@ import { Dialog, Transition } from '@headlessui/react';
 import routes from '../utils/Home/routes';
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
-import { Link } from 'react-router-dom';
 import Welcome from '../components/Home/Welcome';
 import Map from '../components/Home/Map/Map';
 import About from '../components/Home/About';
@@ -50,13 +49,6 @@ const Home = () => {
         });
     };
     const [locationState, setLocationState] = useState(false);
-    const location = useLocation();
-
-    useEffect(() => {
-        console.log('Новая ссылка:', location.pathname);
-    }, [location]);
-
-
 
     const [isVisible, setIsVisible] = useState(false);
     const [sidebarOpen, toggle] = useReducer((s) => !s, false);
@@ -133,12 +125,12 @@ const Home = () => {
                                             {routes.map((el, i) => {
                                                 return (
                                                     <li key={uuidv4()}>
-                                                        <Link to={el.link} onClick={toggle} className='flex gap-[1px] outline-none'>
+                                                        <a href={el.link} onClick={toggle} className='flex gap-[1px] outline-none'>
                                                             <p className='monterey'>
                                                                 {el.text}
                                                             </p>
                                                             {el.icon && <img src={el.icon} alt="Иконка пункта меню" />}
-                                                        </Link>
+                                                        </a>
                                                     </li>
                                                 );
                                             })}

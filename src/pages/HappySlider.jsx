@@ -84,7 +84,7 @@ const HappySlider = () => {
                         <div className="h-screen relative pb-[40px]" key={uuidv4()}>
                             <picture>
                                 <source srcSet={`${el.bgAvif} 1x`} type="image/avif" />
-                                <img className="absolute w-full h-[851px] top-0" src={el.bgWebp} alt="Икша Кантри Клаб" />
+                                <img className="absolute w-full h-full top-0" src={el.bgWebp} alt="Икша Кантри Клаб" />
                             </picture>
 
                             <div style={{ transform: 'translateX(-50%)' }} className="flex flex-col items-center justify-center absolute left-1/2 z-20 w-full h-[90px]">
@@ -93,7 +93,7 @@ const HappySlider = () => {
                                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                                 </picture>
 
-                                <h2 className="text-[20px] text-white z-10 font-bold">РАЗВЛЕЧЕНИЯ</h2>
+                                <h2 className="text-[20px] text-white z-10 font-bold mt-2">РАЗВЛЕЧЕНИЯ</h2>
                             </div>
                             <picture>
                                 <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />

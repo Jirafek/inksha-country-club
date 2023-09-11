@@ -141,7 +141,7 @@ const Events = () => {
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
 
-                <h2 className="text-[20px] text-white z-10 font-bold">МЕРОПРИЯТИЯ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">МЕРОПРИЯТИЯ</h2>
             </div>
             <Confetti
                 width={width}
@@ -155,8 +155,8 @@ const Events = () => {
                     eventsData.map((el, i) => {
                         return (
                             <div className="flex flex-col items-center justify-center relative" key={uuidv4()}>
-                                <div className="flex justify-center mb-[20px]">
-                                    <div style={{ backgroundImage: 'url(/image/events_title.webp)' }} className="back_settings flex justify-center items-center w-[310px] h-[55px] text-[#000] monterey text-[19px] font-bold">
+                                <div className="flex justify-center w-[320px] h-[60px] mx-auto mb-[20px]">
+                                    <div style={{ backgroundImage: 'url(/image/events_title.webp)' }} className="back_settings flex justify-center items-center w-full text-[#000] monterey text-[19px] font-bold">
                                         {el.title}
                                     </div>
                                 </div>

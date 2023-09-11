@@ -82,7 +82,7 @@ const FAQ = () => {
                         <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                     </picture>
 
-                    <h2 className="text-[20px] text-white z-10 font-bold">ВОПРОС-ОТВЕТ</h2>
+                    <h2 className="text-[20px] text-white z-10 font-bold mt-2">ВОПРОС-ОТВЕТ</h2>
                 </div>
                 <div className="flex justify-center flex-col items-center gap-2 pb-[100px]">
                     {

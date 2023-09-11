@@ -38,7 +38,7 @@ const Responce = () => {
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
-                <h2 className="text-[20px] text-white z-10 font-bold">ОТЗЫВЫ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">ОТЗЫВЫ</h2>
             </div>
             <Slider className="mt-5 pb-16" {...settings}>
                 {

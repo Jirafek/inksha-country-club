@@ -141,19 +141,19 @@ const Welcome = () => {
     }, 1500)
   }, []);
 
-  window.addEventListener("hashchange", function () {
-    // Получить текущий URL с хэшем
-    var currentUrlWithHash = window.location.href;
-
-    console.log(currentUrlWithHash)
-
-    // Можно также получить только хэш
-    var currentHash = window.location.hash;
-    console.log(currentHash)
-
-    // Здесь ты можешь выполнить действия при изменении ссылки
-    // Например, управлять z-index для модуля бронирования и контента
-  });
+  // window.addEventListener("hashchange", function () {
+  //   // Получить текущий URL с хэшем
+  //   var currentUrlWithHash = window.location.href;
+  //
+  //   console.log(currentUrlWithHash)
+  //
+  //   // Можно также получить только хэш
+  //   var currentHash = window.location.hash;
+  //   console.log(currentHash)
+  //
+  //   // Здесь ты можешь выполнить действия при изменении ссылки
+  //   // Например, управлять z-index для модуля бронирования и контента
+  // });
 
   useEffect(() => {
     // BookingCalendar([], 'zaezd'); // get data from FireBase

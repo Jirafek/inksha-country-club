@@ -146,7 +146,7 @@ const LocationsSlider = () => {
                                 <iframe className="relative w-full h-[200px]" src={el.link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                             <div className="flex justify-center mt-3 mb-2">
-                                <div className="w-full h-[370px] back_settings relative px-5 py-3 flex flex-col items-center" style={{ backgroundImage: 'url(/image/locations_text_layer.webp)' }}>
+                                <div className="w-full h-[370px] back_settings relative px-5 py-3 flex flex-col items-center" style={{ backgroundImage: 'url(/image/locations_text_layer.webp)', backgroundSize: '100% 100%' }}>
                                     <h3 className="font-extrabold text-[20px] text-center">
                                         {el.title}
                                     </h3>

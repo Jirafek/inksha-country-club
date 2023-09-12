@@ -55,9 +55,10 @@ const HappySlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow isBottom='37%' />,
+        nextArrow: <CustomNextArrow isBottom='37.1%' />,
         prevArrow: <CustomPrevArrow isBottom="37%" />,
     };
+
     return (
            <>
       <Helmet>

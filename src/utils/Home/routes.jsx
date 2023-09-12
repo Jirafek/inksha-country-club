@@ -4,7 +4,7 @@ const routes = [
         text: "БРОНИРОВАНИЕ",
         icon: "/image/Heart.webp",
         whiteIcon: "/image/white_heart.webp",
-        link: "#book"
+        link: "https://bronirui-online.ru/iksha-country-club/uslugi"
     },
     {
         text: "КАРТА ТЕРРИТОРИИ",

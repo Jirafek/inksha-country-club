@@ -48,6 +48,9 @@
 }
 
 .map_title__text {
+    margin-top: 10px;
+    margin-left: 10px;
+
     font-size: 20px;
     font-weight: 700;
     color: white;

@@ -45,24 +45,6 @@ body {
   overflow-x: hidden;
 }
 
-/* #root {
-  height: 200vh;
-}
-
-.sections-container {
-  display: flex !important;
-}
-
-.section {
-  height: 100vh;
-  width: 100vw;
-  background-color: #fff !important;
-} */
-
-section#book {
-  height: 695px;
-}
-
 .welcome {
   position: relative;
   z-index: 1000;

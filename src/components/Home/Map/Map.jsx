@@ -54,7 +54,7 @@ const Map = () => {
 
     // Выше было появление тайтла
 
-    return <section className='section map'>
+    return <section className='section map' id='map'>
         <div className='map-header'>
             <div
                 className="map_title"

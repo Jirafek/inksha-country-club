@@ -26,7 +26,7 @@ const FixedFuter = ({ link, needRotate }) => {
                     <button className='self-end' onClick={goBack}>
                         <picture>
                             <source srcSet="/avif/to_top_button.avif 1x" type="image/avif" />
-                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
+                            <img style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} className="w-[80px]" src="/image/to_top_button.webp" alt="Икша Кантри Клаб" />
                         </picture>
                     </button>
             }

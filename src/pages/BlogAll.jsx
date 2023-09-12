@@ -68,7 +68,7 @@ const BlogAll = () => {
                     <img alt="Икша Кантри Клаб" className="absolute top-0 left-50% translate-x-[-50%]" src="/image/blog_title_bg.webp" />
                 </picture>
 
-                <h2 className="text-[20px] text-white z-10 font-bold mt-2">Икша Кантри Клаб</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold">Икша Кантри Клаб</h2>
             </div>
             <Slider className="pb-16" {...settings}>
                 {

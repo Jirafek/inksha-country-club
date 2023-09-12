@@ -100,27 +100,29 @@ const Keitering = () => {
                 <div className="m-0 flex flex-col items-center">
                     <picture>
                         <source srcSet="/avif/eat_bg_title.avif 1x" type="image/avif" />
-                        <img src="/image/eat_bg_title.webp" alt="Икша Кантри Клаб" />
+                        <img className="mb-4" src="/image/eat_bg_title.webp" alt="Икша Кантри Клаб" />
                     </picture>
 
                     <a
                         href="https://bronirui-online.ru/iksha-country-club/uslugi"
                         style={{ backgroundColor: 'rgba(230, 234, 41, 0.60)' }}
-                        className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] montaga mb-3 py-[7px] px-[6px]"
+                        className="text-[#000] text-center text-[20px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] montaga mb-6 py-[7px] px-[40px]"
                         rel="noreferrer"
                     >
                         Заказать питание
                     </a>
                     <div className="flex flex-col items-center gap-4 mb-5 montaga">
                         <button onClick={() => handleDownload('/pdf/keyt.pdf')}
-                            className="text-white underline font-bold text-[20px]"
+                            style={{ backgroundColor: 'rgba(230, 234, 41, 0.30)' }}
+                            className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] montaga py-[7px] px-[10px]"
                         >
                             Меню кейтеринга
                         </button>
                         <button onClick={() => handleDownload('/pdf/z_o_u.pdf')}
-                            className="text-white underline font-bold text-[20px]"
+                            style={{ backgroundColor: 'rgba(230, 234, 41, 0.30)' }}
+                            className="text-[#000] text-center text-[15px] font-medium rounded-[10px] backdrop-blur-[1px] border-[2px] border-[#645A53] montaga py-[7px] px-[10px]"
                         >
-                            Завтраки, обеды, и ужины
+                            Завтраки, обеды и ужины
                         </button>
                     </div>
                 </div>

@@ -343,8 +343,8 @@ const GalleryAll = () => {
                                 variants={headingLines}
                                 src={chosenImage.imgPng}
                                 alt="Икша Кантри Клаб"
-                                style={{ width: "200px" }}
-                                className="absolute top-[40%] left-[25%]"
+                                style={{ width: "300px" }}
+                                className="absolute top-[30%] left-[20%]"
                             />
                         </picture>
 

@@ -106,9 +106,9 @@ const EventsFromFireBase = () => {
             variants={heading}
             id="blog"
             style={{ backgroundImage: 'url(/image/bg-eve.webp)', overflowX: 'hidden' }}
-            className="section min-h-[500px] back_settings relative"
+            className="section min-h-[500px] back_settings relative pb-4"
         >
-            <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
+            <div className="flex flex-col items-center justify-center relative h-[90px] z-10 mb-4">
                 <picture>
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
@@ -134,27 +134,26 @@ const EventsFromFireBase = () => {
                     <m.img variants={sky4} className="absolute -top-[20px] right-[40px]" src="/image/events_sky3.webp" alt="Икша Кантри Клаб" />
                 </picture>
             </div>
-            <div className="h-[500px] overflow-hidden">
                 <div className="flex justify-center flex-wrap gap-x-6 gap-y-[30px] overflow-hidden">
                     {
                         fireBaseData.map((el, i) => (
                             <div key={uuidv4()} className="flex flex-col items-center">
                                 <div className="mb-[10px] flex flex-col items-center">
 
-                                    <div className="flex rounded-[10px] justify-center items-center bg-[#EAD3B5] border border-[#765947] w-[150px] mb-1">
-                                        <p className="text-[11px] text-black monterey text-center font-bold">
+                                    <div className="flex rounded-[10px] justify-center items-center bg-[#EAD3B5] border border-[#765947] w-[150px] min-h-[50px] mb-1">
+                                        <p className="text-[11px] text-black monterey text-center font-bold py-[8px] px-[5px]">
                                             {el.title}
                                         </p>
                                     </div>
                                     <picture>
                                         <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
-                                        <img className="w-[150px] rounded-xl" src={el.imgWebp} alt="Икша Кантри Клаб" />
+                                        <img className="w-[150px] border-[3px] border-[#7C684E] rounded-xl object-cover aspect-square" style={{ boxShadow: '4px 4px 4px 0px rgba(0, 0, 0, 0.50)' }} src={el.imgWebp} alt="Икша Кантри Клаб" />
                                     </picture>
                                 </div>
                                 <div className="flex flex-col gap-1 items-center">
 
-                                    <div className="w-[120px] rounded-[10px] border border-[#765947] flex justify-center items-center bg-white">
-                                        <p className="text-[13px] text-black monterey py-[3px]">
+                                    <div className="w-[120px] rounded-[10px] border border-[#765947] flex justify-center items-center mb-1 bg-white">
+                                        <p className="text-[13px] text-black monterey py-[10px] px-[40px]">
                                             {el.date}
                                         </p>
                                     </div>
@@ -166,7 +165,6 @@ const EventsFromFireBase = () => {
                         ))
                     }
                 </div>
-            </div>
         </m.section>
     );
 }

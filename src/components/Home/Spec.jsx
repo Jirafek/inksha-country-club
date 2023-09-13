@@ -20,7 +20,7 @@ const Spec = () => {
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
                 </picture>
-                <h2 className="text-[20px] text-white z-10 font-bold">СПЕЦПРЕДЛОЖЕНИЯ</h2>
+                <h2 className="text-[20px] text-white z-10 font-bold mt-2">СПЕЦПРЕДЛОЖЕНИЯ</h2>
             </div>
             <div className=" flex justify-center mb-[80px]">
                 <p className="text-[#000] text-center monterey text-[18px] w-[230px] mt-[30px]">ДАРИМ ИМЕНИННИКУ САП-ДОСКУ</p>

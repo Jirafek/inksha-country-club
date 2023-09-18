@@ -142,19 +142,19 @@ const Korporativy = () => {
                                     <img src="/image/korp_title.webp" alt="Икша Кантри Клаб" />
                                 </picture>
                             </div>
-                            <div className="flex justify-center relative">
-                                <picture>
-                                    <source srcSet="/avif/korp_layer_photo.avif 1x" type="image/avif" />
-                                    <img src="/image/korp_layer_photo.webp" alt="Икша Кантри Клаб" />
-                                </picture>
-
+                            <div className="flex justify-center items-end mx-auto my-0 back_settings h-[161px] w-[221px]" style={{ backgroundImage: 'url(/image/korp_layer_photo.webp)' }}>
+                                {/*<picture>*/}
+                                {/*    <source srcSet="/avif/korp_layer_photo.avif 1x" type="image/avif" />*/}
+                                {/*    <img src="/image/korp_layer_photo.webp" alt="Икша Кантри Клаб" />*/}
+                                {/*</picture>*/}
                                 <picture>
                                     <source srcSet="/avif/korp_people.avif 1x" type="image/avif" />
-                                    <img className="absolute bottom-1" src="/image/korp_people.webp" alt="Икша Кантри Клаб" />
+                                    <img className="mb-[5px]" src="/image/korp_people.webp" alt="Икша Кантри Клаб" />
                                 </picture>
+
                             </div>
                             <div>
-                                <div className="flex justify-center flex-col px-[30px]">
+                                <div className="flex justify-center items-center flex-col px-[30px]">
                                     <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.33)' }} className="border-[2px] border-[#B76569] rounded-[25px] w-[330px] py-[9px] px-3 gap-4 flex overflow-x-auto">
                                         {
                                             images.map((el, i) => (

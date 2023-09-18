@@ -115,7 +115,7 @@ const HappySlider = () => {
                                                     </p>
                                                     {
                                                         el.text.map((textItem, index) => (
-                                                            <div className="flex items-center gap-1">
+                                                            <div className="flex items-center gap-1" key={textItem}>
                                                                 <div className="h-[15px] w-[15px] rounded-full bg-white"></div>
                                                                 <p className="text-[15px]">
                                                                     {textItem}

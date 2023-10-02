@@ -9,6 +9,7 @@ import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {URLData} from "../utils/URLData";
 
 const locationsData = [
     {
@@ -99,15 +100,47 @@ const LocationsSlider = () => {
     };
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const onSubmit = (data) => {
 
-        emailjs.send("service_a1dan7b", "template_avgrkli", data, "V_IkuqWqNwJlUw72K")
-            .then((result) => {
-                reset()
-                setNavigation(true);
-            }, (error) => {
-                alert('Ошибка при отправке формы');
-            }); // sending to email
+
+    const onSubmit = async (data) => {
+
+        const sendingData = {
+            ...data,
+            email: '-',
+            source: "Сайт",
+            formType: "Перезвоните мне",
+            link: window.location.href,
+            ...URLData,
+        }
+
+        try {
+            const response = await fetch('https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: new URLSearchParams(sendingData).toString(),
+            });
+
+            if (response.ok) {
+
+                emailjs.send("service_a1dan7b", "template_avgrkli", data, "V_IkuqWqNwJlUw72K")
+                    .then((result) => {
+                        reset();
+                        alert('Данные успешно отправлены');
+                        setNavigation(true);
+                    }, (error) => {
+                        alert('Ошибка при отправке формы');
+                    }); // sending to email
+
+            } else {
+                alert('Произошла ошибка при отправке данных');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Произошла ошибка при отправке данных');
+        }
     }
 
     return (

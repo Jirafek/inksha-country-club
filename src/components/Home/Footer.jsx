@@ -22,8 +22,8 @@ const Footer = () => {
                             <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
                         </picture>
 
-                        <a href="tel:+7985909120">
-                            <h4 className="text-white monterey font-extrabold underline">+7 985 909 12 02</h4>
+                        <a href="tel:+74995055031">
+                            <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-31</h4>
                         </a>
                     </div>
                     <div className="flex items-center">

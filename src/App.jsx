@@ -2,6 +2,7 @@
 import { lazy, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { text_privicy, text_living } from './utils/Home/PrivicyTextHelper';
+import {updateData} from './utils/URLData';
 
 const Home = lazy(() => import('pages/Home'));
 const Booking = lazy(() => import('pages/Booking'));
@@ -18,6 +19,7 @@ const LocationsSlider = lazy(() => import('pages/LocationsSlider'));
 const BlogAll = lazy(() => import('pages/BlogAll'));
 const FormCalculate = lazy(() => import('pages/FormCalculate'));
 const Thanks = lazy(() => import('pages/Thanks'));
+const Popup = lazy(() => import('pages/Popup'));
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
       <Route path='/locations-about' element={<LocationsSlider />} />
       <Route path='/blog-all' element={<BlogAll />} />
       <Route path='/form/:amount' element={<FormCalculate />} />
+        <Route path='/popup' element={<Popup />} />
       <Route path='/thanks' element={<Thanks />} />
       <Route path='*' element={<NotFound />} />
       {/* <Route path='*' element={<NotFound />} /> */}

@@ -31,7 +31,7 @@ const FixedFuter = ({ link, needRotate }) => {
                     </button>
             }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
-                <a rel="noreferrer" className="relative w-[230px] h-[40px] flex items-center justify-center" href="https://bronirui-online.ru/iksha-country-club">
+                <a rel="noreferrer" className="relative w-[230px] h-[40px] flex items-center justify-center" href="#book">
                     <picture>
                         <source srcSet="/avif/booking_button.avif 1x" type="image/avif" />
                         <img className='w-[215px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="Икша Кантри Клаб - Заказть отдых" />
@@ -53,7 +53,7 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img className="h-[65px]" src="/image/tg_footer.png" alt="Икша Кантри Клаб - Заказть отдых через Телеграм" />
                     </picture>
                 </a>
-                <a href="tel:+79859091202">
+                <a href="tel:+74995055031">
                     <picture>
                         <source srcSet="/avif/call.avif 1x" type="image/avif" />
                         <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />

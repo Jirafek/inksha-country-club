@@ -4,7 +4,7 @@ import BookingCalendar from '../BookPicker';
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import VideoPlayer from './VideoPlayer';
-import { useLocation } from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 
 const heading = {
   hidden: {},
@@ -101,7 +101,7 @@ const Welcome = () => {
             backdrop-filter: none !important;
             -webkit-backdrop-filter: none !important;
             --tw-backdrop-blur: none !important;
-            bottom: -50px;
+            bottom: 20px;
           }
 
           .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
@@ -155,6 +155,12 @@ const Welcome = () => {
   //   // Например, управлять z-index для модуля бронирования и контента
   // });
 
+  const [popup, setPopup] = useState(false);
+
+  const togglePopup = () => {
+    setPopup(!popup);
+  }
+
   useEffect(() => {
     // BookingCalendar([], 'zaezd'); // get data from FireBase
     // BookingCalendar([], 'viezd'); // get data from FireBase
@@ -187,7 +193,7 @@ const Welcome = () => {
           </picture>
 
         </a>
-        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+79859091202">
+        <a className='absolute left-1/2 bottom-[25px]' style={{ transform: 'translateX(-50%)' }} href="tel:+74995055031">
           <picture>
             <source srcSet="/avif/call.avif 1x" type="image/avif" />
             <img className='w-[44px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
@@ -207,38 +213,21 @@ const Welcome = () => {
         className='absolute left-1/2 w-full bottom-[8.5rem]'
       >
         <div id="znms-widget-1"></div>
-        <m.form
-          initial='hidden'
-          // whileInView='visible'
-          // viewport={{ once: true }}
-          // variants={heading}
-          onSubmit={handleSubmit(onSubmit)}
-          className='px-16 hidden'>
-          <m.div className='relative w-full mb-2'> {/*  variants={headingLines} */}
-            <picture>
-              <source srcSet="/avif/calendar.avif 1x" type="image/avif" />
-              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="Икша Кантри Клаб" />
-            </picture>
-            <input style={errors.zaezd && { borderColor: 'red' }} {...register("zaezd", { required: true })} id='zaezd' placeholder='ЗАЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
-          </m.div>
-          <m.div className='relative w-full mb-2'>
-            <picture>
-              <source srcSet="/avif/calendar.avif 1x" type="image/avif" />
-              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/calendar.webp" alt="Икша Кантри Клаб" />
-            </picture>
-            <input style={errors.viezd && { borderColor: 'red' }} {...register("viezd", { required: true })} id='viezd' placeholder='ВЫЕЗД' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
-          </m.div>
-          <m.div className='relative w-full mb-2'>
-            <picture>
-              <source srcSet="/avif/persone.avif 1x" type="image/avif" />
-              <img style={{ transform: 'translateY(-50%)' }} className='absolute top-1/2 left-[15px]' src="/image/persone.webp" alt="Икша Кантри Клаб" />
-            </picture>
-            <input style={errors.people && { borderColor: 'red' }} {...register("people", { required: true })} placeholder='КОЛИЧЕСТВО ЧЕЛОВЕК' className='w-full outline-none rounded-[30px] border-2 border-black bg-opacity-75 bg-gray-300 shadow-md pl-12 input_for_calendar h-9' type="text" />
-          </m.div>
-          <m.button type='submit' className='w-full rounded-[30px] border border-black bg-[#0CF259] bg-opacity-50 shadow-md monterey text-white font-semibold text-lg h-9'>
-            Посмотреть
-          </m.button>
-        </m.form>
+        <Link to="/popup">
+          <button className="absolute flex items-center justify-center left-1/2 h-12 w-[3rem] animated_connection_btn bg-green-500 border-[2px] rounded-[48px] border-white pl-2 -translate-x-1/2 -bottom-[8rem]">
+            <div className="relative h-12 w-full flex items-center">
+              <p className="text-white animated_text_appearing opacity-0">Свяжитесь со мной</p>
+              <div className="absolute right-0 top-0">
+                <div className="w-12 h-12 bg-green-500 border-[2px] border-white rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                    <path d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </button>
+        </Link>
+
       </div>
     </section>
   );

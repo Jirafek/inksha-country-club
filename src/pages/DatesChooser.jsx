@@ -7,6 +7,7 @@ import { CustomNextArrow, CustomPrevArrow } from "../components/Home/helpers/Cus
 import { v4 as uuidv4 } from 'uuid';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {Link} from "react-router-dom";
 
 const datesData = [
     {
@@ -266,7 +267,7 @@ const DatesChooser = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-center mt-3">
-                                    <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</a>
+                                    <Link to="/#book" className="px-[60px] border-[2px] border-[rgba(255, 255, 255, 0.88)] text-white bg-[#AB8E67] text-[18px] font-bold py-1 rounded-[30px]">Выбрать</Link>
                                 </div>
                             </div>
                         ))

@@ -22,12 +22,19 @@ import YandexMap from '../components/Home/YandexMap';
 import Footer from '../components/Home/Footer';
 import { Helmet } from "react-helmet";
 import { useLocation } from 'react-router-dom';
+import {updateData} from '../utils/URLData';
 
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Home = () => {
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        updateData(urlParams.get('utm_source') || 'https://mobile.ikshacountryclub.com', urlParams.get('utm_campaign') || '', urlParams.get('utm_content') || '',);
+    }, [])
+
     const parallaxActivate = document => {
         const sections = Array.from(document.querySelectorAll('.section'));
         gsap.registerPlugin(ScrollTrigger);

@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from "react-router-dom";
+import {URLData} from "../utils/URLData";
 
 const FormCalculate = () => {
     const { amount } = useParams();
@@ -12,7 +13,7 @@ const FormCalculate = () => {
     const [isButtonAvailible, setIsButtonAvailible] = useState(false);
     const [navigation, setNavigation] = useState(false)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const urlParams = new URLSearchParams(window.location.href);
         const location = urlParams.get('location') === '1' ?
@@ -29,20 +30,48 @@ const FormCalculate = () => {
             guesses: urlParams.get('guesses'),
             week: urlParams.get('week'),
             days: urlParams.get('days'),
-            dops: urlParams.get('dops'),
+            dops: urlParams.get('dops') || '',
         }
 
-        emailjs.send("service_a1dan7b", "template_lqei02g", data, "V_IkuqWqNwJlUw72K")
-            .then((result) => {
-                setTimeout(() => {
-                    setName('');
-                    setPhone('');
-                    setEmail('');
-                    setNavigation(true);
-                }, 1000)
-            }, (error) => {
-                alert('Ошибка при отправке формы')
-            }); // sending to email
+        const sendingData = {
+            ...data,
+            source: "Сайт",
+            formType: "Калькулятор",
+            link: window.location.href,
+            ...URLData,
+        }
+
+        try {
+            const response = await fetch('https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: new URLSearchParams(sendingData).toString(),
+            });
+
+            if (response.ok) {
+
+                emailjs.send("service_a1dan7b", "template_lqei02g", data, "V_IkuqWqNwJlUw72K")
+                    .then((result) => {
+                        setTimeout(() => {
+                            setName('');
+                            setPhone('');
+                            setEmail('');
+                            setNavigation(true);
+                        }, 1000)
+                    }, (error) => {
+                        alert('Ошибка при отправке формы')
+                    }); // sending to email
+
+            } else {
+                alert('Произошла ошибка при отправке данных');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Произошла ошибка при отправке данных');
+        }
     };
 
     return (

@@ -63,7 +63,7 @@ const YandexMap = () => {
             <m.div variants={headingLines} className="absolute bottom-[50px] left-[15px] bg-white border border-black rounded-[10px] w-[317px] h-[212px] px-[15px] pt-5 monterey">
                 <div className="relative flex flex-col gap-[10px] h-full">
                     <p className="text-black underline">
-                        <a href="tel:+79859091202">+7 985 909 12 02</a>
+                        <a href="tel:+74995055031">+7(499) 505-50-31</a>
                     </p>
                     <p className="text-black underline">
                         <a href="mailto:contact@ikshacountryclub.com">contact@ikshacountryclub.com</a>

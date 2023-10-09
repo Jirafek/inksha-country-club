@@ -7,23 +7,22 @@ import down_arrow from "../assets/down_arrow.png";
 import TariffComponents from "./TarrifComponents";
 import Reveal from "../common/Reveal";
 import { slideFromRight } from "../constants/motion";
-import {URLData} from "../utils/URLData";
+import { URLData } from "../utils/URLData";
 import emailjs from "@emailjs/browser";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
 const Tariff = () => {
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
-   const [navigation, setNavigation] = useState(false)
+   const [navigation, setNavigation] = useState(false);
 
    const handleSubmit = async () => {
-
       const data = {
          name: name,
          phone: phone,
-         email: '-'
-      }
+         email: "-",
+      };
 
       const sendingData = {
          ...data,
@@ -31,30 +30,33 @@ const Tariff = () => {
          formType: "Halloween",
          link: window.location.href,
          ...URLData,
-      }
+      };
 
       try {
-         const response = await fetch('https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form', {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/x-www-form-urlencoded',
-               'Access-Control-Allow-Origin': '*'
-            },
-            body: new URLSearchParams(sendingData).toString(),
-         });
+         const response = await fetch(
+            "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Access-Control-Allow-Origin": "*",
+               },
+               body: new URLSearchParams(sendingData).toString(),
+            }
+         );
 
          if (response.ok) {
             setTimeout(() => {
-               setName('');
-               setPhone('');
+               setName("");
+               setPhone("");
                setNavigation(true);
             }, 1000);
          } else {
-            alert('Произошла ошибка при отправке данных');
+            alert("Произошла ошибка при отправке данных");
          }
       } catch (error) {
          console.error(error);
-         alert('Произошла ошибка при отправке данных');
+         alert("Произошла ошибка при отправке данных");
       }
    };
 
@@ -62,40 +64,40 @@ const Tariff = () => {
       <div
          id="Tariff"
          name="Tariff"
-         className="bg-violet tarif bg-no-repeat bg-cover pb-[10vh]  bg-center py-[7vh]"
+         className="tarif bg-violet bg-cover bg-center bg-no-repeat  py-[7vh] pb-[10vh]"
       >
          {navigation && <Navigate to="/thanks" />}
          <div className="wrapper">
             <Reveal duration={1.5} variants={slideFromRight(-500)}>
-               <h1 className="text-xl tracking-widest relative">
+               <h1 className="druk relative text-xl tracking-widest">
                   Тарифы
-                  <div className="absolute left-2 -top-[30px] md:-top-[70px] text-[64px] md:text-[128px]  opacity-10">
+                  <div className="absolute -top-[30px] left-2 text-[64px] opacity-10 md:-top-[70px]  md:text-[128px]">
                      Тарифы
                   </div>
                </h1>
-               <p className="text-center text-lg droid mb-[5vh]">
+               <p className="droid mb-[5vh] text-center text-lg">
                   В эту таинственную ночь мы предлагаем вам следующие
                   невероятные варианты размещения
                </p>
             </Reveal>
-            <div className="flex droid flex-col">
+            <div className="droid flex flex-col">
                <TariffComponents />
             </div>
             <div className="flex flex-col items-center justify-center">
-               <div className="bg-yellow w-full items-center  box-border mt-[10vh] droid p-[5%] yellow-box text-tarif shadow-xl flex  justify-between rounded-[16px] min-h-[200px]">
+               <div className="droid yellow-box mt-[10vh]  box-border flex min-h-[200px] w-full items-center justify-between rounded-[16px] bg-yellow  p-[5%] text-tarif shadow-xl">
                   <div className="">
-                     <h1 className="text-black font-bold">
+                     <h1 className="font-bold text-black">
                         Вы можете добавить дополнительное
                         <br /> питание к любому тарифу
                      </h1>
-                     <p className="text-violet text-tarif font-bold ">
+                     <p className="text-tarif font-bold text-violet ">
                         Во все локации можно добавить
                         <br /> дополнительного гостя за 2000 (без спального
                         места)
                      </p>
                   </div>
 
-                  <ul className="text-black flex flex-col items-center justify-center text-small">
+                  <ul className="flex flex-col items-center justify-center text-small text-black">
                      <li>
                         Завтрак <span className="font-bold"> 700</span>
                      </li>{" "}
@@ -114,43 +116,46 @@ const Tariff = () => {
                smooth={true}
                duration={1000} // Длительность анимации скролла (в миллисекундах)
             >
-               <Button className="bg-pumpkin btn-pum mb-[10vh] text-white mx-auto">
+               <Button className="btn-pum mx-auto mb-[10vh] bg-pumpkin text-white">
                   Оставить заявку
-                  <img src={down_arrow} className="w-7 h-7" alt="" />
+                  <img src={down_arrow} className="h-7 w-7" alt="" />
                </Button>
             </ScrollLink>
-            <div className="w-full relative flex items-center text-center justify-center">
+            <div className="relative flex w-full items-center justify-center text-center">
                {/* <Reveal duration={1.5} variants={slideFromLeft()}> */}
                <div
                   name="Form"
-                  className="form relative bg-darkViolet p-[5%] rounded-[16px] shadow-2xl  w-[550px] h-[550px] text-center"
+                  className="form relative h-[550px] w-[550px] rounded-[16px] bg-darkViolet  p-[5%] text-center shadow-2xl"
                >
-                  <div className="text-md mb-5 droid">
+                  <div className="droid mb-5 text-md">
                      Оставьте свои данные, и мы обязательно свяжемся с вами
                   </div>
                   <form className="droid" action="">
                      <input
                         type="text"
                         placeholder="Имя"
-                        className="rounded-[20px] p-2 mb-5 text-black h-[50px] w-full bg-grey outline-none"
+                        className="mb-5 h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                      />
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className="rounded-[20px] p-2 text-black h-[50px] w-full bg-grey outline-none"
+                        className="h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none"
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
                      />
-                     <Button onClick={handleSubmit} className="bg-pumpkin w-1/2 h-[40px] mx-auto btn-pum text-white">
+                     <Button
+                        onClick={handleSubmit}
+                        className="btn-pum mx-auto h-[40px] w-1/2 bg-pumpkin text-white"
+                     >
                         Отправить
-                        <img src={arrow} className="w-9 h-5" alt="" />
+                        <img src={arrow} className="h-5 w-9" alt="" />
                      </Button>
                   </form>
                </div>
 
-               <img src={boo} className="absolute right-0 -bottom-20" alt="" />
+               <img src={boo} className="absolute -bottom-20 right-0" alt="" />
             </div>
          </div>
       </div>

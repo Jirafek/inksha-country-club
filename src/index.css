@@ -69,13 +69,23 @@ body {
 }
 
 @keyframes openMenu {
-  0% { height: 0; }
-  100% { height: 1933px; }
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 1933px;
+  }
 }
 
 @keyframes closeMenu {
-  0% { height: 1933px; }
-  100% { height: 0; }
+  0% {
+    height: 1933px;
+  }
+
+  100% {
+    height: 0;
+  }
 }
 
 @font-face {
@@ -189,7 +199,8 @@ html {
   font-family: 'Lato-R';
 }
 
-.air-datepicker-nav--title, .monterey {
+.air-datepicker-nav--title,
+.monterey {
   font-family: 'Montserrat-R';
 }
 
@@ -200,7 +211,8 @@ html {
   font-family: 'Montserrat-R';
 }
 
-.-other-month-.-weekend-, .-disabled-.-weekend- {
+.-other-month-.-weekend-,
+.-disabled-.-weekend- {
   color: rgba(255, 0, 0, 0.422) !important;
 }
 
@@ -208,6 +220,7 @@ html {
   0% {
     left: 0;
   }
+
   100% {
     left: -100%;
   }
@@ -217,6 +230,7 @@ html {
   0% {
     height: 0;
   }
+
   100% {
     height: 100%;
   }
@@ -226,6 +240,7 @@ html {
   0% {
     height: 100%;
   }
+
   100% {
     height: 0;
   }
@@ -235,6 +250,7 @@ html {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -244,6 +260,7 @@ html {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -253,6 +270,7 @@ html {
   0% {
     height: 0;
   }
+
   100% {
     height: 124px;
   }
@@ -262,6 +280,7 @@ html {
   0% {
     height: 124px;
   }
+
   100% {
     height: 0;
   }
@@ -271,6 +290,7 @@ html {
   animation: fromZeroTo120 0.5s ease-out;
   animation-fill-mode: forwards;
 }
+
 .heightLoose {
   animation: from120ToZero 0.5s ease-out;
   animation-fill-mode: forwards;
@@ -279,6 +299,7 @@ html {
 .opacityWin {
   animation: changeOpacit 0.5s ease-in-out;
 }
+
 .opacityLoose {
   animation: changeOpacitBack 0.5s ease-in;
 }
@@ -297,6 +318,7 @@ html {
   0% {
     right: 0;
   }
+
   100% {
     right: -100%;
   }
@@ -306,7 +328,8 @@ html {
 .doska-container {
   left: 50%;
   width: 205px;
-  transition: top 1s ease; /* Плавное изменение top свойства */
+  transition: top 1s ease;
+  /* Плавное изменение top свойства */
   top: -20rem;
 }
 
@@ -315,6 +338,7 @@ html {
   0% {
     top: -20rem;
   }
+
   100% {
     top: 0;
   }
@@ -335,7 +359,8 @@ html {
   animation-fill-mode: forwards;
 }
 
-.about_background, .happy_background {
+.about_background,
+.happy_background {
   width: 100%;
   height: 100%;
   background-image: url('/image/bg-burger.webp');
@@ -349,7 +374,8 @@ html {
 
 .slider-image {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out; /* Плавный переход с продолжительностью 0.5 секунды */
+  transition: opacity 0.5s ease-in-out;
+  /* Плавный переход с продолжительностью 0.5 секунды */
 }
 
 /* Стиль для скрытия слайдов */
@@ -397,9 +423,11 @@ input[type="range"]::-ms-thumb {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.15);
   }
+
   100% {
     transform: scale(1);
   }
@@ -410,6 +438,7 @@ input[type="range"]::-ms-thumb {
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
 }
+
 /*
 Welome widget css ---------------------------- */
 
@@ -461,6 +490,7 @@ canvas {
   0% {
     width: 3rem;
   }
+
   100% {
     width: 14rem;
   }
@@ -470,9 +500,11 @@ canvas {
   0% {
     opacity: 0;
   }
+
   80% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -500,10 +532,10 @@ canvas {
   font-family: "Druk Text Bold Trial";
   src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot");
   src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
 }
 
 @font-face {
@@ -536,13 +568,17 @@ html {
   font-family: 'Druk Text Bold Trial' !important;
 }
 
+.druk {
+  font-family: 'Druk';
+  letter-spacing: 4px !important;
+  font-weight: 700;
+
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Druk';
-  /* font-family: 'Druk Text Bold Trial'; */
-  letter-spacing: 4px !important;
-  font-weight: 700;
+
   overflow-x: hidden;
   scroll-behavior: smooth;
 }

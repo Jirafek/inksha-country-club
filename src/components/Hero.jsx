@@ -10,19 +10,21 @@ const Hero = () => {
    return (
       <div
          id="Hero"
-         className={`hero min-h-[90vh]  text-center gap-5 bg-center bg-no-repeat bg-cover `}
+         className={`hero min-h-[90vh]  gap-5 bg-cover bg-center bg-no-repeat text-center `}
          // style={{ backgroundImage: bg_hero, backgroundRepeat: "no-repeat" }}
       >
-         <div className="wrapper  flex flex-col items-center justify-center min-h-[90vh] p-10">
-            <div className=" flex items-center max-w-[1000px] bg-black p-5  border-darkViolet  border-[7px] rounded-xl bg-opacity-50 justify-center flex-col">
+         <div className="wrapper  flex min-h-[90vh] flex-col items-center justify-center p-10">
+            <div className=" flex max-w-[1000px] flex-col items-center justify-center  rounded-xl  border-[7px] border-darkViolet bg-black bg-opacity-50 p-5">
                <Reveal delay={0.25}>
-                  <div className="text-[20px] font-light  md:text-[30px] mb-10">
-                     <span className="text-pumpkin eng text-xl">HALLOWEEN</span>
+                  <div className="mb-10 text-[20px]  font-light md:text-[30px]">
+                     <span className="druk eng text-xl text-pumpkin">
+                        HALLOWEEN
+                     </span>
                      <br /> в Икша Кантри Клабе!
                   </div>
                </Reveal>
                <Reveal delay={0.5}>
-                  <div className="text-md droid">
+                  <div className="droid text-md">
                      Хэллоуин – это один из самых ожидаемых праздников в
                      Загородном клабе Икша Кантри Клаб в Подмосковье! Каждый год
                      Клаб организует уникальное и захватывающее мероприятие,
@@ -37,7 +39,7 @@ const Hero = () => {
                >
                   <Button className=" bg-darkViolet text-pumpkin  ">
                      Забронировать место
-                     <img src={arrow} className="w-9 h-5" alt="" />
+                     <img src={arrow} className="h-5 w-9" alt="" />
                   </Button>
                </ScrollLink>
             </div>

@@ -20,6 +20,7 @@ const BlogAll = lazy(() => import('pages/BlogAll'));
 const FormCalculate = lazy(() => import('pages/FormCalculate'));
 const Thanks = lazy(() => import('pages/Thanks'));
 const Popup = lazy(() => import('pages/Popup'));
+const Helloween = lazy(() => import('pages/Helloween'));
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       <Route path='/locations-about' element={<LocationsSlider />} />
       <Route path='/blog-all' element={<BlogAll />} />
       <Route path='/form/:amount' element={<FormCalculate />} />
+        <Route path='/halloween' element={<Helloween />} />
         <Route path='/popup' element={<Popup />} />
       <Route path='/thanks' element={<Thanks />} />
       <Route path='*' element={<NotFound />} />

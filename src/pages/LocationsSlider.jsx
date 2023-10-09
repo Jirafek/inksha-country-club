@@ -107,7 +107,7 @@ const LocationsSlider = () => {
         const sendingData = {
             ...data,
             email: '-',
-            source: "Сайт",
+            source: "https://mobile.ikshacountryclub.com",
             formType: "Перезвоните мне",
             link: window.location.href,
             ...URLData,
@@ -125,14 +125,9 @@ const LocationsSlider = () => {
 
             if (response.ok) {
 
-                emailjs.send("service_a1dan7b", "template_avgrkli", data, "V_IkuqWqNwJlUw72K")
-                    .then((result) => {
-                        reset();
-                        alert('Данные успешно отправлены');
-                        setNavigation(true);
-                    }, (error) => {
-                        alert('Ошибка при отправке формы');
-                    }); // sending to email
+                reset();
+                alert('Данные успешно отправлены');
+                setNavigation(true);
 
             } else {
                 alert('Произошла ошибка при отправке данных');

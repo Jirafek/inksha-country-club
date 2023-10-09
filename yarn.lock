@@ -1529,13 +1529,6 @@ dom-helpers@^5.2.0:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
 
-dom7@^4.0.4:
-  version "4.0.6"
-  resolved "https://registry.npmjs.org/dom7/-/dom7-4.0.6.tgz"
-  integrity sha512-emjdpPLhpNubapLFdjNL9tP06Sr+GZkrIHEXLWvOGsytACUrkbeIdjO5g77m00BrHTznnlcNqgmn7pCN192TBA==
-  dependencies:
-    ssr-window "^4.0.0"
-
 duplex-maker@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/duplex-maker/-/duplex-maker-1.0.0.tgz"
@@ -2271,6 +2264,11 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 long@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/long/-/long-4.0.0.tgz"
@@ -2665,7 +2663,7 @@ react-datepicker@^4.16.0:
     react-onclickoutside "^6.13.0"
     react-popper "^2.3.0"
 
-react-dom@*, "react-dom@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^15.5.x || ^16.x || ^17.x || ^18.x", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0", "react-dom@^16.8.0  || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17 || ^18", "react-dom@^16.9.0 || ^17 || ^18", "react-dom@^17.0.0 || ^18.0.0", react-dom@^18.1.0, react-dom@>=16, react-dom@>=16.3.0, react-dom@>=16.8, "react-dom@>=16.8 || ^17.0.0 || ^18.0.0":
+react-dom@*, "react-dom@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^15.5.x || ^16.x || ^17.x || ^18.x", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0", "react-dom@^16.8.0  || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17 || ^18", "react-dom@^16.9.0 || ^17 || ^18", "react-dom@^17.0.0 || ^18.0.0", react-dom@^18.1.0, react-dom@>=16, react-dom@>=16.3.0, react-dom@>=16.8, "react-dom@>=16.8 || ^17.0.0 || ^18.0.0":
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -2777,6 +2775,14 @@ react-router@6.3.0:
   dependencies:
     history "^5.2.0"
 
+react-scroll@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npmjs.org/react-scroll/-/react-scroll-1.9.0.tgz"
+  integrity sha512-mamNcaX9Ng+JeSbBu97nWwRhYvL2oba+xR2GxvyXsbDeGP+gkYIKZ+aDMMj/n20TbV9SCWm/H7nyuNTSiXA6yA==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
+
 react-side-effect@^2.1.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
@@ -2830,7 +2836,7 @@ react-use@^17.4.0:
     ts-easing "^0.2.0"
     tslib "^2.1.0"
 
-react@*, "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.5.x || ^16.x || ^17.x || ^18.x", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0", "react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || ^17.0.1 || ^18.0.0", "react@^16.8.0  || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.9.0 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", react@^18.1.0, react@^18.2.0, "react@>= 16", react@>=15.0.0, react@>=16, react@>=16.3.0, react@>=16.8, "react@>=16.8 || ^17.0.0 || ^18.0.0", react@>=16.8.0:
+react@*, "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.5.x || ^16.x || ^17.x || ^18.x", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0", "react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || ^17.0.1 || ^18.0.0", "react@^16.8.0  || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.9.0 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", react@^18.1.0, react@^18.2.0, "react@>= 16", react@>=15.0.0, react@>=16, react@>=16.3.0, react@>=16.8, "react@>=16.8 || ^17.0.0 || ^18.0.0", react@>=16.8.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -3027,11 +3033,6 @@ sourcemap-codec@^1.4.8:
   resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
 
-ssr-window@^4.0.0, ssr-window@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
-  integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
-
 stack-generator@^2.0.5:
   version "2.0.10"
   resolved "https://registry.npmjs.org/stack-generator/-/stack-generator-2.0.10.tgz"
@@ -3144,13 +3145,10 @@ svg-parser@^2.0.4:
   resolved "https://registry.npmjs.org/svg-parser/-/svg-parser-2.0.4.tgz"
   integrity sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==
 
-swiper@^8.2.4:
-  version "8.4.7"
-  resolved "https://registry.npmjs.org/swiper/-/swiper-8.4.7.tgz"
-  integrity sha512-VwO/KU3i9IV2Sf+W2NqyzwWob4yX9Qdedq6vBtS0rFqJ6Fa5iLUJwxQkuD4I38w0WDJwmFl8ojkdcRFPHWD+2g==
-  dependencies:
-    dom7 "^4.0.4"
-    ssr-window "^4.0.2"
+swiper@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.npmjs.org/swiper/-/swiper-10.3.1.tgz"
+  integrity sha512-24Wk3YUdZHxjc9faID97GTu6xnLNia+adMt6qMTZG/HgdSUt4fS0REsGUXJOgpTED0Amh/j+gRGQxsLayJUlBQ==
 
 tailwindcss@^3.1.2:
   version "3.3.3"

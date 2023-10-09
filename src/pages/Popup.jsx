@@ -26,7 +26,7 @@ const Popup = () => {
 
         const sendingData = {
             ...data,
-            source: "Сайт",
+            source: "https://mobile.ikshacountryclub.com",
             formType: "Главный экран",
             link: window.location.href,
             ...URLData,

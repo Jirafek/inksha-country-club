@@ -35,7 +35,7 @@ const FormCalculate = () => {
 
         const sendingData = {
             ...data,
-            source: "Сайт",
+            source: "https://mobile.ikshacountryclub.com",
             formType: "Калькулятор",
             link: window.location.href,
             ...URLData,
@@ -53,17 +53,13 @@ const FormCalculate = () => {
 
             if (response.ok) {
 
-                emailjs.send("service_a1dan7b", "template_lqei02g", data, "V_IkuqWqNwJlUw72K")
-                    .then((result) => {
-                        setTimeout(() => {
-                            setName('');
-                            setPhone('');
-                            setEmail('');
-                            setNavigation(true);
-                        }, 1000)
-                    }, (error) => {
-                        alert('Ошибка при отправке формы')
-                    }); // sending to email
+
+                setTimeout(() => {
+                    setName('');
+                    setPhone('');
+                    setEmail('');
+                    setNavigation(true);
+                }, 1000)
 
             } else {
                 alert('Произошла ошибка при отправке данных');

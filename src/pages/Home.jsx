@@ -32,7 +32,8 @@ const Home = () => {
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        updateData(urlParams.get('utm_source') || 'https://mobile.ikshacountryclub.com', urlParams.get('utm_campaign') || '', urlParams.get('utm_content') || '',);
+        console.log(urlParams.get('utm_source'));
+        updateData(urlParams.get('utm_source') || 'Сайт', urlParams.get('utm_campaign') || '', urlParams.get('utm_content') || '',);
     }, [])
 
     const parallaxActivate = document => {

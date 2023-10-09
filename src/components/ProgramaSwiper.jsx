@@ -15,7 +15,7 @@ const ProgramaSwiper = () => {
    const swiperRef = useRef();
    return (
       <div className="">
-         <div className=" border-y-2 border-pumpkin pb-10 w-full h-full mt-[10vh]">
+         <div className=" mt-[10vh] h-full w-full border-y-2 border-pumpkin pb-10">
             <Swiper
                // install Swiper modules
                modules={[Pagination, Navigation]}
@@ -23,7 +23,7 @@ const ProgramaSwiper = () => {
                loop={true}
                slidesPerView={1}
                pagination={{ clickable: true }}
-               className="swiper  w-full h-full aspect-video relative mt-10 rounded-lg "
+               className="swiper  relative mt-10 aspect-video h-full w-full rounded-lg "
                onBeforeInit={(swiper) => {
                   swiperRef.current = swiper;
                }}
@@ -31,44 +31,44 @@ const ProgramaSwiper = () => {
                <SwiperSlide>
                   <img
                      src={swiper4}
-                     className="w-full h-full object-cover aspect-video"
+                     className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
                   <img
                      src={swiper1}
-                     className="w-full h-full object-cover aspect-video"
+                     className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
                   <img
                      src={swiper2}
-                     className="w-full h-full object-cover aspect-video"
+                     className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
                   <img
                      src={swiper3}
-                     className="w-full h-full object-cover aspect-video"
+                     className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
 
                <div
-                  className="absolute md:block hidden top-1/2 transform -translate-y-1/2 z-10 right-10"
+                  className="absolute right-10 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
                   onClick={() => swiperRef.current?.slideNext()}
                >
-                  <img src={scroll} className="w-[90px] h-[90px]" alt="" />
+                  <img src={scroll} className="h-[90px] w-[90px]" alt="" />
                </div>
             </Swiper>
          </div>
-         <div className="w-full mt-5 flex md:hidden justify-end">
+         <div className="mt-5 flex w-full justify-end md:hidden">
             <img
                src={orange_scroll}
-               className="w-[50px] h-[50px]"
+               className="h-[50px] w-[50px]"
                onClick={() => swiperRef.current?.slideNext()}
                alt=""
             />

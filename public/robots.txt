@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://mobile.ikshacountryclub.com/sitemap.xml

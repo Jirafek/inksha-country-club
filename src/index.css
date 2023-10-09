@@ -1,0 +1,652 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'MontserratVariable', system-ui, sans-serif;
+    }
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.welcome {
+  position: relative;
+  z-index: 1000;
+}
+
+/* .section#footer {
+  position: absolute;
+  top: 100vh; left: 0;
+
+}
+
+.section:not(:nth-child(2)),
+.section:not(#footer) {
+  border: 1px solid green;
+  position: absolute;
+  top: 0; left: 0;
+  transform: translateY(100vh);
+  z-index: 1;
+}
+
+.slow-move > .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear;
+} */
+
+/* #areas::after, */
+#areas::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  z-index: 10;
+}
+
+#areas::after {
+  right: 0;
+  background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+
+@keyframes openMenu {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 1933px;
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    height: 1933px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@font-face {
+  font-family: 'Lato-R';
+  font-display: swap;
+  src: local('Lato-Regular'),
+    url('./fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat-R';
+  font-display: swap;
+  src: local('MontserratAlternates-Regular'),
+    url('./fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montaga';
+  font-display: swap;
+  src: local('Montaga-Regular'),
+    url('./fonts/Montaga-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'MontaguSlab';
+  font-display: swap;
+  src: local('MontaguSlab-VariableFont_opsz,wght'),
+    url('./fonts/MontaguSlab-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 500;
+}
+
+.montaga {
+  font-family: 'Montaga';
+}
+
+.montaguSlab {
+  font-family: 'MontaguSlab';
+}
+
+.open-menu {
+  animation-name: openMenu;
+  animation-duration: 1s;
+}
+
+.close-menu {
+  animation-name: closeMenu;
+  animation-duration: 1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.non-slider:nth-child(9) {
+  justify-self: end;
+}
+
+.non-slider:nth-child(11) {
+  justify-self: start;
+}
+
+.non-slider:nth-child(10) {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@media (min-width: 1024px) {
+  .non-slider:nth-child(10) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.disabled-class {
+  border-radius: 100px !important;
+  border: 1px solid var(--unnamed, #FFF);
+  background: rgba(252, 9, 9, 0.50);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: black !important;
+}
+
+.-current- {
+  border-radius: 100px;
+  border: 0.5px solid #000;
+  background: #FFFAFA !important;
+  color: black !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.-selected- {
+  border-radius: 100px !important;
+  border: 1px solid var(--unnamed, #FFF);
+  background: rgba(9, 252, 66, 0.5) !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: black !important;
+}
+
+.air-datepicker-body--day-name {
+  color: black !important;
+}
+
+.-weekend- {
+  color: #FC0909 !important;
+}
+
+.air-datepicker-cell {
+  transition: 0.5s;
+  font-family: 'Lato-R';
+}
+
+.air-datepicker-nav--title,
+.monterey {
+  font-family: 'Montserrat-R';
+}
+
+/*-------------------------------*/
+
+.input_for_calendar {
+  font-size: 13px;
+  font-family: 'Montserrat-R';
+}
+
+.-other-month-.-weekend-,
+.-disabled-.-weekend- {
+  color: rgba(255, 0, 0, 0.422) !important;
+}
+
+@keyframes moveSky1 {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes fromZeroTo100 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes from100ToZero {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes changeOpacit {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes changeOpacitBack {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fromZeroTo120 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 124px;
+  }
+}
+
+@keyframes from120ToZero {
+  0% {
+    height: 124px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+.heightWin {
+  animation: fromZeroTo120 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.heightLoose {
+  animation: from120ToZero 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.opacityWin {
+  animation: changeOpacit 0.5s ease-in-out;
+}
+
+.opacityLoose {
+  animation: changeOpacitBack 0.5s ease-in;
+}
+
+.zero-animation {
+  animation: fromZeroTo100 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.hundreed-animation {
+  animation: fromZeroTo100 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveSky2 {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -100%;
+  }
+}
+
+/* Стили для позиции "doska.webp" */
+.doska-container {
+  left: 50%;
+  width: 205px;
+  transition: top 1s ease;
+  /* Плавное изменение top свойства */
+  top: -20rem;
+}
+
+/* Анимация для перемещения доски вниз */
+@keyframes moveDoska {
+  0% {
+    top: -20rem;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.animate-moveDoska {
+  animation: moveDoska 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.animate-moveSky1 {
+  animation: moveSky1 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.animate-moveSky2 {
+  animation: moveSky2 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.about_background,
+.happy_background {
+  width: 100%;
+  height: 100%;
+  background-image: url('/image/bg-burger.webp');
+}
+
+.back_settings {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider-image {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  /* Плавный переход с продолжительностью 0.5 секунды */
+}
+
+/* Стиль для скрытия слайдов */
+.slider-image:not(.active) {
+  opacity: 0;
+}
+
+input[type="range"] {
+  height: 2px;
+  background-color: #000;
+  width: 140px;
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 17px;
+  width: 17px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart {
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+/*
+Welome widget css ---------------------------- */
+
+.znms-widget__main-wrapper {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+}
+
+.znms-widget__module-form-block__title {
+  display: none;
+}
+
+.znms-widget__module-form-block__btn {
+  background-color: rgba(12, 242, 89, 0.50);
+  border-radius: 30px;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+}
+
+/*END --------------*/
+
+.footer_blured_back {
+  background-color: rgba(124, 104, 78, 0.82);
+  border: solid 1px white;
+  border-radius: 20px 20px 0 0;
+}
+
+.ytp-title-link {
+  display: none;
+}
+
+canvas {
+  z-index: 0 !important;
+}
+
+.visually__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0 none;
+  clip-path: inset(100%);
+}
+
+@keyframes openButton {
+  0% {
+    width: 3rem;
+  }
+
+  100% {
+    width: 14rem;
+  }
+}
+
+@keyframes openText {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated_text_appearing {
+  animation-delay: 7s;
+  animation: 2s ease-in-out;
+  animation-name: openText;
+  animation-fill-mode: forwards;
+}
+
+.animated_connection_btn {
+  animation-delay: 7s;
+  animation: 2s ease-in-out;
+  animation-name: openButton;
+  animation-fill-mode: forwards;
+}
+
+@import url(https://db.onlinewebfonts.com/c/5b0ba2e20d3d7e3fc30b60595f3702c2?family=Druk+Text+Bold+Trial);
+
+@import url(https://db.onlinewebfonts.com/c/9d83fb20700a3a7c45dc9acd64ab121e?family=Droid+Sans);
+
+@font-face {
+  font-family: "Druk Text Bold Trial";
+  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot");
+  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
+}
+
+@font-face {
+  font-family: 'Druk';
+  src: url('../src/fonts/DrukCyr-Bold.woff2') format('woff2');
+  /* Добавьте другие форматы шрифта, если необходимо */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Druk';
+  src: url('../src/fonts/druktextwidecyr-bold.otf') format('otf');
+  /* Добавьте другие форматы шрифта, если необходимо */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.eng {
+  font-family: 'Druk Text Bold Trial' !important;
+}
+
+.druk {
+  font-family: 'Druk';
+  /* font-family: 'Druk Text Bold Trial'; */
+  letter-spacing: 4px !important;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.droid {
+  font-family: "Droid Sans";
+  letter-spacing: normal;
+}
+
+.hero {
+  background-image: url('./assets/bg.jpg');
+
+}
+
+.hero {
+
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/bg.jpg'); */
+
+
+}
+
+
+/* .window {
+  position: relative;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/window.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+} */
+
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #FF7A00;
+
+}
+
+.btn-pum {
+  box-shadow: 1px -1px 107px 8px rgba(255, 122, 0, 0.75);
+
+}
+
+.yellow-box {
+  box-shadow: -1px 2px 79px 7px rgba(255, 236, 68, 0.75);
+  -webkit-box-shadow: -1px 2px 79px 7px rgba(255, 236, 68, 0.75);
+  -moz-box-shadow: -1px 2px 79px 7px rgba(255, 236, 68, 0.75);
+}
+
+.tarif {
+  background-image: url('./assets/tarif_bg.png');
+}
+
+.program {
+  background-image: url('./assets/program_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+ul {
+  list-style: none;
+}

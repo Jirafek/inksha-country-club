@@ -52,7 +52,7 @@ const navVars = {
 const links = [
    { title: "Программа", link: "Programa" },
    { title: "Тарифы", link: "Tariff" },
-   { title: "Связаться со мной", link: "tel:+7 985 909‑12‑02" },
+   { title: "Связаться со мной", link: "Form" },
 ];
 // eslint-disable-next-line react/prop-types
 const Header = ({ toggleMenu, isMenuOpen }) => {
@@ -61,14 +61,14 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
          <AnimatePresence>
             <div className="wrapper  ">
                {isMenuOpen && (
-                  <div className="inset-0 flex md:hidden fixed bg-slate-100 z-20 bg-opacity-60 w-full h-full">
+                  <div className="fixed inset-0 z-20 flex h-full w-full bg-slate-100 bg-opacity-60 md:hidden">
                      <motion.div
                         key="menu" // Make sure to specify a unique key
                         variants={menuVars}
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                        className="duration-300 fixed w-[70%] h-[40%] flex items-center justify-center rounded-[5px] z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-violet p-5"
+                        className="fixed left-1/2 top-1/2 z-20 flex h-[40%] w-[70%] -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-[5px] bg-violet p-5 duration-300"
                      >
                         <div
                            className="absolute right-2 top-2"
@@ -76,12 +76,12 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                         >
                            <img src={close} alt="" />
                         </div>
-                        <ul className="text-center text-grey gap-10">
+                        <ul className="gap-10 text-center text-grey">
                            {links.map((link, i) => {
                               return (
                                  <motion.li
                                     onClick={toggleMenu}
-                                    className="text-[25px] cursor-pointer"
+                                    className="druk cursor-pointer text-[25px]"
                                     variants={navVars}
                                     key={i}
                                  >
@@ -101,9 +101,9 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                   </div>
                )}
                <Reveal duration={2} variants={opacity()}>
-                  <div className="flex  py-5 justify-between">
+                  <div className="druk flex justify-between py-5">
                      <div>Икша Кантри Kлаб</div>
-                     <ul className="md:flex hidden gap-10">
+                     <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {
                            return (
                               <li key={i} className="cursor-pointer">

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   html {
     font-family: 'Montserrat', system-ui, sans-serif;
@@ -95,6 +97,17 @@ body {
     url('./fonts/Lato-Regular.ttf') format('truetype');
   font-weight: 500;
 }
+
+@font-face {
+  font-family: "Druk Text Bold Trial";
+  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot");
+  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
+}
+
 
 @font-face {
   font-family: 'Montserrat-R';
@@ -650,3 +663,18 @@ body {
 ul {
   list-style: none;
 }
+
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+
+/* .error-border {
+  border-color: red !important;
+ 
+} */
+
+/* .error-border .css-1jqq78o-placeholder {
+  color: red !important;
+} */

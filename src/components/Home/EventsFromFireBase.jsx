@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { m } from "framer-motion";
+import GreenButton from "./../../common/GreenButton";
 
 const heading = {
    hidden: {},
@@ -94,6 +95,13 @@ const fireBaseData = [
       link: "",
       title: "Фестиваль лимонада",
       date: "19.08.2023",
+   },
+   {
+      imgWebp: "/src/assets/bg.jpg",
+      imgAvif: "/avif/events_fire3.avif",
+      link: "/halloween",
+      title: "Хеллоуин",
+      date: "28.10.2023",
    },
 ];
 
@@ -190,15 +198,10 @@ const EventsFromFireBase = () => {
                            {el.date}
                         </p>
                      </div>
-                     <a
-                        rel="noreferrer"
-                        href="https://bronirui-online.ru/iksha-country-club/uslugi"
-                        style={{
-                           backgroundImage: "url(/image/fire_button.webp)",
-                        }}
-                        className="back_settings monterey relative flex h-[40px] w-[120px] items-center justify-center text-[16px] font-bold text-[#000]"
-                     >
-                        Подробнее
+                     <a rel="noreferrer" href={el.link} className="">
+                        <GreenButton className="max-w-[140px]">
+                           Подробнее
+                        </GreenButton>
                      </a>
                   </div>
                </div>

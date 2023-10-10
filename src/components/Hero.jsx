@@ -17,12 +17,14 @@ const Hero = () => {
             <div className=" flex max-w-[1000px] flex-col items-center justify-center  rounded-xl  border-[7px] border-darkViolet bg-black bg-opacity-50 p-5">
                <Reveal delay={0.25}>
                   <div className="druk mb-10 text-[20px] font-light md:text-[30px]">
-                     <span className="eng text-xl text-pumpkin">HALLOWEEN</span>
+                     <span className="eng text-xl  text-pumpkin">
+                        HALLOWEEN
+                     </span>
                      <br /> в Икша Кантри Клабе!
                   </div>
                </Reveal>
                <Reveal delay={0.5}>
-                  <div className="droid text-md">
+                  <div className="droid text-md font-semibold">
                      Хэллоуин – это один из самых ожидаемых праздников в
                      Загородном клабе Икша Кантри Клаб в Подмосковье! Каждый год
                      Клаб организует уникальное и захватывающее мероприятие,

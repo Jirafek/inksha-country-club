@@ -10,7 +10,7 @@ const locations_options = [
    { value: "Олимпийская деревня", label: "Олимпийская деревня" },
 ];
 const LocationPopup = ({ isPopupOpen, togglePopup }) => {
-   const [value, setValue] = useState(options[0]);
+   const [value, setValue] = useState(locations_options[0]);
    const [inputValue, setInputValue] = useState("Выберите локацию");
    const navigate = useNavigate();
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);

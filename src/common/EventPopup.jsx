@@ -3,7 +3,10 @@ import close from "./../assets/close.png";
 import date_icon from "./../assets/date_icon.png";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
-
+// import { DateField } from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 const people_options = [
    { value: "1 взр", label: "1 взр" },
    { value: "2 взр", label: "2 взр" },
@@ -25,9 +28,9 @@ const options = [
 
 const EventPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
-   const navigate = useNavigate();
-   const [isError, setIsError] = useState(true); // State for tracking errors
 
+   const [isError, setIsError] = useState(true); // State for tracking errors
+   const [date, setDate] = useState();
    // State variables for Select components
    const [selectedOption1, setSelectedOption1] = useState(null);
    const [selectedOption2, setSelectedOption2] = useState(null);
@@ -62,7 +65,6 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
    useEffect(() => {
       // Check for errors when any of the form fields change
       const newIsError =
-         selectedOption1 === null ||
          selectedOption2 === null ||
          selectedOption3 === null ||
          !formData.name ||
@@ -76,7 +78,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
 
       // Combine the selected options into an object as needed
       const selectedOptions = {
-         option1: selectedOption1,
+         // option1: selectedOption1,
          option2: selectedOption2,
          option3: selectedOption3,
       };
@@ -89,7 +91,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
 
       // Check for errors one more time before submission
       const newIsError =
-         selectedOptions.option1 === null ||
+         // selectedOptions.option1 === null ||
          selectedOptions.option2 === null ||
          selectedOptions.option3 === null ||
          !inputValues.name ||
@@ -102,6 +104,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          const allData = {
             ...selectedOptions,
             ...inputValues,
+            ...date,
          };
          console.log(allData);
 
@@ -126,12 +129,12 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
    };
 
    return (
-      <div>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
          {isPopupOpen && (
             <div>
                {isPopupCompleted ? (
                   <div
-                     className={`fixed left-1/2 top-1/2 z-[2000] flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
+                     className={`fixed left-1/2 top-1/2 z-[10] flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
                   >
                      <div className="absolute right-2 top-2">
                         <img
@@ -171,7 +174,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Имя"
                            type="text"
-                           className={`border-b-2 border-[#7C6F61] bg-transparent ${
+                           className={`h-[40px] border-b-2 border-[#7C6F61] bg-transparent ${
                               isError && !formData.name ? "error-border" : ""
                            }`}
                            name="name"
@@ -182,7 +185,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Телефон"
                            type="tel"
-                           className={`border-b-2 border-[#7C6F61] bg-transparent ${
+                           className={`h-[40px] border-b-2 border-[#7C6F61] bg-transparent ${
                               isError && !formData.phone ? "error-border" : ""
                            }`}
                            name="phone"
@@ -190,7 +193,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            onChange={handleInputChange}
                         />
 
-                        <Select
+                        {/* <Select
                            className={`rounded-[10px]  ${
                               selectedOption1 === null
                                  ? "border-[#7c6f6172] text-[#7c6f6172]"
@@ -204,7 +207,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            options={options}
                            value={selectedOption1}
                            onChange={handleSelectChange1}
-                        />
+                        /> */}
 
                         <Select
                            className={`rounded-[10px]  ${
@@ -237,6 +240,21 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            value={selectedOption3}
                            onChange={handleSelectChange3}
                         />
+                        <div className="h-[40px]">
+                           <DatePicker
+                              sx={{
+                                 width: "100%",
+                                 height: "40px",
+                                 // border: "2px solid black",
+                              }}
+                              value={date}
+                              onChange={(newDate) => setdate(newDate)}
+                              // InputProps={{
+                              //    disableUnderline: true,
+                              // }}
+                              slotProps={{ textField: { variant: "standard" } }}
+                           />
+                        </div>
 
                         <button
                            type="submit"
@@ -254,7 +272,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                )}
             </div>
          )}
-      </div>
+      </LocalizationProvider>
    );
 };
 

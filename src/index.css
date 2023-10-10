@@ -678,3 +678,7 @@ ul {
 /* .error-border .css-1jqq78o-placeholder {
   color: red !important;
 } */
+
+.css-3dah0e-MuiModal-root-MuiDialog-root {
+  z-index: 999999 !important;
+}

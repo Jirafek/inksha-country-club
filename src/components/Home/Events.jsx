@@ -218,8 +218,8 @@ const Events = () => {
                         </div>
                      </div>
                      <a
-                        rel="noreferrer"
-                        href="#book"
+                        // rel="noreferrer"
+                        // href="#book"
                         className="flex justify-center pb-[30px]"
                      >
                         <AnimatedButton

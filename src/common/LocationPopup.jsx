@@ -11,9 +11,6 @@ const locations_options = [
    { value: "Олимпийская деревня", label: "Олимпийская деревня" },
 ];
 const LocationPopup = ({ isPopupOpen, togglePopup }) => {
-   const [value, setValue] = useState(locations_options[0]);
-   const [inputValue, setInputValue] = useState("Выберите локацию");
-   const navigate = useNavigate();
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // Состояние для отслеживания ошибки
    const [formData, setFormData] = useState({
@@ -159,7 +156,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                            className={` flex h-[40px] items-center justify-center rounded-[10px] ${
                               isError
                                  ? "border-none bg-[#D0C9C9]"
-                                 : "white border border-green-400"
+                                 : "white border-[2px] border-green-400"
                            } w-full`}
                         >
                            Отправить

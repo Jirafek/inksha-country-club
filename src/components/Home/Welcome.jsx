@@ -180,13 +180,13 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/halloween" className="fixed right-10 top-10">
+         {/* <Link to="/halloween" className="fixed right-10 top-10">
             <img
                src={halloween_logo}
                className="z-[10000000] h-[170px] w-[170px]  rounded-full bg-center object-cover shadow-xl"
                alt=""
             />
-         </Link>
+         </Link> */}
          <picture>
             <source srcSet="/avif/bg1.avif 1x" type="image/avif" />
             <img

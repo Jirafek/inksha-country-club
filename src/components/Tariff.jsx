@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Button from "./../common/Button";
 import { Link as ScrollLink } from "react-scroll";
 import food from "../assets/food.png";
@@ -8,16 +9,24 @@ import TariffComponents from "./TarrifComponents";
 import Reveal from "../common/Reveal";
 import { slideFromRight } from "../constants/motion";
 import { URLData } from "../utils/URLData";
-import emailjs from "@emailjs/browser";
-import React, { useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Tariff = () => {
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
    const [navigation, setNavigation] = useState(false);
+   const [isFormValid, setIsFormValid] = useState(true); // State to track form validity
 
    const handleSubmit = async () => {
+      // Validate the form
+      if (!name || !phone) {
+         setIsFormValid(false);
+         return;
+      }
+
+      setIsFormValid(true);
+
+      // Your form submission logic here
       const data = {
          name: name,
          phone: phone,
@@ -64,14 +73,14 @@ const Tariff = () => {
       <div
          id="Tariff"
          name="Tariff"
-         className="tarif bg-violet bg-cover bg-center bg-no-repeat  py-[7vh] pb-[10vh]"
+         className="tarif bg-violet bg-cover bg-center bg-no-repeat py-[7vh] pb-[10vh]"
       >
          {navigation && <Navigate to="/thanks" />}
          <div className="wrapper">
             <Reveal duration={1.5} variants={slideFromRight(-500)}>
                <h1 className="druk relative text-xl tracking-widest">
                   Тарифы
-                  <div className="absolute -top-[30px] left-2 text-[64px] opacity-10 md:-top-[70px]  md:text-[128px]">
+                  <div className="absolute -top-[30px] left-2 text-[64px] opacity-10 md:-top-[70px] md:text-[128px]">
                      Тарифы
                   </div>
                </h1>
@@ -122,7 +131,6 @@ const Tariff = () => {
                </Button>
             </ScrollLink>
             <div className="relative flex w-full items-center justify-center text-center">
-               {/* <Reveal duration={1.5} variants={slideFromLeft()}> */}
                <div
                   name="Form"
                   className="form relative h-[550px] w-[550px] rounded-[16px] bg-darkViolet  p-[5%] text-center shadow-2xl"
@@ -134,14 +142,19 @@ const Tariff = () => {
                      <input
                         type="text"
                         placeholder="Имя"
-                        className="mb-5 h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none"
+                        className={`mb-5 h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                           !isFormValid && !name ? "error-border" : ""
+                        }`}
+                        name="name"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                      />
                      <input
-                        type="text"
+                        type="tel"
                         placeholder="Телефон"
-                        className="h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none"
+                        className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                           !isFormValid && !phone ? "error-border" : ""
+                        }`}
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
                      />
@@ -153,6 +166,11 @@ const Tariff = () => {
                         <img src={arrow} className="h-5 w-9" alt="" />
                      </Button>
                   </form>
+                  {isFormValid === false && (
+                     <p className="error-text text-red-500">
+                        Пожалуйста, заполните все поля.
+                     </p>
+                  )}
                </div>
 
                <img src={boo} className="absolute -bottom-20 right-0" alt="" />

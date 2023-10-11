@@ -682,3 +682,21 @@ ul {
 .css-3dah0e-MuiModal-root-MuiDialog-root {
   z-index: 999999 !important;
 }
+
+
+.css-13cymwt-control {
+  border: '1px solid #7C6F61' !important;
+
+}
+
+.css-1dimb5e-singleValue {
+  color: #7C6F61 !important
+}
+
+#react-select-2-listbox {
+  border-radius: 0px, 0px, 10px, 10px;
+  font-size: 14px;
+  color: #7C6F61;
+  text-align: start;
+  border: 2px solid #7C6F61;
+}

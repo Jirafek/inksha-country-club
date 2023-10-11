@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import close from "./../assets/close.png";
-import Select from "react-select";
+import Select from "./../common/Select";
+import SelectComponent from "react-select";
 import { useNavigate } from "react-router-dom";
 
 const locations_options = [
@@ -120,7 +121,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Имя"
                            type="text"
-                           className={`border-b-2 border-[#7C6F61] bg-transparent 
+                           className={`border-b-1 border-[#7C6F61] bg-transparent 
                             
                            `}
                            name="name"
@@ -130,7 +131,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Телефон"
                            type="tel"
-                           className={`border-b-2 border-[#7C6F61] bg-transparent 
+                           className={`border-b-1 border-[#7C6F61] bg-transparent 
                             
                            `}
                            name="phone"
@@ -138,18 +139,18 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                            onChange={handleInputChange}
                         />
 
-                        <Select
-                           className={`rounded-[10px] font-bold 
-                             
-                            ${
-                               selectedOption
-                                  ? " border-[#7c6f6172] text-[#7c6f6172]"
-                                  : "border-[#7C6F61] text-[#7C6F61]"
-                            }  text-start`}
+                        {/* <Select
+                           className={` rounded-[10px] text-start font-[600] text-[#7C6F61]`}
                            placeholder="Выберите локацию"
                            options={locations_options}
                            value={selectedOption} // Устанавливаем выбранное значение
                            onChange={handleSelectChange} // Передаем обработчик события
+                        /> */}
+                        <SelectComponent
+                           onChange={handleSelectChange}
+                           value={selectedOption}
+                           options={locations_options}
+                           placeholder="Выберите локацию"
                         />
 
                         <button

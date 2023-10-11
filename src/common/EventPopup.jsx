@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import date_icon from "./../assets/date_icon.png";
+import SelectComponent from "./Select";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 // import { DateField } from "@mui/material";
@@ -181,7 +182,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Имя"
                            type="text"
-                           className={`h-[40px] border-b-2 border-[#7C6F61] bg-transparent ${
+                           className={`h-[40px] border-b border-[#7C6F61] bg-transparent ${
                               isError && !formData.name ? "error-border" : ""
                            }`}
                            name="name"
@@ -192,7 +193,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Телефон"
                            type="tel"
-                           className={`h-[40px] border-b-2 border-[#7C6F61] bg-transparent ${
+                           className={`h-[40px] border-b border-[#7C6F61] bg-transparent ${
                               isError && !formData.phone ? "error-border" : ""
                            }`}
                            name="phone"
@@ -215,24 +216,28 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            value={selectedOption1}
                            onChange={handleSelectChange1}
                         /> */}
-
-                        <Select
-                           className={`rounded-[10px]  ${
-                              selectedOption2 === null
-                                 ? "border-[#7c6f6172] text-[#7c6f6172]"
-                                 : "border-[#7C6F61] text-[#7C6F61]"
-                           }  text-start ${
-                              isError && selectedOption2 === null
-                                 ? "error-border"
-                                 : ""
-                           }`}
+                        <SelectComponent
+                           onChange={handleSelectChange2}
+                           value={selectedOption2}
+                           options={locations_options}
+                           placeholder="Выберите локацию"
+                        />
+                        {/* <Select
+                           className={`rounded-[10px]`}
                            placeholder="Выберите локацию"
                            options={locations_options}
                            value={selectedOption2}
                            onChange={handleSelectChange2}
+                        /> */}
+
+                        <SelectComponent
+                           onChange={handleSelectChange3}
+                           value={selectedOption3}
+                           options={people_options}
+                           placeholder="Кол-во гостей"
                         />
 
-                        <Select
+                        {/* <Select
                            className={`rounded-[10px]  ${
                               selectedOption3 === null
                                  ? "border-[#7c6f6172] text-[#7c6f6172]"
@@ -246,7 +251,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            options={people_options}
                            value={selectedOption3}
                            onChange={handleSelectChange3}
-                        />
+                        /> */}
                         <div className="h-[40px]">
                            <DatePicker
                               sx={{

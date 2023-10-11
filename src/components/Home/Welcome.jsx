@@ -164,6 +164,16 @@ const Welcome = () => {
    //   // Здесь ты можешь выполнить действия при изменении ссылки
    //   // Например, управлять z-index для модуля бронирования и контента
    // });
+   const pumpkin_vars = {
+      initial: {
+         // y: "5px", // Начальная позиция за пределами экрана справа
+         scale: 0.85,
+      },
+      animate: {
+         // y: "-10px", // Конечная позиция за пределами экрана слева
+         scale: 1,
+      },
+   };
 
    useEffect(() => {
       // BookingCalendar([], 'zaezd'); // get data from FireBase
@@ -180,13 +190,23 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         {/* <Link to="/halloween" className="fixed right-10 top-10">
-            <img
+         <Link to="/halloween" className="absolute right-0 top-10 z-[1000]">
+            <m.img
+               transition={{
+                  repeat: Infinity,
+                  duration: 1,
+
+                  repeatType: "reverse",
+                  repeatDelay: 0.6,
+               }}
+               initial="initial"
+               animate="animate"
+               variants={pumpkin_vars}
                src={halloween_logo}
-               className="z-[10000000] h-[170px] w-[170px]  rounded-full bg-center object-cover shadow-xl"
+               className="z-[10000000] h-[200px] w-[200px] rounded-full  bg-center object-cover shadow-xl"
                alt=""
             />
-         </Link> */}
+         </Link>
          <picture>
             <source srcSet="/avif/bg1.avif 1x" type="image/avif" />
             <img

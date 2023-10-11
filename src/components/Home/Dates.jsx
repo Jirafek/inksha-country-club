@@ -114,7 +114,7 @@ const Dates = () => {
                   Выбрать дату
                </GreenButton>
             </Link>
-            <a href="#book">
+            <a href="#book" className="mb-7">
                <AnimationButton>
                   Забронировать
                   <br /> отдых

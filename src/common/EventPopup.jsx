@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import date_icon from "./../assets/date_icon.png";
 import SelectComponent from "./Select";
-import Select from "react-select";
+// import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 // import { DateField } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import FormInput from "./FormInput";
 const people_options = [
    { value: "1 взр", label: "1 взр" },
    { value: "2 взр", label: "2 взр" },
@@ -166,10 +167,10 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
    return (
       <LocalizationProvider dateAdapter={AdapterDayjs}>
          {isPopupOpen && (
-            <div>
+            <div className="montery">
                {isPopupCompleted ? (
                   <div
-                     className={`fixed left-1/2 top-1/2 z-[10] flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
+                     className={`montery fixed left-1/2 top-1/2 z-[10] flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
                   >
                      <div className="absolute right-2 top-2">
                         <img
@@ -178,7 +179,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            alt="close"
                         />
                      </div>
-                     <p className="text-[16px] font-bold text-[#6C6053]">
+                     <p className="text-[16px]  font-bold text-[#6C6053]">
                         Ваши данные успешно отправлены!
                         <br />
                         Спасибо, что выбрали нас! Наш менеджер свяжется с вами в
@@ -206,7 +207,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         onSubmit={handleSubmit}
                      >
                         {/* Input fields */}
-                        <input
+                        {/* <input
                            placeholder="Имя"
                            type="text"
                            className={`h-[40px] border-b border-[#7C6F61] bg-transparent ${
@@ -223,6 +224,21 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            className={`h-[40px] border-b border-[#7C6F61] bg-transparent ${
                               isError && !formData.phone ? "error-border" : ""
                            }`}
+                           name="phone"
+                           value={formData.phone}
+                           onChange={handleInputChange}
+                        /> */}
+                        <FormInput
+                           placeholder="Имя"
+                           name="name"
+                           value={formData.name}
+                           onChange={handleInputChange}
+                           type="text"
+                        />
+
+                        <FormInput
+                           placeholder="Телефон"
+                           type="tel"
                            name="phone"
                            value={formData.phone}
                            onChange={handleInputChange}

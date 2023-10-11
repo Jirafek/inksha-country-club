@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import close from "./../assets/close.png";
-
+import FormInput from "./FormInput";
 const MainPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
@@ -53,7 +53,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
    };
 
    return (
-      <div>
+      <div className="montery">
          {isPopupOpen && (
             <div>
                {isPopupCompleted ? (
@@ -92,7 +92,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                         className="flex flex-col gap-5"
                         onSubmit={handleSubmit}
                      >
-                        <input
+                        {/* <input
                            placeholder="Имя"
                            type="text"
                            className={`border-b-[1px] border-[#7C6F61] bg-transparent `}
@@ -104,6 +104,21 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                            placeholder="Телефон"
                            type="tel"
                            className={`border-b-[1px] border-[#7C6F61] bg-transparent `}
+                           name="phone"
+                           value={formData.phone}
+                           onChange={handleInputChange}
+                        /> */}
+                        <FormInput
+                           placeholder="Имя"
+                           name="name"
+                           value={formData.name}
+                           onChange={handleInputChange}
+                           type="text"
+                        />
+
+                        <FormInput
+                           placeholder="Телефон"
+                           type="tel"
                            name="phone"
                            value={formData.phone}
                            onChange={handleInputChange}

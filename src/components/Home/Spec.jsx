@@ -43,32 +43,34 @@ const Spec = () => {
                ДАРИМ ИМЕНИННИКУ САП-ДОСКУ
             </p>
          </div>
-         <div
-            style={
-               currentBg.includes("2") ? { opacity: "1" } : { opacity: "0" }
-            }
-            className="ml-[15px] flex items-center transition-all duration-300"
-         >
-            <picture>
-               <source srcSet="/avif/cake.avif 1x" type="image/avif" />
-               <img src="/image/cake.webp" alt="Икша Кантри Клаб" />
-            </picture>
+         <div className="flex max-w-[200px] flex-col items-center    justify-center gap-5">
+            <div
+               style={
+                  currentBg.includes("2") ? { opacity: "1" } : { opacity: "0" }
+               }
+               className="ml-[15px] flex items-center transition-all duration-300"
+            >
+               <picture>
+                  <source srcSet="/avif/cake.avif 1x" type="image/avif" />
+                  <img src="/image/cake.webp" alt="Икша Кантри Клаб" />
+               </picture>
 
-            <p className="w-[157px] text-center">
-               Дарим Сап-доску именнинику на время заезда
-            </p>
+               <p className="w-[157px] text-center">
+                  Дарим Сап-доску именнинику на время заезда
+               </p>
 
-            <picture>
-               <source srcSet="/avif/cake.avif 1x" type="image/avif" />
-               <img src="/image/cake.webp" alt="Икша Кантри Клаб" />
-            </picture>
+               <picture>
+                  <source srcSet="/avif/cake.avif 1x" type="image/avif" />
+                  <img src="/image/cake.webp" alt="Икша Кантри Клаб" />
+               </picture>
+            </div>
+            <GreenButton
+               onClick={handleChangeImage}
+               className="h-[40px] w-[180px]"
+            >
+               Подробнее
+            </GreenButton>
          </div>
-         <GreenButton
-            onClick={handleChangeImage}
-            className="h-[40px] w-[180px]"
-         >
-            Подробнее
-         </GreenButton>
       </section>
    );
 };

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import Select from "./../common/Select";
-import SelectComponent from "react-select";
+import SelectComponent from "./Select";
 import { useNavigate } from "react-router-dom";
-
+import FormInput from "./FormInput";
 const locations_options = [
    { value: "Лесная резиденция", label: "Лесная резиденция" },
    { value: "Шале", label: "Шале" },
@@ -76,7 +76,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
       togglePopup();
    };
    return (
-      <div>
+      <div className="montery">
          {isPopupOpen && (
             <div>
                {isPopupCompleted ? (
@@ -115,26 +115,22 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         className="flex flex-col gap-5"
                         onSubmit={handleSubmit}
                      >
-                        <input
+                        <FormInput
                            placeholder="Имя"
-                           type="text"
-                           className={`border-b-[1px] border-[#7C6F61] bg-transparent 
-                            
-                           `}
                            name="name"
                            value={formData.name}
                            onChange={handleInputChange}
+                           type="text"
                         />
-                        <input
+
+                        <FormInput
                            placeholder="Телефон"
                            type="tel"
-                           className={`border-b-[1px] border-[#7C6F61] bg-transparent 
-                            
-                           `}
                            name="phone"
                            value={formData.phone}
                            onChange={handleInputChange}
                         />
+                        {/* <input /> */}
 
                         {/* <Select
                            className={` rounded-[10px] text-start font-[600] text-[#7C6F61]`}

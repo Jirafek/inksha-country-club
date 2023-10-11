@@ -684,6 +684,7 @@ ul {
 }
 
 
+.css-13cymwt-control,
 .css-13cymwt-control {
   border: '1px solid #7C6F61' !important;
 
@@ -693,7 +694,11 @@ ul {
   color: #7C6F61 !important
 }
 
-#react-select-2-listbox {
+#react-select-2-listbox,
+#react-select-1-listbox,
+#react-select-3-listbox,
+#react-select-4-listbox,
+#react-select-5-listbox {
   border-radius: 0px, 0px, 10px, 10px;
   font-size: 14px;
   color: #7C6F61;

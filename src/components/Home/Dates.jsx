@@ -114,10 +114,12 @@ const Dates = () => {
                   Выбрать дату
                </GreenButton>
             </Link>
-            <AnimationButton>
-               Забронировать
-               <br /> отдых
-            </AnimationButton>
+            <a href="#book">
+               <AnimationButton>
+                  Забронировать
+                  <br /> отдых
+               </AnimationButton>
+            </a>
          </div>
       </section>
    );

@@ -118,7 +118,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Имя"
                            type="text"
-                           className={`border-b-1 border-[#7C6F61] bg-transparent 
+                           className={`border-b-[1px] border-[#7C6F61] bg-transparent 
                             
                            `}
                            name="name"
@@ -128,7 +128,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         <input
                            placeholder="Телефон"
                            type="tel"
-                           className={`border-b-1 border-[#7C6F61] bg-transparent 
+                           className={`border-b-[1px] border-[#7C6F61] bg-transparent 
                             
                            `}
                            name="phone"

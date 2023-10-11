@@ -57,8 +57,8 @@ const HappySlider = () => {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      nextArrow: <CustomNextArrow isBottom="16%" />,
-      prevArrow: <CustomPrevArrow isBottom="16%" />,
+      nextArrow: <CustomNextArrow isBottom="30.5%" />,
+      prevArrow: <CustomPrevArrow isBottom="30.5%" />,
    };
 
    return (
@@ -84,6 +84,18 @@ const HappySlider = () => {
             />
          </Helmet>
          <section className="relative h-[851px]">
+            <a
+               href="https://bronirui-online.ru/iksha-country-club/uslugi"
+               rel="noreferrer"
+               //    style={{
+               //       backgroundImage: "url(/image/h_btn_layer.webp)",
+               //    }}
+               //    className="absolute left-1/2 -translate-x-[-50%] transform"
+            >
+               <GreenButton className="back_settings absolute bottom-[30%]  left-1/2 z-[1000] -translate-x-1/2 transform text-center">
+                  Выбрать услугу
+               </GreenButton>
+            </a>
             <Slider {...settings}>
                {sliderData.map((el, i) => (
                   <div className="relative h-screen pb-[40px]" key={uuidv4()}>
@@ -166,22 +178,9 @@ const HappySlider = () => {
                            )}
                         </div>
                      </div>
-                     <div className="relative flex h-[100px] w-screen items-center justify-center gap-2">
-                        {/* <CustomPrevArrow isBottom="37%" /> */}
-                        <a
-                           href="https://bronirui-online.ru/iksha-country-club/uslugi"
-                           rel="noreferrer"
-                           //    style={{
-                           //       backgroundImage: "url(/image/h_btn_layer.webp)",
-                           //    }}
-                           //    className="absolute left-1/2 -translate-x-[-50%] transform"
-                        >
-                           <GreenButton className="back_settings ">
-                              Выбрать услугу
-                           </GreenButton>
-                        </a>
-                        {/* <CustomNextArrow isBottom="37.1%" /> */}
-                     </div>
+                     {/* <div className="relative flex h-[100px] w-screen items-center justify-center gap-2">
+                
+                     </div> */}
                   </div>
                ))}
             </Slider>

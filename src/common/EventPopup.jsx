@@ -31,6 +31,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
 
    const [isError, setIsError] = useState(true); // State for tracking errors
    const [date, setDate] = useState();
+
    // State variables for Select components
    const [selectedOption1, setSelectedOption1] = useState(null);
    const [selectedOption2, setSelectedOption2] = useState(null);
@@ -68,10 +69,11 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          selectedOption2 === null ||
          selectedOption3 === null ||
          !formData.name ||
+         date == undefined ||
          !formData.phone;
 
       setIsError(newIsError);
-   }, [selectedOption1, selectedOption2, selectedOption3, formData]);
+   }, [selectedOption1, selectedOption2, selectedOption3, formData, date]);
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -88,6 +90,9 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          name: formData.name,
          phone: formData.phone,
       };
+      const DateValue = {
+         date: date,
+      };
 
       // Check for errors one more time before submission
       const newIsError =
@@ -95,6 +100,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          selectedOptions.option2 === null ||
          selectedOptions.option3 === null ||
          !inputValues.name ||
+         date === undefined ||
          !inputValues.phone;
 
       setIsError(newIsError);
@@ -104,7 +110,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          const allData = {
             ...selectedOptions,
             ...inputValues,
-            ...date,
+            ...DateValue,
          };
          console.log(allData);
 
@@ -118,6 +124,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
             name: "",
             phone: "",
          });
+         setDate(undefined);
          setIsPopupCompleted(!isPopupCompleted);
       }
    };
@@ -248,10 +255,11 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                                  // border: "2px solid black",
                               }}
                               value={date}
-                              onChange={(newDate) => setdate(newDate)}
-                              // InputProps={{
-                              //    disableUnderline: true,
-                              // }}
+                              onChange={(newDate) => {
+                                 const { $d } = newDate;
+                                 setDate($d);
+                                 // console.log(newDate);
+                              }}
                               slotProps={{ textField: { variant: "standard" } }}
                            />
                         </div>

@@ -43,12 +43,12 @@ const Spec = () => {
                ДАРИМ ИМЕНИННИКУ САП-ДОСКУ
             </p>
          </div>
-         <div className="flex max-w-[200px] flex-col items-center    justify-center gap-5">
+         <div className="flex max-w-[200px] flex-col gap-5  text-center">
             <div
                style={
                   currentBg.includes("2") ? { opacity: "1" } : { opacity: "0" }
                }
-               className="ml-[15px] flex items-center transition-all duration-300"
+               className="mx-auto ml-[15px] flex items-center transition-all duration-300"
             >
                <picture>
                   <source srcSet="/avif/cake.avif 1x" type="image/avif" />
@@ -66,7 +66,7 @@ const Spec = () => {
             </div>
             <GreenButton
                onClick={handleChangeImage}
-               className="h-[40px] w-[180px]"
+               className="mx-auto h-[40px] w-[180px]"
             >
                Подробнее
             </GreenButton>

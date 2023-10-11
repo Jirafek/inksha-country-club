@@ -64,7 +64,7 @@ const HappyClickableItems = ({ arrayData }) => {
                );
             })}
          </div>
-         <a className="mb-10" href="#calculator">
+         <a className="mb-20 sm:mb-20" href="#calculator">
             <GreenButton className="text-[19px]">Прайс-лист</GreenButton>
          </a>
       </div>

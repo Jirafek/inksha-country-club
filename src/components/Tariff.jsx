@@ -130,7 +130,7 @@ const Tariff = () => {
                   <div className="droid mb-5 text-md">
                      Оставьте свои данные, и мы обязательно свяжемся с вами
                   </div>
-                  <form className="droid" action="">
+                  <form className="droid" name="Form" action="">
                      <input
                         type="text"
                         placeholder="Имя"

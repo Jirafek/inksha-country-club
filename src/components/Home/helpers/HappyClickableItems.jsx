@@ -62,7 +62,9 @@ const HappyClickableItems = ({ arrayData }) => {
                </Link>
             );
          })}
-         <GreenButton className="text-[19px]">Прайс-лист</GreenButton>
+         <a href="#calculator">
+            <GreenButton className="text-[19px]">Прайс-лист</GreenButton>
+         </a>
       </div>
    );
 };

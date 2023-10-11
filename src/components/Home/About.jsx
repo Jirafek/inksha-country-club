@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import NumeredItemsData from "../../utils/Home/NumeredItemsData";
 import NumberedItem from "./helpers/NumberedItem";
 import { m } from "framer-motion";
-
 const ytSrc = "https://www.youtube.com/embed/Eat2wgPNuIo";
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
-
+import price_calculator from "./../../assets/price_calculator.png";
+import price_arrow from "./../../assets/price_arrow.png";
 const heading = {
    hidden: {},
    visible: {
@@ -30,6 +30,16 @@ const headingLinesOpacity = {
    },
 };
 
+const price_arrow_vars = {
+   initial: {
+      y: "5px", // Начальная позиция за пределами экрана справа
+      // scale: 0.75,
+   },
+   animate: {
+      y: "-10px", // Конечная позиция за пределами экрана слева
+      // scale: 1,
+   },
+};
 const About = () => {
    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -47,6 +57,25 @@ const About = () => {
          className="section back_settings relative"
          id="about"
       >
+         <a
+            href="#calculator"
+            className="absolute right-0 top-6 flex flex-col  items-center justify-center"
+         >
+            <img src={price_calculator} alt="calulator buuton" />
+            <m.img
+               transition={{
+                  repeat: Infinity,
+                  duration: 0.5,
+
+                  repeatType: "reverse",
+                  repeatDelay: 0.75,
+               }}
+               initial="initial"
+               animate="animate"
+               variants={price_arrow_vars}
+               src={price_arrow}
+            />
+         </a>
          <m.div
             initial="hidden"
             whileInView="visible"

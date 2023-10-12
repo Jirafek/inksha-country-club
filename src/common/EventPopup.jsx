@@ -71,6 +71,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
       name: "",
       phone: "",
    });
+   const navigate = useNavigate();
 
    const handleSelectChange1 = (selectedOption) => {
       setSelectedOption1(selectedOption);
@@ -101,8 +102,8 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
 
       const sendingData = {
          ...data,
-         source: "https://mobile.ikshacountryclub.com",
-         formType: "Форма полная Моб ",
+         source: "https://ikshacountryclub.com/",
+         formType: "Форма полная телефон ",
          link: window.location.href,
          ...URLData,
       };
@@ -121,7 +122,9 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          );
 
          if (response.ok) {
-            setTimeout(() => {}, 1000);
+            setTimeout(() => {
+               navigate("/thanks");
+            }, 1000);
          } else {
             alert("Произошла ошибка при отправке данных");
          }

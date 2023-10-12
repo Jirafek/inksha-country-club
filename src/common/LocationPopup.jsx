@@ -19,7 +19,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
       name: "",
       phone: "",
    });
-
+   const navigate = useNavigate();
    const handleSubmitBot = async () => {
       const data = {
          name: formData.name,
@@ -29,8 +29,8 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
 
       const sendingData = {
          ...data,
-         source: "https://mobile.ikshacountryclub.com",
-         formType: "Форма имя + телефон + локация Моб ",
+         source: "https://ikshacountryclub.com/",
+         formType: "Форма имя + телефон + локация телефон ",
          link: window.location.href,
          ...URLData,
       };
@@ -49,7 +49,9 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
          );
 
          if (response.ok) {
-            setTimeout(() => {}, 1000);
+            setTimeout(() => {
+               navigate("/thanks");
+            }, 1000);
          } else {
             alert("Произошла ошибка при отправке данных");
          }

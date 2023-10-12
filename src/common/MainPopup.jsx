@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import FormInput from "./FormInput";
 import { URLData } from "../utils/URLData";
+import { useNavigate } from "react-router-dom";
 const MainPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
@@ -9,7 +10,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
       name: "",
       phone: "",
    });
-
+   const navigate = useNavigate();
    const handleSubmitBot = async () => {
       const data = {
          name: formData.name,
@@ -19,8 +20,8 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
 
       const sendingData = {
          ...data,
-         source: "https://mobile.ikshacountryclub.com",
-         formType: "Форма имя + телефон Моб ",
+         source: "https://ikshacountryclub.com/",
+         formType: "Форма имя + телефон телефон ",
          link: window.location.href,
          ...URLData,
       };
@@ -39,7 +40,9 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
          );
 
          if (response.ok) {
-            setTimeout(() => {}, 1000);
+            setTimeout(() => {
+               navigate("/thanks");
+            }, 1000);
          } else {
             alert("Произошла ошибка при отправке данных");
          }

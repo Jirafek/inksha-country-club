@@ -4,6 +4,8 @@ import Select from "./../common/Select";
 import SelectComponent from "./Select";
 import { useNavigate } from "react-router-dom";
 import FormInput from "./FormInput";
+import { URLData } from "../utils/URLData";
+
 const locations_options = [
    { value: "Лесная резиденция", label: "Лесная резиденция" },
    { value: "Шале", label: "Шале" },
@@ -17,6 +19,45 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
       name: "",
       phone: "",
    });
+
+   const handleSubmitBot = async () => {
+      const data = {
+         name: formData.name,
+         phone: formData.phone,
+         email: "-",
+      };
+
+      const sendingData = {
+         ...data,
+         source: "https://mobile.ikshacountryclub.com",
+         formType: "Форма имя + телефон + локация Моб ",
+         link: window.location.href,
+         ...URLData,
+      };
+      console.log(data);
+      try {
+         const response = await fetch(
+            "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Access-Control-Allow-Origin": "*",
+               },
+               body: new URLSearchParams(sendingData).toString(),
+            }
+         );
+
+         if (response.ok) {
+            setTimeout(() => {}, 1000);
+         } else {
+            alert("Произошла ошибка при отправке данных");
+         }
+      } catch (error) {
+         console.error(error);
+         alert("Произошла ошибка при отправке данных");
+      }
+   };
 
    const [selectedOption, setSelectedOption] = useState(null); // Начальное значение состояния - null
 
@@ -45,7 +86,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
       setIsPopupCompleted(!isPopupCompleted);
 
       // Здесь можно отправить данные на сервер или выполнить другие действия
-
+      handleSubmitBot();
       // Сброс значений полей формы
       setFormData({
          name: "",

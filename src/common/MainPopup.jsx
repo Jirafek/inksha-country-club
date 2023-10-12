@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import close from "./../assets/close.png";
 import FormInput from "./FormInput";
+import { URLData } from "../utils/URLData";
 const MainPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
@@ -11,18 +10,53 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
       phone: "",
    });
 
-   // Define an object to hold all form data
-   const allFormData = {
-      ...formData,
+   const handleSubmitBot = async () => {
+      const data = {
+         name: formData.name,
+         phone: formData.phone,
+         email: "-",
+      };
+
+      const sendingData = {
+         ...data,
+         source: "https://mobile.ikshacountryclub.com",
+         formType: "Форма имя + телефон Моб ",
+         link: window.location.href,
+         ...URLData,
+      };
+      console.log(data);
+      try {
+         const response = await fetch(
+            "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Access-Control-Allow-Origin": "*",
+               },
+               body: new URLSearchParams(sendingData).toString(),
+            }
+         );
+
+         if (response.ok) {
+            setTimeout(() => {}, 1000);
+         } else {
+            alert("Произошла ошибка при отправке данных");
+         }
+      } catch (error) {
+         console.error(error);
+         alert("Произошла ошибка при отправке данных");
+      }
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
-
+      if (isError) {
+         return;
+      }
       // Update the allFormData object with the latest data
-      allFormData.name = formData.name;
-      allFormData.phone = formData.phone;
 
+      handleSubmitBot();
       setIsPopupCompleted(!isPopupCompleted);
 
       // Clear the form data by resetting it to its initial empty state
@@ -51,7 +85,6 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
       setIsPopupCompleted(false);
       togglePopup();
    };
-
    return (
       <div className="montery">
          {isPopupOpen && (

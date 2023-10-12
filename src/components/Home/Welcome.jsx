@@ -7,7 +7,7 @@ import VideoPlayer from "./VideoPlayer";
 import { Link, useLocation } from "react-router-dom";
 import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
-import halloween_logo from "./../../assets/helloween_logo.png";
+import halloween_logo from "./../../assets/helloween_logo.svg";
 
 const heading = {
    hidden: {},
@@ -190,7 +190,7 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/halloween" className="absolute right-0 top-10 z-[1000]">
+         <Link to="/halloween" className="absolute right-10 top-10 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
@@ -203,7 +203,7 @@ const Welcome = () => {
                animate="animate"
                variants={pumpkin_vars}
                src={halloween_logo}
-               className="z-[10000000] h-[200px] w-[200px] rounded-full  bg-center object-cover shadow-xl"
+               className="z-[10000000] h-[150px] w-[150px] rounded-full border border-black  bg-center object-cover shadow-xl"
                alt=""
             />
          </Link>

@@ -5,6 +5,7 @@ import SelectComponent from "./Select";
 // import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 // import { DateField } from "@mui/material";
+import { URLData } from "../utils/URLData";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -61,7 +62,6 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
    const [isError, setIsError] = useState(true); // State for tracking errors
    const [date, setDate] = useState();
 
-   // State variables for Select components
    const [selectedOption1, setSelectedOption1] = useState(null);
    const [selectedOption2, setSelectedOption2] = useState(null);
    const [selectedOption3, setSelectedOption3] = useState(null);
@@ -92,16 +92,55 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
       });
    };
 
+   const handleSubmitBot = async () => {
+      const data = {
+         name: formData.name,
+         phone: formData.phone,
+         email: "-",
+      };
+
+      const sendingData = {
+         ...data,
+         source: "https://mobile.ikshacountryclub.com",
+         formType: "Форма полная Моб ",
+         link: window.location.href,
+         ...URLData,
+      };
+      console.log(data);
+      try {
+         const response = await fetch(
+            "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "Access-Control-Allow-Origin": "*",
+               },
+               body: new URLSearchParams(sendingData).toString(),
+            }
+         );
+
+         if (response.ok) {
+            setTimeout(() => {}, 1000);
+         } else {
+            alert("Произошла ошибка при отправке данных");
+         }
+      } catch (error) {
+         console.error(error);
+         alert("Произошла ошибка при отправке данных");
+      }
+   };
+
    useEffect(() => {
       // Check for errors when any of the form fields change
-      const newIsError =
+      const isError =
          selectedOption2 === null ||
          selectedOption3 === null ||
          !formData.name ||
          date == undefined ||
          !formData.phone;
 
-      setIsError(newIsError);
+      setIsError(isError);
    }, [selectedOption1, selectedOption2, selectedOption3, formData, date]);
 
    const handleSubmit = (e) => {
@@ -122,26 +161,16 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
       const DateValue = {
          date: date,
       };
+      if (!isError) {
+         handleSubmitBot();
 
-      // Check for errors one more time before submission
-      const newIsError =
-         // selectedOptions.option1 === null ||
-         selectedOptions.option2 === null ||
-         selectedOptions.option3 === null ||
-         !inputValues.name ||
-         date === undefined ||
-         !inputValues.phone;
-
-      setIsError(newIsError);
-
-      if (!newIsError) {
          // You can use allData in further processing or send it to the server
-         const allData = {
-            ...selectedOptions,
-            ...inputValues,
-            ...DateValue,
-         };
-         console.log(allData);
+         // const allData = {
+         //    ...selectedOptions,
+         //    ...inputValues,
+         //    ...DateValue,
+         // };
+         // console.log(allData);
 
          // Reset the state of the Select components
          setSelectedOption1(null);

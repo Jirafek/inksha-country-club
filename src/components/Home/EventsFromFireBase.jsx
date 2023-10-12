@@ -97,8 +97,8 @@ const fireBaseData = [
       date: "19.08.2023",
    },
    {
-      imgWebp: "/src/assets/bg.jpg",
-      imgAvif: "/avif/events_fire3.avif",
+      imgWebp: "/image/assets/bg.jpg",
+      imgAvif: "/image/assets/bg.jpg",
       link: "/halloween",
       title: "Хеллоуин",
       date: "28.10.2023",

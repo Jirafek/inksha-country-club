@@ -151,6 +151,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                            onChange={handleInputChange}
                            type="text"
                         />
+                        
 
                         <FormInput
                            placeholder="Телефон"

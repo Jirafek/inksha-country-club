@@ -103,7 +103,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                )}
                <Reveal duration={2} variants={opacity()}>
                   <div className="druk flex justify-between py-5">
-                     <Libk to="/">Икша Кантри Kлаб</Libk>
+                     <Link to="/">Икша Кантри Kлаб</Link>
                      <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {
                            return (

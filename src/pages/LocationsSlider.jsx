@@ -219,8 +219,11 @@ const LocationsSlider = () => {
                </div>
             ))}
          </Slider>
-         <div className="flex justify-center px-4 pb-[150px]">
-            <form className="relative" onSubmit={handleSubmit(onSubmit)}>
+         <div className="flex justify-center px-4 pb-[200px]">
+            <form
+               className="relative flex w-full flex-col items-center rounded-[10px] border-[3px] border-[#4F8B36] bg-[#B5EAC9] px-5 pb-[25px]"
+               onSubmit={handleSubmit(onSubmit)}
+            >
                <p className="mb-[7px] text-[20px] font-bold">Перезвоните мне</p>
                <input
                   {...register("name", { required: true })}
@@ -251,7 +254,7 @@ const LocationsSlider = () => {
                                  borderColor: "rgba(0, 0, 0, 0.50)",
                                  backgroundColor: "rgba(217, 217, 217, 0.50)",
                               }}
-                              className="mb-[2px] w-full rounded-[10px] border py-[6px] pl-[13px] text-[13px]"
+                              className="z-[100000] mb-[2px] w-full rounded-[10px] border py-[6px] pl-[13px] text-[13px]"
                               placeholder="телефон"
                               type="text"
                            />

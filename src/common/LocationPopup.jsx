@@ -4,6 +4,7 @@ import Select from "./../common/Select";
 import SelectComponent from "./Select";
 import { useNavigate } from "react-router-dom";
 import FormInput from "./FormInput";
+import TellInput from "./TellInput";
 import { URLData } from "../utils/URLData";
 
 const locations_options = [
@@ -15,15 +16,14 @@ const locations_options = [
 const LocationPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // Состояние для отслеживания ошибки
-   const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-   });
+   const [name, setName] = useState("");
+   const [isValid, setIsValid] = useState(true);
+   const [phone, setPhone] = useState("");
    const navigate = useNavigate();
    const handleSubmitBot = async () => {
       const data = {
-         name: formData.name,
-         phone: formData.phone,
+         name: name,
+         phone: phone,
          email: "-",
       };
 
@@ -70,47 +70,34 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
 
    useEffect(() => {
       // Проверка на ошибку: проверка, что поля "Имя" и "Телефон" не пустые и selectedOption не равно null
-      const newIsError =
-         !formData.name || !formData.phone || selectedOption === null;
+      const newIsError = !name || !phone || selectedOption === null || !isValid;
       setIsError(newIsError);
-   }, [formData, selectedOption]);
+   }, [name, phone, selectedOption]);
 
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-      }));
+   const handlePhoneChange = (e) => {
+      const inputValue = e.target.value;
+      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
+      setPhone(numericValue);
+      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
+   };
+
+   const handleNameChange = (e) => {
+      const { value } = e.target;
+      setName(value);
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      setIsPopupCompleted(!isPopupCompleted);
+      if (isError) {
+         return;
+      }
 
-      // Здесь можно отправить данные на сервер или выполнить другие действия
       handleSubmitBot();
-      // Сброс значений полей формы
-      setFormData({
-         name: "",
-         phone: "",
-      });
-      const inputValues = {
-         name: formData.name,
-         phone: formData.phone,
-      };
-      const selectedOptions = {
-         option: selectedOption,
-      };
-      const allData = {
-         ...selectedOptions,
-         ...inputValues,
-      };
-      console.log(allData);
-
-      // Combine the input field values into an object
-
-      // Сброс выбранной опции
-      setSelectedOption(null);
+      // ... ваша существующая логика ...
+      setName(""); // Очищаем состояние телефона
+      setPhone(""); // Очищаем состояние телефона
+      setIsPopupCompleted(!isPopupCompleted);
    };
 
    const handlePopupClose = () => {
@@ -161,17 +148,15 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                         <FormInput
                            placeholder="Имя"
                            name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
+                           value={name}
+                           onChange={handleNameChange}
                            type="text"
                         />
 
-                        <FormInput
-                           placeholder="Телефон"
-                           type="tel"
-                           name="phone"
-                           value={formData.phone}
-                           onChange={handleInputChange}
+                        <TellInput
+                           value={phone}
+                           onChange={handlePhoneChange}
+                           isValid={isValid}
                         />
                         {/* <input /> */}
 

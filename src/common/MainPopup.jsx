@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import FormInput from "./FormInput";
+import TellInput from "./TellInput";
 import { URLData } from "../utils/URLData";
 import { useNavigate } from "react-router-dom";
 const MainPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
-   const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-   });
+   const [name, setName] = useState("");
+   const [isValid, setIsValid] = useState(true);
+   const [phone, setPhone] = useState("");
    const navigate = useNavigate();
+
    const handleSubmitBot = async () => {
       const data = {
-         name: formData.name,
-         phone: formData.phone,
+         name: name,
+         phone: phone,
          email: "-",
       };
 
@@ -52,41 +53,43 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
       }
    };
 
+   useEffect(() => {
+      // Проверка на ошибки при изменении полей формы
+      const newIsError = !name || !phone || !isValid;
+      setIsError(newIsError);
+   }, [name, phone]);
+
+   const handlePhoneChange = (e) => {
+      const inputValue = e.target.value;
+      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
+      setPhone(numericValue);
+      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
+   };
+   const handleNameChange = (e) => {
+      const { value } = e.target;
+      setName(value);
+   };
+
+   const handlePopupClose = () => {
+      setIsPopupCompleted(false);
+      togglePopup();
+   };
+
    const handleSubmit = (e) => {
       e.preventDefault();
       if (isError) {
          return;
       }
-      // Update the allFormData object with the latest data
-
+      const data = {
+         name,
+         phone,
+         email: "-",
+      };
       handleSubmitBot();
+      // ... ваша существующая логика ...
+      setPhone(""); // Очищаем состояние телефона
       setIsPopupCompleted(!isPopupCompleted);
-
-      // Clear the form data by resetting it to its initial empty state
-      setFormData({
-         name: "",
-         phone: "",
-      });
-   };
-
-   useEffect(() => {
-      // Check for errors when any of the form fields change
-      const newIsError = !formData.name || !formData.phone;
-      setIsError(newIsError);
-   }, [formData]);
-
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-      }));
-   };
-
-   const handlePopupClose = () => {
-      // Reset the popup state and close the popup
-      setIsPopupCompleted(false);
-      togglePopup();
    };
    return (
       <div className="montery">
@@ -147,19 +150,17 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                         <FormInput
                            placeholder="Имя"
                            name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
+                           value={name}
+                           onChange={handleNameChange}
                            type="text"
                         />
-                        
 
-                        <FormInput
-                           placeholder="Телефон"
-                           type="tel"
-                           name="phone"
-                           value={formData.phone}
-                           onChange={handleInputChange}
+                        <TellInput
+                           value={phone}
+                           isValid={isValid}
+                           onChange={handlePhoneChange}
                         />
+
                         <button
                            type="submit"
                            disabled={isError}

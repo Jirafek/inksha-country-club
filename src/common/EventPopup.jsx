@@ -10,6 +10,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import FormInput from "./FormInput";
+import TellInput from "./TellInput";
 const people_options = [
    { value: "1 взр", label: "1 взр" },
    { value: "2 взр", label: "2 взр" },
@@ -58,24 +59,19 @@ const options = [
 
 const EventPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
-
    const [isError, setIsError] = useState(true); // State for tracking errors
    const [date, setDate] = useState();
-
    const [selectedOption1, setSelectedOption1] = useState(null);
    const [selectedOption2, setSelectedOption2] = useState(null);
    const [selectedOption3, setSelectedOption3] = useState(null);
-
-   // State variables for input fields
-   const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-   });
+   const [name, setName] = useState("");
+   const [isValid, setIsValid] = useState(true);
+   const [phone, setPhone] = useState("");
    const navigate = useNavigate();
 
-   const handleSelectChange1 = (selectedOption) => {
-      setSelectedOption1(selectedOption);
-   };
+   // const handleSelectChange1 = (selectedOption) => {
+   //    setSelectedOption1(selectedOption);
+   // };
 
    const handleSelectChange2 = (selectedOption) => {
       setSelectedOption2(selectedOption);
@@ -85,18 +81,22 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
       setSelectedOption3(selectedOption);
    };
 
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({
-         ...formData,
-         [name]: value,
-      });
+   const handlePhoneChange = (e) => {
+      const inputValue = e.target.value;
+      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
+      setPhone(numericValue);
+      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
+   };
+   const handleNameChange = (e) => {
+      const { value } = e.target;
+      setName(value);
    };
 
    const handleSubmitBot = async () => {
       const data = {
-         name: formData.name,
-         phone: formData.phone,
+         name: name,
+         phone: phone,
          email: "-",
       };
 
@@ -139,52 +139,27 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
       const isError =
          selectedOption2 === null ||
          selectedOption3 === null ||
-         !formData.name ||
+         !name ||
+         !isValid ||
          date == undefined ||
-         !formData.phone;
+         !phone;
 
       setIsError(isError);
-   }, [selectedOption1, selectedOption2, selectedOption3, formData, date]);
+   }, [selectedOption1, selectedOption2, selectedOption3, name, phone, date]);
 
    const handleSubmit = (e) => {
       e.preventDefault();
 
-      // Combine the selected options into an object as needed
-      const selectedOptions = {
-         // option1: selectedOption1,
-         option2: selectedOption2,
-         option3: selectedOption3,
-      };
-
-      // Combine the input field values into an object
-      const inputValues = {
-         name: formData.name,
-         phone: formData.phone,
-      };
-      const DateValue = {
-         date: date,
-      };
       if (!isError) {
          handleSubmitBot();
-
-         // You can use allData in further processing or send it to the server
-         // const allData = {
-         //    ...selectedOptions,
-         //    ...inputValues,
-         //    ...DateValue,
-         // };
-         // console.log(allData);
 
          // Reset the state of the Select components
          setSelectedOption1(null);
          setSelectedOption2(null);
          setSelectedOption3(null);
 
-         // Reset the form fields
-         setFormData({
-            name: "",
-            phone: "",
-         });
+         setName("");
+         setPhone("");
          setDate(undefined);
          setIsPopupCompleted(!isPopupCompleted);
       }
@@ -202,7 +177,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
             <div className="montery">
                {isPopupCompleted ? (
                   <div
-                     className={`montery fixed left-1/2 top-1/2 z-[10] flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
+                     className={`montery fixed left-1/2 top-1/2  flex w-[300px] -translate-x-1/2  -translate-y-1/2 transform flex-col rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
                   >
                      <div className="absolute right-2 top-2">
                         <img
@@ -263,18 +238,33 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                         <FormInput
                            placeholder="Имя"
                            name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
+                           value={name}
+                           onChange={handleNameChange}
                            type="text"
                         />
 
-                        <FormInput
-                           placeholder="Телефон"
-                           type="tel"
-                           name="phone"
-                           value={formData.phone}
-                           onChange={handleInputChange}
+                        <TellInput
+                           value={phone}
+                           isValid={isValid}
+                           onChange={handlePhoneChange}
                         />
+
+                        <div className="h-[40px]">
+                           <DatePicker
+                              sx={{
+                                 width: "100%",
+                                 height: "40px",
+                                 // border: "2px solid black",
+                              }}
+                              value={date}
+                              onChange={(newDate) => {
+                                 const { $d } = newDate;
+                                 setDate($d);
+                                 // console.log(newDate);
+                              }}
+                              slotProps={{ textField: { variant: "standard" } }}
+                           />
+                        </div>
 
                         {/* <Select
                            className={`rounded-[10px]  ${
@@ -327,22 +317,6 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
                            value={selectedOption3}
                            onChange={handleSelectChange3}
                         /> */}
-                        <div className="h-[40px]">
-                           <DatePicker
-                              sx={{
-                                 width: "100%",
-                                 height: "40px",
-                                 // border: "2px solid black",
-                              }}
-                              value={date}
-                              onChange={(newDate) => {
-                                 const { $d } = newDate;
-                                 setDate($d);
-                                 // console.log(newDate);
-                              }}
-                              slotProps={{ textField: { variant: "standard" } }}
-                           />
-                        </div>
 
                         <button
                            type="submit"

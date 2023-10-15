@@ -28,7 +28,7 @@ const images = [
    },
 ];
 
-const inputs = ["имя", "телефон", "e-mail"];
+// const inputs = ["имя", "телефон", "e-mail"];
 
 const korpGramUrls = {
    webp: "/image/gram_korp.webp",
@@ -53,7 +53,7 @@ const Korporativy = () => {
       register,
       handleSubmit,
       control,
-      field,
+
       formState: { errors },
    } = useForm();
    const onSubmit = (data) => {
@@ -78,9 +78,9 @@ const Korporativy = () => {
          sap: "",
          shoosh: "",
          karaoke: "",
-         name: dataFromForm["имя"],
-         phone: dataFromForm["телефон"],
-         email: dataFromForm["e-mail"],
+         name: dataFromForm.name,
+         phone: dataFromForm.phone,
+         email: dataFromForm.email,
       };
 
       let currentDops = [
@@ -114,9 +114,9 @@ const Korporativy = () => {
 
       const sendingData = {
          dops: currentDops,
-         name: dataFromForm["имя"],
-         phone: dataFromForm["телефон"],
-         email: dataFromForm["e-mail"],
+         name: dataFromForm.name,
+         phone: dataFromForm.phone,
+         email: dataFromForm.email,
          source: "https://mobile.ikshacountryclub.com",
          formType: "Копроративы",
          link: window.location.href,
@@ -125,7 +125,7 @@ const Korporativy = () => {
 
       setCurrentWindow(4);
       setIsLoading(true);
-
+      //   console.log(dataFromForm);
       try {
          const response = await fetch(
             "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",

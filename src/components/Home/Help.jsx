@@ -28,7 +28,11 @@ const Help = () => {
                   className="text-[22px] font-semibold text-white"
                   style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
                >
-                  ЗАПОЛНИ ФОРМУ
+                  ЗАПОЛНИ
+                  <span className="font-bold underline">
+                     {" "}
+                     <a href="#book">ФОРМУ</a>
+                  </span>
                </p>
             </div>
 

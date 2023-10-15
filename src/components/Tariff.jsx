@@ -10,7 +10,7 @@ import Reveal from "../common/Reveal";
 import { slideFromRight } from "../constants/motion";
 import { URLData } from "../utils/URLData";
 import { Navigate } from "react-router-dom";
-
+import InputMask from "react-input-mask";
 const Tariff = () => {
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
@@ -149,7 +149,18 @@ const Tariff = () => {
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                      />
-                     <input
+                     {/* <input
+                        type="tel"
+                        placeholder="Телефон"
+                        className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                           !isFormValid && !phone ? "error-border" : ""
+                        }`}
+                        onChange={(e) => setPhone(e.target.value)}
+                        value={phone}
+                     /> */}
+                     <InputMask
+                        mask="+7 (999) 999-99-99" // Define the phone number mask
+                        maskChar="_" // Placeholder for characters
                         type="tel"
                         placeholder="Телефон"
                         className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${

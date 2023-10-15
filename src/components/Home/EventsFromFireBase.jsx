@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { m } from "framer-motion";
 import GreenButton from "./../../common/GreenButton";
-
+import { Link } from "react-router-dom";
 const heading = {
    hidden: {},
    visible: {
@@ -198,11 +198,19 @@ const EventsFromFireBase = () => {
                            {el.date}
                         </p>
                      </div>
-                     <a rel="noreferrer" href={el.link} className="">
-                        <GreenButton className="max-w-[140px]">
-                           Подробнее
-                        </GreenButton>
-                     </a>
+                     {el.link.startsWith("/") ? (
+                        <Link rel="noreferrer" to={el.link} className="">
+                           <GreenButton className="max-w-[140px]">
+                              Подробнее
+                           </GreenButton>
+                        </Link>
+                     ) : (
+                        <a rel="noreferrer" href={el.link}>
+                           <GreenButton className="max-w-[140px]">
+                              Подробнее
+                           </GreenButton>
+                        </a>
+                     )}
                   </div>
                </div>
             ))}

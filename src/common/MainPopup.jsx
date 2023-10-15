@@ -4,7 +4,7 @@ import FormInput from "./FormInput";
 import TellInput from "./TellInput";
 import { URLData } from "../utils/URLData";
 import { useNavigate } from "react-router-dom";
-const MainPopup = ({ isPopupOpen, togglePopup }) => {
+const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null, additionalDataType = null, }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
    const [name, setName] = useState("");
@@ -19,14 +19,18 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
          email: "-",
       };
 
-      const sendingData = {
+      let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Форма имя + телефон телефон ",
+         formType: additionalDataType === null ? "Форма имя + телефон" : additionalDataType,
          link: window.location.href,
          ...URLData,
       };
-      console.log(data);
+
+      if (additionalData !== null) {
+         sendingData = {...sendingData, ...additionalData}
+      }
+
       try {
          const response = await fetch(
             "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",

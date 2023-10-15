@@ -110,6 +110,7 @@ const Calculate = () => {
    const [days, setDays] = useState(1);
    const [selectedLocation, setSelectedLocation] = useState("1");
    const [allDops, setAllDops] = useState("");
+   const [additional, setAdditional] = useState(null);
 
    const [maxDays, setMaxDays] = useState(
       selectedLocation === "1"
@@ -332,6 +333,8 @@ const Calculate = () => {
             key={2}
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
+            additionalData={additional}
+            additionalDataType="Калькулятор"
          />
 
          <div className="relative flex h-[90px] flex-col items-center justify-center">
@@ -535,7 +538,25 @@ const Calculate = () => {
                {/* <Link to={`/form/${total}?location=${selectedLocation}&guesses=${guesses}&week=${selectedWeek}&days=${days}&dops=${allDops}`}> */}
                <div
                   //   type="submit"
-                  onClick={togglePopup}
+                  onClick={() => {
+                     const currentLocation = selectedLocation === '1' ?
+                         'ЛЕСНАЯ РЕЗИДЕНЦИЯ' : selectedLocation === '2' ?
+                             'ШАЛЕ' : selectedLocation === '3' ?
+                                 'КОТТЕДЖ' : 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ';
+
+                     setAdditional(
+                         {
+                            amount: total,
+                            location: currentLocation,
+                            guesses: guesses,
+                            week: selectedWeek,
+                            days: days,
+                            dops: allDops || '',
+                         }
+                     )
+
+                     togglePopup();
+                  }}
                   style={{
                      backgroundImage: "url(/image/calculate_continue.webp)",
                   }}

@@ -8,6 +8,7 @@ import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Helmet } from "react-helmet";
+import {URLData} from "../utils/URLData";
 
 const images = [
     {
@@ -57,12 +58,12 @@ const Korporativy = () => {
         setCurrentWindow(2);
         // console.log(data)
     };
-    const onSend = (dataFromForm) => {
+    const onSend = async (dataFromForm) => {
         const data = {
             active: dataFromForm['Активный отдых'] ? 'Активный отдых' : '',
             bania: dataFromForm['Растопка бани и купели'] ? 'Растопка бани и купели' : '',
             riba: dataFromForm['Рыбалка на пруду'] ? 'Рыбалка на пруду' : '',
-            dogovor: dataFromForm['оформление и оплата договора +10%'] ? 'оформление и оплата договора +10%' : '',
+            dogovor: dataFromForm['dogovor'] ? 'оформление и оплата договора +10%' : '',
             territory: '',
             keyt: '',
             squer: '',
@@ -76,19 +77,80 @@ const Korporativy = () => {
             email: dataFromForm['e-mail'],
         }
 
+        let currentDops = [{
+            isActive: dataFromForm['Активный отдых'],
+            name: 'Активный отдых'
+        }, {
+            isActive: dataFromForm['Растопка бани и купели'],
+            name: 'Растопка бани и купели'
+        }, {
+            isActive: dataFromForm['Рыбалка на пруду'],
+            name: 'Рыбалка на пруду'
+        }, {
+            isActive: dataFromForm['dogovor'],
+            name: 'Оформление и оплата договора +10%'
+        }];
+
+        currentDops = currentDops.map(el => {
+            if (el.isActive) {
+                return el.name
+            }
+
+            return '-'
+        })
+
+        currentDops = currentDops.filter(el => el !== '-').join(", ")
+
+        const sendingData = {
+            dops: currentDops,
+            name: dataFromForm['имя'],
+            phone: dataFromForm['телефон'],
+            email: dataFromForm['e-mail'],
+            source: "https://mobile.ikshacountryclub.com",
+            formType: "Копроративы",
+            link: window.location.href,
+            ...URLData,
+        }
+
         setCurrentWindow(4);
         setIsLoading(true);
 
-        emailjs.send("service_a1dan7b", "template_rmhn4mc", data, "V_IkuqWqNwJlUw72K")
-            .then((result) => {
+        try {
+            const response = await fetch('https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: new URLSearchParams(sendingData).toString(),
+            });
+
+            if (response.ok) {
                 setCurrentWindow(3);
+
                 setTimeout(() => {
                     setIsLoading(false);
                     setNavigateState(true);
                 }, 2000)
-            }, (error) => {
-                alert('Ошибка при отправке формы')
-            }); // sending to email
+
+            } else {
+                alert('Произошла ошибка при отправке данных');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Произошла ошибка при отправке данных');
+        }
+
+        // emailjs.send("service_a1dan7b", "template_rmhn4mc", data, "V_IkuqWqNwJlUw72K")
+        //     .then((result) => {
+        //         setCurrentWindow(3);
+        //         setTimeout(() => {
+        //             setIsLoading(false);
+        //             setNavigateState(true);
+        //         }, 2000)
+        //     }, (error) => {
+        //         alert('Ошибка при отправке формы')
+        //     }); // sending to email
     }
     const handleDownload = (url) => {
         window.open(url, '_blank');
@@ -176,7 +238,7 @@ const Korporativy = () => {
                                     </div>
                                     <div className="bg-[#EDDEDF] border border-[#B76569] rounded-[30px] w-[330px] py-[6px] mt-[2px]">
                                         <label className="flex justify-around items-center">
-                                            <input {...register("оформление и оплата договора +10%")} name="dogovor" type="checkbox" />
+                                            <input {...register("dogovor")} name="dogovor" type="checkbox" />
                                             <p className="monterey text-[13px]">оплата юр.переводом по договору +10%</p>
                                         </label>
                                     </div>
@@ -210,7 +272,7 @@ const Korporativy = () => {
                                 </button>
                             </div>
                             <img className="absolute w-full bottom-1" src="/image/korp_men.webp" alt="" />
-                            <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-20 w-[260px]">
+                            <button type="submit" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-56 w-[260px]">
                                 <picture>
                                     <source srcSet="/avif/korp_btn.avif 1x" type="image/avif" />
                                     <img src="/image/korp_btn.webp" alt="Икша Кантри Клаб" />
@@ -241,16 +303,13 @@ const Korporativy = () => {
                                 </div>
                                 <div className="flex justify-center">
                                     <button className="w-[338px]">
-                                        <picture>
-                                            <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
-                                            <img src="/image/korp2_btn.webp" alt="Икша Кантри Клаб" />
-                                        </picture>
+                                        <img src="/image/korp2_btn.webp" alt="Икша Кантри Клаб" />
                                     </button>
                                 </div>
                             </form>
                             : currentWindow === 3 ?
                                 <>
-                                    {navigateState && <Navigate to="/" />}
+                                    {navigateState && <Navigate to="/thanks" />}
 
                                     <picture>
                                         <source srcSet="/avif/bron_good.avif 1x" type="image/avif" />

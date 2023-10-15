@@ -203,7 +203,7 @@ const Welcome = () => {
                animate="animate"
                variants={pumpkin_vars}
                src={halloween_logo}
-               className="z-[10000000] h-[150px] w-[150px] rounded-full border border-black  bg-center object-cover shadow-xl"
+               className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
                alt=""
             />
          </Link>

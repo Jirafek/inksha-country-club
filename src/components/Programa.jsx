@@ -71,7 +71,7 @@ export const Programa = () => {
                         <Reveal variants={scale()}>
                            <img
                               src={bat}
-                              className="absolute -bottom-[90px] -right-[20%] "
+                              className="absolute -bottom-[60px] -right-[5%] h-[150px] w-[210px] md:-bottom-[90px] md:-right-[20%] "
                               alt=""
                            />
                         </Reveal>
@@ -112,7 +112,7 @@ export const Programa = () => {
                         <Reveal delay={0.5} variants={scale()}>
                            <img
                               src={bat}
-                              className="absolute -bottom-[150px] -right-[20%] -rotate-90 scale-50 "
+                              className="absolute -bottom-[150px] -right-[40%] -rotate-90 scale-50 "
                               alt=""
                            />
                         </Reveal>

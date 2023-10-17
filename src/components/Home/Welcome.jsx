@@ -7,7 +7,7 @@ import VideoPlayer from "./VideoPlayer";
 import { Link, useLocation } from "react-router-dom";
 import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
-import halloween_logo from "./../../assets/helloween_logo.svg";
+import halloween_logo from "./../../assets/helloween_logo.png";
 
 const heading = {
    hidden: {},

@@ -5,11 +5,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./fonts.css";
 import "./index.css";
+import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
+import { QueryParamProvider } from "use-query-params";
 import "./fonts/Lato-Regular.ttf";
 import "./fonts/MontserratAlternates-Regular.ttf";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-   <BrowserRouter basename="/">
+   <BrowserRouter>
+      <QueryParamProvider adapter={ReactRouter6Adapter}>
       <LazyMotion features={domAnimation} strict>
          <Suspense
             fallback={
@@ -22,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <AppWithDelay />
          </Suspense>
       </LazyMotion>
+      </QueryParamProvider>
    </BrowserRouter>
 );
 

@@ -1,8 +1,25 @@
-// import NotFound from 'pages/NotFound';
-import { lazy, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { text_privicy, text_living } from "./utils/Home/PrivicyTextHelper";
 import { updateData } from "./utils/URLData";
+
+// import Home from "./pages/Home";
+// import Booking from "./pages/Booking";
+// import Keitering from "./pages/Keitering";
+// import DatesChooser from "./pages/DatesChooser";
+// import GalleryAll from "./pages/GalleryAll";
+// import HappySlider from "./pages/HappySlider";
+// import Rules from "./pages/Rules";
+// import NotFound from "./pages/NotFound";
+// import Korporativy from "./pages/Korporativy";
+// import KorpSlider from "./pages/KorpSlider";
+// import FAQ from "./pages/FAQ";
+// import LocationsSlider from "./pages/LocationsSlider";
+// import BlogAll from "./pages/BlogAll";
+// import FormCalculate from "./pages/FormCalculate";
+// import Thanks from "./pages/Thanks";
+// import Popup from "./pages/Popup";
+// import Helloween from "./pages/Helloween";
 
 const Home = lazy(() => import("pages/Home"));
 const Booking = lazy(() => import("pages/Booking"));
@@ -63,9 +80,6 @@ function App() {
          <Route path="/popup" element={<Popup />} />
          <Route path="/thanks" element={<Thanks />} />
          <Route path="*" element={<NotFound />} />
-         <Route path="*" element={<NotFound />} />
-
-         {/* <Route path='*' element={<NotFound />} /> */}
       </Routes>
    );
 }

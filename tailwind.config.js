@@ -7,8 +7,8 @@ module.exports = {
          tarif: "clamp(6px, 4vw, 24px)",
          xl: "clamp(40px, 10vw, 80px)",
          lg: "clamp(6px, 5vw, 32px)",
-         md: "clamp(10px, 4vw, 28px)",
-         sm: "clamp(10px, 8vw, 18px)",
+         md: "clamp(10px, 20vw, 28px)",
+         sm: "clamp(10px, 20vw, 18px)",
          small: "clamp(6px, 4vw, 18px)",
       },
       extend: {

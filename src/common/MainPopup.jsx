@@ -4,7 +4,12 @@ import FormInput from "./FormInput";
 import TellInput from "./TellInput";
 import { URLData } from "../utils/URLData";
 import { useNavigate } from "react-router-dom";
-const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null, additionalDataType = null, }) => {
+const MainPopup = ({
+   isPopupOpen,
+   togglePopup,
+   additionalData = null,
+   additionalDataType = null,
+}) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
    const [name, setName] = useState("");
@@ -17,18 +22,22 @@ const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null, additional
          name: name,
          phone: phone,
          email: "-",
+         groupID: 981875757,
       };
 
       let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: additionalDataType === null ? "Форма имя + телефон" : additionalDataType,
+         formType:
+            additionalDataType === null
+               ? "Форма имя + телефон"
+               : additionalDataType,
          link: window.location.href,
          ...URLData,
       };
 
       if (additionalData !== null) {
-         sendingData = {...sendingData, ...additionalData}
+         sendingData = { ...sendingData, ...additionalData };
       }
 
       try {

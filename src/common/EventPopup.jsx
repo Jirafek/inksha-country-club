@@ -98,6 +98,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
          name: name,
          phone: phone,
          email: "-",
+         groupID: 981875757,
       };
 
       const sendingData = {

@@ -4,7 +4,7 @@ import KorpLocations from "./components/KorpLocations";
 import Photo from "./components/KorpPhoto";
 import Add from "./components/KorpAdd";
 import Form from "./components/KorpForm";
-
+import './index.css'
 import Whyus from "./components/KorpWhyus";
 import KorpKaytering from "./components/KorpKaytering";
 import KorpGuest from "./components/KorpGuest";

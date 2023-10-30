@@ -20,6 +20,7 @@ import FormCalculate from "./pages/FormCalculate";
 import Thanks from "./pages/Thanks";
 import Popup from "./pages/Popup";
 import Helloween from "./pages/Helloween";
+import KorpLanding from "./pages/korpLanding/KorpLanding";
 
 // const Home = lazy(() => import("pages/Home"));
 // const Booking = lazy(() => import("pages/Booking"));
@@ -79,6 +80,7 @@ function App() {
          <Route path="/halloween" element={<Helloween />} />
          <Route path="/popup" element={<Popup />} />
          <Route path="/thanks" element={<Thanks />} />
+         <Route path="/korp-landing" element={<KorpLanding />} />
          <Route path="*" element={<NotFound />} />
       </Routes>
    );

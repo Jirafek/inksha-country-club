@@ -106,10 +106,12 @@ const KorpSlider = () => {
                                     Забронировать
                                 </Link>
                             </div>
+                           
                         </div>
                     ))
                 }
             </Slider>
+         <Link to='/korp-landing' className='absolute bottom-20 left-4 underline text-lg tracking-widest rounded-lg hover:no-underline duration-300  '>подробнее</Link>
             <FixedFuter link="/#korp" needRotate={true} />
         </section>
                </>

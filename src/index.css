@@ -111,6 +111,7 @@ body {
 
 @font-face {
   font-family: 'Montserrat-R';
+  font-family: 'Montserrat-R';
   font-display: swap;
   src: local('MontserratAlternates-Regular'),
     url('./fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -752,6 +753,17 @@ ul {
   display: none !important;
 }
 
+.korpswiper .swiper-wrapper {
+  height: 30vh !important;
+}
+
+
+@media (max-width:370px) {
+  .korpswiper .swiper-wrapper {
+    height: 20vh !important;
+  }
+
+}
 
 
 .underlineOnHover {

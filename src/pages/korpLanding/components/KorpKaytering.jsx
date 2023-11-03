@@ -61,7 +61,7 @@ const KorpKaytering = () => {
                         </div>
                         <Button
                            onClick={toggleMenu}
-                           className="bg-brown montserrat mt-4 mx-auto text-white w-full"
+                           className="bg-brown montserrat mt-4 text-[15px]  mx-auto text-white w-full"
                         >
                            Посмотреть меню
                         </Button>

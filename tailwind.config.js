@@ -33,6 +33,7 @@ export default {
          screens: {
             "3xl": "2500px",
             vsm: "355px",
+            
             "370p": "370px",
          },
          keyframes: {

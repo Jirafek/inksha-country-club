@@ -49,7 +49,7 @@ const Add = () => {
          <img
             src={trans2}
             alt=""
-            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] lg:-top-[7vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
+            className="absolute w-full -top-[2.7vh] sm:-top-[3.5vh] md:-top-[5vh] lg:-top-[7vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
          />
          {/* </div> */}
          <div className="wrapper relative pt-[10%]">
@@ -99,9 +99,9 @@ const Add = () => {
             <a href="#form">
 
 
-            <Button className="h-[40px] md:h-[60px] montserrat z-[100] min-w-[200px] sm:w-[600px] gap-5 bg-brown text-white">
+            <Button className="h-[40px] md:h-[60px] text-[15px] montserrat z-[100] min-w-[200px] sm:w-[600px] gap-5 bg-brown text-white">
                Узнать стоимость
-               <img src={arrow} alt="" />
+               <img className='md:block hidden' src={arrow} alt="" />
             </Button>
             </a>
          </div>

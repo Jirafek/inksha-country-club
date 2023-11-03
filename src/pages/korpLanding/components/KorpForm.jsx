@@ -136,10 +136,10 @@ const Form = () => {
 
                <Button
                   onClick={handleSubmit}
-                  className="mx-auto h-[40px]  md:h-[60px] montserrat gap-10 md:w-[600px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                  className="mx-auto h-[40px] text-[15px]  md:h-[60px] montserrat gap-10 md:w-[600px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
                   Отправить
-                  <img src={arrow} className="h-5 w-9" alt="" />
+                  <img  src={arrow} className="h-5 w-9 md:block hidden" alt="" />
                </Button>
             </form>
          </div>

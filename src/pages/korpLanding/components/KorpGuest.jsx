@@ -28,7 +28,7 @@ const guests = [
    },
    {
       img: guest2,
-      name: "Полина  М",
+      name: "Мария  К",
       date: "25 июня",
       text: "Идеальная площадка для летних мероприятий с безумно красивым видом и оформлением. Уютные чистые домики, приветливый персонал. Есть все, что необходимо для вечеринки. Спасибо за отличный праздник!",
    },
@@ -54,7 +54,7 @@ const KorpGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper"
+               className="korpswiper "
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -69,9 +69,9 @@ const KorpGuest = () => {
             >
                {guests.map((guest, i) => {
                   return (
-                     <SwiperSlide className="px-[2vw] md:p-0" key={i}>
-                        <div className="flex pl-5 w-full items-center justify-end">
-                           <div className="min-w-[200px] min-h-[130px] md:w-[700px] bg-[#ECE9E9] rounded-[10px] md:h-[500px] relative">
+                     <SwiperSlide className="px-[2vw]  md:p-0" key={i}>
+                        <div className="flex pl-5 w-full min-h-[130px] items-center ">
+                           <div className="min-w-[200px] md:w-[700px] h-[20vh] 370p:h-[30vh]  bg-[#ECE9E9] rounded-[10px]  md:h-[500px] relative">
                               <img
                                  className="absolute w-[30%] md:w-[40%]  md:max-w-auto -left-[10%] md:-left-[20%] top-1/2 transform -translate-y-1/2"
                                  src={guest.img}
@@ -88,13 +88,13 @@ const KorpGuest = () => {
                   );
                })}
             </Swiper>
-            <div className="flex max-w-[700px] ml-auto z-10 justify-between">
+            <div className="flex px-4 my-5 md:px-0 max-w-[700px] ml-auto z-10 justify-between">
                <button
                   className="z-[200]"
                   onClick={() => swiperRef.current?.slidePrev()}
                >
                   <img
-                     className="aspect-square hover:scale-110 duration-300 w-[40px] md:w-[120px]"
+                     className="aspect-square hover:scale-110 duration-300 w-[60px] md:w-[120px]"
                      src={korpprev}
                      alt=""
                   />
@@ -104,14 +104,14 @@ const KorpGuest = () => {
                   onClick={() => swiperRef.current?.slideNext()}
                >
                   <img
-                     className="aspect-square hover:scale-110 duration-300 w-[40px] md:w-[120px]"
+                     className="aspect-square hover:scale-110 duration-300 w-[60px] md:w-[120px]"
                      src={korpnext}
                      alt=""
                   />
                </button>
             </div>
             <img
-               className="absolute w-[40%] md:w-[30%] left-0 bottom-0 md:bottom-10"
+               className="absolute w-[40%] md:w-[30%] left-14 bottom-0 md:bottom-10"
                src={blag}
                alt="blagodarnosc"
             />

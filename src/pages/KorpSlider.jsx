@@ -111,7 +111,7 @@ const KorpSlider = () => {
                     ))
                 }
             </Slider>
-            <Link to='/korp-landing' className='absolute  bottom-[15%] p-3 left-1/2 transform -translate-x-1/2 '>
+            <Link to='/korp-landing' className='absolute  bottom-[100px] p-3 left-1/2 transform -translate-x-1/2 '>
 
                 <div  className=' underline text-lg tracking-widest rounded-lg hover:no-underline duration-300  '>Подробнее</div>
             </Link>

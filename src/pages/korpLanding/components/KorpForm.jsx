@@ -5,6 +5,7 @@ import { URLData } from "utils/URLData";
 import arrow from "icons/arrow.png";
 import InputMask from "react-input-mask";
 import { useNavigate } from "react-router-dom";
+const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const Form = () => {
    const navigate = useNavigate();
    const [name, setName] = useState("");
@@ -19,12 +20,17 @@ const Form = () => {
          name: name,
          phone: phone,
          email: email,
+         groupID: 981875757,
       };
+      if (!email.match(emailRegex)) {
+         alert("Введите корректный почтовый адресс");
+         return;
+      }
 
       const sendingData = {
          ...data,
-         source: "https://ikshacountryclub.com/",
-         formType: "Форма имя + телефон десктоп ",
+         source: "https://mobile.ikshacountryclub.com/",
+         formType: "корпоратив лендинг",
          link: window.location.href,
          ...URLData,
       };
@@ -46,6 +52,10 @@ const Form = () => {
             setTimeout(() => {
                navigate("/thanks");
             }, 1000);
+            // ... ваша существующая логика ...
+            setPhone(""); // Очищаем состояние телефона
+            setName(""); // Очищаем состояние телефона
+            setEmail(""); // Очищаем состояние телефона
          } else {
             alert("Произошла ошибка при отправке данных");
          }
@@ -56,10 +66,13 @@ const Form = () => {
    };
 
    useEffect(() => {
+      console.log(email);
+      console.log(name);
+      console.log(phone);
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !isValid;
+      const newIsError = !name || !phone || !email || !isValid;
       setIsError(newIsError);
-   }, [name, phone]);
+   }, [name, phone, email]);
 
    const handlePhoneChange = (e) => {
       const inputValue = e.target.value;
@@ -80,14 +93,11 @@ const Form = () => {
    const handleSubmit = (e) => {
       e.preventDefault();
       if (isError) {
-         alert('неправильно заполнена форма')
-         return 
+         alert("Ошибка с номером");
+         return;
       }
 
       handleSubmitBot();
-      // ... ваша существующая логика ...
-      setPhone(""); // Очищаем состояние телефона
-      setName(""); // Очищаем состояние телефона
    };
    return (
       <div id="form" className="bg-brown py-[4%]">

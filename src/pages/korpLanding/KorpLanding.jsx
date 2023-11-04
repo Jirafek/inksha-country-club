@@ -26,7 +26,7 @@ const KorpLanding = () => {
    };
    return (
       <div className="montserrat relative">
-         <Cookie />
+         
          <Header
           MenuClassName='montserrat bg-brown'
             isMenuOpen={isMenuOpen}

@@ -22,6 +22,7 @@ import Popup from "./pages/Popup";
 import Helloween from "./pages/Helloween";
 import KorpLanding from "./pages/korpLanding/KorpLanding";
 import Cookies from "js-cookie";
+import Cookie from './common/Cookie';
 
 // const Home = lazy(() => import("pages/Home"));
 // const Booking = lazy(() => import("pages/Booking"));
@@ -42,6 +43,7 @@ import Cookies from "js-cookie";
 // const Helloween = lazy(() => import("pages/Helloween"));
 
 function App() {
+    const [isCookieOpen, setIsCookieOpen] = useState(true);
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -82,47 +84,51 @@ function App() {
     }, []);
 
     return (
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/booking" element={<Booking/>}/>
-            <Route path="/keitering" element={<Keitering/>}/>
-            <Route path="/choose-date" element={<DatesChooser/>}/>
-            <Route path="/gallery-all" element={<GalleryAll/>}/>
-            <Route path="/choose-happy" element={<HappySlider/>}/>
-            <Route
-                path="/data-privicy"
-                element={
-                    <Rules
-                        title="ПОЛИТИКА ДАННЫХ"
-                        isNeedButton={false}
-                        isNeedPadding={false}
-                        text={text_living}
-                    />
-                }
-            />
-            <Route
-                path="/live-rules"
-                element={
-                    <Rules
-                        title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ"
-                        isNeedButton={true}
-                        isNeedPadding={true}
-                        text={text_privicy}
-                    />
-                }
-            />
-            <Route path="/korp" element={<KorpSlider/>}/>
-            <Route path="/korp/book" element={<Korporativy/>}/>
-            <Route path="/faq" element={<FAQ/>}/>
-            <Route path="/locations-about" element={<LocationsSlider/>}/>
-            <Route path="/blog-all" element={<BlogAll/>}/>
-            <Route path="/form/:amount" element={<FormCalculate/>}/>
-            <Route path="/halloween" element={<Helloween/>}/>
-            <Route path="/popup" element={<Popup/>}/>
-            <Route path="/thanks" element={<Thanks/>}/>
-            <Route path="/korp-landing" element={<KorpLanding/>}/>
-            <Route path="*" element={<NotFound/>}/>
-        </Routes>
+        <div className='relative'>
+            <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen}/>
+
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/booking" element={<Booking/>}/>
+                <Route path="/keitering" element={<Keitering/>}/>
+                <Route path="/choose-date" element={<DatesChooser/>}/>
+                <Route path="/gallery-all" element={<GalleryAll/>}/>
+                <Route path="/choose-happy" element={<HappySlider/>}/>
+                <Route
+                    path="/data-privicy"
+                    element={
+                        <Rules
+                            title="ПОЛИТИКА ДАННЫХ"
+                            isNeedButton={false}
+                            isNeedPadding={false}
+                            text={text_living}
+                        />
+                    }
+                />
+                <Route
+                    path="/live-rules"
+                    element={
+                        <Rules
+                            title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ"
+                            isNeedButton={true}
+                            isNeedPadding={true}
+                            text={text_privicy}
+                        />
+                    }
+                />
+                <Route path="/korp" element={<KorpSlider/>}/>
+                <Route path="/korp/book" element={<Korporativy/>}/>
+                <Route path="/faq" element={<FAQ/>}/>
+                <Route path="/locations-about" element={<LocationsSlider/>}/>
+                <Route path="/blog-all" element={<BlogAll/>}/>
+                <Route path="/form/:amount" element={<FormCalculate/>}/>
+                <Route path="/halloween" element={<Helloween/>}/>
+                <Route path="/popup" element={<Popup/>}/>
+                <Route path="/thanks" element={<Thanks/>}/>
+                <Route path="/korp-landing" element={<KorpLanding/>}/>
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+        </div>
     );
 }
 

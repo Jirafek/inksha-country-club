@@ -1,8 +1,8 @@
 import cookie from "icons/cookies.png";
 import { useState } from "react";
 import {Link} from 'react-router-dom'
-const Cookie = () => {
-   const [isCookieOpen, setIsCookieOpen] = useState(true);
+const Cookie = ({isCookieOpen,setIsCookieOpen}) => {
+   
    const closeCookie = () => {
       setIsCookieOpen(false);
    };

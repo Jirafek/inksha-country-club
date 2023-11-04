@@ -28,21 +28,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Home = () => {
-   useEffect(() => {
-      const urlParams = new URLSearchParams(window.location.search);
-      console.log(urlParams.get("utm_source"));
-      updateData(
-         URLData.utm_source
-            ? URLData.utm_source
-            : urlParams.get("utm_source") || "Сайт",
-         URLData.utm_campaign
-            ? URLData.utm_campaign
-            : urlParams.get("utm_campaign") || "",
-         URLData.utm_content
-            ? URLData.utm_content
-            : urlParams.get("utm_content") || ""
-      );
-   }, []);
 
    const parallaxActivate = (document) => {
       const sections = Array.from(document.querySelectorAll(".section"));

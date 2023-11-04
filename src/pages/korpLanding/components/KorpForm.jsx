@@ -66,9 +66,7 @@ const Form = () => {
    };
 
    useEffect(() => {
-      console.log(email);
-      console.log(name);
-      console.log(phone);
+
       // Проверка на ошибки при изменении полей формы
       const newIsError = !name || !phone || !email || !isValid;
       setIsError(newIsError);
@@ -128,9 +126,8 @@ const Form = () => {
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${
-                           phoneError ? "border-red-500" : ""
-                        }`}
+                        className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
+                           }`}
                         {...inputProps}
                      />
                   )}
@@ -149,7 +146,7 @@ const Form = () => {
                   className="mx-auto h-[40px] text-[15px]  md:h-[60px] montserrat gap-10 md:w-[600px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
                   Отправить
-                  <img  src={arrow} className="h-5 w-9 md:block hidden" alt="" />
+                  <img src={arrow} className="h-5 w-9 md:block hidden" alt="" />
                </Button>
             </form>
          </div>

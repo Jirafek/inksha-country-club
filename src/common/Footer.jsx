@@ -17,7 +17,7 @@ const slideVariants = {
 const Footer = ({ className }) => {
    return (
       <div className={`${className || ""}`}>
-         <div className="wrapper  text-grey ">
+         <div className="wrapper  ">
             <div className="flex justify-between gap-5 py-5">
                <div className="flex w-full items-center justify-between gap-5 md:justify-start">
                   <div>Икша Кантри Kлаб 2023 </div>

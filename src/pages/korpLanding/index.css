@@ -5,10 +5,11 @@
    font-family: 'Montserrat', sans-serif !important;
 }
 
-h1 {
+/* h1 {
    font-weight: 700 !important;
 }
 
+*/
 .rows {
    grid-template-rows: 1fr;
 }

@@ -1,16 +1,17 @@
 import React from "react";
+import { isItWinterNow } from "utils/functions.js";
 
 const V2 = () => {
+    const bg = `/image/shk${isItWinterNow() ? '_winter' : ''}.webp`;
+
     return <>
         <figure className="map-figure">
             <picture>
-                <source srcSet="/avif/shk.avif 1x" type="image/avif" />
-                <img src="/image/shk.webp" alt="Икша Кантри Клаб" className="map_image" />
+                {/* <source srcSet="/avif/shk.avif 1x" type="image/avif" /> */}
+                <img src={bg} alt="Икша Кантри Клаб" className="map_image" />
             </picture>
         </figure>
             <div className="map-controls">
-                {/* <svg className="map-controls-list" viewBox="0 0 2160 3840">
-                </svg> */}
                 <svg className="map-controls-list" viewBox="0 0 4320 7680">
                     <g data-position="37" className="map_button">
                         <path d="m 2181" />

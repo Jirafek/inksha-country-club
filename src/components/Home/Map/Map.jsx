@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import './map.css';
-// import Modal from 'components/Modal/Modal';
 import { mapLogic, buttonsLogic } from './logic';
 import Select from 'components/Select/Select';
 import { V1, V2 } from './variants';
@@ -27,28 +26,7 @@ const Map = () => {
         buttonsLogic(document, setTooltipActive, setTooltipText);
 
         mapLogic(document, setTooltipActive);
-        // window.dragMoveListener = dragMoveListener
     }, [mapVer]);
-
-    // const [isVisible, setIsVisible] = useState(false);
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const scrollPosition = window.scrollY;
-    //         const triggerPosition = 650; // define the scroll position where you want to show the block
-
-    //         setIsVisible(scrollPosition > triggerPosition);
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-
-    //     // parallaxActivate(document);
-
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
-
-
 
 
 
@@ -76,12 +54,6 @@ const Map = () => {
                 </div>
             </div>
         </div>
-
-        {/* <Modal
-            amiActive={modalActive}
-            setAmiActive={setModalActive}
-            Content={ModalContent}
-        /> */}
     </section>;
 };
 

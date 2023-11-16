@@ -49,7 +49,7 @@ function AppWithDelay() {
    // Выводим сообщение в консоль, если ширина экрана большк 420 пикселя
    if (windowWidth > 767) {
       
-      window.location.href = "https://ikshacountryclub.com" + window.location.pathname ;
+      window.location.href = "https://ikshacountryclub.com" +  window.location.search ;
    }
    const [isLoading, setIsLoading] = useState(true);
 

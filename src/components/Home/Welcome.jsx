@@ -9,6 +9,7 @@ import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
 import halloween_logo from "./../../assets/helloween_logo.png";
 import {useURLData} from "utils/URLData";
+import { isItWinterNow } from "utils/functions";
 
 const heading = {
    hidden: {},
@@ -122,7 +123,7 @@ const Welcome = () => {
 
           .znms-widget__module-form-block__items--links-container {
             display: none !important;
-            
+
           }
 
           .znms-widget__module-form-block__item {
@@ -185,6 +186,7 @@ const Welcome = () => {
          document.querySelector(".animate-moveSky2").style.display = "none";
       }, 4500);
    }, []);
+
    return (
       <section id="book" className="welcome relative m-0">
          <MainPopup
@@ -210,10 +212,10 @@ const Welcome = () => {
             />
          </Link>
          <picture>
-            <source srcSet="/avif/bg1.avif 1x" type="image/avif" />
+            <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" />
             <img
                className="h-[100%] w-full object-cover"
-               src="/image/bg1.webp"
+               src={isItWinterNow() ? "/image/welcome_bg_winter.webp" : "/image/welcome_bg.webp"}
                alt="Икша Кантри Клаб"
             />
          </picture>

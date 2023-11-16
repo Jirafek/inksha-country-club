@@ -21,8 +21,6 @@ import Blog from "../components/Home/Blog";
 import YandexMap from "../components/Home/YandexMap";
 import Footer from "../components/Home/Footer";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
-import { updateData, URLData } from "../utils/URLData";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";

@@ -3,11 +3,12 @@ import { useParams, Navigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import FixedFuter from '../components/Home/FixedFuter';
 import { Link } from "react-router-dom";
-import {URLData} from "../utils/URLData";
+import {useURLData} from "../utils/URLData";
 
 const FormCalculate = () => {
     const { amount } = useParams();
     const [name, setName] = useState("");
+    const {utm_campaign, utm_content, utm_source} = useURLData();
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isButtonAvailible, setIsButtonAvailible] = useState(false);
@@ -38,7 +39,9 @@ const FormCalculate = () => {
             source: "https://mobile.ikshacountryclub.com",
             formType: "Калькулятор",
             link: window.location.href,
-            ...URLData,
+            utm_source: utm_source,
+            utm_campaign: utm_campaign,
+            utm_content: utm_content,
         }
 
         try {

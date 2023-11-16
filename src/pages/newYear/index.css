@@ -1,0 +1,82 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: 'Mountains';
+   font-display: swap;
+   src: local('MountinsNY'),
+      url('./../../../public/fonts/MountinsNY.ttf') format('truetype');
+   font-weight: 500;
+}
+
+@font-face {
+   font-family: 'Yaesabu';
+   font-display: swap;
+   src: local('MountinsNY'),
+      url('./../../../public/fonts/YsabeauSC-Regular.ttf') format('truetype');
+   font-weight: 500;
+}
+
+
+.mount {
+   font-family: 'Mountains', sans-serif !important;
+}
+
+.yaes {
+   font-family: 'Yaesabu', sans-serif !important;
+}
+
+
+.ny-bg {
+   background-image: url('./../../../public/image/NY/bg/bg-main.webp');
+   /* background-repeat: no-repeat; */
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   background-size: cover;
+   background-clip: content-box;
+   /* background-position: center; */
+   background-color: black !important;
+   width: 100%;
+   height: 100%;
+}
+
+.tariff-bg {
+   background-image: url('./../../../public/image/NY/bg/bg-tariff.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 10px;
+
+
+}
+
+
+.ny-wrapper {
+   margin-left: 4vw;
+   /* padding-left: 4vw; */
+   margin-right: 4vw;
+   /* padding-right: 1vw; */
+}
+
+
+
+.ny-shadow {
+   box-shadow: 0px 0px 118px -3px rgba(231, 194, 150, 0.75);
+}
+
+
+.ny-form-bg {
+   background-image: url('./../../../public/image/NY/bg/bg-form.png');
+   background-color: black;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+
+.nyswiper .swiper-pagination {
+   display: none;
+}

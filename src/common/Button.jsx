@@ -4,9 +4,8 @@ const Button = ({ children, className, onClick, style }) => {
       <div
          style={style}
          onClick={onClick}
-         className={`droid z-10 active:bg-slate-400 mt-10 flex min-h-[40px]  w-[80%] sm:w-[270px] cursor-pointer  items-center justify-center gap-1 rounded-[100px] px-4 text-[13px] text-center font-bold duration-500 hover:opacity-80 md:max-h-[75px]  ${
-            className || ""
-         } `}
+         className={`droid z-10 active:bg-slate-400 mt-10 flex min-h-[20px] text-center   sm:w-[270px] cursor-pointer  items-center justify-center gap-1 rounded-[100px] px-4  font-bold duration-500 hover:opacity-80 md:max-h-[75px]  ${className || ""
+            } `}
       >
          {children}
          {/* <img src={arrow} alt="" /> */}

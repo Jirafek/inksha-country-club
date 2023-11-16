@@ -2,10 +2,10 @@ import gift from 'images/NY/gift.webp'
 import NYGreenButton from './NYGreenButton';
 import { useEffect, useState } from 'react';
 import {useURLData} from 'utils/URLData';
-const {utm_campaign, utm_content, utm_source} = useURLData();
 import { useNavigate } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 const NYForm = () => {
+   const {utm_campaign, utm_content, utm_source} = useURLData();
 
    const navigate = useNavigate();
    const [name, setName] = useState("");

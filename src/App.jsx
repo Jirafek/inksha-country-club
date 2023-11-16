@@ -147,7 +147,6 @@ function App() {
                 <Route path="/popup" element={<Popup/>}/>
                 <Route path="/thanks" element={<Thanks/>}/>
                 <Route path="/korp-landing" element={<KorpLanding/>}/>
-                <Route path="/ny" element={<NYLanding/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </div>

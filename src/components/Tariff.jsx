@@ -1,156 +1,163 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Button from "./../common/Button";
-import { Link as ScrollLink } from "react-scroll";
+import {Link as ScrollLink} from "react-scroll";
 import food from "../assets/food.png";
 import boo from "../assets/boo.png";
 import arrow from "../assets/arrow.png";
 import down_arrow from "../assets/down_arrow.png";
 import TariffComponents from "./TarrifComponents";
 import Reveal from "../common/Reveal";
-import { slideFromRight } from "../constants/motion";
-import { URLData } from "../utils/URLData";
-import { Navigate } from "react-router-dom";
+import {slideFromRight} from "../constants/motion";
+import {useURLData} from "../utils/URLData";
+import {Navigate} from "react-router-dom";
 import InputMask from "react-input-mask";
+
 const Tariff = () => {
-   const [name, setName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [navigation, setNavigation] = useState(false);
-   const [isFormValid, setIsFormValid] = useState(true); // State to track form validity
+    const {utm_campaign, utm_content, utm_source} = useURLData();
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [navigation, setNavigation] = useState(false);
+    const [isFormValid, setIsFormValid] = useState(true); // State to track form validity
 
-   const handleSubmit = async () => {
-      // Validate the form
-      if (!name || !phone) {
-         setIsFormValid(false);
-         return;
-      }
+    const handleSubmit = async () => {
+        // Validate the form
+        if (!name || !phone) {
+            setIsFormValid(false);
+            return;
+        }
 
-      setIsFormValid(true);
+        setIsFormValid(true);
 
-      // Your form submission logic here
-      const data = {
-         name: name,
-         phone: phone,
-         email: "-",
-         groupID: 981875757,
-      };
+        // Your form submission logic here
+        const data = {
+            name: name,
+            phone: phone,
+            email: "-",
+            groupID: 981875757,
+        };
 
-      const sendingData = {
-         ...data,
-         source: "https://mobile.ikshacountryclub.com",
-         formType: "Halloween",
-         link: window.location.href,
-         ...URLData,
-      };
+        const sendingData = {
+            ...data,
+            source: "https://mobile.ikshacountryclub.com",
+            formType: "Halloween",
+            link: window.location.href,
+            utm_source: utm_source,
+            utm_campaign: utm_campaign,
+            utm_content: utm_content,
+        };
 
-      try {
-         const response = await fetch(
-            "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
-            {
-               method: "POST",
-               headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                  "Access-Control-Allow-Origin": "*",
-               },
-               body: new URLSearchParams(sendingData).toString(),
+        try {
+            const response = await fetch(
+                "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                    body: new URLSearchParams(sendingData).toString(),
+                }
+            );
+
+            if (response.ok) {
+                setTimeout(() => {
+                    setName("");
+                    setPhone("");
+                    setNavigation(true);
+                }, 1000);
+            } else {
+                alert("Произошла ошибка при отправке данных");
             }
-         );
-
-         if (response.ok) {
-            setTimeout(() => {
-               setName("");
-               setPhone("");
-               setNavigation(true);
-            }, 1000);
-         } else {
+        } catch (error) {
+            console.error(error);
             alert("Произошла ошибка при отправке данных");
-         }
-      } catch (error) {
-         console.error(error);
-         alert("Произошла ошибка при отправке данных");
-      }
-   };
+        }
+    };
 
-   return (
-      <div
-         id="Tariff"
-         name="Tariff"
-         className="tarif bg-violet bg-cover bg-center bg-no-repeat py-[7vh] pb-[10vh]"
-      >
-         {navigation && <Navigate to="/thanks" />}
-         <div className="wrapper">
-            <Reveal duration={1.5} variants={slideFromRight(-500)}>
-               <h1 className="druk relative text-xl tracking-widest">
-                  Тарифы
-                  <div className="absolute -top-[30px] left-2 text-[64px] opacity-10 md:-top-[70px] md:text-[128px]">
-                     Тарифы
-                  </div>
-               </h1>
-               <p className="droid mb-[5vh] text-center text-lg">
-                  В эту таинственную ночь мы предлагаем вам следующие
-                  невероятные варианты размещения
-               </p>
-            </Reveal>
-            <div className="droid flex flex-col">
-               <TariffComponents />
-            </div>
-            <div className="flex flex-col items-center justify-center">
-               <div className="droid yellow-box mt-[10vh]  box-border flex min-h-[200px] w-full items-center justify-between rounded-[16px] bg-yellow  p-[5%] text-tarif shadow-xl">
-                  <div className="">
-                     <h1 className="font-bold text-black">
-                        Вы можете добавить дополнительное
-                        <br /> питание к любому тарифу
-                     </h1>
-                     <p className="text-tarif font-bold text-violet ">
-                        Во все локации можно добавить
-                        <br /> дополнительного гостя за 2000 (без спального
-                        места)
-                     </p>
-                  </div>
+    return (
+        <div
+            id="Tariff"
+            name="Tariff"
+            className="tarif bg-violet bg-cover bg-center bg-no-repeat py-[7vh] pb-[10vh]"
+        >
+            {navigation && <Navigate to="/thanks"/>}
+            <div className="wrapper">
+                <Reveal duration={1.5} variants={slideFromRight(-500)}>
+                    <h1 className="druk relative text-xl tracking-widest">
+                        Тарифы
+                        <div
+                            className="absolute -top-[30px] left-2 text-[64px] opacity-10 md:-top-[70px] md:text-[128px]">
+                            Тарифы
+                        </div>
+                    </h1>
+                    <p className="droid mb-[5vh] text-center text-lg">
+                        В эту таинственную ночь мы предлагаем вам следующие
+                        невероятные варианты размещения
+                    </p>
+                </Reveal>
+                <div className="droid flex flex-col">
+                    <TariffComponents/>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                    <div
+                        className="droid yellow-box mt-[10vh]  box-border flex min-h-[200px] w-full items-center justify-between rounded-[16px] bg-yellow  p-[5%] text-tarif shadow-xl">
+                        <div className="">
+                            <h1 className="font-bold text-black">
+                                Вы можете добавить дополнительное
+                                <br/> питание к любому тарифу
+                            </h1>
+                            <p className="text-tarif font-bold text-violet ">
+                                Во все локации можно добавить
+                                <br/> дополнительного гостя за 2000 (без спального
+                                места)
+                            </p>
+                        </div>
 
-                  <ul className="flex flex-col items-center justify-center text-small text-black">
-                     <li>
-                        Завтрак <span className="font-bold"> 700</span>
-                     </li>{" "}
-                     <li>
-                        Обед <span className="font-bold"> 1800</span>
-                     </li>
-                     <li>
-                        Ужин <span className="font-bold"> 1200</span>
-                     </li>
-                  </ul>
-               </div>
-               <img src={food} alt="" />
-            </div>
-            <ScrollLink
-               to="Form"
-               smooth={true}
-               duration={1000} // Длительность анимации скролла (в миллисекундах)
-            >
-               <Button className="btn-pum mx-auto mb-[10vh] bg-pumpkin text-white">
-                  Оставить заявку
-                  <img src={down_arrow} className="h-7 w-7" alt="" />
-               </Button>
-            </ScrollLink>
-            <div className="relative flex w-full items-center justify-center text-center">
-               <div
-                  name="Form"
-                  className="form relative h-[550px] w-[550px] rounded-[16px] bg-darkViolet  p-[5%] text-center shadow-2xl"
-               >
-                  <div className="droid mb-5 text-md">
-                     Оставьте свои данные, и мы обязательно свяжемся с вами
-                  </div>
-                  <form className="droid" name="Form" action="">
-                     <input
-                        type="text"
-                        placeholder="Имя"
-                        className={`mb-5 h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
-                           !isFormValid && !name ? "error-border" : ""
-                        }`}
-                        name="name"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                     />
-                     {/* <input
+                        <ul className="flex flex-col items-center justify-center text-small text-black">
+                            <li>
+                                Завтрак <span className="font-bold"> 700</span>
+                            </li>
+                            {" "}
+                            <li>
+                                Обед <span className="font-bold"> 1800</span>
+                            </li>
+                            <li>
+                                Ужин <span className="font-bold"> 1200</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src={food} alt=""/>
+                </div>
+                <ScrollLink
+                    to="Form"
+                    smooth={true}
+                    duration={1000} // Длительность анимации скролла (в миллисекундах)
+                >
+                    <Button className="btn-pum mx-auto mb-[10vh] bg-pumpkin text-white">
+                        Оставить заявку
+                        <img src={down_arrow} className="h-7 w-7" alt=""/>
+                    </Button>
+                </ScrollLink>
+                <div className="relative flex w-full items-center justify-center text-center">
+                    <div
+                        name="Form"
+                        className="form relative h-[550px] w-[550px] rounded-[16px] bg-darkViolet  p-[5%] text-center shadow-2xl"
+                    >
+                        <div className="droid mb-5 text-md">
+                            Оставьте свои данные, и мы обязательно свяжемся с вами
+                        </div>
+                        <form className="droid" name="Form" action="">
+                            <input
+                                type="text"
+                                placeholder="Имя"
+                                className={`mb-5 h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                                    !isFormValid && !name ? "error-border" : ""
+                                }`}
+                                name="name"
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                            />
+                            {/* <input
                         type="tel"
                         placeholder="Телефон"
                         className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
@@ -159,37 +166,37 @@ const Tariff = () => {
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
                      /> */}
-                     <InputMask
-                        mask="+7 (999) 999-99-99" // Define the phone number mask
-                        maskChar="_" // Placeholder for characters
-                        type="tel"
-                        placeholder="Телефон"
-                        className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
-                           !isFormValid && !phone ? "error-border" : ""
-                        }`}
-                        onChange={(e) => setPhone(e.target.value)}
-                        value={phone}
-                     />
-                     <Button
-                        onClick={handleSubmit}
-                        className="btn-pum mx-auto h-[40px] w-1/2 bg-pumpkin text-white"
-                     >
-                        Отправить
-                        <img src={arrow} className="h-5 w-9" alt="" />
-                     </Button>
-                  </form>
-                  {isFormValid === false && (
-                     <p className="error-text text-red-500">
-                        Пожалуйста, заполните все поля.
-                     </p>
-                  )}
-               </div>
+                            <InputMask
+                                mask="+7 (999) 999-99-99" // Define the phone number mask
+                                maskChar="_" // Placeholder for characters
+                                type="tel"
+                                placeholder="Телефон"
+                                className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                                    !isFormValid && !phone ? "error-border" : ""
+                                }`}
+                                onChange={(e) => setPhone(e.target.value)}
+                                value={phone}
+                            />
+                            <Button
+                                onClick={handleSubmit}
+                                className="btn-pum mx-auto h-[40px] w-1/2 bg-pumpkin text-white"
+                            >
+                                Отправить
+                                <img src={arrow} className="h-5 w-9" alt=""/>
+                            </Button>
+                        </form>
+                        {isFormValid === false && (
+                            <p className="error-text text-red-500">
+                                Пожалуйста, заполните все поля.
+                            </p>
+                        )}
+                    </div>
 
-               <img src={boo} className="absolute -bottom-20 right-0" alt="" />
+                    <img src={boo} className="absolute -bottom-20 right-0" alt=""/>
+                </div>
             </div>
-         </div>
-      </div>
-   );
+        </div>
+    );
 };
 
 export default Tariff;

@@ -1,7 +1,8 @@
 import gift from 'images/NY/gift.webp'
 import NYGreenButton from './NYGreenButton';
 import { useEffect, useState } from 'react';
-import { URLData } from 'utils/URLData';
+import {useURLData} from 'utils/URLData';
+const {utm_campaign, utm_content, utm_source} = useURLData();
 import { useNavigate } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 const NYForm = () => {
@@ -30,7 +31,9 @@ const NYForm = () => {
          source: "https://ikshacountryclub.com/",
          formType: "Новый год лендинг",
          link: window.location.href,
-         ...URLData,
+         utm_source: utm_source,
+         utm_campaign: utm_campaign,
+         utm_content: utm_content,
       };
 
       try {

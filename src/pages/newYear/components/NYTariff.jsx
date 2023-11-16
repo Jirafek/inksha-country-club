@@ -30,12 +30,12 @@ const Tariff = () => {
                         Тарифы
                      </div>
                   </h1>
-                  <p className="text-center text-lg font-semibold droid mb-[5vh]">
+                  <p className="text-center text-lg font-semibold yaes mb-[5vh]">
                      В эту таинственную ночь мы предлагаем вам следующие
                      невероятные варианты размещения
                   </p>
                </Reveal>
-               <div className="flex droid flex-col">
+               <div className="flex yaes flex-col">
                   <TariffComponents />
                </div>
 
@@ -55,7 +55,7 @@ const Tariff = () => {
 
          <div className='wrapper'>
             <div className="flex flex-col items-center justify-center">
-               <div className="bg-NYcream ny-shadow w-full items-center  box-border mt-[10vh] droid p-[5%]  text-tarif shadow-xl flex  justify-between rounded-[16px] min-h-[200px]">
+               <div className="bg-NYcream ny-shadow w-full items-center  box-border mt-[10vh] yaes p-[5%]  text-tarif shadow-xl flex  justify-between rounded-[16px] min-h-[200px]">
                   <div className="">
                      <h1 className="text-black mount text-lg font-light">
                         Вы можете добавить дополнительное

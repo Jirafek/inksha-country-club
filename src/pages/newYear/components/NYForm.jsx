@@ -108,8 +108,8 @@ const NYForm = () => {
                   name="Form"
                   className="form relative flex justify-center items-center flex-col bg-NYcream p-[5%] rounded-[16px] shadow-2xl  md:w-[650px] py-14 md:h-[550px] text-center"
                >
-                  <img className='absolute w-[100px] md:w-auto md:-top-[170px] -left-0  -top-14 md:-left-[170px]' src={gift} alt="" />
-                  <img className='absolute w-[100px] md:w-auto md:-bottom-[140px] -right-0 -bottom-8 md:-right-[140px]' src={gift} alt="" />
+                  <img className='absolute w-[100px] md:w-auto md:-top-[170px] -left-2  -top-14 md:-left-[170px]' src={gift} alt="" />
+                  <img className='absolute w-[100px] md:w-auto md:-bottom-[140px] -right-2 -bottom-8 md:-right-[140px]' src={gift} alt="" />
                   <div className="text-md font-bold mb-5 ">
                      Оставьте свои данные, и мы обязательно свяжемся с вами
                   </div>

@@ -24,7 +24,7 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A]  rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[30px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      01
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
@@ -86,7 +86,7 @@ function TariffComponents() {
          <div className="place-self-end">
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[30px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      02
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
@@ -146,7 +146,7 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[30px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      03
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
@@ -208,7 +208,7 @@ function TariffComponents() {
          <div className="place-self-end">
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[30px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      04
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
@@ -271,7 +271,7 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[30px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      05
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">

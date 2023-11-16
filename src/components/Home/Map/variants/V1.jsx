@@ -1,5 +1,5 @@
 import React from "react";
-import { isItWinterNow } from "../../../../utils/functions";
+import { isItWinterNow } from "utils/functions.js";
 
 const V1 = () => {
     const bg = `/image/od${isItWinterNow() ? '_winter' : ''}.webp`;

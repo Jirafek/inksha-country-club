@@ -23,6 +23,7 @@ import Helloween from "./pages/Helloween";
 import KorpLanding from "./pages/korpLanding/KorpLanding";
 import Cookies from "js-cookie";
 import Cookie from './common/Cookie';
+import NYLanding from "pages/newYear/NYLanding";
 
 // const Home = lazy(() => import("pages/Home"));
 // const Booking = lazy(() => import("pages/Booking"));
@@ -146,6 +147,7 @@ function App() {
                 <Route path="/popup" element={<Popup/>}/>
                 <Route path="/thanks" element={<Thanks/>}/>
                 <Route path="/korp-landing" element={<KorpLanding/>}/>
+                <Route path="/ny" element={<NYLanding/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </div>

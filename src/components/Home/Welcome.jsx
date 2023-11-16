@@ -8,6 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
 import halloween_logo from "./../../assets/helloween_logo.png";
+import {useURLData} from "utils/URLData";
 
 const heading = {
    hidden: {},
@@ -44,6 +45,7 @@ const Welcome = () => {
       formState: { errors },
    } = useForm();
    const onSubmit = (data) => console.log(data);
+   const {utm_source} = useURLData();
    useEffect(() => {
       const script = document.createElement("script");
       script.src = "//widget.bronirui-online.ru/js/app.js";
@@ -250,7 +252,7 @@ const Welcome = () => {
             <a
                className="absolute bottom-[25px] left-1/2"
                style={{ transform: "translateX(-50%)" }}
-               href="tel:+74995055031"
+               href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : 'tel:+74995055031'}
             >
                <picture>
                   <source srcSet="/avif/call.avif 1x" type="image/avif" />

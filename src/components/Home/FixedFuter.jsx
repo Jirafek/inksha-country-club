@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {useURLData} from "utils/URLData";
 
 const FixedFuter = ({ link, needRotate }) => {
     const navigate = useNavigate();
+    const {utm_source} = useURLData();
     const goBack = () => {
         navigate(-1)
     };
@@ -53,12 +55,31 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img className="h-[65px]" src="/image/tg_footer.png" alt="Икша Кантри Клаб - Заказть отдых через Телеграм" />
                     </picture>
                 </a>
-                <a href="tel:+74995055031">
-                    <picture>
-                        <source srcSet="/avif/call.avif 1x" type="image/avif" />
-                        <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
-                    </picture>
-                </a>
+
+                {
+                    utm_source === 'yandex' ?
+                        <a href="tel:+74995055067">
+                            <picture>
+                                <source srcSet="/avif/call.avif 1x" type="image/avif" />
+                                <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                            </picture>
+                        </a>
+                        : utm_source === 'vkontakte' ?
+                            <a href="tel:+74995055087">
+                                <picture>
+                                    <source srcSet="/avif/call.avif 1x" type="image/avif" />
+                                    <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                                </picture>
+                            </a>
+                            :
+                            <a href="tel:+74995055031">
+                                <picture>
+                                    <source srcSet="/avif/call.avif 1x" type="image/avif" />
+                                    <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                                </picture>
+                            </a>
+
+                }
             </div>
         </div>
     );

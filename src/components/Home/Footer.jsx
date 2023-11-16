@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import routes from "../../utils/Home/routes";
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
+import {useURLData} from "../../utils/URLData";
+import Cookies from "js-cookie";
 
 const Footer = () => {
+    const {utm_source} = useURLData();
+
     return (
         <section id="footer" className="section back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
@@ -22,7 +26,7 @@ const Footer = () => {
                             <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
                         </picture>
 
-                        <a href="tel:+74995055031">
+                        <a href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : "tel:+74995055031"}>
                             <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-31</h4>
                         </a>
                     </div>

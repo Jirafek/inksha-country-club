@@ -4,18 +4,18 @@
 // import arrow from "images/NY/arrow.png";
 // import down_arrow from "icons/down_arrow.png";
 
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
 // import ProgramaSwiper from "./NYProgramaSwiper";
-import Reveal from "common/Reveal";
-import { scale, slideFromRight } from "constants/motion";
-import NYGreenButton from './NYGreenButton';
-import NYCreamButton from './NYCreamButton';
+import Reveal from "common/Reveal"
+import { scale, slideFromRight } from "constants/motion"
+import NYCreamButton from './NYCreamButton'
+import NYGreenButton from './NYGreenButton'
 
 
 // import prog1 from 'images/NY/prog/001.webp'
@@ -38,7 +38,7 @@ export const Programa = () => {
                         Программа
                      </div>
                   </h1>
-                  <p className="text-center mb-10 yaes  font-semibold text-lg yaes">
+                  <p className="text-center text-NYblack mb-10 yaes  font-semibold text-lg yaes">
                      Программа для празднования Хэллоуина в загородном клабе Икша
                      Кантри Клаб с 27 по 29 октября:
                   </p>
@@ -214,5 +214,5 @@ export const Programa = () => {
             </Reveal>
          </div>
       </div>
-   );
-};
+   )
+}

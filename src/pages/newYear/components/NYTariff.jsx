@@ -1,14 +1,14 @@
 // import Button from "common/Button";
-import { Link as ScrollLink } from "react-scroll";
-import food from "assets/food.png";
+import food from "assets/food.png"
+import { Link as ScrollLink } from "react-scroll"
 // import boo from "../assets/boo.png";
 // import arrow from "icons/arrow.png";
 // import down_arrow from "icons/down_arrow.png";
-import TariffComponents from "./NYTarrifComponents";
-import Reveal from "common/Reveal";
-import { slideFromRight } from "constants/motion";
+import Reveal from "common/Reveal"
+import { slideFromRight } from "constants/motion"
+import TariffComponents from "./NYTarrifComponents"
 // import NYCreamButton from './NYCreamButton';
-import NYGreenButton from './NYGreenButton';
+import NYGreenButton from './NYGreenButton'
 
 
 const Tariff = () => {
@@ -30,7 +30,7 @@ const Tariff = () => {
                         Тарифы
                      </div>
                   </h1>
-                  <p className="text-center text-lg font-semibold yaes mb-[5vh]">
+                  <p className="text-center text-NYblack text-lg font-semibold yaes mb-[5vh]">
                      В эту таинственную ночь мы предлагаем вам следующие
                      невероятные варианты размещения
                   </p>
@@ -91,7 +91,7 @@ const Tariff = () => {
 
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default Tariff;
+export default Tariff

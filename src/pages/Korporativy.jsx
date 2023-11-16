@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {useForm, Controller} from "react-hook-form";
 import {v4 as uuidv4} from "uuid";
-import {m} from "framer-motion";
-import emailjs from "@emailjs/browser";
 import {Navigate} from "react-router-dom";
 import {css} from "@emotion/react";
 import {RingLoader} from "react-spinners";
@@ -63,27 +61,6 @@ const Korporativy = () => {
         // console.log(data)
     };
     const onSend = async (dataFromForm) => {
-        const data = {
-            active: dataFromForm["Активный отдых"] ? "Активный отдых" : "",
-            bania: dataFromForm["Растопка бани и купели"]
-                ? "Растопка бани и купели"
-                : "",
-            riba: dataFromForm["Рыбалка на пруду"] ? "Рыбалка на пруду" : "",
-            dogovor: dataFromForm["dogovor"]
-                ? "оформление и оплата договора +10%"
-                : "",
-            territory: "",
-            keyt: "",
-            squer: "",
-            besedka: "",
-            voley: "",
-            sap: "",
-            shoosh: "",
-            karaoke: "",
-            name: dataFromForm.name,
-            phone: dataFromForm.phone,
-            email: dataFromForm.email,
-        };
 
         let currentDops = [
             {

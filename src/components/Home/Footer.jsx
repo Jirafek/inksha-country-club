@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import routes from "../../utils/Home/routes";
-import { v4 as uuidv4 } from 'uuid';
-import { Link } from "react-router-dom";
+import {v4 as uuidv4} from 'uuid';
+import {Link} from "react-router-dom";
 import {useURLData} from "../../utils/URLData";
 import Cookies from "js-cookie";
 
@@ -9,11 +9,13 @@ const Footer = () => {
     const {utm_source} = useURLData();
 
     return (
-        <section id="footer" className="section back_settings relative" style={{ backgroundImage: 'url(/image/footer_bg.webp)' }}>
+        <section id="footer" className="section back_settings relative"
+                 style={{backgroundImage: 'url(/image/footer_bg.webp)'}}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <picture>
-                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
-                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp" alt="Икша Кантри Клаб" />
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif"/>
+                    <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp"
+                         alt="Икша Кантри Клаб"/>
                 </picture>
 
                 <h2 className="text-[20px] text-white z-10 font-bold mt-2">ИКША Country Club</h2>
@@ -22,19 +24,34 @@ const Footer = () => {
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center">
                         <picture>
-                            <source srcSet="/avif/call_big.avif 1x" type="image/avif" />
-                            <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
+                            <source srcSet="/avif/call_big.avif 1x" type="image/avif"/>
+                            <img src="/image/call_big.webp" alt="Икша Кантри Клаб"/>
                         </picture>
 
-                        <a href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : "tel:+74995055031"}>
-                            <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-31</h4>
-                        </a>
+                        {
+                            utm_source === 'yandex' ?
+                                <a href={'tel:+74995055067'}>
+                                    <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-67</h4>
+                                </a>
+                                : utm_source === 'vkontakte' ?
+                                    <a href={'tel:+74995055087'}>
+                                        <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-87</h4>
+                                    </a>
+                                    :
+                                    <a href={"tel:+74995055031"}>
+                                        <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-31</h4>
+                                    </a>
+
+                        }
+
+
                     </div>
                     <div className="flex items-center">
-                        <div style={{ backgroundImage: 'url(/image/email_big.webp)' }} className="flex w-[49px] h-[51px] justify-center items-center back_settings">
+                        <div style={{backgroundImage: 'url(/image/email_big.webp)'}}
+                             className="flex w-[49px] h-[51px] justify-center items-center back_settings">
                             <picture>
-                                <source srcSet="/avif/email_inside.avif 1x" type="image/avif" />
-                                <img src="/image/email_inside.webp" alt="Икша Кантри Клаб" />
+                                <source srcSet="/avif/email_inside.avif 1x" type="image/avif"/>
+                                <img src="/image/email_inside.webp" alt="Икша Кантри Клаб"/>
                             </picture>
                         </div>
                         <a href="mailto:contact@ikshacountryclub.com">
@@ -52,13 +69,13 @@ const Footer = () => {
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб"/>}
                                         </Link> :
                                         <a href={route.link} className='flex gap-[1px]'>
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб"/>}
                                         </a>
                                 }
                             </li>
@@ -74,7 +91,8 @@ const Footer = () => {
                     <div className="flex justify-center monterey">
                         <a className="text-white text-[12px] underline" href="/pdf/oferta.pdf">Договор оферты</a>
                     </div>
-                    <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права защищены Copyright © 2023 Икша Кантри Клаб</p>
+                    <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права
+                        защищены Copyright © 2023 Икша Кантри Клаб</p>
                 </div>
             </div>
         </section>

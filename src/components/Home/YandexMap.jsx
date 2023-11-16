@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { m } from "framer-motion";
+import {useURLData} from "utils/URLData";
 
 const ytSrc = "https://www.youtube.com/embed/m24zezD9fWs";
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
@@ -33,6 +34,7 @@ const YandexMap = () => {
       width: "100%",
       height: "800px",
    };
+   const {utm_source} = useURLData();
 
    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -81,7 +83,21 @@ const YandexMap = () => {
          >
             <div className="relative flex h-full flex-col gap-[10px]">
                <p className="text-black underline">
-                  <a href="tel:+74995055031">+7 (499) 505-50-31</a>
+                  {
+                     utm_source === 'yandex' ?
+                         <a href={'tel:+74995055067'}>
+                            +7(499) 505-50-67
+                         </a>
+                         : utm_source === 'vkontakte' ?
+                             <a href={'tel:+74995055087'}>
+                                +7(499) 505-50-87
+                             </a>
+                             :
+                             <a href={"tel:+74995055031"}>
+                                +7(499) 505-50-31
+                             </a>
+
+                  }
                </p>
                <p className="text-black underline">
                   <a href="mailto:contact@ikshacountryclub.com">

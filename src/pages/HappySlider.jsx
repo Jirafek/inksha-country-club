@@ -14,8 +14,8 @@ const sliderData = [
    {
       bgAvif: "/avif/h_bg4.avif",
       bgWebp: "/image/h_bg4.webp",
-      imgAvif: "/avif/h_4.avif",
-      imgWebp: "/image/h_4.webp",
+      imgAvif: `/avif/h_4.avif`,
+      imgWebp: `/image/h_4.webp`,
       text: "",
       height: "545px",
    },
@@ -179,7 +179,7 @@ const HappySlider = () => {
                         </div>
                      </div>
                      {/* <div className="relative flex h-[100px] w-screen items-center justify-center gap-2">
-                
+
                      </div> */}
                   </div>
                ))}

@@ -9,7 +9,7 @@ import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
 import halloween_logo from "./../../assets/helloween_logo.png";
 import {useURLData} from "utils/URLData";
-import { isItWinterNow } from "utils/functions";
+import { isItWinterNow } from "utils/helpers";
 
 const heading = {
    hidden: {},

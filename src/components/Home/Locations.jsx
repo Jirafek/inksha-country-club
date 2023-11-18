@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import GreenButton from "./../../common/GreenButton";
 import AnimationButton from "./../../common/AnimationButton";
 import LocationPopup from "./../../common/LocationPopup";
+import { isItWinterNow } from "utils/helpers";
 
 const heading = {
    hidden: {},
@@ -89,6 +90,7 @@ const Locations = () => {
    return (
       <section
          id="locations"
+         style={{ backgroundImage: `url('/image/bg_burger${isItWinterNow()}.webp')` }}
          className="section about_background back_settings relative"
       >
          <LocationPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
@@ -153,7 +155,7 @@ const Locations = () => {
                Узнать стоимость
             </AnimationButton>
          </div>
-         <div className="absolute -bottom-[10px] w-full">
+      {!isItWinterNow() && <div className="absolute -bottom-[10px] w-full">
             <svg
                xmlns="http://www.w3.org/2000/svg"
                width="100%"
@@ -208,7 +210,7 @@ const Locations = () => {
                   </linearGradient>
                </defs>
             </svg>
-         </div>
+         </div>}
       </section>
    );
 };

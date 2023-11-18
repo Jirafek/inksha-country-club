@@ -3,10 +3,9 @@ import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
-import { isItWinterNow } from "utils/functions"
+import { isItWinterNow } from "utils/helpers"
 import AnimationButton from "./../../common/AnimationButton"
 import MainPopup from "./../../common/MainPopup"
-
 const heading = {
    hidden: {},
    visible: {

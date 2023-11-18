@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import instWinter from 'icons/winter/inst.webp'
 import whatWinter from 'icons/winter/sup.webp'
 import { useURLData } from "utils/URLData"
-import { isItWinterNow } from 'utils/functions'
+import { isItWinterNow } from 'utils/helpers'
 import inst from "./../assets/inst.png"
 import phone from "./../assets/phone.png"
 import what from "./../assets/what.png"

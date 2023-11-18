@@ -6,6 +6,7 @@ const ytSrc = "https://www.youtube.com/embed/Eat2wgPNuIo";
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
 import price_calculator from "./../../assets/price_calculator.png";
 import price_arrow from "./../../assets/price_arrow.png";
+import { isItWinterNow } from "utils/helpers";
 const heading = {
    hidden: {},
    visible: {
@@ -53,7 +54,7 @@ const About = () => {
    };
    return (
       <section
-         style={{ backgroundImage: "url(/image/about_bg_styled.webp)" }}
+         style={{ backgroundImage: `url(/image/about_bg_styled${isItWinterNow()}.webp)` }}
          className="section back_settings relative"
          id="about"
       >
@@ -164,19 +165,19 @@ const About = () => {
                </button>
             </div>
             <picture>
-               <source srcSet="/avif/gorshok_left.avif 1x" type="image/avif" />
+               {/* <source srcSet={`/avif/gorshok_left${isItWinterNow()}.avif 1x`} type="image/avif" /> */}
                <img
                   alt="Икша Кантри Клаб"
                   className="absolute bottom-0 left-0"
-                  src="/image/gorshok_left.webp"
+                  src={`/image/gorshok_left${isItWinterNow()}.webp`}
                />
             </picture>
             <picture>
-               <source srcSet="/avif/gorshok.avif 1x" type="image/avif" />
+               {/* <source srcSet={`/avif/gorshok${isItWinterNow()}.avif 1x`} type="image/avif" /> */}
                <img
                   alt="Икша Кантри Клаб"
                   className="absolute bottom-0 right-0"
-                  src="/image/gorshok.webp"
+                  src={`/image/gorshok${isItWinterNow()}.webp`}
                />
             </picture>
             <picture>

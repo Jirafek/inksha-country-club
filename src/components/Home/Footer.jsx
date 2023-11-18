@@ -4,13 +4,14 @@ import {v4 as uuidv4} from 'uuid';
 import {Link} from "react-router-dom";
 import {useURLData} from "../../utils/URLData";
 import Cookies from "js-cookie";
+import { isItWinterNow } from "utils/helpers";
 
 const Footer = () => {
     const {utm_source} = useURLData();
 
     return (
         <section id="footer" className="section back_settings relative"
-                 style={{backgroundImage: 'url(/image/footer_bg.webp)'}}>
+                 style={{backgroundImage: `url(/image/footer_bg${isItWinterNow()}.webp)`}}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <picture>
                     <source srcSet="/avif/titles_bg.avif 1x" type="image/avif"/>

@@ -1,14 +1,13 @@
 import React from "react";
-import { isItWinterNow } from "utils/functions.js";
+import { isItWinterNow } from "utils/helpers.js";
 
 const V1 = () => {
-    const bg = `/image/od${isItWinterNow() ? '_winter' : ''}.webp`;
 
     return <>
         <figure className="map-figure">
             <picture>
-                {/* <source srcSet="/avif/od.avif 1x" type="image/avif" /> */}
-                <img src={bg} alt="Икша Кантри Клаб" className="map_image" />
+                <source srcSet={`./avif/map_ver1${isItWinterNow()}.avif 1x`} type="image/avif" />
+                <img src={`./image/map_ver1${isItWinterNow()}.webp`} alt="Икша Кантри Клаб" className="map_image" />
             </picture>
         </figure>
         <div className="map-controls">

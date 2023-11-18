@@ -1,3 +1,5 @@
+import { isItWinterNow } from "utils/helpers";
+
 const headingLines1 = {
   hidden: {
     opacity: 0,
@@ -55,31 +57,33 @@ const headingLines2 = {
     },
   };
 
+const isWinter = isItWinterNow();
+
 const HappyClickableItemsData = [
     {
-        imgWebp: "/image/bania.webp",
-        imgAvif: "/avif/bania.avif",
+        imgWebp: `/image/bania.webp`,
+        imgAvif: `/avif/bania.avif`,
         imgAlt: 'Баня в Икша Кантри Клаб',
         text: "Баня",
         animation: headingLines1
     },
     {
-        imgWebp: "/image/ribalka.webp",
-        imgAvif: "/avif/ribalka.avif",
+      imgWebp: `/image/ribalka${isWinter}.webp`,
+      imgAvif: `/avif/ribalka${isWinter}.avif`,
         imgAlt: 'Рыбалка в Икша Кантри Клаб',
         text: "Рыбалка",
         animation: headingLines2
     },
     {
-        imgWebp: "/image/sport.webp",
-        imgAvif: "/avif/sport.avif",
+        imgWebp: `/image/sport${isWinter}.webp`,
+        imgAvif: `/avif/sport${isWinter}.avif`,
         imgAlt: 'Занятия спортом в Икша Кантри Клаб',
         text: "Спорт",
         animation: headingLines3
     },
     {
-        imgWebp: "/image/posidelki.webp",
-        imgAvif: "/avif/posidelki.avif",
+        imgWebp: `/image/posidelki${isWinter}.webp`,
+        imgAvif: `/avif/posidelki${isWinter}.avif`,
         imgAlt: 'Посиделки в Икша Кантри Клаб',
         text: "Посиделки",
         animation: headingLines4

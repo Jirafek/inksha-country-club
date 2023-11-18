@@ -24,6 +24,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { isItWinterNow } from "utils/helpers";
 
 const Home = () => {
 
@@ -207,10 +208,10 @@ const Home = () => {
                <EventsFromFireBase />
                <Help />
                <Calculate />
-               <Spec />
+               {!isItWinterNow() && <Spec />}
                <Dates />
                <Responce />
-               <Blog />
+               {!isItWinterNow() && <Blog />}
                <YandexMap />
                <Footer />
                {/* <div className="h-[60px]"></div> */}

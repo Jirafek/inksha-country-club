@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { m } from "framer-motion";
 import {useURLData} from "utils/URLData";
+import { isItWinterNow } from "utils/helpers";
 
 const ytSrc = "https://www.youtube.com/embed/m24zezD9fWs";
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
@@ -112,10 +113,10 @@ const YandexMap = () => {
                <div className="absolute bottom-[2px] right-0 flex items-center">
                   <a href="https://wa.me/+79859091202">
                      <picture>
-                        <source srcSet="/avif/wa.avif 1x" type="image/avif" />
+                        <source srcSet={`/avif/whatsapp.avif 1x`} type="image/avif" />
                         <img
                            className="h-[50px] w-[50px] bg-transparent"
-                           src="/image/wa.webp"
+                           src={`/image/whatsapp.webp`}
                            alt="Икша Кантри Клаб - Заказть отдых через Ватсап"
                         />
                      </picture>
@@ -135,9 +136,9 @@ const YandexMap = () => {
                      href="https://vk.com/ikshacountryclub"
                   >
                      <picture>
-                        <source srcSet="/avif/vk.avif 1x" type="image/avif" />
+                        <source srcSet={`/avif/vk.avif 1x`} type="image/avif" />
                         <img
-                           src="/image/vk.webp"
+                           src={`/image/vk.webp`}
                            alt="Загородный клуб Икша Кантри Клаб - ВКонтакте"
                         />
                      </picture>
@@ -147,9 +148,9 @@ const YandexMap = () => {
                      href="https://www.instagram.com/ikshacountryclub"
                   >
                      <picture>
-                        <source srcSet="/avif/inst.avif 1x" type="image/avif" />
+                        <source srcSet={`/avif/inst.avif 1x`} type="image/avif" />
                         <img
-                           src="/image/inst.webp"
+                           src={`/image/inst.webp`}
                            alt="Загородный клуб Икша Кантри Клаб - Инстаграм"
                         />
                      </picture>

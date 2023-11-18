@@ -1,28 +1,27 @@
-import Hero from "./components/NYHero";
-import { Programa } from "./components/NYPrograma";
-import "./index.css";
-import Tariff from "./components/NYTariff";
-import Footer from "common/Footer";
-import Header from "common/Header";
-import ProgramaSwiper from './components/NYProgramaSwiper';
-import venok from 'images/NY/venok.webp';
-import { useState } from 'react';
-import NYForm from './components/NYForm';
-import { Helmet } from 'react-helmet';
-
+import Footer from "common/Footer"
+import Header from "common/Header"
+import venok from 'images/NY/venok.webp'
+import { useState } from 'react'
+import { Helmet } from 'react-helmet'
+import NYForm from './components/NYForm'
+import Hero from "./components/NYHero"
+import { Programa } from "./components/NYPrograma"
+import ProgramaSwiper from './components/NYProgramaSwiper'
+import Tariff from "./components/NYTariff"
+import "./index.css"
 
 
 const NYLanding = () => {
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(false)
    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-   };
+      setIsMenuOpen(!isMenuOpen)
+   }
 
    const links = [
       { title: "Программа", link: "Programa" },
       { title: "Тарифы", link: "Tariff" },
       { title: "Связаться со мной", link: "Form" },
-   ];
+   ]
    return (
       <div className="yaes">
          <Helmet>
@@ -51,14 +50,15 @@ const NYLanding = () => {
             className='bg-NYheader text-NYgreen' />
          <div className='ny-bg relative  w-full h-full'>
             <Hero />
+            <ProgramaSwiper />
             <Programa />
 
-            <div className='relative mt-[5vh ] sm:mt-[15vh]'>
+            <div className='relative py-[5vh] sm:mt-[15vh]'>
 
                <img src={venok} className='max-h-[500px] absolute  -bottom-[140px] z-[100]  w-screen' alt="" />
             </div>
             {/* <div className='ny-bg  relative w-full h-full'> */}
-            <ProgramaSwiper />
+
 
 
             <Tariff />
@@ -67,7 +67,7 @@ const NYLanding = () => {
          <NYForm />
          <Footer className='bg-NYheader text-NYgreen' />
       </div>
-   );
-};
+   )
+}
 
-export default NYLanding;
+export default NYLanding

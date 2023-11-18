@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-import inst from "./../assets/inst.png";
-import what from "./../assets/what.png";
-import phone from "./../assets/phone.png";
-import { motion } from "framer-motion";
-import {useURLData} from "utils/URLData";
-import React from "react";
-
+import { motion } from "framer-motion"
+import instWinter from 'icons/winter/inst.webp'
+import whatWinter from 'icons/winter/sup.webp'
+import { useURLData } from "utils/URLData"
+import { isItWinterNow } from 'utils/functions'
+import inst from "./../assets/inst.png"
+import phone from "./../assets/phone.png"
+import what from "./../assets/what.png"
 const slideVariants = {
    initial: {
       x: "2%", // Начальная позиция за пределами экрана справа
@@ -15,9 +16,10 @@ const slideVariants = {
       x: "-2%", // Конечная позиция за пределами экрана слева
       scale: 1,
    },
-};
+}
+
 const Footer = ({ className }) => {
-   const {utm_source} = useURLData();
+   const { utm_source } = useURLData()
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -30,14 +32,14 @@ const Footer = ({ className }) => {
                         rel="noreferrer"
                         href="https://www.instagram.com/ikshacountryclub/"
                      >
-                        <img className="z-10 h-9 w-9" src={inst} alt="" />
+                        <img className="z-10 h-9 w-9" src={isItWinterNow() ? instWinter : inst} alt="" />
                      </a>
                      <a
                         href="https://wa.me/79859091202"
                         target="_blank"
                         rel="noreferrer"
                      >
-                        <img className="z-10 h-9 w-9" src={what} alt="" />
+                        <img className="z-10 h-9 w-9" src={isItWinterNow() ? whatWinter : what} alt="" />
                      </a>
                      <motion.a
                         variants={slideVariants}
@@ -58,23 +60,23 @@ const Footer = ({ className }) => {
                </div>
                {
                   utm_source === 'yandex' ?
-                      <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
-                         +7(499) 505-50-67
-                      </a>
-                      : utm_source === 'vkontakte' ?
-                          <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
-                             +7(499) 505-50-87
-                          </a>
-                          :
-                          <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
-                             +7(499) 505-50-31
-                          </a>
+                     <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
+                        +7(499) 505-50-67
+                     </a>
+                     : utm_source === 'vkontakte' ?
+                        <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
+                           +7(499) 505-50-87
+                        </a>
+                        :
+                        <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
+                           +7(499) 505-50-31
+                        </a>
 
                }
             </div>
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default Footer;
+export default Footer

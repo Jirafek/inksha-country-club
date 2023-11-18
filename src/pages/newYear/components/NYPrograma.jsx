@@ -46,35 +46,33 @@ export const Programa = () => {
                      <div className="flex col-span-1 md:col-span-2 flex-col relative  w-full md:w-[90%] justify-center items-center">
 
                         <img
-                           className="md:w-[200px] absolute w-[60px] 370p:w-[75px] 370p:h-[75px] md:h-[200px] md:-left-[150px] md:top-1/2 transform md:-translate-y-1/2    -top-10 right-1/2 translate-x-1/2    z-10"
+                           className="md:w-[200px] absolute w-[60px] 370p:w-[75px] 370p:h-[75px] md:h-[200px] md:-left-[250px] md:top-1/2 transform md:-translate-y-1/2    -top-10 right-1/2 translate-x-1/2    z-10"
                            src={prog2}
                            alt=""
                         />
                         <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
                            <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
-                              Пятница, 27 октября
+                              Четверг, 30 декабря:
                               <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
                               <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    16:00 - 18:00
+                                    15:00-16:00:
                                  </h2>
                                  <h2 className="text-md mb-6 w-full font-light ">
-                                    Регистрация и заселение гостей
+                                    заезд гостей
                                  </h2>
                               </div>
                               <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    18:30 - 20:00
+                                    16:00-20:00
                                  </h2>
                                  <h2 className="text-md mb-6  font-light ">
-                                    {" "}
-                                    Ужин в стиле Хэллоуина с участием ведьм и зомби
-                                    (фуршет на каждой локации)
+                                    Welcome-программа и подготовка к празднику
                                  </h2>
                               </div>
-                              <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                              {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
                                     20:30 - 22:00{" "}
                                  </h2>
@@ -83,7 +81,7 @@ export const Programa = () => {
                                     проведут игры и развлечения для детей, включая охоту
                                     за сладостями и конкурс на лучший детский костюм
                                  </h2>
-                              </div>
+                              </div> */}
                               <Reveal variants={scale()}>
                                  {/* <img
                                     src={bat}
@@ -94,6 +92,57 @@ export const Programa = () => {
                            </div>
                         </div>
                      </div>
+
+                     <div className="flex col-span-1 md:col-span-2 flex-col relative  w-full md:w-[90%] justify-center items-center">
+
+                        <img
+                           className="md:w-[200px] absolute w-[60px] 370p:w-[75px] 370p:h-[75px] md:h-[200px] md:-left-[250px] md:top-1/2 transform md:-translate-y-1/2    -top-10 right-1/2 translate-x-1/2    z-10"
+                           src={prog2}
+                           alt=""
+                        />
+                        <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
+                           <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
+                              Пятница, 31 декабря:
+                              <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
+                           </h2>
+                           <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
+                              <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                    18:30 - 20:00:
+                                 </h2>
+                                 <h2 className="text-md mb-6 w-full font-light ">
+                                    Праздничный ужин с живой музыкой и вручение новогодних подарков
+                                 </h2>
+                              </div>
+                              <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                    21:00 - 23:00:
+                                 </h2>
+                                 <h2 className="text-md mb-6  font-light ">
+                                    Новогодняя вечеринка с фейерверками и дискотекой
+                                 </h2>
+                              </div>
+                              {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                    20:30 - 22:00{" "}
+                                 </h2>
+                                 <h2 className="text-md mb-6  font-light ">
+                                    Вечеринка с живой музыкой и DJ в Шатре Аниматоры
+                                    проведут игры и развлечения для детей, включая охоту
+                                    за сладостями и конкурс на лучший детский костюм
+                                 </h2>
+                              </div> */}
+                              <Reveal variants={scale()}>
+                                 {/* <img
+                                    src={bat}
+                                    className="absolute -bottom-[90px] -right-[20%] "
+                                    alt=""
+                                 /> */}
+                              </Reveal>
+                           </div>
+                        </div>
+                     </div>
+
                      <div className="flex relative col-span-1 mt-auto md:mt-[100px] self-start flex-col max-w-[600px] justify-center items-center">
 
                         <img
@@ -103,32 +152,34 @@ export const Programa = () => {
                         />
                         <div className="bg-NYblack text-center md:text-start text-white yaes relative rounded-[20px] ">
                            <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
-                              Пятница, 27 октября
+                              Суббота, 1 января:
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 md:px-[50px]'>
 
                               <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 16:00 - 18:00
+                                 09:00 - 11:00:
                               </h2>
                               <h2 className="text-md mb-6  font-light ">
-                                 Регистрация и заселение гостей
+                                 Поздний завтрак на локациях
                               </h2>
                               <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 18:30 - 20:00
+                                 11:30 - 13:30:
                               </h2>
                               <h2 className="text-md mb-6  font-light ">
-                                 {" "}
-                                 Ужин в стиле Хэллоуина с участием ведьм и зомби
-                                 (фуршет на каждой локации)
+                                 Ледовое катание и игры на снегу
                               </h2>
                               <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 20:30 - 22:00{" "}
+                                 16:00 - 18:00:
                               </h2>
                               <h2 className="text-md mb-6  font-light ">
-                                 Вечеринка с живой музыкой и DJ в Шатре Аниматоры
-                                 проведут игры и развлечения для детей, включая охоту
-                                 за сладостями и конкурс на лучший детский костюм
+                                 Мастер-класс по созданию новогодних поделок для детей и взрослых
+                              </h2>
+                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
+                                 18:30 - 20:00:
+                              </h2>
+                              <h2 className="text-md mb-6  font-light ">
+                                 Ужин с новогодней программой
                               </h2>
                               <Reveal variants={scale()}>
                                  {/* <img
@@ -151,31 +202,31 @@ export const Programa = () => {
                         <div className="bg-NYblack text-white yaes relative rounded-[20px] ">
 
                            <h2 className="md:text-[40px] py-10 relative text-center text-[25px] font-extrabold">
-                              Пятница, 28 октября
+                              Воскресенье, 2 января:
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 md:px-[50px]'>
 
 
                               <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 10:30 - 12:30
+                                 09:00 - 11:00:
                               </h2>
                               <h2 className="text-md  mb-6  font-light">
-                                 Мастер-класс по созданию тыквенных фигур для детей и
-                                 взрослых в шатре Ворожба и гадание для всех желающих
+                                 Завтрак на локациях
                               </h2>
                               <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 15:00 - 17:00
+                                 11:30 - 13:30:
                               </h2>
                               <h2 className="text-md  mb-6  font-light">
-                                 Экскурсия по заброшенным местам Икшинского
-                                 водохранилища
+                                 Спортивные игры и соревнования. Лыжная экскурсия
                               </h2>
-                              <h2 className="md:text-[40px] mount text-[25px]  font-bold ">20:30 - 22:00</h2>
+                              <h2 className="md:text-[40px] mount text-[25px]  font-bold ">16:00 - 18:00:</h2>
                               <h2 className=" text-md font-light  mb-6 ">
-                                 Вечеринка с тематическими коктейлями для детей и
-                                 взрослых и шоу Зомби-бал. Костюмированный конкурс и
-                                 раздача призов
+                                 Катание на санках и конкурс на лучший новогодний костюм
+                              </h2>
+                              <h2 className="md:text-[40px] mount text-[25px]  font-bold ">18:30 - 20:00:</h2>
+                              <h2 className=" text-md font-light  mb-6 ">
+                                 Ужин с новогодней программой
                               </h2>
                               <Reveal delay={0.5} variants={scale()}>
                                  {/* <img

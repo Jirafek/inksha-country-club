@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { m } from "framer-motion";
-import BookingCalendar from "../BookPicker";
-import { useForm } from "react-hook-form";
-import { Helmet } from "react-helmet";
-import VideoPlayer from "./VideoPlayer";
-import { Link, useLocation } from "react-router-dom";
-import AnimationButton from "./../../common/AnimationButton";
-import MainPopup from "./../../common/MainPopup";
-import halloween_logo from "./../../assets/helloween_logo.png";
-import {useURLData} from "utils/URLData";
-import { isItWinterNow } from "utils/functions";
+import { m } from "framer-motion"
+import ny_logo from "icons/ny-logo.webp"
+import { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom"
+import { useURLData } from "utils/URLData"
+import { isItWinterNow } from "utils/functions"
+import AnimationButton from "./../../common/AnimationButton"
+import MainPopup from "./../../common/MainPopup"
 
 const heading = {
    hidden: {},
@@ -18,7 +15,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLines = {
    hidden: {
@@ -33,24 +30,24 @@ const headingLines = {
          duration: 1.5,
       },
    },
-};
+}
 
 const Welcome = () => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
+      setIsPopupOpen((prev) => !prev)
+   }
    const {
       register,
       handleSubmit,
       formState: { errors },
-   } = useForm();
-   const onSubmit = (data) => console.log(data);
-   const {utm_source} = useURLData();
+   } = useForm()
+   const onSubmit = (data) => console.log(data)
+   const { utm_source } = useURLData()
    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "//widget.bronirui-online.ru/js/app.js";
-      script.async = true;
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-widget-1", {
@@ -75,14 +72,14 @@ const Welcome = () => {
                   right: "50px",
                },
             },
-         });
+         })
 
          // Примените ваши стили после инициализации виджета
          const customStyles = `
 
 
       .znms-widget__module-form-block__btn {
-        background-color: rgba(12, 242, 89, 0.5) !important;
+        background-color: ${isItWinterNow ? 'rgb(12, 242, 89) !important' : 'rgba(12, 242, 89, 0.5) !important'} ;
         border-radius: 30px !important;
         border: 1px solid #000 !important;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
@@ -127,7 +124,10 @@ const Welcome = () => {
           }
 
           .znms-widget__module-form-block__item {
-            opacity: 0.8;
+            opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
+            background:${isItWinterNow() ? `rgba(0,0,0,0.5) ${isItWinterNow() ? '!important' : ''}` : `white ${isItWinterNow() ? '' : '!important'}`};
+            color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+            
             padding-top: 0 !important;
             padding-bottom: 0 !important;
             height: 35px !important;
@@ -136,23 +136,32 @@ const Welcome = () => {
           .znms-widget__v-calendar-popover-content-wrapper {
             z-index: 100 !important;
           }
-        `;
-         const styleElement = document.createElement("style");
-         styleElement.innerHTML = customStyles;
-         document.head.appendChild(styleElement);
-      };
-      script.onload = initializeWidget;
-      document.body.appendChild(script);
+          .znms-widget__module-form-block__input{
+             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+          }
+          .znms-widget__module-form-block__label{
+             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+          }
+          .znms-widget__module-form-block__select, .znms-widget__module-form-block__select span {
+             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+          }
+        `
+         const styleElement = document.createElement("style")
+         styleElement.innerHTML = customStyles
+         document.head.appendChild(styleElement)
+      }
+      script.onload = initializeWidget
+      document.body.appendChild(script)
       setTimeout(() => {
          const doskaContainer = document.querySelector(".doska-container"),
             skyContainer1 = document.querySelector(".sky1"),
-            skyContainer2 = document.querySelector(".sky2");
+            skyContainer2 = document.querySelector(".sky2")
 
-         skyContainer1.classList.add("animate-moveSky1");
-         skyContainer2.classList.add("animate-moveSky2");
-         doskaContainer.classList.add("animate-moveDoska");
-      }, 1500);
-   }, []);
+         skyContainer1.classList.add("animate-moveSky1")
+         skyContainer2.classList.add("animate-moveSky2")
+         doskaContainer.classList.add("animate-moveDoska")
+      }, 1500)
+   }, [])
 
    // window.addEventListener("hashchange", function () {
    //   // Получить текущий URL с хэшем
@@ -176,16 +185,16 @@ const Welcome = () => {
          // y: "-10px", // Конечная позиция за пределами экрана слева
          scale: 1,
       },
-   };
+   }
 
    useEffect(() => {
       // BookingCalendar([], 'zaezd'); // get data from FireBase
       // BookingCalendar([], 'viezd'); // get data from FireBase
       setTimeout(() => {
-         document.querySelector(".animate-moveSky1").style.display = "none";
-         document.querySelector(".animate-moveSky2").style.display = "none";
-      }, 4500);
-   }, []);
+         document.querySelector(".animate-moveSky1").style.display = "none"
+         document.querySelector(".animate-moveSky2").style.display = "none"
+      }, 4500)
+   }, [])
 
    return (
       <section id="book" className="welcome relative m-0">
@@ -194,7 +203,7 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/halloween" className="absolute right-10 top-10 z-[1000]">
+         <Link to="/New-Year" className="absolute right-10 top-10 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
@@ -206,7 +215,7 @@ const Welcome = () => {
                initial="initial"
                animate="animate"
                variants={pumpkin_vars}
-               src={halloween_logo}
+               src={ny_logo}
                className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
                alt=""
             />
@@ -320,7 +329,7 @@ const Welcome = () => {
             {/* </Link> */}
          </div>
       </section>
-   );
-};
+   )
+}
 
-export default Welcome;
+export default Welcome

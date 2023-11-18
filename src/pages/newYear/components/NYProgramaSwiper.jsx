@@ -1,8 +1,13 @@
-import swiper1 from "images/NY/swiper/001.webp";
-import swiper2 from "images/NY/swiper/002.webp";
-import swiper3 from "images/NY/swiper/003.webp";
-import swiper4 from "images/NY/swiper/004.webp";
-import { useRef } from "react";
+import swiper1 from "images/NY/swiper/001.webp"
+import swiper2 from "images/NY/swiper/002.webp"
+import swiper3 from "images/NY/swiper/003.webp"
+import swiper4 from "images/NY/swiper/004.webp"
+import swiper5 from "images/NY/swiper/005.webp"
+import swiper6 from "images/NY/swiper/006.webp"
+import swiper7 from "images/NY/swiper/007.webp"
+import swiper8 from "images/NY/swiper/008.webp"
+import swiper9 from "images/NY/swiper/009.webp"
+import { useRef } from "react"
 // import scroll from "./../assets/scroll.png";
 // import orange_scroll from "./../assets/orange_scroll.png";
 
@@ -10,17 +15,17 @@ import swipernext from 'icons/swipernext_black.png'
 import swiperprev from 'icons/swiperprev_black.png'
 // import venok from 'images/NY/venok.webp'
 // import Swiper core and required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules"
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const ProgramaSwiper = () => {
-   const swiperRef = useRef();
+   const swiperRef = useRef()
    return (
       <div className='relative'>
 
          <div className="wrapper relative">
-            <div className=" w-full pt-[15vh] md:py-[10vh] h-full relative ">
+            <div className=" w-full  h-full relative ">
                <Swiper
                   // install Swiper modules
                   modules={[Pagination, Navigation]}
@@ -30,9 +35,17 @@ const ProgramaSwiper = () => {
                   pagination={{ clickable: true }}
                   className="  w-full nyswiper h-full aspect-video relative  rounded-lg "
                   onBeforeInit={(swiper) => {
-                     swiperRef.current = swiper;
+                     swiperRef.current = swiper
                   }}
                >
+                  <SwiperSlide>
+                     <img
+                        src={swiper5}
+                        className="w-full h-full object-cover aspect-video"
+                        alt=""
+                     />
+                  </SwiperSlide>
+
                   <SwiperSlide>
                      <img
                         src={swiper4}
@@ -47,6 +60,7 @@ const ProgramaSwiper = () => {
                         alt=""
                      />
                   </SwiperSlide>
+
                   <SwiperSlide>
                      <img
                         src={swiper2}
@@ -56,7 +70,35 @@ const ProgramaSwiper = () => {
                   </SwiperSlide>
                   <SwiperSlide>
                      <img
+                        src={swiper6}
+                        className="w-full h-full object-cover aspect-video"
+                        alt=""
+                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img
                         src={swiper3}
+                        className="w-full h-full object-cover aspect-video"
+                        alt=""
+                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img
+                        src={swiper7}
+                        className="w-full h-full object-cover aspect-video"
+                        alt=""
+                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img
+                        src={swiper8}
+                        className="w-full h-full object-cover aspect-video"
+                        alt=""
+                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img
+                        src={swiper9}
                         className="w-full h-full object-cover aspect-video"
                         alt=""
                      />
@@ -87,7 +129,7 @@ const ProgramaSwiper = () => {
          </div> */}
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default ProgramaSwiper;
+export default ProgramaSwiper

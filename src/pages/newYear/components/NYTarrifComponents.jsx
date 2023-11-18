@@ -12,10 +12,10 @@ import tar3 from 'images/NY/tariff/3.webp'
 import tar4 from 'images/NY/tariff/4.webp'
 import tar5 from 'images/NY/tariff/5.webp'
 // import arrow from "icons/arrow.png";
-import { Reveal } from "common/Reveal";
-import { slideFromRight, slideFromLeft } from "constants/motion";
-import { Link as ScrollLink } from "react-scroll";
-import NYGreenButton from './NYGreenButton';
+import { Reveal } from "common/Reveal"
+import { slideFromLeft, slideFromRight } from "constants/motion"
+import { Link as ScrollLink } from "react-scroll"
+import NYGreenButton from './NYGreenButton'
 
 function TariffComponents() {
    return (
@@ -24,33 +24,33 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A]  rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      01
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
-                     &quot; Тариф Волшебные Олимпийские&quot;
+                     Тариф &quot;  Звездный Огонь&quot;
                   </h1>
                   <div className=" flex-col md:flex-row mb-[2%]  mx-5 p-5  rounded-lg flex justify-between">
                      <div className="text-md">
-                        <p>2-6 человек</p>
+                        <p>Домик на 6 гостей</p>
                         <p>Локация: Олимпийская деревня</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
                               Что включено
                            </h2>
                            <ul className="list-disc">
-                              <li>Проживание с 27 по 29</li>
-                              <li>Проживание с 28 по 30</li>
+                              <li>Проживание 4 суток</li>
+                              <li>новогодний ужин</li>
+                              <li>завтраки</li>
                               <li>
-                                 Торжественный ужин, участие во всех
-                                 мероприятиях
+                                 участие в новогодних мероприятиях
                               </li>
                            </ul>
                         </div>
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold">
-                           46,000
+                           32 000
                         </div>
                      </div>
                   </div>
@@ -86,32 +86,33 @@ function TariffComponents() {
          <div className="place-self-end">
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      02
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
-                     &quot;Тариф Шале Чародеев&quot;
+                     Тариф  &quot; Снежное Шале&quot;
                   </h1>
                   <div className=" flex-col md:flex-row mb-[2%]  mx-5 p-5  rounded-lg flex justify-between">
                      <div className="text-md">
-                        <p>6-10 человек</p>
+                        <p>домик на 15 человек </p>
                         <p>Локация: Шале</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
                               Что включено
                            </h2>
                            <ul className="list-disc">
-                              <li>Проживание 27, 28 ИЛИ 29 октября</li>
+                              <li>Проживание с 31 по 1 января</li>
+                              <li>новогодний ужин</li>
+                              <li>Возможно проживание в коттедже (узнавать по телефону)</li>
                               <li>
-                                 Торжественный ужин, участие во всех
-                                 мероприятиях
+                                 участие в новогодних мероприятиях
                               </li>
                            </ul>
                         </div>
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold">
-                           55,000
+                           101 000
                         </div>
                      </div>
                   </div>
@@ -146,33 +147,33 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      03
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
-                     &quot;Тариф Коттеджные Заклинатели&quot;
+                     Тариф  &quot; Коттеджные Сказки&quot;
                   </h1>
                   <div className=" flex-col md:flex-row mb-[2%]  mx-5 p-5  rounded-lg flex justify-between">
                      <div className="text-md">
-                        <p>6-10 человек</p>
+                        <p>Двухэтажный дом на 10 гостей</p>
                         <p>Локация: Коттедж</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
                               Что включено
                            </h2>
                            <ul className="list-disc">
-                              <li>Проживание с 27 по 29</li>
-                              <li>Проживание с 28 по 30</li>
+                              <li>Проживание с 30 декабря по 3 января</li>
+                              <li>новогодний ужин</li>
+                              <li>участие в новогодних мероприятиях</li>
                               <li>
-                                 Торжественный ужин, участие во всех
-                                 мероприятиях
+                                 завтраки
                               </li>
                            </ul>
                         </div>
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold">
-                           70,000
+                           53 000
                         </div>
                      </div>
                   </div>
@@ -208,33 +209,33 @@ function TariffComponents() {
          <div className="place-self-end">
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      04
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
-                     &quot;Тариф Лесные Ведьмы&quot;
+                     Тариф &quot; Лесные Снегурочки&quot;
                   </h1>
                   <div className=" flex-col md:flex-row mb-[2%]  mx-5 p-5  rounded-lg flex justify-between">
                      <div className="text-md">
-                        <p>6-10 человек</p>
+                        <p>Лесная локация с баней, верандой и костровой зоной на 10 гостей</p>
                         <p>Локация: Лесная Резиденция</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
                               Что включено
                            </h2>
                            <ul className="list-disc">
-                              <li>Проживание с 27 по 29</li>
-                              <li>Проживание с 28 по 30</li>
+                              <li>Проживание с 31 декабря по 2 января</li>
+                              <li>новогодний ужин</li>
+                              <li>участие в новогодних мероприятиях</li>
                               <li>
-                                 Торжественный ужин, участие во всех
-                                 мероприятиях
+                                 завтраки
                               </li>
                            </ul>
                         </div>
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold">
-                           75,000
+                           101 000
                         </div>
                      </div>
                   </div>
@@ -271,33 +272,33 @@ function TariffComponents() {
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[60px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
                      05
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
-                     &quot;Тариф Дуплекс Загадок&quot;
+                     Тариф &quot; Дуплекс С Новогодним Чудом&quot;
                   </h1>
                   <div className=" flex-col md:flex-row mb-[2%]  mx-5 p-5  rounded-lg flex justify-between">
                      <div className="text-md">
-                        <p>6-10 человек</p>
+                        <p>Дом-дуплекс на 10 гостей</p>
                         <p>Локация: Дуплекс</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
                               Что включено
                            </h2>
                            <ul className="list-disc">
-                              <li>Проживание с 27 по 29</li>
-                              <li>Проживание с 28 по 30</li>
+                              <li>Проживание с 30 декабря по 3 января</li>
+                              <li>новогодний ужин</li>
+                              <li>участие в новогодних мероприятиях</li>
                               <li>
-                                 Торжественный ужин, участие во всех
-                                 мероприятиях
+                                 завтраки
                               </li>
                            </ul>
                         </div>
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold">
-                           82,600
+                           51 000
                         </div>
                      </div>
                   </div>
@@ -329,7 +330,7 @@ function TariffComponents() {
             </Reveal>
          </div>
       </div>
-   );
+   )
 }
 
-export default TariffComponents;
+export default TariffComponents

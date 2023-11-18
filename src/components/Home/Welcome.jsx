@@ -1,4 +1,5 @@
 import { m } from "framer-motion"
+import ny_logo from 'icons/ny-logo.webp'
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"

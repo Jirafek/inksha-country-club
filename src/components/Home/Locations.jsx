@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomArrows";
-import { v4 as uuidv4 } from "uuid";
-import { m } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import { v4 as uuidv4 } from "uuid"
 
-import GreenButton from "./../../common/GreenButton";
-import AnimationButton from "./../../common/AnimationButton";
-import LocationPopup from "./../../common/LocationPopup";
-import { isItWinterNow } from "utils/helpers";
+import { isItWinterNow } from "utils/helpers"
+import AnimationButton from "./../../common/AnimationButton"
+import GreenButton from "./../../common/GreenButton"
+import LocationPopup from "./../../common/LocationPopup"
 
 const heading = {
    hidden: {},
@@ -19,7 +17,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLinesOpacity = {
    hidden: {
@@ -34,7 +32,7 @@ const headingLinesOpacity = {
          duration: 1,
       },
    },
-};
+}
 
 const sliderData = [
    // get images from FireBase
@@ -45,6 +43,9 @@ const sliderData = [
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/1",
+      imagesForSwiper: [
+         { img: '' }
+      ]
    },
    {
       imgWebp: "/image/locations2.webp",
@@ -70,22 +71,24 @@ const sliderData = [
       money: "от 10,000 Р",
       link: "/locations/4",
    },
-];
+]
 
 const Locations = () => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
+      setIsPopupOpen((prev) => !prev)
+   }
    const settings = {
       dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      nextArrow: <CustomNextArrow />,
-      prevArrow: <CustomPrevArrow />,
-   };
+      autoplay: true,
+      autoplaySpeed: 3000,
+      // nextArrow: <CustomNextArrow />,
+      // prevArrow: <CustomPrevArrow />,
+   }
 
    return (
       <section
@@ -142,7 +145,7 @@ const Locations = () => {
                         </div>
                      </div>
                   </div>
-               );
+               )
             })}
          </Slider>
          <div className=" z-[1] flex  flex-col items-center justify-center gap-5 pb-[65px]">
@@ -155,7 +158,7 @@ const Locations = () => {
                Узнать стоимость
             </AnimationButton>
          </div>
-      {!isItWinterNow() && <div className="absolute -bottom-[10px] w-full">
+         {!isItWinterNow() && <div className="absolute -bottom-[10px] w-full">
             <svg
                xmlns="http://www.w3.org/2000/svg"
                width="100%"
@@ -212,7 +215,7 @@ const Locations = () => {
             </svg>
          </div>}
       </section>
-   );
-};
+   )
+}
 
-export default Locations;
+export default Locations

@@ -26,7 +26,7 @@ const NYForm = () => {
       //    return;
       // }
 
-      const sendingData = {
+      sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
          formType: "Новый год лендинг",

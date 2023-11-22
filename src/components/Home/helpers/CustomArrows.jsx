@@ -1,7 +1,6 @@
-import React from "react";
 
 const CustomNextArrow = (props) => {
-   const { onClick } = props;
+   const { onClick } = props
    return (
       <div
          className="arrow next-arrow absolute bottom-[40px] right-2 z-20 h-7 w-[45px] rotate-90"
@@ -12,11 +11,11 @@ const CustomNextArrow = (props) => {
             backgroundRepeat: "no-repeat",
          }}
       ></div>
-   );
-};
+   )
+}
 
 const CustomPrevArrow = (props) => {
-   const { onClick } = props;
+   const { onClick } = props
    return (
       <div
          className="arrow prev-arrow absolute bottom-[40px] left-2 z-20 h-7 w-[45px] -rotate-90"
@@ -27,7 +26,8 @@ const CustomPrevArrow = (props) => {
             backgroundRepeat: "no-repeat",
          }}
       ></div>
-   );
-};
+   )
+}
 
-export { CustomNextArrow, CustomPrevArrow };
+export { CustomNextArrow, CustomPrevArrow }
+

@@ -1,20 +1,19 @@
-import React, {useState} from "react";
-import {useParams, Navigate} from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import {v4 as uuidv4} from "uuid";
-import InputMask from "react-input-mask";
+import { useState } from "react"
+import InputMask from "react-input-mask"
+import { Navigate } from "react-router-dom"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import { v4 as uuidv4 } from "uuid"
 
+import { Helmet } from "react-helmet"
+import { Controller, useForm } from "react-hook-form"
+import FixedFuter from "../components/Home/FixedFuter"
 import {
     CustomNextArrow,
     CustomPrevArrow,
-} from "../utils/Home/CustomArrowsLocations";
-import emailjs from "@emailjs/browser";
-import {useForm, Controller} from "react-hook-form";
-import FixedFuter from "../components/Home/FixedFuter";
-import {Helmet} from "react-helmet";
-import {useURLData} from "../utils/URLData";
+} from "../utils/Home/CustomArrowsLocations"
+import { useURLData } from "../utils/URLData"
 
 const locationsData = [
     {
@@ -74,41 +73,46 @@ const locationsData = [
             "Шезлонги, зона для пикника, а также",
         ],
     },
-];
+]
 
 const LocationsSlider = () => {
-    const {utm_campaign, utm_content, utm_source} = useURLData();
+    const { utm_campaign, utm_content, utm_source } = useURLData()
     //    const { register, handleSubmit, control } = useForm();
-    const [navigation, setNavigation] = useState(false);
+    const [navigation, setNavigation] = useState(false)
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <CustomNextArrow/>,
-        prevArrow: <CustomPrevArrow/>,
-    };
+        nextArrow: <CustomNextArrow />,
+        prevArrow: <CustomPrevArrow />,
+    }
     const {
         register,
         handleSubmit,
         control,
-        formState: {errors},
+        formState: { errors },
         reset,
-    } = useForm();
+    } = useForm()
 
     const onSubmit = async (data) => {
-        console.log(data);
+        console.log(data)
         const sendingData = {
-            ...data,
-            email: "-",
+
+            data: {
+                name: data.name,
+                phone: data.phone,
+                groupID: 981875757,
+                email: "-",
+            },
             source: "https://mobile.ikshacountryclub.com",
             formType: "Перезвоните мне",
             link: window.location.href,
             utm_source: utm_source,
             utm_campaign: utm_campaign,
             utm_content: utm_content,
-        };
+        }
 
         try {
             const response = await fetch(
@@ -121,24 +125,24 @@ const LocationsSlider = () => {
                     },
                     body: new URLSearchParams(sendingData).toString(),
                 }
-            );
+            )
 
             if (response.ok) {
-                reset();
-                alert("Данные успешно отправлены");
-                setNavigation(true);
+                reset()
+                alert("Данные успешно отправлены")
+                setNavigation(true)
             } else {
-                alert("Произошла ошибка при отправке данных");
+                alert("Произошла ошибка при отправке данных")
             }
         } catch (error) {
-            console.error(error);
-            alert("Произошла ошибка при отправке данных");
+            console.error(error)
+            alert("Произошла ошибка при отправке данных")
         }
-    };
+    }
 
     return (
         <section className="about_background back_settings relative">
-            {navigation && <Navigate to="/thanks"/>}
+            {navigation && <Navigate to="/thanks" />}
             <Helmet>
                 <title>
                     Домики в Подмосковье на берегу Икшинского водохранилища - Икша
@@ -165,7 +169,7 @@ const LocationsSlider = () => {
                     <div key={uuidv4()} className="flex flex-col items-center">
                         <div className="flex flex-col items-center">
                             <picture>
-                                <source srcSet={`${el.imgAvif} 1x`} type="image/avif"/>
+                                <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />
                                 <img
                                     src={el.imgWebp}
                                     alt={`Икша Кантри Клаб - ${el.title}`}
@@ -229,7 +233,7 @@ const LocationsSlider = () => {
                 >
                     <p className="mb-[7px] text-[20px] font-bold">Перезвоните мне</p>
                     <input
-                        {...register("name", {required: true})}
+                        {...register("name", { required: true })}
                         style={{
                             borderColor: "rgba(0, 0, 0, 0.50)",
                             backgroundColor: "rgba(217, 217, 217, 0.50)",
@@ -242,7 +246,7 @@ const LocationsSlider = () => {
                         name="phone"
                         control={control}
                         defaultValue=""
-                        render={({field}) => (
+                        render={({ field }) => (
                             <InputMask
                                 mask="+7 (999) 999-99-99"
                                 maskChar="_"
@@ -268,16 +272,16 @@ const LocationsSlider = () => {
 
                     <button
                         type="submit"
-                        style={{transform: "translateX(-50%)"}}
+                        style={{ transform: "translateX(-50%)" }}
                         className="absolute -bottom-8 left-1/2 rounded-[10px] border-[2px] border-black bg-[#0CF259] px-[40px] py-[2px] text-[13px]"
                     >
                         Отправить
                     </button>
                 </form>
             </div>
-            <FixedFuter link="/#locations" needRotate={true}/>
+            <FixedFuter link="/#locations" needRotate={true} />
         </section>
-    );
-};
+    )
+}
 
-export default LocationsSlider;
+export default LocationsSlider

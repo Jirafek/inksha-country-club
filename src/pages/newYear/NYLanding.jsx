@@ -53,7 +53,7 @@ const NYLanding = () => {
             <ProgramaSwiper />
             <Programa />
 
-            <div className='relative py-[5vh] sm:mt-[15vh]'>
+            <div className='relative py-[5vh] mb-[9vh] sm:mt-[15vh]'>
 
                <img src={venok} className='max-h-[500px] absolute  -bottom-[140px] z-[100]  w-screen' alt="" />
             </div>

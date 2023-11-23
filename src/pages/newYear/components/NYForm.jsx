@@ -26,7 +26,7 @@ const NYForm = () => {
       //    return;
       // }
 
-      sendingData = {
+      const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
          formType: "Новый год лендинг",
@@ -51,7 +51,8 @@ const NYForm = () => {
 
          if (response.ok) {
             setTimeout(() => {
-               navigate("/thanks")
+               window.location.href = 'https://ikshacountryclub.com/thanks'
+
             }, 1000)
             // ... ваша существующая логика ...
             setPhone("") // Очищаем состояние телефона

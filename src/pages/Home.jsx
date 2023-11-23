@@ -1,41 +1,49 @@
-import React, { useReducer, Fragment, useState, useEffect } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import routes from "../utils/Home/routes";
-import { v4 as uuidv4 } from "uuid";
-import FixedFuter from "../components/Home/FixedFuter";
-import Welcome from "../components/Home/Welcome";
-import Map from "../components/Home/Map/Map";
-import About from "../components/Home/About";
-import Happy from "../components/Home/Happy";
-import Gallery from "../components/Home/Gallery";
-import Eat from "../components/Home/Eat";
-import Locations from "../components/Home/Locations";
-import Events from "../components/Home/Events";
-import EventsFromFireBase from "../components/Home/EventsFromFireBase";
-import Help from "../components/Home/Help";
-import Calculate from "../components/Home/Calculate";
-import Spec from "../components/Home/Spec";
-import Dates from "../components/Home/Dates";
-import Responce from "../components/Home/Responce";
-import Blog from "../components/Home/Blog";
-import YandexMap from "../components/Home/YandexMap";
-import Footer from "../components/Home/Footer";
-import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { isItWinterNow } from "utils/helpers";
+import { Dialog, Transition } from "@headlessui/react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import { Fragment, useEffect, useReducer, useState } from "react"
+import { Helmet } from "react-helmet"
+import { Link } from "react-router-dom"
+import { isItWinterNow } from "utils/helpers"
+import { v4 as uuidv4 } from "uuid"
+// import About from "../components/Home/About"
+// import Blog from "../components/Home/Blog"
+import routes from "../utils/Home/routes"
 
+
+
+import loadable from '@loadable/component'
+
+const Welcome = loadable(() => import("../components/Home/Welcome"))
+const YandexMap = loadable(() => import("../components/Home/YandexMap"))
+const Calculate = loadable(() => import("../components/Home/Calculate"))
+const Dates = loadable(() => import("../components/Home/Dates"))
+const FixedFuter = loadable(() => import("../components/Home/FixedFuter"))
+const Events = loadable(() => import("../components/Home/Events"))
+const EventsFromFireBase = loadable(() => import("../components/Home/EventsFromFireBase"))
+const Eat = loadable(() => import("../components/Home/Eat"))
+const Footer = loadable(() => import("../components/Home/Footer"))
+const Happy = loadable(() => import("../components/Home/Happy"))
+const Spec = loadable(() => import("../components/Home/Spec"))
+const Responce = loadable(() => import("../components/Home/Responce"))
+const Gallery = loadable(() => import("../components/Home/Gallery"))
+const Locations = loadable(() => import("../components/Home/Locations"))
+const Help = loadable(() => import("../components/Home/Help"))
+const About = loadable(() => import("../components/Home/About"))
+const Blog = loadable(() => import("../components/Home/Blog"))
+const Map = loadable(() => import("../components/Home/Map/Map"))
 const Home = () => {
 
+
+
    const parallaxActivate = (document) => {
-      const sections = Array.from(document.querySelectorAll(".section"));
-      gsap.registerPlugin(ScrollTrigger);
-      const timeline = gsap.timeline();
+      const sections = Array.from(document.querySelectorAll(".section"))
+      gsap.registerPlugin(ScrollTrigger)
+      const timeline = gsap.timeline()
 
       for (const i in sections) {
          // if(i !== 0)
-         timeline.fromTo(sections[i], { y: "100vh" }, { y: "0" });
+         timeline.fromTo(sections[i], { y: "100vh" }, { y: "0" })
       }
 
       ScrollTrigger.create({
@@ -46,38 +54,38 @@ const Home = () => {
          end: "bottom",
          scrub: 1,
          pin: true,
-      });
-   };
-   const [locationState, setLocationState] = useState(false);
+      })
+   }
+   const [locationState, setLocationState] = useState(false)
 
-   const [isVisible, setIsVisible] = useState(false);
-   const [sidebarOpen, toggle] = useReducer((s) => !s, false);
+   const [isVisible, setIsVisible] = useState(false)
+   const [sidebarOpen, toggle] = useReducer((s) => !s, false)
 
    useEffect(() => {
       const handleScroll = () => {
-         const scrollPosition = window.scrollY;
-         const triggerPosition = 1000; // define the scroll position where you want to show the block
+         const scrollPosition = window.scrollY
+         const triggerPosition = 1000 // define the scroll position where you want to show the block
 
-         setIsVisible(scrollPosition > triggerPosition);
-      };
+         setIsVisible(scrollPosition > triggerPosition)
+      }
 
-      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll)
 
       // parallaxActivate(document);
 
       return () => {
-         window.removeEventListener("scroll", handleScroll);
-      };
-   }, []);
+         window.removeEventListener("scroll", handleScroll)
+      }
+   }, [])
 
-   const [burgerState, setBurgerState] = useState(false);
+   const [burgerState, setBurgerState] = useState(false)
 
    function handleBurgerClick() {
-      setBurgerState(!burgerState);
+      setBurgerState(!burgerState)
    }
 
    function closeBurger() {
-      setBurgerState(false);
+      setBurgerState(false)
    }
 
    return (
@@ -130,9 +138,8 @@ const Home = () => {
                               <button
                                  className="outline-none"
                                  style={{
-                                    display: `${
-                                       sidebarOpen ? "block" : "none"
-                                    }`,
+                                    display: `${sidebarOpen ? "block" : "none"
+                                       }`,
                                  }}
                                  onClick={toggle}
                               >
@@ -170,7 +177,7 @@ const Home = () => {
                                              )}
                                           </Link>
                                        </li>
-                                    );
+                                    )
                                  })}
                               </ul>
                            </nav>
@@ -219,7 +226,7 @@ const Home = () => {
             </div>
          </Fragment>
       </>
-   );
-};
+   )
+}
 
-export default Home;
+export default Home

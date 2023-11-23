@@ -122,7 +122,7 @@ const EventPopup = ({ isPopupOpen, togglePopup }) => {
 
             if (response.ok) {
                 setTimeout(() => {
-                    navigate("/thanks")
+                    window.location.href = 'https://ikshacountryclub.com/thanks'
                 }, 1000)
             } else {
                 alert("Произошла ошибка при отправке данных")

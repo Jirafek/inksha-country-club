@@ -1,26 +1,24 @@
-import React, { useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
-import emailjs from '@emailjs/browser';
-import FixedFuter from '../components/Home/FixedFuter';
-import { Link } from "react-router-dom";
-import {useURLData} from "../utils/URLData";
+import { useState } from "react"
+import { Navigate, useParams } from "react-router-dom"
+import FixedFuter from '../components/Home/FixedFuter'
+import { useURLData } from "../utils/URLData"
 
 const FormCalculate = () => {
-    const { amount } = useParams();
-    const [name, setName] = useState("");
-    const {utm_campaign, utm_content, utm_source} = useURLData();
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
-    const [isButtonAvailible, setIsButtonAvailible] = useState(false);
+    const { amount } = useParams()
+    const [name, setName] = useState("")
+    const { utm_campaign, utm_content, utm_source } = useURLData()
+    const [phone, setPhone] = useState("")
+    const [email, setEmail] = useState("")
+    const [isButtonAvailible, setIsButtonAvailible] = useState(false)
     const [navigation, setNavigation] = useState(false)
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const urlParams = new URLSearchParams(window.location.href);
+        e.preventDefault()
+        const urlParams = new URLSearchParams(window.location.href)
         const location = urlParams.get('location') === '1' ?
             'ЛЕСНАЯ РЕЗИДЕНЦИЯ' : urlParams.get('location') === '2' ?
                 'ШАЛЕ' : urlParams.get('location') === '3' ?
-                    'КОТТЕДЖ' : 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ';
+                    'КОТТЕДЖ' : 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ'
 
         const data = {
             name: name,
@@ -52,26 +50,27 @@ const FormCalculate = () => {
                     'Access-Control-Allow-Origin': '*'
                 },
                 body: new URLSearchParams(sendingData).toString(),
-            });
+            })
 
             if (response.ok) {
 
 
                 setTimeout(() => {
-                    setName('');
-                    setPhone('');
-                    setEmail('');
-                    setNavigation(true);
+                    setName('')
+                    setPhone('')
+                    setEmail('')
+                    setNavigation(true)
+                    window.location.href = 'https://ikshacountryclub.com/thanks'
                 }, 1000)
 
             } else {
-                alert('Произошла ошибка при отправке данных');
+                alert('Произошла ошибка при отправке данных')
             }
         } catch (error) {
-            console.error(error);
-            alert('Произошла ошибка при отправке данных');
+            console.error(error)
+            alert('Произошла ошибка при отправке данных')
         }
-    };
+    }
 
     return (
         <section className="bg-[#201e1f] h-screen">
@@ -121,7 +120,7 @@ const FormCalculate = () => {
             </div>
             <FixedFuter link="/" needRotate={true} />
         </section>
-    );
+    )
 }
 
-export default FormCalculate;
+export default FormCalculate

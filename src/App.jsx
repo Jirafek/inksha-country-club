@@ -1,47 +1,50 @@
-import { useEffect, useState } from "react"
+import Cookies from "js-cookie"
+import { lazy, useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
 
-import Cookies from "js-cookie"
-import NYLanding from "pages/newYear/NYLanding"
-import Cookie from './common/Cookie'
-import BlogAll from "./pages/BlogAll"
-import Booking from "./pages/Booking"
-import DatesChooser from "./pages/DatesChooser"
-import FAQ from "./pages/FAQ"
-import FormCalculate from "./pages/FormCalculate"
-import GalleryAll from "./pages/GalleryAll"
-import HappySlider from "./pages/HappySlider"
-import Helloween from "./pages/Helloween"
-import Home from "./pages/Home"
-import Keitering from "./pages/Keitering"
-import KorpSlider from "./pages/KorpSlider"
-import Korporativy from "./pages/Korporativy"
-import LocationsSlider from "./pages/LocationsSlider"
-import NotFound from "./pages/NotFound"
-import Popup from "./pages/Popup"
-import Rules from "./pages/Rules"
-import Thanks from "./pages/Thanks"
-import KorpLanding from "./pages/korpLanding/KorpLanding"
+// import NYLanding from "pages/newYear/NYLanding"
+// import Cookie from './common/Cookie'
+// import BlogAll from "./pages/BlogAll"
+// import Booking from "./pages/Booking"
+// import DatesChooser from "./pages/DatesChooser"
+// import FAQ from "./pages/FAQ"
+// import FormCalculate from "./pages/FormCalculate"
+// import GalleryAll from "./pages/GalleryAll"
+// import HappySlider from "./pages/HappySlider"
+// import Helloween from "./pages/Helloween"
+// import Home from "./pages/Home"
+// import Keitering from "./pages/Keitering"
+// import KorpSlider from "./pages/KorpSlider"
+// import Korporativy from "./pages/Korporativy"
+// import LocationsSlider from "./pages/LocationsSlider"
+// import NotFound from "./pages/NotFound"
+// import Popup from "./pages/Popup"
+// import Rules from "./pages/Rules"
+// import Thanks from "./pages/Thanks"
+// import KorpLanding from "./pages/korpLanding/KorpLanding"
 
-// const Home = lazy(() => import("pages/Home"));
-// const Booking = lazy(() => import("pages/Booking"));
-// const Keitering = lazy(() => import("pages/Keitering"));
-// const DatesChooser = lazy(() => import("pages/DatesChooser"));
-// const GalleryAll = lazy(() => import("pages/GalleryAll"));
-// const HappySlider = lazy(() => import("pages/HappySlider"));
-// const Rules = lazy(() => import("pages/Rules"));
-// const NotFound = lazy(() => import("pages/NotFound"));
-// const Korporativy = lazy(() => import("pages/Korporativy"));
-// const KorpSlider = lazy(() => import("pages/KorpSlider"));
-// const FAQ = lazy(() => import("pages/FAQ"));
-// const LocationsSlider = lazy(() => import("pages/LocationsSlider"));
-// const BlogAll = lazy(() => import("pages/BlogAll"));
-// const FormCalculate = lazy(() => import("pages/FormCalculate"));
-// const Thanks = lazy(() => import("pages/Thanks"));
-// const Popup = lazy(() => import("pages/Popup"));
-// const Helloween = lazy(() => import("pages/Helloween"));
+const Home = lazy(() => import("pages/Home"))
+const Cookie = lazy(() => import('./common/Cookie'))
+const NYLanding = lazy(() => import("pages/newYear/NYLanding"))
+const Booking = lazy(() => import("pages/Booking"))
+const Keitering = lazy(() => import("pages/Keitering"))
+const DatesChooser = lazy(() => import("pages/DatesChooser"))
+const GalleryAll = lazy(() => import("pages/GalleryAll"))
+const HappySlider = lazy(() => import("pages/HappySlider"))
+const Rules = lazy(() => import("pages/Rules"))
+const NotFound = lazy(() => import("pages/NotFound"))
+const Korporativy = lazy(() => import("pages/Korporativy"))
+const KorpSlider = lazy(() => import("pages/KorpSlider"))
+const FAQ = lazy(() => import("pages/FAQ"))
+const LocationsSlider = lazy(() => import("pages/LocationsSlider"))
+const BlogAll = lazy(() => import("pages/BlogAll"))
+const FormCalculate = lazy(() => import("pages/FormCalculate"))
+const Thanks = lazy(() => import("pages/Thanks"))
+const Popup = lazy(() => import("pages/Popup"))
+const Helloween = lazy(() => import("pages/Helloween"))
+const KorpLanding = lazy(() => import("./pages/korpLanding/KorpLanding"))
 
 function App() {
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()

@@ -17,6 +17,29 @@
     z-index: 10;
 }
 
+.map-looker {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    backdrop-filter: blur(2px);
+    /* transition: all .3s linear; */
+}
+
+.map-looker---close {
+    top: calc(100% - 40px); right: 0;
+    height: 40px;
+    font-size: 14px;
+}
+
 
 .map-header {
     position: absolute;

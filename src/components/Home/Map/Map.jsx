@@ -19,7 +19,8 @@ const Map = () => {
 
     const [mapVer, setMapVer] = useState(0),
         [tooltipActive, setTooltipActive] = useState(false),
-        [tooltipText, setTooltipText] = useState('');
+        [tooltipText, setTooltipText] = useState(''),
+        [mapLook, setMapLook] = useState(true);
 
 
     useEffect(() => {
@@ -46,13 +47,18 @@ const Map = () => {
             </div>
             <Select current={mapVer} setCurrent={setMapVer} datas={mapVersions} />
         </div>
-        <div className='map-viewer'>
+        <div className='map-viewer' onDoubleClick={() => setMapLook(true)}>
             <div className="map-wrapper">
                 {mapVersions[mapVer].component}
                 <div className={tooltipActive ? 'map-tooltip map-tooltip--active' : 'map-tooltip'}>
                     {tooltipText}
                 </div>
             </div>
+        </div>
+        <div
+            className={`map-looker ${!mapLook ? 'map-looker---close' : ''}`}
+            onDoubleClick={() => setMapLook(false)}>
+            Тапните два раза {!mapLook && 'чтобы заблокировать карту'}
         </div>
     </section>;
 };

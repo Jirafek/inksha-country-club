@@ -15,6 +15,8 @@ import {
 } from "../utils/Home/CustomArrowsLocations"
 import { useURLData } from "../utils/URLData"
 
+
+
 const locationsData = [
     {
         imgAvif: "/avif/locations_slider_title.avif",

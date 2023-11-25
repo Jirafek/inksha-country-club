@@ -1,9 +1,9 @@
+import loadable from '@loadable/component'
 import Cookies from "js-cookie"
-import { lazy, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
-
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -25,26 +25,26 @@ import { useURLData } from "./utils/URLData"
 // import Thanks from "./pages/Thanks"
 // import KorpLanding from "./pages/korpLanding/KorpLanding"
 
-const Home = lazy(() => import("pages/Home"))
-const Cookie = lazy(() => import('./common/Cookie'))
-const NYLanding = lazy(() => import("pages/newYear/NYLanding"))
-const Booking = lazy(() => import("pages/Booking"))
-const Keitering = lazy(() => import("pages/Keitering"))
-const DatesChooser = lazy(() => import("pages/DatesChooser"))
-const GalleryAll = lazy(() => import("pages/GalleryAll"))
-const HappySlider = lazy(() => import("pages/HappySlider"))
-const Rules = lazy(() => import("pages/Rules"))
-const NotFound = lazy(() => import("pages/NotFound"))
-const Korporativy = lazy(() => import("pages/Korporativy"))
-const KorpSlider = lazy(() => import("pages/KorpSlider"))
-const FAQ = lazy(() => import("pages/FAQ"))
-const LocationsSlider = lazy(() => import("pages/LocationsSlider"))
-const BlogAll = lazy(() => import("pages/BlogAll"))
-const FormCalculate = lazy(() => import("pages/FormCalculate"))
-const Thanks = lazy(() => import("pages/Thanks"))
-const Popup = lazy(() => import("pages/Popup"))
-const Helloween = lazy(() => import("pages/Helloween"))
-const KorpLanding = lazy(() => import("./pages/korpLanding/KorpLanding"))
+const Home = loadable(() => import("pages/Home"))
+const Cookie = loadable(() => import('./common/Cookie'))
+const NYLanding = loadable(() => import("pages/newYear/NYLanding"))
+const Booking = loadable(() => import("pages/Booking"))
+const Keitering = loadable(() => import("pages/Keitering"))
+const DatesChooser = loadable(() => import("pages/DatesChooser"))
+const GalleryAll = loadable(() => import("pages/GalleryAll"))
+const HappySlider = loadable(() => import("pages/HappySlider"))
+const Rules = loadable(() => import("pages/Rules"))
+const NotFound = loadable(() => import("pages/NotFound"))
+const Korporativy = loadable(() => import("pages/Korporativy"))
+const KorpSlider = loadable(() => import("pages/KorpSlider"))
+const FAQ = loadable(() => import("pages/FAQ"))
+const LocationsSlider = loadable(() => import("pages/LocationsSlider"))
+const BlogAll = loadable(() => import("pages/BlogAll"))
+const FormCalculate = loadable(() => import("pages/FormCalculate"))
+const Thanks = loadable(() => import("pages/Thanks"))
+const Popup = loadable(() => import("pages/Popup"))
+const Helloween = loadable(() => import("pages/Helloween"))
+const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 
 function App() {
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()

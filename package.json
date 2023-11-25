@@ -38,6 +38,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.47.0",
     "react-input-mask": "^2.0.4",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-lottie-player": "^1.4.3",
     "react-phone-number-input": "^3.3.0",
     "react-router-dom": "^6.17.0",

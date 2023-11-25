@@ -11,7 +11,6 @@ import { v4 as uuidv4 } from "uuid"
 import routes from "../utils/Home/routes"
 
 
-
 import loadable from '@loadable/component'
 
 const Welcome = loadable(() => import("../components/Home/Welcome"))
@@ -88,8 +87,22 @@ const Home = () => {
       setBurgerState(false)
    }
 
+   // function onRenderCallback(
+   //    id, // уникальный идентификатор примечания для этого профилирования
+   //    phase, // "mount" (если профилирование происходит во время монтирования) или "update" (если профилирование происходит во время обновления)
+   //    actualDuration, // время, затраченное на рендеринг компонента
+   //    baseDuration, // оценочное время, которое React считает необходимым для рендеринга компонента
+   //    startTime, // когда React начал рендеринг этого компонента
+   //    commitTime, // когда React зафиксировал результаты этого рендеринга
+   //    interactions // множество взаимодействий, связанных с этим рендерингом
+   // ) {
+   //    // Здесь вы можете отправить данные профилирования аналитике или логгеру
+   //    console.log(id, phase, 'actual ', actualDuration, '///', 'base ' + baseDuration, startTime, commitTime, interactions)
+   // }
+
    return (
       <>
+         {/* <Profiler id="home" onRender={onRenderCallback}> */}
          <Helmet>
             <title>
                Загородный клуб Икша Кантри Клаб - Отдых в Подмосковье на берегу
@@ -107,7 +120,7 @@ const Home = () => {
             <meta
                name="keywords"
                content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
-корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+         корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
          <Fragment>
@@ -225,6 +238,7 @@ const Home = () => {
                {isVisible && <FixedFuter link="#book" needRotate={false} />}
             </div>
          </Fragment>
+         {/* </Profiler> */}
       </>
    )
 }

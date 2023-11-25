@@ -1,15 +1,17 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { v4 as uuidv4 } from "uuid"
 
+import next from "icons/next_photo.png"
+import prev from "icons/prev_photo.png"
+import { Navigation } from 'swiper/modules'
 import { isItWinterNow } from "utils/helpers"
 import AnimationButton from "./../../common/AnimationButton"
 import GreenButton from "./../../common/GreenButton"
 import LocationPopup from "./../../common/LocationPopup"
-
 const heading = {
    hidden: {},
    visible: {
@@ -34,6 +36,117 @@ const headingLinesOpacity = {
    },
 }
 
+export const ImageComponent = ({ image }) => {
+
+   return (
+
+      <div className='w-full h-[50vh]'>
+         {/* <LazyLoadImage
+         alt={image.alt}
+         src={image.src} /> */}
+         <img className='object-contain ' src={image} alt="" />
+         {/* <span>{image.caption}</span> */}
+      </div>
+   )
+}
+
+
+export const SlickComponent = ({ el }) => {
+
+   const { imagesForSwiper, title, people, money } = el
+   console.log(imagesForSwiper)
+
+   const swiperRef = useRef()
+   return (
+      <div
+         className="flex flex-col items-center justify-center"
+         key={uuidv4()}
+      >
+         <div className="flex justify-center">
+            {/* <Swiper
+               // install Swiper modules
+               spaceBetween={50}
+               slidesPerView={1}
+               modules={[Navigation, Pagination, Scrollbar, A11y]}
+               onBeforeInit={(swiper) => {
+                  swiperRef.current = swiper
+               }}
+               className='relative'
+
+
+            >
+               {imagesForSwiper.map(image => {
+
+                  return (
+                     <SwiperSlide>
+                        <ImageComponent image={image.img} />
+                     </SwiperSlide>
+                  )
+               })}
+
+               <div>
+
+                  <button
+                     className="absolute right-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
+                     onClick={() => {
+                        swiperRef.current?.slideNext()
+                     }}
+                  >
+                     <img src={next} alt="" />
+                  </button>
+                  <button
+                     className="absolute left-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
+                     onClick={() => {
+                        swiperRef.current?.slidePrev()
+                     }}
+                  >
+                     <img src={prev} alt="" />
+                  </button>
+               </div>
+            </Swiper> */}
+            <picture>
+               <source
+                  srcSet={`${el.imgAvif} 1x`}
+                  type="image/avif"
+               />
+               <img
+                  className="mb-[10px] px-5"
+                  src={el.imgWebp}
+                  alt={`Изображение локации - ${el.title}`}
+               />
+            </picture>
+         </div>
+         <div className="flex justify-center">
+            <div
+               style={{
+                  backgroundImage:
+                     "url(/image/locations_about.webp)",
+               }}
+               className="back_settings monterey flex h-[95px] w-[240px] flex-col items-center justify-center text-[16px] text-[#000]"
+            >
+               <h3 className="text-[14px] font-bold">{title}</h3>
+               <p>{people}</p>
+               <p>{money}</p>
+            </div>
+         </div>
+      </div>
+   )
+}
+
+
+
+import rez1 from 'images/locations/rezyd/001.webp'
+import rez2 from 'images/locations/rezyd/002.webp'
+import rez3 from 'images/locations/rezyd/003.webp'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+import { A11y, Pagination, Scrollbar } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+
 const sliderData = [
    // get images from FireBase
    {
@@ -44,7 +157,9 @@ const sliderData = [
       money: "от 10,000 Р",
       link: "/locations/1",
       imagesForSwiper: [
-         { img: '' }
+         { img: rez1 },
+         { img: rez2 },
+         { img: rez3 }
       ]
    },
    {
@@ -54,6 +169,11 @@ const sliderData = [
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/2",
+      imagesForSwiper: [
+         { img: rez1 },
+         { img: rez2 },
+         { img: rez3 }
+      ]
    },
    {
       imgWebp: "/image/locations3.webp",
@@ -62,6 +182,11 @@ const sliderData = [
       people: "до 10 человек",
       money: "от 10,000 Р",
       link: "/locations/3",
+      imagesForSwiper: [
+         { img: rez1 },
+         { img: rez2 },
+         { img: rez3 }
+      ]
    },
    {
       imgWebp: "/image/locations4.webp",
@@ -70,6 +195,11 @@ const sliderData = [
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/4",
+      imagesForSwiper: [
+         { img: rez1 },
+         { img: rez2 },
+         { img: rez3 }
+      ]
    },
 ]
 
@@ -84,8 +214,9 @@ const Locations = () => {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
+      // autoplay: true,
+      // autoplaySpeed: 5000,
+
       // nextArrow: <CustomNextArrow />,
       // prevArrow: <CustomPrevArrow />,
    }
@@ -114,38 +245,10 @@ const Locations = () => {
          <Slider className="mt-[35px]" {...settings}>
             {sliderData.map((el, i) => {
                return (
-                  <div
-                     className="flex flex-col items-center justify-center"
-                     key={uuidv4()}
-                  >
-                     <div className="flex justify-center">
-                        <picture>
-                           <source
-                              srcSet={`${el.imgAvif} 1x`}
-                              type="image/avif"
-                           />
-                           <img
-                              className="mb-[10px] px-5"
-                              src={el.imgWebp}
-                              alt={`Изображение локации - ${el.title}`}
-                           />
-                        </picture>
-                     </div>
-                     <div className="flex justify-center">
-                        <div
-                           style={{
-                              backgroundImage:
-                                 "url(/image/locations_about.webp)",
-                           }}
-                           className="back_settings monterey flex h-[95px] w-[240px] flex-col items-center justify-center text-[16px] text-[#000]"
-                        >
-                           <h3 className="text-[14px] font-bold">{el.title}</h3>
-                           <p>{el.people}</p>
-                           <p>{el.money}</p>
-                        </div>
-                     </div>
-                  </div>
+
+                  <SlickComponent el={el} i={i} />
                )
+
             })}
          </Slider>
          <div className=" z-[1] flex  flex-col items-center justify-center gap-5 pb-[65px]">

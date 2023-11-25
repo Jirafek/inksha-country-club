@@ -1,10 +1,10 @@
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react"
 
-import { defineConfig } from "vite";
+import { defineConfig } from "vite"
 
-import svgr from "vite-plugin-svgr";
+import svgr from "vite-plugin-svgr"
 
-import path from "path";
+import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +24,6 @@ export default defineConfig({
          constants: path.resolve(__dirname, "./src/constants/"),
          images: path.resolve(__dirname, "./public/image/"),
          icons: path.resolve(__dirname, "./public/image/icons/"),
-
          common: path.resolve(__dirname, "./src/common/"),
          utils: path.resolve(__dirname, "./src/utils/"),
       },

@@ -10,7 +10,24 @@ import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
 
+
+function onRenderCallback(
+   id, // уникальный идентификатор примечания для этого профилирования
+   phase, // "mount" (если профилирование происходит во время монтирования) или "update" (если профилирование происходит во время обновления)
+   actualDuration, // время, затраченное на рендеринг компонента
+   baseDuration, // оценочное время, которое React считает необходимым для рендеринга компонента
+   startTime, // когда React начал рендеринг этого компонента
+   commitTime, // когда React зафиксировал результаты этого рендеринга
+   interactions // множество взаимодействий, связанных с этим рендерингом
+) {
+   // Здесь вы можете отправить данные профилирования аналитике или логгеру
+   console.log(id, phase, actualDuration, baseDuration, startTime, commitTime, interactions)
+}
+
+
 ReactDOM.createRoot(document.getElementById("root")).render(
+   // <Profiler id="app" onRender={onRenderCallback}>
+
    <BrowserRouter>
       <QueryParamProvider adapter={ReactRouter6Adapter}>
          <LazyMotion features={domAnimation} strict>
@@ -27,6 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
          </LazyMotion>
       </QueryParamProvider>
    </BrowserRouter>
+   // </Profiler>
 )
 
 function AppWithDelay() {

@@ -48,6 +48,7 @@ const Map = () => {
             <Select current={mapVer} setCurrent={setMapVer} datas={mapVersions} />
         </div>
         <div className='map-viewer' onDoubleClick={() => setMapLook(true)}>
+
             <div className="map-wrapper">
                 {mapVersions[mapVer].component}
                 <div className={tooltipActive ? 'map-tooltip map-tooltip--active' : 'map-tooltip'}>

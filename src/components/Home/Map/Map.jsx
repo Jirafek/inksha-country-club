@@ -57,7 +57,7 @@ const Map = () => {
         </div>
         <div
             className={`map-looker ${!mapLook ? 'map-looker---close' : ''}`}
-            onDoubleClick={() => setMapLook(false)}>
+            onDoubleClick={() => setMapLook(!mapLook)}>
             Тапните два раза {!mapLook && 'чтобы заблокировать карту'}
         </div>
     </section>;

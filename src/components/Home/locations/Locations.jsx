@@ -1,17 +1,15 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
-import { v4 as uuidv4 } from "uuid"
 
-import next from "icons/next_photo.png"
-import prev from "icons/prev_photo.png"
-import { Navigation } from 'swiper/modules'
 import { isItWinterNow } from "utils/helpers"
-import AnimationButton from "./../../common/AnimationButton"
-import GreenButton from "./../../common/GreenButton"
-import LocationPopup from "./../../common/LocationPopup"
+import AnimationButton from "../../../common/AnimationButton"
+import GreenButton from "../../../common/GreenButton"
+import LocationPopup from "../../../common/LocationPopup"
+
+import { SlickComponent } from './SlickComponent'
 const heading = {
    hidden: {},
    visible: {
@@ -36,169 +34,88 @@ const headingLinesOpacity = {
    },
 }
 
-export const ImageComponent = ({ image }) => {
-
-   return (
-
-      <div className='w-full h-[50vh]'>
-         {/* <LazyLoadImage
-         alt={image.alt}
-         src={image.src} /> */}
-         <img className='object-contain ' src={image} alt="" />
-         {/* <span>{image.caption}</span> */}
-      </div>
-   )
-}
-
-
-export const SlickComponent = ({ el }) => {
-
-   const { imagesForSwiper, title, people, money } = el
-   console.log(imagesForSwiper)
-
-   const swiperRef = useRef()
-   return (
-      <div
-         className="flex flex-col items-center justify-center"
-         key={uuidv4()}
-      >
-         <div className="flex justify-center">
-            {/* <Swiper
-               // install Swiper modules
-               spaceBetween={50}
-               slidesPerView={1}
-               modules={[Navigation, Pagination, Scrollbar, A11y]}
-               onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper
-               }}
-               className='relative'
-
-
-            >
-               {imagesForSwiper.map(image => {
-
-                  return (
-                     <SwiperSlide>
-                        <ImageComponent image={image.img} />
-                     </SwiperSlide>
-                  )
-               })}
-
-               <div>
-
-                  <button
-                     className="absolute right-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
-                     onClick={() => {
-                        swiperRef.current?.slideNext()
-                     }}
-                  >
-                     <img src={next} alt="" />
-                  </button>
-                  <button
-                     className="absolute left-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
-                     onClick={() => {
-                        swiperRef.current?.slidePrev()
-                     }}
-                  >
-                     <img src={prev} alt="" />
-                  </button>
-               </div>
-            </Swiper> */}
-            <picture>
-               <source
-                  srcSet={`${el.imgAvif} 1x`}
-                  type="image/avif"
-               />
-               <img
-                  className="mb-[10px] px-5"
-                  src={el.imgWebp}
-                  alt={`Изображение локации - ${el.title}`}
-               />
-            </picture>
-         </div>
-         <div className="flex justify-center">
-            <div
-               style={{
-                  backgroundImage:
-                     "url(/image/locations_about.webp)",
-               }}
-               className="back_settings monterey flex h-[95px] w-[240px] flex-col items-center justify-center text-[16px] text-[#000]"
-            >
-               <h3 className="text-[14px] font-bold">{title}</h3>
-               <p>{people}</p>
-               <p>{money}</p>
-            </div>
-         </div>
-      </div>
-   )
-}
-
 
 
 import rez1 from 'images/locations/rezyd/001.webp'
 import rez2 from 'images/locations/rezyd/002.webp'
 import rez3 from 'images/locations/rezyd/003.webp'
+import rez4 from 'images/locations1.webp'
+
+import cot1 from 'images/locations/cottage/002.webp'
+import cot2 from 'images/locations/cottage/003.webp'
+import cot3 from 'images/locations3.webp'
+
+import shal1 from 'images/locations/shale/001.webp'
+import shal2 from 'images/locations/shale/002.webp'
+import shal3 from 'images/locations/shale/003.webp'
+import shal4 from 'images/locations2.webp'
+
+import ol1 from 'images/locations/olympic/001.webp'
+import ol2 from 'images/locations/olympic/002.webp'
+import ol3 from 'images/locations/olympic/003.webp'
+import ol4 from 'images/locations/olympic/004.webp'
+import ol5 from 'images/locations4.webp'
+
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import { A11y, Pagination, Scrollbar } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 
 const sliderData = [
    // get images from FireBase
    {
-      imgWebp: "/image/locations1.webp",
-      imgAvif: "/avif/locations1.avif",
+
       title: "ЛЕСНАЯ РЕЗИДЕНЦИЯ",
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/1",
       imagesForSwiper: [
+         { img: rez4 },
          { img: rez1 },
          { img: rez2 },
          { img: rez3 }
       ]
    },
    {
-      imgWebp: "/image/locations2.webp",
-      imgAvif: "/avif/locations2.avif",
+
       title: "ШАЛЕ",
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/2",
       imagesForSwiper: [
-         { img: rez1 },
-         { img: rez2 },
-         { img: rez3 }
+         { img: shal4 },
+         { img: shal1 },
+         { img: shal2 },
+         { img: shal3 }
       ]
    },
    {
-      imgWebp: "/image/locations3.webp",
-      imgAvif: "/avif/locations3.avif",
+
       title: "КОТТЕДЖ",
       people: "до 10 человек",
       money: "от 10,000 Р",
       link: "/locations/3",
       imagesForSwiper: [
-         { img: rez1 },
-         { img: rez2 },
-         { img: rez3 }
+         { img: cot3 },
+         { img: cot1 },
+         { img: cot2 },
+
       ]
    },
    {
-      imgWebp: "/image/locations4.webp",
-      imgAvif: "/avif/locations4.avif",
+
       title: "ОЛИМПИЙСКАЯ ДЕРЕВНЯ",
       people: "до 30 человек",
       money: "от 10,000 Р",
       link: "/locations/4",
       imagesForSwiper: [
-         { img: rez1 },
-         { img: rez2 },
-         { img: rez3 }
+         { img: ol5 },
+         { img: ol1 },
+         { img: ol2 },
+         { img: ol3 },
+         { img: ol4 },
       ]
    },
 ]
@@ -214,8 +131,9 @@ const Locations = () => {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // autoplay: true,
-      // autoplaySpeed: 5000,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      pauseOnFocus: true,
 
       // nextArrow: <CustomNextArrow />,
       // prevArrow: <CustomPrevArrow />,
@@ -245,8 +163,10 @@ const Locations = () => {
          <Slider className="mt-[35px]" {...settings}>
             {sliderData.map((el, i) => {
                return (
+                  <div key={i}>
 
-                  <SlickComponent el={el} i={i} />
+                     <SlickComponent el={el} i={i} />
+                  </div>
                )
 
             })}

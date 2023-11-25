@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import './map.css';
-import { mapLogic, buttonsLogic } from './logic';
-import Select from 'components/Select/Select';
-import { V1, V2 } from './variants';
+import Select from 'components/Select/Select'
+import { buttonsLogic, mapLogic } from './logic'
+import './map.css'
+import { V1, V2 } from './variants'
 
 const Map = () => {
     const mapVersions = [
@@ -15,19 +15,19 @@ const Map = () => {
             component: <V2 />,
             title: 'Коттедж & Шале'
         }
-    ];
+    ]
 
     const [mapVer, setMapVer] = useState(0),
         [tooltipActive, setTooltipActive] = useState(false),
         [tooltipText, setTooltipText] = useState(''),
-        [mapLook, setMapLook] = useState(true);
+        [mapLook, setMapLook] = useState(true)
 
 
     useEffect(() => {
-        buttonsLogic(document, setTooltipActive, setTooltipText);
+        buttonsLogic(document, setTooltipActive, setTooltipText)
 
-        mapLogic(document, setTooltipActive);
-    }, [mapVer]);
+        mapLogic(document, setTooltipActive)
+    }, [mapVer])
 
 
 
@@ -57,10 +57,14 @@ const Map = () => {
         </div>
         <div
             className={`map-looker ${!mapLook ? 'map-looker---close' : ''}`}
-            onDoubleClick={() => setMapLook(false)}>
+            // onDoubleClick={() => setMapLook(!mapLook)}
+            onDoubleClick={() => { setMapLook(!mapLook) }}
+
+        >
+
             Тапните два раза {!mapLook && 'чтобы заблокировать карту'}
         </div>
-    </section>;
-};
+    </section >
+}
 
-export default Map;
+export default Map

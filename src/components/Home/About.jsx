@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import NumeredItemsData from "../../utils/Home/NumeredItemsData";
-import NumberedItem from "./helpers/NumberedItem";
-import { m } from "framer-motion";
+import { m } from "framer-motion"
+import { useState } from "react"
+import { isItWinterNow } from "utils/helpers"
+import NumeredItemsData from "../../utils/Home/NumeredItemsData"
+import price_arrow from "./../../assets/price_arrow.png"
+import price_calculator from "./../../assets/price_calculator.png"
+import NumberedItem from "./helpers/NumberedItem"
 const ytSrc = "https://www.youtube.com/embed/Eat2wgPNuIo";
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
-import price_calculator from "./../../assets/price_calculator.png";
-import price_arrow from "./../../assets/price_arrow.png";
-import { isItWinterNow } from "utils/helpers";
 const heading = {
    hidden: {},
    visible: {

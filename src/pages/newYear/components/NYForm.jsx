@@ -19,7 +19,7 @@ const NYForm = () => {
          name: name,
          phone: phone,
          email: '-',
-         groupID: 981875757,
+         groupID: import.meta.env.VITE_GROUP_ID,
       }
       // if (!email.match(emailRegex)) {
       //    alert("Введите корректный почтовый адресс");

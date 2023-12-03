@@ -1,8 +1,7 @@
-import React, {useState} from "react";
-import {useForm, Controller} from "react-hook-form";
-import emailjs from "@emailjs/browser";
-import {useURLData} from "../utils/URLData";
-import {Navigate} from "react-router-dom";
+import { useState } from "react"
+import { Controller, useForm } from "react-hook-form"
+import { Navigate } from "react-router-dom"
+import { useURLData } from "../utils/URLData"
 
 const Popup = () => {
     const {utm_campaign, utm_content, utm_source} = useURLData();
@@ -38,6 +37,7 @@ const Popup = () => {
             utm_source: utm_source,
             utm_campaign: utm_campaign,
             utm_content: utm_content,
+            
 
         };
 

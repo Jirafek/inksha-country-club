@@ -30,6 +30,7 @@ const FormCalculate = () => {
             week: urlParams.get('week'),
             days: urlParams.get('days'),
             dops: urlParams.get('dops') || '',
+            groupID:import.meta.env.VITE_GROUP_ID,
         }
 
         const sendingData = {

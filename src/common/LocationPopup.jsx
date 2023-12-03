@@ -25,7 +25,7 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
             name: name,
             phone: phone,
             email: "-",
-            groupID: 981875757,
+            groupID: import.meta.env.VITE_GROUP_ID,
         }
 
         const sendingData = {

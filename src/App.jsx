@@ -96,8 +96,10 @@ function App() {
             ...settedData
         )
 
-        if (cookieData.utm_source === undefined && urlParams.get("utm_source") !== null) {
-            Cookies.set('utm_source', urlParams.get("utm_source"), { expires: Infinity })
+        const UTMSource = urlParams.get("utm_source");
+
+        if (cookieData.utm_source === undefined && UTMSource !== null) {
+            Cookies.set('utm_source', UTMSource.toLowerCase().includes('vk') ? 'vkontakte' : UTMSource, { expires: Infinity })
         }
         if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
             Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity })

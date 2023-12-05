@@ -76,7 +76,7 @@ function App() {
             utm_content: Cookies.get('utm_content'),
         }
 
-        const UTMSource = urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source");
+        const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : '';
 
         const settedData = [
             cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source

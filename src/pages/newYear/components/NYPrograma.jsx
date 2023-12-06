@@ -22,6 +22,65 @@ import NYGreenButton from './NYGreenButton'
 import prog2 from 'images/NY/prog/002.webp'
 import prog3 from 'images/NY/prog/003.webp'
 
+const programaContent = {
+   1: {
+      events: [
+         {
+            time: '15:00-16:00: ',
+            title: 'Заезд гостей'
+         },
+         {
+            time: '16:00-20:00: ',
+            title: 'Подготовка к празднику'
+         }
+      ]
+   },
+   2: {
+      events: [
+         {
+            time: '18:30 - 20:00:',
+            title: 'Праздничный ужин на локациях и вручение новогодних подарков'
+         },
+         {
+            time: '00:00: ',
+            title: 'Новогодний фейерверк'
+         }
+      ]
+   },
+   3: {
+      events: [
+         {
+            time: '12:00 - 14:00: ',
+            title: 'Новогоднее BBQ на локациях'
+         },
+         {
+            time: '16:00 - 18:00: ',
+            title: 'Спортивные игры и соревнования. Лыжная экскурсия'
+         },
+         {
+            time: '18:30 - 20:00: ',
+            title: 'Ужин'
+         }
+      ]
+   },
+   4: {
+      events: [
+         {
+            time: '09:00 - 11:00: ',
+            title: 'Завтрак на локациях'
+         },
+         {
+            time: '12:00 - 18:00:30: ',
+            title: 'Парения в Бане на воде'
+         },
+         {
+            time: '18:30 - 20:00: ',
+            title: 'Ужин на локациях'
+         }
+      ]
+   }
+}
+
 export const Programa = () => {
    return (
       <div
@@ -57,22 +116,27 @@ export const Programa = () => {
                               <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
-                              <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    15:00-16:00:
-                                 </h2>
-                                 <h2 className="text-md mb-6 w-full font-light ">
-                                    заезд гостей
-                                 </h2>
-                              </div>
-                              <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                              {programaContent[1].events.map((item, i) => {
+                                 return (
+
+                                    <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                       <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                          {item.time}
+                                       </h2>
+                                       <h2 className="text-md mb-6 w-full font-light ">
+                                          {item.title}
+                                       </h2>
+                                    </div>
+                                 )
+                              })}
+                              {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
                                     16:00-20:00
                                  </h2>
                                  <h2 className="text-md mb-6  font-light ">
                                     Welcome-программа и подготовка к празднику
                                  </h2>
-                              </div>
+                              </div> */}
                               {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
                                     20:30 - 22:00{" "}
@@ -107,7 +171,20 @@ export const Programa = () => {
                               <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
-                              <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                              {programaContent[2].events.map((item, i) => {
+                                 return (
+
+                                    <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                       <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                          {item.time}
+                                       </h2>
+                                       <h2 className="text-md mb-6 w-full font-light ">
+                                          {item.title}
+                                       </h2>
+                                    </div>
+                                 )
+                              })}
+                              {/* <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
                                     18:30 - 20:00:
                                  </h2>
@@ -122,7 +199,7 @@ export const Programa = () => {
                                  <h2 className="text-md mb-6  font-light ">
                                     Новогодняя вечеринка с фейерверками и дискотекой
                                  </h2>
-                              </div>
+                              </div> */}
                               {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
                                  <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
                                     20:30 - 22:00{" "}
@@ -156,9 +233,22 @@ export const Programa = () => {
                               Суббота, 1 января:
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
-                           <div className='px-3 md:px-[50px]'>
+                           <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
+                              {programaContent[3].events.map((item, i) => {
+                                 return (
 
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
+                                    <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                       <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                          {item.time}
+                                       </h2>
+                                       <h2 className="text-md mb-6 w-full font-light ">
+                                          {item.title}
+                                       </h2>
+                                    </div>
+                                 )
+                              })}
+
+                              {/* <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
                                  09:00 - 11:00:
                               </h2>
                               <h2 className="text-md mb-6  font-light ">
@@ -181,7 +271,7 @@ export const Programa = () => {
                               </h2>
                               <h2 className="text-md mb-6  font-light ">
                                  Ужин с новогодней программой
-                              </h2>
+                              </h2> */}
                               <Reveal variants={scale()}>
                                  {/* <img
                                     src={bat}
@@ -193,23 +283,36 @@ export const Programa = () => {
                         </div>
                      </div>
 
-                     <div className="flex relative col-span-1 mt-auto md:mt-[100px] self-start text-center md:text-start flex-col  max-w-[600px] justify-center items-center">
+                     <div className="flex relative col-span-1 w-full mt-auto md:mt-[100px] self-start text-center md:text-start flex-col  max-w-[600px] justify-center items-center">
                         <img
                            className="md:w-[200px] w-[60px] 370p:w-[80px] 370p:h-[80px] md:h-[200px] absolute transform md:right-1/2 md:translate-x-1/2  -top-10 right-1/2 translate-x-1/2   md:-top-[150px] z-10"
                            src={prog3}
                            alt=""
                         />
 
-                        <div className="bg-NYblack text-white yaes relative rounded-[20px] ">
+                        <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
 
-                           <h2 className="md:text-[40px] py-10 relative text-center text-[25px] font-extrabold">
+                           <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
                               Воскресенье, 2 января:
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
-                           <div className='px-3 md:px-[50px]'>
+                           <div className='px-3 flex  flex-col gap-7 md:px-[50px]'>
+                              {programaContent[4].events.map((item, i) => {
+                                 return (
+
+                                    <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
+                                       <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
+                                          {item.time}
+                                       </h2>
+                                       <h2 className="text-md mb-6 w-full font-light ">
+                                          {item.title}
+                                       </h2>
+                                    </div>
+                                 )
+                              })}
 
 
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
+                              {/* <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
                                  09:00 - 11:00:
                               </h2>
                               <h2 className="text-md  mb-6  font-light">
@@ -228,7 +331,7 @@ export const Programa = () => {
                               <h2 className="md:text-[40px] mount text-[25px]  font-bold ">18:30 - 20:00:</h2>
                               <h2 className=" text-md font-light  mb-6 ">
                                  Ужин с новогодней программой
-                              </h2>
+                              </h2> */}
                               <Reveal delay={0.5} variants={scale()}>
                                  {/* <img
                                  src={bat}

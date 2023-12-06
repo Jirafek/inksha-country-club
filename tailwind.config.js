@@ -17,6 +17,25 @@ export default {
          small: "clamp(6px, 3vw, 18px)",
       },
       extend: {
+         keyframes: {
+            fade: {
+               from: { opacity: '0' },
+               to: { opacity: '1' },
+            },
+            scaleIn: {
+               '0%': {
+                  opacity: '0',
+                  transform: 'scale(0.9',
+               },
+               '50%': {
+                  opacity: '0.3',
+               },
+               '100%': {
+                  opacity: '1',
+                  transform: 'scale(1)',
+               },
+            },
+         },
          colors: {
             primary: "#ecd23b",
             violet: "#412E52",
@@ -41,7 +60,7 @@ export default {
          screens: {
             "3xl": "2500px",
             vsm: "355px",
-            '900p':'900px',
+            '900p': '900px',
             "370p": "370px",
          },
          keyframes: {
@@ -51,13 +70,17 @@ export default {
             },
          },
       },
+      animation: {
+         fade: 'fade .5s ease-in-out',
+         scaleIn: 'scaleIn .35s ease-in-out',
+      },
    },
    plugins: [
       function ({ addVariant }) {
          addVariant(
             "supports-backdrop-blur",
             "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))"
-         );
+         )
       },
    ],
-};
+}

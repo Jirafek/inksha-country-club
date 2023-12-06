@@ -98,13 +98,7 @@ const MainPopup = ({
         if (isError) {
             return
         }
-        const data = {
-            name,
-            phone,
-            email: "-",
-        }
         handleSubmitBot()
-        // ... ваша существующая логика ...
         setPhone("") // Очищаем состояние телефона
         setIsPopupCompleted(!isPopupCompleted)
     }
@@ -183,8 +177,8 @@ const MainPopup = ({
                                     type="submit"
                                     disabled={isError}
                                     className={`h-[40px] rounded-[10px] ${isError
-                                            ? "border-none bg-[#D0C9C9]"
-                                            : "white border-[2px] border-green-400"
+                                        ? "border-none bg-[#D0C9C9]"
+                                        : "white border-[2px] border-green-400"
                                         } w-full`}
                                 >
                                     Отправить

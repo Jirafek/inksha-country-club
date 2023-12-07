@@ -1,7 +1,5 @@
-import React from "react";
-import HappyClickableItems from "./helpers/HappyClickableItems";
-import HappyClickableItemsData from "../../utils/Home/HappyClickableItemsData";
-import GreenButton from "./../../common/GreenButton";
+import HappyClickableItemsData from "../../utils/Home/HappyClickableItemsData"
+import HappyClickableItems from "./helpers/HappyClickableItems"
 const Happy = () => {
    return (
       <section
@@ -34,8 +32,8 @@ const Happy = () => {
             />
          </picture>
       </section>
-   );
-};
+   )
+}
 
 {
    /* <div className="flex justify-center items-center w-[148px] h-[168px]">
@@ -44,4 +42,4 @@ const Happy = () => {
 </div> */
 }
 
-export default Happy;
+export default Happy

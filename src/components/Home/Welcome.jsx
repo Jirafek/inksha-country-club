@@ -1,5 +1,6 @@
 import { m } from "framer-motion"
 import ny_logo from 'icons/ny-logo.webp'
+import bg1 from 'images/bg1.webp'
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
@@ -220,10 +221,11 @@ const Welcome = () => {
             />
          </Link>
          <picture>
+            {/* <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" /> */}
             <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" />
             <img
                className="h-[100%] w-full object-cover"
-               src={isItWinterNow() ? "/image/welcome_bg_winter.webp" : "/image/welcome_bg.webp"}
+               src={isItWinterNow() ? bg1 : "/image/welcome_bg.webp"}
                alt="Икша Кантри Клаб"
             />
          </picture>

@@ -56,9 +56,9 @@ function App() {
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(true)
 
 
-    // setTimeout(() => {
-    //     setIsHelpPopupOpen(true)
-    // }, 4000)
+    setTimeout(() => {
+        setIsHelpPopupOpen(true)
+    }, 10000)
 
     useEffect(() => {
         setUrlParams()

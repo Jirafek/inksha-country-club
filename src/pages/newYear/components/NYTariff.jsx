@@ -70,13 +70,13 @@ const Tariff = () => {
 
                   <ul className="text-black flex flex-col items-center gap-4 justify-center text-md whitespace-nowrap">
                      <li>
-                        <span className='mount'> Завтрак</span> <span className="font-bold"> 700</span>
+                        <span className='mount'> Завтрак</span> <span className="font-bold">2000<span className='text-[10px]'>с гостя</span> </span>
                      </li>{" "}
                      <li>
-                        <span className='mount'> Обед</span> <span className="font-bold"> 1800</span>
+                        <span className='mount'> BBQ обед</span> <span className="font-bold">5000<span className='text-[10px]'>с гостя</span></span>
                      </li>
                      <li>
-                        <span className='mount'> Ужин</span> <span className="font-bold"> 1200</span>
+                        <span className='mount'> Ужин</span> <span className="font-bold">7000<span className='text-[10px]'>с гостя</span></span>
                      </li>
                   </ul>
                </div>

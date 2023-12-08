@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomEventArrows";
-import useWindowSize from "react-use/lib/useWindowSize";
-import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
-import Confetti from "react-confetti";
-import AnimatedButton from "./../../common/AnimationButton";
-import EventPopup from "./../../common/EventPopup";
-
+import { useState } from "react"
+import Confetti from "react-confetti"
+import { useInView } from 'react-intersection-observer'
+import Slider from "react-slick"
+import useWindowSize from "react-use/lib/useWindowSize"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import { v4 as uuidv4 } from "uuid"
+import AnimatedButton from "./../../common/AnimationButton"
+import EventPopup from "./../../common/EventPopup"
+import { CustomNextArrow, CustomPrevArrow } from "./helpers/CustomEventArrows"
 // without link, book block
 
 const eventsData = [
@@ -117,13 +116,13 @@ const eventsData = [
       ],
       link: "https://bronirui-online.ru/iksha-country-club/uslugi",
    },
-];
+]
 
 const Events = () => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
+      setIsPopupOpen((prev) => !prev)
+   }
    const settings = {
       dots: false,
       infinite: true,
@@ -133,15 +132,21 @@ const Events = () => {
       nextArrow: <CustomNextArrow />,
       prevArrow: <CustomPrevArrow />,
       afterChange: (currentSlide) => setActiveSlideIndex(currentSlide),
-   };
+   }
 
-   const { width, height } = useWindowSize();
-   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+   const { ref, inView, entry } = useInView({
+      /* Optional options */
+      threshold: 0,
+   })
+
+   const { width, height } = useWindowSize()
+   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
    return (
       <section
          style={{ backgroundImage: "url(/image/bg-events.webp)" }}
          id="events"
+         ref={ref}
          className="section back_settings relative"
       >
          <EventPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
@@ -163,7 +168,8 @@ const Events = () => {
             width={width}
             height="710px"
             numberOfPieces={
-               eventsData[activeSlideIndex]?.title === "День рождения" ? 300 : 0
+
+               eventsData[activeSlideIndex]?.title === "День рождения" ? (inView ? 300 : 0) : 0
             }
             gravity={0.1}
             className="z-0"
@@ -212,7 +218,7 @@ const Events = () => {
                                     <li key={uuidv4()} className="w-[220px]">
                                        - {el}
                                     </li>
-                                 );
+                                 )
                               })}
                            </ul>
                         </div>
@@ -224,21 +230,21 @@ const Events = () => {
                      >
                         <AnimatedButton
                            onClick={togglePopup}
-                           //    style={{
-                           //       backgroundImage:
-                           //          "url(/image/date_button_event.webp)",
-                           //    }}
-                           //    className="monterey flex h-[70px] w-[205px] items-center justify-center text-[19px] font-bold text-[#000]"
+                        //    style={{
+                        //       backgroundImage:
+                        //          "url(/image/date_button_event.webp)",
+                        //    }}
+                        //    className="monterey flex h-[70px] w-[205px] items-center justify-center text-[19px] font-bold text-[#000]"
                         >
                            Выбрать дату
                         </AnimatedButton>
                      </a>
                   </div>
-               );
+               )
             })}
          </Slider>
       </section>
-   );
-};
+   )
+}
 
-export default Events;
+export default Events

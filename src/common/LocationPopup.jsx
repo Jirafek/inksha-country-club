@@ -69,7 +69,6 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
     const handleSelectChange = (selectedOption) => {
         setSelectedOption(selectedOption) // Обновляем состояние при изменении значения
     }
-    console.log(selectedOption)
 
     useEffect(() => {
         // Проверка на ошибку: проверка, что поля "Имя" и "Телефон" не пустые и selectedOption не равно null
@@ -182,8 +181,8 @@ const LocationPopup = ({ isPopupOpen, togglePopup }) => {
                                     type="submit"
                                     disabled={isError}
                                     className={` flex h-[40px] items-center justify-center rounded-[10px] ${isError
-                                            ? "border-none bg-[#D0C9C9]"
-                                            : "white border-[2px] border-green-400"
+                                        ? "border-none bg-[#D0C9C9]"
+                                        : "white border-[2px] border-green-400"
                                         } w-full`}
                                 >
                                     Отправить

@@ -1,10 +1,12 @@
 import loadable from '@loadable/component'
+import call from 'images/call.webp'
 import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
+
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -53,18 +55,39 @@ function App() {
 
     const isCookieOn = Cookies.get('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
+    const [buttonClicked, setButtonClicked] = useState(false)
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
 
 
 
-    useEffect(() => {
-        let timeoutId = setTimeout(() => {
-            setIsHelpPopupOpen(true)
-            clearTimeout(timeoutId)
-        }, 10000)
 
+
+    // useEffect(() => {
+    //     let timeoutId
+    //     console.log('updated')
+    //     // if (!buttonClicked) {
+    //     timeoutId = setTimeout(() => {
+    //         setIsHelpPopupOpen(true)
+    //         clearTimeout(timeoutId)
+    //     }, 10000)
+
+    // Очищаем таймер при размонтировании компонента или при срабатывании кнопки
+    // }
+
+    // Сбрасываем состояние кнопки
+    // setButtonClicked(false)
+    // return () => clearTimeout(timeoutId)
+    // }, [])
+
+    useEffect(() => {
         setUrlParams()
     }, [])
+
+    const handleButtonClick = () => {
+        setIsHelpPopupOpen(!isHelpPopupOpen)
+        setButtonClicked(true)
+    }
+
 
     const setUrlParams = (isCoockieOnRight = undefined) => {
         const isCookieOn = Cookies.get('cookies_on')
@@ -123,7 +146,14 @@ function App() {
     return (
         <div className='relative'>
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-            {isHelpPopupOpen && <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
+            <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
+
+
+            <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-0 right-0'>
+                <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
+                <img className='w-[70px]  h-[70px]' src={call} alt="" />
+            </div>
+
 
             <Routes>
                 <Route path="/" element={<Home />} />

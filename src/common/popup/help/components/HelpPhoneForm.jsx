@@ -16,7 +16,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       const data = {
          name: name,
          phone: phone,
-         email: addInfo,
+         email: '-',
          groupID: import.meta.env.VITE_GROUP_ID,
       }
 

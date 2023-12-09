@@ -53,12 +53,12 @@ function App() {
 
     const isCookieOn = Cookies.get('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
-    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(true)
+    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
 
 
     setTimeout(() => {
         setIsHelpPopupOpen(true)
-    }, 10000)
+    }, 30000)
 
     useEffect(() => {
         setUrlParams()

@@ -2,6 +2,7 @@ import loadable from '@loadable/component'
 import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
+import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
 // import NYLanding from "pages/newYear/NYLanding"
@@ -52,6 +53,12 @@ function App() {
 
     const isCookieOn = Cookies.get('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
+    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(true)
+
+
+    setTimeout(() => {
+        setIsHelpPopupOpen(true)
+    }, 10000)
 
     useEffect(() => {
         setUrlParams()
@@ -76,7 +83,7 @@ function App() {
             utm_content: Cookies.get('utm_content'),
         }
 
-        const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : '';
+        const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : ''
 
         const settedData = [
             cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source
@@ -94,6 +101,8 @@ function App() {
 
         console.log(settedData)
 
+
+
         updateData(
             ...settedData
         )
@@ -102,7 +111,7 @@ function App() {
             Cookies.set('utm_source', UTMSource, { expires: Infinity })
         }
         if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
-            Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity })
+            Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { sexpires: Infinity })
         }
         if (cookieData.utm_content === undefined && urlParams.get("utm_content") !== null) {
             Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity })
@@ -112,6 +121,7 @@ function App() {
     return (
         <div className='relative'>
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+            {isHelpPopupOpen && <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
 
             <Routes>
                 <Route path="/" element={<Home />} />

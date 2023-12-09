@@ -33,9 +33,18 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
 
    return (
       <div className={` ${className} fixed left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2 transform z-[100000]`}>
-
-         <div className='border w-[70vw] mx-auto  h-[35vh] text-black  relative montery border-black bg-white rounded-[20px] p-5'>
-            <div className="absolute right-3 p-1 top-3">
+         <div
+            style={{ transform: "translateX(-50%)" }}
+            className="absolute left-1/2 -top-[155px] z-30 w-[215px] bg-transparent"
+         >
+            <img
+               className="bg-transparent"
+               src="/image/girman.gif"
+               alt="Икша Кантри Клаб"
+            />
+         </div>
+         <div className='border w-[70vw] mx-auto  h-[40vh] text-black  relative montery border-black bg-white rounded-[20px] p-5'>
+            <div className="absolute right-3 z-[60] p-2 top-3">
                <img
                   onClick={handlePopupClose}
                   src={close}

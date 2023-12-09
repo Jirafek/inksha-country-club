@@ -90,7 +90,20 @@ function App() {
 
 
     const setUrlParams = (isCoockieOnRight = undefined) => {
-        const isCookieOn = Cookies.get('cookies_on')
+        const isCookieOn = Cookies.get('cookies_on');
+        const urlParams = new URLSearchParams(window.location.search)
+
+        console.log(isCookieOn);
+
+        const urlParamsData = [
+            utm_source ? utm_source : urlParams.get("utm_source"),
+            utm_campaign ? utm_campaign : urlParams.get("utm_campaign"),
+            utm_content ? utm_content : urlParams.get("utm_content"),
+        ]
+
+        updateData(
+            ...urlParamsData
+        )
 
         if (isCoockieOnRight === undefined && isCookieOn === undefined) {
             return
@@ -99,8 +112,6 @@ function App() {
         if (isCoockieOnRight === false) {
             return
         }
-
-        const urlParams = new URLSearchParams(window.location.search)
 
         const cookieData = {
             utm_source: Cookies.get('utm_source'),
@@ -111,15 +122,15 @@ function App() {
         const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : ''
 
         const settedData = [
-            cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source
+            cookieData.utm_source !== undefined && cookieData.utm_source ? cookieData.utm_source : utm_source
                 ? utm_source
                 : UTMSource || "Сайт",
 
-            cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : utm_campaign
+            cookieData.utm_campaign !== undefined && cookieData.utm_campaign ? cookieData.utm_campaign : utm_campaign
                 ? utm_campaign
                 : urlParams.get("utm_campaign") || "",
 
-            cookieData.utm_content !== undefined ? cookieData.utm_content : utm_content
+            cookieData.utm_content !== undefined && cookieData.utm_content ? cookieData.utm_content : utm_content
                 ? utm_content
                 : urlParams.get("utm_content") || ""
         ]
@@ -127,18 +138,17 @@ function App() {
         console.log(settedData)
 
 
-
         updateData(
             ...settedData
         )
 
-        if (cookieData.utm_source === undefined && UTMSource !== null) {
+        if ((cookieData.utm_source === undefined || !cookieData.utm_source) && UTMSource !== null) {
             Cookies.set('utm_source', UTMSource, { expires: Infinity })
         }
-        if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
-            Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { sexpires: Infinity })
+        if ((cookieData.utm_campaign === undefined || !cookieData.utm_campaign) && urlParams.get("utm_campaign") !== null) {
+            Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity })
         }
-        if (cookieData.utm_content === undefined && urlParams.get("utm_content") !== null) {
+        if ((cookieData.utm_content === undefined || !cookieData.utm_content) && urlParams.get("utm_content") !== null) {
             Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity })
         }
     }

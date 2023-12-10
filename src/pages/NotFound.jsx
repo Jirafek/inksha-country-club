@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Helmet } from "react-helmet"
 import { Link } from "react-router-dom"
 
@@ -5,10 +6,11 @@ import { Link } from "react-router-dom"
 
 const NotFound = () => {
   useEffect(() => {
+
     let time = setTimeout(() => {
       window.location.href = 'https://mobile.ikshacountryclub.com'
+      clearTimeout(time)
     }, 2000)
-    clearTimeout(time)
   }, [])
   return (
     <>

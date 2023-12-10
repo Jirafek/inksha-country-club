@@ -1,5 +1,5 @@
 import loadable from '@loadable/component'
-import call from 'images/call.webp'
+// import call from 'images/call.webp'
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
@@ -70,16 +70,19 @@ export default function App() {
     }, [])
 
     useEffect(() => {
-
         // Check if the URL contains a fragment identifier
         let time = setTimeout(() => {
             clearTimeout(time)
             if (window.location.hash) {
                 const welcome = document.getElementById('welcome')
                 // Extract the fragment identifier (e.g., "locations")
-                const fragmentId = window.location.hash.substring(1)
+                // const fragmentId = window.location.hash.substring(1)
+                const fragmentId = window.location.hash.substring(1).split('/')[0]
+
+                console.log(fragmentId)
                 // Find the element with the corresponding ID
                 const targetElement = document.getElementById(fragmentId)
+
                 // If the element is found, scroll to it
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' })
@@ -174,8 +177,8 @@ export default function App() {
 
 
             <div onClick={handleButtonClick} className='fixed z-[4000] bottom-10 right-0'>
-                <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
-                <img className='w-[70px]  h-[70px]' src={call} alt="" />
+                <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
+                {/* <img className='w-[70px]  h-[70px]' src={call} alt="" /> */}
             </div>
 
 

@@ -14,7 +14,6 @@ const FixedFuter = ({ link, needRotate }) => {
         })
     }
     const message = 'Здравствуйте, меня интересует аренда домика' // Replace with your desired message
-
     const whatsappLink = `https://wa.me/79859091202?text=${encodeURIComponent(message)}`
 
     return (

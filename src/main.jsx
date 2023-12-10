@@ -17,7 +17,7 @@ function onRenderCallback(
    actualDuration, // время, затраченное на рендеринг компонента
    baseDuration, // оценочное время, которое React считает необходимым для рендеринга компонента
    startTime, // когда React начал рендеринг этого компонента
-   commitTime, // когда React зафиксировал результаты этого рендеринга
+   commitTime, // когда React з  афиксировал результаты этого рендеринга
    interactions // множество взаимодействий, связанных с этим рендерингом
 ) {
    // Здесь вы можете отправить данные профилирования аналитике или логгеру
@@ -66,9 +66,13 @@ function AppWithDelay() {
 
    // Выводим сообщение в консоль, если ширина экрана большк 420 пикселя
    if (windowWidth > 767) {
+      // console.log(window.location.pathname)
+      // console.log(window.location.pathname === '/')
+      // window.location.href = "http://localhost:5174" + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname)
+      window.location.href = "https://ikshacountryclub.com" + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname)
+      // console.log(window.location.pathname)
+      // console.log(window.location.hash)
 
-      window.location.href = "https://ikshacountryclub.com" + window.location.pathname
-      console.log(window.location.pathname)
 
    }
    const [isLoading, setIsLoading] = useState(true)

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
-import { m } from "framer-motion";
-import GreenButton from "./../../common/GreenButton";
+import { m } from "framer-motion"
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import { v4 as uuidv4 } from "uuid"
+import GreenButton from "./../../common/GreenButton"
 const heading = {
    hidden: {},
    visible: {
@@ -10,7 +10,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLinesLeft = {
    hidden: {
@@ -25,7 +25,7 @@ const headingLinesLeft = {
          duration: 2.5,
       },
    },
-};
+}
 const headingLinesRight = {
    hidden: {
       opacity: 0,
@@ -39,7 +39,7 @@ const headingLinesRight = {
          duration: 2,
       },
    },
-};
+}
 
 const EatListData = [
    {
@@ -57,18 +57,18 @@ const EatListData = [
       text: "шашлык от Шефа",
       openImage: "/image/shah.webp",
    },
-];
+]
 
 const Eat = () => {
-   const [selectedImage, setSelectedImage] = useState(null);
+   const [selectedImage, setSelectedImage] = useState(null)
 
    const openImage = (image) => {
-      setSelectedImage(image);
-   };
+      setSelectedImage(image)
+   }
 
    const closeImage = () => {
-      setSelectedImage(null);
-   };
+      setSelectedImage(null)
+   }
 
    return (
       <m.section
@@ -122,7 +122,7 @@ const Eat = () => {
                   backgroundSize: "auto",
                }}
             >
-               <h4 className="monterey text-[16px] text-lg font-semibold text-[#161212]">
+               <h4 className="monterey  text-[17px]  font-semibold text-[#161212]">
                   МЫ РАДЫ ПРЕДЛОЖИТЬ ВАМ
                </h4>
 
@@ -206,7 +206,7 @@ const Eat = () => {
             />
          </picture>
       </m.section>
-   );
-};
+   )
+}
 
-export default Eat;
+export default Eat

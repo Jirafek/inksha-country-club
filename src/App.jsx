@@ -107,9 +107,9 @@ export default function App() {
         }
 
         const cookieData = {
-            utm_source: Cookies.get('utm_source'),
-            utm_campaign: Cookies.get('utm_campaign'),
-            utm_content: Cookies.get('utm_content'),
+            utm_source: localStorage.getItem('utm_source'),
+            utm_campaign: localStorage.getItem('utm_campaign'),
+            utm_content: localStorage.getItem('utm_content'),
         }
 
         const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : ''
@@ -136,13 +136,13 @@ export default function App() {
         )
 
         if ((cookieData.utm_source === undefined || !cookieData.utm_source) && UTMSource !== null) {
-            Cookies.set('utm_source', UTMSource, { expires: Infinity })
+            localStorage.setItem('utm_source', UTMSource)
         }
         if ((cookieData.utm_campaign === undefined || !cookieData.utm_campaign) && urlParams.get("utm_campaign") !== null) {
-            Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity })
+            localStorage.setItem('utm_campaign', urlParams.get("utm_campaign"))
         }
         if ((cookieData.utm_content === undefined || !cookieData.utm_content) && urlParams.get("utm_content") !== null) {
-            Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity })
+            localStorage.setItem('utm_content', urlParams.get("utm_content"))
         }
     }
 

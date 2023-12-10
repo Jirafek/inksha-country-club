@@ -1,5 +1,4 @@
 import loadable from '@loadable/component'
-import call from 'images/call.webp'
 import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
@@ -58,6 +57,8 @@ export default function App() {
 
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
     const [timer, setTimer] = useState(false)
+    const [isButtonActive, setIsButtonActive] = useState(false)
+
 
 
     useEffect(() => {
@@ -151,10 +152,10 @@ export default function App() {
             <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
 
 
-            <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-10 right-0'>
+            {/* <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-10 right-0'>
                 <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
                 <img className='w-[70px]  h-[70px]' src={call} alt="" />
-            </div>
+            </div> */}
 
 
             <Routes>

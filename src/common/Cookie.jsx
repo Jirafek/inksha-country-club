@@ -10,6 +10,7 @@ const Cookie = ({isCookieOpen,setIsCookieOpen, callBack = (isOn) => {}}) => {
    };
    const handleAccept = () => {
       Cookies.set('cookies_on', true, { expires: Infinity });
+      localStorage.setItem('cookies_on', 'true');
       callBack(true);
       closeCookie();
       //

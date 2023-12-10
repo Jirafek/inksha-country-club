@@ -51,7 +51,7 @@ function App() {
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
 
 
-    const isCookieOn = Cookies.get('cookies_on')
+    const isCookieOn = localStorage.getItem('cookies_on');
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
 
@@ -67,7 +67,7 @@ function App() {
     }, [])
 
     const setUrlParams = (isCoockieOnRight = undefined) => {
-        const isCookieOn = Cookies.get('cookies_on');
+        const isCookieOn = localStorage.getItem('cookies_on');
         const urlParams = new URLSearchParams(window.location.search)
 
         console.log(isCookieOn);

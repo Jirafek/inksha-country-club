@@ -3,7 +3,6 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { Fragment, useEffect, useReducer, useState } from "react"
 import { Helmet } from "react-helmet"
-import { Link } from "react-router-dom"
 import { isItWinterNow } from "utils/helpers"
 import { v4 as uuidv4 } from "uuid"
 // import About from "../components/Home/About"
@@ -125,6 +124,7 @@ const Home = () => {
          </Helmet>
          <Fragment>
             <div
+               id='welcome'
                style={{ display: `${locationState ? "none" : "block"}` }}
                className="sections-container relative"
             >
@@ -174,8 +174,9 @@ const Home = () => {
                                  {routes.map((el, i) => {
                                     return (
                                        <li key={uuidv4()}>
-                                          <Link
-                                             to={el.link}
+                                          <a
+                                             // to={el.link}
+                                             href={el.link}
                                              onClick={toggle}
                                              className="flex gap-[1px] outline-none"
                                           >
@@ -188,7 +189,7 @@ const Home = () => {
                                                    alt="Иконка пункта меню"
                                                 />
                                              )}
-                                          </Link>
+                                          </a>
                                        </li>
                                     )
                                  })}

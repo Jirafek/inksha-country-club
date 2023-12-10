@@ -1,5 +1,4 @@
 import loadable from '@loadable/component'
-import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
@@ -69,6 +68,27 @@ export default function App() {
 
             }, 40000))
     }, [])
+
+    useEffect(() => {
+        // Check if the URL contains a fragment identifier
+        let time = setTimeout(() => {
+            clearTimeout(time)
+            if (window.location.hash) {
+                const welcome = document.getElementById('welcome')
+                // Extract the fragment identifier (e.g., "locations")
+                const fragmentId = window.location.hash.substring(1)
+                // Find the element with the corresponding ID
+                const targetElement = document.getElementById(fragmentId)
+                // If the element is found, scroll to it
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' })
+                } else {
+                    welcome.scrollIntoView({ behavior: 'smooth' })
+                }
+            }
+        }, 2000)
+    }, [window.location.hash])
+
 
     useEffect(() => {
         setUrlParams()

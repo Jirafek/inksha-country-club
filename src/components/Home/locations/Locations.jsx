@@ -140,7 +140,7 @@ const Locations = () => {
    }
 
    return (
-      <section
+      <div
          id="locations"
          style={{ backgroundImage: `url('/image/bg_burger${isItWinterNow()}.webp')` }}
          className="section about_background back_settings relative"
@@ -237,7 +237,7 @@ const Locations = () => {
                </defs>
             </svg>
          </div>}
-      </section>
+      </div>
    )
 }
 

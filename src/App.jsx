@@ -1,10 +1,12 @@
 import loadable from '@loadable/component'
+import call from 'images/call.webp'
 import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
+
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -47,30 +49,43 @@ const Popup = loadable(() => import("pages/Popup"))
 const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 
-function App() {
+export default function App() {
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
 
 
-    const isCookieOn = localStorage.getItem('cookies_on');
+    const isCookieOn = localStorage.getItem('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
-    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
 
+    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
+    const [timer, setTimer] = useState(false)
 
 
     useEffect(() => {
-        let timeoutId = setTimeout(() => {
-            setIsHelpPopupOpen(true)
-            clearTimeout(timeoutId)
-        }, 10000)
+        console.log('updated')
+        setTimer(
+            setTimeout(() => {
+                setIsHelpPopupOpen(true)
 
+            }, 40000))
+    }, [])
+
+    useEffect(() => {
         setUrlParams()
     }, [])
 
+    const handleButtonClick = () => {
+        clearTimeout(timer)
+        setIsHelpPopupOpen(!isHelpPopupOpen)
+
+    }
+
+
     const setUrlParams = (isCoockieOnRight = undefined) => {
-        const isCookieOn = localStorage.getItem('cookies_on');
+
+        const isCookieOn = localStorage.getItem('cookies_on')
         const urlParams = new URLSearchParams(window.location.search)
 
-        console.log(isCookieOn);
+        console.log(isCookieOn)
 
         const urlParamsData = [
             utm_source ? utm_source : urlParams.get("utm_source"),
@@ -133,7 +148,14 @@ function App() {
     return (
         <div className='relative'>
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-            {isHelpPopupOpen && <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
+            <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
+
+
+            <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-10 right-0'>
+                <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
+                <img className='w-[70px]  h-[70px]' src={call} alt="" />
+            </div>
+
 
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -179,6 +201,6 @@ function App() {
             </Routes>
         </div>
     )
-}
 
-export default App
+
+}

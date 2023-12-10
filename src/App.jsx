@@ -49,51 +49,42 @@ const Popup = loadable(() => import("pages/Popup"))
 const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 
-function App() {
+export default function App() {
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
 
 
     const isCookieOn = Cookies.get('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
-    const [buttonClicked, setButtonClicked] = useState(false)
+
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
+    const [timer, setTimer] = useState(false)
 
 
+    useEffect(() => {
+        console.log('updated')
+        setTimer(
+            setTimeout(() => {
+                setIsHelpPopupOpen(true)
 
-
-
-    // useEffect(() => {
-    //     let timeoutId
-    //     console.log('updated')
-    //     // if (!buttonClicked) {
-    //     timeoutId = setTimeout(() => {
-    //         setIsHelpPopupOpen(true)
-    //         clearTimeout(timeoutId)
-    //     }, 10000)
-
-    // Очищаем таймер при размонтировании компонента или при срабатывании кнопки
-    // }
-
-    // Сбрасываем состояние кнопки
-    // setButtonClicked(false)
-    // return () => clearTimeout(timeoutId)
-    // }, [])
+            }, 40000))
+    }, [])
 
     useEffect(() => {
         setUrlParams()
     }, [])
 
     const handleButtonClick = () => {
+        clearTimeout(timer)
         setIsHelpPopupOpen(!isHelpPopupOpen)
-        setButtonClicked(true)
+
     }
 
 
     const setUrlParams = (isCoockieOnRight = undefined) => {
-        const isCookieOn = Cookies.get('cookies_on');
+        const isCookieOn = Cookies.get('cookies_on')
         const urlParams = new URLSearchParams(window.location.search)
 
-        console.log(isCookieOn);
+        console.log(isCookieOn)
 
         const urlParamsData = [
             utm_source ? utm_source : urlParams.get("utm_source"),
@@ -159,7 +150,7 @@ function App() {
             <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
 
 
-            <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-0 right-0'>
+            <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-10 right-0'>
                 <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
                 <img className='w-[70px]  h-[70px]' src={call} alt="" />
             </div>
@@ -209,6 +200,6 @@ function App() {
             </Routes>
         </div>
     )
-}
 
-export default App
+
+}

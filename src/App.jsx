@@ -1,10 +1,10 @@
 import loadable from '@loadable/component'
+import call from 'images/call.webp'
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
-
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -70,6 +70,7 @@ export default function App() {
     }, [])
 
     useEffect(() => {
+
         // Check if the URL contains a fragment identifier
         let time = setTimeout(() => {
             clearTimeout(time)
@@ -172,10 +173,10 @@ export default function App() {
             <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
 
 
-            {/* <div onClick={handleButtonClick} className='fixed z-[1000000] bottom-10 right-0'>
+            <div onClick={handleButtonClick} className='fixed z-[4000] bottom-10 right-0'>
                 <div className='relative top-[20px] text-[14px] -right-[40px] border border-black w-[25px] h-[25px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
                 <img className='w-[70px]  h-[70px]' src={call} alt="" />
-            </div> */}
+            </div>
 
 
             <Routes>

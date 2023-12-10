@@ -1,19 +1,22 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {useURLData} from "utils/URLData";
+import { useNavigate } from "react-router-dom"
+import { useURLData } from "utils/URLData"
 
 const FixedFuter = ({ link, needRotate }) => {
-    const navigate = useNavigate();
-    const {utm_source} = useURLData();
+    const navigate = useNavigate()
+    const { utm_source } = useURLData()
     const goBack = () => {
         navigate(-1)
-    };
+    }
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
-        });
-    };
+        })
+    }
+    const message = 'Здравствуйте, меня интересует аренда домика' // Replace with your desired message
+
+    const whatsappLink = `https://wa.me/79859091202?text=${encodeURIComponent(message)}`
+
     return (
         <div className='flex fixed bottom-0 w-full z-[1001] flex-col gap-1 transition-all'>
             {
@@ -41,7 +44,7 @@ const FixedFuter = ({ link, needRotate }) => {
 
                     <h3 className="monterey font-extrabold text-[18px] z-10">ЗАБРОНИРОВАТЬ</h3>
                 </a>
-                <a href="https://wa.me/79859091202" >
+                <a href={whatsappLink} >
                     <picture>
                         <source srcSet="/avif/wa_ft.avif 1x" type="image/avif" />
                         <source srcSet="/image/wa_ft.webp 1x" type="image/webp" />
@@ -82,7 +85,7 @@ const FixedFuter = ({ link, needRotate }) => {
                 }
             </div>
         </div>
-    );
+    )
 }
 
-export default FixedFuter;
+export default FixedFuter

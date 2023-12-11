@@ -1,22 +1,20 @@
-import React, {useEffect} from "react";
-import routes from "../../utils/Home/routes";
-import {v4 as uuidv4} from 'uuid';
-import {Link} from "react-router-dom";
-import {useURLData} from "../../utils/URLData";
-import Cookies from "js-cookie";
-import { isItWinterNow } from "utils/helpers";
+import { Link } from "react-router-dom"
+import { isItWinterNow } from "utils/helpers"
+import { v4 as uuidv4 } from 'uuid'
+import routes from "../../utils/Home/routes"
+import { useURLData } from "../../utils/URLData"
 
 const Footer = () => {
-    const {utm_source} = useURLData();
+    const { utm_source } = useURLData()
 
     return (
         <section id="footer" className="section back_settings relative"
-                 style={{backgroundImage: `url(/image/footer_bg${isItWinterNow()}.webp)`}}>
+            style={{ backgroundImage: `url(/image/footer_bg${isItWinterNow()}.webp)` }}>
             <div className="flex flex-col items-center justify-center relative h-[90px] z-10">
                 <picture>
-                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif"/>
+                    <source srcSet="/avif/titles_bg.avif 1x" type="image/avif" />
                     <img className="absolute top-0 left-50% translate-x-[-50%]" src="/image/titles_bg.webp"
-                         alt="Икша Кантри Клаб"/>
+                        alt="Икша Кантри Клаб" />
                 </picture>
 
                 <h2 className="text-[20px] text-white z-10 font-bold mt-2">ИКША Country Club</h2>
@@ -25,8 +23,8 @@ const Footer = () => {
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center">
                         <picture>
-                            <source srcSet="/avif/call_big.avif 1x" type="image/avif"/>
-                            <img src="/image/call_big.webp" alt="Икша Кантри Клаб"/>
+                            <source srcSet="/avif/call_big.avif 1x" type="image/avif" />
+                            <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
                         </picture>
 
                         {
@@ -48,11 +46,11 @@ const Footer = () => {
 
                     </div>
                     <div className="flex items-center">
-                        <div style={{backgroundImage: 'url(/image/email_big.webp)'}}
-                             className="flex w-[49px] h-[51px] justify-center items-center back_settings">
+                        <div style={{ backgroundImage: 'url(/image/email_big.webp)' }}
+                            className="flex w-[49px] h-[51px] justify-center items-center back_settings">
                             <picture>
-                                <source srcSet="/avif/email_inside.avif 1x" type="image/avif"/>
-                                <img src="/image/email_inside.webp" alt="Икша Кантри Клаб"/>
+                                <source srcSet="/avif/email_inside.avif 1x" type="image/avif" />
+                                <img src="/image/email_inside.webp" alt="Икша Кантри Клаб" />
                             </picture>
                         </div>
                         <a href="mailto:contact@ikshacountryclub.com">
@@ -70,13 +68,13 @@ const Footer = () => {
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб"/>}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
                                         </Link> :
                                         <a href={route.link} className='flex gap-[1px]'>
                                             <p className='monterey text-white font-medium'>
                                                 {route.text}
                                             </p>
-                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб"/>}
+                                            {route.icon && <img src={route.whiteIcon} alt="Икша Кантри Клаб" />}
                                         </a>
                                 }
                             </li>
@@ -87,17 +85,17 @@ const Footer = () => {
                     <div className="flex justify-between monterey px-[11px]"> {/* justify-between */}
                         <Link to="/data-privicy" className="text-white text-[12px] underline">Политика данных</Link>
                         <Link to="/faq" className="text-white text-[12px] underline">FAQ</Link>
-                        <Link to="/live-rules" className="text-white text-[12px] underline">Правила проживания</Link>
+                        <Link to="/rules" className="text-white text-[12px] underline">Правила проживания</Link>
                     </div>
                     <div className="flex justify-center monterey">
-                        <a className="text-white text-[12px] underline" href="/pdf/oferta.pdf">Договор оферты</a>
+                        <a className="text-white text-[12px] underline" target='_blank' href="/pdf/oferta.pdf">Договор оферты</a>
                     </div>
                     <p className="text-center text-white text-[12px] monterey px-[26px]">"Икша Кантри Клаб" | Все права
                         защищены Copyright © 2023 Икша Кантри Клаб</p>
                 </div>
             </div>
         </section>
-    );
+    )
 }
 
-export default Footer;
+export default Footer

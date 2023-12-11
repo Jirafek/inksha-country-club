@@ -44,7 +44,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
                   alt="Икша Кантри Клаб"
                />
             </div>
-            <div className='border w-[70vw] mx-auto  h-[40vh] text-black  relative montery border-black bg-white rounded-[20px] p-5'>
+            <div className='border w-[70vw] mx-auto  h-[250px] text-black  relative montery border-black bg-white rounded-[20px] p-5'>
                <div className="absolute right-3 z-[60] p-2 top-3">
                   <img
                      onClick={handlePopupClose}

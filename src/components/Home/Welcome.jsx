@@ -1,5 +1,6 @@
 import { m } from "framer-motion"
 import ny_logo from 'icons/ny-logo.webp'
+import bg1avif from 'images/bg1.avif'
 import bg1 from 'images/bg1.webp'
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -222,7 +223,7 @@ const Welcome = () => {
          </Link>
          <picture>
             {/* <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" /> */}
-            <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" />
+            <source srcSet={isItWinterNow() ? bg1avif : `/avif/welcome_bg.avif 1x`} type="image/avif" />
             <img
                className="h-[100%] w-full object-cover"
                src={isItWinterNow() ? bg1 : "/image/welcome_bg.webp"}

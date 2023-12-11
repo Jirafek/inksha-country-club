@@ -46,12 +46,12 @@ const routes = [
         icon: "",
         link: "#calculator"
     },
-    {
-        text: "СПЕЦПРЕДЛОЖЕНИЯ",
-        icon: "/image/Heart.webp",
-        whiteIcon: "/image/white_heart.webp",
-        link: "#spec"
-    },
+    // {
+    //     text: "СПЕЦПРЕДЛОЖЕНИЯ",
+    //     icon: "/image/Heart.webp",
+    //     whiteIcon: "/image/white_heart.webp",
+    //     link: "#spec"
+    // },
     {
         text: "СВИДАНИЯ НА БЕРЕГУ",
         icon: "",
@@ -82,6 +82,6 @@ const routes = [
         icon: "",
         link: "#contacts"
     },
-];
+]
 
-export default routes;
+export default routes

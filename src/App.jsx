@@ -1,5 +1,6 @@
 import loadable from '@loadable/component'
 // import call from 'images/call.webp'
+import messageIcon from 'icons/messageIcon.webp'
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
@@ -57,6 +58,7 @@ export default function App() {
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
     const [timer, setTimer] = useState(false)
     const [isButtonActive, setIsButtonActive] = useState(false)
+    const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
 
 
 
@@ -65,7 +67,7 @@ export default function App() {
         setTimer(
             setTimeout(() => {
                 setIsHelpPopupOpen(true)
-
+                setIsHelpButtonActive(true)
             }, 40000))
     }, [])
 
@@ -174,12 +176,12 @@ export default function App() {
         <div className='relative'>
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
             <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
+            {isHelpButtonActive && <div onClick={handleButtonClick} className='fixed z-[4000] bottom-10 right-0'>
+                {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
+                <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+            </div>}
 
 
-            <div onClick={handleButtonClick} className='fixed z-[4000] bottom-10 right-0'>
-                <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div>
-                {/* <img className='w-[70px]  h-[70px]' src={call} alt="" /> */}
-            </div>
 
 
             <Routes>
@@ -201,7 +203,7 @@ export default function App() {
                     }
                 />
                 <Route
-                    path="/live-rules"
+                    path="/rules"
                     element={
                         <Rules
                             title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ"

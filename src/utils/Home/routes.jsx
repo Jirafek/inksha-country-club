@@ -42,6 +42,11 @@ const routes = [
         link: "#events"
     },
     {
+        text: "СОБЫТИЯ",
+        icon: "",
+        link: "#agenda"
+    },
+    {
         text: "КАЛЬКУЛЯТОР",
         icon: "",
         link: "#calculator"

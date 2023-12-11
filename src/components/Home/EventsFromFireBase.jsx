@@ -1,8 +1,7 @@
-import React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { m } from "framer-motion";
-import GreenButton from "./../../common/GreenButton";
-import { Link } from "react-router-dom";
+import { m } from "framer-motion"
+import { Link } from "react-router-dom"
+import { v4 as uuidv4 } from "uuid"
+import GreenButton from "./../../common/GreenButton"
 const heading = {
    hidden: {},
    visible: {
@@ -10,7 +9,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const sky1 = {
    hidden: {
@@ -27,7 +26,7 @@ const sky1 = {
          duration: 4,
       },
    },
-};
+}
 
 const sky2 = {
    hidden: {
@@ -42,7 +41,7 @@ const sky2 = {
          duration: 4,
       },
    },
-};
+}
 
 const sky3 = {
    hidden: {
@@ -57,7 +56,7 @@ const sky3 = {
          duration: 4,
       },
    },
-};
+}
 
 const sky4 = {
    hidden: {
@@ -72,7 +71,7 @@ const sky4 = {
          duration: 4,
       },
    },
-};
+}
 
 const fireBaseData = [
    {
@@ -103,7 +102,7 @@ const fireBaseData = [
       title: "Хеллоуин",
       date: "28.10.2023",
    },
-];
+]
 
 const EventsFromFireBase = () => {
    return (
@@ -112,7 +111,7 @@ const EventsFromFireBase = () => {
          whileInView="visible"
          viewport={{ once: true }}
          variants={heading}
-         id="blog"
+         id="agenda"
          style={{
             backgroundImage: "url(/image/bg-eve.webp)",
             overflowX: "hidden",
@@ -216,7 +215,7 @@ const EventsFromFireBase = () => {
             ))}
          </div>
       </m.section>
-   );
-};
+   )
+}
 
-export default EventsFromFireBase;
+export default EventsFromFireBase

@@ -232,7 +232,7 @@ const Home = () => {
                {!isItWinterNow() && <Spec />}
                <Dates />
                <Responce />
-               {!isItWinterNow() && <Blog />}
+               <Blog />
                <YandexMap />
                <Footer />
                {/* <div className="h-[60px]"></div> */}

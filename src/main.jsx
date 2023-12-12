@@ -66,13 +66,20 @@ function AppWithDelay() {
 
    // Выводим сообщение в консоль, если ширина экрана большк 420 пикселя
    if (windowWidth > 767) {
-      if (window.location.pathname.includes('/locations-about')) {
-         window.location.href = "https://ikshacountryclub.com/location/1"
-      } else {
+      switch (true) {
+         case window.location.pathname.includes('/locations-about'):
+            window.location.href = "https://ikshacountryclub.com/location/1"
+            break
 
+         case window.location.pathname.includes('/korp'):
+            window.location.href = "https://ikshacountryclub.com/?korpOpen=1"
+            break
 
-         window.location.href = "https://ikshacountryclub.com" + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname)
+         default:
+            window.location.href = "https://ikshacountryclub.com" + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname)
+            break
       }
+
       // console.log(window.location.pathname)
       // console.log(window.location.pathname === '/')
       // window.location.href = "http://localhost:5174" + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname)

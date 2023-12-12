@@ -63,11 +63,11 @@ export default function App() {
 
 
     useEffect(() => {
-        console.log('updated')
+
         setTimer(
             setTimeout(() => {
                 setIsHelpPopupOpen(true)
-                setIsHelpButtonActive(true)
+                // setIsHelpButtonActive(true)
             }, 40000))
     }, [])
 
@@ -175,8 +175,8 @@ export default function App() {
     return (
         <div className='relative'>
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-            <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
-            {isHelpButtonActive && <div onClick={handleButtonClick} className='fixed z-[4000] bottom-10 right-0'>
+            <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
+            {isHelpButtonActive && <div onClick={handleButtonClick} className='fixed z-[4000] bottom-[130px] right-[5px]'>
                 {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
                 <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
             </div>}

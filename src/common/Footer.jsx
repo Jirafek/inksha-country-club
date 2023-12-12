@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion"
-import instWinter from 'icons/winter/inst.webp'
 import whatWinter from 'icons/winter/sup.webp'
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from 'utils/helpers'
-import inst from "./../assets/inst.png"
+// import inst from "./../assets/inst.png"
 import phone from "./../assets/phone.png"
 import what from "./../assets/what.png"
 const slideVariants = {
@@ -27,13 +26,13 @@ const Footer = ({ className }) => {
                <div className="flex w-full items-center justify-between gap-5 md:justify-start">
                   <div className="text-white">Икша Кантри Kлаб 2023 </div>
                   <div className="fixed bottom-5 md:bottom-[70px]  right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
-                     <a
+                     {/* <a
                         target="_blank"
                         rel="noreferrer"
                         href="https://www.instagram.com/ikshacountryclub/"
                      >
                         <img className="z-10 h-9 w-9" src={isItWinterNow() ? instWinter : inst} alt="" />
-                     </a>
+                     </a> */}
                      <a
                         href="https://wa.me/79859091202"
                         target="_blank"

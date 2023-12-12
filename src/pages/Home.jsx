@@ -219,8 +219,8 @@ const Home = () => {
                </h1>
 
                <Welcome />
-               <Map />
                <About />
+               <Map />
                <Happy />
                <Gallery />
                <Eat />

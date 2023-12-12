@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import HelpPhoneForm from './components/HelpPhoneForm'
 import style from './helpPopup.module.scss'
-const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
+const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsHelpButtonActive }) => {
    const [isValid, setIsValid] = useState(false)
    const [path, setPath] = useState(1)
 
@@ -20,6 +20,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
 
    const handlePopupClose = () => {
       setIsHelpPopupOpen(false)
+      setIsHelpButtonActive(true)
    }
 
    useEffect(() => {

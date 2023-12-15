@@ -71,7 +71,7 @@ export default function App() {
             setTimeout(() => {
                 setIsHelpPopupOpen(true)
                 // setIsHelpButtonActive(true)
-            }, 10000))
+            }, 40000))
     }, [])
 
     useEffect(() => {

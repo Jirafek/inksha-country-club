@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
+
+import { AnimatePresence } from 'framer-motion'
+import FadeIn from './common/animation/FadeIn'
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -68,7 +71,7 @@ export default function App() {
             setTimeout(() => {
                 setIsHelpPopupOpen(true)
                 // setIsHelpButtonActive(true)
-            }, 40000))
+            }, 10000))
     }, [])
 
     useEffect(() => {
@@ -173,61 +176,66 @@ export default function App() {
     }
 
     return (
-        <div className='relative'>
+        <AnimatePresence mode='wait'>
+            <div className='relative'>
 
-            <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-            <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
-            {isHelpButtonActive && <div onClick={handleButtonClick} className='fixed z-[4000] bottom-[130px] right-[5px]'>
-                {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
-                <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
-            </div>}
+                <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+
+                {isHelpPopupOpen &&
+                    <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
+                }
+                {isHelpButtonActive && <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[130px] right-[5px]'>
+                    {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
+                    <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+                </FadeIn>}
 
 
 
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/booking" element={<Booking />} />
-                <Route path="/keitering" element={<Keitering />} />
-                <Route path="/choose-date" element={<DatesChooser />} />
-                <Route path="/gallery-all" element={<GalleryAll />} />
-                <Route path="/choose-happy" element={<HappySlider />} />
-                <Route
-                    path="/data-privicy"
-                    element={
-                        <Rules
-                            title="ПОЛИТИКА ДАННЫХ"
-                            isNeedButton={false}
-                            isNeedPadding={false}
-                            text={text_living}
-                        />
-                    }
-                />
-                <Route
-                    path="/rules"
-                    element={
-                        <Rules
-                            title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ"
-                            isNeedButton={true}
-                            isNeedPadding={true}
-                            text={text_privicy}
-                        />
-                    }
-                />
-                <Route path="/korp" element={<KorpSlider />} />
-                <Route path="/korp/book" element={<Korporativy />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/locations-about" element={<LocationsSlider />} />
-                <Route path="/blog-all" element={<BlogAll />} />
-                <Route path="/form/:amount" element={<FormCalculate />} />
-                <Route path="/halloween" element={<Helloween />} />
-                <Route path="/popup" element={<Popup />} />
-                <Route path="/thanks" element={<Thanks />} />
-                <Route path="/korp-landing" element={<KorpLanding />} />
-                <Route path="/New-Year" element={<NYLanding />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/booking" element={<Booking />} />
+                    <Route path="/keitering" element={<Keitering />} />
+                    <Route path="/choose-date" element={<DatesChooser />} />
+                    <Route path="/gallery-all" element={<GalleryAll />} />
+                    <Route path="/choose-happy" element={<HappySlider />} />
+                    <Route
+                        path="/data-privicy"
+                        element={
+                            <Rules
+                                title="ПОЛИТИКА ДАННЫХ"
+                                isNeedButton={false}
+                                isNeedPadding={false}
+                                text={text_living}
+                            />
+                        }
+                    />
+                    <Route
+                        path="/rules"
+                        element={
+                            <Rules
+                                title="ПРАВИЛА ПРОЖИВАНИЯ ГОСТЕЙ В ИКША КАНТРИ КЛАБ"
+                                isNeedButton={true}
+                                isNeedPadding={true}
+                                text={text_privicy}
+                            />
+                        }
+                    />
+                    <Route path="/korp" element={<KorpSlider />} />
+                    <Route path="/korp/book" element={<Korporativy />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/locations-about" element={<LocationsSlider />} />
+                    <Route path="/blog-all" element={<BlogAll />} />
+                    <Route path="/form/:amount" element={<FormCalculate />} />
+                    <Route path="/halloween" element={<Helloween />} />
+                    <Route path="/popup" element={<Popup />} />
+                    <Route path="/thanks" element={<Thanks />} />
+                    <Route path="/korp-landing" element={<KorpLanding />} />
+                    <Route path="/New-Year" element={<NYLanding />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </div>
+        </AnimatePresence>
     )
 
 

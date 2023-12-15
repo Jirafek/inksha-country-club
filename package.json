@@ -28,7 +28,7 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "firebase": "^9.23.0",
-    "framer-motion": "^6.3.11",
+    "framer-motion": "^10.16.16",
     "gsap": "^3.12.2",
     "interactjs": "^1.10.18",
     "js-cookie": "^3.0.5",

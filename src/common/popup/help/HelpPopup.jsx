@@ -1,7 +1,7 @@
 
+import FadeIn from 'common/animation/FadeIn'
 import close from "icons/close.png"
 import { useEffect, useState } from 'react'
-
 import HelpPhoneForm from './components/HelpPhoneForm'
 import style from './helpPopup.module.scss'
 const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsHelpButtonActive }) => {
@@ -34,7 +34,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
 
    return (
       <>
-         {isHelpPopupOpen && <div className={` ${className} fixed left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2 transform z-[100000]`}>
+         <FadeIn className={` ${className} fixed left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2 transform z-[100000]`}>
             <div
                style={{ transform: "translateX(-50%)" }}
                className="absolute left-1/2 -top-[155px] z-30 w-[215px] bg-transparent"
@@ -75,7 +75,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
 
 
 
-         </div>}
+         </FadeIn>
       </>
 
    )

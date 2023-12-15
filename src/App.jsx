@@ -174,6 +174,7 @@ export default function App() {
 
     return (
         <div className='relative'>
+
             <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
             <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
             {isHelpButtonActive && <div onClick={handleButtonClick} className='fixed z-[4000] bottom-[130px] right-[5px]'>

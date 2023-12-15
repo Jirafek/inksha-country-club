@@ -5,8 +5,8 @@ import NumeredItemsData from "../../utils/Home/NumeredItemsData"
 import price_arrow from "./../../assets/price_arrow.png"
 import price_calculator from "./../../assets/price_calculator.png"
 import NumberedItem from "./helpers/NumberedItem"
-const ytSrc = "https://www.youtube.com/embed/Eat2wgPNuIo";
-const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
+const ytSrc = "https://www.youtube.com/embed/Eat2wgPNuIo"
+const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1]
 const heading = {
    hidden: {},
    visible: {
@@ -14,7 +14,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLinesOpacity = {
    hidden: {
@@ -29,7 +29,7 @@ const headingLinesOpacity = {
          duration: 1,
       },
    },
-};
+}
 
 const price_arrow_vars = {
    initial: {
@@ -40,18 +40,18 @@ const price_arrow_vars = {
       y: "-10px", // Конечная позиция за пределами экрана слева
       // scale: 1,
    },
-};
+}
 const About = () => {
-   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
    const handlePlayVideo = () => {
-      setIsVideoPlaying(true);
-   };
+      setIsVideoPlaying(true)
+   }
 
    const handleDownload = () => {
-      const fileUrl = "/pdf/iksha_pdf.pdf";
-      window.open(fileUrl, "_blank");
-   };
+      const fileUrl = "/pdf/iksha_pdf.pdf"
+      window.open(fileUrl, "_blank")
+   }
    return (
       <section
          style={{ backgroundImage: `url(/image/about_bg_styled${isItWinterNow()}.webp)` }}
@@ -66,10 +66,10 @@ const About = () => {
             <m.img
                transition={{
                   repeat: Infinity,
-                  duration: 0.5,
+                  duration: 0.2,
 
                   repeatType: "reverse",
-                  repeatDelay: 0.75,
+                  repeatDelay: 0.3,
                }}
                initial="initial"
                animate="animate"
@@ -193,7 +193,7 @@ const About = () => {
             </picture>
          </m.div>
       </section>
-   );
-};
+   )
+}
 
-export default About;
+export default About

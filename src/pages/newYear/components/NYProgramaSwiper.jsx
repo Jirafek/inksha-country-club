@@ -7,6 +7,16 @@ import swiper6 from "images/NY/swiper/006.webp"
 import swiper7 from "images/NY/swiper/007.webp"
 import swiper8 from "images/NY/swiper/008.webp"
 import swiper9 from "images/NY/swiper/009.webp"
+import swiper10 from "images/NY/swiper/010.webp"
+import swiper11 from "images/NY/swiper/011.webp"
+import swiper12 from "images/NY/swiper/012.webp"
+import swiper13 from "images/NY/swiper/013.webp"
+import swiper14 from "images/NY/swiper/014.webp"
+import swiper15 from "images/NY/swiper/015.webp"
+import swiper16 from "images/NY/swiper/016.webp"
+import swiper17 from "images/NY/swiper/017.webp"
+import swiper18 from "images/NY/swiper/018.webp"
+
 import { useRef } from "react"
 // import scroll from "./../assets/scroll.png";
 // import orange_scroll from "./../assets/orange_scroll.png";
@@ -18,7 +28,7 @@ import swiperprev from 'icons/swiperprev_black.png'
 import { Navigation, Pagination } from "swiper/modules"
 
 import { Swiper, SwiperSlide } from "swiper/react"
-
+const slides = [swiper1, swiper2, swiper3, swiper4, swiper5, swiper6, swiper7, swiper8, swiper9, swiper10, swiper11, swiper12, swiper13, swiper14, swiper15, swiper16, swiper17, swiper18]
 const ProgramaSwiper = () => {
    const swiperRef = useRef()
    return (
@@ -38,15 +48,21 @@ const ProgramaSwiper = () => {
                      swiperRef.current = swiper
                   }}
                >
-                  <SwiperSlide>
-                     <img
-                        src={swiper5}
-                        className="w-full h-full object-cover aspect-video"
-                        alt=""
-                     />
-                  </SwiperSlide>
+                  {slides.map((slide, index) => {
+                     return (
 
-                  <SwiperSlide>
+
+                        <SwiperSlide key={index}>
+                           <img
+                              src={slide}
+                              className="w-full h-full object-cover aspect-video"
+                              alt=""
+                           />
+                        </SwiperSlide>
+                     )
+                  })}
+
+                  {/* <SwiperSlide>
                      <img
                         src={swiper4}
                         className="w-full h-full object-cover aspect-video"
@@ -102,7 +118,7 @@ const ProgramaSwiper = () => {
                         className="w-full h-full object-cover aspect-video"
                         alt=""
                      />
-                  </SwiperSlide>
+                  </SwiperSlide> */}
 
                   <div
                      className="absolute  cursor-pointer top-1/2 transform -translate-y-1/2 z-10 right-0 md:right-10"

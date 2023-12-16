@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import whatWinter from 'icons/winter/sup.webp'
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from 'utils/helpers'
@@ -40,7 +40,7 @@ const Footer = ({ className }) => {
                      >
                         <img className="z-10 h-9 w-9" src={isItWinterNow() ? whatWinter : what} alt="" />
                      </a>
-                     <motion.a
+                     <m.a
                         variants={slideVariants}
                         transition={{
                            repeat: Infinity,
@@ -54,7 +54,7 @@ const Footer = ({ className }) => {
                         href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : 'tel:+74995055031'}
                      >
                         <img className="z-10 h-9 w-9" src={phone} alt="" />
-                     </motion.a>
+                     </m.a>
                   </div>
                </div>
                {

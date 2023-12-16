@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Firenight-Regular';
+  src: url('./../../../../public/fonts/Firenight-Regular.otf') format('opentype');
+  /* Add additional font formats if needed (e.g., woff, woff2) */
+}
+
+.link {
+   font-family: 'Firenight-Regular', sans-serif;
+   text-align: center;
+   text-decoration: underline;
+   font-size: 18px;
+   white-space: nowrap;
+   font-weight: 400;
+}
+
+
+.fire{
+   font-family: 'Firenight-Regular', sans-serif;
+}

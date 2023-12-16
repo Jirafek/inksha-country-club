@@ -48,15 +48,16 @@ const ProgramaSwiper = () => {
                      swiperRef.current = swiper
                   }}
                >
-                  {slides.map((slide, index) => {
+                  {slides.map((slide, i) => {
                      return (
 
 
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={i}>
                            <img
+                              key={i + 1}
                               src={slide}
                               className="w-full h-full object-cover aspect-video"
-                              alt=""
+                              alt='image'
                            />
                         </SwiperSlide>
                      )

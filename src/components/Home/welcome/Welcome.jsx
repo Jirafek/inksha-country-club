@@ -7,8 +7,11 @@ import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from "utils/helpers"
-import AnimationButton from "./../../common/AnimationButton"
-import MainPopup from "./../../common/MainPopup"
+import AnimationButton from "../../../common/AnimationButton"
+import MainPopup from "../../../common/MainPopup"
+import WelcomeSwiper from './components/WelcomeSwiper'
+import styles from './welcome.module.scss'
+
 const heading = {
    hidden: {},
    visible: {
@@ -160,7 +163,7 @@ const Welcome = () => {
 
          skyContainer1.classList.add("animate-moveSky1")
          skyContainer2.classList.add("animate-moveSky2")
-         doskaContainer.classList.add("animate-moveDoska")
+         // doskaContainer.classList.add("animate-moveDoska")
       }, 1500)
    }, [])
 
@@ -236,7 +239,7 @@ const Welcome = () => {
       <div className="absolute z-[1] bottom-0 w-full bg-transparent">
         <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
       </div> */}
-         <div
+         {/* <div
             style={{ transform: "translateX(-50%)" }}
             className="doska-container absolute left-1/2 top-0 w-[260px]"
          >
@@ -276,7 +279,7 @@ const Welcome = () => {
                   />
                </picture>
             </a>
-         </div>
+         </div> */}
          <picture>
             <source srcSet="/avif/sky1.avif 1x" type="image/avif" />
             <img
@@ -320,14 +323,18 @@ const Welcome = () => {
                      </div>
                   </div>
                </button> */}
-            <AnimationButton
+            {/* <AnimationButton
                key={1}
                onClick={togglePopup}
                className=" absolute -bottom-[8rem] left-1/2 -translate-x-1/2"
             >
                {" "}
                Свяжитесь со мной
-            </AnimationButton>
+            </AnimationButton> */}
+            <div className={`${styles.fire} text-[13px] text-[#FDD9BE] absolute whitespace-nowrap transform left-1/2 -translate-x-1/2  -top-[45px]`}>
+               Загородный клуб <span className='text-[16px]  mx-[5px]'>&#8226;</span>  База отдыха  <span className='text-[16px]  mx-[5px]'>&#8226;</span> Глэмпинг
+            </div>
+            <WelcomeSwiper />
             {/* </Link> */}
          </div>
       </section>

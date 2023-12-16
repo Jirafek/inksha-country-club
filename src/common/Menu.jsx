@@ -1,8 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import close from "assets/close.png";
+import close from "assets/close.png"
+import { m } from 'framer-motion'
 
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll"
 const menuVars = {
    initial: {
       opacity: 0,
@@ -22,7 +21,7 @@ const menuVars = {
          duration: 0.5, // Adjust the exit animation duration as needed
       },
    },
-};
+}
 
 const navVars = {
    initial: {
@@ -44,7 +43,7 @@ const navVars = {
          duration: 0.5, // Adjust the exit animation duration as needed
       },
    },
-};
+}
 
 const Menu = ({ toggleMenu, links, MenuClassName }) => {
    return (
@@ -53,7 +52,7 @@ const Menu = ({ toggleMenu, links, MenuClassName }) => {
             onClick={toggleMenu}
             className="fixed inset-0 z-20 flex h-full w-full bg-slate-100 bg-opacity-60 md:hidden"
          >
-            <motion.div
+            <m.div
                key="menu" // Make sure to specify a unique key
                variants={menuVars}
                initial="initial"
@@ -70,7 +69,7 @@ const Menu = ({ toggleMenu, links, MenuClassName }) => {
                <ul className="gap-10 text-center ">
                   {links?.map((link, i) => {
                      return (
-                        <motion.li
+                        <m.li
                            onClick={toggleMenu}
                            className=" cursor-pointer text-[25px]"
                            variants={navVars}
@@ -85,11 +84,11 @@ const Menu = ({ toggleMenu, links, MenuClassName }) => {
                            >
                               {link.title}
                            </ScrollLink>
-                        </motion.li>
-                     );
+                        </m.li>
+                     )
                   })}
                </ul>
-            </motion.div>
+            </m.div>
          </div>
       </div>
    )

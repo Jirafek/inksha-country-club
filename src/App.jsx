@@ -66,7 +66,6 @@ export default function App() {
 
 
     useEffect(() => {
-
         setTimer(
             setTimeout(() => {
                 setIsHelpPopupOpen(true)

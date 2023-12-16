@@ -12,7 +12,7 @@ import routes from "../utils/Home/routes"
 
 import loadable from '@loadable/component'
 
-const Welcome = loadable(() => import("../components/Home/Welcome"))
+const Welcome = loadable(() => import("../components/Home/welcome/Welcome"))
 const YandexMap = loadable(() => import("../components/Home/YandexMap"))
 const Calculate = loadable(() => import("../components/Home/Calculate"))
 const Dates = loadable(() => import("../components/Home/Dates"))

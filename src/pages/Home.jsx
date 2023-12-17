@@ -62,7 +62,7 @@ const Home = () => {
    useEffect(() => {
       const handleScroll = () => {
          const scrollPosition = window.scrollY
-         const triggerPosition = 1000 // define the scroll position where you want to show the block
+         const triggerPosition = 500 // define the scroll position where you want to show the block
 
          setIsVisible(scrollPosition > triggerPosition)
       }

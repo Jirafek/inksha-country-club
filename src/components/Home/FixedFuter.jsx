@@ -35,13 +35,13 @@ const FixedFuter = ({ link, needRotate }) => {
                     </button>
             }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
-                <a rel="noreferrer" className="relative w-[230px] h-[40px] flex items-center justify-center" href="#book">
-                    <picture>
+                <a rel="noreferrer" className="relative w-[230px] monterey font-extrabold text-[18px] bg-[#79E718] border border-black rounded-[16px] h-[40px] flex items-center justify-center" href="#book">
+                    {/* <picture>
                         <source srcSet="/avif/booking_button.avif 1x" type="image/avif" />
                         <img className='w-[215px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="Икша Кантри Клаб - Заказть отдых" />
-                    </picture>
+                    </picture> */}
 
-                    <h3 className="monterey font-extrabold text-[18px] z-10">ЗАБРОНИРОВАТЬ</h3>
+                    <h3 className=" z-10">ЗАБРОНИРОВАТЬ</h3>
                 </a>
                 <a href={whatsappLink} >
                     <picture>
@@ -57,31 +57,31 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img className="h-[65px]" src="/image/tg_footer.png" alt="Икша Кантри Клаб - Заказть отдых через Телеграм" />
                     </picture>
                 </a>
-
+                {/* 
                 {
                     utm_source === 'yandex' ?
-                        <a href="tel:+74995055067">
-                            <picture>
+                        <a className='fixed h-[60px] w-[60px] bottom-[130px] right-0' href="tel:+74995055067">
+                            <picture className=''>
                                 <source srcSet="/avif/call.avif 1x" type="image/avif" />
-                                <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                                <img className=' w-full  h-full' src="/image/call.webp" alt="Икша Кантри Клаб" />
                             </picture>
                         </a>
                         : utm_source === 'vkontakte' ?
-                            <a href="tel:+74995055087">
-                                <picture>
+                            <a className='fixed h-[60px] w-[60px] bottom-[130px] right-0' href="tel:+74995055087">
+                                <picture className=''>
                                     <source srcSet="/avif/call.avif 1x" type="image/avif" />
-                                    <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                                    <img className=' w-full  h-full' src="/image/call.webp" alt="Икша Кантри Клаб" />
                                 </picture>
                             </a>
                             :
-                            <a href="tel:+74995055031">
-                                <picture>
+                            <a className='fixed h-[60px] w-[60px] bottom-[130px] right-0' href="tel:+74995055031">
+                                <picture className=''>
                                     <source srcSet="/avif/call.avif 1x" type="image/avif" />
-                                    <img className='h-[58px] w-[61px]' src="/image/call.webp" alt="Икша Кантри Клаб" />
+                                    <img className=' w-full  h-full' src="/image/call.webp" alt="Икша Кантри Клаб" />
                                 </picture>
                             </a>
 
-                }
+                } */}
             </div>
         </div>
     )

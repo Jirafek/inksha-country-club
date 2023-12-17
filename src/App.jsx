@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom"
 import HelpPopup from './common/popup/help/HelpPopup'
 import { text_living, text_privicy } from "./utils/Home/PrivicyTextHelper"
 import { useURLData } from "./utils/URLData"
-
+import call from 'images/call_big.webp'
 import { AnimatePresence } from 'framer-motion'
 import FadeIn from './common/animation/FadeIn'
 // import NYLanding from "pages/newYear/NYLanding"
@@ -179,16 +179,32 @@ export default function App() {
             <div className='relative'>
 
                 <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-
                 {isHelpPopupOpen &&
                     <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
                 }
-                {isHelpButtonActive && <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[130px] right-[5px]'>
+                {isHelpButtonActive && <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
                     {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
                     <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
-                </FadeIn>}
+                </FadeIn>
+                }
 
 
+                <div className='fixed bottom-[130px] z-[4000]  h-[60px] w-[60px] right-0'>
+                    {
+                        utm_source === 'yandex' ?
+                            <a className='' href="tel:+74995055067">
+                                <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
+                            </a>
+                            : utm_source === 'vkontakte' ?
+                                <a className='' href="tel:+74995055087">
+                                    <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
+                                </a>
+                                :
+                                <a className='' href="tel:+74995055031">
+                                    <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
+                                </a>
+                    }
+                </div>
 
 
                 <Routes>

@@ -34,13 +34,13 @@ const Footer = ({ className }) => {
                         <img className="z-10 h-9 w-9" src={isItWinterNow() ? instWinter : inst} alt="" />
                      </a> */}
                      <a
-                        href="https://wa.me/79859091202"
+                        href={`https://wa.me/79859091202?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`}
                         target="_blank"
                         rel="noreferrer"
                      >
                         <img className="z-10 h-9 w-9" src={isItWinterNow() ? whatWinter : what} alt="" />
                      </a>
-                     <m.a
+                     {/* <m.a
                         variants={slideVariants}
                         transition={{
                            repeat: Infinity,
@@ -54,7 +54,7 @@ const Footer = ({ className }) => {
                         href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : 'tel:+74995055031'}
                      >
                         <img className="z-10 h-9 w-9" src={phone} alt="" />
-                     </m.a>
+                     </m.a> */}
                   </div>
                </div>
                {

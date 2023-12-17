@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import InputMask from "react-input-mask"
 import { useURLData } from 'utils/URLData'
 import style from './../helpPopup.module.scss'
+import Cookies from 'js-cookie'
 const HelpPhoneForm = ({ addInfo = '', additionalData = null,
    additionalDataType = null, }) => {
    const { utm_campaign, utm_content, utm_source } = useURLData()
@@ -51,6 +52,8 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
          )
 
          if (response.ok) {
+            Cookies.set('isTimerOn', 'false', { expires: 7 })
+            console.log(!Cookies.get('isTimerOn'))
             setTimeout(() => {
                window.location.href = 'https://ikshacountryclub.com/thanks'
             }, 1000)

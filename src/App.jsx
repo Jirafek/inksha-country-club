@@ -9,6 +9,8 @@ import { useURLData } from "./utils/URLData"
 import call from 'images/call_big.webp'
 import { AnimatePresence } from 'framer-motion'
 import FadeIn from './common/animation/FadeIn'
+import Cookies from 'js-cookie'
+
 // import NYLanding from "pages/newYear/NYLanding"
 // import Cookie from './common/Cookie'
 // import BlogAll from "./pages/BlogAll"
@@ -52,28 +54,32 @@ const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 
 export default function App() {
+
+
     const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
-
-
     const isCookieOn = localStorage.getItem('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
-
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
     const [timer, setTimer] = useState(false)
-    const [isButtonActive, setIsButtonActive] = useState(false)
     const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
+    const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
 
+
+    // console.log(!Cookies.get('isTimerOn'))
+
+    if (isTimerOn) {
+        useEffect(() => {
+            setTimer(
+                setTimeout(() => {
+                    setIsHelpPopupOpen(true)
+                    // setIsHelpButtonActive(true)
+                }, 40000))
+        }, [])
+    }
 
 
     useEffect(() => {
-        setTimer(
-            setTimeout(() => {
-                setIsHelpPopupOpen(true)
-                // setIsHelpButtonActive(true)
-            }, 40000))
-    }, [])
 
-    useEffect(() => {
         // Check if the URL contains a fragment identifier
         let time = setTimeout(() => {
             clearTimeout(time)
@@ -98,11 +104,18 @@ export default function App() {
     }, [window.location.hash])
 
 
+
+
+
+
     useEffect(() => {
         setUrlParams()
     }, [])
 
+    // '' - true
+    // 'adsa' - false
     const handleButtonClick = () => {
+
         clearTimeout(timer)
         setIsHelpPopupOpen(!isHelpPopupOpen)
 
@@ -182,11 +195,21 @@ export default function App() {
                 {isHelpPopupOpen &&
                     <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
                 }
-                {isHelpButtonActive && <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
-                    {/* <div className='relative -top-6 text-[30px] border border-black w-[55px] h-[55px]  flex items-center justify-center bg-yellow text-black rounded-full'>?</div> */}
-                    <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
-                </FadeIn>
+
+
+
+                {/* лучше не пробовать читать это говно))))) */}
+                {
+                    isTimerOn ? (isHelpButtonActive ? <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
+                        <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+                    </FadeIn> : <div></div>)
+                        : <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
+                            <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+                        </FadeIn>
                 }
+
+
+
 
 
                 <div className='fixed bottom-[130px] z-[4000]  h-[60px] w-[60px] right-0'>

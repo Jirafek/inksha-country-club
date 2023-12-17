@@ -331,9 +331,9 @@ const Welcome = () => {
                {" "}
                Свяжитесь со мной
             </AnimationButton> */}
-            <div className={`${styles.fire} text-[13px] text-[#FDD9BE] absolute whitespace-nowrap transform left-1/2 -translate-x-1/2  -top-[45px]`}>
+            {/* <div className={`${styles.fire} text-[13px] text-[#FDD9BE] absolute whitespace-nowrap transform left-1/2 -translate-x-1/2  -top-[45px]`}>
                Загородный клуб <span className='text-[16px]  mx-[5px]'>&#8226;</span>  База отдыха  <span className='text-[16px]  mx-[5px]'>&#8226;</span> Глэмпинг
-            </div>
+            </div> */}
             <WelcomeSwiper />
             {/* </Link> */}
          </div>

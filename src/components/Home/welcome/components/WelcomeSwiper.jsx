@@ -30,37 +30,56 @@ const WelcomeSwiper = () => {
             }}
 
          >
+
             <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="#locations">Домики</a>
+                  <a className={styles.link} href="#about">Глэмпинг</a>
+               </div>
+            </SwiperSlide>
+
+            {/* <SwiperSlide>
+               <div className="text-center">
+                  <a className={styles.link} href="#about">База отдыха</a>
+               </div>
+            </SwiperSlide> */}
+
+            <SwiperSlide>
+               <div className="text-center">
+                  <a className={styles.link} href="#locations">База отдыха</a>
                </div>
             </SwiperSlide>
 
             <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="/keitering">Плов и уха</a>
+                  <a className={styles.link} href="#events">День рождения</a>
+               </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+               <div className="text-center">
+                  <a className={styles.link} href="#eat">Плов и уха</a>
                </div>
             </SwiperSlide>
             <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="/choose-happy">Баня</a>
+                  <a className={styles.link} href="#happy">Баня и купель</a>
                </div>
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="#events">Развлечения</a>
+                  <a className={styles.link} href="#events">Де</a>
                </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
             <SwiperSlide>
                <div className="text-center">
                   <a className={styles.link} href="/New-Year">Новый год</a>
                </div>
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
                <div className="text-center">
                   <a className={styles.link} href="/gallery">Галерея</a>
                </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
          </Swiper>
       </div>
    )

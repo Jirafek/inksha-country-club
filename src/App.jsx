@@ -100,7 +100,7 @@ export default function App() {
                     welcome.scrollIntoView({ behavior: 'smooth' })
                 }
             }
-        }, 2000)
+        }, 40000)
     }, [window.location.hash])
 
 
@@ -115,7 +115,6 @@ export default function App() {
     // '' - true
     // 'adsa' - false
     const handleButtonClick = () => {
-
         clearTimeout(timer)
         setIsHelpPopupOpen(!isHelpPopupOpen)
 
@@ -192,11 +191,13 @@ export default function App() {
             <div className='relative'>
 
                 <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+
+
+
+
                 {isHelpPopupOpen &&
                     <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
                 }
-
-
 
                 {/* лучше не пробовать читать это говно))))) */}
                 {
@@ -207,8 +208,6 @@ export default function App() {
                             <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
                         </FadeIn>
                 }
-
-
 
 
 
@@ -228,8 +227,6 @@ export default function App() {
                                 </a>
                     }
                 </div>
-
-
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/booking" element={<Booking />} />

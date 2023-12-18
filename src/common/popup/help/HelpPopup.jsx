@@ -66,7 +66,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
                   </div>
                </div>}
                {path === 2 && <div>
-                  <HelpPhoneForm addInfo={questInput} />
+                  <HelpPhoneForm setIsHelpPopupOpen={setIsHelpPopupOpen} addInfo={questInput} />
                </div>}
 
 

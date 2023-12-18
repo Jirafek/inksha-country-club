@@ -4,7 +4,7 @@ import { useURLData } from 'utils/URLData'
 import style from './../helpPopup.module.scss'
 import Cookies from 'js-cookie'
 const HelpPhoneForm = ({ addInfo = '', additionalData = null,
-   additionalDataType = null, }) => {
+   additionalDataType = null, setIsHelpPopupOpen }) => {
    const { utm_campaign, utm_content, utm_source } = useURLData()
    const [isPopupCompleted, setIsPopupCompleted] = useState(false)
    const [isError, setIsError] = useState(true) // State for tracking errors
@@ -111,6 +111,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       }
       handleSubmitBot()
       setPhone("") // Очищаем состояние телефона
+      setIsHelpPopupOpen(false)
       setIsPopupCompleted(!isPopupCompleted)
    }
    return (

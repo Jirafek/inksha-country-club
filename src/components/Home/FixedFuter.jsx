@@ -5,8 +5,11 @@ const FixedFuter = ({ link, needRotate }) => {
     const navigate = useNavigate()
     const { utm_source } = useURLData()
     const goBack = () => {
-        navigate(-1)
+        // navigate(-1)
+        navigate('/')
+        navigate(0)
     }
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,

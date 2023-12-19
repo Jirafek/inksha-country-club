@@ -3,7 +3,7 @@ import InputMask from "react-input-mask"
 import { useURLData } from 'utils/URLData'
 import style from './../helpPopup.module.scss'
 import Cookies from 'js-cookie'
-const HelpPhoneForm = ({ addInfo = '', additionalData = null,
+const HelpPhoneForm = ({ addInfo = '', questInput = '', additionalData = null,
    additionalDataType = null, setIsHelpPopupOpen }) => {
    const { utm_campaign, utm_content, utm_source } = useURLData()
    const [isPopupCompleted, setIsPopupCompleted] = useState(false)
@@ -17,17 +17,14 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       const data = {
          name: name,
          phone: phone,
-         email: '-',
+         message: questInput,
          groupID: import.meta.env.VITE_GROUP_ID,
       }
 
       let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType:
-            additionalDataType === null
-               ? "Попап Вопрос"
-               : additionalDataType,
+         formType: "Call Back",
          link: window.location.href,
          utm_source: utm_source,
          utm_campaign: utm_campaign,

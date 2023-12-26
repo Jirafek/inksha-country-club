@@ -35,7 +35,9 @@ const YandexMap = () => {
       width: "100%",
       height: "800px",
    };
-   const {utm_source} = useURLData();
+   const { utm_source, phoneContent } = useURLData();
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source);
+   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
 
    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -84,21 +86,9 @@ const YandexMap = () => {
          >
             <div className="relative flex h-full flex-col gap-[10px]">
                <p className="text-black underline">
-                  {
-                     utm_source === 'yandex' ?
-                         <a href={'tel:+74995055067'}>
-                            +7(499) 505-50-67
-                         </a>
-                         : utm_source === 'vkontakte' ?
-                             <a href={'tel:+74995055087'}>
-                                +7(499) 505-50-87
+                             <a href={`tel:${phoneNumber}`}>
+                                {phoneNumber}
                              </a>
-                             :
-                             <a href={"tel:+74995055031"}>
-                                +7(499) 505-50-31
-                             </a>
-
-                  }
                </p>
                <p className="text-black underline">
                   <a href="mailto:contact@ikshacountryclub.com">

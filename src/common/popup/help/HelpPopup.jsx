@@ -8,15 +8,26 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
    const [isValid, setIsValid] = useState(false)
    const [path, setPath] = useState(1)
 
+   const [isPhoneCall, setIsPhoneCall] = useState(false)
+
    const [questInput, setQuestInput] = useState('Как забронировать домик?')
 
    const changeQuestInput = (e) => {
       setQuestInput(e.target.value)
    }
-   const submitFirstForm = (e) => {
+   const submitFirstForm1 = (e) => {
       e.preventDefault()
+      setIsPhoneCall(false)
       setPath(2)
    }
+   
+
+   const submitFirstForm2 = (e) => {
+      e.preventDefault()
+      setIsPhoneCall(true)
+      setPath(2)
+   }
+   
 
    const handlePopupClose = () => {
       setIsHelpPopupOpen(false)
@@ -61,14 +72,13 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
                      <input name='input' className='border h-[50px] mb-4 border-[#334727] text-[14px] my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
                   </form>
                   <div className='flex flex-col gap-3'>
-                     <button disabled={!isValid} onClick={submitFirstForm} className={` w-full h-[30px] rounded-[10px] text-white bg-[#334727] ${style.btn}`}>Отправить</button>
-                     <button onClick={submitFirstForm} className={` w-full h-[30px] rounded-[10px] text-sm flex items-center justify-center bg-white border border-[#334727] text-[#334727]`}>Перезвоним в течение минуты</button>
+                     <button  disabled={!isValid} onClick={submitFirstForm1} className={` w-full h-[30px] rounded-[10px] text-white bg-[#334727] ${style.btn}`}>Отправить</button>
+                     <button onClick={submitFirstForm2} className={` w-full h-[30px] rounded-[10px] text-sm flex items-center justify-center bg-white border border-[#334727] text-[#334727]`}>Перезвоним в течение минуты</button>
                   </div>
                </div>}
                {path === 2 && <div>
-                  <HelpPhoneForm questInput={questInput} setIsHelpPopupOpen={setIsHelpPopupOpen} addInfo={questInput} />
+                  <HelpPhoneForm isPhoneCall={isPhoneCall} questInput={questInput} setIsHelpPopupOpen={setIsHelpPopupOpen} addInfo={questInput} />
                </div>}
-
 
 
             </div>

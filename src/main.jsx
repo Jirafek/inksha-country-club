@@ -54,7 +54,6 @@ function AppWithDelay() {
    const groupID = -1002014846298;
 
    useEffect(() => {
-      console.log('yep yep')
 
       fetchData(groupID, updatePhoneContent)
    }, [updatePhoneContent])

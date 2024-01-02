@@ -9,6 +9,8 @@ import "./fonts.css"
 import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
+import {db, fetchData} from '../firebase.js';
+import {useURLData} from "utils/URLData";
 
 
 function onRenderCallback(
@@ -48,6 +50,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
+   const { updatePhoneContent } = useURLData();
+   const groupID = -1002014846298;
+
+   useEffect(() => {
+
+      fetchData(groupID, updatePhoneContent)
+   }, [updatePhoneContent])
+
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
    const handleResize = () => {

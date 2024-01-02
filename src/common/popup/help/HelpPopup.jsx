@@ -20,14 +20,14 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
       setIsPhoneCall(false)
       setPath(2)
    }
-   
+
 
    const submitFirstForm2 = (e) => {
       e.preventDefault()
       setIsPhoneCall(true)
       setPath(2)
    }
-   
+
 
    const handlePopupClose = () => {
       setIsHelpPopupOpen(false)
@@ -68,12 +68,12 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
 
                   <p className='font-bold text-md mb-2'>Нужна помощь?</p>
                   <p className='text-sm mb-3'>Наши администраторы всегда на связи!</p>
-                  <form onSubmit={submitFirstForm}>
+                  <form onSubmit={submitFirstForm ? submitFirstForm : ''}>
                      <input name='input' className='border h-[50px] mb-4 border-[#334727] text-[14px] my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
                   </form>
                   <div className='flex flex-col gap-3'>
-                     <button  disabled={!isValid} onClick={submitFirstForm1} className={` w-full h-[30px] rounded-[10px] text-white bg-[#334727] ${style.btn}`}>Отправить</button>
-                     <button onClick={submitFirstForm2} className={` w-full h-[30px] rounded-[10px] text-sm flex items-center justify-center bg-white border border-[#334727] text-[#334727]`}>Перезвоним в течение минуты</button>
+                     <button disabled={!isValid} onClick={submitFirstForm ? submitFirstForm : ''} className={` w-full h-[30px] rounded-[10px] text-white bg-[#334727] ${style.btn}`}>Отправить</button>
+                     <button onClick={submitFirstForm ? submitFirstForm : ''} className={` w-full h-[30px] rounded-[10px] text-sm flex items-center justify-center bg-white border border-[#334727] text-[#334727]`}>Перезвоним в течение минуты</button>
                   </div>
                </div>}
                {path === 2 && <div>

@@ -88,8 +88,6 @@ export default function App() {
                 // Extract the fragment identifier (e.g., "locations")
                 // const fragmentId = window.location.hash.substring(1)
                 const fragmentId = window.location.hash.substring(1).split('/')[0]
-
-                console.log(fragmentId)
                 // Find the element with the corresponding ID
                 const targetElement = document.getElementById(fragmentId)
 
@@ -125,8 +123,6 @@ export default function App() {
 
         const isCookieOn = localStorage.getItem('cookies_on')
         const urlParams = new URLSearchParams(window.location.search)
-
-        console.log(isCookieOn)
 
         const urlParamsData = [
             utm_source ? utm_source : urlParams.get("utm_source"),
@@ -167,8 +163,6 @@ export default function App() {
                 ? utm_content
                 : urlParams.get("utm_content") || ""
         ]
-
-        console.log(settedData)
 
 
         updateData(

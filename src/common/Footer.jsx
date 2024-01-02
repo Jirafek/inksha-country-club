@@ -18,7 +18,10 @@ const slideVariants = {
 }
 
 const Footer = ({ className }) => {
-   const { utm_source } = useURLData()
+   const { utm_source, phoneContent } = useURLData();
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source);
+   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -57,21 +60,9 @@ const Footer = ({ className }) => {
                      </m.a> */}
                   </div>
                </div>
-               {
-                  utm_source === 'yandex' ?
-                     <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
-                        +7(499) 505-50-67
-                     </a>
-                     : utm_source === 'vkontakte' ?
-                        <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
-                           +7(499) 505-50-87
-                        </a>
-                        :
-                        <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
-                           +7(499) 505-50-31
-                        </a>
-
-               }
+               <a href={`tel:${phoneNumber}`} className="min-w-[160px] text-white">
+                  {phoneNumber}
+               </a>
             </div>
          </div>
       </div>

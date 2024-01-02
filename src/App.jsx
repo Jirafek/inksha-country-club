@@ -265,6 +265,8 @@ export default function App() {
                     <Route path="/halloween" element={<Helloween />} />
                     <Route path="/popup" element={<Popup />} />
                     <Route path="/thanks" element={<Thanks />} />
+                    <Route path="/success" element={<Thanks />} />
+
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />
                     <Route path="*" element={<NotFound />} />

@@ -21,7 +21,7 @@ const extraServiceData = [
    },
    {
       title: "Банщик",
-      cost: "3000",
+      cost: "15000",
       point: "р",
    },
    {

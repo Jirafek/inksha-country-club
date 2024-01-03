@@ -56,7 +56,10 @@ const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 export default function App() {
 
 
-    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
+    const { updateData, utm_campaign, utm_content, utm_source, phoneContent } = useURLData()
+    const matchingPhone = phoneContent.find(item => item.utm === utm_source);
+    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+
     const isCookieOn = localStorage.getItem('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
     const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
@@ -206,20 +209,9 @@ export default function App() {
 
 
                 <div className='fixed bottom-[130px] z-[4000]  h-[60px] w-[60px] right-0'>
-                    {
-                        utm_source === 'yandex' ?
-                            <a className='' href="tel:+74995055067">
-                                <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
-                            </a>
-                            : utm_source === 'vkontakte' ?
-                                <a className='' href="tel:+74995055087">
+                                <a className='' href={`tel:${phoneNumber}`}>
                                     <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
                                 </a>
-                                :
-                                <a className='' href="tel:+74995055031">
-                                    <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
-                                </a>
-                    }
                 </div>
                 <Routes>
                     <Route path="/" element={<Home />} />

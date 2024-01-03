@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
-import MainPopup from "./../../common/MainPopup";
+import React, { useState, useEffect } from "react"
+
+import { useForm } from "react-hook-form"
+
+import { v4 as uuidv4 } from "uuid"
+
+import { Link } from "react-router-dom"
+
+import MainPopup from "./../../common/MainPopup"
 const extraServiceData = [
    {
       title: "Растопка бани",
@@ -99,202 +103,201 @@ const extraServiceData = [
       cost: "5000",
       point: "р/день",
    },
-];
+]
 
 const Calculate = () => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
-   const [guesses, setGuesses] = useState(1);
-   const [days, setDays] = useState(1);
-   const [selectedLocation, setSelectedLocation] = useState("1");
-   const [allDops, setAllDops] = useState("");
-   const [additional, setAdditional] = useState(null);
+      setIsPopupOpen((prev) => !prev)
+   }
+   const [guesses, setGuesses] = useState(1)
+   const [days, setDays] = useState(1)
+   const [selectedLocation, setSelectedLocation] = useState("1")
+   const [allDops, setAllDops] = useState("")
+   const [additional, setAdditional] = useState(null)
 
    const [maxDays, setMaxDays] = useState(
       selectedLocation === "1"
          ? 30
          : selectedLocation === "2"
-         ? 15
-         : selectedLocation === "3"
-         ? 10
-         : 30
-   );
+            ? 15
+            : selectedLocation === "3"
+               ? 10
+               : 30
+   )
 
    const handleLocationChange = (event) => {
-      setSelectedLocation(event.target.value);
+      setSelectedLocation(event.target.value)
       const currentDays =
          event.target.value === "1"
             ? 30
             : event.target.value === "2"
-            ? 15
-            : event.target.value === "3"
-            ? 10
-            : 30;
+               ? 15
+               : event.target.value === "3"
+                  ? 10
+                  : 30
       if (guesses > currentDays) {
-         setGuesses(currentDays);
+         setGuesses(currentDays)
       }
-      setMaxDays(currentDays);
-      countTotal();
-   };
+      setMaxDays(currentDays)
+      countTotal()
+   }
 
-   const [selectedWeek, setSelectedWeek] = useState("пн-чт");
+   const [selectedWeek, setSelectedWeek] = useState("пн-чт")
 
    const handleWeekChange = (event) => {
-      setSelectedWeek(event.target.value);
-      countTotal("", event.target.value);
-   };
+      setSelectedWeek(event.target.value)
+      countTotal("", event.target.value)
+   }
 
    const [checkedStates, setCheckedStates] = useState(
       extraServiceData.map((el) => ({ cost: +el.cost, isChecked: false }))
-   );
+   )
 
    const handleCheckboxChange = (index) => (event) => {
       const updatedStates = checkedStates.map((el, i) =>
          i === index ? { ...el, isChecked: event.target.checked } : el
-      );
-      setCheckedStates(updatedStates);
-      countTotal(updatedStates);
-   };
+      )
+      setCheckedStates(updatedStates)
+      countTotal(updatedStates)
+   }
 
    const handleSliderChange = (event) => {
-      setGuesses(event.target.value);
-      countTotal();
-   };
+      setGuesses(event.target.value)
+      countTotal()
+   }
 
    const handleDaySliderChange = (event) => {
-      setDays(event.target.value);
-      countTotal();
-   };
+      setDays(event.target.value)
+      countTotal()
+   }
 
-   const [total, setTotal] = useState(0);
-
-   useEffect(() => {
-      countTotal();
-   }, [total]);
+   const [total, setTotal] = useState(0)
 
    useEffect(() => {
-      let string = "";
+      countTotal()
+   }, [total])
+
+   useEffect(() => {
+      let string = ""
       checkedStates.forEach((el, i) => {
          if (el.isChecked) {
-            string += `${extraServiceData[i].title} ${
-               extraServiceData[i].cost + extraServiceData[i].point
-            }, `;
+            string += `${extraServiceData[i].title} ${extraServiceData[i].cost + extraServiceData[i].point
+               }, `
          }
-      });
-      setAllDops(string);
-   }, [checkedStates]);
+      })
+      setAllDops(string)
+   }, [checkedStates])
 
    const countTotal = (updatedStates = "", week = "") => {
-      let currentTotal = 0;
-      const SALE = 0.2; // Размер скидки
-      const currentWeek = week === "" ? selectedWeek : week;
+      let currentTotal = 0
+      const SALE = 0.2 // Размер скидки
+      const currentWeek = week === "" ? selectedWeek : week
       if (selectedLocation === "1") {
          // Лесная резиденция
-         const BUDNI = 15000;
-         const VIHODNIE = 20000;
+         const BUDNI = 15000
+         const VIHODNIE = 20000
          if (currentWeek === "пн-чт") {
-            currentTotal += BUDNI;
+            currentTotal += BUDNI
             if (guesses > 12) {
                if (guesses <= 17) {
                   // Подсчет в зависимости от кол-ва гостей
-                  currentTotal += 5000;
+                  currentTotal += 5000
                } else if (guesses <= 22) {
-                  currentTotal += 10000;
+                  currentTotal += 10000
                } else {
-                  currentTotal += 15000;
+                  currentTotal += 15000
                }
             }
 
-            currentTotal += (days - 1) * 5000; // Подсчет за ночевки
+            currentTotal += (days - 1) * 5000 // Подсчет за ночевки
          } else {
-            currentTotal += VIHODNIE;
+            currentTotal += VIHODNIE
             if (guesses > 12) {
                if (guesses <= 17) {
                   // Подсчет в зависимости от кол-ва гостей
-                  currentTotal += 5000;
+                  currentTotal += 5000
                } else if (guesses <= 22) {
-                  currentTotal += 10000;
+                  currentTotal += 10000
                } else {
-                  currentTotal += 15000;
+                  currentTotal += 15000
                }
             }
 
-            currentTotal += (days - 1) * 10000; // Подсчет за ночевки
+            currentTotal += (days - 1) * 10000 // Подсчет за ночевки
          }
       } else if (selectedLocation === "2") {
          // Шале
-         const BUDNI = 10000;
-         const VIHODNIE = 20000;
+         const BUDNI = 10000
+         const VIHODNIE = 20000
          if (currentWeek === "пн-чт") {
-            currentTotal += BUDNI;
+            currentTotal += BUDNI
             if (guesses > 12) {
                if (guesses <= 17) {
                   // Подсчет в зависимости от кол-ва гостей
-                  currentTotal += 5000;
+                  currentTotal += 5000
                } else if (guesses <= 22) {
-                  currentTotal += 10000;
+                  currentTotal += 10000
                } else {
-                  currentTotal += 15000;
+                  currentTotal += 15000
                }
             }
-            currentTotal += (days - 1) * 15000; // Подсчет за ночевки
+            currentTotal += (days - 1) * 15000 // Подсчет за ночевки
          } else {
-            currentTotal += VIHODNIE;
+            currentTotal += VIHODNIE
             if (guesses > 12) {
                if (guesses <= 17) {
                   // Подсчет в зависимости от кол-ва гостей
-                  currentTotal += 5000;
+                  currentTotal += 5000
                } else if (guesses <= 22) {
-                  currentTotal += 10000;
+                  currentTotal += 10000
                } else {
-                  currentTotal += 15000;
+                  currentTotal += 15000
                }
             }
-            currentTotal += (days - 1) * 20000; // Подсчет за ночевки
+            currentTotal += (days - 1) * 20000 // Подсчет за ночевки
          }
       } else if (selectedLocation === "3") {
          // Коттедж
-         const BUDNI = 20000;
-         const VIHODNIE = 30000;
+         const BUDNI = 20000
+         const VIHODNIE = 30000
          if (currentWeek === "пн-чт") {
-            currentTotal += days * BUDNI; // Подсчет за сутки
+            currentTotal += days * BUDNI // Подсчет за сутки
          } else {
-            currentTotal += days * VIHODNIE; // Подсчет за сутки
+            currentTotal += days * VIHODNIE // Подсчет за сутки
          }
       } else {
          // Олимпийка
-         const BUDNI = 15000;
-         const VIHODNIE = 20000;
+         const BUDNI = 15000
+         const VIHODNIE = 20000
          if (currentWeek === "пн-чт") {
-            currentTotal += BUDNI;
+            currentTotal += BUDNI
             if (guesses > 6) {
                if (guesses <= 12) {
-                  currentTotal += 5000;
+                  currentTotal += 5000
                } else if (guesses <= 18) {
-                  currentTotal += 20000;
+                  currentTotal += 20000
                } else if (guesses <= 24) {
-                  currentTotal += 35000;
+                  currentTotal += 35000
                } else {
-                  currentTotal += 50000;
+                  currentTotal += 50000
                }
             }
-            currentTotal = currentTotal * days;
+            currentTotal = currentTotal * days
          } else {
-            currentTotal += VIHODNIE;
+            currentTotal += VIHODNIE
             if (guesses > 6) {
                if (guesses <= 12) {
-                  currentTotal += 10000;
+                  currentTotal += 10000
                } else if (guesses <= 18) {
-                  currentTotal += 30000;
+                  currentTotal += 30000
                } else if (guesses <= 24) {
-                  currentTotal += 50000;
+                  currentTotal += 50000
                } else {
-                  currentTotal += 70000;
+                  currentTotal += 70000
                }
             }
-            currentTotal = currentTotal * days;
+            currentTotal = currentTotal * days
          }
       }
 
@@ -302,27 +305,27 @@ const Calculate = () => {
       if (updatedStates == "") {
          checkedStates.forEach((el, i) => {
             if (el.isChecked) {
-               currentTotal += el.cost;
+               currentTotal += el.cost
             }
-         });
+         })
       } else {
          updatedStates.forEach((el, i) => {
             if (el.isChecked) {
-               currentTotal += el.cost;
+               currentTotal += el.cost
             }
-         });
+         })
       }
 
       if (days >= 3) {
-         currentTotal = currentTotal * (1 - SALE); // отнимаем скидку
+         currentTotal = currentTotal * (1 - SALE) // отнимаем скидку
       }
 
-      setTotal(currentTotal);
-   };
+      setTotal(currentTotal)
+   }
 
    const onSubmit = () => {
-      togglePopup();
-   };
+      togglePopup()
+   }
    return (
       <section
          id="calculator"
@@ -540,22 +543,22 @@ const Calculate = () => {
                   //   type="submit"
                   onClick={() => {
                      const currentLocation = selectedLocation === '1' ?
-                         'ЛЕСНАЯ РЕЗИДЕНЦИЯ' : selectedLocation === '2' ?
-                             'ШАЛЕ' : selectedLocation === '3' ?
-                                 'КОТТЕДЖ' : 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ';
+                        'ЛЕСНАЯ РЕЗИДЕНЦИЯ' : selectedLocation === '2' ?
+                           'ШАЛЕ' : selectedLocation === '3' ?
+                              'КОТТЕДЖ' : 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ'
 
                      setAdditional(
-                         {
-                            amount: total,
-                            location: currentLocation,
-                            guesses: guesses,
-                            week: selectedWeek,
-                            days: days,
-                            dops: allDops || '',
-                         }
+                        {
+                           amount: total,
+                           location: currentLocation,
+                           guesses: guesses,
+                           week: selectedWeek,
+                           days: days,
+                           dops: allDops || '',
+                        }
                      )
 
-                     togglePopup();
+                     togglePopup()
                   }}
                   style={{
                      backgroundImage: "url(/image/calculate_continue.webp)",
@@ -566,7 +569,7 @@ const Calculate = () => {
             </div>
          </form>
       </section>
-   );
-};
+   )
+}
 
-export default Calculate;
+export default Calculate

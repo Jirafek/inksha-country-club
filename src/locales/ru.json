@@ -1,0 +1,27 @@
+{
+	"tariff": {
+		"starFire": "Тариф \"Звездный Огонь\"",
+		"house6Guests": "Домик на 6 гостей",
+		"olympicVillage": "Домик Олимпийская деревня",
+		"stayFrom3Nights": "Проживание от 3 суток",
+		"2HoursWaterSauna": "2 часа бани на воде",
+		"participateInNYEvents": "участие в новогодних мероприятиях",
+		"checkIn30CheckOut2": "заезд 30, выезд 2",
+		"snowyChalet": "Тариф \"Снежное Шале\"",
+		"house10People": "Домик на 10 человек",
+		"chalet": "Шале",
+		"stayOnNYEWithoutBeds": "Проживание в новогоднюю ночь (без спальных мест)",
+		"participateInNYEventsPossibleStayInCottage": "участие в новогодних мероприятиях. Возможно проживание в коттедже (узнавать по телефону)",
+		"checkIn31CheckOut1": "заезд 31, выезд 1",
+		"cottageTales": "Тариф \"Коттеджные Сказки\"",
+		"twoFloorHouse10Guests": "Двухэтажный дом на 10 гостей",
+		"cottage": "Коттедж",
+		"forestSnowMaidens": "Тариф \"Лесные Снегурочки\"",
+		"forestLocationWithSaunaVerandaBonfireZone10Guests": "Лесная локация с баней, верандой и костровой зоной на 10 гостей",
+		"forestResidence": "Лесная Резиденция",
+		"stayFrom2Nights": "Проживание от 2 суток",
+		"checkIn31CheckOut2January": "заезд 31, выезд 2 января",
+		"duplexWithNewYearMagic": "Тариф \"Дуплекс С Новогодним Чудом\"",
+		"duplexHouse10Guests": "Дом-дуплекс на 10 гостей"
+	}
+}

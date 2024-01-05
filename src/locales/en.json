@@ -1,0 +1,27 @@
+{
+	"tariff": {
+		"starFire": "Star Fire Tariff",
+		"house6Guests": "House for 6 Guests",
+		"olympicVillage": "Olympic Village House",
+		"stayFrom3Nights": "Stay from 3 nights",
+		"2HoursWaterSauna": "2 hours of water sauna",
+		"participateInNYEvents": "Participate in NY events",
+		"checkIn30CheckOut2": "Check-in 30, Check-out 2",
+		"snowyChalet": "Snowy Chalet Tariff",
+		"house10People": "House for 10 People",
+		"chalet": "Chalet",
+		"stayOnNYEWithoutBeds": "Stay on NYE (without beds)",
+		"participateInNYEventsPossibleStayInCottage": "Participate in NY events (possible stay in cottage)",
+		"checkIn31CheckOut1": "Check-in 31, Check-out 1",
+		"cottageTales": "Cottage Tales Tariff",
+		"twoFloorHouse10Guests": "Two-floor house for 10 guests",
+		"cottage": "Cottage",
+		"forestSnowMaidens": "Forest Snow Maidens Tariff",
+		"forestLocationWithSaunaVerandaBonfireZone10Guests": "Forest location with sauna, veranda, and bonfire zone for 10 guests",
+		"forestResidence": "Forest Residence",
+		"stayFrom2Nights": "Stay from 2 nights",
+		"checkIn31CheckOut2January": "Check-in 31, Check-out 2 January",
+		"duplexWithNewYearMagic": "Duplex with New Year Magic Tariff",
+		"duplexHouse10Guests": "Duplex House for 10 Guests"
+	}
+}

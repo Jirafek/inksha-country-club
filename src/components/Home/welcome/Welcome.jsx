@@ -82,74 +82,74 @@ const Welcome = () => {
          const customStyles = `
 
 
-      .znms-widget__module-form-block__btn {
-        background-color: ${isItWinterNow ? 'rgb(12, 242, 89) !important' : 'rgba(12, 242, 89, 0.5) !important'} ;
-        border-radius: 30px !important;
-        border: 1px solid #000 !important;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
-        font-size: 18px !important;
-        margin-top: 13px !important;
-        height: 35px !important;
-        display: flex !important;А
-        justify-content: center !important;
-        align-items: center !important;
-      }
-          .znms-widget__main-wrapper {
-            background-color: transparent !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            --tw-backdrop-blur: none !important;
-          }
-
-          .znms-widget__teleporter {
-            position: relative;
-            bottom: -100px;
-          }
-
-          .znms-widget__v-calendar-pane-container {
-            z-index: 2000 !important;
-          }
-
-          .znms-widget__module-form-block {
-            background-color: transparent !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            --tw-backdrop-blur: none !important;
-            bottom: 20px;
-          }
-
-          .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
-            display: none !important;
-          }
-
-          .znms-widget__module-form-block__items--links-container {
-            display: none !important;
-
-          }
-
-          .znms-widget__module-form-block__item {
-            opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
-            background:${isItWinterNow() ? `rgba(0,0,0,0.5) ${isItWinterNow() ? '!important' : ''}` : `white ${isItWinterNow() ? '' : '!important'}`};
-            color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
-            
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
+            .znms-widget__module-form-block__btn {
+            background-color: ${isItWinterNow ? 'rgb(12, 242, 89) !important' : 'rgba(12, 242, 89, 0.5) !important'} ;
+            border-radius: 30px !important;
+            border: 1px solid #000 !important;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+            font-size: 18px !important;
+            margin-top: 13px !important;
             height: 35px !important;
-          }
+            display: flex !important;А
+            justify-content: center !important;
+            align-items: center !important;
+            }
+               .znms-widget__main-wrapper {
+                  background-color: transparent !important;
+                  backdrop-filter: none !important;
+                  -webkit-backdrop-filter: none !important;
+                  --tw-backdrop-blur: none !important;
+               }
 
-          .znms-widget__v-calendar-popover-content-wrapper {
-            z-index: 100 !important;
-          }
-          .znms-widget__module-form-block__input{
-             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
-          }
-          .znms-widget__module-form-block__label{
-             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
-          }
-          .znms-widget__module-form-block__select, .znms-widget__module-form-block__select span {
-             color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
-          }
-        `
+               .znms-widget__teleporter {
+                  position: relative;
+                  bottom: -100px;
+               }
+
+               .znms-widget__v-calendar-pane-container {
+                  z-index: 2000 !important;
+               }
+
+               .znms-widget__module-form-block {
+                  background-color: transparent !important;
+                  backdrop-filter: none !important;
+                  -webkit-backdrop-filter: none !important;
+                  --tw-backdrop-blur: none !important;
+                  bottom: 20px;
+               }
+
+               .znms-widget__module-form-block__title, .znms-widget__widget-btn.znms-widget__v-color4 {
+                  display: none !important;
+               }
+
+               .znms-widget__module-form-block__items--links-container {
+                  display: none !important;
+
+               }
+
+               .znms-widget__module-form-block__item {
+                  opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
+                  background:${isItWinterNow() ? `rgba(0,0,0,0.5) ${isItWinterNow() ? '!important' : ''}` : `white ${isItWinterNow() ? '' : '!important'}`};
+                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+                  
+                  padding-top: 0 !important;
+                  padding-bottom: 0 !important;
+                  height: 35px !important;
+               }
+
+               .znms-widget__v-calendar-popover-content-wrapper {
+                  z-index: 100 !important;
+               }
+               .znms-widget__module-form-block__input{
+                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+               }
+               .znms-widget__module-form-block__label{
+                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+               }
+               .znms-widget__module-form-block__select, .znms-widget__module-form-block__select span {
+                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+               }
+            `
          const styleElement = document.createElement("style")
          styleElement.innerHTML = customStyles
          document.head.appendChild(styleElement)
@@ -301,39 +301,7 @@ const Welcome = () => {
             className="absolute bottom-[8.5rem] left-1/2 w-full"
          >
             <div id="znms-widget-1"></div>
-            {/* <Link to="/popup"> */}
-            {/* <button className="animated_connection_btn absolute -bottom-[8rem] left-1/2 flex h-12 w-[3rem] -translate-x-1/2 items-center justify-center rounded-[48px] border-[2px] border-white bg-green-500 pl-2">
-                  <div className="relative flex h-12 w-full items-center">
-                     <p className="animated_text_appearing text-white opacity-0">
-                        Свяжитесь со мной
-                     </p>
-                     <div className="absolute right-0 top-0">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full border-[2px] border-white bg-green-500">
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              x="0px"
-                              y="0px"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 50 50"
-                           >
-                              <path d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"></path>
-                           </svg>
-                        </div>
-                     </div>
-                  </div>
-               </button> */}
-            {/* <AnimationButton
-               key={1}
-               onClick={togglePopup}
-               className=" absolute -bottom-[8rem] left-1/2 -translate-x-1/2"
-            >
-               {" "}
-               Свяжитесь со мной
-            </AnimationButton> */}
-            {/* <div className={`${styles.fire} text-[13px] text-[#FDD9BE] absolute whitespace-nowrap transform left-1/2 -translate-x-1/2  -top-[45px]`}>
-               Загородный клуб <span className='text-[16px]  mx-[5px]'>&#8226;</span>  База отдыха  <span className='text-[16px]  mx-[5px]'>&#8226;</span> Глэмпинг
-            </div> */}
+
             <WelcomeSwiper />
             {/* </Link> */}
          </div>

@@ -11,27 +11,6 @@ import { AnimatePresence } from 'framer-motion'
 import FadeIn from './common/animation/FadeIn'
 import Cookies from 'js-cookie'
 
-// import NYLanding from "pages/newYear/NYLanding"
-// import Cookie from './common/Cookie'
-// import BlogAll from "./pages/BlogAll"
-// import Booking from "./pages/Booking"
-// import DatesChooser from "./pages/DatesChooser"
-// import FAQ from "./pages/FAQ"
-// import FormCalculate from "./pages/FormCalculate"
-// import GalleryAll from "./pages/GalleryAll"
-// import HappySlider from "./pages/HappySlider"
-// import Helloween from "./pages/Helloween"
-// import Home from "./pages/Home"
-// import Keitering from "./pages/Keitering"
-// import KorpSlider from "./pages/KorpSlider"
-// import Korporativy from "./pages/Korporativy"
-// import LocationsSlider from "./pages/LocationsSlider"
-// import NotFound from "./pages/NotFound"
-// import Popup from "./pages/Popup"
-// import Rules from "./pages/Rules"
-// import Thanks from "./pages/Thanks"
-// import KorpLanding from "./pages/korpLanding/KorpLanding"
-
 const Home = loadable(() => import("pages/Home"))
 const Cookie = loadable(() => import('./common/Cookie'))
 const NYLanding = loadable(() => import("pages/newYear/NYLanding"))
@@ -57,8 +36,8 @@ export default function App() {
 
 
     const { updateData, utm_campaign, utm_content, utm_source, phoneContent } = useURLData()
-    const matchingPhone = phoneContent.find(item => item.utm === utm_source);
-    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
 
     const isCookieOn = localStorage.getItem('cookies_on')
     const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
@@ -209,9 +188,9 @@ export default function App() {
 
 
                 <div className='fixed bottom-[130px] z-[4000]  h-[60px] w-[60px] right-0'>
-                                <a className='' href={`tel:${phoneNumber}`}>
-                                    <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
-                                </a>
+                    <a className='' href={`tel:${phoneNumber}`}>
+                        <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
+                    </a>
                 </div>
                 <Routes>
                     <Route path="/" element={<Home />} />

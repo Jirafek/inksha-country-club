@@ -1,6 +1,30 @@
+import { useEffect } from 'react'
 import HappyClickableItemsData from "../../utils/Home/HappyClickableItemsData"
 import HappyClickableItems from "./helpers/HappyClickableItems"
+import { isItWinterNow } from 'utils/helpers'
+import GreenButton from './../../common/GreenButton'
 const Happy = () => {
+
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
+
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+
+      }
+      script.onload = initializeWidget
+
+
+
+      document.body.appendChild(script)
+
+   }, [])
+
    return (
       <section
          id="happy"
@@ -22,6 +46,11 @@ const Happy = () => {
             </h2>
          </div>
          <HappyClickableItems arrayData={HappyClickableItemsData} />
+
+
+         <div id='znms-service-widget-module' ></div>
+
+
 
          <picture>
             <source srcSet="/avif/wood_translate.avif 1x" type="image/avif" />

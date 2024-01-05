@@ -1,8 +1,8 @@
-import React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { m } from "framer-motion";
-import { Link } from "react-router-dom";
-import GreenButton from "./../../../common/GreenButton";
+import React from "react"
+import { v4 as uuidv4 } from "uuid"
+import { m } from "framer-motion"
+import { Link } from "react-router-dom"
+import GreenButton from "./../../../common/GreenButton"
 const heading = {
    hidden: {},
    visible: {
@@ -10,7 +10,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const HappyClickableItems = ({ arrayData }) => {
    return (
@@ -61,14 +61,14 @@ const HappyClickableItems = ({ arrayData }) => {
                         </div>
                      </m.div>
                   </Link>
-               );
+               )
             })}
          </div>
          <a className="mb-20 sm:mb-20" href="#calculator">
-            <GreenButton className="text-[19px]">Прайс-лист</GreenButton>
+            <GreenButton href='?znms_service_widget_open=5026' className="text-[19px]">Прайс-лист</GreenButton>
          </a>
       </div>
-   );
-};
+   )
+}
 
-export default HappyClickableItems;
+export default HappyClickableItems

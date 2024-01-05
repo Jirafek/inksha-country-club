@@ -18,83 +18,92 @@ import { Link as ScrollLink } from "react-scroll"
 import NYGreenButton from './NYGreenButton'
 
 
-
-
-const tariffContent = {
-   1: {
-      counter: '01',
-      title: 'Тариф "Звездный Огонь"',
-      dom: 'Домик на 6 гостей',
-      location: 'Домик Олимпийская деревня',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '26 250',
-
-   },
-   2: {
-      counter: '02',
-      title: 'Тариф "Снежное Шале"',
-      dom: 'Домик на 10 человек',
-      location: 'Шале',
-      includes: [
-         'Проживание в новогоднюю ночь (без спальных мест)',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях. Возможно проживание в коттедже (узнавать по телефону)', 'заезд 31, выезд 1'
-      ],
-      price: '59 000р'
-   },
-   3: {
-      counter: '03',
-      title: 'Тариф "Коттеджные Сказки"',
-      dom: 'Двухэтажный дом на 10 гостей',
-      location: 'Коттедж',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '49 000р',
-
-   },
-   4: {
-      counter: '04',
-      title: 'Тариф "Лесные Снегурочки"',
-      dom: 'Лесная локация с баней, верандой и костровой зоной на 10 гостей',
-      location: 'Лесная Резиденция',
-      includes: [
-         'Проживание от 2 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 31, выезд 2 января'
-      ],
-      price: '45 000р',
-
-   },
-   5: {
-      counter: '05',
-      title: 'Тариф "Дуплекс С Новогодним Чудом"',
-      dom: 'Дом-дуплекс на 10 гостей',
-      location: 'Дуплекс',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '34 500р',
-
+const getTariffContent = (t) => {
+   const tariffContent = {
+      1: {
+         counter: '01',
+         title: t('tariff.starFire'),
+         dom: t('tariff.house6Guests'),
+         location: t('tariff.olympicVillage'),
+         includes: [
+            t('tariff.stayFrom3Nights'),
+            t('tariff.2HoursWaterSauna'),
+            t('tariff.participateInNYEvents'),
+            t('tariff.checkIn30CheckOut2')
+         ],
+         price: '26 250',
+      },
+      2: {
+         counter: '02',
+         title: t('tariff.snowyChalet'),
+         dom: t('tariff.house10People'),
+         location: t('tariff.chalet'),
+         includes: [
+            t('tariff.stayOnNYEWithoutBeds'),
+            t('tariff.2HoursWaterSauna'),
+            t('tariff.participateInNYEventsPossibleStayInCottage'),
+            t('tariff.checkIn31CheckOut1')
+         ],
+         price: '59 000р'
+      },
+      3: {
+         counter: '03',
+         title: t('tariff.cottageTales'),
+         dom: t('tariff.twoFloorHouse10Guests'),
+         location: t('tariff.cottage'),
+         includes: [
+            t('tariff.stayFrom3Nights'),
+            t('tariff.2HoursWaterSauna'),
+            t('tariff.participateInNYEvents'),
+            t('tariff.checkIn30CheckOut2')
+         ],
+         price: '49 000р',
+      },
+      4: {
+         counter: '04',
+         title: t('tariff.forestSnowMaidens'),
+         dom: t('tariff.forestLocationWithSaunaVerandaBonfireZone10Guests'),
+         location: t('tariff.forestResidence'),
+         includes: [
+            t('tariff.stayFrom2Nights'),
+            t('tariff.2HoursWaterSauna'),
+            t('tariff.participateInNYEvents'),
+            t('tariff.checkIn31CheckOut2January')
+         ],
+         price: '45 000р',
+      },
+      5: {
+         counter: '05',
+         title: t('tariff.duplexWithNewYearMagic'),
+         dom: t('tariff.duplexHouse10Guests'),
+         location: t('tariff.duplex'),
+         includes: [
+            t('tariff.stayFrom3Nights'),
+            t('tariff.2HoursWaterSauna'),
+            t('tariff.participateInNYEvents'),
+            t('tariff.checkIn30CheckOut2')
+         ],
+         price: '34 500р',
+      }
    }
+
+   return tariffContent
 }
 
 function TariffComponents() {
+   const { t } = useTranslation() // Assuming the useTranslation hook is imported and available
+   s
+   const tariffContent = getTariffContent(t)
+
    return (
       <div className="flex flex-col yaes text-white items-center justify-center gap-[100px]">
+
          {/* Блок 1 */}
          <div className="place-self-start">
             <Reveal variants={slideFromRight()}>
-               <div className="bg-[#BC8E4A]  rounded-[16px] p-[2%] max-w-[1000px] relative">
-                  <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
+               <div>
+                  <div className="bg-[#BC8E4A]  rounded-[16px] p-[2%] max-w-[1000px] relative">
+                     <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes"></div>
                      {tariffContent[1].counter}
                   </div>
                   <h1 className="text-center text-lg font-bold text-violet">
@@ -155,10 +164,10 @@ function TariffComponents() {
                   </ScrollLink>
                </div>
             </Reveal>
-         </div>
+         </div >
 
-         {/* Блок 2 */}
-         <div className="place-self-end">
+
+         <div div className="place-self-end" >
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
                   <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
@@ -216,7 +225,7 @@ function TariffComponents() {
          </div>
 
          {/* Блок 3 */}
-         <div className="place-self-start">
+         <div className="place-self-start" >
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
                   <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
@@ -273,7 +282,7 @@ function TariffComponents() {
          </div>
 
          {/* Блок 4 */}
-         <div className="place-self-end">
+         <div div className="place-self-end" >
             <Reveal variants={slideFromLeft()}>
                <div className="bg-[#BC8E4A] place-self-end rounded-[16px] p-[2%] max-w-[1000px] relative">
                   <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
@@ -330,7 +339,7 @@ function TariffComponents() {
          </div>
 
          {/* Блок 5 */}
-         <div className="place-self-start">
+         <div div className="place-self-start" >
             <Reveal variants={slideFromRight()}>
                <div className="bg-[#BC8E4A] place-self-start rounded-[16px] p-[2%] max-w-[1000px] relative">
                   <div className="absolute -left-[40px] sm:-left-[50px] -top-[100px] sm:-top-[90px] md:-top-[90px] md:-left-[50px]  text-3xl text-NYred font-bold yaes">
@@ -386,7 +395,7 @@ function TariffComponents() {
             </Reveal>
          </div>
 
-      </div>
+      </div >
    )
 }
 

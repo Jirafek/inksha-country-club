@@ -101,7 +101,7 @@ const YandexMap = () => {
                </p>
 
                <div className="absolute bottom-[2px] right-0 flex items-center">
-                  <a href="https://wa.me/+79859091202">
+                  <a href={`https://wa.me/+79859091202`}>
                      <picture>
                         <source srcSet={`/avif/whatsapp.avif 1x`} type="image/avif" />
                         <img
@@ -111,7 +111,7 @@ const YandexMap = () => {
                         />
                      </picture>
                   </a>
-                  <a href="https://t.me/ikshacountryclub">
+                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`}>
                      <picture>
                         <source srcSet="/avif/tg.avif 1x" type="image/avif" />
                         <img

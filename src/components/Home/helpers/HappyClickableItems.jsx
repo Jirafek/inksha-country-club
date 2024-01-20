@@ -64,8 +64,9 @@ const HappyClickableItems = ({ arrayData }) => {
                )
             })}
          </div>
-         <a className="mb-20 sm:mb-20" href="#calculator">
-            <GreenButton href='?znms_service_widget_open=5026' className="text-[19px]">Прайс-лист</GreenButton>
+         <a className="mb-20 sm:mb-20" >
+            <GreenButton onClick={() => { window.znmsWidget.open('#znms-widget-1') }} className="text-[19px]">
+               Забронировать</GreenButton>
          </a>
       </div>
    )

@@ -16,6 +16,20 @@ const Happy = () => {
             type: 'booking-services',
          })
 
+         // const customStyles = `
+         //  .znms-widget__brononline_popup_full {
+         //    width: 90vw !important;
+         //    height: 60vh !important;
+         //    position: fixed !important;
+         //    top: 50% !important;
+         //    left: 50% !important;
+         //    transform: translate(-50%, -50%) !important;
+         // }
+
+         // `
+         // const styleElement = document.createElement("style")
+         // styleElement.innerHTML = customStyles
+         // document.head.appendChild(styleElement)
       }
       script.onload = initializeWidget
 

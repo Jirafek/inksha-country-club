@@ -98,15 +98,23 @@ body {
   font-weight: 500;
 }
 
+
 @font-face {
-  font-family: "Druk Text Bold Trial";
-  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot");
-  src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
+  font-family: 'Druk Text Bold Trial'; /* Название вашего шрифта */
+  src: url('./../public/fonts/DrukText-Bold-Trial.woff') format('woff'); /* Путь к вашему файлу WOFF-шрифта */
+  /* Дополнительные свойства (опционально) */
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'Droid Sans'; /* Название вашего шрифта */
+  src: url('./../public/fonts/DroidSans.ttf') format('truetype'); /* Путь к вашему файлу WOFF-шрифта */
+  /* Дополнительные свойства (опционально) */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 @font-face {
@@ -541,7 +549,7 @@ canvas {
 
 @import url(https://db.onlinewebfonts.com/c/9d83fb20700a3a7c45dc9acd64ab121e?family=Droid+Sans);
 
-@font-face {
+/* @font-face {
   font-family: "Druk Text Bold Trial";
   src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot");
   src: url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.eot?#iefix")format("embedded-opentype"),
@@ -549,7 +557,7 @@ canvas {
     url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.woff")format("woff"),
     url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/5b0ba2e20d3d7e3fc30b60595f3702c2.svg#Druk Text Bold Trial")format("svg");
-}
+} */
 
 @font-face {
   font-family: 'Druk';
@@ -822,3 +830,11 @@ ul {
 .trans4 {
   width: 300vw !important;
 }
+
+
+/* .znms-widget__main-wrapper .znms-widget__brononline_popup_full{
+  width: 90% !important;
+  height: 90% !important;
+  margin: auto auto !important;
+
+} */

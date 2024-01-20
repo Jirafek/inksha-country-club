@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const GreenButton = ({ children, href = ' ', className, onClick, style }) => {
+const GreenButton = ({ children, href = '', className, onClick, style }) => {
    return (
       <a
          href={href}

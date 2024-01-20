@@ -129,7 +129,7 @@ const Welcome = () => {
 
                .znms-widget__module-form-block__item {
                   opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
-                  background:${isItWinterNow() ? `rgba(0,0,0,0.5) ${isItWinterNow() ? '!important' : ''}` : `white ${isItWinterNow() ? '' : '!important'}`};
+                  background:black;
                   color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
                   
                   padding-top: 0 !important;

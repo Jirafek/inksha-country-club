@@ -1,4 +1,5 @@
 import { domAnimation, LazyMotion } from "framer-motion"
+
 import { Suspense, useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
@@ -9,8 +10,8 @@ import "./fonts.css"
 import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
-import {db, fetchData} from '../firebase.js';
-import {useURLData} from "utils/URLData";
+import { db, fetchData } from '../firebase.js'
+import { useURLData } from "utils/URLData"
 
 
 function onRenderCallback(
@@ -50,8 +51,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
-   const { updatePhoneContent } = useURLData();
-   const groupID = -1002014846298;
+   const { updatePhoneContent } = useURLData()
+   const groupID = -1002014846298
 
    useEffect(() => {
 

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { m } from "framer-motion";
-import {useURLData} from "utils/URLData";
-import { isItWinterNow } from "utils/helpers";
+import React, { useState } from "react"
 
-const ytSrc = "https://www.youtube.com/embed/m24zezD9fWs";
-const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
+import { m } from "framer-motion"
+
+import { useURLData } from "utils/URLData"
+import { isItWinterNow } from "utils/helpers"
+
+const ytSrc = "https://www.youtube.com/embed/m24zezD9fWs"
+const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1]
 
 const heading = {
    hidden: {},
@@ -13,7 +15,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLines = {
    hidden: {
@@ -28,22 +30,23 @@ const headingLines = {
          duration: 1.5,
       },
    },
-};
+}
 
 const YandexMap = () => {
    const mapStyles = {
       width: "100%",
       height: "800px",
-   };
-   const { utm_source, phoneContent } = useURLData();
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source);
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+   }
+   const { utm_source, phoneContent } = useURLData()
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
+   const phoneNumber = '+79859091202'
 
-   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
    const handlePlayVideo = () => {
-      setIsVideoPlaying(true);
-   };
+      setIsVideoPlaying(true)
+   }
 
    return (
       <m.section
@@ -82,22 +85,22 @@ const YandexMap = () => {
          </div>
          <m.div
             variants={headingLines}
-            className="monterey absolute bottom-[50px] left-[15px] h-[212px] w-[317px] rounded-[10px] border border-black bg-white px-[15px] pt-5"
+            className="monterey absolute bottom-[50px] left-[15px] h-[252px] w-[317px] rounded-[10px] border border-black bg-white px-[15px] pt-5"
          >
             <div className="relative flex h-full flex-col gap-[10px]">
                <p className="text-black underline">
-                             <a href={`tel:${phoneNumber}`}>
-                                {phoneNumber}
-                             </a>
+                  <a href={`tel:${phoneNumber}`}>
+                     {phoneNumber}
+                  </a>
                </p>
                <p className="text-black underline">
                   <a href="mailto:contact@ikshacountryclub.com">
                      contact@ikshacountryclub.com
                   </a>
                </p>
-               <p className="text-black">
-                  посёлок Менжинец, городской округ Мытищи, Московская область,
-                  Россия
+               <p className="text-black mb-2">
+                  обл. Московская, р-н Мытищинский, сельское поселение
+                  Федоскинское, п. Менжинец, СНТ "Икша" участок 4
                </p>
 
                <div className="absolute bottom-[2px] right-0 flex items-center">
@@ -201,7 +204,7 @@ const YandexMap = () => {
             </div>
          </div>
       </m.section>
-   );
-};
+   )
+}
 
-export default YandexMap;
+export default YandexMap

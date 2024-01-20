@@ -1,12 +1,12 @@
-import loc1 from "images/korpLanding/locations/003.webp";
-import loc2 from "images/korpLanding/locations/001.webp";
-import loc3 from "images/korpLanding/locations/002.webp";
-import loc4 from "images/korpLanding/locations/004.webp";
-import longarrow from "icons/longarrow.png";
-import brownarrow from "icons/brownarrow.png";
-import arrow from "icons/arrow.png";
-import Button from "common/Button";
-import { Link } from "react-router-dom";
+import loc1 from "images/korpLanding/locations/003.webp"
+import loc2 from "images/korpLanding/locations/001.webp"
+import loc3 from "images/korpLanding/locations/002.webp"
+import loc4 from "images/korpLanding/locations/004.webp"
+import longarrow from "icons/longarrow.png"
+import brownarrow from "icons/brownarrow.png"
+import arrow from "icons/arrow.png"
+import Button from "common/Button"
+import { Link } from "react-router-dom"
 
 
 const locations = [
@@ -38,7 +38,7 @@ const locations = [
       img: loc4,
       link: '/locations-about',
    },
-];
+]
 const KorpLocations = () => {
    return (
       <div id="locations" className="location ">
@@ -78,11 +78,11 @@ const KorpLocations = () => {
                            </div>
                         </div>
                      </Link>
-                  );
+                  )
                })}
             </div>
             {/* <LocationsBlocks /> */}
-            <a href="#form"> 
+            <a href="#form">
                <Button className="bg-brown text-[15px] bg-opacity-70 w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-black">
                   Узнать подробнее
                   <img className='md:block hidden' src={brownarrow} alt="" />
@@ -90,7 +90,7 @@ const KorpLocations = () => {
             </a>
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default KorpLocations;
+export default KorpLocations

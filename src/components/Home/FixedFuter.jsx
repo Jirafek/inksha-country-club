@@ -38,14 +38,16 @@ const FixedFuter = ({ link, needRotate }) => {
                     </button>
             }
             <div className='bg-[#957BAE] h-full w-full flex items-center justify-around relative'>
-                <a rel="noreferrer" className="relative w-[230px] monterey font-extrabold text-[18px] bg-[#79E718] border border-black rounded-[16px] h-[40px] flex items-center justify-center" href="#book">
+                <div onClick={() => { window.znmsWidget.open('#znms-widget-1') }}
+                    className="relative w-[230px] monterey font-extrabold text-[18px] bg-[#79E718] border border-black rounded-[16px] h-[40px] flex items-center justify-center"
+                >
                     {/* <picture>
                         <source srcSet="/avif/booking_button.avif 1x" type="image/avif" />
                         <img className='w-[215px] h-[40px] absolute inset-0' src="/image/booking_button.webp" alt="Икша Кантри Клаб - Заказть отдых" />
                     </picture> */}
 
                     <h3 className=" z-10">ЗАБРОНИРОВАТЬ</h3>
-                </a>
+                </div>
                 <a href={whatsappLink} >
                     <picture>
                         <source srcSet="/avif/wa_ft.avif 1x" type="image/avif" />

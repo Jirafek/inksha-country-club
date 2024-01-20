@@ -37,6 +37,7 @@ const headingLines = {
 }
 
 const Welcome = () => {
+   console.log(isItWinterNow())
    const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev)
@@ -128,9 +129,9 @@ const Welcome = () => {
                }
 
                .znms-widget__module-form-block__item {
-                  opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
+                  opacity: ${!isItWinterNow() ? '1' : '0.8 '} ;
                   background:black;
-                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+                  color:${!isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
                   
                   padding-top: 0 !important;
                   padding-bottom: 0 !important;
@@ -141,13 +142,13 @@ const Welcome = () => {
                   z-index: 100 !important;
                }
                .znms-widget__module-form-block__input{
-                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+                  color:${isItWinterNow() ? `black ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
                }
                .znms-widget__module-form-block__label{
-                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+                  color:${isItWinterNow() ? `black ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
                }
                .znms-widget__module-form-block__select, .znms-widget__module-form-block__select span {
-                  color:${isItWinterNow() ? `white ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
+                  color:${isItWinterNow() ? `black ${isItWinterNow() ? '!important' : ''}` : `black ${isItWinterNow() ? '' : '!important'}`};
                }
             `
          const styleElement = document.createElement("style")
@@ -156,15 +157,15 @@ const Welcome = () => {
       }
       script.onload = initializeWidget
       document.body.appendChild(script)
-      setTimeout(() => {
-         const doskaContainer = document.querySelector(".doska-container"),
-            skyContainer1 = document.querySelector(".sky1"),
-            skyContainer2 = document.querySelector(".sky2")
+      // setTimeout(() => {
+      //    const doskaContainer = document.querySelector(".doska-container"),
+      //       skyContainer1 = document.querySelector(".sky1"),
+      //       skyContainer2 = document.querySelector(".sky2")
 
-         skyContainer1.classList.add("animate-moveSky1")
-         skyContainer2.classList.add("animate-moveSky2")
-         // doskaContainer.classList.add("animate-moveDoska")
-      }, 1500)
+      //    skyContainer1.classList.add("animate-moveSky1")
+      //    skyContainer2.classList.add("animate-moveSky2")
+      //    // doskaContainer.classList.add("animate-moveDoska")
+      // }, 1500)
    }, [])
 
    // window.addEventListener("hashchange", function () {

@@ -32,6 +32,10 @@ const Popup = loadable(() => import("pages/Popup"))
 const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("./pages/korpLanding/KorpLanding"))
 
+const BanLanding = loadable(() => import("./pages/banLanding/BanLanding"))
+const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"))
+const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"))
+
 export default function App() {
 
 
@@ -231,6 +235,10 @@ export default function App() {
                     <Route path="/popup" element={<Popup />} />
                     <Route path="/thanks" element={<Thanks />} />
                     <Route path="/success" element={<Thanks />} />
+
+                    <Route path="/banya" element={<BanLanding />} />
+                    <Route path="/fishing" element={<FishingLanding />} />
+                    <Route path="/active" element={<ChillLanding />} />
 
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />

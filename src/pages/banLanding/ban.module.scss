@@ -1,0 +1,43 @@
+.bg {
+   background-image: url('./../../../public/image/ban/bg.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+}
+
+
+
+@font-face {
+   font-family: 'Acari Sans';
+   font-display: swap;
+   src: url('./../../../public/fonts/AcariSans-Bold.ttf') format('truetype');
+   font-weight: bold;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Acari Sans Medium';
+   font-display: swap;
+   src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+
+.acariBold {
+   font-family: 'Acari Sans Bold', sans-serif;
+
+}
+
+.acariMedium {
+   font-family: 'Acari Sans Medium', sans-serif;
+
+}
+
+.formBg {
+   background-image: url('./../../../public/image/ban/form.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}

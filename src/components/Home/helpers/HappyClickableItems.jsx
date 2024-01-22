@@ -18,7 +18,7 @@ const HappyClickableItems = ({ arrayData }) => {
          <div className="relative z-[1] flex flex-wrap items-center justify-center gap-10 pb-10 pt-6">
             {arrayData.map((el, i) => {
                return (
-                  <Link key={uuidv4()} to="/choose-happy">
+                  <Link key={uuidv4()} to={el.link !== "" ? el.link : "/choose-happy"}>
                      <m.div
                         initial="hidden"
                         whileInView="visible"
@@ -64,10 +64,10 @@ const HappyClickableItems = ({ arrayData }) => {
                )
             })}
          </div>
-         <a className="mb-20 sm:mb-20" >
-            <GreenButton onClick={() => { window.znmsWidget.open('#znms-widget-1') }} className="text-[19px]">
-               Забронировать</GreenButton>
-         </a>
+
+         <GreenButton onClick={() => { window.znmsWidget.open('#znms-widget-1') }} className="mb-20 sm:mb-20 text-[19px]">
+            Забронировать</GreenButton>
+
       </div>
    )
 }

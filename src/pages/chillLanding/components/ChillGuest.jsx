@@ -39,7 +39,7 @@ const ChillGuest = () => {
    const swiperRef = useRef()
    return (
       <div className={` ${s.guestBg} relative pt-[5vh] pb-[15vh] max-h-[1000px] text-white md:pb-[25vh]`}>
-         <div className='text-black font-bold text-center mb-[10vh] text-md+'>Почему нас выбирают</div>
+         <div className='text-white font-bold text-center mb-[10vh] text-md+'>Что говорят наши гости</div>
          <div className="flex px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
             <button
                className="z-[200]"
@@ -83,7 +83,7 @@ const ChillGuest = () => {
                   return (
                      <SwiperSlide className="px-[2vw] flex justify-center items-center  md:p-0" key={i}>
 
-                        <div className="flex mb-10 w-full mx-auto bg-[#ECE9E9]  max-w-[1050px] items-center justify-end">
+                        <div className="flex mb-10 w-full mx-auto bg-gray-200 rounded-[10px] border border-stone-900  max-w-[1050px] items-center justify-end">
                            <div className="min-w-[200px] min-h-[130px] w-full bg-transparent  text-white  rounded-[10px] md:h-[600px] relative">
                               <img
                                  className="absolute w-[20%] md:w-[20%]  md:max-w-auto z-10 -bottom-10 right-5  md:left-2 md:top-1/2 transform md:-translate-y-1/2"
@@ -94,14 +94,14 @@ const ChillGuest = () => {
                                  <div className={`${s.acariMedium} gap-4 mb-[20px] md:hidden flex items-center justify-start`}>
 
 
-                                    <div className="text-sm ">{guest.date}</div>
+                                    <div className="text-md ">{guest.date}</div>
                                     <h1 className="text-md ">{guest.name}</h1>
                                  </div>
-                                 <h1 className="text-md md:mb-[100px] ">{guest.text}</h1>
+                                 <h1 className="text-md my-auto montserrat md:mb-[100px] ">{guest.text}</h1>
                                  <div className={`${s.acariMedium} gap-4 hidden md:flex items-center justify-end`}>
 
 
-                                    <div className="text-sm ">{guest.date}</div>
+                                    <div className="text-md font-bold ">{guest.date}</div>
                                     <h1 className="text-md ">{guest.name}</h1>
                                  </div>
                               </div>

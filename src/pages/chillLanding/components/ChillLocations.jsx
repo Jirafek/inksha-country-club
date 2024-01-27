@@ -49,7 +49,7 @@ const ChillLocations = () => {
                   return (
                      <Link
                         to={loc.link}
-                        className={`flex md:place-self-start gap-[10px] sm:max-w-[550px] h-[82] md:h-[182px]  md:gap-[20px] md:max-h-[216px]   w-full  rounded-[19px] bg-[#F5F5F5]`}
+                        className={`flex md:place-self-start shadow gap-[10px] sm:max-w-[550px] h-[82] md:h-[182px]  md:gap-[40px] md:max-h-[216px]   w-full  rounded-[19px] bg-[#F5F5F5]`}
                         key={i}
                      >
                         <img
@@ -57,17 +57,17 @@ const ChillLocations = () => {
                            src={loc.img}
                            alt=""
                         />
-                        <div className="flex flex-col justify-between    py-3">
-                           <div className="text-md font-bold text-black">
+                        <div className="flex flex-col justify-between    py-[20px]">
+                           <div className="text-md acariMedium max-w-[150px] font-bold text-black">
                               {loc.title}
                            </div>
-                           <div className="flex items-center  gap-5 text-sm font-bold text-white">
-                              <div className="flex flex-col text-[#785E4E] gap-5">
+                           <div className="flex items-center acariMedium  gap-5 text-sm font-semibolda text-white">
+                              <div className="flex flex-col text-[#785E4E] gap-2">
                                  <div className='text-[#785E4E]'>{loc.people}</div>
-                                 <div className='text-[#785E4E]'>{loc.price}</div>
+                                 <div className='text-[#785E4E] font-semibold text-md-'>{loc.price}</div>
                               </div>
                               <img
-                                 className="w-12 md:w-[80px] lg:w-[100px] pr-1"
+                                 className="w-12 md:w-[40px] lg:w-[100px] pr-1"
                                  src={longarrow}
                                  alt=""
                               />

@@ -57,7 +57,7 @@ const BanServices = () => {
    const services = GetServices()
 
    return (
-      <div id='services' className='relative py-[100px] wrapper text-black bg-white '>
+      <div id='services' className='relative py-[100px] wrapper text-black  '>
          <div>
             <div className='text-center text-md+ font-bold'>Дополнительные услуги</div>
             <div className={`grid grid-cols-1 ${s.acariMedium} md:grid-cols-2 mt-8 mx-[40px] md:mx-auto gap-x-11 max-w-[1200px] content-center `}>
@@ -66,7 +66,7 @@ const BanServices = () => {
 
                {services[0].map((item, i) => {
                   return (
-                     <div key={i} className='justify-between w-full gap-2 md:gap-4 items-center py-[10px] md:py-[50px] border-y border-black flex'>
+                     <div key={i} className={`justify-between w-full ${s.services_wrapper} gap-2 md:gap-4 items-center py-[10px] md:py-[50px] flex`}>
                         <div className='flex flex-col'>
                            <div className="text-black text-md   leading-[33.80px] tracking-wide">{item.title}</div>
 

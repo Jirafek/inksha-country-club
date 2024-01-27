@@ -577,7 +577,7 @@ canvas {
 
 
 @font-face {
-   font-family: 'Acari Sans';
+   font-family: 'Acari Sans Bold';
    font-display: swap;
    src: url('./../public/fonts/AcariSans-Bold.ttf') format('truetype');
    font-weight: bold;
@@ -783,6 +783,9 @@ ul {
   background-position: center center;
 }
 
+.swiperNoButton .swiper-button-prev{
+  display: none !important;
+}
 
 .korpswiper .swiper-button-prev {
   display: none !important;
@@ -866,3 +869,7 @@ ul {
   margin: auto auto !important;
 
 } */
+
+.chill .swiper-button-prev {
+	display: none;
+}

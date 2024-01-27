@@ -7,7 +7,7 @@ import s from './../ban.module.scss'
 
 const FishContacts = () => {
    return (
-      <div className='bg-white px-4 w-full text-black'>
+      <div className=' px-4 w-full text-black'>
          <div className='text-black font-bold text-center mb-[5vh] text-36px'>Контакты</div>
          <div className='flex w-full justify-between flex-col mb-10 gap-2 md:flex-row'>
             <div className='w-[733.57px] text-black text-md font-semibold  leading-[44.80px] tracking-wide'>Мы находимся по адресу Московская область,<br /> городской округ Мытищи,<br /> посёлок Менжинец </div>

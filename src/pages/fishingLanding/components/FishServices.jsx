@@ -1,5 +1,5 @@
 // import { useTranslation } from 'react-i18next'
-
+import s from './../fishing.module.scss'
 const GetServices = () => {
 
    // const { t } = useTranslation()
@@ -86,7 +86,7 @@ const FishServices = () => {
 
                {services[0].map((item, i) => {
                   return (
-                     <div key={i} className='justify-between w-full items-center py-[50px] gap-2 border-y border-white flex'>
+                     <div key={i} className={`justify-between ${s.services_wrapper} w-full items-center py-[50px] gap-2  flex`}>
                         <div className='flex flex-col'>
                            <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.title}</div>
 
@@ -107,7 +107,7 @@ const FishServices = () => {
 
                {services[1].map((item, i) => {
                   return (
-                     <div key={i} className='justify-between w-full items-center py-[50px] gap-2 border-y border-white flex'>
+                     <div key={i} className={`justify-between w-full ${s.services_wrapper} items-center py-[50px] gap-2  flex`}>
                         <div className='flex flex-col'>
                            <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.title}</div>
 

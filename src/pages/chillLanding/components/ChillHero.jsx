@@ -163,15 +163,22 @@ const ChillHero = () => {
       <div id="Hero" className='mb-[10vh]'>
          <div className={` text-black text-center `}>
             <div className="relative  flex h-[80vh]  flex-col-reverse items-center justify-center ">
-               <div className="z-10 flex max-w-[1000px] flex-col items-center justify-center ">
+               <div className={` ${s.banner} absolute flex justify-center items-center bottom-0 w-full z-[20] h-[70px] md:h-[90px] `}>
+                  <div className='text-white text-center text-md font-semibold'>
+                     Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
+
+                  </div>
+
+               </div>
+               <div className="z-10  flex max-w-[1000px] flex-col items-center justify-center ">
                   <Reveal delay={0.25}>
-                     <div className={`text-white  ${s.acariBold} text-xl font-bold`}>
+                     <div className={`text-white ${s.acariBold} text-xl font-bold`}>
                         Активный отдых
                         <br />
                         в Подмосковье
                      </div>
                   </Reveal>
-                  <div className='absolute bottom-0 flex justify-center gap-[20px] left-0'>
+                  <div className='absolute bottom-12 flex justify-center gap-[20px] left-0'>
                      <button
                         className=" z-20 h-[50px] w-[50px] md:h-[100px] md:w-[100px] -translate-y-1/2 transform "
                         onClick={() => {
@@ -191,6 +198,7 @@ const ChillHero = () => {
 
                   </div>
                </div>
+
                <div className='absolute h-[80vh]  w-full'>
                   <Swiper
                      // install Swiper modules
@@ -209,7 +217,7 @@ const ChillHero = () => {
                         return (
                            <SwiperSlide className="w-full h-full" key={i}>
                               <img
-                                 className="w-full h-full object-cover"
+                                 className="w-full filter brightness-75 h-full object-cover"
                                  src={photo}
                                  alt=""
                               />
@@ -227,14 +235,14 @@ const ChillHero = () => {
             <div id="znms-widget-1"></div>
          </div>
          <Reveal delay={0.5}>
-            <div className="text-md max-w-[1200px] text-center mt-[15vh] mx-auto font-semibold">
-               Икша кантри клаб - идеальное место для активного отдыха на природе. Здесь вы сможете заняться различными видами спорта, такими как верховая езда, занятия в тренажерном зале или игры в теннис. Кроме того, вас ждут увлекательные экскурсии на велосипеде или пешие прогулки по живописным просторам. Расположенный в окружении лесов и рек, Икша кантри клаб станет настоящим райским местом для всех любителей активного отдыха и приключений.
+            <div className="text-md max-w-[1200px] text-[#593723] text-center mt-[15vh] border-2 rounded-[20px] border-[#593723] p-4 md:p-12 mx-[20px] md:mx-auto font-semibold">
+               <span className='font-[800] text-md'>Икша кантри клаб</span> - идеальное место для активного отдыха на природе. Здесь вы сможете заняться различными видами спорта, такими как верховая езда, занятия в тренажерном зале или игры в теннис. Кроме того, вас ждут увлекательные экскурсии на велосипеде или пешие прогулки по живописным просторам. Расположенный в окружении лесов и рек, Икша кантри клаб станет настоящим райским местом для всех любителей активного отдыха и приключений.
             </div>
          </Reveal>
 
 
          <div className='block md:hidden' onClick={() => { window.znmsWidget.open('#znms-widget-1') }}>
-            <Button className='bg-black h-[40px] w-[200px] text-md mx-auto text-white'>Забронировать</Button>
+            <Button className='bg-[#593723] h-[40px] w-[300px] text-md mx-auto text-white'>Забронировать</Button>
          </div>
       </div >
    )

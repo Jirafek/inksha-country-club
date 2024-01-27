@@ -90,7 +90,7 @@ const BanProgram = ({ handleProductClick }) => {
 
    const program = GetProgram()
    return (
-      <div id='program' className='bg-white relative text-black'>
+      <div id='program' className='relative text-black'>
          <div id="znms-service-widget-module"></div>
          <div className='text-black font-bold text-center mb-[10vh] text-md+'>Наши программы</div>
          <div className='flex justify-around md:px-[30px] flex-col gap-5 w-full items-center lg:flex-row'>

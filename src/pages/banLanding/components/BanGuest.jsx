@@ -40,11 +40,11 @@ const BanGuest = () => {
    return (
       <div className=" relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
          <div className='text-black font-bold text-center mb-[10vh] text-md+'>Почему нас выбирают</div>
-         <div className="bg-[#221C1C]">
+         <div className="">
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10"
+               className="korpswiper mb-10 bg-[#221C1C]"
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -79,7 +79,7 @@ const BanGuest = () => {
                   )
                })}
             </Swiper>
-            <div className="flex px-[20px] w-full ml-auto  bg-white z-10 justify-between">
+            <div className="flex px-[20px] w-full ml-auto   z-10 justify-between">
                <button
                   className="z-[200]"
                   onClick={() => swiperRef.current?.slidePrev()}

@@ -7,7 +7,7 @@ import Header from "common/Header"
 import { useState } from 'react'
 
 import { Helmet } from 'react-helmet'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 import FishHero from './components/FishHero'
 
 import s from './fishing.module.scss'
@@ -24,9 +24,29 @@ const FishingLanding = () => {
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
    }
+   const GetFooterLinks = () => {
+      // const { t } = useTranslation()
+      // const links = [
+      //    { title: t('chilling.header.Main'), link: "Programa" },
+      //    { title: t('chilling.header.Gallery'), link: "Tariff" },
+      //    { title: t('chilling.header.Price'), link: "Form" },
+      //    { title: t('chilling.header.Terr'), link: "Form" },
+      //    { title: t('chilling.header.Locations'), link: "Form" },
+      //    { title: t('chilling.header.Call'), link: "Form" },
+
+      // ]
+
+      const links = [
+         { title: 'Договор оферты', link: "public/pdf/oferta.pdf" },
+         { title: 'Правила проживания', link: "/rules" },
+
+      ]
+
+      return links
+   }
 
    const GetLinks = () => {
-      const { t } = useTranslation()
+      // const { t } = useTranslation()
       // const links = [
       //    { title: t('fishing.header.Main'), link: "Programa" },
       //    { title: t('fishing.header.Gallery'), link: "Tariff" },
@@ -49,7 +69,7 @@ const FishingLanding = () => {
 
       return links
    }
-
+   const footerLinks = GetFooterLinks()
    const links = GetLinks()
    return (
       <div className={`montserrat ${s.main}`}>
@@ -91,7 +111,7 @@ const FishingLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer className='bg-FBlack text-grey' />
+         <Footer FooterLinks={footerLinks} className='bg-FBlack text-grey' />
       </div>
    )
 }

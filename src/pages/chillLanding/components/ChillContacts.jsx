@@ -7,10 +7,10 @@ import s from './../chill.module.scss'
 
 const ChillContacts = () => {
    return (
-      <div className='bg-white mt-[120px] mb-10 w-full text-black'>
-         <div className='text-black font-bold text-center mb-[5vh] text-36px'>Контакты</div>
-         <div className='flex w-full justify-between flex-col pb-10 gap-2 md:flex-row'>
-            <div className='w-[733.57px] text-black text-md font-semibold  leading-[44.80px] tracking-wide'>Мы находимся по адресу Московская область,<br /> городской округ Мытищи,<br /> посёлок Менжинец </div>
+      <div id='contacts' className=' mt-[120px] mb-10  w-full text-black'>
+         <div className='text-ChillHeadBrown font-bold text-center mb-[5vh] text-36px'>Контакты</div>
+         <div className='flex w-full px-[20px] md:px-[40px] justify-between flex-col pb-10 gap-2 md:flex-row'>
+            <div className='md:w-[733.57px] text-black text-md font-semibold  leading-[44.80px] tracking-wide'>Мы находимся по адресу Московская область,<br /> городской округ Мытищи,<br /> посёлок Менжинец </div>
 
             <div className='flex gap-2 flex-col text-left md:text-right'>
                <div className='flex justify-start md:justify-end gap-5'>

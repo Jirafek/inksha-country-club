@@ -46,15 +46,37 @@ const ChillLanding = () => {
 
       const links = [
          { title: 'Главная', link: "Programa" },
-         { title: 'Программа', link: "proga" },
+         { title: 'Пакеты услуг', link: "proga" },
          { title: 'Стоимость Услуг', link: "services" },
          { title: 'Локации', link: "locations" },
+         { title: 'Контакты', link: "contacts" },
          { title: 'Связаться со мной', link: "Form" },
       ]
 
       return links
    }
 
+   const GetFooterLinks = () => {
+      // const { t } = useTranslation()
+      // const links = [
+      //    { title: t('chilling.header.Main'), link: "Programa" },
+      //    { title: t('chilling.header.Gallery'), link: "Tariff" },
+      //    { title: t('chilling.header.Price'), link: "Form" },
+      //    { title: t('chilling.header.Terr'), link: "Form" },
+      //    { title: t('chilling.header.Locations'), link: "Form" },
+      //    { title: t('chilling.header.Call'), link: "Form" },
+
+      // ]
+
+      const links = [
+         { title: 'Договор оферты', link: "public/pdf/oferta.pdf" },
+         { title: 'Правила проживания', link: "/rules" },
+
+      ]
+
+      return links
+   }
+   const footerLinks = GetFooterLinks()
    const links = GetLinks()
 
 
@@ -65,7 +87,7 @@ const ChillLanding = () => {
    }
    useEffect(() => {
       if (productId === undefined) {
-         document.body.style.overflow = 'scroll'
+         document.body.style.overflow = 'auto'
 
       } else {
          document.body.style.overflow = 'hidden'
@@ -100,8 +122,8 @@ const ChillLanding = () => {
             links={links}
             toggleMenu={toggleMenu}
             MenuClassName='bg-ChillBrown text-white'
-            className='bg-ChillBrown font-bold text-white' />
-         <div className={` bg-white relative  w-full h-full`}>
+            className='bg-ChillBrown acariBold font-bold text-white' />
+         <div className={`${s.bg} bg-white relative  w-full h-full`}>
 
 
             {productId && <ChillProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
@@ -119,7 +141,7 @@ const ChillLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer className='bg-ChillBrown text-white' />
+         <Footer FooterLinks={footerLinks} isMediaOpen={false} className='bg-ChillBrown text-white' />
       </div>
    )
 }

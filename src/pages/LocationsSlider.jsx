@@ -105,7 +105,7 @@ const LocationsSlider = () => {
             data: {
                 name: data.name,
                 phone: data.phone,
-                groupID: 981875757,
+                groupID: import.meta.env.VITE_GROUP_ID,
                 email: "-",
             },
             source: "https://mobile.ikshacountryclub.com",

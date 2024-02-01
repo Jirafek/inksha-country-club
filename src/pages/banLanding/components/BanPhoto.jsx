@@ -24,6 +24,8 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 
+import s from './../ban.module.scss'
+
 // const ytSrc = "https://www.youtube.com/watch?v=Eat2wgPNuIo";
 // const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
 
@@ -35,10 +37,10 @@ const BanPhoto = () => {
       <div id="photo" className=" py-[10vh]">
          <div className="">
             <div className="text-center">
-               <h1 className="block md:hidden  mb-[30px] text-md max-w-[900px] mx-auto font-semibold text-center text-[#081130]">
+               {/* <h1 className={`block md:hidden  mb-[30px] text-md max-w-[900px] mx-auto font-semibold text-center text-[#081130]`}>
                   Комфортная отдельная купель, в которой можно расслабиться и насладиться прохладной водой.
                   В нашей бане можно провести отдых как на несколько часов, так и на целый день. Возможно, после бани вы захотите поплавать в водохранилище, пойти на рыбалку или просто насладиться красотой природы вокруг.
-               </h1>
+               </h1> */}
                <div className="relative ">
                   <Swiper
                      // install Swiper modules
@@ -66,10 +68,10 @@ const BanPhoto = () => {
                         )
                      })}
 
-                     <div className='absolute hidden md:block bottom-0 pb-[100px] pr-[50px] text-right text-md text-white z-[100] right-0'>
+                     {/* <div className='absolute hidden md:block bottom-0 pb-[100px] pr-[50px] text-right text-md text-white z-[100] right-0'>
                         Комфортная отдельная купель, в которой можно расслабиться и<br /> насладиться прохладной водой.<br />
                         В нашей бане можно провести отдых как на несколько часов, так и <br /> на целый день. Возможно, после бани вы захотите поплавать в водохранилище,<br /> пойти на рыбалку или просто насладиться красотой природы вокруг.
-                     </div>
+                     </div> */}
                   </Swiper>
                   <button
                      className="absolute right-4 md:-right-10 top-1/2 z-20 h-[50px] w-[50px] md:h-[100px] md:w-[100px] -translate-y-1/2 transform "

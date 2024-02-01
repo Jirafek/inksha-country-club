@@ -30,16 +30,7 @@ const BanLanding = () => {
    }
 
    const GetLinks = () => {
-      // const { t } = useTranslation()
-      // const links = [
-      //    { title: t('baning.header.Main'), link: "Programa" },
-      //    { title: t('baning.header.Gallery'), link: "Tariff" },
-      //    { title: t('baning.header.Price'), link: "Form" },
-      //    { title: t('baning.header.Terr'), link: "Form" },
-      //    { title: t('baning.header.Locations'), link: "Form" },
-      //    { title: t('baning.header.Call'), link: "Form" },
 
-      // ]
 
       const links = [
          { title: 'Главная', link: "Programa" },
@@ -53,6 +44,18 @@ const BanLanding = () => {
 
       return links
    }
+
+   const GetFooterLinks = () => {
+
+      const links = [
+         { title: 'Договор оферты', link: "public/pdf/oferta.pdf" },
+         { title: 'Правила проживания', link: "/rules" },
+
+      ]
+
+      return links
+   }
+   const footerLinks = GetFooterLinks()
 
    const links = GetLinks()
 
@@ -91,7 +94,7 @@ const BanLanding = () => {
             links={links}
             toggleMenu={toggleMenu}
             MenuClassName='bg-white text-black'
-            className=' font-bold text-black' />
+            className=' font-bold bg-[#221C1C] text-white' />
          <div className={` ${s.bg} relative  w-full h-full`}>
 
             {productId && <BanProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
@@ -110,7 +113,7 @@ const BanLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer className='bg-black text-white' />
+         <Footer isMediaOpen={false} FooterLinks={footerLinks} className='bg-black text-white' />
       </div>
    )
 }

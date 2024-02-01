@@ -50,14 +50,15 @@ import "swiper/css/scrollbar"
 import korpprev from "icons/swiperprev_black.png"
 import korpnext from "icons/swipernext_black.png"
 
-import close from 'icons/close.png'
 
 import sun from 'icons/buttons/filter/sun.png'
 import winter from 'icons/buttons/filter/winter.png'
 import many from 'icons/buttons/filter/many.png'
 import low from 'icons/buttons/filter/low.png'
 
-import { motion } from 'framer-motion'
+import Button from 'common/Button'
+
+
 
 
 
@@ -425,16 +426,16 @@ const GetProgram = () => {
 
 
 
-const ChillProgram = ({ handleProductClick }) => {
+const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
    const program = GetProgram()
 
 
    const [isManyPeople, setIsManyPeople] = useState(false)
-   const [currentTime, setTime] = useState('Лето')
+
 
    const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedImages, setSelectedImages] = useState(program)
+   const [selectedimages, setSelectedimages] = useState(program)
 
 
    const filter = () => {
@@ -445,7 +446,7 @@ const ChillProgram = ({ handleProductClick }) => {
       })
 
 
-      setSelectedImages(filteredProgram)
+      setSelectedimages(filteredProgram)
 
 
    }
@@ -611,7 +612,7 @@ const ChillProgram = ({ handleProductClick }) => {
 
          <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
 
-            {selectedImages.map((item, i) => {
+            {selectedimages.map((item, i) => {
                return (
 
                   <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
@@ -644,9 +645,15 @@ const ChillProgram = ({ handleProductClick }) => {
                            <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
                               <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
                            </div>
-                           {item.hasAbout ? <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                              <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                           </div> : ''}
+                           {item.hasAbout ?
+                              <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                              </div>
+                              :
+                              <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                              </a>
+                           }
 
                         </div>
 
@@ -684,11 +691,15 @@ const ChillProgram = ({ handleProductClick }) => {
 
             <Swiper
                // install Swiper modules
-               modules={[Navigation]}
+               modules={[Navigation, Autoplay]}
                // style={{ display: 'none' }}
                className="hidden chill"
                spaceBetween={50}
                loop={true}
+               autoplay={{
+                  delay: 1500,
+                  disableOnInteraction: true,
+               }}
                onBeforeInit={(swiper) => {
                   swiperRef.current = swiper
                }}
@@ -696,7 +707,7 @@ const ChillProgram = ({ handleProductClick }) => {
                navigation
 
             >
-               {selectedImages.map((item, i) => {
+               {selectedimages.map((item, i) => {
                   return (
                      <SwiperSlide className="py-[30px]" key={i}>
 
@@ -736,9 +747,15 @@ const ChillProgram = ({ handleProductClick }) => {
                                  <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
                                     <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
                                  </div>
-                                 {item.hasAbout ? <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                    <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                                 </div> : ''}
+                                 {item.hasAbout ?
+                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                    </div>
+                                    :
+                                    <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                    </a>
+                                 }
 
                               </div>
 
@@ -751,6 +768,17 @@ const ChillProgram = ({ handleProductClick }) => {
                })}
             </Swiper>
          </div>
+
+         <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
+            <div className='text-white text-center text-md font-semibold'>
+               Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
+
+            </div>
+
+         </div>
+         <a className='mx-auto' href='#module'>
+            <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
+         </a>
 
 
       </div >

@@ -79,7 +79,7 @@ const FishServices = () => {
    return (
       <div id='services' className='relative py-[100px] wrapper text-white bg-FBlack '>
          <div>
-            <div className='text-center text-36px font-bold'>Дополнительные услуги</div>
+            <div className='text-center text-lg font-bold'>Дополнительные услуги</div>
             <div className='grid grid-cols-1 md:grid-cols-2 mt-8 mx-[40px] md:mx-auto gap-x-11 max-w-[1200px] content-center '>
 
 

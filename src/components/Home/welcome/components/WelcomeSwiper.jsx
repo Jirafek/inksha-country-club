@@ -57,12 +57,24 @@ const WelcomeSwiper = () => {
 
             <SwiperSlide>
                <div className="text-center">
+                  <a className={styles.link} href="/fishing">Рыбалка</a>
+               </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+               <div className="text-center">
+                  <a className={styles.link} href="/active">Активный отдых</a>
+               </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+               <div className="text-center">
                   <a className={styles.link} href="#eat">Плов и уха</a>
                </div>
             </SwiperSlide>
             <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="#happy">Баня и купель</a>
+                  <a className={styles.link} href="/banya">Баня и купель</a>
                </div>
             </SwiperSlide>
             {/* <SwiperSlide>

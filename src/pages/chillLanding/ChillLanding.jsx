@@ -25,25 +25,22 @@ import ChillServices from './components/ChillServices'
 import { StringParam, useQueryParam } from "use-query-params"
 import ChillProgramPopup from './components/chillProgramPlik/ChillProgramPopup'
 import ChillProgram from './components/chillProgramPlik/ChillProgram'
+// import ChillModule from './components/ChillModule'
+
+import { isItWinterNow } from 'utils/helpers.js'
 
 const ChillLanding = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
+   const [currentTime, setTime] = useState(isItWinterNow() === '_winter' ? 'Зима' : 'Лето')
+
+
+
+
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
    }
 
    const GetLinks = () => {
-      // const { t } = useTranslation()
-      // const links = [
-      //    { title: t('chilling.header.Main'), link: "Programa" },
-      //    { title: t('chilling.header.Gallery'), link: "Tariff" },
-      //    { title: t('chilling.header.Price'), link: "Form" },
-      //    { title: t('chilling.header.Terr'), link: "Form" },
-      //    { title: t('chilling.header.Locations'), link: "Form" },
-      //    { title: t('chilling.header.Call'), link: "Form" },
-
-      // ]
-
       const links = [
          { title: 'Главная', link: "Programa" },
          { title: 'Пакеты услуг', link: "proga" },
@@ -57,21 +54,10 @@ const ChillLanding = () => {
    }
 
    const GetFooterLinks = () => {
-      // const { t } = useTranslation()
-      // const links = [
-      //    { title: t('chilling.header.Main'), link: "Programa" },
-      //    { title: t('chilling.header.Gallery'), link: "Tariff" },
-      //    { title: t('chilling.header.Price'), link: "Form" },
-      //    { title: t('chilling.header.Terr'), link: "Form" },
-      //    { title: t('chilling.header.Locations'), link: "Form" },
-      //    { title: t('chilling.header.Call'), link: "Form" },
-
-      // ]
 
       const links = [
          { title: 'Договор оферты', link: "public/pdf/oferta.pdf" },
          { title: 'Правила проживания', link: "/rules" },
-
       ]
 
       return links
@@ -127,10 +113,11 @@ const ChillLanding = () => {
 
 
             {productId && <ChillProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
-            <ChillHero />
+            <ChillHero currentTime={currentTime} />
 
-            <ChillProgram handleProductClick={handleProductClick} />
+            <ChillProgram setTime={setTime} currentTime={currentTime} handleProductClick={handleProductClick} />
             <ChillServices />
+            {/* <ChillModule /> */}
             <ChillMap />
             <ChillLocations />
             <ChillGuest />

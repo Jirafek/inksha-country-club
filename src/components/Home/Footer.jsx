@@ -5,9 +5,9 @@ import routes from "../../utils/Home/routes"
 import { useURLData } from "../../utils/URLData"
 
 const Footer = () => {
-    const { utm_source, phoneContent } = useURLData();
-    const matchingPhone = phoneContent.find(item => item.utm === utm_source);
-    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+    const { utm_source, phoneContent } = useURLData()
+    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
 
     return (
         <section id="footer" className="section back_settings relative"
@@ -29,9 +29,23 @@ const Footer = () => {
                             <img src="/image/call_big.webp" alt="Икша Кантри Клаб" />
                         </picture>
 
-                                    <a href={`tel:${phoneNumber}`}>
-                                        <h4 className="text-white monterey font-extrabold underline">{phoneNumber}</h4>
+                        {
+                            utm_source === 'yandex' ?
+                                <a href={'tel:+74995055067'}>
+                                    <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-67</h4>
+                                </a>
+                                : utm_source === 'vkontakte' ?
+                                    <a href={'tel:+74995055087'}>
+                                        <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-87</h4>
                                     </a>
+                                    :
+                                    <a href={"tel:+74995055031"}>
+                                        <h4 className="text-white monterey font-extrabold underline">+7(499) 505-50-31</h4>
+                                    </a>
+
+                        }
+
+
 
 
                     </div>

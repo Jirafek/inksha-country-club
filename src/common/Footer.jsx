@@ -2,7 +2,7 @@
 import inst from "./../assets/inst.png"
 import what from "./../assets/what.png"
 import phone from "./../assets/phone.png"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useURLData } from 'utils/URLData'
 
 const slideVariants = {
@@ -16,9 +16,9 @@ const slideVariants = {
    },
 }
 const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
-   const { utm_source, phoneContent } = useURLData()
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
+   const { utm_source } = useURLData()
+   // const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -26,7 +26,7 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                <div className="flex w-full items-center  justify-between gap-5 md:justify-start">
                   <div className='flex gap-5 items-center'>
 
-                     <div>Икша Кантри Kлаб 2023 </div>
+                     <a className='underline font-bold' href='/'>Икша Кантри Kлаб 2023 </a>
                      {FooterLinks.length !== 0 && FooterLinks.map((item, i) => {
                         return (
                            <div key={i}>
@@ -50,7 +50,7 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                      >
                         <img className="z-10 h-9 w-9" src={what} alt="" />
                      </a>
-                     <motion.a
+                     <m.a
                         variants={slideVariants}
                         transition={{
                            repeat: Infinity,
@@ -64,7 +64,7 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                         href="tel:+7 (499) 505-50-31"
                      >
                         <img className="z-10 h-9 w-9" src={phone} alt="" />
-                     </motion.a>
+                     </m.a>
                   </div>}
 
                </div>
@@ -74,9 +74,25 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                   <a href="#Tariff">Тарифы</a>
                   <a href="tel:+7 (499) 505-50-31">Связаться со мной</a>
                </div> */}
-               <a href={`tel:${phoneNumber}`} className="min-w-[160px]">
-                  {phoneNumber}
-               </a>
+               {/* <a href={`tel:${phoneNumber}`} className="min-w-[160px]">
+                  {phoneNumber} */}
+
+               {
+                  utm_source === 'yandex' ?
+                     <a href={'tel:+74995055067'}>
+                        <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-67</h4>
+                     </a>
+                     : utm_source === 'vkontakte' ?
+                        <a href={'tel:+74995055087'}>
+                           <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-87</h4>
+                        </a>
+                        :
+                        <a href={"tel:+74995055031"}>
+                           <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-31</h4>
+                        </a>
+
+               }
+               {/* </a> */}
             </div>
          </div>
       </div>

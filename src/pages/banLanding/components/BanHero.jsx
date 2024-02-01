@@ -146,12 +146,12 @@ const BanHero = () => {
          <div
             id="Hero"
             className={` text-black text-center `}
-         // style={{ backgroundImage: bg_hero, backgroundRepeat: "no-repeat" }}
+         // style={{ backgroundimages: bg_hero, backgroundRepeat: "no-repeat" }}
          >
-            <div className="relative  flex h-[30vh] md:h-[40vh] flex-col-reverse items-center justify-center ">
+            <div className="relative  flex h-[40vh] md:h-[50vh] flex-col-reverse items-center justify-center ">
                <div className="z-10 flex max-w-[1000px] flex-col items-center justify-center ">
                   <Reveal delay={0.25}>
-                     <div className={`text-white ${s.acariBold} acari text-lg font-bold`}>
+                     <div className={`text-white ${s.acariBold} acari text-xl font-bold`}>
                         Баня с купелью<br />
                         в Подмосковье
                      </div>
@@ -170,8 +170,8 @@ const BanHero = () => {
 
                   </ScrollLink>
                </div>
-               <div className=' absolute h-[30vh] md:h-[40vh] w-[95vw]'>
-                  <img className='w-full h-full object-cover' src={hero} alt="" />
+               <div className=' absolute h-[40vh] md:h-[50vh] w-screen'>
+                  <img className='w-full brightness-75 h-full object-cover' src={hero} alt="" />
                </div>
             </div>
          </div>
@@ -181,14 +181,14 @@ const BanHero = () => {
                Мы предлагаем своим гостям возможность насладиться не только полезными процедурами, но и красивыми пейзажами окружающей природы.
             </div>
          </Reveal>
-         <div className='hidden md:block'>
+         {/* <div className='hidden md:block'>
 
             <div id="znms-widget-1"></div>
-         </div>
+         </div> */}
 
-         <div onClick={() => { window.znmsWidget.open('#znms-widget-1') }}>
-            <Button className='bg-black h-[40px] w-[80%] mx-auto text-white'>Забронировать</Button>
-         </div>
+         <a href='#program' >
+            <Button className='bg-black h-[40px] md:h-[60px] text-md md:w-[600px] mx-auto text-white'>Посмотреть услуги</Button>
+         </a>
       </div>
    )
 }

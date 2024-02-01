@@ -20,17 +20,30 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 
-import photo1 from "images/chill/hero/001.webp"
-import photo2 from "images/chill/hero/002.webp"
-import photo3 from "images/chill/hero/003.webp"
-import photo4 from "images/chill/hero/004.webp"
-import photo5 from "images/chill/hero/005.webp"
-import photo6 from "images/chill/hero/006.webp"
-import photo7 from "images/chill/hero/007.webp"
+import photo1 from "images/chill/hero/summer/001.webp"
+import photo2 from "images/chill/hero/summer/002.webp"
+import photo3 from "images/chill/hero/summer/003.webp"
+import photo4 from "images/chill/hero/summer/004.webp"
+import photo5 from "images/chill/hero/summer/005.webp"
+import photo6 from "images/chill/hero/summer/006.webp"
+import photo7 from "images/chill/hero/summer/007.webp"
+
+
+import winterPhoto1 from 'images/chill/hero/winter/001.webp'
+import winterPhoto2 from 'images/chill/hero/winter/002.webp'
+import winterPhoto3 from 'images/chill/hero/winter/003.webp'
+import winterPhoto4 from 'images/chill/hero/winter/004.webp'
+import winterPhoto5 from 'images/chill/hero/winter/005.webp'
+import winterPhoto6 from 'images/chill/hero/winter/006.webp'
+import winterPhoto7 from 'images/chill/hero/winter/007.webp'
+import winterPhoto8 from 'images/chill/hero/winter/008.webp'
 
 const photos = [photo7, photo6, photo5, photo4, photo3, photo2, photo1]
 
-const ChillHero = () => {
+const winterPhotos = [winterPhoto1, winterPhoto2, winterPhoto3, winterPhoto4, winterPhoto5, winterPhoto6, winterPhoto7, winterPhoto8]
+
+// eslint-disable-next-line react/prop-types
+const ChillHero = ({ currentTime }) => {
 
    useEffect(() => {
       const script = document.createElement("script")
@@ -163,13 +176,6 @@ const ChillHero = () => {
       <div id="Hero" className='mb-[10vh]'>
          <div className={` text-black text-center `}>
             <div className="relative  flex h-[80vh]  flex-col-reverse items-center justify-center ">
-               <div className={` ${s.banner} absolute flex justify-center items-center bottom-0 w-full z-[20] h-[70px] md:h-[90px] `}>
-                  <div className='text-white text-center text-md font-semibold'>
-                     Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
-
-                  </div>
-
-               </div>
                <div className="z-10  flex max-w-[1000px] flex-col items-center justify-center ">
                   <Reveal delay={0.25}>
                      <div className={`text-white ${s.acariBold} text-xl font-bold`}>
@@ -178,6 +184,9 @@ const ChillHero = () => {
                         в Подмосковье
                      </div>
                   </Reveal>
+                  <a href='#program' className='md:w-auto w-[300px] mx-auto' >
+                     <Button className='bg-[#593723] px-3 h-[40px] md:h-[60px] md:w-[700px] text-md mx-auto text-white'>Выбрать услуги</Button>
+                  </a>
                   <div className='absolute bottom-12 flex justify-center gap-[20px] left-0'>
                      <button
                         className=" z-20 h-[50px] w-[50px] md:h-[100px] md:w-[100px] -translate-y-1/2 transform "
@@ -213,7 +222,7 @@ const ChillHero = () => {
                      }}
                   >
 
-                     {photos.map((photo, i) => {
+                     {(currentTime === 'Лето' ? photos : winterPhotos).map((photo, i) => {
                         return (
                            <SwiperSlide className="w-full h-full" key={i}>
                               <img
@@ -231,8 +240,7 @@ const ChillHero = () => {
             </div>
          </div>
          <div className='hidden md:block'>
-
-            <div id="znms-widget-1"></div>
+            {/* <div id="znms-widget-1"></div> */}
          </div>
          <Reveal delay={0.5}>
             <div className="text-md max-w-[1200px] text-[#593723] text-center mt-[15vh] border-2 rounded-[20px] border-[#593723] p-4 md:p-12 mx-[20px] md:mx-auto font-semibold">
@@ -240,10 +248,9 @@ const ChillHero = () => {
             </div>
          </Reveal>
 
-
-         <div className='block md:hidden' onClick={() => { window.znmsWidget.open('#znms-widget-1') }}>
-            <Button className='bg-[#593723] h-[40px] w-[300px] text-md mx-auto text-white'>Забронировать</Button>
-         </div>
+         <a href='#program' className='w-[300px]' >
+            <Button className='bg-[#593723] px-3 h-[40px] md:h-[60px] md:w-[700px] w-[300px] text-md mx-auto text-white'>Забронировать</Button>
+         </a>
       </div >
    )
 }

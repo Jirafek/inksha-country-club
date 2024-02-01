@@ -36,7 +36,7 @@ const ChillForm = () => {
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Баня лендинг",
+         formType: "Активный Отдых лендинг",
          link: window.location.href,
          ...URLData,
       }

@@ -181,16 +181,22 @@ const ChillProgramPopup = ({ onClose }) => {
                   )
                })}
             </div> */}
-            <div className="items-center sm:justify-start justify-centers gap-10 flex-col sm:flex-row flex">
+            <div className="items-center sm:justify-start justify-center mb-[20px] gap-5 flex-col sm:flex-row flex">
                <div onClick={onClose} className=" cursor-pointer flex items-center gap-2 h-3 ">
                   <img src={arrow} className='transform rotate-180' alt="" />
                   <div className="text-stone-700 font-medium  leading-snug">Вернуться назад</div>
                </div>
 
+               <div>
 
+               </div>
                <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module'); onClose() }} className="w-[184.02px] cursor-pointer h-[41.89px] flex items-center justify-center rounded-tr-[20px] rounded-bl-[20px] border-2 border-stone-700">
                   <div className="w-[135.03px] h-[17.26px] text-center text-stone-700 text-base font-bold montserrat leading-snug tracking-tight">Забронировать</div>
                </div>
+
+               <a onClick={() => { onClose() }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                  <div className="text-center text-zinc-500 font-semibold">Узнать подробнее</div>
+               </a>
 
             </div>
 

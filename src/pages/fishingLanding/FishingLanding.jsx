@@ -18,6 +18,7 @@ import FishGuest from './components/FishGuest'
 import FishMap from './components/FishMap'
 import FishContacts from './components/FishContacts'
 import FishForm from './components/FishForm'
+import FishProgram from './components/FishProgram'
 
 const FishingLanding = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -96,9 +97,10 @@ const FishingLanding = () => {
             links={links}
             toggleMenu={toggleMenu}
             MenuClassName='bg-FBlack text-grey'
-            className='bg-black font-bold text-grey' />
+            className='bg-[#081130] font-bold text-grey' />
          <div className='bg-FBlack relative  w-full h-full'>
             <FishHero />
+            <FishProgram />
             <FishPhoto />
             <FishServices />
             <FishMap />
@@ -111,7 +113,7 @@ const FishingLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer FooterLinks={footerLinks} className='bg-FBlack text-grey' />
+         <Footer FooterLinks={footerLinks} isMediaOpen={false} className='bg-FBlack text-grey' />
       </div>
    )
 }

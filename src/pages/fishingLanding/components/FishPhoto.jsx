@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 // import next from "icons/next_photo.png"
 // import prev from "icons/prev_photo.png"
 
+
 import next from "icons/swipernext_black.png"
 import prev from "icons/swiperprev_black.png"
 

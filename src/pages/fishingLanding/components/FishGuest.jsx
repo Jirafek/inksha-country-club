@@ -38,13 +38,13 @@ const guests = [
 const FishGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className="bg-FBlack relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
-         <div className='text-white font-bold text-center mb-[10vh] text-36px'>Что говорят наши гости</div>
+      <div className="bg-FBlack relative pt-[5vh] pb-[5vh] md:pb-[25vh]">
+         <div className='text-white font-bold text-center mb-[10vh] text-lg'>Что говорят наши гости</div>
          <div className="wrapper ">
             <Swiper
-               // install Swiper modules
+
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10"
+               className="korpswiper min-h-[300px] mb-10"
                spaceBetween={50}
                loop={true}
                autoplay={{

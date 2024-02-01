@@ -2,11 +2,14 @@
 }
 
 .hero {
-	background-image: url('./../../../public/image/fishing/Hero.webp');
+	background-image: url('./../../../public/images/fishing/Hero.webp');
 }
 
 .services_wrapper:nth-of-type(2),
+.services_wrapper:nth-of-type(1),
+.services_wrapper:nth-of-type(3),
 .services_wrapper:nth-of-type(4),
+.services_wrapper:nth-of-type(5),
 .services_wrapper:nth-of-type(6),
 .services_wrapper:nth-of-type(10),
 .services_wrapper:nth-of-type(12),

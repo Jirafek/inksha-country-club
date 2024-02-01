@@ -5,9 +5,9 @@ import loc4 from "images/korpLanding/locations/004.webp"
 import longarrow from "icons/longbrownarrow.png"
 
 // import arrow from "icons/arrow.png"
-import Button from "common/Button"
-import { Link } from "react-router-dom"
 
+import { Link } from "react-router-dom"
+import ChillModule from './ChillModule'
 
 const locations = [
    {
@@ -42,7 +42,7 @@ const locations = [
 const ChillLocations = () => {
    return (
       <div id="locations" className=" text-black ">
-         <div className="wrapper py-[10vh]">
+         <div className="wrapper py-[20vh]">
 
             <div className="grid grid-rows-1 grid-cols-1 md:place-items-start place-items-center gap-10 md:grid-cols-2">
                {locations.map((loc, i) => {
@@ -78,12 +78,13 @@ const ChillLocations = () => {
                })}
             </div>
             {/* <LocationsBlocks /> */}
-            <a href="#form">
+            {/* <a href="#form">
                <Button className="bg-ChillBrown text-md  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
                   Забронировать
 
                </Button>
-            </a>
+            </a> */}
+            <ChillModule />
          </div>
       </div>
    )

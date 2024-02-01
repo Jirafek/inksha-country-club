@@ -57,9 +57,12 @@ const BanServices = () => {
    const services = GetServices()
 
    return (
-      <div id='services' className='relative py-[100px] wrapper text-black  '>
+      <div id='services' className='relative py-[50px] wrapper text-black  '>
+         {/* <div className="max-w-[1282.45px] px-[20px]  py-[40px] mx-auto text-center text-stone-900 text-md font-semibold leading-2 tracking-wide">После бани можно отдохнуть в уютном домике или коттедже. Здесь можно насладиться спокойствием и уединением, отдохнуть от повседневных забот. Уха или плов от шефа станут отличным завершением такого отдыха. Наслаждаясь вкусной кухней, можно насладиться ароматами свежих ингредиентов, подаривших блюдам неповторимый вкус. Это станет идеальным способом расслабиться после бани в уютной обстановке.</div> */}
+
          <div>
-            <div className='text-center text-md+ font-bold'>Дополнительные услуги</div>
+            <div className='text-center text-lg font-bold'>Дополнительные услуги</div>
+
             <div className={`grid grid-cols-1 ${s.acariMedium} md:grid-cols-2 mt-8 mx-[40px] md:mx-auto gap-x-11 max-w-[1200px] content-center `}>
 
 

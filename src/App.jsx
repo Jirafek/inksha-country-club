@@ -11,6 +11,10 @@ import { AnimatePresence } from 'framer-motion'
 import FadeIn from './common/animation/FadeIn'
 import Cookies from 'js-cookie'
 
+
+import { useLocation } from 'react-router-dom'
+
+
 const Home = loadable(() => import("pages/Home"))
 const Cookie = loadable(() => import('./common/Cookie'))
 const NYLanding = loadable(() => import("pages/newYear/NYLanding"))
@@ -51,6 +55,35 @@ export default function App() {
     const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
 
 
+    const { pathname } = useLocation()
+
+    console.log(pathname)
+
+    const FixedButtons = () => {
+        return (
+            <div className={`${pathname === '/' ? 'bottom-[120px]' : 'bottom-0'} fixed  z-[4000] right-0 flex flex-col items-center`}>
+                {/* лучше не пробовать читать это говно))))) */}
+                {
+                    isTimerOn ? (isHelpButtonActive ? <FadeIn onClick={handleButtonClick} className=''>
+                        <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+                    </FadeIn> : <div></div>)
+                        : <FadeIn onClick={handleButtonClick} className=''>
+                            <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
+                        </FadeIn>
+                }
+
+
+
+                <div className='z-[4000]  h-[60px] w-[60px] '>
+                    <a className='' href={`tel:${phoneNumber}`}>
+                        <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
+                    </a>
+                </div>
+            </div>
+        )
+    }
+
+
     // console.log(!Cookies.get('isTimerOn'))
 
     if (isTimerOn) {
@@ -62,6 +95,12 @@ export default function App() {
                 }, 40000))
         }, [])
     }
+
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
 
     useEffect(() => {
@@ -173,29 +212,13 @@ export default function App() {
                 <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
 
 
-
+                <FixedButtons />
 
                 {isHelpPopupOpen &&
                     <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />
                 }
 
-                {/* лучше не пробовать читать это говно))))) */}
-                {
-                    isTimerOn ? (isHelpButtonActive ? <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
-                        <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
-                    </FadeIn> : <div></div>)
-                        : <FadeIn onClick={handleButtonClick} className='fixed z-[4000] bottom-[190px] right-[5px]'>
-                            <img className='w-[50px]  h-[50px]' src={messageIcon} alt="" />
-                        </FadeIn>
-                }
 
-
-
-                <div className='fixed bottom-[130px] z-[4000]  h-[60px] w-[60px] right-0'>
-                    <a className='' href={`tel:${phoneNumber}`}>
-                        <img className='w-full h-full' src={call} alt="Икша Кантри Клаб" />
-                    </a>
-                </div>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/booking" element={<Booking />} />

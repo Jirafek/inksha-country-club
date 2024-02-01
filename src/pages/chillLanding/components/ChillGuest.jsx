@@ -38,7 +38,7 @@ const guests = [
 const ChillGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className={` ${s.guestBg} relative pt-[5vh] pb-[15vh] max-h-[1000px] text-white md:pb-[25vh]`}>
+      <div className={` ${s.guestBg} relative pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
          <div className='text-white font-bold text-center mb-[10vh] text-md+'>Что говорят наши гости</div>
          <div className="flex px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
             <button
@@ -66,7 +66,7 @@ const ChillGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10"
+               className="korpswiper mb-10 min-h-[300px]"
                spaceBetween={50}
                loop={true}
                autoplay={{

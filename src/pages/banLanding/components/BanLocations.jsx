@@ -7,6 +7,7 @@ import longarrow from "icons/longarrow.png"
 // import arrow from "icons/arrow.png"
 import Button from "common/Button"
 import { Link } from "react-router-dom"
+import ChillModule from '../../chillLanding/components/ChillModule'
 
 
 const locations = [
@@ -78,12 +79,13 @@ const BanLocations = () => {
                })}
             </div>
             {/* <LocationsBlocks /> */}
-            <a href="#form">
+            <ChillModule />
+            {/* <a href="#form">
                <Button className="bg-black text-[15px]  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
                   Забронировать
 
                </Button>
-            </a>
+            </a> */}
          </div>
       </div>
    )

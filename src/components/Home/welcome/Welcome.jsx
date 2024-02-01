@@ -12,6 +12,8 @@ import MainPopup from "../../../common/MainPopup"
 import WelcomeSwiper from './components/WelcomeSwiper'
 import styles from './welcome.module.scss'
 
+import logo from 'icons/events/active.png'
+
 const heading = {
    hidden: {},
    visible: {
@@ -208,7 +210,7 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/New-Year" className="absolute right-10 top-10 z-[1000]">
+         <Link to="/active" className="absolute right-10 top-10 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
@@ -220,7 +222,7 @@ const Welcome = () => {
                initial="initial"
                animate="animate"
                variants={pumpkin_vars}
-               src={ny_logo}
+               src={logo}
                className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
                alt=""
             />

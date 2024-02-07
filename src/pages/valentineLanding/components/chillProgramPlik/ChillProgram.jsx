@@ -3,13 +3,35 @@
 import { v4 as uuid4 } from 'uuid'
 import { m } from 'framer-motion'
 
-import main1 from 'images/fishing/program/001.webp'
-import main2 from 'images/fishing/program/002.webp'
-import main3 from 'images/fishing/program/003.webp'
-import main4 from 'images/fishing/program/004.webp'
-import main5 from 'images/fishing/program/005.webp'
-import main6 from 'images/fishing/program/006.webp'
-
+import main1 from 'images/chill/program/001.webp'
+import main2 from 'images/chill/program/002.webp'
+import main3 from 'images/chill/program/003.webp'
+import main4 from 'images/chill/program/004.webp'
+import main5 from 'images/chill/program/005.webp'
+import main6 from 'images/chill/program/006.webp'
+import main7 from 'images/chill/program/007.webp'
+import main8 from 'images/chill/program/008.webp'
+import main9 from 'images/chill/program/009.webp'
+import main10 from 'images/chill/program/010.webp'
+import main11 from 'images/chill/program/011.webp'
+import main12 from 'images/chill/program/012.webp'
+import main13 from 'images/chill/program/013.webp'
+import main14 from 'images/chill/program/014.webp'
+import main15 from 'images/chill/program/015.webp'
+import main16 from 'images/chill/program/016.webp'
+import main17 from 'images/chill/program/017.webp'
+import main18 from 'images/chill/program/018.webp'
+import main19 from 'images/chill/program/019.webp'
+import main20 from 'images/chill/program/020.webp'
+import main21 from 'images/chill/program/021.webp'
+import main22 from 'images/chill/program/022.webp'
+import main23 from 'images/chill/program/023.webp'
+import main24 from 'images/chill/program/024.webp'
+import main25 from 'images/chill/program/025.webp'
+import main26 from 'images/chill/program/026.webp'
+import main27 from 'images/chill/program/027.webp'
+import main28 from 'images/chill/program/028.webp'
+import main29 from 'images/chill/program/029.webp'
 // import main30 from 'images/chill/program/030.webp'
 
 
@@ -40,7 +62,7 @@ import Button from 'common/Button'
 
 
 
-import s from './../fishing.module.scss'
+import s from './../../chill.module.scss'
 import { useEffect, useRef, useState } from 'react'
 
 const GetProgram = () => {
@@ -48,22 +70,23 @@ const GetProgram = () => {
 
       {
          img: main1,
-         title: 'Казан плова/ухи + аренда удочки + чай из самовара/ глинтвейн',
-         oldPrice: '10 990 ₽ /чел',
-         price: '1990 ₽ /чел',
+         title: 'Казан плова + заезд на фэтбайках',
+         price: '4990₽',
          number: 1,
          hasAbout: false,
+         oldPrice: '',
          desc: '',
+
          time: 'Лето',
          isManyPeople: false,
       },
       {
          img: main2,
-         title: 'Казан плова +заезд на фэтбайках',
-         price: '1990 ₽ /чел.',
-         oldPrice: '8990 ₽ /чел.',
+         title: 'Экскурсия в Усадьбу Марфино + аренда фэтбайков или лыж + казан ухи/плова ',
+         price: '1 190 ₽ /чел.',
+         oldPrice: '10 990 ₽ /чел.',
          number: 2,
-         hasAbout: false,
+         hasAbout: true,
          desc: 'с онлайн-гидом',
 
 
@@ -71,23 +94,89 @@ const GetProgram = () => {
          isManyPeople: false,
 
       },
+      // {
+      //    img: main3,
+      //    title: 'Фэтбайки',
+      //    price: '1000₽',
+      //    oldPrice: '',
+      //    number: 3,
+      //    hasAbout: true,
+      //    desc: '',
+
+      //    time: 'Лето',
+      //    isManyPeople: false,
+      // },
+
+
+      // {
+      //    img: main4,
+      //    title: 'Гидроцикл',
+      //    price: 'от 3 500₽',
+      //    oldPrice: '',
+      //    number: 4,
+      //    hasAbout: true,
+      //    desc: '* цена за 1 час',
+      //    type: 'Лето'
+
+      // },
+      // {
+      //    img: main5,
+      //    title: 'Волейбол',
+      //    price: '1000₽',
+      //    oldPrice: '',
+      //    number: 5,
+      //    hasAbout: true,
+      //    desc: '* цена за 1 час',
+      //    type: 'Лето'
+      // },
+      // {
+      //    img: main6,
+      //    title: 'Сап-борд',
+      //    price: '3 000₽',
+      //    oldPrice: '',
+      //    number: 6,
+      //    hasAbout: true,
+      //    desc: '* цена за 1 шт',
+      //    type: 'Лето'
+      // },
+      // {
+      //    img: main7,
+      //    title: 'Катер',
+      //    price: '10 000₽',
+      //    oldPrice: '',
+      //    number: 7,
+      //    hasAbout: true,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
+      // {
+      //    img: main8,
+      //    title: 'Баня с купелью',
+      //    oldPrice: '',
+      //    price: '10 000₽',
+      //    number: 8,
+      //    hasAbout: true,
+      //    desc: '* цена за 1 час',
+      //    type: 'Лето'
+
+      // },
       {
-         img: main3,
-         title: 'Баня с купелью',
-         // oldPrice: '10 990 ₽ /чел', 
-         price: '10 000 ₽',
-         number: 3,
-         hasAbout: false,
-         desc: '* цена за 2 часа',
+         img: main9,
+         title: 'Кино и настольные игры + казан ухи/плова',
+         oldPrice: '10 990 ₽ /чел',
+         price: '1 190 ₽ /чел.',
+         number: 9,
+         hasAbout: true,
+         desc: '',
 
 
          time: 'Зима',
          isManyPeople: false,
       },
       {
-         img: main4,
-         title: 'Казан плова + заезд на лодке',
-         price: '1990 ₽ /чел.',
+         img: main10,
+         title: 'Баббл соккер + аренда беседки + мангал(уголь, решётка)',
+         price: '1 190 ₽ /чел.',
          oldPrice: '8990 ₽ /чел.',
          number: 10,
          hasAbout: false,
@@ -97,32 +186,237 @@ const GetProgram = () => {
          time: 'Лето',
          isManyPeople: false,
       },
+      // {
+      //    img: main11,
+      //    title: 'Казан плова + заезд на лодке',
+      //    price: '4990 ₽ /чел.',
+      //    oldPrice: '8990 ₽ /чел.',
+      //    number: 11,
+      //    hasAbout: false,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
       {
-         img: main5,
-         title: 'Снегоход',
+         img: main12,
+         title: 'Заплыв на каноэ + баня с купелью + чай из самовара на выбор',
          price: '1 590 ₽ /чел.',
-         oldPrice: '3 990 ₽ /чел',
-         number: 5,
+         oldPrice: '12 990 ₽ /чел.',
+         number: 12,
          hasAbout: false,
-         desc: '* цена за 1 час',
+         desc: '',
 
 
          time: 'Лето',
          isManyPeople: false,
       },
       {
-         img: main6,
-         title: 'Стрельба из лука + баня с купелью на 3 часа + аренда мангала',
-         price: '1 990 ₽ /чел',
+         img: main13,
+         title: 'Катание на SUP-досках + баня с купелью или казан ухи/плова ',
+         price: '1 590 ₽ /чел',
          oldPrice: '15 990 ₽ /чел.',
-         number: 6,
+         number: 13,
          hasAbout: false,
          desc: '',
 
          time: 'Лето',
          isManyPeople: false,
       },
+      // {
+      //    img: main14,
+      //    title: 'Экскурсия в Марфино + аренда фэтбайков + казан ухи/плова',
+      //    price: '6 990 ₽ /чел.',
+      //    oldPrice: '10 990 ₽ /чел.',
+      //    number: 14,
+      //    hasAbout: false,
+      //    desc: '',
 
+
+      //    time: ['Лето', 'Зима'],
+      //    isManyPeople: false,
+      // },
+      // {
+      //    img: main15,
+      //    title: 'Экскурсия в Марфино + аренда фэтбайков + казан ухи/плова + ночлег в охотничьем домике с видом на водохранилище',
+      //    price: '13 990 ₽ /чел',
+      //    oldPrice: '18 990 ₽ /чел',
+      //    number: 15,
+      //    hasAbout: false,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
+      // {
+      //    img: main16,
+      //    title: 'Аренда квадроциклов/снегоходов  + казан ухи/плова + ночлег в охотничьем домике с видом на водохранилище',
+      //    price: 'от 15 990 ₽ /чел',
+      //    oldPrice: 'от 19 990 ₽ /чел',
+      //    number: 16,
+      //    hasAbout: false,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
+      // {
+      //    img: main17,
+      //    title: 'Ночлег в выбранной локации + аренда мангала(уголь,решёка) + чай из самовара или глинтвейн',
+      //    price: 'от 11990 ₽ / чел.',
+      //    oldPrice: 'от 15990 ₽ / чел.',
+      //    number: 17,
+      //    hasAbout: false,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
+      {
+         img: main18,
+         title: 'Командные лыжи + аренда бани с купелью + чай из самовара или глинтвейн',
+         price: 'от 1 190 ₽ /чел',
+         oldPrice: 'от 15 990 ₽ /чел',
+         number: 18,
+         hasAbout: false,
+         desc: '',
+
+
+         time: 'Зима',
+         isManyPeople: false,
+      },
+      {
+         img: main19,
+         title: 'Стрельба из лука или дартс + баня с купелью на 3 часа + аренда мангала',
+         price: '1 590 ₽ /чел',
+         oldPrice: '12 990 ₽ /чел',
+         number: 19,
+         hasAbout: false,
+         desc: '',
+
+
+         time: ['Лето', 'Зима'],
+         isManyPeople: false,
+      },
+      {
+         img: main20,
+         title: 'Перетягивание каната + аренда мангала + аренда волейбольной площадки',
+         price: '5 990 ₽ /чел',
+         oldPrice: '9 990 ₽ /чел',
+         number: 20,
+         hasAbout: false,
+         desc: '',
+
+
+         time: 'Лето',
+         isManyPeople: false,
+      },
+      {
+         img: main21,
+         title: 'Перетягивание каната + стрельба из лука + “Скользкое бревно” + прыжок доверия + “китайские палочки” + казан ухи / плова',
+         price: '1 990 ₽ /чел',
+         oldPrice: '15 990 ₽ /чел',
+         number: 21,
+         hasAbout: false,
+         desc: '*Рассчитано на команды от 4 человек',
+
+
+         time: 'Лето',
+         isManyPeople: false,
+      },
+      // {
+      //    img: main22,
+      //    title: 'Фотосессия + аренда катера + ужин на двоих',
+      //    price: '10 990 ₽ /чел',
+      //    oldPrice: '18 990 ₽ /чел',
+      //    number: 22,
+      //    hasAbout: false,
+      //    desc: '',
+      //    type: 'Лето'
+      // },
+      {
+         img: main23,
+         title: 'Квест: расследование таинственного убийства в лесу  + казан ухи/плова',
+         price: '1 990 ₽ /чел',
+         oldPrice: '15 990 ₽ /чел',
+         number: 23,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 4 человек',
+
+
+         time: ['Лето', 'Зима'],
+         isManyPeople: false,
+      },
+      {
+         img: main24,
+         title: 'Стэнд-ап паддл (заезд на равновесие на SUP - досках)',
+         price: '6 990 ₽ /чел',
+         oldPrice: '9 990 ₽ /чел',
+         number: 24,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 3 человек',
+
+
+         time: 'Лето',
+         isManyPeople: false,
+      },
+      {
+         img: main25,
+         title: '“Охота за сокровищами”(игра на сплочение и укрепеление командного духа) + казан ухи/плова',
+         price: '1 990 ₽ /чел',
+         oldPrice: '10 990 ₽ /чел',
+         number: 25,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 4 человек',
+
+
+         time: ['Лето', 'Зима'],
+         isManyPeople: false,
+      },
+      {
+         img: main26,
+         title: '“Зарница” Найди флаг и передай его на базу! Твоя команда сможет сделать это первой? + казан ухи/плова',
+         price: '1 590 ₽ /чел',
+         oldPrice: '12 990 ₽ /чел',
+         number: 26,
+         hasAbout: false,
+         desc: '*Рассчитано на команды от 4 человек',
+
+         time: ['Зима', 'Лето'],
+         isManyPeople: true,
+
+      },
+      {
+         img: main27,
+         title: '“Строительство плота”(Запоминающийся способ развлечь сотрудников и сплотить коллег) + казан ухи/плова',
+         price: '1 590 ₽ /чел',
+         oldPrice: '12 990 ₽ /чел',
+         number: 27,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 4 человек',
+
+
+         time: 'Лето',
+         isManyPeople: true,
+      },
+      {
+         img: main28,
+         title: 'Спортивная ориентация(“Весёлые старты”)',
+         price: '1 190 ₽ /чел',
+         oldPrice: '10 990 ₽ /чел',
+         number: 28,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 5 человек',
+
+
+         time: ['Зима', 'Лето'],
+         isManyPeople: true,
+      },
+      {
+         img: main29,
+         title: 'Кулинарный тимбилдинг Чья команда приготовит самое вкусное блюдо? + баня с купелью на 3 часа + аренда мангала',
+         price: '1 990 ₽ /чел',
+         oldPrice: '15 990 ₽ /чел',
+         number: 29,
+         hasAbout: false,
+         desc: '* Рассчитано на команды от 5 человек',
+
+
+         time: ['Зима', 'Лето'],
+         isManyPeople: true,
+      },
 
 
    ]
@@ -132,13 +426,13 @@ const GetProgram = () => {
 
 
 
-const FishProgram = () => {
+const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
    const program = GetProgram()
 
 
    const [isManyPeople, setIsManyPeople] = useState(false)
-   const [currentTime, setTime] = useState('Лето')
+
 
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const [selectedimages, setSelectedimages] = useState(program)
@@ -223,9 +517,9 @@ const FishProgram = () => {
    console.log()
 
    return (
-      <div name='proga' id='program' className='relative bg-[#081130] py-[10vh] text-black'>
+      <div name='proga' id='program' className='relative text-black'>
          <div id="znms-service-widget-module"></div>
-         <div className="text-center text-white mb-[10vh] text-lg font-bold leading-[62.40px]">Активный отдых в Икша Кантри Клаб</div>
+         <div className="text-center text-stone-700 mb-[10vh] text-lg font-bold leading-[62.40px]">Активный отдых в Икша Кантри Клаб</div>
          {/* <div className=' font-bold text-center mb-[10vh] text-ChillHeadBrown text-lg'>Активный отдых в Икша Кантри Клаб</div> */}
 
 
@@ -258,7 +552,8 @@ const FishProgram = () => {
          </m.button> */}
 
 
-         {/* <div className='flex justify-center mb-[50px] md:mb-[100px] items-center gap-5'>
+         <div className='flex justify-center mb-[50px] md:mb-[100px] items-center gap-5'>
+
             <div className="w-[101.84px] h-[46.98px] ">
                <div
                   onClick={toggleTime}
@@ -308,7 +603,10 @@ const FishProgram = () => {
                <div className="text-center text-stone-600 text-sm font-semibold leading-normal tracking-tight">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
 
             </div>
-         </div> */}
+
+
+
+         </div>
 
 
 
@@ -471,7 +769,7 @@ const FishProgram = () => {
             </Swiper>
          </div>
 
-         {/* <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
+         <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='text-white text-center text-md font-semibold'>
                Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
@@ -480,11 +778,11 @@ const FishProgram = () => {
          </div>
          <a className='mx-auto' href='#module'>
             <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
-         </a> */}
+         </a>
 
 
       </div >
    )
 }
 
-export default FishProgram
+export default ChillProgram

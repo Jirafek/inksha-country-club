@@ -69,18 +69,6 @@ const GetProgram = () => {
    const program = [
 
       {
-         img: main1,
-         title: 'Казан плова + заезд на фэтбайках',
-         price: '4990₽',
-         number: 1,
-         hasAbout: false,
-         oldPrice: '',
-         desc: '',
-
-         time: 'Лето',
-         isManyPeople: false,
-      },
-      {
          img: main2,
          title: 'Экскурсия в Усадьбу Марфино + аренда фэтбайков или лыж + казан ухи/плова ',
          price: '1 190 ₽ /чел.',
@@ -293,7 +281,7 @@ const GetProgram = () => {
       {
          img: main20,
          title: 'Перетягивание каната + аренда мангала + аренда волейбольной площадки',
-         price: '5 990 ₽ /чел',
+         price: '1 990 ₽ /чел',
          oldPrice: '9 990 ₽ /чел',
          number: 20,
          hasAbout: false,
@@ -342,7 +330,7 @@ const GetProgram = () => {
       {
          img: main24,
          title: 'Стэнд-ап паддл (заезд на равновесие на SUP - досках)',
-         price: '6 990 ₽ /чел',
+         price: '1 990 ₽ /чел',
          oldPrice: '9 990 ₽ /чел',
          number: 24,
          hasAbout: false,

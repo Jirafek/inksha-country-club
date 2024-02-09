@@ -9,7 +9,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/autoplay"
 import "swiper/css/scrollbar"
-import s from './../chill.module.scss'
+import s from './../valen.module.scss'
 
 import guest2 from "images/korpLanding/guest/002.webp"
 
@@ -35,7 +35,7 @@ const guests = [
 
 ]
 
-const ChillGuest = () => {
+const ValenGuest = () => {
    const swiperRef = useRef()
    return (
       <div className={` ${s.guestBg} relative pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
@@ -66,7 +66,7 @@ const ChillGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10 min-h-[400px]"
+               className="korpswiper min-h-[400px] mb-10"
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -119,4 +119,4 @@ const ChillGuest = () => {
    )
 }
 
-export default ChillGuest
+export default ValenGuest

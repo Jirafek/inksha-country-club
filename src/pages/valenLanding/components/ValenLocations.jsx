@@ -7,7 +7,7 @@ import longarrow from "icons/longbrownarrow.png"
 // import arrow from "icons/arrow.png"
 
 import { Link } from "react-router-dom"
-import ChillModule from './ChillModule'
+import ValenModule from './ValenModule'
 
 const locations = [
    {
@@ -39,10 +39,10 @@ const locations = [
       link: '/locations-about',
    },
 ]
-const ChillLocations = () => {
+const ValenLocations = () => {
    return (
       <div id="locations" className=" text-black ">
-         <div className="wrapper py-[20vh]">
+         <div className="wrapper py-[15vh]">
 
             <div className="grid grid-rows-1 grid-cols-1 md:place-items-start place-items-center gap-10 md:grid-cols-2">
                {locations.map((loc, i) => {
@@ -79,15 +79,15 @@ const ChillLocations = () => {
             </div>
             {/* <LocationsBlocks /> */}
             {/* <a href="#form">
-               <Button className="bg-ChillBrown text-md  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
+               <Button className="bg-ValenBrown text-md  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
                   Забронировать
 
                </Button>
             </a> */}
-            <ChillModule />
+            <ValenModule />
          </div>
       </div>
    )
 }
 
-export default ChillLocations
+export default ValenLocations

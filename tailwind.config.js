@@ -4,7 +4,7 @@ export default {
    theme: {
       fontSize: {
          "3xl": "clamp(60px, 20vw, 128px)",
-
+         "2xl": "clamp(32px, 5vw, 96px)",
          ultra: "clamp(48px, 10vw, 128px)",
          tarif: "clamp(6px, 5vw, 24px)",
          xl: "clamp(30px, 5vw, 70px)",
@@ -55,7 +55,8 @@ export default {
             NYred: "#EF004B",
             NYheader: "#041106",
             FBlack: '#081130',
-            ChillBrown: '#593723'
+            ChillBrown: '#593723',
+            ValenPurple: '#79072C',
          },
          container: {
             center: true,

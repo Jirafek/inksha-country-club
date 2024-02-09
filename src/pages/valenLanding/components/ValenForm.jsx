@@ -4,7 +4,7 @@ import Button from "common/Button"
 
 import { URLData } from "utils/URLData"
 
-import s from './../chill.module.scss'
+import s from './../valen.module.scss'
 
 import InputMask from "react-input-mask"
 
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom"
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
-const ChillForm = () => {
+const ValenForm = () => {
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
@@ -29,14 +29,14 @@ const ChillForm = () => {
          groupID: 1002014846298,
       }
       if (!email.match(emailRegex)) {
-         alert("Введите корректный почтовый адресс")
+         alert("Введите корректный почтовый адрес")
          return
       }
 
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Активный Отдых лендинг",
+         formType: "14 февраля лендинг",
          link: window.location.href,
          ...URLData,
       }
@@ -107,18 +107,18 @@ const ChillForm = () => {
       <div id="form" className={`${s.formBg}  py-[80px] `}>
          <div className="w-full flex justify-center md:justify-end ">
             <form
-               className="montserrat flex justify-center md:mr-[20px] bg-[#ECE9E9] rounded-[28.37px] shadow border border-stone-400 flex-col items-center  w-[90%] md:max-w-[640px]   px-[20px] py-[30px] md:px-[50px] md:py-[70px]"
+               className="montserrat flex justify-center md:mr-[20px] bg-white rounded-[28.37px] shadow border border-stone-400 flex-col items-center  w-[90%] md:max-w-[640px]   px-[20px] py-[30px] md:px-[50px] md:py-[70px]"
                name="Form"
                action=""
             >
-               <h2 className="mb-10 text-center text-md text-black">
+               <h2 className="mb-10 text-center text-md text-[#FF2D72]">
                   Оставьте ваши данные, и наш менеджер свяжется с вами для
                   уточнения деталей
                </h2>
                <input
                   type="text"
                   placeholder="Имя"
-                  className="mb-5 border border-ChillBrown h-[40px] pl-[25px] md:pl-[50px] md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#C5C3C3] outline-none md:text-[27px]"
+                  className="mb-5 border border-[#FF2D72] h-[40px] pl-[25px] md:pl-[50px] md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#FF2D72] outline-none md:text-[27px]"
                   onChange={handleNameChange}
                   value={name}
                />
@@ -132,7 +132,7 @@ const ChillForm = () => {
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className={`mb-5 border border-ChillBrown h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#C5C3C3] outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
+                        className={`mb-5 border border-[#FF2D72] h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#FF2D72] outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
                            }`}
                         {...inputProps}
                      />
@@ -142,14 +142,14 @@ const ChillForm = () => {
                <input
                   type="text"
                   placeholder="Email"
-                  className="mb-5 border border-ChillBrown h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#C5C3C3] outline-none md:text-[27px]"
+                  className="mb-5 border border-[#FF2D72] h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#FF2D72] outline-none md:text-[27px]"
                   onChange={handleEmailChange}
                   value={email}
                />
 
                <Button
                   onClick={handleSubmit}
-                  className="mx-auto h-[40px] w-full md:h-[60px] montserrat gap-10 md:w-full  bg-ChillBrown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                  className="mx-auto h-[40px] w-full md:h-[60px] montserrat gap-10 md:w-full  bg-[#FF2D72] text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
                   Узнать стоимость
 
@@ -160,4 +160,4 @@ const ChillForm = () => {
    )
 }
 
-export default ChillForm
+export default ValenForm

@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 
 import { isItWinterNow } from "utils/helpers"
 
-
-const ChillModule = () => {
+import s from './../valen.module.scss'
+const ValenModule = () => {
    useEffect(() => {
       const script = document.createElement("script")
       script.src = "//widget.bronirui-online.ru/js/app.js"
@@ -38,6 +38,7 @@ const ChillModule = () => {
          const customStyles = `
             #module > div > div:nth-child(1) > div > div {
                position: unset !important;
+               background-color: #FF96B8 !important;
             }
             @media (min-width: 960px){
                .znms-widget__module-form-block__items--input-container{
@@ -47,51 +48,48 @@ const ChillModule = () => {
 
                
             }
-           
-            .znms-widget__main-wrapper {
 
-               
-               margin:0 auto 50px auto !important;
-               box-shadow: none !important;
-               width:auto !important;
-               margin:auto !important;
-            }
+            
+           
+
              
             .znms-widget__module-form-block__btn {
                box-shadow: none !important;
                position: unset !important;
                border:none !important;
             }
-               .znms-widget__main-wrapper {
-                  position: unset !important;
+            .znms-widget__main-wrapper {
+               position: unset !important;
+               border-radius:22px !important;
+               background-color: #FF96B8 !important;
+               backdrop-filter: none !important;
+               -webkit-backdrop-filter: none !important;
+               --tw-backdrop-blur: none !important;
+               box-shadow: none !important;
+            }
+
+            .znms-widget__teleporter {
+               position: relative;
+               bottom: -100px;
+               border-radius:22px !important;
                
-                  background-color: #AB8E67 !important;
-                  backdrop-filter: none !important;
-                  -webkit-backdrop-filter: none !important;
-                  --tw-backdrop-blur: none !important;
-                  box-shadow: none !important;
-               }
+            }
 
-               .znms-widget__teleporter {
-                  position: relative;
-                  bottom: -100px;
-                  
-               }
+            .znms-widget__v-calendar-pane-container {
+               z-index: 2000 !important;
+            }
 
-               .znms-widget__v-calendar-pane-container {
-                  z-index: 2000 !important;
-               }
-
-               .znms-widget__module-form-block {
-                  background-color: #AB8E67 !important;
-                  // backdrop-filter: none !important;
-                  // -webkit-backdrop-filter: none !important;
-                  // --tw-backdrop-blur: none !important;
-                  bottom: 20px;
-               }
-               .znms-widget__widget-btn.znms-widget__v-color4{
-                  display: none !important;
-               }
+            .znms-widget__module-form-block {
+               background-color: #FF96B8 !important;
+               backdrop-filter: none !important;
+               -webkit-backdrop-filter: none !important;
+               --tw-backdrop-blur: none !important;
+               bottom: 20px;
+                border-radius:22px !important;
+            }
+            .znms-widget__widget-btn.znms-widget__v-color4{
+               display: none !important;
+            }
 
                .znms-widget__module-form-block__title  {
                   
@@ -106,7 +104,7 @@ const ChillModule = () => {
 
                .znms-widget__module-form-block__item {
                   opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
-                  background: #AB8E67;
+                  background: #FF96B8;
                   color:#AB8E67;
                   
                   padding-top: 0 !important;
@@ -141,10 +139,11 @@ const ChillModule = () => {
             Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
          </div> */}
-         <div id="znms-widget-1"></div>
+         <div className={`${s.widget}`} id="znms-widget-1"></div>
+
       </div>
    )
 }
 
 
-export default ChillModule
+export default ValenModule

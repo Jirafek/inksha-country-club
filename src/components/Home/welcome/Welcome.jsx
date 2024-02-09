@@ -1,5 +1,5 @@
 import { m } from "framer-motion"
-import ny_logo from 'icons/ny-logo.webp'
+
 import bg1avif from 'images/bg1.avif'
 import bg1 from 'images/bg1.webp'
 import { useEffect, useState } from "react"
@@ -10,9 +10,10 @@ import { isItWinterNow } from "utils/helpers"
 import AnimationButton from "../../../common/AnimationButton"
 import MainPopup from "../../../common/MainPopup"
 import WelcomeSwiper from './components/WelcomeSwiper'
-import styles from './welcome.module.scss'
 
-import logo from 'icons/events/active.png'
+import logo from 'icons/events/valen.webp'
+
+
 
 const heading = {
    hidden: {},
@@ -210,12 +211,11 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/active" className="absolute right-10 top-10 z-[1000]">
+         <Link to="/valentine" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
                   duration: 1,
-
                   repeatType: "reverse",
                   repeatDelay: 0.6,
                }}
@@ -223,9 +223,10 @@ const Welcome = () => {
                animate="animate"
                variants={pumpkin_vars}
                src={logo}
-               className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
+               className="z-[10000000] h-[100px] w-[100px] rounded-full bg-center object-cover shadow-xl"
                alt=""
             />
+
          </Link>
          <picture>
             {/* <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" /> */}

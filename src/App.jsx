@@ -40,6 +40,7 @@ const BanLanding = loadable(() => import("./pages/banLanding/BanLanding"))
 const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"))
 const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"))
 const ValenLanding = loadable(() => import("./pages/valenLanding/ValenLanding"))
+const ManLanding = loadable(() => import("./pages/manLanding/ManLanding"))
 
 export default function App() {
 
@@ -264,6 +265,7 @@ export default function App() {
                     <Route path="/fishing" element={<FishingLanding />} />
                     <Route path="/active" element={<ChillLanding />} />
                     <Route path="/valentine" element={<ValenLanding />} />
+                    <Route path="/defender" element={<ManLanding />} />
 
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />

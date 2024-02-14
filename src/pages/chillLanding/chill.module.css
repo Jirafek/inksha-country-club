@@ -1,3 +1,22 @@
+
+@font-face {
+	font-family: 'Acari Sans Bold';
+	font-display: swap;
+	src: local('AcariSans-Bold'),
+		url('./fonts/AcariSans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Acari Sans Medium';
+	font-display: swap;
+	src: url('./fonts/AcariSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 .bg {
 	background-image: url('./../../../public/image/ban/bg.png');
 
@@ -13,24 +32,9 @@
 	background-color: #8bb26f8a;
 }
 
-@font-face {
-	font-family: 'Acari Sans Bold';
-	font-display: swap;
-	src: url('./../../../public/fonts/AcariSans-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Acari Sans Medium';
-	font-display: swap;
-	src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
 
 .acariBold {
-	font-family: 'Acari Sans Bold', sans-serif;
+	font-family: 'Acari Sans Bold' !important;
 }
 
 .acariMedium {

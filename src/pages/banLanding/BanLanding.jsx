@@ -24,6 +24,26 @@ import BanProgram from './components/BanProgram/BanProgram'
 import BanProgramPopup from './components/BanProgram/BanProgramPopup'
 
 const BanLanding = () => {
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
+
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+
+
+      }
+      script.onload = initializeWidget
+
+
+
+      document.body.appendChild(script)
+
+   }, [])
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
@@ -96,7 +116,7 @@ const BanLanding = () => {
             MenuClassName='bg-white text-black'
             className=' font-bold bg-[#221C1C] text-white' />
          <div className={` ${s.bg} relative  w-full h-full`}>
-
+            <div id="znms-service-widget-module"></div>
             {productId && <BanProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
 
             <BanHero />
@@ -113,7 +133,7 @@ const BanLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer isMediaOpen={false} FooterLinks={footerLinks} className='bg-black text-white' />
+         <Footer FooterLinks={footerLinks} className='bg-black text-white' />
       </div>
    )
 }

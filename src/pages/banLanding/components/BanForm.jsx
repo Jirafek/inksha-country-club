@@ -10,13 +10,11 @@ import InputMask from "react-input-mask"
 
 import { useNavigate } from "react-router-dom"
 
-const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
-
 const BanForm = () => {
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
-   const [email, setEmail] = useState("")
+
    const [isValid, setIsValid] = useState(true)
    const [phoneError] = useState("")
    const [isError, setIsError] = useState(true) // State for tracking errors
@@ -25,13 +23,10 @@ const BanForm = () => {
       const data = {
          name: name,
          phone: phone,
-         email: email,
+         email: '-',
          groupID: 1002014846298,
       }
-      if (!email.match(emailRegex)) {
-         alert("Введите корректный почтовый адресс")
-         return
-      }
+
 
       const sendingData = {
          ...data,
@@ -61,7 +56,7 @@ const BanForm = () => {
             // ... ваша существующая логика ...
             setPhone("") // Очищаем состояние телефона
             setName("") // Очищаем состояние телефона
-            setEmail("") // Очищаем состояние телефона
+
          } else {
             alert("Произошла ошибка при отправке данных")
          }
@@ -74,9 +69,9 @@ const BanForm = () => {
    useEffect(() => {
 
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !email || !isValid
+      const newIsError = !name || !phone || !isValid
       setIsError(newIsError)
-   }, [name, phone, email])
+   }, [name, phone])
 
    const handlePhoneChange = (e) => {
       const inputValue = e.target.value
@@ -90,10 +85,7 @@ const BanForm = () => {
       setName(value)
    }
 
-   const handleEmailChange = (e) => {
-      const { value } = e.target
-      setEmail(value)
-   }
+
    const handleSubmit = (e) => {
       e.preventDefault()
       if (isError) {
@@ -139,13 +131,6 @@ const BanForm = () => {
                   )}
                </InputMask>
 
-               <input
-                  type="text"
-                  placeholder="Email"
-                  className="mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#C5C3C3] outline-none md:text-[27px]"
-                  onChange={handleEmailChange}
-                  value={email}
-               />
 
                <Button
                   onClick={handleSubmit}

@@ -8,45 +8,17 @@ import longarrow from "icons/longarrow.png"
 import Button from "common/Button"
 import { Link } from "react-router-dom"
 import ChillModule from '../../chillLanding/components/ChillModule'
+import { getLocation } from 'src/constants/locations'
 
 
-const locations = [
-   {
-      title: "ЛЕСНАЯ РЕЗИДЕНЦИЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc1,
-      link: '/locations-about',
-   },
-   {
-      title: "КОТТЕДЖ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc2,
-      link: '/locations-about',
-   },
-   {
-      title: "ШАЛЕ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc3,
-      link: '/locations-about',
-   },
-   {
-      title: "ОЛИМПИЙСКАЯ ДЕРЕВНЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc4,
-      link: '/locations-about',
-   },
-]
+
 const BanLocations = () => {
    return (
       <div id="locations" className=" text-black ">
          <div className="wrapper py-[10vh]">
 
             <div className="grid grid-rows-1 grid-cols-1 md:place-items-start place-items-center gap-10 md:grid-cols-2">
-               {locations.map((loc, i) => {
+               {getLocation().map((loc, i) => {
                   return (
                      <Link
                         to={loc.link}

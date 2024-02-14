@@ -8,6 +8,7 @@ import longarrow from "icons/longarrow.png"
 import Button from "common/Button"
 import { Link } from "react-router-dom"
 import ChillModule from '../../chillLanding/components/ChillModule'
+import { getLocation } from 'constants/locations'
 
 
 const locations = [
@@ -48,7 +49,7 @@ const FishLocations = () => {
                После успешной рыбалки мы можем предложить вам сварить уху из пойманного вами улова, а также остановиться на ночлег в уютных локациях нашего загородного клуба Икша Кантри Клаб.
             </div>
             <div className="grid grid-rows-1 grid-cols-1 md:place-items-start place-items-center gap-10 md:grid-cols-2">
-               {locations.map((loc, i) => {
+               {getLocation().map((loc, i) => {
                   return (
                      <Link
                         to={loc.link}

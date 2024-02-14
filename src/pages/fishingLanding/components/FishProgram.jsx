@@ -314,7 +314,7 @@ const FishProgram = () => {
 
          <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
 
-            {selectedimages.map((item, i) => {
+            {program.map((item, i) => {
                return (
 
                   <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
@@ -409,7 +409,7 @@ const FishProgram = () => {
                navigation
 
             >
-               {selectedimages.map((item, i) => {
+               {program.map((item, i) => {
                   return (
                      <SwiperSlide className="py-[30px]" key={i}>
 

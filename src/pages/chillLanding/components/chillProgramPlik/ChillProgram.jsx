@@ -62,7 +62,7 @@ import Button from 'common/Button'
 
 
 
-import s from './../../chill.module.scss'
+import s from './../../chill.module.css'
 import { useEffect, useRef, useState } from 'react'
 
 const GetProgram = () => {

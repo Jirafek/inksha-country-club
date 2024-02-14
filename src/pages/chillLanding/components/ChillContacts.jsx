@@ -3,7 +3,7 @@
 import inst from 'images/icons/social/black/inst.png'
 import what from 'images/icons/social/black/what.png'
 import vk from 'images/icons/social/black/vk.png'
-import s from './../chill.module.scss'
+import s from './../chill.module.css'
 import { useURLData } from 'utils/URLData'
 
 const ChillContacts = () => {

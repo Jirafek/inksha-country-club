@@ -181,10 +181,10 @@ const BanHero = () => {
                Мы предлагаем своим гостям возможность насладиться не только полезными процедурами, но и красивыми пейзажами окружающей природы.
             </div>
          </Reveal>
-       
+         {/* <div className='hidden md:block'>
 
             <div id="znms-widget-1"></div>
-
+         </div> */}
 
          <a href='#program' >
             <Button className='bg-black h-[40px] md:h-[60px] text-md md:w-[600px] mx-auto text-white'>Посмотреть услуги</Button>

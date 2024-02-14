@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'
 import ChillHero from './components/ChillHero'
 // import { BooleanParam, useQueryParam } from "use-query-params"
 
-import s from './chill.module.scss'
+import s from './chill.module.css'
 
 // import ChillServices from './components/ChillServices'
 import ChillLocations from './components/ChillLocations'

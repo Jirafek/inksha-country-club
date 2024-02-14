@@ -1,0 +1,133 @@
+/* .bg {
+	background-image: url('./../../../public/image/ban/bg.png');
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	background-color: rgba(255, 255, 255, 0.499);
+	overflow-x: hidden;
+} */
+
+.programBg{
+	/* background-image: url('./../../../public/image/valen/programBg.png'); */
+
+	/* background-position: center center; */
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: rgba(255, 255, 255, 0.499); */
+	overflow-x: hidden;
+}
+
+.banner {
+	background-color: #8bb26f8a;
+	font-family: sans-serif;
+}
+
+@font-face {
+	font-family: 'Acari Sans Bold';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rowdies Regular';
+	font-display: swap;
+	src: url('./../../../public/fonts/rowdies/Rowdies-Regular.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rockwell';
+	font-display: swap;
+	src: url('./../../../public/fonts/rockwell/Rockwell-Bold.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rosario SemiBold';
+	font-display: swap;
+	src: url('./../../../public/fonts/rosario/Rosario-SemiBold.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Acari Sans Medium';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.rowdiesReg {
+	font-family: 'Rowdies Regular', sans-serif;
+}
+
+
+
+.rockwell {
+	font-family: 'Rockwell', sans-serif;
+}
+
+
+.rosarioLight {
+	font-family: 'Rosario Light', sans-serif;
+}
+
+.acariBold {
+	font-family: 'Acari Sans Bold', sans-serif;
+}
+
+.acariMedium {
+	font-family: 'Acari Sans Medium', sans-serif;
+}
+
+.formBg {
+	background-image: url('./../../../public/image/man/formBg.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.guestBg {
+	background-image: url('./../../../public/image/man/guestBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.services_wrapper:first-of-type {
+	border-top: 1px solid white;
+	/* border-bottom: 1px solid white; */
+}
+.services_wrapper:nth-of-type(2),
+.services_wrapper:nth-of-type(3),
+.services_wrapper:nth-of-type(6) {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.services_wrapper:nth-of-type(5) {
+	border-bottom: 1px solid white;
+}
+
+@media (max-width: 767px) {
+	.services_wrapper:nth-of-type(2),
+	.services_wrapper:nth-of-type(4),
+	.services_wrapper:nth-of-type(6),
+	.services_wrapper:nth-of-type(10),
+	.services_wrapper:nth-of-type(12),
+	.services_wrapper:nth-of-type(14),
+	.services_wrapper:nth-of-type(8) {
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+	}
+}
+.services_wrapper:first-of-type {
+	border-top: 1px solid white;
+}
+
+

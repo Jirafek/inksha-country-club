@@ -57,6 +57,8 @@ export default {
             FBlack: '#081130',
             ChillBrown: '#593723',
             ValenPurple: '#79072C',
+            ManBrown: '#502500',
+            ManGreen: '#002500',
          },
          container: {
             center: true,

@@ -8,6 +8,7 @@ import longarrow from "icons/longbrownarrow.png"
 
 import { Link } from "react-router-dom"
 import ChillModule from './ChillModule'
+import { getLocation } from 'constants/locations'
 
 const locations = [
    {
@@ -45,7 +46,7 @@ const ChillLocations = () => {
          <div className="wrapper py-[20vh]">
 
             <div className="grid grid-rows-1 grid-cols-1 md:place-items-start place-items-center gap-10 md:grid-cols-2">
-               {locations.map((loc, i) => {
+               {getLocation().map((loc, i) => {
                   return (
                      <Link
                         to={loc.link}

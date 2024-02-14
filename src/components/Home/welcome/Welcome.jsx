@@ -11,7 +11,7 @@ import AnimationButton from "../../../common/AnimationButton"
 import MainPopup from "../../../common/MainPopup"
 import WelcomeSwiper from './components/WelcomeSwiper'
 
-import logo from 'icons/events/valen.webp'
+import logo from 'icons/events/man.png'
 
 
 
@@ -211,7 +211,7 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/valentine" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
+         <Link to="/defender" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { isItWinterNow } from "utils/helpers"
 
-import s from './../valen.module.scss'
+
 const ValenModule = () => {
    useEffect(() => {
       const script = document.createElement("script")
@@ -48,8 +48,6 @@ const ValenModule = () => {
 
                
             }
-
-            
            
 
              
@@ -60,7 +58,7 @@ const ValenModule = () => {
             }
             .znms-widget__main-wrapper {
                position: unset !important;
-               border-radius:22px !important;
+            
                background-color: #FF96B8 !important;
                backdrop-filter: none !important;
                -webkit-backdrop-filter: none !important;
@@ -68,28 +66,26 @@ const ValenModule = () => {
                box-shadow: none !important;
             }
 
-            .znms-widget__teleporter {
-               position: relative;
-               bottom: -100px;
-               border-radius:22px !important;
-               
-            }
+               .znms-widget__teleporter {
+                  position: relative;
+                  bottom: -100px;
+                  
+               }
 
-            .znms-widget__v-calendar-pane-container {
-               z-index: 2000 !important;
-            }
+               .znms-widget__v-calendar-pane-container {
+                  z-index: 2000 !important;
+               }
 
-            .znms-widget__module-form-block {
-               background-color: #FF96B8 !important;
-               backdrop-filter: none !important;
-               -webkit-backdrop-filter: none !important;
-               --tw-backdrop-blur: none !important;
-               bottom: 20px;
-                border-radius:22px !important;
-            }
-            .znms-widget__widget-btn.znms-widget__v-color4{
-               display: none !important;
-            }
+               .znms-widget__module-form-block {
+                  background-color: #FF96B8 !important;
+                  // backdrop-filter: none !important;
+                  // -webkit-backdrop-filter: none !important;
+                  // --tw-backdrop-blur: none !important;
+                  bottom: 20px;
+               }
+               .znms-widget__widget-btn.znms-widget__v-color4{
+                  display: none !important;
+               }
 
                .znms-widget__module-form-block__title  {
                   
@@ -139,8 +135,7 @@ const ValenModule = () => {
             Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
          </div> */}
-         <div className={`${s.widget}`} id="znms-widget-1"></div>
-
+         <div id="znms-widget-1"></div>
       </div>
    )
 }

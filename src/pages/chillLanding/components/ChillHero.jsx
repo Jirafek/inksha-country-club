@@ -4,7 +4,7 @@ import Reveal from "common/Reveal"
 import { useEffect } from 'react'
 import { isItWinterNow } from "utils/helpers"
 import Button from 'common/Button'
-import s from './../chill.module.scss'
+import s from './../chill.module.css'
 
 import next from 'icons/slider/brown/next.png'
 import prev from 'icons/slider/brown/prev.png'
@@ -37,7 +37,6 @@ import winterPhoto5 from 'images/chill/hero/winter/005.webp'
 import winterPhoto6 from 'images/chill/hero/winter/006.webp'
 import winterPhoto7 from 'images/chill/hero/winter/007.webp'
 import winterPhoto8 from 'images/chill/hero/winter/008.webp'
-
 
 const photos = [photo7, photo6, photo5, photo4, photo3, photo2, photo1]
 
@@ -179,7 +178,7 @@ const ChillHero = ({ currentTime }) => {
             <div className="relative  flex h-[80vh]  flex-col-reverse items-center justify-center ">
                <div className="z-10  flex max-w-[1000px] flex-col items-center justify-center ">
                   <Reveal delay={0.25}>
-                     <div className={`text-white ${s.acariBold} text-xl font-bold`}>
+                     <div className={`text-white acariBold text-xl font-bold`}>
                         Активный отдых
                         <br />
                         в Подмосковье
@@ -227,7 +226,7 @@ const ChillHero = ({ currentTime }) => {
                         return (
                            <SwiperSlide className="w-full h-full" key={i}>
                               <img
-                                 className="w-full filter brightness-75 object-center h-full object-cover"
+                                 className="w-full filter brightness-75 h-full object-cover"
                                  src={photo}
                                  alt=""
                               />

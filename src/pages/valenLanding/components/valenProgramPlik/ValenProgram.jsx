@@ -495,7 +495,7 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
+                                 <div onClickCapture={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
                                     <div className="text-center text-[#79072C] font-semibold ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?

@@ -9,7 +9,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/autoplay"
 import "swiper/css/scrollbar"
-import s from './../chill.module.scss'
+import s from './../chill.module.css'
 
 import guest2 from "images/korpLanding/guest/002.webp"
 
@@ -66,7 +66,7 @@ const ChillGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10 min-h-[400px]"
+               className="korpswiper mb-10"
                spaceBetween={50}
                loop={true}
                autoplay={{

@@ -26,6 +26,7 @@ export default defineConfig({
          icons: path.resolve(__dirname, "./public/image/icons/"),
          common: path.resolve(__dirname, "./src/common/"),
          utils: path.resolve(__dirname, "./src/utils/"),
+         constants: path.resolve(__dirname, "./src/constants/"),
       },
    },
 });

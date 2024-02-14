@@ -44,7 +44,7 @@ const BanGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper min-h-[250px] mb-10 bg-[#221C1C]"
+               className="korpswiper mb-10 bg-[#221C1C]"
                spaceBetween={50}
                loop={true}
                autoplay={{

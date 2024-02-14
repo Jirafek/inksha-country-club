@@ -1,5 +1,5 @@
 // import { useTranslation } from 'react-i18next'
-import s from './../chill.module.scss'
+import s from './../chill.module.css'
 
 
 const GetServices = () => {

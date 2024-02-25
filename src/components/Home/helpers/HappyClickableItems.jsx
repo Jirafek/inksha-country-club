@@ -65,7 +65,7 @@ const HappyClickableItems = ({ arrayData }) => {
             })}
          </div>
 
-         <GreenButton onClick={() => { window.znmsWidget.open('#znms-widget-1') }} className="mb-20 sm:mb-20 text-[19px]">
+         <GreenButton onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="mb-20 sm:mb-20 text-[19px]">
             Забронировать</GreenButton>
 
       </div>

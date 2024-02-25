@@ -462,11 +462,12 @@ const ManProgram = ({ handleProductClick, currentTime, setTime, }) => {
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClickCapture={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#4D382B]">
+
+                                 <div onTouchEnd={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#4D382B]">
                                     <div className="text-center text-black font-semibold ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?
-                                    <div onClickCapture={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
+                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
                                        <div className="text-center text-[#525050] font-semibold">Подробнее</div>
                                     </div>
                                     :

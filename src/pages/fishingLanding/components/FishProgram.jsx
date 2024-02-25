@@ -446,7 +446,7 @@ const FishProgram = () => {
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                                 <div onTouchEnd={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
                                     <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?

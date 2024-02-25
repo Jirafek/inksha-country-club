@@ -444,6 +444,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
    }, [])
 
 
+
    const togglePeople = () => {
 
       setIsManyPeople(!isManyPeople)
@@ -460,7 +461,9 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
       filter()
    }
 
-
+   const znms_widget_open = () => {
+      window.znmsWidget.open('#znms-service-widget-module')
+   }
    useEffect(() => {
       filter()
    }, [currentTime, isManyPeople])

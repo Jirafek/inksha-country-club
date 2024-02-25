@@ -34,6 +34,27 @@ const ChillLanding = () => {
    const [currentTime, setTime] = useState(isItWinterNow() === '_winter' ? 'Зима' : 'Лето')
 
 
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
+
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+
+
+      }
+      script.onload = initializeWidget
+
+
+
+      document.body.appendChild(script)
+
+   }, [])
+
 
 
    const toggleMenu = () => {
@@ -111,7 +132,7 @@ const ChillLanding = () => {
             className='bg-ChillBrown acariBold font-bold text-white' />
          <div className={`${s.bg} bg-white relative  w-full h-full`}>
 
-
+            <div id="znms-service-widget-module"></div>
             {productId && <ChillProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
             <ChillHero currentTime={currentTime} />
 

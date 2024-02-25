@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { v4 as uuid4 } from 'uuid'
-import { m } from 'framer-motion'
+
 
 import main1 from 'images/valen/program/001.webp'
 import main2 from 'images/valen/program/002.webp'
@@ -495,9 +495,10 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClickCapture={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
-                                    <div className="text-center text-[#79072C] font-semibold ">Забронировать</div>
+                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
+                                    <div className="text-center text-[#79072C] font-semibold">Забронировать</div>
                                  </div>
+
                                  {item.hasAbout ?
                                     <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
                                        <div className="text-center text-[#FF96B8] font-semibold">Подробнее</div>

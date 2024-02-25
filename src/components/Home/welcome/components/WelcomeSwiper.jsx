@@ -82,11 +82,11 @@ const WelcomeSwiper = () => {
                   <a className={styles.link} href="#events">Де</a>
                </div>
             </SwiperSlide> */}
-            <SwiperSlide>
+            {/* <SwiperSlide>
                <div className="text-center">
                   <a className={styles.link} href="/New-Year">Новый год</a>
                </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
             {/* <SwiperSlide>
                <div className="text-center">
                   <a className={styles.link} href="/gallery">Галерея</a>

@@ -59,6 +59,8 @@ export default {
             ValenPurple: '#79072C',
             ManBrown: '#502500',
             ManGreen: '#002500',
+            MartPurple: '#674270',
+            MartPink: '#D5B1DD',
          },
          container: {
             center: true,

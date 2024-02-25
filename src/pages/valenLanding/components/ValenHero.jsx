@@ -10,7 +10,7 @@ import s from './../valen.module.scss'
 
 import { useRef } from "react"
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import heart from 'images/valen/heart.png'
 
@@ -189,7 +189,7 @@ const ValenHero = ({ currentTime }) => {
                      </div>
                   </Reveal>
 
-                  <motion.img
+                  <m.img
                      transition={{
                         repeat: Infinity,
                         duration: 0.5,
@@ -217,7 +217,7 @@ const ValenHero = ({ currentTime }) => {
 
                </div>
 
-               <motion.img
+               <m.img
                   transition={{
                      repeat: Infinity,
                      duration: 0.5,

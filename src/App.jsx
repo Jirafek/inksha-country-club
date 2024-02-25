@@ -13,6 +13,7 @@ import Cookies from 'js-cookie'
 
 
 import { useLocation } from 'react-router-dom'
+import MartLanding from 'pages/martLanding/MartLanding'
 
 
 const Home = loadable(() => import("pages/Home"))
@@ -266,6 +267,7 @@ export default function App() {
                     <Route path="/active" element={<ChillLanding />} />
                     <Route path="/valentine" element={<ValenLanding />} />
                     <Route path="/defender" element={<ManLanding />} />
+                    <Route path="/mart" element={<MartLanding />} />
 
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />

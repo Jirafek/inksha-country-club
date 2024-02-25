@@ -22,6 +22,7 @@ import BanForm from './components/BanForm'
 import BanServices from './components/BanServices'
 import BanProgram from './components/BanProgram/BanProgram'
 import BanProgramPopup from './components/BanProgram/BanProgramPopup'
+import { useEffect } from 'react'
 
 const BanLanding = () => {
    useEffect(() => {

@@ -1,3 +1,6 @@
+import { useURLData } from "utils/URLData"
+
+
 export const
     getMonth = () => (new Date()).getMonth(),
     isItWinterNow = () => {
@@ -13,3 +16,15 @@ export const
 
         return ''
     }
+
+export const getPhoneNumber = () => {
+    const { utm_source } = useURLData()
+
+    const phoneNumber = utm_source === "yandex"
+        ? "+7(499) 505-50-67"
+        : utm_source === "vkontakte"
+            ? "+7(499) 505-50-87"
+            : "+74995055031"
+
+    return phoneNumber
+}

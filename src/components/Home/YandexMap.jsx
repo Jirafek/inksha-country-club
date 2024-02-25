@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { m } from "framer-motion"
 
 import { useURLData } from "utils/URLData"
-import { isItWinterNow } from "utils/helpers"
+import { getPhoneNumber, isItWinterNow } from "utils/helpers"
 
 const ytSrc = "https://www.youtube.com/embed/m24zezD9fWs"
 const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1]
@@ -40,7 +40,7 @@ const YandexMap = () => {
    const { utm_source, phoneContent } = useURLData()
    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
-   const phoneNumber = '+79859091202'
+   const phoneNumber = getPhoneNumber()
 
    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
@@ -85,7 +85,7 @@ const YandexMap = () => {
          </div>
          <m.div
             variants={headingLines}
-            className="monterey absolute bottom-[50px] left-[15px] h-[252px] w-[317px] rounded-[10px] border border-black bg-white px-[15px] pt-5"
+            className="monterey absolute bottom-[150px] left-[15px] h-[152px] w-[317px] rounded-[10px] border border-black bg-white px-[15px] pt-5"
          >
             <div className="relative flex h-full flex-col gap-[10px]">
                <p className="text-black underline">
@@ -98,10 +98,10 @@ const YandexMap = () => {
                      contact@ikshacountryclub.com
                   </a>
                </p>
-               <p className="text-black mb-2">
+               {/* <p className="text-black mb-2">
                   обл. Московская, р-н Мытищинский, сельское поселение
                   Федоскинское, п. Менжинец, СНТ "Икша" участок 4
-               </p>
+               </p> */}
 
                <div className="absolute bottom-[2px] right-0 flex items-center">
                   <a href={`https://wa.me/+79859091202`}>

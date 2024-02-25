@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+
+
+/* .bg {
+	background-image: url('./../../../public/image/ban/bg.png');
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	background-color: rgba(255, 255, 255, 0.499);
+	overflow-x: hidden;
+} */
+
+
+
+.heroBg{
+	background-image: url('./../../../public/image/mart/hero/bg_desctop.png');
+
+	/* background-position: center center; */
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: rgba(255, 255, 255, 0.499); */
+	overflow-x: hidden;
+}
+
+
+
+.cardBg{
+	background-color: #f2c3d52c;
+}
+
+.programBg{
+	background-image: url('./../../../public/image/mart/programBg.png');
+
+	/* background-position: center center; */
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: rgba(255, 255, 255, 0.499); */
+	overflow-x: hidden;
+}
+
+
+@font-face {
+	font-family: 'Acari Sans Bold';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rosarium';
+	font-display: swap;
+	src: url('./../../../public/fonts/Rosarium.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rosario Light';
+	font-display: swap;
+	src: url('./../../../public/fonts/rosario/Rosario-Light.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rosario SemiBold';
+	font-display: swap;
+	src: url('./../../../public/fonts/rosario/Rosario-SemiBold.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Acari Sans Medium';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.nunito {
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.rosarium {
+	font-family: 'Rosarium', sans-serif;
+}
+
+.popup{
+	background-image: url('./image/mart/popupBg.png');
+	background-repeat: no-repeat;
+	background-color: rgba(255, 255, 255, 0.802);
+	background-size: cover;
+	filter: brightness(140%); /* Увеличение яркости на 50% */
+
+}
+
+.rosarioSBold {
+	font-family: 'Rosario SemiBold', sans-serif;
+}
+
+
+.rosarioLight {
+	font-family: 'Rosario Light', sans-serif;
+}
+
+.acariBold {
+	font-family: 'Acari Sans Bold', sans-serif;
+}
+
+.acariMedium {
+	font-family: 'Acari Sans Medium', sans-serif;
+}
+
+.formBg {
+	background-image: url('./../../../public/image/mart/formBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.guestBg {
+	background-image: url('./../../../public/image/mart/guestBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.services_wrapper:first-of-type {
+	border-top: 1px solid white;
+	/* border-bottom: 1px solid white; */
+}
+.services_wrapper:nth-of-type(2),
+.services_wrapper:nth-of-type(3),
+.services_wrapper:nth-of-type(6) {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.services_wrapper:nth-of-type(5) {
+	border-bottom: 1px solid white;
+}
+
+@media (max-width: 767px) {
+	.services_wrapper:nth-of-type(2),
+	.services_wrapper:nth-of-type(4),
+	.services_wrapper:nth-of-type(6),
+	.services_wrapper:nth-of-type(10),
+	.services_wrapper:nth-of-type(12),
+	.services_wrapper:nth-of-type(14),
+	.services_wrapper:nth-of-type(8) {
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+	}
+}
+.services_wrapper:first-of-type {
+	border-top: 1px solid white;
+}
+
+
+.banner {
+	background-color: #FC5296;
+}
+
+
+
+@media (max-width: 768px) {
+  .heroBg{
+		background-image: url('./../../../public/image/mart/hero/bg_mobile.png');
+
+		 background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		overflow-x: hidden;
+	}
+
+
+	
+	.cardBg{
+		background-color: #f2c3d56d;
+	}
+	
+}

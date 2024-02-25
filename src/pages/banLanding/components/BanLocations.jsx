@@ -8,7 +8,7 @@ import longarrow from "icons/longarrow.png"
 import Button from "common/Button"
 import { Link } from "react-router-dom"
 import ChillModule from '../../chillLanding/components/ChillModule'
-import { getLocation } from 'src/constants/locations'
+import { getLocation } from 'constants/locations'
 
 
 

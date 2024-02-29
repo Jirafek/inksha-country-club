@@ -42,6 +42,7 @@ const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"))
 const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"))
 const ValenLanding = loadable(() => import("./pages/valenLanding/ValenLanding"))
 const ManLanding = loadable(() => import("./pages/manLanding/ManLanding"))
+const CopyToken = loadable(() => import("./pages/CopyToken"))
 
 export default function App() {
 
@@ -271,6 +272,9 @@ export default function App() {
 
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />
+
+                    <Route path="/copy_token" element={<CopyToken />} />
+
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>

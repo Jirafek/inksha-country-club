@@ -41,6 +41,7 @@ const YandexMap = () => {
    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const phoneNumber = getPhoneNumber()
+   const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
 
    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
@@ -104,7 +105,7 @@ const YandexMap = () => {
                </p> */}
 
                <div className="absolute bottom-[2px] right-0 flex items-center">
-                  <a href={`https://wa.me/+79859091202`}>
+                  <a href={`https://wa.me/${waPhone}`}>
                      <picture>
                         <source srcSet={`/avif/whatsapp.avif 1x`} type="image/avif" />
                         <img

@@ -4,6 +4,7 @@ import { useURLData } from "utils/URLData"
 const FixedFuter = ({ link, needRotate }) => {
     const navigate = useNavigate()
     const { utm_source } = useURLData()
+    const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
     const goBack = () => {
         // navigate(-1)
         navigate('/')
@@ -17,7 +18,7 @@ const FixedFuter = ({ link, needRotate }) => {
         })
     }
     const message = 'Здравствуйте, меня интересует аренда домика' // Replace with your desired message
-    const whatsappLink = `https://wa.me/79859091202?text=${encodeURIComponent(message)}`
+    const whatsappLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`
 
     return (
         <div className='flex fixed bottom-0 w-full z-[1001] flex-col gap-1 transition-all'>

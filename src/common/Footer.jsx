@@ -19,6 +19,7 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
    const { utm_source } = useURLData()
    // const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
+   const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -44,7 +45,7 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                         <img className="z-10 h-9 w-9" src={inst} alt="" />
                      </a>
                      <a
-                        href="https://wa.me/79859091202"
+                        href={`https://wa.me/${waPhone}`}
                         target="_blank"
                         rel="noreferrer"
                      >

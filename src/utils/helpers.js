@@ -10,8 +10,7 @@ export const
             currentMonth === 10 ||
             currentMonth === 11 ||
             currentMonth === 0 ||
-            currentMonth === 1 ||
-            currentMonth === 2
+            currentMonth === 1 
         ) return '_winter'
 
         return ''

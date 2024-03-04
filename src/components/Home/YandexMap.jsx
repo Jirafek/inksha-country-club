@@ -37,7 +37,7 @@ const YandexMap = () => {
       width: "100%",
       height: "800px",
    }
-   const { utm_source, phoneContent } = useURLData()
+   const { utm_source, phoneContent, clientId } = useURLData()
    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const phoneNumber = getPhoneNumber()
@@ -115,7 +115,7 @@ const YandexMap = () => {
                         />
                      </picture>
                   </a>
-                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`}>
+                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_${clientId && `${clientId}_`}`}>
                      <picture>
                         <source srcSet="/avif/tg.avif 1x" type="image/avif" />
                         <img

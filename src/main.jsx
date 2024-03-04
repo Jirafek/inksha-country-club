@@ -51,8 +51,23 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
-   const { updatePhoneContent } = useURLData()
+   const { updatePhoneContent, setClienId } = useURLData()
    const groupID = -1002014846298
+
+   const cookies = document.cookie.split('; ');
+   let maxUid = -1;
+   cookies.forEach(cookie => {
+      if (cookie.startsWith('_ym_uid')) {
+         const uidValue = cookie.split('=')[1];
+         if (+uidValue > +maxUid) {
+            maxUid = +uidValue;
+         }
+      }
+   });
+
+   if (maxUid !== -1) {
+        setClienId(maxUid);
+   }
 
    useEffect(() => {
 

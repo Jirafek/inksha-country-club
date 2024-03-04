@@ -56,7 +56,7 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img className="h-[65px]" src="/image/wa_ft.png" alt="Икша Кантри Клаб - Заказть отдых через Ватсап" />
                     </picture>
                 </a>
-                <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_${clientId && `${clientId}_`}`} >
+                <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`} >
                     <picture>
                         <source srcSet="/avif/tg_footer.avif 1x" type="image/avif" />
                         <source srcSet="/image/tg_footer.webp 1x" type="image/webp" />

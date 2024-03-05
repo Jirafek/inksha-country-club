@@ -65,14 +65,14 @@ function AppWithDelay() {
       }
    });
 
-   if (maxUid !== -1) {
-        setClienId(maxUid);
-   }
-
    useEffect(() => {
 
       fetchData(groupID, updatePhoneContent)
-   }, [updatePhoneContent])
+
+      if (maxUid !== -1) {
+         setClienId(maxUid);
+      }
+   }, [updatePhoneContent, setClienId])
 
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 

@@ -37,10 +37,11 @@ const YandexMap = () => {
       width: "100%",
       height: "800px",
    }
-   const { utm_source, phoneContent } = useURLData()
+   const { utm_source, phoneContent, clientId } = useURLData()
    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const phoneNumber = getPhoneNumber()
+   const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
 
    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
@@ -104,7 +105,7 @@ const YandexMap = () => {
                </p> */}
 
                <div className="absolute bottom-[2px] right-0 flex items-center">
-                  <a href={`https://wa.me/+79859091202`}>
+                  <a href={`https://wa.me/${waPhone}`}>
                      <picture>
                         <source srcSet={`/avif/whatsapp.avif 1x`} type="image/avif" />
                         <img
@@ -114,7 +115,7 @@ const YandexMap = () => {
                         />
                      </picture>
                   </a>
-                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`}>
+                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`}>
                      <picture>
                         <source srcSet="/avif/tg.avif 1x" type="image/avif" />
                         <img

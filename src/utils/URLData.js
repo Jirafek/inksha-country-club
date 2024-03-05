@@ -4,6 +4,8 @@ export const useURLData = create((set) => ({
     utm_source: '',
     utm_campaign: '',
     utm_content: '',
+    clientId: null,
+    setClienId: (id) => set({ clientId: id }),
     updateData: (source, campaign, content) => set({ utm_source: source, utm_campaign: campaign, utm_content: content }),
     phoneContent: [],
     updatePhoneContent: (newPhoneContent) => set({ phoneContent: newPhoneContent }),

@@ -3,7 +3,8 @@ import { useURLData } from "utils/URLData"
 
 const FixedFuter = ({ link, needRotate }) => {
     const navigate = useNavigate()
-    const { utm_source } = useURLData()
+    const { utm_source, clientId } = useURLData()
+    const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
     const goBack = () => {
         // navigate(-1)
         navigate('/')
@@ -17,7 +18,7 @@ const FixedFuter = ({ link, needRotate }) => {
         })
     }
     const message = 'Здравствуйте, меня интересует аренда домика' // Replace with your desired message
-    const whatsappLink = `https://wa.me/79859091202?text=${encodeURIComponent(message)}`
+    const whatsappLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`
 
     return (
         <div className='flex fixed bottom-0 w-full z-[1001] flex-col gap-1 transition-all'>
@@ -55,7 +56,7 @@ const FixedFuter = ({ link, needRotate }) => {
                         <img className="h-[65px]" src="/image/wa_ft.png" alt="Икша Кантри Клаб - Заказть отдых через Ватсап" />
                     </picture>
                 </a>
-                <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`} >
+                <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`} >
                     <picture>
                         <source srcSet="/avif/tg_footer.avif 1x" type="image/avif" />
                         <source srcSet="/image/tg_footer.webp 1x" type="image/webp" />

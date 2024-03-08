@@ -115,7 +115,7 @@ const YandexMap = () => {
                         />
                      </picture>
                   </a>
-                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`}>
+                  <a href={`https://t.me/IkshaCountryClubSupportBot?start=${utm_source === "Сайт" ? "" : utm_source}__${clientId ?? ""}`}>
                      <picture>
                         <source srcSet="/avif/tg.avif 1x" type="image/avif" />
                         <img

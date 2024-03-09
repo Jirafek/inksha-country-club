@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { m } from "framer-motion";
 import FixedFuter from "../components/Home/FixedFuter";
+import {useURLData} from "utils/URLData";
+import {addControlPoint} from "../api/yandex/yandex";
+
+const YANDEX_ACCESS_KEY = 'y0_AgAAAAAuU-5gAAtqeQAAAAD9loD8AAB5Du3w2WxMEYtlXTjeDxv5mxNYYw'
 
 const heading = {
    hidden: {},
@@ -38,6 +42,29 @@ const HL2 = {
 };
 
 const Thanks = () => {
+   const { clientId } = useURLData()
+
+   const [isMetrika, setIsMetrika] = useState(false);
+
+   useEffect(() => {
+      // Функция для извлечения параметров из строки запроса
+      const getQueryParam = (name) => {
+         const searchParams = new URLSearchParams(window.location.search);
+         return searchParams.get(name);
+      };
+
+      // Получение параметра metrika
+      const metrikaParam = getQueryParam('metrika');
+
+      if (metrikaParam) {
+         setIsMetrika(true);
+
+         if (clientId) {
+            addControlPoint(clientId, YANDEX_ACCESS_KEY).then();
+         }
+      }
+   }, []);
+
    return (
       <section
          style={{ backgroundImage: "url(/image/thanks_bg.png)" }}
@@ -51,8 +78,18 @@ const Thanks = () => {
             className=" flex flex-col items-center gap-2 pt-24"
          >
             <m.p variants={HL1} className="monterey text-center text-[20px]">
-               Бронирование
-               <br /> прошло успешно!
+               {
+                  !isMetrika ?
+                      (
+                          <>Бронирование
+                             <br /> прошло успешно!</>
+                      ) :
+                      (
+                          <>Уже вызвли
+                          <br /> менеджера </>
+
+                      )
+               }
             </m.p>
 
             <picture>

@@ -38,7 +38,7 @@ const guests = [
 const ButterGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className={`  relative pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
+      <div className={`  relative pt-[5vh] pb-[1vh] max-h-[1000px] text-white md:pb-[25vh]`}>
          <div className={`text-white ${s.cormReg} font-bold text-center mb-[3vh] text-lg`}>Что говорят наши гости</div>
          <div className="flex px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
             <button
@@ -66,7 +66,7 @@ const ButterGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper min-h-[400px] mb-10"
+               className="korpswiper min-h-[400px] pt-10"
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -81,7 +81,7 @@ const ButterGuest = () => {
             >
                {guests.map((guest, i) => {
                   return (
-                     <SwiperSlide className="px-[2vw] flex justify-center items-center  md:p-0" key={i}>
+                     <SwiperSlide className="px-[2vw] mt-[80px] flex justify-center items-center  md:p-0" key={i}>
 
                         <div className="flex mb-10 w-full mx-auto bg-gray-200 rounded-[10px] border border-stone-900  max-w-[1050px] items-center justify-end">
                            <div className="min-w-[200px] min-h-[130px] w-full bg-transparent  text-ButterDarkBlue  rounded-[10px] md:h-[600px] relative">

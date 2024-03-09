@@ -61,6 +61,9 @@ export default {
             ManGreen: '#002500',
             MartPurple: '#674270',
             MartPink: '#D5B1DD',
+            ButterOrange: '#FCA40C',
+            ButterDarkBlue: '#153B73',
+            ButterLightBlue: '#6977A4',
          },
          container: {
             center: true,

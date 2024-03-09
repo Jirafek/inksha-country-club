@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 import { m } from "framer-motion";
 import FixedFuter from "../components/Home/FixedFuter";
 import {useURLData} from "utils/URLData";
-import {addControlPoint} from "../api/yandex/yandex";
-
-const YANDEX_ACCESS_KEY = 'y0_AgAAAAAuU-5gAAtqeQAAAAD9loD8AAB5Du3w2WxMEYtlXTjeDxv5mxNYYw'
 
 const heading = {
    hidden: {},
@@ -60,7 +57,22 @@ const Thanks = () => {
          setIsMetrika(true);
 
          if (clientId) {
-            addControlPoint(clientId, YANDEX_ACCESS_KEY).then();
+            const sendingData = {
+               clientId: clientId
+            }
+
+            try {
+               const response = fetch('https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/metrika', {
+                  method: 'POST',
+                  headers: {
+                     'Content-Type': 'application/x-www-form-urlencoded',
+                     'Access-Control-Allow-Origin': '*'
+                  },
+                  body: new URLSearchParams(sendingData).toString(),
+               })
+            } catch (error) {
+               console.error(error)
+            }
          }
       }
    }, []);

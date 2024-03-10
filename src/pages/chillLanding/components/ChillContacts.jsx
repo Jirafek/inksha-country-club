@@ -5,6 +5,7 @@ import what from 'images/icons/social/black/what.png'
 import vk from 'images/icons/social/black/vk.png'
 import s from './../chill.module.css'
 import { useURLData } from 'utils/URLData'
+import { getWALink } from 'utils/helpers'
 
 const ChillContacts = () => {
 
@@ -23,7 +24,7 @@ const ChillContacts = () => {
                   <a href="https://www.instagram.com/ikshacountryclub" target='_blank' rel="noreferrer">
                      <img className='w-[30px] md:w-[50px]' src={inst} alt="" />
                   </a>
-                  <a href="https://api.whatsapp.com/send/?phone=79859091202&text&type=phone_number&app_absent=0" target='_blank' rel="noreferrer">
+                  <a href={getWALink()} target='_blank' rel="noreferrer">
                      <img className='w-[30px] md:w-[50px]' src={what} alt="" />
                   </a>
                   <a href="https://vk.com/ikshacountryclub" target='_blank' rel="noreferrer">

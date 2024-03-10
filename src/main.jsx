@@ -54,23 +54,12 @@ function AppWithDelay() {
    const { updatePhoneContent, setClienId } = useURLData()
    const groupID = -1002014846298
 
-   const cookies = document.cookie.split('; ');
-   let maxUid = -1;
-   cookies.forEach(cookie => {
-      if (cookie.startsWith('_ym_uid')) {
-         const uidValue = cookie.split('=')[1];
-         if (+uidValue > +maxUid) {
-            maxUid = +uidValue;
-         }
-      }
-   });
-
    useEffect(() => {
 
       fetchData(groupID, updatePhoneContent)
 
-      if (maxUid !== -1) {
-         setClienId(maxUid);
+      if (window.globalClientId) {
+         setClienId(window.globalClientId);
       }
    }, [updatePhoneContent, setClienId])
 

@@ -1,6 +1,6 @@
 import firebaseConfig from './firebase-config.js';
 import {initializeApp} from 'firebase/app';
-import { getDatabase, ref, get, set } from 'firebase/database';
+import { getDatabase, ref, get, set, push, update } from 'firebase/database';
 
 const app = initializeApp(firebaseConfig);
 
@@ -39,17 +39,20 @@ export const addUser = async (clientId) => {
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val();
                 if (childData.clientId === clientId) {
-                    set(ref(db, `yandexUsers/${childSnapshot.key}`), {
-                        clientId: clientId,
-                        timestamp: Date.now()
-                    });
+                    update(usersRef, {
+                        [childSnapshot.key]: {
+                            clientId: clientId,
+                            timestamp: Date.now()
+                        }
+
+                    })
                     isUpdated = true;
                 }
             });
         }
 
         if (!isUpdated) {
-            await set(usersRef, {
+            await push(usersRef, {
                 clientId: clientId,
                 timestamp: Date.now()
             });

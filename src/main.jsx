@@ -10,7 +10,7 @@ import "./fonts.css"
 import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
-import { db, fetchData } from '../firebase.js'
+import {addUser, db, fetchData} from '../firebase.js'
 import { useURLData } from "utils/URLData"
 
 
@@ -56,9 +56,10 @@ function AppWithDelay() {
 
    useEffect(() => {
 
-      fetchData(groupID, updatePhoneContent)
+      fetchData(groupID, updatePhoneContent).then()
 
       if (window.globalClientId) {
+         addUser(window.globalClientId).then();
          setClienId(window.globalClientId);
       }
    }, [updatePhoneContent, setClienId])

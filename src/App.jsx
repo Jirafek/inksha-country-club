@@ -15,6 +15,8 @@ import Cookies from 'js-cookie'
 import { useLocation } from 'react-router-dom'
 import MartLanding from 'pages/martLanding/MartLanding'
 import ButterLanding from 'pages/butterLanding/ButterLanding'
+import BirthLanding from 'pages/birthLanding/BirthLanding'
+import MajLanding from 'pages/majLanding/MajLanding'
 
 
 
@@ -275,6 +277,10 @@ export default function App() {
 
                     <Route path="/korp-landing" element={<KorpLanding />} />
                     <Route path="/New-Year" element={<NYLanding />} />
+
+                    <Route path="/birthday" element={<BirthLanding />} />
+                    <Route path="/may" element={<MajLanding />} />
+
 
                     <Route path="/copy_token" element={<CopyToken />} />
 

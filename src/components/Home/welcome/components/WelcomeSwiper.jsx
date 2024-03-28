@@ -51,7 +51,7 @@ const WelcomeSwiper = () => {
 
             <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="#events">День рождения</a>
+                  <a className={styles.link} href="/birthday">День рождения</a>
                </div>
             </SwiperSlide>
 
@@ -79,7 +79,7 @@ const WelcomeSwiper = () => {
             </SwiperSlide>
             {/* <SwiperSlide>
                <div className="text-center">
-                  <a className={styles.link} href="#events">Де</a>
+                  <a className={styles.link} href="/birthday">День рождения</a>
                </div>
             </SwiperSlide> */}
             {/* <SwiperSlide>

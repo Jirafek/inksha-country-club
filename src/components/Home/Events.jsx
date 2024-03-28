@@ -23,7 +23,7 @@ const eventsData = [
          "Возможность остаться на ночлег (до 10 чел.)",
          "Предзаказ питания и праздничного торта",
       ],
-      link: "https://bronirui-online.ru/iksha-country-club/uslugi",
+      link: "/birthday",
    },
    {
       title: "Шашлыки",

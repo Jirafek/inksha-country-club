@@ -136,7 +136,7 @@ const ChillLanding = () => {
             {productId && <ChillProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
             <ChillHero currentTime={currentTime} />
 
-            <ChillProgram setTime={setTime} currentTime={currentTime} handleProductClick={handleProductClick} />
+            <ChillProgram setTime={setTime} currentTime={currentTime} showOnlyExpensive={true} handleProductClick={handleProductClick} />
             <ChillServices />
             {/* <ChillModule /> */}
             <ChillMap />

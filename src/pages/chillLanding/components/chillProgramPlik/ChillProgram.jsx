@@ -414,7 +414,7 @@ const GetProgram = () => {
 
 
 
-const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisible }) => {
+const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpensive }) => {
 
    const program = GetProgram()
 
@@ -618,7 +618,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                         <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                         <div className='flex justify-between mb-[20px]'>
-                           {item.oldPrice !== '' && isOldPriceVisible ?
+                           {item.oldPrice !== '' && !showOnlyExpensive ?
                               <div className='flex flex-col items-center justify-center w-full'>
                                  <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
                                  <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
@@ -627,7 +627,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                               </div>
                               :
                               <div className='flex w-full flex-col'>
-                                 <div className="text-center text-36px text-stone-700 font-semibold">{item.price}</div>
+                                 <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
                               </div>
                            }
                         </div>
@@ -718,7 +718,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                               <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
-                                 {item.oldPrice !== '' && isOldPriceVisible ?
+                                 {item.oldPrice !== '' && !showOnlyExpensive ?
                                     <div className='flex flex-col items-center justify-center w-full'>
                                        <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
                                        <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
@@ -727,7 +727,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                                     </div>
                                     :
                                     <div className='flex w-full flex-col'>
-                                       <div className="text-center text-36px text-stone-700 font-semibold">{item.price}</div>
+                                       <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
                                     </div>
                                  }
                               </div>

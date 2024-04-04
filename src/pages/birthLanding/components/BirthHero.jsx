@@ -11,8 +11,9 @@ const BirthHero = () => {
    const { t } = useTranslation()
 
    return (
-      <div className="relative bg-white ">
-         <div className="wrapper min-h-screen py-[70px]">
+      <div className={`relative  min-h-screen `}>
+         <div className={`${s.heroBg} h-screen`}></div>
+         <div className="wrapper w-full absolute transform -translate-y-1/2 top-1/2 -translate-x-1/2 left-1/2 z-10 py-[70px]">
             <div className="text-center">
                <h1 className="text-xl font-bold text-BirthDarkPurple">
                   День Рождения

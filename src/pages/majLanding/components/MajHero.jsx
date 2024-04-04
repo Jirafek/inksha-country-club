@@ -164,8 +164,8 @@ const MajHero = () => {
                <div className={`relative py-[30px] px-[30px]  w-full z-10 flex-col text-center md:text-right flex items-center md:items-end `}>
                   <Reveal delay={0.25}>
                      <div className={`relative  ${s.cormReg}`}>
-                        <div className={` text-MajRed text-ultra`}>
-                           Масленица
+                        <div className={` text-MajRed leading-none text-ultra`}>
+                           Майские праздники
                         </div>
                      </div>
                   </Reveal>

@@ -44,7 +44,7 @@ const BanGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper mb-10 bg-[#221C1C]"
+               className="korpswiper  h-[70vh] sm:h-screen mb-10 bg-[#221C1C]"
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -59,7 +59,7 @@ const BanGuest = () => {
             >
                {guests.map((guest, i) => {
                   return (
-                     <SwiperSlide className="px-[2vw] md:p-0" key={i}>
+                     <SwiperSlide className="px-[2vw] my-auto  h-[70vh] sm:h-screen flex justify-center items-center  md:p-0" key={i}>
 
                         <div className="flex mb-10 w-full items-center justify-end">
                            <div className="min-w-[200px] min-h-[130px] w-full bg-transparent  text-white  rounded-[10px] md:h-[600px] relative">

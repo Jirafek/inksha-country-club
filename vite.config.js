@@ -16,6 +16,7 @@ export default defineConfig({
 
    resolve: {
       alias: {
+         src: path.resolve(__dirname, "./src/"),
          hooks: path.resolve(__dirname, "./src/hooks/"),
          data: path.resolve(__dirname, "./src/data/"),
          components: path.resolve(__dirname, "./src/components/"),
@@ -28,4 +29,4 @@ export default defineConfig({
          constants: path.resolve(__dirname, "./src/constants/"),
       },
    },
-});
+})

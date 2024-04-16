@@ -64,6 +64,8 @@ import Button from 'common/Button'
 
 import s from './../../chill.module.css'
 import { useEffect, useRef, useState } from 'react'
+import PriceBanner from 'common/PriceBanner'
+import { LandingProgramPriceBanner } from 'constants/variables'
 
 const GetProgram = () => {
    const program = [
@@ -758,13 +760,9 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
             </Swiper>
          </div>
 
-         <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
-            <div className='text-white text-center text-md font-semibold'>
-               Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
-            </div>
+         <PriceBanner className={s.banner} prices={LandingProgramPriceBanner} />
 
-         </div>
          <a className='mx-auto' href='#module'>
             <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
          </a>

@@ -635,9 +635,12 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
                         </div>
 
                         <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                           <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                           {/* <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
                               <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
-                           </div>
+                           </div> */}
+                           <a href="#form" className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                              <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                           </a>
                            {item.hasAbout ?
                               <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
                                  <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
@@ -735,9 +738,12 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                                 {/* <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
                                     <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
-                                 </div>
+                                 </div> */}
+                                 <a href="#form" className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                                    <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                                 </a>
                                  {item.hasAbout ?
                                     <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
                                        <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
@@ -761,7 +767,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
          </div>
 
 
-         <PriceBanner className={s.banner} prices={LandingProgramPriceBanner} />
+         <PriceBanner isHolyday={true} className={s.banner} prices={LandingProgramPriceBanner} />
 
          <a className='mx-auto' href='#module'>
             <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>

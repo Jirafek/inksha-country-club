@@ -17,6 +17,7 @@ import MartLanding from 'pages/martLanding/MartLanding'
 import ButterLanding from 'pages/butterLanding/ButterLanding'
 import BirthLanding from 'pages/birthLanding/BirthLanding'
 import MajLanding from 'pages/majLanding/MajLanding'
+import GradLanding from './pages/gradLanding/GradLanding'
 
 
 
@@ -280,6 +281,7 @@ export default function App() {
 
                     <Route path="/birthday" element={<BirthLanding />} />
                     <Route path="/may" element={<MajLanding />} />
+                    <Route path="/graduation" element={<GradLanding />} />
 
 
                     <Route path="/copy_token" element={<CopyToken />} />

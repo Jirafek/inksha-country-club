@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+/* 
+*{
+  outline: 1px solid red;
+} */
 @layer base {
   html {
     font-family: 'Montserrat', system-ui, sans-serif;

@@ -11,7 +11,7 @@ import AnimationButton from "../../../common/AnimationButton"
 import MainPopup from "../../../common/MainPopup"
 import WelcomeSwiper from './components/WelcomeSwiper'
 
-import logo from 'icons/events/maj.png'
+import logo from 'icons/events/russia.png'
 
 
 
@@ -211,8 +211,8 @@ const Welcome = () => {
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/may" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
-            <m.img
+         <Link to="/russiaDay" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
+            {/* <m.img
                transition={{
                   repeat: Infinity,
                   duration: 1,
@@ -224,6 +224,12 @@ const Welcome = () => {
                variants={pumpkin_vars}
                src={logo}
                className="z-[10000000] h-[100px] w-[100px] rounded-full bg-center object-cover shadow-xl"
+               alt=""
+            /> */}
+
+            <img
+               className="z-[10000000] h-[100px] w-[100px] rounded-full bg-center object-cover shadow-xl"
+               src={logo}
                alt=""
             />
 

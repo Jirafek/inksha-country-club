@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+
+
+
+///fonts 
+
+@font-face {
+	font-family: 'Dudka Reg';
+	font-display: swap;
+	src: url('./../../../public/fonts/dudka/Dudka Regular.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cormorant Reg';
+	font-display: swap;
+	src: url('./../../../public/fonts/cormorant/CormorantGaramond-Regular.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Adamina Reg';
+	font-display: swap;
+	src: url('./../../../public/fonts/Adamina-Regular.ttf') format('truetype');
+	font-style: normal;
+}
+
+
+
+/* 
+@font-face {
+	font-family: 'Acari Sans Medium';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+.adaminaReg {
+	font-family: "Adamina Reg", sans-serif;
+}
+.cormReg {
+	font-family: 'Cormorant Reg', sans-serif;
+}
+
+.dudkaReg {
+	font-family: 'Dudka Reg', sans-serif;
+}
+
+.LocationImg{
+	position: relative !important;
+	left: 0 !important ;
+}
+
+
+///// bg
+
+.formBg {
+	
+	background-image: url('./../../../public/image/maj/formBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.guestBg {
+	/* background-color: #2a57918e; */
+	background-image: url('./../../../public/image/rus/guestBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+
+.cardBg{
+	background-color: #f2c3d52c;
+}
+
+.programBg{
+	background-image: url('./../../../public/image/maj/servicesBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #2A5691;
+	overflow-x: hidden;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+	
+	.cardBg{
+		background-color: #f2c3d56d;
+	}
+	
+}
+
+
+//other
+
+
+.popup{
+	background-image: url('./image/mart/popupBg.png');
+	background-repeat: no-repeat;
+	background-color: rgba(255, 255, 255, 0.802);
+	background-size: cover;
+	filter: brightness(140%);
+}
+
+
+.banner {
+	background-color: #55bd9ad2;
+}
+
+
+

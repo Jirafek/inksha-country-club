@@ -72,6 +72,9 @@ export default {
             MajRed: "#DF3F8A",
             GradPurple: "#2E1A44",
             GradCyan: "#019AB0",
+            RusDarkBlue: "#0B1E42",
+            RusLigthBlue: "#2A5691",
+            RusDarkRed: "#A00000"
          },
          container: {
             center: true,

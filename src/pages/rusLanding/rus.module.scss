@@ -7,21 +7,21 @@
 @font-face {
 	font-family: 'Dudka Reg';
 	font-display: swap;
-	src: url('./../../../public/fonts/dudka/Dudka Regular.ttf') format('truetype');
+	src: url('./../../../public/fonts/dudka/Dudka Regular.ttf') format('truetype') !important;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Cormorant Reg';
 	font-display: swap;
-	src: url('./../../../public/fonts/cormorant/CormorantGaramond-Regular.ttf') format('truetype');
+	src: url('./../../../public/fonts/cormorant/CormorantGaramond-Regular.ttf') format('truetype') !important;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Adamina Reg';
 	font-display: swap;
-	src: url('./../../../public/fonts/Adamina-Regular.ttf') format('truetype');
+	src: url('./../../../public/fonts/Adamina-Regular.ttf') format('truetype') !important;
 	font-style: normal;
 }
 
@@ -57,7 +57,7 @@
 
 .formBg {
 	
-	background-image: url('./../../../public/image/maj/formBg.png');
+	background-image: url('./../../../public/image/maj/formBg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -81,7 +81,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #2A5691;
-	overflow-x: hidden;
 }
 
 

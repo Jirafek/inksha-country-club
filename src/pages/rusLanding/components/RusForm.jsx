@@ -10,6 +10,8 @@ import InputMask from "react-input-mask"
 
 import { useNavigate } from "react-router-dom"
 
+import bg from 'images/rus/formBg.webp'
+
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
 const ButterForm = () => {
@@ -95,8 +97,8 @@ const ButterForm = () => {
       handleSubmitBot()
    }
    return (
-      <div id="form" className={`${s.formBg}  py-[80px] `}>
-         <div className="w-full flex  justify-center ">
+      <div id="form" className={`${s.formBg} grid grid-cols-1 md:grid-cols-2 `}>
+         <div className="w-full flex justify-center items-center p-5   ">
             <form
                className="montserrat flex justify-center md:mr-[20px] shadow-xl bg-white rounded-[28.37px] border border-stone-400 flex-col items-center  w-[90%] md:max-w-[640px]   px-[20px] py-[30px] md:px-[50px] md:py-[70px]"
                name="Form"
@@ -139,6 +141,10 @@ const ButterForm = () => {
                   Узнать стоимость
                </Button>
             </form>
+         </div>
+         <div>
+
+            <img src={bg} className='w-full hidden md:block h-full object-cover' alt="" />
          </div>
       </div>
    )

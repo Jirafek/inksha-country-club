@@ -18,7 +18,7 @@
 
 
 .bg {
-	background-image: url('./../../../public/image/ban/bg.png');
+	background-image: url('./../../../public/image/ban/bg.png') !important;
 
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -42,14 +42,14 @@
 }
 
 .formBg {
-	background-image: url('./../../../public/image/chill/form.webp');
+	background-image: url('./../../../public/image/chill/form.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
 .guestBg {
-	background-image: url('./../../../public/image/chill/guest.webp');
+	background-image: url('./../../../public/image/chill/guest.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

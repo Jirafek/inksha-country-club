@@ -6,7 +6,7 @@ import { isItWinterNow } from "utils/helpers"
 import Button from 'common/Button'
 import s from './../rus.module.scss'
 
-import rose from 'images/rus/heroBg.jpg'
+import rose from 'images/rus/heroBg.webp'
 
 import { useRef } from "react"
 

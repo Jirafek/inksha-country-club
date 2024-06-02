@@ -83,6 +83,7 @@ export default {
          screens: {
             "3xl": "2500px",
             vsm: "355px",
+            "md+": "700px",
             '900p': '900px',
             "370p": "370px",
          },

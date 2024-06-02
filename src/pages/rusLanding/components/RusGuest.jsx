@@ -38,7 +38,7 @@ const guests = [
 const RusGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className={`  relative ${s.guestBg} pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
+      <div className={`  relative bg-RusDarkBlue pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
          <div className={`text-white ${s.cormReg} font-bold text-center mb-[3vh] text-lg`}>Что говорят наши гости</div>
          <div className="flex px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
             <button
@@ -81,7 +81,7 @@ const RusGuest = () => {
             >
                {guests.map((guest, i) => {
                   return (
-                     <SwiperSlide className="px-[2vw] my-auto  h-[70vh] sm:h-screen flex justify-center items-center  md:p-00" key={i}>
+                     <SwiperSlide className="px-[2vw] my-auto  h-[70vh] sm:h-screen flex justify-center items-center  md:p-0" key={i}>
 
                         <div className="flex mb-10 w-full mx-auto bg-gray-200 rounded-[10px] border border-stone-900  max-w-[1050px] items-center justify-end">
                            <div className="min-w-[200px] min-h-[130px] w-full bg-transparent  text-ButterDarkBlue  rounded-[10px] md:h-[600px] relative">

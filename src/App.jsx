@@ -19,6 +19,7 @@ import BirthLanding from 'pages/birthLanding/BirthLanding'
 import MajLanding from 'pages/majLanding/MajLanding'
 import GradLanding from './pages/gradLanding/GradLanding'
 import RusLanding from 'pages/rusLanding/RusLanding'
+import HousingLanding from 'pages/housingLanding/HousingLanding'
 
 
 
@@ -284,6 +285,7 @@ export default function App() {
                     <Route path="/may" element={<MajLanding />} />
                     <Route path="/graduation" element={<GradLanding />} />
                     <Route path="/russiaDay" element={<RusLanding />} />
+                    <Route path="/housing" element={<HousingLanding />} />
 
 
                     <Route path="/copy_token" element={<CopyToken />} />

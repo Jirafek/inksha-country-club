@@ -29,6 +29,14 @@ export const getPhoneNumber = () => {
     return phoneNumber
 }
 
+export function GenerateRandom8Numbers() {
+    let random16DigitNumber = ''
+    for (let i = 0; i < 8; i++) {
+        random16DigitNumber += Math.floor(Math.random() * 10)
+    }
+    return random16DigitNumber
+}
+
 
 
 export const getWALink = () => {

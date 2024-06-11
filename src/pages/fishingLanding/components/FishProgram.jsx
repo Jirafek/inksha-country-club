@@ -42,6 +42,7 @@ import Button from 'common/Button'
 
 import s from './../fishing.module.scss'
 import { useEffect, useRef, useState } from 'react'
+import ProgramSlider from 'common/landings/ProgramSlider'
 
 const GetProgram = () => {
    const program = [
@@ -231,7 +232,7 @@ const FishProgram = () => {
 
 
          {/* <div style={{ display: `${isMenuOpen ? 'block' : 'none'}` }} className="absolute py-7 z-10 left-1/2 -translate-x-1/2 lg:top-[210px] top-[180px]  w-[360px] bg-[#5F4D3A] rounded-b-[22px]">
-            <div className="relative w-full pl-12 flex flex-col gap-2 items-start">
+            <div className="relative flex flex-col items-start w-full gap-2 pl-12">
                {
                   types.map((el) => {
                      return (
@@ -278,7 +279,7 @@ const FishProgram = () => {
                   }
 
                </div>
-               <div className="text-center text-stone-600 text-sm font-semibold leading-normal tracking-tight">{currentTime === 'Лето' ? <div>Лето</div> : <div>Зима</div>}</div>
+               <div className="text-sm font-semibold leading-normal tracking-tight text-center text-stone-600">{currentTime === 'Лето' ? <div>Лето</div> : <div>Зима</div>}</div>
 
             </div>
 
@@ -305,14 +306,14 @@ const FishProgram = () => {
                   }
 
                </div>
-               <div className="text-center text-stone-600 text-sm font-semibold leading-normal tracking-tight">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
+               <div className="text-sm font-semibold leading-normal tracking-tight text-center text-stone-600">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
 
             </div>
          </div> */}
 
 
 
-         <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
+         {/* <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
 
             {program.map((item, i) => {
                return (
@@ -326,34 +327,34 @@ const FishProgram = () => {
                      </div>
                      <div className=' p-[15px] md:p-[30px] '>
                         <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
-                        <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                        <div className="font-semibold text-left text-stone-500 ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                         <div className='flex justify-between mb-[20px]'>
                            {item.oldPrice !== '' ?
                               <div className='flex flex-col items-center justify-center w-full'>
-                                 <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                 <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
+                                 <div className="font-semibold leading-loose text-center text-yellow-900 line-through text-36px">{item.oldPrice}</div>
+                                 <div className="font-semibold leading-loose text-center text-red-600 text-36px">{item.price}</div>
 
 
                               </div>
                               :
                               <div className='flex flex-col'>
-                                 <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
+                                 <div className="font-semibold text-left text-36px text-stone-700">{item.price}</div>
                               </div>
                            }
                         </div>
 
-                        <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
+                        <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
                            <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                              <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                              <div className="font-semibold text-center text-stone-700 ">Забронировать</div>
                            </div>
                            {item.hasAbout ?
                               <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                 <div className="font-semibold text-center text-zinc-500">Подробнее</div>
                               </div>
                               :
                               <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                 <div className="font-semibold text-center text-zinc-500">Подробнее</div>
                               </a>
                            }
 
@@ -426,36 +427,36 @@ const FishProgram = () => {
 
                            <div className=' p-[15px] md:p-[30px] '>
                               <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
-                              <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                              <div className="font-semibold text-left text-stone-500 ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
                                  {item.oldPrice !== '' ?
                                     <div className='flex flex-col items-center justify-center w-full'>
-                                       <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                       <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
+                                       <div className="font-semibold leading-loose text-center text-yellow-900 line-through text-36px">{item.oldPrice}</div>
+                                       <div className="font-semibold leading-loose text-center text-red-600 text-36px">{item.price}</div>
 
 
                                     </div>
                                     :
                                     <div className='flex flex-col'>
-                                       <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
+                                       <div className="font-semibold text-left text-36px text-stone-700">{item.price}</div>
 
 
                                     </div>
                                  }
                               </div>
 
-                              <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onTouchEnd={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                                    <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                              <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
+                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
+                                    <div className="font-semibold text-center text-stone-700 ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?
                                     <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                       <div className="font-semibold text-center text-zinc-500">Подробнее</div>
                                     </div>
                                     :
                                     <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                       <div className="font-semibold text-center text-zinc-500">Подробнее</div>
                                     </a>
                                  }
 
@@ -470,9 +471,14 @@ const FishProgram = () => {
                })}
             </Swiper>
          </div>
+ */}
+
+
+         <ProgramSlider nextBtn={korpnext} prevBtn={korpprev} selectedImages={program} mainColor='#593723' secondaryColor='rgb(113 113 122)' />
+
 
          {/* <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
-            <div className='text-white text-center text-md font-semibold'>
+            <div className='font-semibold text-center text-white text-md'>
                Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
             </div>

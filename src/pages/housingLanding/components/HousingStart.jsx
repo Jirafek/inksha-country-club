@@ -5,6 +5,13 @@ import img2 from "images/housing/start/2.webp"
 import img3 from "images/housing/start/3.webp"
 import img4 from "images/housing/start/4.webp"
 
+// import gal1 from "images/housing/start/001.webp"
+// import gal2 from "images/housing/start/002.webp"
+// import gal3 from "images/housing/start/003.webp"
+// import gal4 from "images/housing/start/004.webp"
+
+
+
 import leaves from "images/housing/pngs/leaves.png"
 import HousingMobileSliders from './HousingMobileSlider'
 import Reveal from 'common/Reveal'
@@ -45,7 +52,7 @@ const HousingStart = () => {
                               <div className='text-17px'>{item[1]}</div>
                            </div>
                         </div>
-                        <img src={item[2]} className='w-[80%] hidden md:block object-cover rounded-[10px]' alt="Housing option" />
+                        <img src={item[2]} className='w-[80%] hidden md:block object-cover max-h-[120px] max-w-[400px] rounded-[10px]' alt="Housing option" />
                      </div>
                   </Reveal>
                ))}

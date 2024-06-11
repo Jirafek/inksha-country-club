@@ -6,6 +6,12 @@ import photo2 from "images/housing/start/2.webp"
 import photo3 from "images/housing/start/3.webp"
 import photo4 from "images/housing/start/4.webp"
 
+
+import gal1 from "images/housing/start/001.webp"
+import gal2 from "images/housing/start/002.webp"
+import gal3 from "images/housing/start/003.webp"
+import gal4 from "images/housing/start/004.webp"
+
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/navigation"
@@ -13,7 +19,7 @@ import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 
 const photos = [
-   photo1, photo2, photo3, photo4
+   photo1, photo2, photo3, photo4, gal1, gal2, gal3, gal4
 ]
 
 const HousingMobileSliders = () => {
@@ -36,9 +42,9 @@ const HousingMobileSliders = () => {
 
                   {photos.map((photo, i) => {
                      return (
-                        <SwiperSlide className="h-full w-full" key={i}>
+                        <SwiperSlide className="w-full h-full" key={i}>
                            <img
-                              className="w-full h-full object-cover"
+                              className="object-cover w-full h-full"
                               src={photo}
                               alt=""
                            />

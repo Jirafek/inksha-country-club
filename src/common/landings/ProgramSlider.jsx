@@ -9,7 +9,7 @@ import "swiper/css/pagination"
 import "swiper/css/autoplay"
 import "swiper/css/scrollbar"
 
-const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryColor = "black", showOnlyExpensive = false, prevBtn, nextBtn }) => {
+const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryColor = "black", showOnlyExpensive = false, prevBtn, nextBtn, handleProductClick = null }) => {
    const swiperRef = useRef()
 
    return (
@@ -24,32 +24,32 @@ const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryCol
                      </div>
                      <div className=' p-[15px] md:p-[30px] '>
                         <div className={`text-32px leading-[41.60px] acariBold`} style={{ color: mainColor }}>{item.title}</div>
-                        <div className="text-left font-semibold" style={{ color: secondaryColor }}>{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                        <div className="font-semibold text-left" style={{ color: secondaryColor }}>{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                         <div className='flex justify-between mb-[20px]'>
                            {item.oldPrice !== '' && !showOnlyExpensive ?
                               <div className='flex flex-col items-center justify-center w-full'>
-                                 <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                 <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
+                                 <div className="font-semibold leading-loose text-center text-yellow-900 line-through text-36px">{item.oldPrice}</div>
+                                 <div className="font-semibold leading-loose text-center text-red-600 text-36px">{item.price}</div>
                               </div>
                               :
-                              <div className='flex w-full flex-col'>
+                              <div className='flex flex-col w-full'>
                                  <div className={`text-center text-36px  font-semibold`} style={{ color: mainColor }}>{showOnlyExpensive ? item.oldPrice : item.price}</div>
                               </div>
                            }
                         </div>
 
-                        <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
+                        <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
                            <a style={{ borderColor: mainColor }} href="#form" className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4">
-                              <div className="text-center  font-semibold" style={{ color: mainColor }}>Забронировать</div>
+                              <div className="font-semibold text-center" style={{ color: mainColor }}>Забронировать</div>
                            </a>
                            {item.hasAbout ?
                               <div style={{ borderColor: secondaryColor }} onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
+                                 <div className="font-semibold text-center" style={{ color: secondaryColor }}>Подробнее</div>
                               </div>
                               :
                               <a style={{ borderColor: secondaryColor }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 ">
-                                 <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
+                                 <div className="font-semibold text-center" style={{ color: secondaryColor }}>Подробнее</div>
                               </a>
                            }
                         </div>
@@ -107,32 +107,32 @@ const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryCol
 
                            <div className=' p-[15px] md:p-[30px] '>
                               <div className={`text-32px leading-[41.60px] acariBold`} style={{ color: mainColor }}>{item.title}</div>
-                              <div className="text-left font-semibold" style={{ color: secondaryColor }}>{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                              <div className="font-semibold text-left" style={{ color: secondaryColor }}>{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
                                  {item.oldPrice !== '' && !showOnlyExpensive ?
                                     <div className='flex flex-col items-center justify-center w-full'>
-                                       <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                       <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
+                                       <div className="font-semibold leading-loose text-center text-yellow-900 line-through text-36px">{item.oldPrice}</div>
+                                       <div className="font-semibold leading-loose text-center text-red-600 text-36px">{item.price}</div>
                                     </div>
                                     :
-                                    <div className='flex w-full flex-col'>
-                                       <div className="text-center text-36px  font-semibold" style={{ color: mainColor }}>{showOnlyExpensive ? item.oldPrice : item.price}</div>
+                                    <div className='flex flex-col w-full'>
+                                       <div className="font-semibold text-center text-36px" style={{ color: mainColor }}>{showOnlyExpensive ? item.oldPrice : item.price}</div>
                                     </div>
                                  }
                               </div>
 
-                              <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
+                              <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
                                  <a style={{ borderColor: mainColor }} href="#form" className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4">
-                                    <div className="text-center  font-semibold" style={{ color: mainColor }}>Забронировать</div>
+                                    <div className="font-semibold text-center" style={{ color: mainColor }}>Забронировать</div>
                                  </a>
                                  {item.hasAbout ?
                                     <div style={{ borderColor: secondaryColor }} onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
+                                       <div className="font-semibold text-center" style={{ color: secondaryColor }}>Подробнее</div>
                                     </div>
                                     :
                                     <a style={{ borderColor: secondaryColor }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
+                                       <div className="font-semibold text-center" style={{ color: secondaryColor }}>Подробнее</div>
                                     </a>
                                  }
                               </div>

@@ -31,7 +31,7 @@
 
 
 .ny-bg {
-   background-image: url('./../../../public/image/NY/bg/bg-main.webp');
+   background-image: url('./../../../public/image/NY/bg/bg-main.webp') !important;
    /* background-repeat: no-repeat; */
    padding: 0;
    margin: 0;
@@ -45,7 +45,7 @@
 }
 
 .tariff-bg {
-   background-image: url('./../../../public/image/NY/bg/bg-tariff.webp');
+   background-image: url('./../../../public/image/NY/bg/bg-tariff.webp') !important;
    background-repeat: no-repeat;
    background-size: cover;
    border-radius: 10px;
@@ -69,7 +69,7 @@
 
 
 .ny-form-bg {
-   background-image: url('./../../../public/image/NY/bg/bg-form.png');
+   background-image: url('./../../../public/image/NY/bg/bg-form.png') !important;
    background-color: black;
    background-repeat: no-repeat;
    background-size: cover;

@@ -2,6 +2,9 @@ import React from 'react'
 import communityImg from 'images/housing/communityImg.webp'
 
 import s from './../housing.module.scss'
+import { fadeIn } from 'constants/motion'
+import Reveal from 'common/Reveal'
+import { formatDistanceWithOptions } from 'date-fns/fp'
 
 const GetServices = () => {
    const list = [
@@ -39,10 +42,13 @@ const HousingCommunity = () => {
          {/* //mobile version */}
          <div className={`${s.communityBg} flex relative flex-col py-[30px] items-center gap-[40px] justify-center`}>
             {GetServices().map((item, i) => (
-               <div key={i} className='relative z-[1] px-[30px] py-[15px] w-[90vw] md:w-[80vw] bg-[#221C1C] text-brown border border-brown rounded-[10px]'>
-                  <div className='mb-2 font-semibold underline text-20px'>{item[0]}</div>
-                  <div className='text-20px'>{item[1]}</div>
-               </div>
+               <Reveal variants={formatDistanceWithOptions()} key={i} duration={1} delay={0 + i / 10}>
+
+                  <div className='relative z-[1] px-[30px] py-[15px] w-[90vw] md:w-[80vw] bg-[#221C1C] text-brown border border-brown rounded-[10px]'>
+                     <div className='mb-2 font-semibold underline text-20px'>{item[0]}</div>
+                     <div className='text-20px'>{item[1]}</div>
+                  </div>
+               </Reveal>
             ))}
             <img src={communityImg} className='absolute inset-0 object-cover object-center w-full h-full z-[0]' alt="" />
          </div>

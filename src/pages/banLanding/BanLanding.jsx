@@ -1,4 +1,6 @@
 
+
+
 // import "./index.css"
 
 import Footer from "common/Footer"
@@ -134,7 +136,7 @@ const BanLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer FooterLinks={footerLinks} className='bg-black text-white' />
+         <Footer FooterLinks={footerLinks} className='text-white bg-black' />
       </div>
    )
 }

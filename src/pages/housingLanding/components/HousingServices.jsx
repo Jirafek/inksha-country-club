@@ -30,9 +30,9 @@ const HousingServices = () => {
             <div className='flex col-span-1 flex-col py-[20px] justify-center px-[10px] gap-[20px] items-center'>
                {GetServices().map((item, i) => {
                   return (
-                     <Reveal variants={fadeIn()} key={i} duration={0.5} delay={0 + i / 10} >
+                     <Reveal variants={fadeIn()} key={i} duration={1} delay={0 + i / 10} >
                         <div className='px-[30px] py-[15px] max-w-[420px] text-brown border border-brown rounded-[10px]'>
-                           <div className='underline text-17px'>{item[0]}</div>
+                           <a href="#form" className='underline text-17px'>{item[0]}</a>
                            <div className='text-14px'>{item[1]}</div>
                         </div>
                      </Reveal>

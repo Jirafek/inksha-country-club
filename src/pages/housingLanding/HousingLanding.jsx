@@ -14,6 +14,7 @@ import HousingJoinus from './components/HousingJoinus'
 import HousingEnv from './components/HousingEnv'
 
 import s from './housing.module.scss'
+import HousingForm from './components/HousingForm'
 
 const HousingLanding = () => {
    const getLinks = () => {
@@ -82,6 +83,7 @@ const HousingLanding = () => {
                   <HousingStart />
                   <HousingContacts />
                   <HousingJoinus />
+                  <HousingForm />
                </div>
             </div>
 

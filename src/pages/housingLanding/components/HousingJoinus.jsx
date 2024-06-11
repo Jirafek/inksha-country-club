@@ -9,6 +9,8 @@ import qr from 'images/housing/pngs/qr.png'
 import tg from "icons/social/brown/tg.png"
 import inst from "icons/social/brown/inst.png"
 import vk from "icons/social/brown/vk.png"
+import Button from 'common/Button'
+import { getPhoneNumber } from 'utils/helpers'
 
 const socials = [
    { img: tg, link: "https://t.me/IkshaCountryClubSupportBot" },
@@ -33,28 +35,29 @@ const HousingJoinus = () => {
 
 
             <div className='flex justify-center gap-[140px] items-center'>
-               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 text-white max-w-[500px] flex justify-between gap-4'>
+
+               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 text-white w-[90%] md:max-w-[500px] flex flex-col'>
                   <div className='flex flex-col justify-between gap-1'>
-                     <div className='text-md- font-bold'>
+                     <div className='font-bold text-md-'>
                         Присоединяйся сейчас!
                      </div>
                      <div className='font-normal'>
                         Заполняй анкету онлайн
                         или уточняй у администратора
                      </div>
-                     <div className='text-md- font-extrabold'>
-                        + 7-499-505-50-31
-                     </div>
+                     <a href={`tel:${getPhoneNumber()}`} className='font-extrabold underline text-md-'>
+                        {getPhoneNumber()}
+                     </a>
                   </div>
 
-                  <img className='object-contain aspect-square' src={qr} alt="" />
+                  <Button href="#form" className="flex w-full text-white bg-brown">Стать собственником!</Button>
+                  {/* <img className='object-contain aspect-square' src={qr} alt="" /> */}
                </div>
-
 
                <div className='border hidden border-brown md:flex max-w-[500px] flex-col pr-[90px] rounded-[16px] gap-[30px] p-[20px]'>
                   {socials.map((item, i) => {
                      return (
-                        <div key={i} className='flex text-brown items-center justify-center text-md gap-2'>
+                        <div key={i} className='flex items-center justify-center gap-2 text-brown text-md'>
                            <img src={item.img} alt="" />
                            <a href={item.link} target='_blank' className='underline'>@ikshacountryclub</a>
                         </div>

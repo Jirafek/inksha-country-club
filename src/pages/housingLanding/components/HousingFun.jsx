@@ -18,8 +18,8 @@ const HousingEntertainment = () => {
    return (
       <div id="fun" key="fun" className='md:pl-[60px] p-5 border-y border-brown pt-[60px]'>
          <div className='flex justify-between gap-1 mb-[20px] items-center'>
-            <div className='flex gap-[40px] flex-col'>
-               <h2 className='text-36px font-bold'>РАЗВЛЕЧЕНИЯ И<span className='text-brown'> МЕРОПРИЯТИЯ</span></h2>
+            <div className='flex gap-[40px] text-center md:text-start flex-col'>
+               <h2 className='font-bold text-36px'>РАЗВЛЕЧЕНИЯ И<span className='text-brown'> МЕРОПРИЯТИЯ</span></h2>
                <p className='text-24px'>В Икша Кантри Клабе мы гордимся широким спектром развлекательных программ и мероприятий для всех наших гостей</p>
             </div>
          </div>
@@ -29,8 +29,8 @@ const HousingEntertainment = () => {
                <div key={i} className=' border-t w-full h-full py-[30px] justify-center place-content-center place-items-center border-brown'>
 
                   {item.img === undefined ? (
-                     <div className={`${(i + 1) % 2 === 0 ? "md:text-right md:justify-end md:ml-5" : "md:text-left md:mr-5"} text-center items-center justify-center flex flex-col`}>
-                        <div className='text-brown font-bold text-24px'>{item.title}</div>
+                     <div className={`${(i + 1) % 2 === 0 ? "md:text-right md:justify-end md:ml-5" : "md:text-left md:mr-5"} text-center  justify-center flex flex-col`}>
+                        <div className='font-bold text-brown text-24px'>{item.title}</div>
                         <div className='text-20px'>{item.text}</div>
                      </div>
                   ) : (

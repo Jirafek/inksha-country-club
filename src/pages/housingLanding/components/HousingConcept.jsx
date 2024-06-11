@@ -37,7 +37,7 @@ const HousingConcept = () => {
                <div className={`flex flex-col self-center md:self-start  items-center md:items-start p-0 text-center md:text-left `}>
                   {GetConceptList().map((item, i) => {
                      return (
-                        <Reveal variants={fadeIn()} key={i} duration={0.5} delay={0 + i / 10}>
+                        <Reveal variants={fadeIn()} key={i} duration={1} delay={0 + i / 10}>
                            <div className='text-24px mb-[12px] flex gap-1 items-center' ><span><img src={dash} alt="" /></span>{item}</div>
                         </Reveal>
                      )

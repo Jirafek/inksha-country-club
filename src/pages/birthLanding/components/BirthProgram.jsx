@@ -603,7 +603,7 @@ const BirthProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
 
 
-         <ProgramSlider nextBtn={korpnext} prevBtn={korpprev} selectedImages={selectedimages} mainColor='#593723' secondaryColor='rgb(113 113 122)' />
+         <ProgramSlider nextBtn={korpnext} prevBtn={korpprev} selectedImages={program} mainColor='#593723' secondaryColor='rgb(113 113 122)' />
 
          <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='font-semibold text-center text-white text-md'>

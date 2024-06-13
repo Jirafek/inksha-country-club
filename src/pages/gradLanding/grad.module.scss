@@ -39,7 +39,7 @@
 ///// bg
 
 .heroBg{
-	background-image: url('./../../../public/image/grad/heroBg.webp');
+	background-image: url('./../../../public/image/grad/heroBg.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -47,7 +47,7 @@
 
 .formBg {
 	
-	background-image: url('./../../../public/image/grad/formBg.webp');
+	background-image: url('./../../../public/image/grad/formBg.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -60,7 +60,7 @@
 }
 
 .programBg{
-	background-image: url('./../../../public/image/grad/programBg.webp');
+	background-image: url('./../../../public/image/grad/programBg.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

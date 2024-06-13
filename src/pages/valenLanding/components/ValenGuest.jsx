@@ -66,7 +66,7 @@ const ValenGuest = () => {
             <Swiper
                // install Swiper modules
                modules={[Navigation, Autoplay]}
-               className="korpswiper min-h-[400px] mb-10"
+               className="korpswiper  h-[70vh] sm:h-screen mb-10"
                spaceBetween={50}
                loop={true}
                autoplay={{
@@ -81,7 +81,7 @@ const ValenGuest = () => {
             >
                {guests.map((guest, i) => {
                   return (
-                     <SwiperSlide className="px-[2vw] flex justify-center items-center  md:p-0" key={i}>
+                     <SwiperSlide className="px-[2vw] my-auto  h-[70vh] sm:h-screen flex justify-center items-center  md:p-0" key={i}>
 
                         <div className="flex mb-10 w-full mx-auto bg-gray-200 rounded-[10px] border border-stone-900  max-w-[1050px] items-center justify-end">
                            <div className="min-w-[200px] min-h-[130px] w-full bg-transparent  text-white  rounded-[10px] md:h-[600px] relative">
@@ -101,7 +101,7 @@ const ValenGuest = () => {
                                  <div className={`${s.acariMedium} gap-4 hidden md:flex items-center justify-end`}>
 
 
-                                    <div className="text-md font-bold ">{guest.date}</div>
+                                    <div className="font-bold text-md ">{guest.date}</div>
                                     <h1 className="text-md ">{guest.name}</h1>
                                  </div>
                               </div>

@@ -4,16 +4,52 @@ import bg1avif from 'images/bg1.avif'
 import bg1 from 'images/bg1.webp'
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useURLData } from "utils/URLData"
-import { isItWinterNow } from "utils/helpers"
+import { GetCurrentHoliday, isItWinterNow } from "utils/helpers"
 import AnimationButton from "../../../common/AnimationButton"
 import MainPopup from "../../../common/MainPopup"
 import WelcomeSwiper from './components/WelcomeSwiper'
 
 import logo from 'icons/events/russia.png'
 
+const LandingLogo = () => {
+   const currHolyday = GetCurrentHoliday()
 
+
+   const pumpkin_vars = {
+      initial: {
+         scale: 0.85,
+      },
+      animate: {
+         scale: 1,
+      },
+   }
+
+   const navigate = useNavigate()
+
+   const handleClick = () => {
+      navigate(currHolyday.link)
+   }
+
+   return (
+      <m.img
+         onClick={handleClick}
+         transition={{
+            repeat: Infinity,
+            duration: 1,
+            repeatType: "reverse",
+            repeatDelay: 0.6,
+         }}
+         initial="initial"
+         animate="animate"
+         variants={pumpkin_vars}
+         src={currHolyday.img}
+         className="z-[10000000] h-[150px] w-[150px] cursor-pointer rounded-full absolute right-0 bg-center object-contain shadow-xl"
+         alt="лого"
+      />
+   )
+}
 
 const heading = {
    hidden: {},
@@ -205,35 +241,15 @@ const Welcome = () => {
    }, [])
 
    return (
-      <section id="book" className="welcome relative m-0">
+      <section id="book" className="relative m-0 welcome">
          <MainPopup
             key={1}
             togglePopup={togglePopup}
             isPopupOpen={isPopupOpen}
          />
-         <Link to="/russiaDay" className="absolute flex justify-center items-center flex-col right-4 top-20 z-[1000]">
-            {/* <m.img
-               transition={{
-                  repeat: Infinity,
-                  duration: 1,
-                  repeatType: "reverse",
-                  repeatDelay: 0.6,
-               }}
-               initial="initial"
-               animate="animate"
-               variants={pumpkin_vars}
-               src={logo}
-               className="z-[10000000] h-[100px] w-[100px] rounded-full bg-center object-cover shadow-xl"
-               alt=""
-            /> */}
 
-            <img
-               className="z-[10000000] h-[100px] w-[100px] rounded-full bg-center object-cover shadow-xl"
-               src={logo}
-               alt=""
-            />
+         <LandingLogo />
 
-         </Link>
          <picture>
             {/* <source srcSet={isItWinterNow() ? `/avif/welcome_bg_winter.avif 1x` : `/avif/welcome_bg.avif 1x`} type="image/avif" /> */}
             <source srcSet={isItWinterNow() ? bg1avif : `/avif/welcome_bg.avif 1x`} type="image/avif" />
@@ -245,7 +261,7 @@ const Welcome = () => {
          </picture>
 
          {/* <VideoPlayer /> */}
-         {/* <div className="absolute z-30 bottom-0 w-full bg-transparent">
+         {/* <div className="absolute bottom-0 z-30 w-full bg-transparent">
       <div className="absolute z-[1] bottom-0 w-full bg-transparent">
         <img className="bg-transparent" src="/image/volna.gif" alt="GIF Image" />
       </div> */}
@@ -256,7 +272,7 @@ const Welcome = () => {
             <picture>
                <source srcSet="/avif/doska.avif 1x" type="image/avif" />
                <img
-                  className="h-full w-full"
+                  className="w-full h-full"
                   src="/image/doska.webp"
                   alt="Икша Кантри Клаб"
                />

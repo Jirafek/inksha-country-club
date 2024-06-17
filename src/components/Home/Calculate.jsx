@@ -323,14 +323,11 @@ const Calculate = () => {
       setTotal(currentTotal)
    }
 
-   const onSubmit = () => {
-      togglePopup()
-   }
    return (
       <section
          id="calculator"
          style={{ backgroundImage: "url(/image/calc_bg.webp)" }}
-         className="section back_settings relative"
+         className="relative section back_settings"
       >
          <MainPopup
             key={2}
@@ -418,7 +415,7 @@ const Calculate = () => {
                <div className="monterey mt-[42px] flex flex-col text-[13px] text-[#000]">
                   <h3 className="flex justify-center text-center text-[15px] font-semibold">
                      Количество гостей:{" "}
-                     <span className="ml-1 block w-5">{guesses}</span>
+                     <span className="block w-5 ml-1">{guesses}</span>
                   </h3>
                   <div className="flex justify-center">
                      <div className="flex items-center">
@@ -472,7 +469,7 @@ const Calculate = () => {
                   </div>
                   <h3 className="flex justify-center text-center text-[15px] font-semibold">
                      Количество дней:{" "}
-                     <span className="ml-1 block w-5">{days}</span>
+                     <span className="block w-5 ml-1">{days}</span>
                   </h3>
                   <div className="flex justify-center">
                      <div className="flex items-center">
